@@ -849,16 +849,21 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
                     gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
-                    for periodo in PERIODOSMUNI:                    
-                        prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
-                        prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
-                        prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
-                        dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
-                        
-                        prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
-                        prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
-                        prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
-                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+                    for periodo in PERIODOSMUNI: 
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                            prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                            dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                            prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                            dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
 
                     InggroupPart=pd.concat(dfIngresos)
                     InggroupPart.participacion=InggroupPart.participacion.round(5)
@@ -901,15 +906,20 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
 
                 if select_indicador == 'IHH':
                     for periodo in PERIODOS:
-                        prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
-                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
-                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
-                        dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
-                        ##
-                        prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
-                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
-                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
-                        dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                            prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                            dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                            prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                            dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
                         ##
 
                     EnvgroupPart3=pd.concat(dfEnvios3)
@@ -933,14 +943,20 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 if select_indicador == 'Linda':
                     dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
                     for periodo in PERIODOS:
-                        prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
-                        nempresaEnv.append(prEn.empresa.nunique())
-                        dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
-                        datosEnv.append(prEn)    
-                        prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
-                        nempresaIng.append(prIn.empresa.nunique())
-                        dflistIng2.append(Linda(prIn,'ingresos',periodo))
-                        datosIng.append(prIn)
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            nempresaEnv.append(prEn.empresa.nunique())
+                            dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                            datosEnv.append(prEn)    
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            nempresaIng.append(prIn.empresa.nunique())
+                            dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                            datosIng.append(prIn)
                     NemphisEnv=max(nempresaEnv)
                     NemphisIng=max(nempresaIng)     
                     dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
@@ -1014,17 +1030,23 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
 
                 if select_indicador == 'Dominancia':
                     for periodo in PERIODOS:
-                        prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
-                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
-                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
-                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
-                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                            prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                            prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                            dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
                         ##
-                        prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
-                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
-                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
-                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
-                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                            prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                            prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                            dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
                         ##
 
                     EnvgroupPart4=pd.concat(dfEnvios4)
