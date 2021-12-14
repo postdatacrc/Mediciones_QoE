@@ -334,7 +334,6 @@ st.markdown("""<style type="text/css">
     z-index:9999;
     top:80px;
     left:0;}
-    .css-m70y {display:none}
     .barra-superior{top: 0;
     position: fixed;
     background-color: #27348b;
@@ -441,6 +440,7 @@ st.title("Mercado postal")
 if select_ambito =='Nacional':
     nacional=Postales[Postales['ambito'].isin(['Local','Nacional'])]
     select_envio = st.sidebar.selectbox('Seleccionar envío',['Individual','Masivo'])
+    
     if select_envio== 'Individual':
         Individual=nacional[nacional['tipo_envio']=='Envíos Individuales']
         col1, col2 ,col3= st.columns(3)
@@ -3002,7 +3002,6 @@ $$i = 1, 2, ..., n$$
                     if select_variable == "Ingresos":
                         AgGrid(InggroupPart4)
                         st.plotly_chart(fig14,use_container_width=True)
-
  
     if select_envio== 'Masivo':    
         Masivo=nacional[nacional['tipo_envio']=='Envíos Masivos']
@@ -3632,7 +3631,6 @@ $$i = 1, 2, ..., n$$
                     AgGrid(InggroupPart4)
                     st.plotly_chart(fig14,use_container_width=True)
 
-
         if select_dimension == 'Departamental':            
             st.write('#### Desagregación departamental') 
             select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Media entrópica','Penetración','Dominancia'])
@@ -3805,16 +3803,21 @@ $$i = 1, 2, ..., n$$
             ## Cálculo de los indicadores
             if select_indicador == 'Stenbacka':
                 gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
-                for periodo in PERIODOSDPTO:                    
-                    prIn=MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)]
-                    prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
-                    prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
-                    dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
-                    
-                    prEn=MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)]
-                    prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
-                    prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
-                    dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+                for periodo in PERIODOSDPTO:
+                    if MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prIn=MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                        prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                        dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                    if MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prEn=MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                        prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
 
                 InggroupPart=pd.concat(dfIngresos)
                 InggroupPart.participacion=InggroupPart.participacion.round(5)
@@ -3891,7 +3894,423 @@ $$i = 1, 2, ..., n$$
                     with col2:
                         folium_static(colombia_map,width=480) 
 
+            if select_indicador == 'Concentración':
+                dflistEnv=[];dflistIng=[]
+                
+                for periodo in PERIODOS:
+                    if MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prIn=MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)]
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    if MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prEn=MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                    
+                ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                         
+                if select_variable == "Envíos":
+                    colsconEnv=ConcEnv.columns.values.tolist()
+                    value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                    conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                    fig4=PlotlyConcentracion(ConcEnv)
+                    st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                    st.plotly_chart(fig4,use_container_width=True)
+                if select_variable == "Ingresos":
+                    colsconIng=ConcIng.columns.values.tolist()
+                    value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                    conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                    fig5=PlotlyConcentracion(ConcIng)
+                    st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                    st.plotly_chart(fig5,use_container_width=True)
             
+            if select_indicador == 'IHH':
+                for periodo in PERIODOS:
+                    if MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prEn=MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                    if MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prIn=MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+
+                EnvgroupPart3=pd.concat(dfEnvios3)
+                InggroupPart3=pd.concat(dfIngresos3)
+                
+                InggroupPart3.participacion=InggroupPart3.participacion.round(3)
+                EnvgroupPart3.participacion=EnvgroupPart3.participacion.round(3)
+                
+                IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                
+                ##Gráficas
+                
+                fig7 = PlotlyIHH(IHHEnv)   
+                fig8 = PlotlyIHH(IHHIng)  
+                
+                if select_variable == "Envíos":
+                    AgGrid(EnvgroupPart3)
+                    st.plotly_chart(fig7,use_container_width=True)
+                    st.markdown('#### Visualización departamental del IHH')
+                    periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOS,PERIODOS[-1])
+                    dfMap=[];
+                    for departamento in DEPARTAMENTOS:
+                        if MasivodptoEnv[(MasivodptoEnv['id_departamento']==departamento)&(MasivodptoEnv['periodo']==periodoME)].empty==True:
+                            pass
+                        else:    
+                            prEn2=MasivodptoEnv[(MasivodptoEnv['id_departamento']==departamento)&(MasivodptoEnv['periodo']==periodoME)]
+                            prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                            prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                            IHHDpto=prEn2.groupby(['id_departamento'])['IHH'].mean().reset_index()
+                            dfMap.append(IHHDpto) 
+                    IHHMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                    departamentos_df=gdf.merge(IHHMap, on='id_departamento')
+
+                    colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                    tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                    for tile in tiles:
+                        folium.TileLayer(tile).add_to(colombia_map)
+                    choropleth=folium.Choropleth(
+                        geo_data=Colombian_DPTO,
+                        data=departamentos_df,
+                        columns=['id_departamento', 'IHH'],
+                        key_on='feature.properties.DPTO',
+                        fill_color='Reds_r', 
+                        fill_opacity=0.9, 
+                        line_opacity=0.9,
+                        legend_name='IHH',
+                        #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                        smooth_factor=0).add_to(colombia_map)
+                    # Adicionar nombres del departamento
+                    style_function = "font-size: 15px; font-weight: bold"
+                    choropleth.geojson.add_child(
+                        folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                    folium.LayerControl().add_to(colombia_map)
+
+                    #Adicionar valores velocidad
+                    style_function = lambda x: {'fillColor': '#ffffff', 
+                                                'color':'#000000', 
+                                                'fillOpacity': 0.1, 
+                                                'weight': 0.1}
+                    highlight_function = lambda x: {'fillColor': '#000000', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.50, 
+                                                    'weight': 0.1}
+                    NIL = folium.features.GeoJson(
+                        data = departamentos_df,
+                        style_function=style_function, 
+                        control=False,
+                        highlight_function=highlight_function, 
+                        tooltip=folium.features.GeoJsonTooltip(
+                            fields=['id_departamento','departamento','IHH'],
+                            aliases=['ID Departamento','Departamento','IHH'],
+                            style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                        )
+                    )
+                    colombia_map.add_child(NIL)
+                    colombia_map.keep_in_front(NIL)
+                    col1, col2 ,col3= st.columns([1.5,4,1])
+                    with col2:
+                        folium_static(colombia_map,width=480) 
+                
+                    
+                if select_variable == "Ingresos":
+                    AgGrid(InggroupPart3)
+                    st.plotly_chart(fig8,use_container_width=True)
+
+            if select_indicador == 'Linda':
+                dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                for periodo in PERIODOS:
+                    if MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prEn=MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)]
+                        nempresaEnv.append(prEn.empresa.nunique())
+                        dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                        datosEnv.append(prEn)  
+                    if MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prIn=MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)]
+                        nempresaIng.append(prIn.empresa.nunique())
+                        dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                        datosIng.append(prIn)
+                NemphisEnv=max(nempresaEnv)
+                NemphisIng=max(nempresaIng)     
+                dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                dIng=pd.concat(datosIng).reset_index()
+                LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                    
+                if select_variable == "Envíos":
+                    LindconEnv=LindEnv.columns.values.tolist()
+                    if NemphisEnv==1:
+                        st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                        AgGrid(dEnv)
+                    elif  NemphisEnv==2:
+                        col1, col2 = st.columns([3, 1])
+                        fig10=PlotlyLinda2(LindEnv)
+                        col1.write("**Datos completos**")                    
+                        col1.write(dEnv)  
+                        col2.write("**Índice de Linda**")
+                        col2.write(LindEnv)
+                        st.plotly_chart(fig10,use_container_width=True)        
+                    else:    
+                        lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                        fig10=PlotlyLinda(LindEnv)
+                        st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                        with st.expander("Mostrar datos"):
+                            st.write(dEnv)                    
+                        st.plotly_chart(fig10,use_container_width=True)
+     
+                if select_variable == "Ingresos":
+                    LindconIng=LindIng.columns.values.tolist()
+                    if  NemphisIng==1:
+                        st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                        st.write(dIng)
+                    elif  NemphisIng==2:
+                        col1, col2 = st.columns([3, 1])
+                        fig11=PlotlyLinda2(LindIng)
+                        col1.write("**Datos completos**")
+                        col1.AgGrid(dIng)
+                        col2.write("**Índice de Linda**")    
+                        col2.AgGrid(LindIng)
+                        st.plotly_chart(fig11,use_container_width=True)        
+                    else:
+                        lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                        fig11=PlotlyLinda(LindIng)
+                        st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                        with st.expander("Mostrar datos"):
+                            st.write(dIng)
+                        st.plotly_chart(fig11,use_container_width=True)
+
+            if select_indicador == 'Media entrópica':
+
+                for periodo in PERIODOS:
+                    if MasivoEnv[(MasivoEnv['periodo']==periodo)&(MasivoEnv['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prEn=MasivoEnv[(MasivoEnv['periodo']==periodo)&(MasivoEnv['id_departamento']==DPTO)]
+                        prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                        dfEnvios.append(prEn)
+                EnvgroupPart=pd.concat(dfEnvios)
+                MEDIAENTROPICAENV=EnvgroupPart.groupby(['periodo'])['media entropica'].mean().reset_index()         
+                                   
+                fig7=PlotlyMEntropica(MEDIAENTROPICAENV)
+
+                
+                if select_variable == "Envíos":
+                    st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
+                    st.plotly_chart(fig7,use_container_width=True)
+                    dfMap=[];
+                    periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOS,PERIODOS[-1])
+                    MEperiodTableEnv=MediaEntropica(MasivoEnv[(MasivoEnv['id_departamento']==DPTO)&(MasivoEnv['periodo']==periodoME)],'numero_total_envios')[1] 
+                    
+                    for departamento in DEPARTAMENTOS:
+                        if MasivoEnv[(MasivoEnv['id_departamento']==departamento)&(MasivoEnv['periodo']==periodoME)].empty==True:
+                            pass
+                        else:    
+                            prEn=MasivoEnv[(MasivoEnv['id_departamento']==departamento)&(MasivoEnv['periodo']==periodoME)]
+                            prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                            prEn2=prEn.groupby(['id_departamento'])['media entropica'].mean().reset_index()
+                            dfMap.append(prEn2)
+                    EnvMap=pd.concat(dfMap).reset_index().drop('index',axis=1)
+                    colsME=['SIJ','SI','WJ','MED','MEE','MEI','Media entropica'] 
+                    st.write(MEperiodTableEnv.reset_index(drop=True).style.apply(f, axis=0, subset=colsME))
+                    departamentos_df=gdf.merge(EnvMap, on='id_departamento')
+                    departamentos_df['media entropica']=departamentos_df['media entropica'].round(4)
+                    colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                    tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                    for tile in tiles:
+                        folium.TileLayer(tile).add_to(colombia_map)
+                    choropleth=folium.Choropleth(
+                        geo_data=Colombian_DPTO,
+                        data=departamentos_df,
+                        columns=['id_departamento', 'media entropica'],
+                        key_on='feature.properties.DPTO',
+                        fill_color='Greens', 
+                        fill_opacity=0.9, 
+                        line_opacity=0.9,
+                        legend_name='Media entrópica',
+                        bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                        smooth_factor=0).add_to(colombia_map)
+                    # Adicionar nombres del departamento
+                    style_function = "font-size: 15px; font-weight: bold"
+                    choropleth.geojson.add_child(
+                        folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                    folium.LayerControl().add_to(colombia_map)
+
+                    #Adicionar valores velocidad
+                    style_function = lambda x: {'fillColor': '#ffffff', 
+                                                'color':'#000000', 
+                                                'fillOpacity': 0.1, 
+                                                'weight': 0.1}
+                    highlight_function = lambda x: {'fillColor': '#000000', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.50, 
+                                                    'weight': 0.1}
+                    NIL = folium.features.GeoJson(
+                        data = departamentos_df,
+                        style_function=style_function, 
+                        control=False,
+                        highlight_function=highlight_function, 
+                        tooltip=folium.features.GeoJsonTooltip(
+                            fields=['id_departamento','departamento','media entropica'],
+                            aliases=['ID Departamento','Departamento','Media entrópica'],
+                            style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                        )
+                    )
+                    colombia_map.add_child(NIL)
+                    colombia_map.keep_in_front(NIL)
+                    MunicipiosME=MEperiodTableEnv.groupby(['id_municipio'])['WJ'].mean().reset_index()
+                    MunicipiosME=MunicipiosME[MunicipiosME.WJ!=0]
+                    MunicipiosME.WJ=MunicipiosME.WJ.round(7)
+                    
+                    
+                    fig9=PlotlyMentropicaTorta(MunicipiosME)
+                    
+                    col1, col2= st.columns(2)
+                    with col1:
+                        st.write(r"""###### <center>Visualización de la media entrópica en todos los departamentos y en el periodo seleccionado</center>""",unsafe_allow_html=True)
+                        folium_static(colombia_map,width=480)    
+                    with col2:
+                        st.write(r"""###### <center>Visualización de la participación de los municipios dentro del departamento seleccionado</center>""",unsafe_allow_html=True)                
+                        st.plotly_chart(fig9,use_container_width=True)
+
+            if select_indicador == 'Penetración':
+                PersonasDpto=Personas.groupby(['anno','id_departamento'])['poblacion'].sum().reset_index()  
+                MasivodptoEnv=MasivodptoEnv[(MasivodptoEnv['id_departamento']==DPTO)]
+                Envdpto=MasivodptoEnv.groupby(['periodo','id_departamento'])[['numero_total_envios']].sum().reset_index()
+                Envdpto.insert(0,'anno',Envdpto.periodo.str.split('-',expand=True)[0])
+                PersonasDpto.id_departamento=PersonasDpto.id_departamento.astype('int64')
+                PersonasDpto.anno=PersonasDpto.anno.astype('int64')
+                Envdpto.id_departamento=Envdpto.id_departamento.astype('int64')
+                Envdpto.anno=Envdpto.anno.astype('int64')
+                PenetracionDpto=Envdpto.merge(PersonasDpto, on=['anno','id_departamento'], how='left')
+                PenetracionDpto.insert(5,'penetracion',PenetracionDpto['numero_total_envios']/PenetracionDpto['poblacion'])
+                PenetracionDpto.penetracion=PenetracionDpto.penetracion.round(3)
+                PenetracionDpto=PenetracionDpto[PenetracionDpto['periodo']!='2021-T3']
+                if select_variable=='Envíos':
+                    fig12=PlotlyPenetracion(PenetracionDpto)
+                    AgGrid(PenetracionDpto[['periodo','id_departamento','numero_total_envios','poblacion','penetracion']])
+                    st.plotly_chart(fig12,use_container_width=True)
+                if select_variable=='Ingresos':
+                    st.write("El indicador de penetración sólo está definido para la variable de Líneas.")  
+
+            if select_indicador == 'Dominancia':
+                for periodo in PERIODOS:
+                    if MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prEn=MasivodptoEnv[(MasivodptoEnv['periodo']==periodo)&(MasivodptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                    if MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)].empty==True:
+                        pass
+                    else:    
+                        prIn=MasivodptoIng[(MasivodptoIng['periodo']==periodo)&(MasivodptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                    ##
+
+                EnvgroupPart4=pd.concat(dfEnvios4)
+                EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                InggroupPart4=pd.concat(dfIngresos4)
+                InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                
+                DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                
+                ##Gráficas
+                
+                fig13 = PlotlyDominancia(DomEnv)   
+                fig14 = PlotlyDominancia(DomIng)  
+                
+                if select_variable == "Envíos":
+                    AgGrid(EnvgroupPart4)
+                    st.plotly_chart(fig13,use_container_width=True)
+                    st.markdown('#### Visualización departamental de la dominancia')
+                    periodoME=st.select_slider('Escoja un periodo para calcular la dominancia', PERIODOS,PERIODOS[-1])
+                    dfMap=[];
+                    for departamento in DEPARTAMENTOS:
+                        if MasivodptoEnv[(MasivodptoEnv['id_departamento']==departamento)&(MasivodptoEnv['periodo']==periodoME)].empty==True:
+                            pass
+                        else:    
+                            prEn2=MasivodptoEnv[(MasivodptoEnv['id_departamento']==departamento)&(MasivodptoEnv['periodo']==periodoME)]
+                            prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                            prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                            prEn2.insert(5,'Dominancia',Dominancia(prEn2,'numero_total_envios'))
+                            DomDpto=prEn2.groupby(['id_departamento'])['Dominancia'].mean().reset_index()
+                            dfMap.append(DomDpto) 
+                    DomMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                    departamentos_df=gdf.merge(DomMap, on='id_departamento')
+
+                    colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                    tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                    for tile in tiles:
+                        folium.TileLayer(tile).add_to(colombia_map)
+                    choropleth=folium.Choropleth(
+                        geo_data=Colombian_DPTO,
+                        data=departamentos_df,
+                        columns=['id_departamento', 'Dominancia'],
+                        key_on='feature.properties.DPTO',
+                        fill_color='Oranges', 
+                        fill_opacity=0.9, 
+                        line_opacity=0.9,
+                        legend_name='Dominancia',
+                        #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                        smooth_factor=0).add_to(colombia_map)
+                    # Adicionar nombres del departamento
+                    style_function = "font-size: 15px; font-weight: bold"
+                    choropleth.geojson.add_child(
+                        folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                    folium.LayerControl().add_to(colombia_map)
+
+                    #Adicionar valores velocidad
+                    style_function = lambda x: {'fillColor': '#ffffff', 
+                                                'color':'#000000', 
+                                                'fillOpacity': 0.1, 
+                                                'weight': 0.1}
+                    highlight_function = lambda x: {'fillColor': '#000000', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.50, 
+                                                    'weight': 0.1}
+                    NIL = folium.features.GeoJson(
+                        data = departamentos_df,
+                        style_function=style_function, 
+                        control=False,
+                        highlight_function=highlight_function, 
+                        tooltip=folium.features.GeoJsonTooltip(
+                            fields=['id_departamento','departamento','Dominancia'],
+                            aliases=['ID Departamento','Departamento','Dominancia'],
+                            style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                        )
+                    )
+                    colombia_map.add_child(NIL)
+                    colombia_map.keep_in_front(NIL)
+                    col1, col2 ,col3= st.columns([1.5,4,1])
+                    with col2:
+                        folium_static(colombia_map,width=480) 
+                
+                    
+                if select_variable == "Ingresos":
+                    AgGrid(InggroupPart3)
+                    st.plotly_chart(fig8,use_container_width=True)
+
 
 if select_ambito =='Internacional':
     internacional=Postales[Postales['ambito'].isin(['Internacional de salida','Internacional de entrada'])]
