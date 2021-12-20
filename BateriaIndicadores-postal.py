@@ -4345,24 +4345,43 @@ if select_ambito =='Internacional':
         with col1:
             select_objeto=st.selectbox('Seleccionar tipo de objeto',['Documentos','Paquetes'])
         with col2:    
-            select_dimension = st.selectbox('Seleccione ámbito aplicación',['Nacional','Municipal'])
+            select_dimension = st.selectbox('Seleccione ámbito aplicación',['Nacional','Municipal','Departamental'])
         with col3:
             select_variable = st.selectbox('Seleccione la variable',['Envíos','Ingresos'])
             
         if select_objeto=='Documentos':
-            dfIngresos=[];dfIngresos2=[];dfIngresos3=[];
-            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];
+            dfIngresos=[];dfIngresos2=[];dfIngresos3=[];dfIngresos4=[];
+            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];dfEnvios4=[];
             Documentos=Entrada[Entrada['tipo_objeto']=='Documentos']
             Documentos.drop(['anno','trimestre','id_tipo_envio','tipo_envio','id_tipo_objeto','tipo_objeto','id_ambito'],axis=1, inplace=True)
             PERIODOS=['2020-T3','2020-T4','2021-T1','2021-T2']
             DocumentosnacIng=Documentos.groupby(['periodo','empresa','id_empresa'])['ingresos'].sum().reset_index()
             DocumentosnacEnv=Documentos.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()
+            DocumentosmuniIng=Documentos.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingresos'].sum().reset_index()
+            DocumentosmuniEnv=Documentos.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['numero_total_envios'].sum().reset_index()
+            DocumentosmuniIng.codigo_municipio=DocumentosmuniIng.codigo_municipio.astype('str')
+            DocumentosmuniEnv.codigo_municipio=DocumentosmuniEnv.codigo_municipio.astype('str')
+
+            DocumentosdptoIng=Documentos.copy()
+            DocumentosdptoIng.codigo_municipio=DocumentosdptoIng.codigo_municipio.astype('str')
+            DocumentosdptoIng=DocumentosdptoIng.groupby(['periodo','empresa','id_empresa','id_departamento','departamento'])['ingresos'].sum().reset_index()
+            DocumentosdptoEnv=Documentos.copy()
+            DocumentosdptoEnv.codigo_municipio=DocumentosdptoEnv.codigo_municipio.astype('str')
+            DocumentosdptoEnv=DocumentosdptoEnv.groupby(['periodo','empresa','id_empresa','id_departamento','departamento',])['numero_total_envios'].sum().reset_index()     
+
+            DocumentosEnv=Documentos[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','numero_total_envios']]
+            DocumentosEnv.codigo_municipio=DocumentosEnv.codigo_municipio.astype('str')
+            DocumentosEnv=DocumentosEnv.rename(columns={'codigo_municipio':'id_municipio'})
+            DocumentosIng=Documentos[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','ingresos']]
+            DocumentosIng.codigo_municipio=DocumentosIng.codigo_municipio.astype('str')
+            DocumentosIng=DocumentosIng.rename(columns={'codigo_municipio':'id_municipio'})
             
             with st.expander('Datos documentos'):
                 AgGrid(Documentos)
 
-            if select_dimension == 'Nacional':            
-                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración'])
+            if select_dimension == 'Nacional':  
+                st.write('#### Agregación nacional')  
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
             ## Información sobre los indicadores                                
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
@@ -4435,7 +4454,34 @@ if select_ambito =='Internacional':
     | Alta            | $>1$          |""",unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown("El índice de penetración es usado para...")    
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -4553,22 +4599,1074 @@ if select_ambito =='Internacional':
                         st.plotly_chart(fig12,use_container_width=True)
                     if select_variable=='Ingresos':
                         st.write("El indicador de penetración sólo está definido para la variable de Envíos.")   
+
+                if select_indicador == 'Dominancia':
+                    for elem in PERIODOS:
+                        prEn=DocumentosnacEnv[DocumentosnacEnv['periodo']==elem]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=DocumentosnacIng[DocumentosnacIng['periodo']==elem]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+
+            if select_dimension == 'Municipal':            
+                st.write('#### Desagregación municipal') 
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
+                MUNICIPIOS=sorted(DocumentosmuniIng.codigo_municipio.unique().tolist())
+                MUNI=st.selectbox('Escoja el municipio', MUNICIPIOS)
+                PERIODOSMUNI=['2020-T3','2020-T4','2021-T1','2021-T2']
+                
+            ## Información sobre los indicadores
+                if select_indicador == 'Stenbacka':
+                    st.write("### Índice de Stenbacka")
+                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
+                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    with st.expander("Información adicional índice de Stenbacka"):
+                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
+                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
+                        st.write(r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                    """,unsafe_allow_html=True)
+                if select_indicador == 'Concentración':
+                    st.write("### Razón de concentración")
+                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    with st.expander("Información adicional razón de concentración"):
+                        st.write("La concentración se calcula de la siguiente forma:")
+                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
+                        st.write(r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+""")
+                if select_indicador == 'IHH':
+                    st.write("### Índice de Herfindahl-Hirschman")
+                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    with st.expander("Información adicional IHH"):
+                        st.write("La fórmula del IHH está dada como")
+                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
+                        st.write(r"""**Donde:**
+-   $S_{i}$ es la participación de mercado de la variable analizada.
+-   $n$ es el número de empresas más grandes consideradas.
+
+De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+| Mercado                   | Rango          |
+|---------------------------|----------------|
+| Muy competitivo           | $<100$         |
+| Desconcentrado            | $100 - 1500$   |
+| Moderadamente concentrado | $>1500 - 2500$ |
+| Altamente concentrado     | $>2500$        |                
+                """)
+                if select_indicador == 'Linda':         
+                    st.write("### Índice de Linda")               
+                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    with st.expander("Información adicional indicador de linda"): 
+                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
+                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
+                        st.write(r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |""",unsafe_allow_html=True)
+                if select_indicador == 'Penetración':
+                    st.write("### Índice de penetración")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                     
+ 
+            ## Cálculo de los indicadores
+                if select_indicador == 'Stenbacka':
+                    gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
+                    for periodo in PERIODOSMUNI: 
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                            prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                            dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                            prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                            dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+
+                    InggroupPart=pd.concat(dfIngresos)
+                    InggroupPart.participacion=InggroupPart.participacion.round(5)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    if select_variable == 'Ingresos':
+                        AgGrid(InggroupPart)
+                        fig1=PlotlyStenbacka(InggroupPart)
+                        st.plotly_chart(fig1, use_container_width=True)
+                    if select_variable == 'Envíos':
+                        AgGrid(EnvgroupPart)
+                        fig2=PlotlyStenbacka(EnvgroupPart)
+                        st.plotly_chart(fig2, use_container_width=True) 
+
+                if select_indicador == 'Concentración':
+                    dflistEnv=[];dflistIng=[]
+                    
+                    for periodo in PERIODOS:
+                        prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                        prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                    ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                             
+                    if select_variable == "Envíos":
+                        colsconEnv=ConcEnv.columns.values.tolist()
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                        fig4=PlotlyConcentracion(ConcEnv)
+                        st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                        st.plotly_chart(fig4,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        colsconIng=ConcIng.columns.values.tolist()
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5=PlotlyConcentracion(ConcIng)
+                        st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                        st.plotly_chart(fig5,use_container_width=True)   
+
+                if select_indicador == 'IHH':
+                    for periodo in PERIODOS:
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                            prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                            dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                            prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                            dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart3=pd.concat(dfEnvios3)
+                    InggroupPart3=pd.concat(dfIngresos3)
+                    
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig7 = PlotlyIHH(IHHEnv)   
+                    fig8 = PlotlyIHH(IHHIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
+                if select_indicador == 'Linda':
+                    dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                    for periodo in PERIODOS:
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            nempresaEnv.append(prEn.empresa.nunique())
+                            dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                            datosEnv.append(prEn)    
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            nempresaIng.append(prIn.empresa.nunique())
+                            dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                            datosIng.append(prIn)
+                    NemphisEnv=max(nempresaEnv)
+                    NemphisIng=max(nempresaIng)     
+                    dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                    LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                    dIng=pd.concat(datosIng).reset_index()
+                    LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                        
+                    if select_variable == "Envíos":
+                        LindconEnv=LindEnv.columns.values.tolist()
+                        if NemphisEnv==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            AgGrid(dEnv)
+                        elif  NemphisEnv==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig10=PlotlyLinda2(LindEnv)
+                            col1.write("**Datos completos**")                    
+                            col1.write(dEnv)  
+                            col2.write("**Índice de Linda**")
+                            col2.write(LindEnv)
+                            st.plotly_chart(fig10,use_container_width=True)        
+                        else:    
+                            lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                            fig10=PlotlyLinda(LindEnv)
+                            st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dEnv)                    
+                            st.plotly_chart(fig10,use_container_width=True)
+         
+                    if select_variable == "Ingresos":
+                        LindconIng=LindIng.columns.values.tolist()
+                        if  NemphisIng==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            st.write(dIng)
+                        elif  NemphisIng==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig11=PlotlyLinda2(LindIng)
+                            col1.write("**Datos completos**")
+                            col1.AgGrid(dIng)
+                            col2.write("**Índice de Linda**")    
+                            col2.AgGrid(LindIng)
+                            st.plotly_chart(fig11,use_container_width=True)        
+                        else:
+                            lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                            fig11=PlotlyLinda(LindIng)
+                            st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dIng)
+                            st.plotly_chart(fig11,use_container_width=True)
+
+                if select_indicador == 'Penetración':
+                    PersonasMuni=Personas.groupby(['anno','id_municipio'])['poblacion'].sum().reset_index()  
+                    DocumentosmuniEnv=DocumentosmuniEnv[(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                    Envmuni=DocumentosmuniEnv.groupby(['periodo','codigo_municipio'])[['numero_total_envios']].sum().reset_index()
+                    Envmuni.insert(0,'anno',Envmuni.periodo.str.split('-',expand=True)[0])
+                    PersonasMuni.id_municipio=PersonasMuni.id_municipio.astype('int64')
+                    PersonasMuni.anno=PersonasMuni.anno.astype('int64')
+                    Envmuni.insert(4,'IDMuni',Envmuni.codigo_municipio.str.split('-',expand=True)[1])
+                    Envmuni=Envmuni.rename(columns={'IDMuni':'id_municipio'})
+                    Envmuni.id_municipio=Envmuni.id_municipio.astype('int64')
+                    Envmuni.anno=Envmuni.anno.astype('int64')
+                    PenetracionMuni=Envmuni.merge(PersonasMuni, on=['anno','id_municipio'], how='left')
+                    PenetracionMuni.insert(5,'penetracion',PenetracionMuni['numero_total_envios']/PenetracionMuni['poblacion'])
+                    PenetracionMuni.penetracion=PenetracionMuni.penetracion.round(3)
+                    PenetracionMuni=PenetracionMuni[PenetracionMuni['periodo']!='2021-T3']
+                    if select_variable=='Envíos':
+                        fig12=PlotlyPenetracion(PenetracionMuni)
+                        AgGrid(PenetracionMuni[['periodo','id_municipio','numero_total_envios','poblacion','penetracion']])
+                        st.plotly_chart(fig12,use_container_width=True)
+                    if select_variable=='Ingresos':
+                        st.write("El indicador de penetración sólo está definido para la variable de Líneas.")  
+
+                if select_indicador == 'Dominancia':
+                    for periodo in PERIODOS:
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                            prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                            prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                            dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                            prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                            prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                            dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+
+            if select_dimension == 'Departamental':            
+                st.write('#### Desagregación departamental') 
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Media entrópica','Penetración','Dominancia'])
+                DEPARTAMENTOS=DocumentosdptoIng.id_departamento.unique().tolist()
+                DPTO=st.selectbox('Escoja el departamento', DEPARTAMENTOS)
+                PERIODOSDPTO=['2020-T3','2020-T4','2021-T1','2021-T2']
+                               
+            ## Información sobre los indicadores
+                if select_indicador == 'Stenbacka':
+                    st.write("### Índice de Stenbacka")
+                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
+                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    with st.expander("Información adicional índice de Stenbacka"):
+                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
+                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
+                        st.write(r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                    """,unsafe_allow_html=True)
+                if select_indicador == 'Concentración':
+                    st.write("### Razón de concentración")
+                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    with st.expander("Información adicional razón de concentración"):
+                        st.write("La concentración se calcula de la siguiente forma:")
+                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
+                        st.write(r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+""")
+                if select_indicador == 'IHH':
+                    st.write("### Índice de Herfindahl-Hirschman")
+                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    with st.expander("Información adicional IHH"):
+                        st.write("La fórmula del IHH está dada como")
+                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
+                        st.write(r"""**Donde:**
+-   $S_{i}$ es la participación de mercado de la variable analizada.
+-   $n$ es el número de empresas más grandes consideradas.
+
+De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+| Mercado                   | Rango          |
+|---------------------------|----------------|
+| Muy competitivo           | $<100$         |
+| Desconcentrado            | $100 - 1500$   |
+| Moderadamente concentrado | $>1500 - 2500$ |
+| Altamente concentrado     | $>2500$        |                
+                """)
+                if select_indicador == 'Linda':         
+                    st.write("### Índice de Linda")               
+                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    with st.expander("Información adicional indicador de linda"): 
+                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
+                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
+                        st.write(r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |""",unsafe_allow_html=True)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
+-   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
+
+-   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
+
+-   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
+
+La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
+
+$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
+
+**Donde:**
+
+-   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
+
+Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
+
+$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
+
+La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
+
+#### Descomposición multiplicativa de la media entrópica
+
+La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
+
+$$ME = ME_{D} * ME_{E} * ME_{I}$$
+
+**Donde:**
+
+-   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
+
+$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
+$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+-   $ME_{E}$ corresponde al componente de concentración entre los submercados:
+
+$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
+
+-   $ME_{I}$ corresponde al componente de interacción:
+
+$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
+$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+***Donde a su vez de manera general:***
+
+-   $w_{j}$ es:
+
+$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
+$$j = 1, 2, ..., p$$
+
+-   $S_{i}$ es:
+
+$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
+$$i = 1, 2, ..., n$$
+
+                """)
+                if select_indicador == 'Penetración':
+                    st.write("### Índice de penetración")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                  
+
+            ## Cálculo de los indicadores
+                if select_indicador == 'Stenbacka':
+                    gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
+                    for periodo in PERIODOSDPTO:                    
+                        prIn=DocumentosdptoIng[(DocumentosdptoIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                        prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                        dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        
+                        prEn=DocumentosdptoEnv[(DocumentosdptoEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                        prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+
+                    InggroupPart=pd.concat(dfIngresos)
+                    InggroupPart.participacion=InggroupPart.participacion.round(5)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    if select_variable == 'Ingresos':
+                        AgGrid(InggroupPart)
+                        fig1=PlotlyStenbacka(InggroupPart)
+                        st.plotly_chart(fig1, use_container_width=True)
+                    if select_variable == 'Envíos':
+                        AgGrid(EnvgroupPart)
+                        fig2=PlotlyStenbacka(EnvgroupPart)
+                        st.plotly_chart(fig2, use_container_width=True) 
+                        st.markdown('#### Visualización departamental del Stenbacka')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el Stenbacka', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(5,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(6,'stenbacka',Stenbacka(prEn2,'numero_total_envios',gamma))
+                                StenDpto=prEn2.groupby(['id_departamento'])['stenbacka'].mean().reset_index()
+                                dfMap.append(StenDpto) 
+                        StenMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        
+                        departamentos_df=gdf.merge(StenMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'stenbacka'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Reds_r', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Stenbacka',
+                            #bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','stenbacka'],
+                                aliases=['ID Departamento','Departamento','Stenbacka'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                       
+                if select_indicador == 'Concentración':
+                    dflistEnv=[];dflistIng=[]
+                    
+                    for periodo in PERIODOS:
+                        prIn=DocumentosdptoIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        prEn=DocumentosdptoEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                    ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                             
+                    if select_variable == "Envíos":
+                        colsconEnv=ConcEnv.columns.values.tolist()
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                        fig4=PlotlyConcentracion(ConcEnv)
+                        st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                        st.plotly_chart(fig4,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        colsconIng=ConcIng.columns.values.tolist()
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5=PlotlyConcentracion(ConcIng)
+                        st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                        st.plotly_chart(fig5,use_container_width=True)
+
+                if select_indicador == 'IHH':
+                    for periodo in PERIODOS:
+                        prEn=DocumentosdptoEnv[(DocumentosdptoEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=DocumentosdptoIng[(DocumentosdptoIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart3=pd.concat(dfEnvios3)
+                    InggroupPart3=pd.concat(dfIngresos3)
+                    
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig7 = PlotlyIHH(IHHEnv)   
+                    fig8 = PlotlyIHH(IHHIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                        st.markdown('#### Visualización departamental del IHH')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                                IHHDpto=prEn2.groupby(['id_departamento'])['IHH'].mean().reset_index()
+                                dfMap.append(IHHDpto) 
+                        IHHMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        departamentos_df=gdf.merge(IHHMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'IHH'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Reds_r', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='IHH',
+                            #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','IHH'],
+                                aliases=['ID Departamento','Departamento','IHH'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                    
+                        
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
+                if select_indicador == 'Linda':
+                    dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                    for periodo in PERIODOS:
+                        prEn=DocumentosdptoEnv[(DocumentosdptoEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        nempresaEnv.append(prEn.empresa.nunique())
+                        dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                        datosEnv.append(prEn)    
+                        prIn=DocumentosdptoIng[(DocumentosdptoIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        nempresaIng.append(prIn.empresa.nunique())
+                        dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                        datosIng.append(prIn)
+                    NemphisEnv=max(nempresaEnv)
+                    NemphisIng=max(nempresaIng)     
+                    dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                    LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                    dIng=pd.concat(datosIng).reset_index()
+                    LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                        
+                    if select_variable == "Envíos":
+                        LindconEnv=LindEnv.columns.values.tolist()
+                        if NemphisEnv==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            AgGrid(dEnv)
+                        elif  NemphisEnv==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig10=PlotlyLinda2(LindEnv)
+                            col1.write("**Datos completos**")                    
+                            col1.write(dEnv)  
+                            col2.write("**Índice de Linda**")
+                            col2.write(LindEnv)
+                            st.plotly_chart(fig10,use_container_width=True)        
+                        else:    
+                            lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                            fig10=PlotlyLinda(LindEnv)
+                            st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dEnv)                    
+                            st.plotly_chart(fig10,use_container_width=True)
+         
+                    if select_variable == "Ingresos":
+                        LindconIng=LindIng.columns.values.tolist()
+                        if  NemphisIng==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            st.write(dIng)
+                        elif  NemphisIng==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig11=PlotlyLinda2(LindIng)
+                            col1.write("**Datos completos**")
+                            col1.AgGrid(dIng)
+                            col2.write("**Índice de Linda**")    
+                            col2.AgGrid(LindIng)
+                            st.plotly_chart(fig11,use_container_width=True)        
+                        else:
+                            lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                            fig11=PlotlyLinda(LindIng)
+                            st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dIng)
+                            st.plotly_chart(fig11,use_container_width=True)
+
+                if select_indicador == 'Media entrópica':
+
+                    for periodo in PERIODOS:
+                        prEn=DocumentosEnv[(DocumentosEnv['periodo']==periodo)&(DocumentosEnv['id_departamento']==DPTO)]
+                        prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                        dfEnvios.append(prEn)
+                        prIn=DocumentosIng[(DocumentosIng['periodo']==periodo)&(DocumentosIng['id_departamento']==DPTO)]
+                        prIn.insert(4,'media entropica',MediaEntropica(prIn,'ingresos')[0])
+                        dfIngresos.append(prIn)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    MEDIAENTROPICAENV=EnvgroupPart.groupby(['periodo'])['media entropica'].mean().reset_index()    
+                    InggroupPart=pd.concat(dfIngresos)
+                    MEDIAENTROPICAING=InggroupPart.groupby(['periodo'])['media entropica'].mean().reset_index()       
+                                       
+                    fig7=PlotlyMEntropica(MEDIAENTROPICAENV)
+                    fig8=PlotlyMEntropica(MEDIAENTROPICAING)
+
+                    
+                    if select_variable == "Envíos":
+                        st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
+                        st.plotly_chart(fig7,use_container_width=True)
+                        dfMap=[];
+                        periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOS,PERIODOS[-1])
+                        MEperiodTableEnv=MediaEntropica(DocumentosEnv[(DocumentosEnv['id_departamento']==DPTO)&(DocumentosEnv['periodo']==periodoME)],'numero_total_envios')[1] 
+                        
+                        for departamento in DEPARTAMENTOS:
+                            prEn=DocumentosEnv[(DocumentosEnv['id_departamento']==departamento)&(DocumentosEnv['periodo']==periodoME)]
+                            prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                            prEn2=prEn.groupby(['id_departamento'])['media entropica'].mean().reset_index()
+                            dfMap.append(prEn2)
+                        EnvMap=pd.concat(dfMap).reset_index().drop('index',axis=1)
+                        colsME=['SIJ','SI','WJ','MED','MEE','MEI','Media entropica'] 
+                        st.write(MEperiodTableEnv.reset_index(drop=True).style.apply(f, axis=0, subset=colsME))
+                        departamentos_df=gdf.merge(EnvMap, on='id_departamento')
+                        departamentos_df['media entropica']=departamentos_df['media entropica'].round(4)
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'media entropica'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Greens', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Media entrópica',
+                            bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','media entropica'],
+                                aliases=['ID Departamento','Departamento','Media entrópica'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        MunicipiosME=MEperiodTableEnv.groupby(['id_municipio'])['WJ'].mean().reset_index()
+                        MunicipiosME=MunicipiosME[MunicipiosME.WJ!=0]
+                        MunicipiosME.WJ=MunicipiosME.WJ.round(7)
+                        
+                        
+                        fig9=PlotlyMentropicaTorta(MunicipiosME)
+                        
+                        col1, col2= st.columns(2)
+                        with col1:
+                            st.write(r"""###### <center>Visualización de la media entrópica en todos los departamentos y en el periodo seleccionado</center>""",unsafe_allow_html=True)
+                            folium_static(colombia_map,width=480)    
+                        with col2:
+                            st.write(r"""###### <center>Visualización de la participación de los municipios dentro del departamento seleccionado</center>""",unsafe_allow_html=True)                
+                            st.plotly_chart(fig9,use_container_width=True)
+                        
+                if select_indicador == 'Penetración':
+                    PersonasDpto=Personas.groupby(['anno','id_departamento'])['poblacion'].sum().reset_index()  
+                    DocumentosdptoEnv=DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==DPTO)]
+                    Envdpto=DocumentosdptoEnv.groupby(['periodo','id_departamento'])[['numero_total_envios']].sum().reset_index()
+                    Envdpto.insert(0,'anno',Envdpto.periodo.str.split('-',expand=True)[0])
+                    PersonasDpto.id_departamento=PersonasDpto.id_departamento.astype('int64')
+                    PersonasDpto.anno=PersonasDpto.anno.astype('int64')
+                    Envdpto.id_departamento=Envdpto.id_departamento.astype('int64')
+                    Envdpto.anno=Envdpto.anno.astype('int64')
+                    PenetracionDpto=Envdpto.merge(PersonasDpto, on=['anno','id_departamento'], how='left')
+                    PenetracionDpto.insert(5,'penetracion',PenetracionDpto['numero_total_envios']/PenetracionDpto['poblacion'])
+                    PenetracionDpto.penetracion=PenetracionDpto.penetracion.round(3)
+                    PenetracionDpto=PenetracionDpto[PenetracionDpto['periodo']!='2021-T3']
+                    if select_variable=='Envíos':
+                        fig12=PlotlyPenetracion(PenetracionDpto)
+                        AgGrid(PenetracionDpto[['periodo','id_departamento','numero_total_envios','poblacion','penetracion']])
+                        st.plotly_chart(fig12,use_container_width=True)
+                    if select_variable=='Ingresos':
+                        st.write("El indicador de penetración sólo está definido para la variable de Líneas.")  
+
+                if select_indicador == 'Dominancia':
+                    for periodo in PERIODOS:
+                        prEn=DocumentosdptoEnv[(DocumentosdptoEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=DocumentosdptoIng[(DocumentosdptoIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                        st.markdown('#### Visualización departamental de la dominancia')
+                        periodoME=st.select_slider('Escoja un periodo para calcular la dominancia', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                                prEn2.insert(5,'Dominancia',Dominancia(prEn2,'numero_total_envios'))
+                                DomDpto=prEn2.groupby(['id_departamento'])['Dominancia'].mean().reset_index()
+                                dfMap.append(DomDpto) 
+                        DomMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        departamentos_df=gdf.merge(DomMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'Dominancia'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Oranges', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Dominancia',
+                            #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','Dominancia'],
+                                aliases=['ID Departamento','Departamento','Dominancia'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                    
+                        
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
            
         if select_objeto=='Paquetes':
-            dfIngresos=[];dfIngresos2=[];dfIngresos3=[];
-            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];         
+            dfIngresos=[];dfIngresos2=[];dfIngresos3=[];dfIngresos4=[];
+            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];dfEnvios4=[];    
+            dfIngresosPorEnvio=[];dfIngresosPorEnvio2=[];dfIngresosPorEnvio3=[];dfIngresosPorEnvio4=[];
+            
             Paquetes=Entrada[Entrada['tipo_objeto']=='Paquetes']
-            Paquetes.drop(['anno','trimestre','id_tipo_envio','tipo_envio','id_tipo_objeto','tipo_objeto','id_ambito'],axis=1, inplace=True)
+            Paquetes.drop(['anno','trimestre','id_tipo_envio','tipo_envio','id_tipo_objeto','id_ambito'],axis=1, inplace=True)
             with st.expander('Datos paquetes'):
-                AgGrid(Paquetes)     
-            PESO = st.select_slider('Seleccione rango de peso',Paquetes.rango_peso_envio.unique().tolist())   
+                AgGrid(Paquetes[['periodo','id_empresa','empresa','codigo_municipio','departamento','ingresos','numero_total_envios','ingreso/envio']])
+            #PESO = st.select_slider('Seleccione rango de peso',Paquetes.rango_peso_envio.unique().tolist())
+            PESO2 = st.multiselect('Seleccione los rangos de peso a agrupar',Paquetes.rango_peso_envio.unique().tolist(),default=Paquetes.rango_peso_envio.unique().tolist())              
             PERIODOS=['2020-T3','2020-T4','2021-T1','2021-T2']            
-            PaquetesPeso=Paquetes[Paquetes['rango_peso_envio']==PESO]
+            #PaquetesPeso=Paquetes[Paquetes['rango_peso_envio']==PESO]
+            PaquetesPeso=Paquetes[Paquetes['rango_peso_envio'].isin(PESO2)]
+            #st.write(Paquetes[Paquetes['rango_peso_envio'].isin(PESO2)])
             PaquetesnacIng=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['ingresos'].sum().reset_index()
-            PaquetesnacEnv=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()                
-                
+            PaquetesnacEnv=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()
+            PaquetesnacIngEnvio=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['ingreso/envio'].sum().reset_index()
+            PaquetesmuniIng=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingresos'].sum().reset_index()
+            PaquetesmuniEnv=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['numero_total_envios'].sum().reset_index()    
+            PaquetesmuniIngEnvio=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingreso/envio'].sum().reset_index()
+            PaquetesmuniIng.codigo_municipio=PaquetesmuniIng.codigo_municipio.astype('str')
+            PaquetesmuniEnv.codigo_municipio=PaquetesmuniEnv.codigo_municipio.astype('str')
+            PaquetesmuniIngEnvio.codigo_municipio=PaquetesmuniIngEnvio.codigo_municipio.astype('str')
+            
+            PaquetesdptoIng=PaquetesPeso.copy()
+            PaquetesdptoIng.codigo_municipio=PaquetesdptoIng.codigo_municipio.astype('str')
+            PaquetesdptoIng=PaquetesdptoIng.groupby(['periodo','empresa','id_empresa','id_departamento'])['ingresos'].sum().reset_index()
+            PaquetesdptoEnv=PaquetesPeso.copy()
+            PaquetesdptoEnv.codigo_municipio=PaquetesdptoEnv.codigo_municipio.astype('str')
+            PaquetesdptoEnv=PaquetesdptoEnv.groupby(['periodo','empresa','id_empresa','id_departamento'])['numero_total_envios'].sum().reset_index()     
+            PaquetesdptoIngEnvio=PaquetesPeso.copy()
+            PaquetesdptoIngEnvio.codigo_municipio=PaquetesdptoIngEnvio.codigo_municipio.astype('str')
+            PaquetesdptoIngEnvio=PaquetesdptoIngEnvio.groupby(['periodo','empresa','id_empresa','id_departamento'])['ingreso/envio'].sum().reset_index()
+
+
+            PaquetesEnv=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','numero_total_envios']]
+            PaquetesEnv.codigo_municipio=PaquetesEnv.codigo_municipio.astype('str')
+            PaquetesEnv=PaquetesEnv.rename(columns={'codigo_municipio':'id_municipio'})
+            PaquetesIng=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','ingresos']]
+            PaquetesIng.codigo_municipio=PaquetesIng.codigo_municipio.astype('str') 
+            PaquetesIng=PaquetesIng.rename(columns={'codigo_municipio':'id_municipio'})  
+            PaquetesIngEnvio=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','ingreso/envio']]
+            PaquetesIngEnvio.codigo_municipio=PaquetesIngEnvio.codigo_municipio.astype('str') 
+            PaquetesIngEnvio=PaquetesIngEnvio.rename(columns={'codigo_municipio':'id_municipio'})  
+            
+             
             if select_dimension == 'Nacional':       
-                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración'])
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
                 ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
@@ -4609,18 +5707,18 @@ De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden
                         st.write("La fórmula del IHH está dada como")
                         st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
                         st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
 
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
 
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
+    | Mercado                   | Rango          |
+    |---------------------------|----------------|
+    | Muy competitivo           | $<100$         |
+    | Desconcentrado            | $100 - 1500$   |
+    | Moderadamente concentrado | $>1500 - 2500$ |
+    | Altamente concentrado     | $>2500$        |                
+                    """)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
                     st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
@@ -4641,7 +5739,35 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
 | Alta            | $>1$          |""",unsafe_allow_html=True)
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown("El índice de penetración es usado para...")    
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                 
 
                 ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -4655,12 +5781,20 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         prEn=PaquetesnacEnv[PaquetesnacEnv['periodo']==elem]
                         prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
                         prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
-                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                        
+                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))  
+
+                        prInEnv=PaquetesnacIngEnvio[PaquetesnacIngEnvio['periodo']==elem]
+                        prInEnv.insert(3,'participacion',Participacion(prInEnv,'ingreso/envio'))
+                        prInEnv.insert(4,'stenbacka',Stenbacka(prInEnv,'ingreso/envio',gamma))
+                        dfIngresosPorEnvio.append(prIn.sort_values(by='participacion',ascending=False))                        
                         
                     InggroupPart=pd.concat(dfIngresos)
                     InggroupPart.participacion=InggroupPart.participacion.round(5)
                     EnvgroupPart=pd.concat(dfEnvios)
                     EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    IngEnvgroupPart=pd.concat(dfIngresosPorEnvio)
+                    IngEnvgroupPart.participacion=IngEnvgroupPart.participacion.round(5)                    
+                    
                     if select_variable == 'Ingresos':
                         AgGrid(InggroupPart)
                         fig1=PlotlyStenbacka(InggroupPart)
@@ -4668,31 +5802,45 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                     if select_variable == 'Envíos':
                         AgGrid(EnvgroupPart)
                         fig2=PlotlyStenbacka(EnvgroupPart)
-                        st.plotly_chart(fig2, use_container_width=True)  
+                        st.plotly_chart(fig2, use_container_width=True)
+
+                    if select_variable == 'Ingresos por envío':
+                        AgGrid(IngEnvgroupPart)
+                        fig2b=PlotlyStenbacka(IngEnvgroupPart)
+                        st.plotly_chart(fig2b, use_container_width=True)                        
 
                 if select_indicador == 'Concentración':
-                    dflistEnv=[];dflistIng=[]                    
+                    dflistEnv=[];dflistIng=[];dflistIngEnv=[];                    
                     for elem in PERIODOS:
                         dflistEnv.append(Concentracion(PaquetesnacEnv,'numero_total_envios',elem))
                         dflistIng.append(Concentracion(PaquetesnacIng,'ingresos',elem))
+                        dflistIngEnv.append(Concentracion(PaquetesnacIngEnvio,'ingreso/envio',elem))
                     ConcEnv=pd.concat(dflistEnv).fillna(1.0)
                     ConcIng=pd.concat(dflistIng).fillna(1.0)
-                    
+                    ConcIngEnv=pd.concat(dflistIngEnv).fillna(1.0)
+                                             
                     if select_variable == "Envíos":
-                        colsconEnv=ConcEnv.columns.values.tolist()   
+                        colsconEnv=ConcEnv.columns.values.tolist()
                         value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
                         conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
                         fig4=PlotlyConcentracion(ConcEnv)
                         st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
                         st.plotly_chart(fig4,use_container_width=True)
                     if select_variable == "Ingresos":
-                        colsconIng=ConcIng.columns.values.tolist() 
+                        colsconIng=ConcIng.columns.values.tolist()
                         value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
                         conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
                         fig5=PlotlyConcentracion(ConcIng)
                         st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
-                        st.plotly_chart(fig5,use_container_width=True)                    
-
+                        st.plotly_chart(fig5,use_container_width=True) 
+                    if select_variable == "Ingresos por envío":
+                        colsconIngEnv=ConcIngEnv.columns.values.tolist()
+                        value1= len(colsconIngEnv)-1 if len(colsconIngEnv)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5a=PlotlyConcentracion(ConcIngEnv)
+                        st.write(ConcIngEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIngEnv[conc]]))
+                        st.plotly_chart(fig5a,use_container_width=True) 
+                        
                 if select_indicador == 'IHH':
                     for elem in PERIODOS:
                         prEn=PaquetesnacEnv[PaquetesnacEnv['periodo']==elem]
@@ -4705,24 +5853,32 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
                         dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
                         ##
+                        # prInEnv=PaquetesnacIngEnvio[PaquetesnacIngEnvio['periodo']==elem]
+                        # prInEnv.insert(3,'participacion',(prInEnv['ingreso/envio']/prInEnv['ingreso/envio'].sum())*100)
+                        # prInEnv.insert(4,'IHH',IHH(prInEnv,'ingreso/envio'))
+                        # dfIngresosPorEnvio3.append(prInEnv.sort_values(by='participacion',ascending=False))
+
 
                     EnvgroupPart3=pd.concat(dfEnvios3)
                     InggroupPart3=pd.concat(dfIngresos3)
+                    IngEnvgroupPart3=pd.concat(dfIngresosPorEnvio3)
                     
-                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
-                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    # IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    # IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()   
+                    # IHHIngEnv=IngEnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()           
                     
                     ##Gráficas
                     
                     fig7 = PlotlyIHH(IHHEnv)   
-                    fig8 = PlotlyIHH(IHHIng)  
+                    fig8 = PlotlyIHH(IHHIng) 
+                    fig8a = PlotlyIHH(IHHEnvIng)      
                     
                     if select_variable == "Envíos":
                         AgGrid(EnvgroupPart3)
                         st.plotly_chart(fig7,use_container_width=True)
                     if select_variable == "Ingresos":
                         AgGrid(InggroupPart3)
-                        st.plotly_chart(fig8,use_container_width=True)
+                        st.plotly_chart(fig8,use_container_width=True)                      
 
                 if select_indicador == 'Linda':
                     dflistEnv2=[];dflistIng2=[];nempresaIng=[]; nempresaEnv=[];                     
@@ -4771,7 +5927,1001 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         st.plotly_chart(fig12,use_container_width=True)
                     if select_variable=='Ingresos':
                         st.write("El indicador de penetración sólo está definido para la variable de Envíos.")   
-               
+
+                if select_indicador == 'Dominancia':
+                    for elem in PERIODOS:
+                        prEn=PaquetesnacEnv[PaquetesnacEnv['periodo']==elem]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesnacIng[PaquetesnacIng['periodo']==elem]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+
+            if select_dimension == 'Municipal':            
+                st.write('#### Desagregación municipal') 
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
+                MUNICIPIOS=sorted(PaquetesmuniIng.codigo_municipio.unique().tolist())
+                MUNI=st.selectbox('Escoja el municipio', MUNICIPIOS)
+                PERIODOSMUNI=['2020-T3','2020-T4','2021-T1','2021-T2']
+                
+                ## Información de los indicadores 
+                if select_indicador == 'Stenbacka':
+                    st.write("### Índice de Stenbacka")
+                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
+                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    with st.expander("Información adicional índice de Stenbacka"):
+                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
+                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
+                        st.write(r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                """,unsafe_allow_html=True)
+                if select_indicador == 'Concentración':
+                    st.write("### Razón de concentración")
+                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    with st.expander("Información adicional razón de concentración"):
+                        st.write("La concentración se calcula de la siguiente forma:")
+                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
+                        st.write(r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+""")
+                if select_indicador == 'IHH':
+                    st.write("### Índice de Herfindahl-Hirschman")
+                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    with st.expander("Información adicional IHH"):
+                        st.write("La fórmula del IHH está dada como")
+                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
+                        st.write(r"""**Donde:**
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+    | Mercado                   | Rango          |
+    |---------------------------|----------------|
+    | Muy competitivo           | $<100$         |
+    | Desconcentrado            | $100 - 1500$   |
+    | Moderadamente concentrado | $>1500 - 2500$ |
+    | Altamente concentrado     | $>2500$        |                
+                    """)
+                if select_indicador == 'Linda':
+                    st.write("### Índice de Linda")               
+                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    with st.expander("Información adicional indicador de linda"): 
+                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
+                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
+                        st.write(r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |""",unsafe_allow_html=True)
+                if select_indicador == 'Penetración':
+                    st.write("### Índice de penetración")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                    
+
+            ## Cálculo de los indicadores
+                if select_indicador == 'Stenbacka':
+                    gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
+                    for periodo in PERIODOSMUNI:                    
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                        prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                        dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                        prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+
+                    InggroupPart=pd.concat(dfIngresos)
+                    InggroupPart.participacion=InggroupPart.participacion.round(5)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    if select_variable == 'Ingresos':
+                        AgGrid(InggroupPart)
+                        fig1=PlotlyStenbacka(InggroupPart)
+                        st.plotly_chart(fig1, use_container_width=True)
+                    if select_variable == 'Envíos':
+                        AgGrid(EnvgroupPart)
+                        fig2=PlotlyStenbacka(EnvgroupPart)
+                        st.plotly_chart(fig2, use_container_width=True) 
+
+                if select_indicador == 'Concentración':
+                    dflistEnv=[];dflistIng=[]
+                    
+                    for periodo in PERIODOS:
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                    ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                             
+                    if select_variable == "Envíos":
+                        colsconEnv=ConcEnv.columns.values.tolist()
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                        fig4=PlotlyConcentracion(ConcEnv)
+                        st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                        st.plotly_chart(fig4,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        colsconIng=ConcIng.columns.values.tolist()
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5=PlotlyConcentracion(ConcIng)
+                        st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                        st.plotly_chart(fig5,use_container_width=True)   
+
+                if select_indicador == 'IHH':
+                    for periodo in PERIODOS:
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart3=pd.concat(dfEnvios3)
+                    InggroupPart3=pd.concat(dfIngresos3)
+                    
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig7 = PlotlyIHH(IHHEnv)   
+                    fig8 = PlotlyIHH(IHHIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
+                if select_indicador == 'Linda':
+                    dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                    for periodo in PERIODOS:
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        nempresaEnv.append(prEn.empresa.nunique())
+                        dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                        datosEnv.append(prEn)    
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        nempresaIng.append(prIn.empresa.nunique())
+                        dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                        datosIng.append(prIn)
+                    NemphisEnv=max(nempresaEnv)
+                    NemphisIng=max(nempresaIng)     
+                    dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                    LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                    dIng=pd.concat(datosIng).reset_index()
+                    LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                        
+                    if select_variable == "Envíos":
+                        LindconEnv=LindEnv.columns.values.tolist()
+                        if NemphisEnv==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            AgGrid(dEnv)
+                        elif  NemphisEnv==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig10=PlotlyLinda2(LindEnv)
+                            col1.write("**Datos completos**")                    
+                            col1.write(dEnv)  
+                            col2.write("**Índice de Linda**")
+                            col2.write(LindEnv)
+                            st.plotly_chart(fig10,use_container_width=True)        
+                        else:    
+                            lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                            fig10=PlotlyLinda(LindEnv)
+                            st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dEnv)                    
+                            st.plotly_chart(fig10,use_container_width=True)
+         
+                    if select_variable == "Ingresos":
+                        LindconIng=LindIng.columns.values.tolist()
+                        if  NemphisIng==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            st.write(dIng)
+                        elif  NemphisIng==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig11=PlotlyLinda2(LindIng)
+                            col1.write("**Datos completos**")
+                            col1.AgGrid(dIng)
+                            col2.write("**Índice de Linda**")    
+                            col2.AgGrid(LindIng)
+                            st.plotly_chart(fig11,use_container_width=True)        
+                        else:
+                            lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                            fig11=PlotlyLinda(LindIng)
+                            st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dIng)
+                            st.plotly_chart(fig11,use_container_width=True)
+
+                if select_indicador == 'Penetración':
+                    PersonasMuni=Personas.groupby(['anno','id_municipio'])['poblacion'].sum().reset_index()  
+                    PaquetesmuniEnv=PaquetesmuniEnv[(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                    Envmuni=PaquetesmuniEnv.groupby(['periodo','codigo_municipio'])[['numero_total_envios']].sum().reset_index()
+                    Envmuni.insert(0,'anno',Envmuni.periodo.str.split('-',expand=True)[0])
+                    PersonasMuni.id_municipio=PersonasMuni.id_municipio.astype('int64')
+                    PersonasMuni.anno=PersonasMuni.anno.astype('int64')
+                    Envmuni.insert(4,'IDMuni',Envmuni.codigo_municipio.str.split('-',expand=True)[1])
+                    Envmuni=Envmuni.rename(columns={'IDMuni':'id_municipio'})
+                    Envmuni.id_municipio=Envmuni.id_municipio.astype('int64')
+                    Envmuni.anno=Envmuni.anno.astype('int64')
+                    PenetracionMuni=Envmuni.merge(PersonasMuni, on=['anno','id_municipio'], how='left')
+                    PenetracionMuni.insert(5,'penetracion',PenetracionMuni['numero_total_envios']/PenetracionMuni['poblacion'])
+                    PenetracionMuni.penetracion=PenetracionMuni.penetracion.round(3)
+                    PenetracionMuni=PenetracionMuni[PenetracionMuni['periodo']!='2021-T3']
+                    if select_variable=='Envíos':
+                        fig12=PlotlyPenetracion(PenetracionMuni)
+                        AgGrid(PenetracionMuni[['periodo','id_municipio','numero_total_envios','poblacion','penetracion']])
+                        st.plotly_chart(fig12,use_container_width=True)
+                    if select_variable=='Ingresos':
+                        st.write("El indicador de penetración sólo está definido para la variable de Líneas.") 
+
+                if select_indicador == 'Dominancia':
+                    for periodo in PERIODOS:
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+
+            if select_dimension == 'Departamental':            
+                st.write('#### Desagregación departamental') 
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Media entrópica','Dominancia'])
+                DEPARTAMENTOS=sorted(PaquetesdptoIng.id_departamento.unique().tolist())
+                DPTO=st.selectbox('Escoja el departamento', DEPARTAMENTOS)
+                PERIODOSDPTO=['2020-T3','2020-T4','2021-T1','2021-T2']
+
+            ## Información sobre los indicadores
+                if select_indicador == 'Stenbacka':
+                    st.write("### Índice de Stenbacka")
+                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
+                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    with st.expander("Información adicional índice de Stenbacka"):
+                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
+                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
+                        st.write(r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                    """,unsafe_allow_html=True)
+                if select_indicador == 'Concentración':
+                    st.write("### Razón de concentración")
+                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    with st.expander("Información adicional razón de concentración"):
+                        st.write("La concentración se calcula de la siguiente forma:")
+                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
+                        st.write(r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+""")
+                if select_indicador == 'IHH':
+                    st.write("### Índice de Herfindahl-Hirschman")
+                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    with st.expander("Información adicional IHH"):
+                        st.write("La fórmula del IHH está dada como")
+                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
+                        st.write(r"""**Donde:**
+-   $S_{i}$ es la participación de mercado de la variable analizada.
+-   $n$ es el número de empresas más grandes consideradas.
+
+De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+| Mercado                   | Rango          |
+|---------------------------|----------------|
+| Muy competitivo           | $<100$         |
+| Desconcentrado            | $100 - 1500$   |
+| Moderadamente concentrado | $>1500 - 2500$ |
+| Altamente concentrado     | $>2500$        |                
+                """)
+                if select_indicador == 'Linda':         
+                    st.write("### Índice de Linda")               
+                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    with st.expander("Información adicional indicador de linda"): 
+                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
+                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
+                        st.write(r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |""",unsafe_allow_html=True)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
+-   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
+
+-   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
+
+-   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
+
+La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
+
+$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
+
+**Donde:**
+
+-   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
+
+Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
+
+$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
+
+La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
+
+#### Descomposición multiplicativa de la media entrópica
+
+La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
+
+$$ME = ME_{D} * ME_{E} * ME_{I}$$
+
+**Donde:**
+
+-   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
+
+$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
+$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+-   $ME_{E}$ corresponde al componente de concentración entre los submercados:
+
+$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
+
+-   $ME_{I}$ corresponde al componente de interacción:
+
+$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
+$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+***Donde a su vez de manera general:***
+
+-   $w_{j}$ es:
+
+$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
+$$j = 1, 2, ..., p$$
+
+-   $S_{i}$ es:
+
+$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
+$$i = 1, 2, ..., n$$
+
+                """)
+                if select_indicador == 'Penetración':
+                    st.write("### Índice de penetración")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                   
+                ##Cálculo de los indicadores
+                if select_indicador == 'Stenbacka':
+                    gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
+                    for periodo in PERIODOSDPTO:                    
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                        prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                        dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                        prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+
+                    InggroupPart=pd.concat(dfIngresos)
+                    InggroupPart.participacion=InggroupPart.participacion.round(5)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    if select_variable == 'Ingresos':
+                        AgGrid(InggroupPart)
+                        fig1=PlotlyStenbacka(InggroupPart)
+                        st.plotly_chart(fig1, use_container_width=True)
+                    if select_variable == 'Envíos':
+                        AgGrid(EnvgroupPart)
+                        fig2=PlotlyStenbacka(EnvgroupPart)
+                        st.plotly_chart(fig2, use_container_width=True) 
+                        st.markdown('#### Visualización departamental del Stenbacka')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el Stenbacka', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(5,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(6,'stenbacka',Stenbacka(prEn2,'numero_total_envios',gamma))
+                                StenDpto=prEn2.groupby(['id_departamento'])['stenbacka'].mean().reset_index()
+                                dfMap.append(StenDpto) 
+                        StenMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        
+                        departamentos_df=gdf.merge(StenMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'stenbacka'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Reds_r', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Stenbacka',
+                            #bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','stenbacka'],
+                                aliases=['ID Departamento','Departamento','Stenbacka'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+
+                if select_indicador == 'Concentración':
+                    dflistEnv=[];dflistIng=[]
+                    
+                    for periodo in PERIODOS:
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                    ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                             
+                    if select_variable == "Envíos":
+                        colsconEnv=ConcEnv.columns.values.tolist()
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                        fig4=PlotlyConcentracion(ConcEnv)
+                        st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                        st.plotly_chart(fig4,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        colsconIng=ConcIng.columns.values.tolist()
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5=PlotlyConcentracion(ConcIng)
+                        st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                        st.plotly_chart(fig5,use_container_width=True)
+
+                if select_indicador == 'IHH':
+                    for periodo in PERIODOS:
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart3=pd.concat(dfEnvios3)
+                    InggroupPart3=pd.concat(dfIngresos3)
+                    
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig7 = PlotlyIHH(IHHEnv)   
+                    fig8 = PlotlyIHH(IHHIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                        st.markdown('#### Visualización departamental del IHH')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                                IHHDpto=prEn2.groupby(['id_departamento'])['IHH'].mean().reset_index()
+                                dfMap.append(IHHDpto) 
+                        IHHMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        departamentos_df=gdf.merge(IHHMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'IHH'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Reds_r', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='IHH',
+                            #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','IHH'],
+                                aliases=['ID Departamento','Departamento','IHH'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                        
+                        
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
+                if select_indicador == 'Linda':
+                    dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                    for periodo in PERIODOS:
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        nempresaEnv.append(prEn.empresa.nunique())
+                        dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                        datosEnv.append(prEn)    
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        nempresaIng.append(prIn.empresa.nunique())
+                        dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                        datosIng.append(prIn)
+                    NemphisEnv=max(nempresaEnv)
+                    NemphisIng=max(nempresaIng)     
+                    dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                    LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                    dIng=pd.concat(datosIng).reset_index()
+                    LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                        
+                    if select_variable == "Envíos":
+                        LindconEnv=LindEnv.columns.values.tolist()
+                        if NemphisEnv==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            AgGrid(dEnv)
+                        elif  NemphisEnv==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig10=PlotlyLinda2(LindEnv)
+                            col1.write("**Datos completos**")                    
+                            col1.write(dEnv)  
+                            col2.write("**Índice de Linda**")
+                            col2.write(LindEnv)
+                            st.plotly_chart(fig10,use_container_width=True)        
+                        else:    
+                            lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                            fig10=PlotlyLinda(LindEnv)
+                            st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dEnv)                    
+                            st.plotly_chart(fig10,use_container_width=True)
+         
+                    if select_variable == "Ingresos":
+                        LindconIng=LindIng.columns.values.tolist()
+                        if  NemphisIng==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            st.write(dIng)
+                        elif  NemphisIng==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig11=PlotlyLinda2(LindIng)
+                            col1.write("**Datos completos**")
+                            col1.AgGrid(dIng)
+                            col2.write("**Índice de Linda**")    
+                            col2.AgGrid(LindIng)
+                            st.plotly_chart(fig11,use_container_width=True)        
+                        else:
+                            lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                            fig11=PlotlyLinda(LindIng)
+                            st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dIng)
+                            st.plotly_chart(fig11,use_container_width=True)
+
+                if select_indicador == 'Penetración':
+                    PersonasDpto=Personas.groupby(['anno','id_departamento'])['poblacion'].sum().reset_index()  
+                    PaquetesdptoEnv=PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==DPTO)]
+                    Envdpto=PaquetesdptoEnv.groupby(['periodo','id_departamento'])[['numero_total_envios']].sum().reset_index()
+                    Envdpto.insert(0,'anno',Envdpto.periodo.str.split('-',expand=True)[0])
+                    PersonasDpto.id_departamento=PersonasDpto.id_departamento.astype('int64')
+                    PersonasDpto.anno=PersonasDpto.anno.astype('int64')
+                    Envdpto.id_departamento=Envdpto.id_departamento.astype('int64')
+                    Envdpto.anno=Envdpto.anno.astype('int64')
+                    PenetracionDpto=Envdpto.merge(PersonasDpto, on=['anno','id_departamento'], how='left')
+                    PenetracionDpto.insert(5,'penetracion',PenetracionDpto['numero_total_envios']/PenetracionDpto['poblacion'])
+                    PenetracionDpto.penetracion=PenetracionDpto.penetracion.round(3)
+                    PenetracionDpto=PenetracionDpto[PenetracionDpto['periodo']!='2021-T3']
+                    if select_variable=='Envíos':
+                        fig12=PlotlyPenetracion(PenetracionDpto)
+                        AgGrid(PenetracionDpto[['periodo','id_departamento','numero_total_envios','poblacion','penetracion']])
+                        st.plotly_chart(fig12,use_container_width=True)
+                    if select_variable=='Ingresos':
+                        st.write("El indicador de penetración sólo está definido para la variable de Líneas.")  
+
+                if select_indicador == 'Media entrópica':
+
+                    for periodo in PERIODOS:
+                        prEn=PaquetesEnv[(PaquetesEnv['periodo']==periodo)&(PaquetesEnv['id_departamento']==DPTO)]
+                        prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                        dfEnvios.append(prEn)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    MEDIAENTROPICAENV=EnvgroupPart.groupby(['periodo'])['media entropica'].mean().reset_index()         
+                                       
+                    fig7=PlotlyMEntropica(MEDIAENTROPICAENV)
+                    
+                    if select_variable == "Envíos":
+                        st.plotly_chart(fig7,use_container_width=True)
+                        periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOS,PERIODOS[-1])
+                        if PaquetesEnv[(PaquetesEnv['id_departamento']==DPTO)&(PaquetesEnv['periodo']==periodoME)].empty==True:
+                            pass
+                        else:    
+                            MEperiodTableEnv=MediaEntropica(PaquetesEnv[(PaquetesEnv['id_departamento']==DPTO)&(PaquetesEnv['periodo']==periodoME)],'numero_total_envios')[1] 
+                        st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
+                        
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if PaquetesEnv[(PaquetesEnv['id_departamento']==departamento)&(PaquetesEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn=PaquetesEnv[(PaquetesEnv['id_departamento']==departamento)&(PaquetesEnv['periodo']==periodoME)]
+                                prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                                prEn2=prEn.groupby(['id_departamento'])['media entropica'].mean().reset_index()
+                                dfMap.append(prEn2)
+                        EnvMap=pd.concat(dfMap).reset_index().drop('index',axis=1)
+                        colsME=['SIJ','SI','WJ','MED','MEE','MEI','Media entropica'] 
+                        st.write(MEperiodTableEnv.reset_index(drop=True).style.apply(f, axis=0, subset=colsME))
+                        departamentos_df=gdf.merge(EnvMap, on='id_departamento')
+                        departamentos_df['media entropica']=departamentos_df['media entropica'].round(4)
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'media entropica'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Greens', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Media entrópica',
+                            #bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','media entropica'],
+                                aliases=['ID Departamento','Departamento','Media entrópica'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        MunicipiosME=MEperiodTableEnv.groupby(['id_municipio'])['WJ'].mean().reset_index()
+                        MunicipiosME=MunicipiosME[MunicipiosME.WJ!=0]
+                        MunicipiosME.WJ=MunicipiosME.WJ.round(7)
+                        
+                        
+                        fig9=PlotlyMentropicaTorta(MunicipiosME)
+                        
+                        col1, col2= st.columns(2)
+                        with col1:
+                            st.write(r"""###### <center>Visualización de la media entrópica en todos los departamentos y en el periodo seleccionado</center>""",unsafe_allow_html=True)
+                            folium_static(colombia_map,width=480)    
+                        with col2:
+                            st.write(r"""###### <center>Visualización de la participación de los municipios dentro del departamento seleccionado</center>""",unsafe_allow_html=True)                
+                            st.plotly_chart(fig9,use_container_width=True)
+
+                if select_indicador == 'Dominancia':
+                    for periodo in PERIODOS:
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                        st.markdown('#### Visualización departamental del IHH')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                                prEn2.insert(5,'Dominancia',Dominancia(prEn2,'numero_total_envios'))
+                                DomDpto=prEn2.groupby(['id_departamento'])['Dominancia'].mean().reset_index()
+                                dfMap.append(DomDpto) 
+                        DomMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        departamentos_df=gdf.merge(DomMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'Dominancia'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Oranges', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='IHH',
+                            #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','Dominancia'],
+                                aliases=['ID Departamento','Departamento','Dominancia'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                        
+                        
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+ 
+  
     if select_ambinternacional=='Salida':
         Salida=internacional[internacional['ambito']=='Internacional de salida']
 
@@ -4779,7 +6929,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
         with col1:
             select_objeto=st.selectbox('Seleccionar tipo de objeto',['Documentos','Paquetes'])
         with col2:    
-            select_dimension = st.selectbox('Seleccione ámbito aplicación',['Nacional','Municipal'])
+            select_dimension = st.selectbox('Seleccione ámbito aplicación',['Nacional','Municipal','Departamental'])
         with col3:
             select_variable = st.selectbox('Seleccione la variable',['Envíos','Ingresos'])
 
@@ -4791,12 +6941,32 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             PERIODOS=['2020-T3','2020-T4','2021-T1','2021-T2']
             DocumentosnacIng=Documentos.groupby(['periodo','empresa','id_empresa'])['ingresos'].sum().reset_index()
             DocumentosnacEnv=Documentos.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()
+            DocumentosmuniIng=Documentos.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingresos'].sum().reset_index()
+            DocumentosmuniEnv=Documentos.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['numero_total_envios'].sum().reset_index()
+            DocumentosmuniIng.codigo_municipio=DocumentosmuniIng.codigo_municipio.astype('str')
+            DocumentosmuniEnv.codigo_municipio=DocumentosmuniEnv.codigo_municipio.astype('str')
+
+            DocumentosdptoIng=Documentos.copy()
+            DocumentosdptoIng.codigo_municipio=DocumentosdptoIng.codigo_municipio.astype('str')
+            DocumentosdptoIng=DocumentosdptoIng.groupby(['periodo','empresa','id_empresa','id_departamento','departamento'])['ingresos'].sum().reset_index()
+            DocumentosdptoEnv=Documentos.copy()
+            DocumentosdptoEnv.codigo_municipio=DocumentosdptoEnv.codigo_municipio.astype('str')
+            DocumentosdptoEnv=DocumentosdptoEnv.groupby(['periodo','empresa','id_empresa','id_departamento','departamento',])['numero_total_envios'].sum().reset_index()     
+
+            DocumentosEnv=Documentos[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','numero_total_envios']]
+            DocumentosEnv.codigo_municipio=DocumentosEnv.codigo_municipio.astype('str')
+            DocumentosEnv=DocumentosEnv.rename(columns={'codigo_municipio':'id_municipio'})
+            DocumentosIng=Documentos[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','ingresos']]
+            DocumentosIng.codigo_municipio=DocumentosIng.codigo_municipio.astype('str')
+            DocumentosIng=DocumentosIng.rename(columns={'codigo_municipio':'id_municipio'})
+            
             with st.expander('Datos documentos'):
                 AgGrid(Documentos)
-            if select_dimension == 'Nacional':       
-                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración'])
-                ## Información sobre los indicadores
-
+                
+            if select_dimension == 'Nacional':  
+                st.write('#### Agregación nacional')  
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
+            ## Información sobre los indicadores                                
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
                     st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
@@ -4805,10 +6975,10 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
                         st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
                         st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                """,unsafe_allow_html=True)
+    **Donde**
+    -   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+    -   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                    """,unsafe_allow_html=True)
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
                     st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
@@ -4816,19 +6986,19 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         st.write("La concentración se calcula de la siguiente forma:")
                         st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
                         st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
+    -   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+    -   $n$ es el número total de empresas consideradas.
 
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+    De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
 
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+    | Concetración | Rango         |
+    |--------------|---------------|
+    | Baja         | $<0,45$       |
+    | Moderada     | $0,45 - 0,70$ |
+    | Alta         | $>0,70$       |
+                    
+                    
+    """)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
                     st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
@@ -4836,39 +7006,66 @@ De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden
                         st.write("La fórmula del IHH está dada como")
                         st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
                         st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
 
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
 
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':                
+    | Mercado                   | Rango          |
+    |---------------------------|----------------|
+    | Muy competitivo           | $<100$         |
+    | Desconcentrado            | $100 - 1500$   |
+    | Moderadamente concentrado | $>1500 - 2500$ |
+    | Altamente concentrado     | $>2500$        |                
+                    """)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
                     st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
                     with st.expander("Información adicional indicador de linda"): 
                         st.write("El indicador de Linda está dado por la siguiente ecuación:")
                         st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
                         st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+    - $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+    - $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
 
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+    De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
 
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+    | Concentración   | Rango         |
+    |-----------------|---------------|
+    | Baja            | $<0,20$       |
+    | Moderada        | $0,20 - 0,50$ |
+    | Concentrada     | $>0,50 - 1$   |
+    | Alta            | $>1$          |""",unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown("El índice de penetración es usado para...")    
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -4908,13 +7105,15 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                                              
                     if select_variable == "Envíos":
                         colsconEnv=ConcEnv.columns.values.tolist()
-                        conc=st.slider('Seleccionar el número de empresas',1,len(colsconEnv)-1,1,1)
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
                         fig4=PlotlyConcentracion(ConcEnv)
                         st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
                         st.plotly_chart(fig4,use_container_width=True)
                     if select_variable == "Ingresos":
                         colsconIng=ConcIng.columns.values.tolist()
-                        conc=st.slider('Seleccione el número de empresas',1,len(colsconIng)-1,1,1)
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
                         fig5=PlotlyConcentracion(ConcIng)
                         st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
                         st.plotly_chart(fig5,use_container_width=True)                    
@@ -4985,22 +7184,1071 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                     if select_variable=='Ingresos':
                         st.write("El indicador de penetración sólo está definido para la variable de Envíos.")   
 
+                if select_indicador == 'Dominancia':
+                    for elem in PERIODOS:
+                        prEn=DocumentosnacEnv[DocumentosnacEnv['periodo']==elem]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=DocumentosnacIng[DocumentosnacIng['periodo']==elem]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+
+            if select_dimension == 'Municipal':            
+                st.write('#### Desagregación municipal') 
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
+                MUNICIPIOS=sorted(DocumentosmuniIng.codigo_municipio.unique().tolist())
+                MUNI=st.selectbox('Escoja el municipio', MUNICIPIOS)
+                PERIODOSMUNI=['2020-T3','2020-T4','2021-T1','2021-T2']
+                
+            ## Información sobre los indicadores
+                if select_indicador == 'Stenbacka':
+                    st.write("### Índice de Stenbacka")
+                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
+                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    with st.expander("Información adicional índice de Stenbacka"):
+                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
+                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
+                        st.write(r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                    """,unsafe_allow_html=True)
+                if select_indicador == 'Concentración':
+                    st.write("### Razón de concentración")
+                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    with st.expander("Información adicional razón de concentración"):
+                        st.write("La concentración se calcula de la siguiente forma:")
+                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
+                        st.write(r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+""")
+                if select_indicador == 'IHH':
+                    st.write("### Índice de Herfindahl-Hirschman")
+                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    with st.expander("Información adicional IHH"):
+                        st.write("La fórmula del IHH está dada como")
+                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
+                        st.write(r"""**Donde:**
+-   $S_{i}$ es la participación de mercado de la variable analizada.
+-   $n$ es el número de empresas más grandes consideradas.
+
+De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+| Mercado                   | Rango          |
+|---------------------------|----------------|
+| Muy competitivo           | $<100$         |
+| Desconcentrado            | $100 - 1500$   |
+| Moderadamente concentrado | $>1500 - 2500$ |
+| Altamente concentrado     | $>2500$        |                
+                """)
+                if select_indicador == 'Linda':         
+                    st.write("### Índice de Linda")               
+                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    with st.expander("Información adicional indicador de linda"): 
+                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
+                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
+                        st.write(r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |""",unsafe_allow_html=True)
+                if select_indicador == 'Penetración':
+                    st.write("### Índice de penetración")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                     
+ 
+            ## Cálculo de los indicadores
+                if select_indicador == 'Stenbacka':
+                    gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
+                    for periodo in PERIODOSMUNI: 
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                            prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                            dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                            prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                            dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+
+                    InggroupPart=pd.concat(dfIngresos)
+                    InggroupPart.participacion=InggroupPart.participacion.round(5)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    if select_variable == 'Ingresos':
+                        AgGrid(InggroupPart)
+                        fig1=PlotlyStenbacka(InggroupPart)
+                        st.plotly_chart(fig1, use_container_width=True)
+                    if select_variable == 'Envíos':
+                        AgGrid(EnvgroupPart)
+                        fig2=PlotlyStenbacka(EnvgroupPart)
+                        st.plotly_chart(fig2, use_container_width=True) 
+
+                if select_indicador == 'Concentración':
+                    dflistEnv=[];dflistIng=[]
+                    
+                    for periodo in PERIODOS:
+                        prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                        prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                    ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                             
+                    if select_variable == "Envíos":
+                        colsconEnv=ConcEnv.columns.values.tolist()
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                        fig4=PlotlyConcentracion(ConcEnv)
+                        st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                        st.plotly_chart(fig4,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        colsconIng=ConcIng.columns.values.tolist()
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5=PlotlyConcentracion(ConcIng)
+                        st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                        st.plotly_chart(fig5,use_container_width=True)   
+
+                if select_indicador == 'IHH':
+                    for periodo in PERIODOS:
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                            prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                            dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                            prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                            dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart3=pd.concat(dfEnvios3)
+                    InggroupPart3=pd.concat(dfIngresos3)
+                    
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig7 = PlotlyIHH(IHHEnv)   
+                    fig8 = PlotlyIHH(IHHIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
+                if select_indicador == 'Linda':
+                    dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                    for periodo in PERIODOS:
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            nempresaEnv.append(prEn.empresa.nunique())
+                            dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                            datosEnv.append(prEn)    
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            nempresaIng.append(prIn.empresa.nunique())
+                            dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                            datosIng.append(prIn)
+                    NemphisEnv=max(nempresaEnv)
+                    NemphisIng=max(nempresaIng)     
+                    dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                    LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                    dIng=pd.concat(datosIng).reset_index()
+                    LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                        
+                    if select_variable == "Envíos":
+                        LindconEnv=LindEnv.columns.values.tolist()
+                        if NemphisEnv==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            AgGrid(dEnv)
+                        elif  NemphisEnv==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig10=PlotlyLinda2(LindEnv)
+                            col1.write("**Datos completos**")                    
+                            col1.write(dEnv)  
+                            col2.write("**Índice de Linda**")
+                            col2.write(LindEnv)
+                            st.plotly_chart(fig10,use_container_width=True)        
+                        else:    
+                            lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                            fig10=PlotlyLinda(LindEnv)
+                            st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dEnv)                    
+                            st.plotly_chart(fig10,use_container_width=True)
+         
+                    if select_variable == "Ingresos":
+                        LindconIng=LindIng.columns.values.tolist()
+                        if  NemphisIng==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            st.write(dIng)
+                        elif  NemphisIng==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig11=PlotlyLinda2(LindIng)
+                            col1.write("**Datos completos**")
+                            col1.AgGrid(dIng)
+                            col2.write("**Índice de Linda**")    
+                            col2.AgGrid(LindIng)
+                            st.plotly_chart(fig11,use_container_width=True)        
+                        else:
+                            lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                            fig11=PlotlyLinda(LindIng)
+                            st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dIng)
+                            st.plotly_chart(fig11,use_container_width=True)
+
+                if select_indicador == 'Penetración':
+                    PersonasMuni=Personas.groupby(['anno','id_municipio'])['poblacion'].sum().reset_index()  
+                    DocumentosmuniEnv=DocumentosmuniEnv[(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                    Envmuni=DocumentosmuniEnv.groupby(['periodo','codigo_municipio'])[['numero_total_envios']].sum().reset_index()
+                    Envmuni.insert(0,'anno',Envmuni.periodo.str.split('-',expand=True)[0])
+                    PersonasMuni.id_municipio=PersonasMuni.id_municipio.astype('int64')
+                    PersonasMuni.anno=PersonasMuni.anno.astype('int64')
+                    Envmuni.insert(4,'IDMuni',Envmuni.codigo_municipio.str.split('-',expand=True)[1])
+                    Envmuni=Envmuni.rename(columns={'IDMuni':'id_municipio'})
+                    Envmuni.id_municipio=Envmuni.id_municipio.astype('int64')
+                    Envmuni.anno=Envmuni.anno.astype('int64')
+                    PenetracionMuni=Envmuni.merge(PersonasMuni, on=['anno','id_municipio'], how='left')
+                    PenetracionMuni.insert(5,'penetracion',PenetracionMuni['numero_total_envios']/PenetracionMuni['poblacion'])
+                    PenetracionMuni.penetracion=PenetracionMuni.penetracion.round(3)
+                    PenetracionMuni=PenetracionMuni[PenetracionMuni['periodo']!='2021-T3']
+                    if select_variable=='Envíos':
+                        fig12=PlotlyPenetracion(PenetracionMuni)
+                        AgGrid(PenetracionMuni[['periodo','id_municipio','numero_total_envios','poblacion','penetracion']])
+                        st.plotly_chart(fig12,use_container_width=True)
+                    if select_variable=='Ingresos':
+                        st.write("El indicador de penetración sólo está definido para la variable de Líneas.")  
+
+                if select_indicador == 'Dominancia':
+                    for periodo in PERIODOS:
+                        if DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=DocumentosmuniEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                            prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                            prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                            dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        if DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=DocumentosmuniIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                            prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                            prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                            dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+
+            if select_dimension == 'Departamental':            
+                st.write('#### Desagregación departamental') 
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Media entrópica','Penetración','Dominancia'])
+                DEPARTAMENTOS=DocumentosdptoIng.id_departamento.unique().tolist()
+                DPTO=st.selectbox('Escoja el departamento', DEPARTAMENTOS)
+                PERIODOSDPTO=['2020-T3','2020-T4','2021-T1','2021-T2']
+                               
+            ## Información sobre los indicadores
+                if select_indicador == 'Stenbacka':
+                    st.write("### Índice de Stenbacka")
+                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
+                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    with st.expander("Información adicional índice de Stenbacka"):
+                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
+                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
+                        st.write(r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                    """,unsafe_allow_html=True)
+                if select_indicador == 'Concentración':
+                    st.write("### Razón de concentración")
+                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    with st.expander("Información adicional razón de concentración"):
+                        st.write("La concentración se calcula de la siguiente forma:")
+                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
+                        st.write(r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+""")
+                if select_indicador == 'IHH':
+                    st.write("### Índice de Herfindahl-Hirschman")
+                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    with st.expander("Información adicional IHH"):
+                        st.write("La fórmula del IHH está dada como")
+                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
+                        st.write(r"""**Donde:**
+-   $S_{i}$ es la participación de mercado de la variable analizada.
+-   $n$ es el número de empresas más grandes consideradas.
+
+De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+| Mercado                   | Rango          |
+|---------------------------|----------------|
+| Muy competitivo           | $<100$         |
+| Desconcentrado            | $100 - 1500$   |
+| Moderadamente concentrado | $>1500 - 2500$ |
+| Altamente concentrado     | $>2500$        |                
+                """)
+                if select_indicador == 'Linda':         
+                    st.write("### Índice de Linda")               
+                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    with st.expander("Información adicional indicador de linda"): 
+                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
+                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
+                        st.write(r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |""",unsafe_allow_html=True)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
+-   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
+
+-   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
+
+-   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
+
+La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
+
+$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
+
+**Donde:**
+
+-   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
+
+Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
+
+$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
+
+La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
+
+#### Descomposición multiplicativa de la media entrópica
+
+La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
+
+$$ME = ME_{D} * ME_{E} * ME_{I}$$
+
+**Donde:**
+
+-   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
+
+$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
+$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+-   $ME_{E}$ corresponde al componente de concentración entre los submercados:
+
+$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
+
+-   $ME_{I}$ corresponde al componente de interacción:
+
+$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
+$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+***Donde a su vez de manera general:***
+
+-   $w_{j}$ es:
+
+$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
+$$j = 1, 2, ..., p$$
+
+-   $S_{i}$ es:
+
+$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
+$$i = 1, 2, ..., n$$
+
+                """)
+                if select_indicador == 'Penetración':
+                    st.write("### Índice de penetración")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                  
+
+            ## Cálculo de los indicadores
+                if select_indicador == 'Stenbacka':
+                    gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
+                    for periodo in PERIODOSDPTO:                    
+                        prIn=DocumentosdptoIng[(DocumentosdptoIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                        prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                        dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        
+                        prEn=DocumentosdptoEnv[(DocumentosdptoEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                        prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+
+                    InggroupPart=pd.concat(dfIngresos)
+                    InggroupPart.participacion=InggroupPart.participacion.round(5)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    if select_variable == 'Ingresos':
+                        AgGrid(InggroupPart)
+                        fig1=PlotlyStenbacka(InggroupPart)
+                        st.plotly_chart(fig1, use_container_width=True)
+                    if select_variable == 'Envíos':
+                        AgGrid(EnvgroupPart)
+                        fig2=PlotlyStenbacka(EnvgroupPart)
+                        st.plotly_chart(fig2, use_container_width=True) 
+                        st.markdown('#### Visualización departamental del Stenbacka')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el Stenbacka', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(5,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(6,'stenbacka',Stenbacka(prEn2,'numero_total_envios',gamma))
+                                StenDpto=prEn2.groupby(['id_departamento'])['stenbacka'].mean().reset_index()
+                                dfMap.append(StenDpto) 
+                        StenMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        
+                        departamentos_df=gdf.merge(StenMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'stenbacka'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Reds_r', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Stenbacka',
+                            #bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','stenbacka'],
+                                aliases=['ID Departamento','Departamento','Stenbacka'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                       
+                if select_indicador == 'Concentración':
+                    dflistEnv=[];dflistIng=[]
+                    
+                    for periodo in PERIODOS:
+                        prIn=DocumentosdptoIng[(DocumentosmuniIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        prEn=DocumentosdptoEnv[(DocumentosmuniEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                    ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                             
+                    if select_variable == "Envíos":
+                        colsconEnv=ConcEnv.columns.values.tolist()
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                        fig4=PlotlyConcentracion(ConcEnv)
+                        st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                        st.plotly_chart(fig4,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        colsconIng=ConcIng.columns.values.tolist()
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5=PlotlyConcentracion(ConcIng)
+                        st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                        st.plotly_chart(fig5,use_container_width=True)
+
+                if select_indicador == 'IHH':
+                    for periodo in PERIODOS:
+                        prEn=DocumentosdptoEnv[(DocumentosdptoEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=DocumentosdptoIng[(DocumentosdptoIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart3=pd.concat(dfEnvios3)
+                    InggroupPart3=pd.concat(dfIngresos3)
+                    
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig7 = PlotlyIHH(IHHEnv)   
+                    fig8 = PlotlyIHH(IHHIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                        st.markdown('#### Visualización departamental del IHH')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                                IHHDpto=prEn2.groupby(['id_departamento'])['IHH'].mean().reset_index()
+                                dfMap.append(IHHDpto) 
+                        IHHMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        departamentos_df=gdf.merge(IHHMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'IHH'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Reds_r', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='IHH',
+                            #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','IHH'],
+                                aliases=['ID Departamento','Departamento','IHH'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                    
+                        
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
+                if select_indicador == 'Linda':
+                    dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                    for periodo in PERIODOS:
+                        prEn=DocumentosdptoEnv[(DocumentosdptoEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        nempresaEnv.append(prEn.empresa.nunique())
+                        dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                        datosEnv.append(prEn)    
+                        prIn=DocumentosdptoIng[(DocumentosdptoIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        nempresaIng.append(prIn.empresa.nunique())
+                        dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                        datosIng.append(prIn)
+                    NemphisEnv=max(nempresaEnv)
+                    NemphisIng=max(nempresaIng)     
+                    dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                    LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                    dIng=pd.concat(datosIng).reset_index()
+                    LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                        
+                    if select_variable == "Envíos":
+                        LindconEnv=LindEnv.columns.values.tolist()
+                        if NemphisEnv==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            AgGrid(dEnv)
+                        elif  NemphisEnv==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig10=PlotlyLinda2(LindEnv)
+                            col1.write("**Datos completos**")                    
+                            col1.write(dEnv)  
+                            col2.write("**Índice de Linda**")
+                            col2.write(LindEnv)
+                            st.plotly_chart(fig10,use_container_width=True)        
+                        else:    
+                            lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                            fig10=PlotlyLinda(LindEnv)
+                            st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dEnv)                    
+                            st.plotly_chart(fig10,use_container_width=True)
+         
+                    if select_variable == "Ingresos":
+                        LindconIng=LindIng.columns.values.tolist()
+                        if  NemphisIng==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            st.write(dIng)
+                        elif  NemphisIng==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig11=PlotlyLinda2(LindIng)
+                            col1.write("**Datos completos**")
+                            col1.AgGrid(dIng)
+                            col2.write("**Índice de Linda**")    
+                            col2.AgGrid(LindIng)
+                            st.plotly_chart(fig11,use_container_width=True)        
+                        else:
+                            lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                            fig11=PlotlyLinda(LindIng)
+                            st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dIng)
+                            st.plotly_chart(fig11,use_container_width=True)
+
+                if select_indicador == 'Media entrópica':
+
+                    for periodo in PERIODOS:
+                        prEn=DocumentosEnv[(DocumentosEnv['periodo']==periodo)&(DocumentosEnv['id_departamento']==DPTO)]
+                        prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                        dfEnvios.append(prEn)
+                        prIn=DocumentosIng[(DocumentosIng['periodo']==periodo)&(DocumentosIng['id_departamento']==DPTO)]
+                        prIn.insert(4,'media entropica',MediaEntropica(prIn,'ingresos')[0])
+                        dfIngresos.append(prIn)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    MEDIAENTROPICAENV=EnvgroupPart.groupby(['periodo'])['media entropica'].mean().reset_index()    
+                    InggroupPart=pd.concat(dfIngresos)
+                    MEDIAENTROPICAING=InggroupPart.groupby(['periodo'])['media entropica'].mean().reset_index()       
+                                       
+                    fig7=PlotlyMEntropica(MEDIAENTROPICAENV)
+                    fig8=PlotlyMEntropica(MEDIAENTROPICAING)
+
+                    
+                    if select_variable == "Envíos":
+                        st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
+                        st.plotly_chart(fig7,use_container_width=True)
+                        dfMap=[];
+                        periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOS,PERIODOS[-1])
+                        MEperiodTableEnv=MediaEntropica(DocumentosEnv[(DocumentosEnv['id_departamento']==DPTO)&(DocumentosEnv['periodo']==periodoME)],'numero_total_envios')[1] 
+                        
+                        for departamento in DEPARTAMENTOS:
+                            prEn=DocumentosEnv[(DocumentosEnv['id_departamento']==departamento)&(DocumentosEnv['periodo']==periodoME)]
+                            prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                            prEn2=prEn.groupby(['id_departamento'])['media entropica'].mean().reset_index()
+                            dfMap.append(prEn2)
+                        EnvMap=pd.concat(dfMap).reset_index().drop('index',axis=1)
+                        colsME=['SIJ','SI','WJ','MED','MEE','MEI','Media entropica'] 
+                        st.write(MEperiodTableEnv.reset_index(drop=True).style.apply(f, axis=0, subset=colsME))
+                        departamentos_df=gdf.merge(EnvMap, on='id_departamento')
+                        departamentos_df['media entropica']=departamentos_df['media entropica'].round(4)
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'media entropica'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Greens', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Media entrópica',
+                            bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','media entropica'],
+                                aliases=['ID Departamento','Departamento','Media entrópica'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        MunicipiosME=MEperiodTableEnv.groupby(['id_municipio'])['WJ'].mean().reset_index()
+                        MunicipiosME=MunicipiosME[MunicipiosME.WJ!=0]
+                        MunicipiosME.WJ=MunicipiosME.WJ.round(7)
+                        
+                        
+                        fig9=PlotlyMentropicaTorta(MunicipiosME)
+                        
+                        col1, col2= st.columns(2)
+                        with col1:
+                            st.write(r"""###### <center>Visualización de la media entrópica en todos los departamentos y en el periodo seleccionado</center>""",unsafe_allow_html=True)
+                            folium_static(colombia_map,width=480)    
+                        with col2:
+                            st.write(r"""###### <center>Visualización de la participación de los municipios dentro del departamento seleccionado</center>""",unsafe_allow_html=True)                
+                            st.plotly_chart(fig9,use_container_width=True)
+                        
+                if select_indicador == 'Penetración':
+                    PersonasDpto=Personas.groupby(['anno','id_departamento'])['poblacion'].sum().reset_index()  
+                    DocumentosdptoEnv=DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==DPTO)]
+                    Envdpto=DocumentosdptoEnv.groupby(['periodo','id_departamento'])[['numero_total_envios']].sum().reset_index()
+                    Envdpto.insert(0,'anno',Envdpto.periodo.str.split('-',expand=True)[0])
+                    PersonasDpto.id_departamento=PersonasDpto.id_departamento.astype('int64')
+                    PersonasDpto.anno=PersonasDpto.anno.astype('int64')
+                    Envdpto.id_departamento=Envdpto.id_departamento.astype('int64')
+                    Envdpto.anno=Envdpto.anno.astype('int64')
+                    PenetracionDpto=Envdpto.merge(PersonasDpto, on=['anno','id_departamento'], how='left')
+                    PenetracionDpto.insert(5,'penetracion',PenetracionDpto['numero_total_envios']/PenetracionDpto['poblacion'])
+                    PenetracionDpto.penetracion=PenetracionDpto.penetracion.round(3)
+                    PenetracionDpto=PenetracionDpto[PenetracionDpto['periodo']!='2021-T3']
+                    if select_variable=='Envíos':
+                        fig12=PlotlyPenetracion(PenetracionDpto)
+                        AgGrid(PenetracionDpto[['periodo','id_departamento','numero_total_envios','poblacion','penetracion']])
+                        st.plotly_chart(fig12,use_container_width=True)
+                    if select_variable=='Ingresos':
+                        st.write("El indicador de penetración sólo está definido para la variable de Líneas.")  
+
+                if select_indicador == 'Dominancia':
+                    for periodo in PERIODOS:
+                        prEn=DocumentosdptoEnv[(DocumentosdptoEnv['periodo']==periodo)&(DocumentosdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=DocumentosdptoIng[(DocumentosdptoIng['periodo']==periodo)&(DocumentosdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                        st.markdown('#### Visualización departamental de la dominancia')
+                        periodoME=st.select_slider('Escoja un periodo para calcular la dominancia', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=DocumentosdptoEnv[(DocumentosdptoEnv['id_departamento']==departamento)&(DocumentosdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                                prEn2.insert(5,'Dominancia',Dominancia(prEn2,'numero_total_envios'))
+                                DomDpto=prEn2.groupby(['id_departamento'])['Dominancia'].mean().reset_index()
+                                dfMap.append(DomDpto) 
+                        DomMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        departamentos_df=gdf.merge(DomMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'Dominancia'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Oranges', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Dominancia',
+                            #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','Dominancia'],
+                                aliases=['ID Departamento','Departamento','Dominancia'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                    
+                        
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
                 
         if select_objeto=='Paquetes':
-            dfIngresos=[];dfIngresos2=[];dfIngresos3=[];
-            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];           
+            dfIngresos=[];dfIngresos2=[];dfIngresos3=[];dfIngresos4=[];
+            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];dfEnvios4=[];    
+            dfIngresosPorEnvio=[];dfIngresosPorEnvio2=[];dfIngresosPorEnvio3=[];dfIngresosPorEnvio4=[];            
             Paquetes=Salida[Salida['tipo_objeto']=='Paquetes']
-            Paquetes.drop(['anno','trimestre','id_tipo_envio','tipo_envio','id_tipo_objeto','tipo_objeto','id_ambito'],axis=1, inplace=True)
+            Paquetes.drop(['anno','trimestre','id_tipo_envio','tipo_envio','id_tipo_objeto','id_ambito'],axis=1, inplace=True)
             with st.expander('Datos paquetes'):
-                AgGrid(Paquetes)        
-            PESO = st.select_slider('Seleccione rango de peso',Paquetes.rango_peso_envio.unique().tolist())   
+                AgGrid(Paquetes[['periodo','id_empresa','empresa','codigo_municipio','departamento','ingresos','numero_total_envios','ingreso/envio']])
+            #PESO = st.select_slider('Seleccione rango de peso',Paquetes.rango_peso_envio.unique().tolist())
+            PESO2 = st.multiselect('Seleccione los rangos de peso a agrupar',Paquetes.rango_peso_envio.unique().tolist(),default=Paquetes.rango_peso_envio.unique().tolist())              
             PERIODOS=['2020-T3','2020-T4','2021-T1','2021-T2']            
-            PaquetesPeso=Paquetes[Paquetes['rango_peso_envio']==PESO]
+            #PaquetesPeso=Paquetes[Paquetes['rango_peso_envio']==PESO]
+            PaquetesPeso=Paquetes[Paquetes['rango_peso_envio'].isin(PESO2)]
+            #st.write(Paquetes[Paquetes['rango_peso_envio'].isin(PESO2)])
             PaquetesnacIng=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['ingresos'].sum().reset_index()
-            PaquetesnacEnv=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()                
+            PaquetesnacEnv=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()
+            PaquetesnacIngEnvio=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['ingreso/envio'].sum().reset_index()
+            PaquetesmuniIng=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingresos'].sum().reset_index()
+            PaquetesmuniEnv=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['numero_total_envios'].sum().reset_index()    
+            PaquetesmuniIngEnvio=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingreso/envio'].sum().reset_index()
+            PaquetesmuniIng.codigo_municipio=PaquetesmuniIng.codigo_municipio.astype('str')
+            PaquetesmuniEnv.codigo_municipio=PaquetesmuniEnv.codigo_municipio.astype('str')
+            PaquetesmuniIngEnvio.codigo_municipio=PaquetesmuniIngEnvio.codigo_municipio.astype('str')
+            
+            PaquetesdptoIng=PaquetesPeso.copy()
+            PaquetesdptoIng.codigo_municipio=PaquetesdptoIng.codigo_municipio.astype('str')
+            PaquetesdptoIng=PaquetesdptoIng.groupby(['periodo','empresa','id_empresa','id_departamento'])['ingresos'].sum().reset_index()
+            PaquetesdptoEnv=PaquetesPeso.copy()
+            PaquetesdptoEnv.codigo_municipio=PaquetesdptoEnv.codigo_municipio.astype('str')
+            PaquetesdptoEnv=PaquetesdptoEnv.groupby(['periodo','empresa','id_empresa','id_departamento'])['numero_total_envios'].sum().reset_index()     
+            PaquetesdptoIngEnvio=PaquetesPeso.copy()
+            PaquetesdptoIngEnvio.codigo_municipio=PaquetesdptoIngEnvio.codigo_municipio.astype('str')
+            PaquetesdptoIngEnvio=PaquetesdptoIngEnvio.groupby(['periodo','empresa','id_empresa','id_departamento'])['ingreso/envio'].sum().reset_index()
+
+
+            PaquetesEnv=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','numero_total_envios']]
+            PaquetesEnv.codigo_municipio=PaquetesEnv.codigo_municipio.astype('str')
+            PaquetesEnv=PaquetesEnv.rename(columns={'codigo_municipio':'id_municipio'})
+            PaquetesIng=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','ingresos']]
+            PaquetesIng.codigo_municipio=PaquetesIng.codigo_municipio.astype('str') 
+            PaquetesIng=PaquetesIng.rename(columns={'codigo_municipio':'id_municipio'})  
+            PaquetesIngEnvio=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','ingreso/envio']]
+            PaquetesIngEnvio.codigo_municipio=PaquetesIngEnvio.codigo_municipio.astype('str') 
+            PaquetesIngEnvio=PaquetesIngEnvio.rename(columns={'codigo_municipio':'id_municipio'})  
                 
             if select_dimension == 'Nacional':       
-                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración'])
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
                 ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
@@ -5041,19 +8289,19 @@ De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden
                         st.write("La fórmula del IHH está dada como")
                         st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
                         st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
 
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
 
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':               
+    | Mercado                   | Rango          |
+    |---------------------------|----------------|
+    | Muy competitivo           | $<100$         |
+    | Desconcentrado            | $100 - 1500$   |
+    | Moderadamente concentrado | $>1500 - 2500$ |
+    | Altamente concentrado     | $>2500$        |                
+                    """)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
                     st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
                     with st.expander("Información adicional indicador de linda"): 
@@ -5073,10 +8321,37 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
 | Alta            | $>1$          |""",unsafe_allow_html=True)
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown("El índice de penetración es usado para...")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                 
 
                 ## Cálculo de los indicadores
-
                 if select_indicador == 'Stenbacka':
                     gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
                     for elem in PERIODOS:
@@ -5088,12 +8363,20 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         prEn=PaquetesnacEnv[PaquetesnacEnv['periodo']==elem]
                         prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
                         prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
-                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                        
+                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))  
+
+                        prInEnv=PaquetesnacIngEnvio[PaquetesnacIngEnvio['periodo']==elem]
+                        prInEnv.insert(3,'participacion',Participacion(prInEnv,'ingreso/envio'))
+                        prInEnv.insert(4,'stenbacka',Stenbacka(prInEnv,'ingreso/envio',gamma))
+                        dfIngresosPorEnvio.append(prIn.sort_values(by='participacion',ascending=False))                        
                         
                     InggroupPart=pd.concat(dfIngresos)
                     InggroupPart.participacion=InggroupPart.participacion.round(5)
                     EnvgroupPart=pd.concat(dfEnvios)
                     EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    IngEnvgroupPart=pd.concat(dfIngresosPorEnvio)
+                    IngEnvgroupPart.participacion=IngEnvgroupPart.participacion.round(5)                    
+                    
                     if select_variable == 'Ingresos':
                         AgGrid(InggroupPart)
                         fig1=PlotlyStenbacka(InggroupPart)
@@ -5101,31 +8384,45 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                     if select_variable == 'Envíos':
                         AgGrid(EnvgroupPart)
                         fig2=PlotlyStenbacka(EnvgroupPart)
-                        st.plotly_chart(fig2, use_container_width=True)  
+                        st.plotly_chart(fig2, use_container_width=True)
+
+                    if select_variable == 'Ingresos por envío':
+                        AgGrid(IngEnvgroupPart)
+                        fig2b=PlotlyStenbacka(IngEnvgroupPart)
+                        st.plotly_chart(fig2b, use_container_width=True)                        
 
                 if select_indicador == 'Concentración':
-                    dflistEnv=[];dflistIng=[]                    
+                    dflistEnv=[];dflistIng=[];dflistIngEnv=[];                    
                     for elem in PERIODOS:
                         dflistEnv.append(Concentracion(PaquetesnacEnv,'numero_total_envios',elem))
                         dflistIng.append(Concentracion(PaquetesnacIng,'ingresos',elem))
+                        dflistIngEnv.append(Concentracion(PaquetesnacIngEnvio,'ingreso/envio',elem))
                     ConcEnv=pd.concat(dflistEnv).fillna(1.0)
                     ConcIng=pd.concat(dflistIng).fillna(1.0)
-                    
+                    ConcIngEnv=pd.concat(dflistIngEnv).fillna(1.0)
+                                             
                     if select_variable == "Envíos":
-                        colsconEnv=ConcEnv.columns.values.tolist()   
+                        colsconEnv=ConcEnv.columns.values.tolist()
                         value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
                         conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
                         fig4=PlotlyConcentracion(ConcEnv)
                         st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
                         st.plotly_chart(fig4,use_container_width=True)
                     if select_variable == "Ingresos":
-                        colsconIng=ConcIng.columns.values.tolist() 
+                        colsconIng=ConcIng.columns.values.tolist()
                         value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
                         conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
                         fig5=PlotlyConcentracion(ConcIng)
                         st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
-                        st.plotly_chart(fig5,use_container_width=True)                    
-
+                        st.plotly_chart(fig5,use_container_width=True) 
+                    if select_variable == "Ingresos por envío":
+                        colsconIngEnv=ConcIngEnv.columns.values.tolist()
+                        value1= len(colsconIngEnv)-1 if len(colsconIngEnv)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5a=PlotlyConcentracion(ConcIngEnv)
+                        st.write(ConcIngEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIngEnv[conc]]))
+                        st.plotly_chart(fig5a,use_container_width=True) 
+                        
                 if select_indicador == 'IHH':
                     for elem in PERIODOS:
                         prEn=PaquetesnacEnv[PaquetesnacEnv['periodo']==elem]
@@ -5138,24 +8435,32 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
                         dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
                         ##
+                        # prInEnv=PaquetesnacIngEnvio[PaquetesnacIngEnvio['periodo']==elem]
+                        # prInEnv.insert(3,'participacion',(prInEnv['ingreso/envio']/prInEnv['ingreso/envio'].sum())*100)
+                        # prInEnv.insert(4,'IHH',IHH(prInEnv,'ingreso/envio'))
+                        # dfIngresosPorEnvio3.append(prInEnv.sort_values(by='participacion',ascending=False))
+
 
                     EnvgroupPart3=pd.concat(dfEnvios3)
                     InggroupPart3=pd.concat(dfIngresos3)
+                    IngEnvgroupPart3=pd.concat(dfIngresosPorEnvio3)
                     
-                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
-                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    # IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    # IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()   
+                    # IHHIngEnv=IngEnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()           
                     
                     ##Gráficas
                     
                     fig7 = PlotlyIHH(IHHEnv)   
-                    fig8 = PlotlyIHH(IHHIng)  
+                    fig8 = PlotlyIHH(IHHIng) 
+                    fig8a = PlotlyIHH(IHHEnvIng)      
                     
                     if select_variable == "Envíos":
                         AgGrid(EnvgroupPart3)
                         st.plotly_chart(fig7,use_container_width=True)
                     if select_variable == "Ingresos":
                         AgGrid(InggroupPart3)
-                        st.plotly_chart(fig8,use_container_width=True)
+                        st.plotly_chart(fig8,use_container_width=True)                      
 
                 if select_indicador == 'Linda':
                     dflistEnv2=[];dflistIng2=[];nempresaIng=[]; nempresaEnv=[];                     
@@ -5205,5 +8510,1003 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                     if select_variable=='Ingresos':
                         st.write("El indicador de penetración sólo está definido para la variable de Envíos.")   
 
-  
-            
+                if select_indicador == 'Dominancia':
+                    for elem in PERIODOS:
+                        prEn=PaquetesnacEnv[PaquetesnacEnv['periodo']==elem]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesnacIng[PaquetesnacIng['periodo']==elem]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+
+
+            if select_dimension == 'Municipal':            
+                st.write('#### Desagregación municipal') 
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
+                MUNICIPIOS=sorted(PaquetesmuniIng.codigo_municipio.unique().tolist())
+                MUNI=st.selectbox('Escoja el municipio', MUNICIPIOS)
+                PERIODOSMUNI=['2020-T3','2020-T4','2021-T1','2021-T2']
+                
+                ## Información de los indicadores 
+                if select_indicador == 'Stenbacka':
+                    st.write("### Índice de Stenbacka")
+                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
+                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    with st.expander("Información adicional índice de Stenbacka"):
+                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
+                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
+                        st.write(r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                """,unsafe_allow_html=True)
+                if select_indicador == 'Concentración':
+                    st.write("### Razón de concentración")
+                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    with st.expander("Información adicional razón de concentración"):
+                        st.write("La concentración se calcula de la siguiente forma:")
+                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
+                        st.write(r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+""")
+                if select_indicador == 'IHH':
+                    st.write("### Índice de Herfindahl-Hirschman")
+                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    with st.expander("Información adicional IHH"):
+                        st.write("La fórmula del IHH está dada como")
+                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
+                        st.write(r"""**Donde:**
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+    | Mercado                   | Rango          |
+    |---------------------------|----------------|
+    | Muy competitivo           | $<100$         |
+    | Desconcentrado            | $100 - 1500$   |
+    | Moderadamente concentrado | $>1500 - 2500$ |
+    | Altamente concentrado     | $>2500$        |                
+                    """)
+                if select_indicador == 'Linda':
+                    st.write("### Índice de Linda")               
+                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    with st.expander("Información adicional indicador de linda"): 
+                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
+                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
+                        st.write(r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |""",unsafe_allow_html=True)
+                if select_indicador == 'Penetración':
+                    st.write("### Índice de penetración")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                    
+
+            ## Cálculo de los indicadores
+                if select_indicador == 'Stenbacka':
+                    gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
+                    for periodo in PERIODOSMUNI:    
+                        if PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                            prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                            prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                            dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        if PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)].empty==True:
+                            pass
+                        else:    
+                            prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                            prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                            prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                            dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+
+                    InggroupPart=pd.concat(dfIngresos)
+                    InggroupPart.participacion=InggroupPart.participacion.round(5)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    if select_variable == 'Ingresos':
+                        AgGrid(InggroupPart)
+                        fig1=PlotlyStenbacka(InggroupPart)
+                        st.plotly_chart(fig1, use_container_width=True)
+                    if select_variable == 'Envíos':
+                        AgGrid(EnvgroupPart)
+                        fig2=PlotlyStenbacka(EnvgroupPart)
+                        st.plotly_chart(fig2, use_container_width=True) 
+
+                if select_indicador == 'Concentración':
+                    dflistEnv=[];dflistIng=[]
+                    
+                    for periodo in PERIODOS:
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                    ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                             
+                    if select_variable == "Envíos":
+                        colsconEnv=ConcEnv.columns.values.tolist()
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                        fig4=PlotlyConcentracion(ConcEnv)
+                        st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                        st.plotly_chart(fig4,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        colsconIng=ConcIng.columns.values.tolist()
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5=PlotlyConcentracion(ConcIng)
+                        st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                        st.plotly_chart(fig5,use_container_width=True)   
+
+                if select_indicador == 'IHH':
+                    for periodo in PERIODOS:
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart3=pd.concat(dfEnvios3)
+                    InggroupPart3=pd.concat(dfIngresos3)
+                    
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig7 = PlotlyIHH(IHHEnv)   
+                    fig8 = PlotlyIHH(IHHIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
+                if select_indicador == 'Linda':
+                    dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                    for periodo in PERIODOS:
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        nempresaEnv.append(prEn.empresa.nunique())
+                        dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                        datosEnv.append(prEn)    
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        nempresaIng.append(prIn.empresa.nunique())
+                        dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                        datosIng.append(prIn)
+                    NemphisEnv=max(nempresaEnv)
+                    NemphisIng=max(nempresaIng)     
+                    dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                    LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                    dIng=pd.concat(datosIng).reset_index()
+                    LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                        
+                    if select_variable == "Envíos":
+                        LindconEnv=LindEnv.columns.values.tolist()
+                        if NemphisEnv==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            AgGrid(dEnv)
+                        elif  NemphisEnv==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig10=PlotlyLinda2(LindEnv)
+                            col1.write("**Datos completos**")                    
+                            col1.write(dEnv)  
+                            col2.write("**Índice de Linda**")
+                            col2.write(LindEnv)
+                            st.plotly_chart(fig10,use_container_width=True)        
+                        else:    
+                            lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                            fig10=PlotlyLinda(LindEnv)
+                            st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dEnv)                    
+                            st.plotly_chart(fig10,use_container_width=True)
+         
+                    if select_variable == "Ingresos":
+                        LindconIng=LindIng.columns.values.tolist()
+                        if  NemphisIng==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            st.write(dIng)
+                        elif  NemphisIng==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig11=PlotlyLinda2(LindIng)
+                            col1.write("**Datos completos**")
+                            col1.AgGrid(dIng)
+                            col2.write("**Índice de Linda**")    
+                            col2.AgGrid(LindIng)
+                            st.plotly_chart(fig11,use_container_width=True)        
+                        else:
+                            lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                            fig11=PlotlyLinda(LindIng)
+                            st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dIng)
+                            st.plotly_chart(fig11,use_container_width=True)
+
+                if select_indicador == 'Penetración':
+                    PersonasMuni=Personas.groupby(['anno','id_municipio'])['poblacion'].sum().reset_index()  
+                    PaquetesmuniEnv=PaquetesmuniEnv[(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                    Envmuni=PaquetesmuniEnv.groupby(['periodo','codigo_municipio'])[['numero_total_envios']].sum().reset_index()
+                    Envmuni.insert(0,'anno',Envmuni.periodo.str.split('-',expand=True)[0])
+                    PersonasMuni.id_municipio=PersonasMuni.id_municipio.astype('int64')
+                    PersonasMuni.anno=PersonasMuni.anno.astype('int64')
+                    Envmuni.insert(4,'IDMuni',Envmuni.codigo_municipio.str.split('-',expand=True)[1])
+                    Envmuni=Envmuni.rename(columns={'IDMuni':'id_municipio'})
+                    Envmuni.id_municipio=Envmuni.id_municipio.astype('int64')
+                    Envmuni.anno=Envmuni.anno.astype('int64')
+                    PenetracionMuni=Envmuni.merge(PersonasMuni, on=['anno','id_municipio'], how='left')
+                    PenetracionMuni.insert(5,'penetracion',PenetracionMuni['numero_total_envios']/PenetracionMuni['poblacion'])
+                    PenetracionMuni.penetracion=PenetracionMuni.penetracion.round(3)
+                    PenetracionMuni=PenetracionMuni[PenetracionMuni['periodo']!='2021-T3']
+                    if select_variable=='Envíos':
+                        fig12=PlotlyPenetracion(PenetracionMuni)
+                        AgGrid(PenetracionMuni[['periodo','id_municipio','numero_total_envios','poblacion','penetracion']])
+                        st.plotly_chart(fig12,use_container_width=True)
+                    if select_variable=='Ingresos':
+                        st.write("El indicador de penetración sólo está definido para la variable de Líneas.") 
+
+                if select_indicador == 'Dominancia':
+                    for periodo in PERIODOS:
+                        prEn=PaquetesmuniEnv[(PaquetesmuniEnv['periodo']==periodo)&(PaquetesmuniEnv['codigo_municipio']==MUNI)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesmuniIng[(PaquetesmuniIng['periodo']==periodo)&(PaquetesmuniIng['codigo_municipio']==MUNI)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart4)
+                        st.plotly_chart(fig13,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+
+
+        if select_dimension == 'Departamental':            
+                st.write('#### Desagregación departamental') 
+                select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Media entrópica','Dominancia'])
+                DEPARTAMENTOS=sorted(PaquetesdptoIng.id_departamento.unique().tolist())
+                DPTO=st.selectbox('Escoja el departamento', DEPARTAMENTOS)
+                PERIODOSDPTO=['2020-T3','2020-T4','2021-T1','2021-T2']
+
+            ## Información sobre los indicadores
+                if select_indicador == 'Stenbacka':
+                    st.write("### Índice de Stenbacka")
+                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
+                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    with st.expander("Información adicional índice de Stenbacka"):
+                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
+                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
+                        st.write(r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                    """,unsafe_allow_html=True)
+                if select_indicador == 'Concentración':
+                    st.write("### Razón de concentración")
+                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    with st.expander("Información adicional razón de concentración"):
+                        st.write("La concentración se calcula de la siguiente forma:")
+                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
+                        st.write(r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+""")
+                if select_indicador == 'IHH':
+                    st.write("### Índice de Herfindahl-Hirschman")
+                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    with st.expander("Información adicional IHH"):
+                        st.write("La fórmula del IHH está dada como")
+                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
+                        st.write(r"""**Donde:**
+-   $S_{i}$ es la participación de mercado de la variable analizada.
+-   $n$ es el número de empresas más grandes consideradas.
+
+De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+| Mercado                   | Rango          |
+|---------------------------|----------------|
+| Muy competitivo           | $<100$         |
+| Desconcentrado            | $100 - 1500$   |
+| Moderadamente concentrado | $>1500 - 2500$ |
+| Altamente concentrado     | $>2500$        |                
+                """)
+                if select_indicador == 'Linda':         
+                    st.write("### Índice de Linda")               
+                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    with st.expander("Información adicional indicador de linda"): 
+                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
+                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
+                        st.write(r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |""",unsafe_allow_html=True)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
+-   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
+
+-   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
+
+-   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
+
+La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
+
+$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
+
+**Donde:**
+
+-   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
+
+Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
+
+$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
+
+La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
+
+#### Descomposición multiplicativa de la media entrópica
+
+La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
+
+$$ME = ME_{D} * ME_{E} * ME_{I}$$
+
+**Donde:**
+
+-   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
+
+$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
+$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+-   $ME_{E}$ corresponde al componente de concentración entre los submercados:
+
+$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
+
+-   $ME_{I}$ corresponde al componente de interacción:
+
+$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
+$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+***Donde a su vez de manera general:***
+
+-   $w_{j}$ es:
+
+$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
+$$j = 1, 2, ..., p$$
+
+-   $S_{i}$ es:
+
+$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
+$$i = 1, 2, ..., n$$
+
+                """)
+                if select_indicador == 'Penetración':
+                    st.write("### Índice de penetración")
+                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    with st.expander('Información adicional índice de penetración'):
+                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
+                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
+                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                if select_indicador == 'Dominancia':
+                    st.write("### Índice de dominancia")
+                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    with st.expander('Información adicional índice de dominancia'):
+                        st.write("La fórmula de la dominancia está dada como")
+                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
+                        st.write(r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |                
+    """)
+                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                   
+                ##Cálculo de los indicadores
+                if select_indicador == 'Stenbacka':
+                    gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
+                    for periodo in PERIODOSDPTO:                    
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',Participacion(prIn,'ingresos'))
+                        prIn.insert(4,'stenbacka',Stenbacka(prIn,'ingresos',gamma))
+                        dfIngresos.append(prIn.sort_values(by='participacion',ascending=False))
+                        
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
+                        prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
+                        dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                          
+
+                    InggroupPart=pd.concat(dfIngresos)
+                    InggroupPart.participacion=InggroupPart.participacion.round(5)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+                    if select_variable == 'Ingresos':
+                        AgGrid(InggroupPart)
+                        fig1=PlotlyStenbacka(InggroupPart)
+                        st.plotly_chart(fig1, use_container_width=True)
+                    if select_variable == 'Envíos':
+                        AgGrid(EnvgroupPart)
+                        fig2=PlotlyStenbacka(EnvgroupPart)
+                        st.plotly_chart(fig2, use_container_width=True) 
+                        st.markdown('#### Visualización departamental del Stenbacka')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el Stenbacka', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(5,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(6,'stenbacka',Stenbacka(prEn2,'numero_total_envios',gamma))
+                                StenDpto=prEn2.groupby(['id_departamento'])['stenbacka'].mean().reset_index()
+                                dfMap.append(StenDpto) 
+                        StenMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        
+                        departamentos_df=gdf.merge(StenMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'stenbacka'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Reds_r', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Stenbacka',
+                            #bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','stenbacka'],
+                                aliases=['ID Departamento','Departamento','Stenbacka'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+
+                if select_indicador == 'Concentración':
+                    dflistEnv=[];dflistIng=[]
+                    
+                    for periodo in PERIODOS:
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        dflistEnv.append(Concentracion(prEn,'numero_total_envios',periodo))
+                        dflistIng.append(Concentracion(prIn,'ingresos',periodo))
+                    ConcEnv=pd.concat(dflistEnv).fillna(1.0).reset_index().drop('index',axis=1)
+                    ConcIng=pd.concat(dflistIng).fillna(1.0).reset_index().drop('index',axis=1)
+                                             
+                    if select_variable == "Envíos":
+                        colsconEnv=ConcEnv.columns.values.tolist()
+                        value1= len(colsconEnv)-1 if len(colsconEnv)-1 >1 else 2
+                        conc=st.slider('Seleccionar el número de empresas',1,value1,1,1)
+                        fig4=PlotlyConcentracion(ConcEnv)
+                        st.write(ConcEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconEnv[conc]]))
+                        st.plotly_chart(fig4,use_container_width=True)
+                    if select_variable == "Ingresos":
+                        colsconIng=ConcIng.columns.values.tolist()
+                        value1= len(colsconIng)-1 if len(colsconIng)-1 >1 else 2
+                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
+                        fig5=PlotlyConcentracion(ConcIng)
+                        st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                        st.plotly_chart(fig5,use_container_width=True)
+
+                if select_indicador == 'IHH':
+                    for periodo in PERIODOS:
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        dfEnvios3.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart3=pd.concat(dfEnvios3)
+                    InggroupPart3=pd.concat(dfIngresos3)
+                    
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig7 = PlotlyIHH(IHHEnv)   
+                    fig8 = PlotlyIHH(IHHIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                        st.markdown('#### Visualización departamental del IHH')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                                IHHDpto=prEn2.groupby(['id_departamento'])['IHH'].mean().reset_index()
+                                dfMap.append(IHHDpto) 
+                        IHHMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        departamentos_df=gdf.merge(IHHMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'IHH'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Reds_r', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='IHH',
+                            #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','IHH'],
+                                aliases=['ID Departamento','Departamento','IHH'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                        
+                        
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart3)
+                        st.plotly_chart(fig8,use_container_width=True)
+
+                if select_indicador == 'Linda':
+                    dflistIng2=[];dflistEnv2=[];datosEnv=[];datosIng=[];nempresaIng=[];nempresaEnv=[];                
+                    for periodo in PERIODOS:
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        nempresaEnv.append(prEn.empresa.nunique())
+                        dflistEnv2.append(Linda(prEn,'numero_total_envios',periodo))
+                        datosEnv.append(prEn)    
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        nempresaIng.append(prIn.empresa.nunique())
+                        dflistIng2.append(Linda(prIn,'ingresos',periodo))
+                        datosIng.append(prIn)
+                    NemphisEnv=max(nempresaEnv)
+                    NemphisIng=max(nempresaIng)     
+                    dEnv=pd.concat(datosEnv).reset_index().drop('index',axis=1)
+                    LindEnv=pd.concat(dflistEnv2).reset_index().drop('index',axis=1).fillna(np.nan)
+                    dIng=pd.concat(datosIng).reset_index()
+                    LindIng=pd.concat(dflistIng2).reset_index().drop('index',axis=1).fillna(np.nan)            
+                        
+                    if select_variable == "Envíos":
+                        LindconEnv=LindEnv.columns.values.tolist()
+                        if NemphisEnv==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            AgGrid(dEnv)
+                        elif  NemphisEnv==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig10=PlotlyLinda2(LindEnv)
+                            col1.write("**Datos completos**")                    
+                            col1.write(dEnv)  
+                            col2.write("**Índice de Linda**")
+                            col2.write(LindEnv)
+                            st.plotly_chart(fig10,use_container_width=True)        
+                        else:    
+                            lind=st.slider('Seleccionar nivel',2,len(LindconEnv),2,1)
+                            fig10=PlotlyLinda(LindEnv)
+                            st.write(LindEnv.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconEnv[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dEnv)                    
+                            st.plotly_chart(fig10,use_container_width=True)
+         
+                    if select_variable == "Ingresos":
+                        LindconIng=LindIng.columns.values.tolist()
+                        if  NemphisIng==1:
+                            st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                            st.write(dIng)
+                        elif  NemphisIng==2:
+                            col1, col2 = st.columns([3, 1])
+                            fig11=PlotlyLinda2(LindIng)
+                            col1.write("**Datos completos**")
+                            col1.AgGrid(dIng)
+                            col2.write("**Índice de Linda**")    
+                            col2.AgGrid(LindIng)
+                            st.plotly_chart(fig11,use_container_width=True)        
+                        else:
+                            lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                            fig11=PlotlyLinda(LindIng)
+                            st.write(LindIng.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                            with st.expander("Mostrar datos"):
+                                st.write(dIng)
+                            st.plotly_chart(fig11,use_container_width=True)
+
+                if select_indicador == 'Penetración':
+                    PersonasDpto=Personas.groupby(['anno','id_departamento'])['poblacion'].sum().reset_index()  
+                    PaquetesdptoEnv=PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==DPTO)]
+                    Envdpto=PaquetesdptoEnv.groupby(['periodo','id_departamento'])[['numero_total_envios']].sum().reset_index()
+                    Envdpto.insert(0,'anno',Envdpto.periodo.str.split('-',expand=True)[0])
+                    PersonasDpto.id_departamento=PersonasDpto.id_departamento.astype('int64')
+                    PersonasDpto.anno=PersonasDpto.anno.astype('int64')
+                    Envdpto.id_departamento=Envdpto.id_departamento.astype('int64')
+                    Envdpto.anno=Envdpto.anno.astype('int64')
+                    PenetracionDpto=Envdpto.merge(PersonasDpto, on=['anno','id_departamento'], how='left')
+                    PenetracionDpto.insert(5,'penetracion',PenetracionDpto['numero_total_envios']/PenetracionDpto['poblacion'])
+                    PenetracionDpto.penetracion=PenetracionDpto.penetracion.round(3)
+                    PenetracionDpto=PenetracionDpto[PenetracionDpto['periodo']!='2021-T3']
+                    if select_variable=='Envíos':
+                        fig12=PlotlyPenetracion(PenetracionDpto)
+                        AgGrid(PenetracionDpto[['periodo','id_departamento','numero_total_envios','poblacion','penetracion']])
+                        st.plotly_chart(fig12,use_container_width=True)
+                    if select_variable=='Ingresos':
+                        st.write("El indicador de penetración sólo está definido para la variable de Líneas.")  
+
+                if select_indicador == 'Media entrópica':
+
+                    for periodo in PERIODOS:
+                        prEn=PaquetesEnv[(PaquetesEnv['periodo']==periodo)&(PaquetesEnv['id_departamento']==DPTO)]
+                        prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                        dfEnvios.append(prEn)
+                    EnvgroupPart=pd.concat(dfEnvios)
+                    MEDIAENTROPICAENV=EnvgroupPart.groupby(['periodo'])['media entropica'].mean().reset_index()         
+                                       
+                    fig7=PlotlyMEntropica(MEDIAENTROPICAENV)
+                    
+                    if select_variable == "Envíos":
+                        st.plotly_chart(fig7,use_container_width=True)
+                        periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOS,PERIODOS[-1])
+                        if PaquetesEnv[(PaquetesEnv['id_departamento']==DPTO)&(PaquetesEnv['periodo']==periodoME)].empty==True:
+                            pass
+                        else:    
+                            MEperiodTableEnv=MediaEntropica(PaquetesEnv[(PaquetesEnv['id_departamento']==DPTO)&(PaquetesEnv['periodo']==periodoME)],'numero_total_envios')[1] 
+                        st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
+                        
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if PaquetesEnv[(PaquetesEnv['id_departamento']==departamento)&(PaquetesEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn=PaquetesEnv[(PaquetesEnv['id_departamento']==departamento)&(PaquetesEnv['periodo']==periodoME)]
+                                prEn.insert(4,'media entropica',MediaEntropica(prEn,'numero_total_envios')[0])
+                                prEn2=prEn.groupby(['id_departamento'])['media entropica'].mean().reset_index()
+                                dfMap.append(prEn2)
+                        EnvMap=pd.concat(dfMap).reset_index().drop('index',axis=1)
+                        colsME=['SIJ','SI','WJ','MED','MEE','MEI','Media entropica'] 
+                        st.write(MEperiodTableEnv.reset_index(drop=True).style.apply(f, axis=0, subset=colsME))
+                        departamentos_df=gdf.merge(EnvMap, on='id_departamento')
+                        departamentos_df['media entropica']=departamentos_df['media entropica'].round(4)
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'media entropica'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Greens', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='Media entrópica',
+                            #bins=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','media entropica'],
+                                aliases=['ID Departamento','Departamento','Media entrópica'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        MunicipiosME=MEperiodTableEnv.groupby(['id_municipio'])['WJ'].mean().reset_index()
+                        MunicipiosME=MunicipiosME[MunicipiosME.WJ!=0]
+                        MunicipiosME.WJ=MunicipiosME.WJ.round(7)
+                        
+                        
+                        fig9=PlotlyMentropicaTorta(MunicipiosME)
+                        
+                        col1, col2= st.columns(2)
+                        with col1:
+                            st.write(r"""###### <center>Visualización de la media entrópica en todos los departamentos y en el periodo seleccionado</center>""",unsafe_allow_html=True)
+                            folium_static(colombia_map,width=480)    
+                        with col2:
+                            st.write(r"""###### <center>Visualización de la participación de los municipios dentro del departamento seleccionado</center>""",unsafe_allow_html=True)                
+                            st.plotly_chart(fig9,use_container_width=True)
+
+                if select_indicador == 'Dominancia':
+                    for periodo in PERIODOS:
+                        prEn=PaquetesdptoEnv[(PaquetesdptoEnv['periodo']==periodo)&(PaquetesdptoEnv['id_departamento']==DPTO)]
+                        prEn.insert(3,'participacion',(prEn['numero_total_envios']/prEn['numero_total_envios'].sum())*100)
+                        prEn.insert(4,'IHH',IHH(prEn,'numero_total_envios'))
+                        prEn.insert(5,'Dominancia',Dominancia(prEn,'numero_total_envios'))
+                        dfEnvios4.append(prEn.sort_values(by='participacion',ascending=False))
+                        ##
+                        prIn=PaquetesdptoIng[(PaquetesdptoIng['periodo']==periodo)&(PaquetesdptoIng['id_departamento']==DPTO)]
+                        prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
+                        prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
+                        prIn.insert(5,'Dominancia',Dominancia(prIn,'ingresos'))
+                        dfIngresos4.append(prIn.sort_values(by='participacion',ascending=False))
+                        ##
+
+                    EnvgroupPart4=pd.concat(dfEnvios4)
+                    EnvgroupPart4.participacion=EnvgroupPart4.participacion.round(2)
+                    InggroupPart4=pd.concat(dfIngresos4)
+                    InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+                    
+                    DomEnv=EnvgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
+                    DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
+                    
+                    ##Gráficas
+                    
+                    fig13 = PlotlyDominancia(DomEnv)   
+                    fig14 = PlotlyDominancia(DomIng)  
+                    
+                    if select_variable == "Envíos":
+                        AgGrid(EnvgroupPart3)
+                        st.plotly_chart(fig7,use_container_width=True)
+                        st.markdown('#### Visualización departamental del IHH')
+                        periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOS,PERIODOS[-1])
+                        dfMap=[];
+                        for departamento in DEPARTAMENTOS:
+                            if PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)].empty==True:
+                                pass
+                            else:    
+                                prEn2=PaquetesdptoEnv[(PaquetesdptoEnv['id_departamento']==departamento)&(PaquetesdptoEnv['periodo']==periodoME)]
+                                prEn2.insert(3,'participacion',Participacion(prEn2,'numero_total_envios'))
+                                prEn2.insert(4,'IHH',IHH(prEn2,'numero_total_envios'))
+                                prEn2.insert(5,'Dominancia',Dominancia(prEn2,'numero_total_envios'))
+                                DomDpto=prEn2.groupby(['id_departamento'])['Dominancia'].mean().reset_index()
+                                dfMap.append(DomDpto) 
+                        DomMap=pd.concat(dfMap).reset_index().drop('index',axis=1)              
+                        departamentos_df=gdf.merge(DomMap, on='id_departamento')
+
+                        colombia_map = folium.Map(width='100%',location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+                        tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                        for tile in tiles:
+                            folium.TileLayer(tile).add_to(colombia_map)
+                        choropleth=folium.Choropleth(
+                            geo_data=Colombian_DPTO,
+                            data=departamentos_df,
+                            columns=['id_departamento', 'Dominancia'],
+                            key_on='feature.properties.DPTO',
+                            fill_color='Oranges', 
+                            fill_opacity=0.9, 
+                            line_opacity=0.9,
+                            legend_name='IHH',
+                            #bins=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                            smooth_factor=0).add_to(colombia_map)
+                        # Adicionar nombres del departamento
+                        style_function = "font-size: 15px; font-weight: bold"
+                        choropleth.geojson.add_child(
+                            folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                        folium.LayerControl().add_to(colombia_map)
+
+                        #Adicionar valores velocidad
+                        style_function = lambda x: {'fillColor': '#ffffff', 
+                                                    'color':'#000000', 
+                                                    'fillOpacity': 0.1, 
+                                                    'weight': 0.1}
+                        highlight_function = lambda x: {'fillColor': '#000000', 
+                                                        'color':'#000000', 
+                                                        'fillOpacity': 0.50, 
+                                                        'weight': 0.1}
+                        NIL = folium.features.GeoJson(
+                            data = departamentos_df,
+                            style_function=style_function, 
+                            control=False,
+                            highlight_function=highlight_function, 
+                            tooltip=folium.features.GeoJsonTooltip(
+                                fields=['id_departamento','departamento','Dominancia'],
+                                aliases=['ID Departamento','Departamento','Dominancia'],
+                                style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                            )
+                        )
+                        colombia_map.add_child(NIL)
+                        colombia_map.keep_in_front(NIL)
+                        col1, col2 ,col3= st.columns([1.5,4,1])
+                        with col2:
+                            folium_static(colombia_map,width=480) 
+                        
+                        
+                    if select_variable == "Ingresos":
+                        AgGrid(InggroupPart4)
+                        st.plotly_chart(fig14,use_container_width=True)
+ 
