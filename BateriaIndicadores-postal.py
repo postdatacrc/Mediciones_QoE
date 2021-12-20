@@ -350,7 +350,7 @@ st.markdown("""<style type="text/css">
     .main, .css-1lcbmhc > div{margin-top:135px;}
     .css-y3whyl, .css-xqnn38 {background-color:#ccc}
     .css-1uvyptr:hover,.css-1uvyptr {background: #ccc}
-    .css-m70y {display:none} 
+    .css-m70y {display:none}
     .block-container {padding-top:0;}
     h2{
     background: #fffdf7;
@@ -450,11 +450,12 @@ if select_ambito =='Nacional':
         with col2:    
             select_dimension = st.selectbox('Seleccione ámbito aplicación',['Nacional','Municipal','Departamental'])
         with col3:
-            select_variable = st.selectbox('Seleccione la variable',['Envíos','Ingresos','Ingresos por envío'])
+            select_variable = st.selectbox('Seleccione la variable',['Envíos','Ingresos'])
             
         if select_objeto=='Documentos':
             dfIngresos=[];dfIngresos2=[];dfIngresos3=[];dfIngresos4=[];
-            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];dfEnvios4=[];            
+            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];dfEnvios4=[];       
+            dfIngresosPorEnvio=[];dfIngresosPorEnvio2=[];dfIngresosPorEnvio3=[];dfIngresosPorEnvio4=[];    
             
             
             Documentos=Individual[Individual['tipo_objeto']=='Documentos']
@@ -462,10 +463,14 @@ if select_ambito =='Nacional':
             PERIODOS=['2020-T3','2020-T4','2021-T1','2021-T2']
             DocumentosnacIng=Documentos.groupby(['periodo','empresa','id_empresa'])['ingresos'].sum().reset_index()
             DocumentosnacEnv=Documentos.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()
+          
+            
             DocumentosmuniIng=Documentos.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingresos'].sum().reset_index()
             DocumentosmuniEnv=Documentos.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['numero_total_envios'].sum().reset_index()
+
             DocumentosmuniIng.codigo_municipio=DocumentosmuniIng.codigo_municipio.astype('str')
             DocumentosmuniEnv.codigo_municipio=DocumentosmuniEnv.codigo_municipio.astype('str')
+
             
             DocumentosdptoIng=Documentos.copy()
             DocumentosdptoIng.codigo_municipio=DocumentosdptoIng.codigo_municipio.astype('str')
@@ -474,15 +479,17 @@ if select_ambito =='Nacional':
             DocumentosdptoEnv.codigo_municipio=DocumentosdptoEnv.codigo_municipio.astype('str')
             DocumentosdptoEnv=DocumentosdptoEnv.groupby(['periodo','empresa','id_empresa','id_departamento','departamento',])['numero_total_envios'].sum().reset_index()     
 
+
             DocumentosEnv=Documentos[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','numero_total_envios']]
             DocumentosEnv.codigo_municipio=DocumentosEnv.codigo_municipio.astype('str')
             DocumentosEnv=DocumentosEnv.rename(columns={'codigo_municipio':'id_municipio'})
             DocumentosIng=Documentos[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','ingresos']]
             DocumentosIng.codigo_municipio=DocumentosIng.codigo_municipio.astype('str')
             DocumentosIng=DocumentosIng.rename(columns={'codigo_municipio':'id_municipio'})
+           
 
             with st.expander('Datos documentos'):
-                AgGrid(Documentos[['periodo','id_empresa','empresa','codigo_municipio','tipo_objeto','ambito','numero_total_envios','ingresos']])
+                AgGrid(Documentos[['periodo','id_empresa','empresa','codigo_municipio','tipo_objeto','ambito','numero_total_envios','ingresos','ingreso/envio']])
             if select_dimension == 'Nacional':      
                 st.write('#### Agregación nacional')     
                 select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
@@ -602,10 +609,13 @@ if select_ambito =='Nacional':
                         prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
                         dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))                        
                         
+
                     InggroupPart=pd.concat(dfIngresos)
                     InggroupPart.participacion=InggroupPart.participacion.round(5)
                     EnvgroupPart=pd.concat(dfEnvios)
                     EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
+
+                    
                     if select_variable == 'Ingresos':
                         AgGrid(InggroupPart)
                         fig1=PlotlyStenbacka(InggroupPart)
@@ -613,8 +623,8 @@ if select_ambito =='Nacional':
                     if select_variable == 'Envíos':
                         AgGrid(EnvgroupPart)
                         fig2=PlotlyStenbacka(EnvgroupPart)
-                        st.plotly_chart(fig2, use_container_width=True)                        
-
+                        st.plotly_chart(fig2, use_container_width=True)   
+                       
                 if select_indicador == 'Concentración':
                     dflistEnv=[];dflistIng=[]
                     
@@ -1724,7 +1734,7 @@ $$i = 1, 2, ..., n$$
         if select_objeto=='Paquetes':
             dfIngresos=[];dfIngresos2=[];dfIngresos3=[];dfIngresos4=[];
             dfEnvios=[];dfEnvios2=[];dfEnvios3=[];dfEnvios4=[];    
-            dfIngresosPorEnvio=[];dfIngresosPorEnvio2=[];dfIngresosPorEnvio3=[];dfIngresosPorEnvio4=[];
+
             
             Paquetes=Individual[Individual['tipo_objeto']=='Paquetes']
             Paquetes.drop(['anno','trimestre','id_tipo_envio','tipo_envio','id_tipo_objeto','id_ambito'],axis=1, inplace=True)
@@ -1738,13 +1748,13 @@ $$i = 1, 2, ..., n$$
             #st.write(Paquetes[Paquetes['rango_peso_envio'].isin(PESO2)])
             PaquetesnacIng=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['ingresos'].sum().reset_index()
             PaquetesnacEnv=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()
-            PaquetesnacIngEnvio=PaquetesPeso.groupby(['periodo','empresa','id_empresa'])['ingreso/envio'].sum().reset_index()
+
             PaquetesmuniIng=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingresos'].sum().reset_index()
             PaquetesmuniEnv=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['numero_total_envios'].sum().reset_index()    
-            PaquetesmuniIngEnvio=PaquetesPeso.groupby(['periodo','empresa','id_empresa','codigo_municipio'])['ingreso/envio'].sum().reset_index()
+
             PaquetesmuniIng.codigo_municipio=PaquetesmuniIng.codigo_municipio.astype('str')
             PaquetesmuniEnv.codigo_municipio=PaquetesmuniEnv.codigo_municipio.astype('str')
-            PaquetesmuniIngEnvio.codigo_municipio=PaquetesmuniIngEnvio.codigo_municipio.astype('str')
+
             
             PaquetesdptoIng=PaquetesPeso.copy()
             PaquetesdptoIng.codigo_municipio=PaquetesdptoIng.codigo_municipio.astype('str')
@@ -1752,9 +1762,6 @@ $$i = 1, 2, ..., n$$
             PaquetesdptoEnv=PaquetesPeso.copy()
             PaquetesdptoEnv.codigo_municipio=PaquetesdptoEnv.codigo_municipio.astype('str')
             PaquetesdptoEnv=PaquetesdptoEnv.groupby(['periodo','empresa','id_empresa','id_departamento'])['numero_total_envios'].sum().reset_index()     
-            PaquetesdptoIngEnvio=PaquetesPeso.copy()
-            PaquetesdptoIngEnvio.codigo_municipio=PaquetesdptoIngEnvio.codigo_municipio.astype('str')
-            PaquetesdptoIngEnvio=PaquetesdptoIngEnvio.groupby(['periodo','empresa','id_empresa','id_departamento'])['ingreso/envio'].sum().reset_index()
 
 
             PaquetesEnv=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','numero_total_envios']]
@@ -1763,9 +1770,6 @@ $$i = 1, 2, ..., n$$
             PaquetesIng=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','ingresos']]
             PaquetesIng.codigo_municipio=PaquetesIng.codigo_municipio.astype('str') 
             PaquetesIng=PaquetesIng.rename(columns={'codigo_municipio':'id_municipio'})  
-            PaquetesIngEnvio=PaquetesPeso[['periodo','empresa','id_empresa','codigo_municipio','id_departamento','rango_peso_envio','ingreso/envio']]
-            PaquetesIngEnvio.codigo_municipio=PaquetesIngEnvio.codigo_municipio.astype('str') 
-            PaquetesIngEnvio=PaquetesIngEnvio.rename(columns={'codigo_municipio':'id_municipio'})  
             
              
             if select_dimension == 'Nacional':       
@@ -1885,18 +1889,12 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         prEn.insert(3,'participacion',Participacion(prEn,'numero_total_envios'))
                         prEn.insert(4,'stenbacka',Stenbacka(prEn,'numero_total_envios',gamma))
                         dfEnvios.append(prEn.sort_values(by='participacion',ascending=False))  
-
-                        prInEnv=PaquetesnacIngEnvio[PaquetesnacIngEnvio['periodo']==elem]
-                        prInEnv.insert(3,'participacion',Participacion(prInEnv,'ingreso/envio'))
-                        prInEnv.insert(4,'stenbacka',Stenbacka(prInEnv,'ingreso/envio',gamma))
-                        dfIngresosPorEnvio.append(prIn.sort_values(by='participacion',ascending=False))                        
+                       
                         
                     InggroupPart=pd.concat(dfIngresos)
                     InggroupPart.participacion=InggroupPart.participacion.round(5)
                     EnvgroupPart=pd.concat(dfEnvios)
-                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)
-                    IngEnvgroupPart=pd.concat(dfIngresosPorEnvio)
-                    IngEnvgroupPart.participacion=IngEnvgroupPart.participacion.round(5)                    
+                    EnvgroupPart.participacion=EnvgroupPart.participacion.round(5)               
                     
                     if select_variable == 'Ingresos':
                         AgGrid(InggroupPart)
@@ -1906,21 +1904,14 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         AgGrid(EnvgroupPart)
                         fig2=PlotlyStenbacka(EnvgroupPart)
                         st.plotly_chart(fig2, use_container_width=True)
-
-                    if select_variable == 'Ingresos por envío':
-                        AgGrid(IngEnvgroupPart)
-                        fig2b=PlotlyStenbacka(IngEnvgroupPart)
-                        st.plotly_chart(fig2b, use_container_width=True)                        
-
+                      
                 if select_indicador == 'Concentración':
-                    dflistEnv=[];dflistIng=[];dflistIngEnv=[];                    
+                    dflistEnv=[];dflistIng=[];                  
                     for elem in PERIODOS:
                         dflistEnv.append(Concentracion(PaquetesnacEnv,'numero_total_envios',elem))
                         dflistIng.append(Concentracion(PaquetesnacIng,'ingresos',elem))
-                        dflistIngEnv.append(Concentracion(PaquetesnacIngEnvio,'ingreso/envio',elem))
                     ConcEnv=pd.concat(dflistEnv).fillna(1.0)
                     ConcIng=pd.concat(dflistIng).fillna(1.0)
-                    ConcIngEnv=pd.concat(dflistIngEnv).fillna(1.0)
                                              
                     if select_variable == "Envíos":
                         colsconEnv=ConcEnv.columns.values.tolist()
@@ -1936,15 +1927,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         fig5=PlotlyConcentracion(ConcIng)
                         st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
                         st.plotly_chart(fig5,use_container_width=True) 
-                    if select_variable == "Ingresos por envío":
-                        colsconIngEnv=ConcIngEnv.columns.values.tolist()
-                        value1= len(colsconIngEnv)-1 if len(colsconIngEnv)-1 >1 else 2
-                        conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
-                        fig5a=PlotlyConcentracion(ConcIngEnv)
-                        st.write(ConcIngEnv.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIngEnv[conc]]))
-                        st.plotly_chart(fig5a,use_container_width=True) 
                         
-
                 if select_indicador == 'IHH':
                     for elem in PERIODOS:
                         prEn=PaquetesnacEnv[PaquetesnacEnv['periodo']==elem]
@@ -1956,26 +1939,20 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         prIn.insert(3,'participacion',(prIn['ingresos']/prIn['ingresos'].sum())*100)
                         prIn.insert(4,'IHH',IHH(prIn,'ingresos'))
                         dfIngresos3.append(prIn.sort_values(by='participacion',ascending=False))
-                        ##
-                        # prInEnv=PaquetesnacIngEnvio[PaquetesnacIngEnvio['periodo']==elem]
-                        # prInEnv.insert(3,'participacion',(prInEnv['ingreso/envio']/prInEnv['ingreso/envio'].sum())*100)
-                        # prInEnv.insert(4,'IHH',IHH(prInEnv,'ingreso/envio'))
-                        # dfIngresosPorEnvio3.append(prInEnv.sort_values(by='participacion',ascending=False))
 
 
                     EnvgroupPart3=pd.concat(dfEnvios3)
                     InggroupPart3=pd.concat(dfIngresos3)
                     IngEnvgroupPart3=pd.concat(dfIngresosPorEnvio3)
                     
-                    # IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
-                    # IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()   
-                    # IHHIngEnv=IngEnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()           
+                    IHHEnv=EnvgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
+                    IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()   
+          
                     
                     ##Gráficas
                     
                     fig7 = PlotlyIHH(IHHEnv)   
-                    fig8 = PlotlyIHH(IHHIng) 
-                    fig8a = PlotlyIHH(IHHEnvIng)      
+                    fig8 = PlotlyIHH(IHHIng)     
                     
                     if select_variable == "Envíos":
                         AgGrid(EnvgroupPart3)
@@ -5617,8 +5594,7 @@ $$i = 1, 2, ..., n$$
                     if select_variable == "Ingresos":
                         AgGrid(InggroupPart3)
                         st.plotly_chart(fig8,use_container_width=True)
-
-           
+          
         if select_objeto=='Paquetes':
             dfIngresos=[];dfIngresos2=[];dfIngresos3=[];dfIngresos4=[];
             dfEnvios=[];dfEnvios2=[];dfEnvios3=[];dfEnvios4=[];    
@@ -8863,7 +8839,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                         st.plotly_chart(fig14,use_container_width=True)
 
 
-        if select_dimension == 'Departamental':            
+            if select_dimension == 'Departamental':            
                 st.write('#### Desagregación departamental') 
                 select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Media entrópica','Dominancia'])
                 DEPARTAMENTOS=sorted(PaquetesdptoIng.id_departamento.unique().tolist())
