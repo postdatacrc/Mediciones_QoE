@@ -350,6 +350,7 @@ st.markdown("""<style type="text/css">
     .main, .css-1lcbmhc > div{margin-top:135px;}
     .css-y3whyl, .css-xqnn38 {background-color:#ccc}
     .css-1uvyptr:hover,.css-1uvyptr {background: #ccc}
+    .css-m70y {display:none} 
     .block-container {padding-top:0;}
     h2{
     background: #fffdf7;
