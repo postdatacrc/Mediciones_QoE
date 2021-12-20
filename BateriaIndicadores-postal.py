@@ -6911,8 +6911,8 @@ $$i = 1, 2, ..., n$$
             select_variable = st.selectbox('Seleccione la variable',['Envíos','Ingresos'])
 
         if select_objeto=='Documentos':
-            dfIngresos=[];dfIngresos2=[];dfIngresos3=[];
-            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];        
+            dfIngresos=[];dfIngresos2=[];dfIngresos3=[];dfIngresos4=[];
+            dfEnvios=[];dfEnvios2=[];dfEnvios3=[];dfEnvios4=[];        
             Documentos=Salida[Salida['tipo_objeto']=='Documentos']
             Documentos.drop(['anno','trimestre','id_tipo_envio','tipo_envio','id_tipo_objeto','tipo_objeto','id_ambito'],axis=1, inplace=True)
             PERIODOS=['2020-T3','2020-T4','2021-T1','2021-T2']
