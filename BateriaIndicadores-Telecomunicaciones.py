@@ -1338,7 +1338,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             if select_variable == "Tráfico":
                 LindconTraf=LindTraf.columns.values.tolist()
                 if NemphisTraf==1:
-                    st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                    st.write("El índice de linda no está definido para este municipio pues cuenta con una sola empresa")
                     AgGrid(dTraf)
                 elif  NemphisTraf==2:
                     col1, col2 = st.columns([3, 1])
@@ -2917,7 +2917,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             if select_variable == "Accesos-corporativo":
                 LindconAccCorp=LindAccCorp.columns.values.tolist()
                 if NemphisAccCorp==1:
-                    st.write("El índice de linda no está definido para éste municipio pues cuenta con una sola empresa")
+                    st.write("El índice de linda no está definido para este municipio pues cuenta con una sola empresa")
                     st.write(dAccCorp)
                 elif  NemphisAccCorp==2:
                     col1, col2 = st.columns([3, 1])
@@ -4813,7 +4813,7 @@ $$i = 1, 2, ..., n$$
             if select_variable == "Suscriptores":
                 LindconSus=LindSus.columns.values.tolist()
                 if NemphisSus==1:
-                    st.write("El índice de linda no está definido para éste departamento pues cuenta con una sola empresa")
+                    st.write("El índice de linda no está definido para este departamento pues cuenta con una sola empresa")
                     st.write(dSus)
                 elif  NemphisSus==2:
                     col1, col2 = st.columns([3, 1])
