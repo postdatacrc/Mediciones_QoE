@@ -790,8 +790,8 @@ De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de
 
 | Mercado                   | Rango          |
 |---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
+| Muy competitivo           | $<1000$         |
+| Desconcentrado            | $1000 - 1500$   |
 | Moderadamente concentrado | $>1500 - 2500$ |
 | Altamente concentrado     | $>2500$        |                
                 """)
@@ -1104,8 +1104,8 @@ De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de
 
 | Mercado                   | Rango          |
 |---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
+| Muy competitivo           | $<1000$        |
+| Desconcentrado            | $1000 - 1500$  |
 | Moderadamente concentrado | $>1500 - 2500$ |
 | Altamente concentrado     | $>2500$        |                
                 """)
@@ -1479,8 +1479,8 @@ De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de
 
 | Mercado                   | Rango          |
 |---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
+| Muy competitivo           | $<1000$        |
+| Desconcentrado            | $1000 - 1500$  |
 | Moderadamente concentrado | $>1500 - 2500$ |
 | Altamente concentrado     | $>2500$        |                
                 """)
@@ -2431,8 +2431,8 @@ De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de
 
 | Mercado                   | Rango          |
 |---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
+| Muy competitivo           | $<1000$        |
+| Desconcentrado            | $1000 - 1500$  |
 | Moderadamente concentrado | $>1500 - 2500$ |
 | Altamente concentrado     | $>2500$        |                
                 """)
@@ -3054,8 +3054,8 @@ De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de
 
 | Mercado                   | Rango          |
 |---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
+| Muy competitivo           | $<1000$        |
+| Desconcentrado            | $1000 - 1500$  |
 | Moderadamente concentrado | $>1500 - 2500$ |
 | Altamente concentrado     | $>2500$        |                
                 """)
@@ -3999,8 +3999,8 @@ De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de
 
 | Mercado                   | Rango          |
 |---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
+| Muy competitivo           | $<1000$        |
+| Desconcentrado            | $1000 - 1500$  |
 | Moderadamente concentrado | $>1500 - 2500$ |
 | Altamente concentrado     | $>2500$        |                
                 """)
@@ -4496,8 +4496,8 @@ De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de
 
 | Mercado                   | Rango          |
 |---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
+| Muy competitivo           | $<1000$        |
+| Desconcentrado            | $1000 - 1500$  |
 | Moderadamente concentrado | $>1500 - 2500$ |
 | Altamente concentrado     | $>2500$        |                
                 """)
@@ -5084,8 +5084,8 @@ De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de
 
 | Mercado                   | Rango          |
 |---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
+| Muy competitivo           | $<1000$        |
+| Desconcentrado            | $1000 - 1500$  |
 | Moderadamente concentrado | $>1500 - 2500$ |
 | Altamente concentrado     | $>2500$        |                
             """)
