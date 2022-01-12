@@ -398,8 +398,8 @@ st.markdown("""
 #st.sidebar.image(LogoComision2, use_column_width=True)
 #st.sidebar.image(LogoMercadoTIC, width=100)
 st.markdown(r""" **<center><ins>Guía de uso de la batería de indicadores para el análisis de competencia</ins></center>**
-- Use el menú de la barra de la izquierda para seleccionar el mercado sobre el cuál le gustaría realizar el cálculo de los indicadores.
-- Elija el ámbito del mercado: Departamental, Municipal, Nacional.
+- Use el menú de la barra de la izquierda para seleccionar el servicio sobre el cuál le gustaría realizar el cálculo de los indicadores.
+- Elija el ámbito de análisis: Departamental, Municipal, Nacional.
 - Escoja el indicador a calcular.
 - Dependiendo del ámbito y el indicador, interactúe con los parámetros establecidos, tal como periodo, municipio, número de empresas, etc.
 """,unsafe_allow_html=True)  
