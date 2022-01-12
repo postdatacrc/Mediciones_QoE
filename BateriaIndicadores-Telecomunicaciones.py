@@ -758,7 +758,7 @@ if select_mercado == 'Telefonía local':
                 """,unsafe_allow_html=True)
         if select_indicador == 'Concentración':
             st.write("### Razón de concentración")
-            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
             with st.expander("Información adicional razón de concentración"):
                 st.write("La concentración se calcula de la siguiente forma:")
                 st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -1072,7 +1072,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 """,unsafe_allow_html=True)
         if select_indicador == 'Concentración':
             st.write("### Razón de concentración")
-            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
             with st.expander("Información adicional razón de concentración"):
                 st.write("La concentración se calcula de la siguiente forma:")
                 st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -1447,7 +1447,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 """,unsafe_allow_html=True)
         if select_indicador == 'Concentración':
             st.write("### Razón de concentración")
-            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
             with st.expander("Información adicional razón de concentración"):
                 st.write("La concentración se calcula de la siguiente forma:")
                 st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -2399,7 +2399,7 @@ if select_mercado == "Internet fijo":
                 """,unsafe_allow_html=True)
         if select_indicador == 'Concentración':
             st.write("### Razón de concentración")
-            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
             with st.expander("Información adicional razón de concentración"):
                 st.write("La concentración se calcula de la siguiente forma:")
                 st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -2718,7 +2718,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 """,unsafe_allow_html=True)
         if select_indicador == 'Concentración':
             st.write("### Razón de concentración")
-            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
             with st.expander("Información adicional razón de concentración"):
                 st.write("La concentración se calcula de la siguiente forma:")
                 st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -3022,7 +3022,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 """,unsafe_allow_html=True)
         if select_indicador == 'Concentración':
             st.write("### Razón de concentración")
-            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
             with st.expander("Información adicional razón de concentración"):
                 st.write("La concentración se calcula de la siguiente forma:")
                 st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -3967,7 +3967,7 @@ if select_mercado == "Televisión por suscripción":
                 """,unsafe_allow_html=True)
         if select_indicador == 'Concentración':
             st.write("### Razón de concentración")
-            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
             with st.expander("Información adicional razón de concentración"):
                 st.write("La concentración se calcula de la siguiente forma:")
                 st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -4464,7 +4464,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 """,unsafe_allow_html=True)
         if select_indicador == 'Concentración':
             st.write("### Razón de concentración")
-            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+            st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
             with st.expander("Información adicional razón de concentración"):
                 st.write("La concentración se calcula de la siguiente forma:")
                 st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -5052,7 +5052,7 @@ if select_mercado == 'Telefonía móvil':
             """,unsafe_allow_html=True)
     if select_indicador == 'Concentración':
         st.write("### Razón de concentración")
-        st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+        st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
         with st.expander("Información adicional razón de concentración"):
             st.write("La concentración se calcula de la siguiente forma:")
             st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
@@ -5287,7 +5287,7 @@ if select_mercado == 'Internet móvil':
             """,unsafe_allow_html=True)
     if select_indicador == 'Concentración':
         st.write("### Razón de concentración")
-        st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+        st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1.")            
         with st.expander("Información adicional razón de concentración"):
             st.write("La concentración se calcula de la siguiente forma:")
             st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
