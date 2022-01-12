@@ -2024,10 +2024,13 @@ $$i = 1, 2, ..., n$$
                 MEperiodTableTraf=MediaEntropica(Trafico[(Trafico['departamento']==DPTO)&(Trafico['periodo']==periodoME)],'trafico')[1]                
                 dfMap=[];
                 for departamento in DEPARTAMENTOSTRAF:
-                    prTr=Trafico[(Trafico['departamento']==departamento)&(Trafico['periodo']==periodoME)]
-                    prTr.insert(4,'media entropica',MediaEntropica(prTr,'trafico')[0])
-                    prTr2=prTr.groupby(['id_departamento','departamento'])['media entropica'].mean().reset_index()
-                    dfMap.append(prTr2)
+                    if Trafico[(Trafico['departamento']==departamento)&(Trafico['periodo']==periodoME)].empty==True:
+                        pass
+                    else:    
+                        prTr=Trafico[(Trafico['departamento']==departamento)&(Trafico['periodo']==periodoME)]
+                        prTr.insert(4,'media entropica',MediaEntropica(prTr,'trafico')[0])
+                        prTr2=prTr.groupby(['id_departamento','departamento'])['media entropica'].mean().reset_index()
+                        dfMap.append(prTr2)
                 TraMap=pd.concat(dfMap).reset_index().drop('index',axis=1)
                 colsME=['SIJ','SI','WJ','MED','MEE','MEI','Media entropica'] 
                 st.write(MEperiodTableTraf.reset_index(drop=True).style.apply(f, axis=0, subset=colsME))
@@ -2099,10 +2102,13 @@ $$i = 1, 2, ..., n$$
                 
                 dfMap2=[];
                 for departamento in DEPARTAMENTOSTRAF:
-                    prLi=Lineas[(Lineas['departamento']==departamento)&(Lineas['periodo']==periodoME2)]
-                    prLi.insert(4,'media entropica',MediaEntropica(prLi,'lineas')[0])
-                    prLi2=prLi.groupby(['id_departamento','departamento'])['media entropica'].mean().reset_index()
-                    dfMap2.append(prLi2)
+                    if Lineas[(Lineas['departamento']==departamento)&(Lineas['periodo']==periodoME2)].empty==True:
+                        pass
+                    else:    
+                        prLi=Lineas[(Lineas['departamento']==departamento)&(Lineas['periodo']==periodoME2)]
+                        prLi.insert(4,'media entropica',MediaEntropica(prLi,'lineas')[0])
+                        prLi2=prLi.groupby(['id_departamento','departamento'])['media entropica'].mean().reset_index()
+                        dfMap2.append(prLi2)
                 LinMap=pd.concat(dfMap2)
                 LinMap=LinMap.reset_index().drop('index',axis=1)
                 colsME=['SIJ','SI','WJ','MED','MEE','MEI','Media entropica'] 
