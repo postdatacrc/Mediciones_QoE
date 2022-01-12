@@ -508,7 +508,7 @@ def ReadApiTVSUSIng():
     response_base = urlopen(consulta + '&limit=10000000') 
     json_base = json.loads(response_base.read())
     TVSUS_ING = pd.DataFrame(json_base['result']['records'])
-    TVSUS_ING.sum_ingresos = TVSUS_ING.sum_ingresos.astype('int64')
+    TVSUS_ING.sum_ingresos = TVSUS_ING.sum_ingresos.astype('float').astype('int64')
     TVSUS_ING = TVSUS_ING.rename(columns={'sum_ingresos':'ingresos'})
     return TVSUS_ING
    ###SUSCRIPTORES
