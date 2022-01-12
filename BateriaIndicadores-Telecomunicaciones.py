@@ -159,7 +159,7 @@ def PlotlyStenbacka(df):
         '<br><b>Stenbacka</b>: %{y:.4f}<br>'))    
     fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
     fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="Participación", row=1, col=1)
-    fig.update_layout(height=550,title="<b> Participación por periodo</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
+    fig.update_layout(height=550,title="<b> Participación e índice de Stenbacka por periodo</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
     fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(192, 192, 192, 0.4)')
     fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(192, 192, 192, 0.4)')
