@@ -1561,7 +1561,7 @@ $$j = 1, 2, ..., p$$
 $$S_{i} = \sum_{j=1}^{p} S_{ij};$$
 $$i = 1, 2, ..., n$$
 
--   y $S_{ij}$ corresponde a la participación de la empresa $i$ en el mercado $j$:
+-   y $S_{ij}$ corresponde a la participación de la empresa $i$ en el mercado $j$
                 """)
         if select_indicador == 'Penetración':
             st.write("### Índice de penetración")
@@ -3137,6 +3137,7 @@ $$j = 1, 2, ..., p$$
 $$S_{i} = \sum_{j=1}^{p} S_{ij};$$
 $$i = 1, 2, ..., n$$
 
+-   y $S_{ij}$ corresponde a la participación de la empresa $i$ en el mercado $j$
                 """)
         if select_indicador == 'Penetración':
             st.write("### Índice de penetración")
@@ -4579,6 +4580,7 @@ $$j = 1, 2, ..., p$$
 $$S_{i} = \sum_{j=1}^{p} S_{ij};$$
 $$i = 1, 2, ..., n$$
 
+-   y $S_{ij}$ corresponde a la participación de la empresa $i$ en el mercado $j$
                 """)
         if select_indicador == 'Penetración':
             st.write("### Índice de penetración")
