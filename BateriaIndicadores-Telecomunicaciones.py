@@ -410,7 +410,8 @@ select_mercado = st.sidebar.selectbox('Servicio',
                               
 #API 
 consulta_anno = '2017,2018,2019,2020,2021,2022,2023,2024,2025'
-##TELEFONIA LOCAL
+##
+
    ###TRAFICO
 @st.cache(allow_output_mutation=True)
 def ReadAPITrafTL():
@@ -848,7 +849,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
         
     ## Cálculo de los indicadores    
         if select_indicador == 'Stenbacka':
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
             for elem in PERIODOS:
                 prTr=Trafnac[Trafnac['periodo']==elem]
                 prTr.insert(3,'participacion',Participacion(prTr,'trafico'))
@@ -1171,7 +1172,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
     ## Cálculo de los indicadores 
     
         if select_indicador == 'Stenbacka':       
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
             
             for periodo in PERIODOSTRAF:
                 prTr=Trafmuni[(Trafmuni['codigo']==MUNI)&(Trafmuni['periodo']==periodo)]
@@ -1607,7 +1608,7 @@ $$i = 1, 2, ..., n$$
     ##Cálculo de los indicadores
     
         if select_indicador == 'Stenbacka':
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)   
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)   
         
             for periodo in PERIODOSTRAF:
                 prTr=Trafdpto[(Trafdpto['departamento']==DPTO)&(Trafdpto['periodo']==periodo)]
@@ -2488,7 +2489,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
         select_variable = st.selectbox('Variable',['Accesos-corporativo','Accesos-residencial','Ingresos']) 
 
         if select_indicador == 'Stenbacka':
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
             for elem in PERIODOS:
                 prAccCorp=AccnacIntCorp[AccnacIntCorp['periodo']==elem]
                 prAccCorp.insert(3,'participacion',Participacion(prAccCorp,'accesos'))
@@ -2815,7 +2816,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
     ## Cálculo de los indicadores 
     
         if select_indicador == 'Stenbacka':                        
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
             
             for periodo in PERIODOSACC:
                 prAccCorp=AccmuniIntCorp[(AccmuniIntCorp['codigo']==MUNI)&(AccmuniIntCorp['periodo']==periodo)]
@@ -3183,7 +3184,7 @@ $$i = 1, 2, ..., n$$
     ##Cálculo de los indicadores
     
         if select_indicador == 'Stenbacka':
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)            
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)            
         
             for periodo in PERIODOSACC:
                 prAcCorp=AccdptoIntCorp[(AccdptoIntCorp['departamento']==DPTO)&(AccdptoIntCorp['periodo']==periodo)]
@@ -4056,7 +4057,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
         select_variable = st.selectbox('Variable',['Suscriptores','Ingresos']) 
 
         if select_indicador == 'Stenbacka':
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
             for elem in PERIODOS:
                 prSus=SusnacTV[SusnacTV['periodo']==elem]
                 prSus.insert(3,'participacion',Participacion(prSus,'suscriptores'))
@@ -4329,7 +4330,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
     ## Cálculo de los indicadores 
 
         if select_indicador == 'Stenbacka':                        
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
             for periodo in PERIODOSSUS:
                 prSus=SusmuniTV[(SusmuniTV['codigo']==MUNI)&(SusmuniTV['periodo']==periodo)]
                 prSus.insert(5,'participacion',Participacion(prSus,'suscriptores'))
@@ -4624,7 +4625,7 @@ $$i = 1, 2, ..., n$$
     ##Cálculo de los indicadores
 
         if select_indicador == 'Stenbacka':
-            gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)            
+            gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)            
         
             for periodo in PERIODOSSUS:
                 prSus=SusdptoTV[(SusdptoTV['departamento']==DPTO)&(SusdptoTV['periodo']==periodo)]
@@ -5112,7 +5113,7 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
     ## Cálculo de los indicadores    
     
     if select_indicador == 'Stenbacka':
-        gamma=st.slider('Seleccionar valor gamma',0.0,1.0,0.1)
+        gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
         for elem in PERIODOS:
             prTr=Trafnac[Trafnac['periodo']==elem]
             prTr.insert(3,'participacion',Participacion(prTr,'trafico'))
