@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.graph_objects as go
-import psutils
+import psutil
 
 fig = go.Figure(data =
     go.Contour(
