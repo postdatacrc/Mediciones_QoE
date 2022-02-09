@@ -177,16 +177,19 @@ def PlotlyConcentracion(df):
     fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
     fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
                   marker_line_width=1.5, opacity=0.4)
-    fig.add_hline(y=0.44, line_dash="dot",
-              annotation_text="Baja", 
-              annotation_position="bottom left")
-    fig.add_hline(y=0.71, line_dash="dot",
-              annotation_text="Alta", 
-              annotation_position="top left",line_color="red")
-    fig.add_hrect(
-    y0=0.45, y1=0.699,
-    fillcolor="orange", opacity=0.4,
-    layer="below", line_width=0,row=1, col=1,annotation_text="Moderada",annotation_position="top left")
+    if conc==3:              
+        fig.add_hline(y=0.44, line_dash="dot",
+                  annotation_text="Baja", 
+                  annotation_position="bottom left")
+        fig.add_hline(y=0.71, line_dash="dot",
+                  annotation_text="Alta", 
+                  annotation_position="top left",line_color="red")
+        fig.add_hrect(
+        y0=0.45, y1=0.699,
+        fillcolor="orange", opacity=0.4,
+        layer="below", line_width=0,row=1, col=1,annotation_text="Moderada",annotation_position="top left")
+    else:
+        pass
     return fig
 def PlotlyPenetracion(df):
     fig = make_subplots(rows=1,cols=1)
@@ -299,8 +302,170 @@ def PlotlyLinda2(df):
     fig.update_traces(marker_color='rgb(127,0,255)', marker_line_color='rgb(51,0,102)',
                   marker_line_width=1.5, opacity=0.4)        
     return fig                
+
+
+##################    INFORMACIÓN SOBRE LOS INDICADORES    ############
+
+                               ##Stenbacka
+IntroStenbacka1="Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado."                 
+InfoStenb1=""" El índice de Stenbacka está dado por la siguiente ecuación"""
+EcuSten=r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]"""
+InfoEcuSten=r"""
+**Donde**
+-   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
+-   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
+                """
+               
+                              ##Concentracion               
+IntroConcentracion="La razón de concentración es un índice que mide las participaciones acumuladas de las empresas líderes en el mercado. Toma valores entre 0 y 1."
+InfoConcen="La concentración se calcula de la siguiente forma:"
+EcuConcen=r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}'''
+InfoEcuConcen=r""" **Donde**:
+-   $S_{i}$ es la participación de mercado de la i-ésima empresa.
+-   $n$ es el número total de empresas consideradas.
+
+De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concetración | Rango         |
+|--------------|---------------|
+| Baja         | $<0,45$       |
+| Moderada     | $0,45 - 0,70$ |
+| Alta         | $>0,70$       |
+                
+                
+"""     
+
+                                   ##IHH           
+IntroIHH="El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000." 
+InfoIHH="La fórmula del IHH está dada como"
+EcuIHH=r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''' 
+InfoEcuIHH=r"""**Donde:**
+-   $S_{i}$ es la participación de mercado de la variable analizada.
+-   $n$ es el número de empresas más grandes consideradas.
+
+De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
+
+| Mercado                   | Rango          |
+|---------------------------|----------------|
+| Muy competitivo           | $<1000$         |
+| Desconcentrado            | $1000 - 1500$   |
+| Moderadamente concentrado | $>1500 - 2500$ |
+| Altamente concentrado     | $>2500$        |                
+                """
+
+                                   ##Linda
+IntroLinda="Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas."                                   
+InfoLinda="El indicador de Linda está dado por la siguiente ecuación:"        
+EcuLinda=r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})'''  
+InfoEcuLinda=r"""**Donde**:
+- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
+- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
+
+De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
+
+| Concentración   | Rango         |
+|-----------------|---------------|
+| Baja            | $<0,20$       |
+| Moderada        | $0,20 - 0,50$ |
+| Concentrada     | $>0,50 - 1$   |
+| Alta            | $>1$          |"""
+
+                                 ##Penetración
+
+IntroPentracion=" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio."
+InfoPenetracion='El indicador de penetración, de manera general, se puede definir como:'
+EcuPenetracion=r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}"""   
+InfoEcuPenetracion=r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
+            mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
+            Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras."""
+
+                                  ##Dominancia
+IntroDominancia="El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013)."
+InfoDominancia="La fórmula de la dominancia está dada como"                
+EcuDominancia=r'''ID=\sum_{i=1}^{n}h_{i}^{2}'''      
+InfoEcuDominancia1=r""" **Donde:**
+    -   $h_{i}=S_{i}^{2}/IHH$                 
+    -   $S_{i}$ es la participación de mercado de la variable analizada.
+    -   $n$ es el número de empresas más grandes consideradas.
+
+    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
+
+    | Concentración                           | Rango          |
+    |-----------------------------------------|----------------|
+    | Baja barreras a la entrada              | $<0.25$        |
+    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
+    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
+    | Altas barreras a la entrada             | $>0.75$        |      
+    """            
+InfoEcuDominancia2="*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*"   
+
+                                  ## Media Entrópica
+
+IntroMEntropica="La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes."                                  
+EcuInfoMEntropica=r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
+-   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
+
+-   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
+
+-   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
+
+La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
+
+$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
+
+**Donde:**
+
+-   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
+
+Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
+
+$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
+
+La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
+
+#### Descomposición multiplicativa de la media entrópica
+
+La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
+
+$$ME = ME_{D} * ME_{E} * ME_{I}$$
+
+**Donde:**
+
+-   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
+
+$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
+$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+-   $ME_{E}$ corresponde al componente de concentración entre los submercados:
+
+$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
+
+-   $ME_{I}$ corresponde al componente de interacción:
+
+$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
+$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
+
+***Donde a su vez de manera general:***
+
+-   $w_{j}$ es:
+
+$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
+$$j = 1, 2, ..., p$$
+
+-   $S_{i}$ es:
+
+$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
+$$i = 1, 2, ..., n$$
+
+-   y $S_{ij}$ corresponde a la participación de la empresa $i$ en el mercado $j$
+                """
+##################    ----------------------------------    ############                
+
+
+
+
 LogoComision="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEX/////K2b/AFf/J2T/AFb/ImL/IGH/G1//Fl3/BVn/EVv//f7/mK//9/n/1+D/7fH/PXH/w9D/0tz/aY3/tsb/qr3/4uj/iKP/6u//y9b/RHX/5ev/ssP/8/b/dZX/NWz/UX3/hqL/XYX/obb/fJv/u8r/VH//XIT/gJ3/lKz/Snn/l6//ZYr/bpH/dpb/AEtCvlPnAAAR2UlEQVR4nO1d2XrqPK9eiXEcO8xjoUxlLHzQff93tzFQCrFsy0po1/qfvkc9KIkVy5ol//nzi1/84he/+MXfgUZ/2Bovd7vBBbvqsttqv05+elll4GXYGxxmSkqlUiFEcsHpr1QpqdLmcTdu/7OEvqx3WxGrNOEssoHxE6mVqLMc/mtkvo6nkVSCW0nL06lk8239r1CZDQeRTBP7xlnITJQcVes/vXovauujUsHU3agUkr0Pf5oGF4Yn8pCc6dhKPvhLd/J1J4qS90mknC3/vjPZ2saCypwAkamc/lUbmfWicrbvDoncr3+ark/Udiotb/u+wFQ0/mnaNGoDJZ5A3pVG1vtp+rLq8+g705hG3R8lcCzQ9J0Ml7MxerLj+BknY1Vbq4nvd6r5cxpy2FSI86dtT1nh8+Outx7WXye1WnZGrdbot1u9dx+JEZOL1x+hb9KRXvq0wck6u3W9Zn3MUPk/Eo9330jYJ3rS8/FPJli6rQ4bnucsUXwuou9m1de589OfbK/KZlnPEE9aebn08sR4aueDJ2AZOxT8iTzx0cKuZ49VpUnyfds42Tg2kCsR4h5kuC28bOP782h6QCu1biATlUMLw5s3vEg0hafTOOs/i6h7vMU2vjqZWcE+AUaU3m/j8+24yT61vJ3LTSv8eb1Akyj+KJ+mB9RtsRde6ZDcHaQo/YIYPdV1HFdgDuXySDwh82CvhKdP9BwHMfhOFh/IEiDoGF5fV3ma43gEl8PUiP5Rg0TpDfGyRKq+kM1BoSBYEfcmTJTeIN9KI+sLtREkE1jlLUj95TG2SWYP1LQsum6ozSAhmjaDGLRRX/d279PtfnbGaPOBttmMNx9KJrABEcjkf9jfv7SW070652cSzm5wpDR8EItSCZxEAIFYG6q97OgkBjkS/h0kgiwqV4hf9pcLnaF5RiguEuUxatY0CWTKr5Tag0hi808UpKWJm7kpRZPZi+dH9QGTZTNmHqokpXEw9aDquH9S6zVliUF+K2S1DALfTZXlCQz1358TBAdQhgHXM+wqVnFaMe2FL0ZVJuLCZviwYhAoXUGK9lw+UbaYYKkvmOeBaRkzl/NS31oDAM8CbxajsJlfMEvs8efG8Xv37wJRSGdM82KUJXYtUY29OQienJMX6lxd4ypDCYEskJ8a53nUsYPtmctNYEmqYjE6rKrLcWs4HLa6vepqMYsJRRsAiWT/+zUvZew7mK3sB5CnUm0G3TogErJ6d9CU9OKN67JmVArzh5BZP1Y7soTMdPy703NL9EnrPSpmHwhiAG6QZzvZtvznzrKBiYwGbZSHXN9FRaSUJMQxTy/N82hsecwEztKwNH23fRIIwyN9I5mgpG1muddJS/inDboPXI66ofGNSZVTrb3EYyhDGOROVmpxB8EQKo+3Idt3QzZmRBrD+bSfC40mG/j/3oBwIJNburU45qTgFGOhHJMLETEGM3oHOIIFSwuyqqJY7mIQ9ppxbuUVcFOyjakkeBET44JGh2LdVoL0fpY7DfCqs735seWhjMTJ0KZfHeCWcwQjJ2ZgSZU1DQKZLCm/57KRbAgRNjmfiXHoFGdmEFw0fdEbPByZZgtCjLfj49pjUPKbLIqKL6Ix2YQKVYWWAP1Ha0aAEa2FcVIqZVfZWZJ5VrAE++TDA3/Am/+R/8Du4AYNa0tC1oYUmXWrP346AQmP/wzPUfiFdaM93k0XoxkXfDZaTHfjti/GUg+zVJnAUdjJHXFlxg7XhucYeYrr+r3jTF7zMvr/tbufKjk79pxf5gVKmNiRog5K3l7TObTcKvrGDjLnbgzfmUzBmAU7uccnD8v+05qpkhxgDEMhUB3BKg+x5SzKu8bCQWB/kLideHZyI6vWBwBKyQGFSEhPjACpRjq628ZO7p1M2TmttcFkL5iQR5uxXhsFMCpDxBarsL3EvqoDjCi4Pe7cavprUK/g8cLyGDj9bAFCojPbktT+IkyMQ2jNHdT3aPrONFaOMK9O8qfC9RBvUrFlL45gFy8/H58CRO0ZBNMyseSSXgO+lPQZjlsXR+htzMenbPGDIacU8Rti+4I2KBxACE/C7cVtKHH1X26P2Qz2rd8CzZHb8+BqIDMDZn1A5KbQIme+kBfdsN9pr2D0Qy2gb2bkF6zwyJqAM31ZDmhE1IM9n3skoH1k5IisP3eGh+uBZWYJWPHRChKhJpgCjJxXtKMhXTGpfAjRBwWFLLp4sWABg4LPPWwJnHL5+oFMKiFN2CtMYATr2A2S9fnRTmAgk3KIRw23g4aKuRHoSk1hZ1OvJH2EBEyQYaBfbgUQOlkiBbSyS9NREJMKQHP1CwqZLzBlStR8KsWCxFpI1Aj7/qn5BMOvKgAWGcw2xPGpPei2DlPTbGY4A9syK2kS04he4IRNbAs4hHYG5Bzj00Gh1TTboIxjUMdxWWqLS1sdJ/saNvfCpl+OGP1CbJiE+RgSjMRSgPJKqJvn90WYaMMKC9NjN4NI4O8sgdPAY3jFV5sOnkfPFdCY/zNTXriTKOGDOKCJCRFdljHBsABLUllJRvP5PqpI5YmGpkAaBCdOUzjsQK2bvwqcqf8DJZKtuv1PJfDS2rmqUFkMqjXUUUjAdGlGd+l0SsYvZoT8MOyU/s5WnMBT2IDuYZbJwFyiEWHCQxfaHD0HhMcDMHea9cCefjW3ZFonKFkD5gNpgkaD7f1CTh7sMd+BEbJisT3acsDIGlDU7MjjH7TGcFsLTDpj0fVccCRhjjg/aidAHxGnTKHliz9/ak4W5768Tba4X7Y8uCqc3K+6AvIK6PpaCy7n+U/2/pqs1U2ZMl8xB0YlJlDbN1nQ6KC+y+9K9phinvcrif5eI4w0ZVvzd7Rex+jiq7jkMJvhquo6Zzkg/YWUGKEPRU3bVL9AFyO5hltYLCgTp2PCEb1GOA8hNn9GVhY69Ocwh9xS9B6vMh2hqlUwMhFwEVG2AoQ0+9Ow840/F/SFJXIqBGYcijJTdVR1yLfOhBUUrSoKTPMwoBCDW/+v0Lkeu1cCVgy2dtPOavncBnDAzacqfB26s48NkKZ1uVNKcJ4IOSN3ZSFMU0Dlhw83uNLw4lCliVEH1o9u553FB2IfOMI4EWbelmrSKFfSROZZsf0QT02atLlBCH4DYqbIaGsebOQ4+YbebeQCxsmcROEbwtk2qwiJgoZPHWMDjA9p5NDx5YT3QGQfuBluIyoLbXZbFU0+XNI2e/0SylFE6O7yKBSnTbAOlcsbbEAoB2Wm5YGYNVEehVrvTG0HX+beAVRHuXPSFnS/lcK13WHLCxqo0ENLqmA4bKjyKdQK30rh/PEVdWhh/F+mMG91QylmXL0kgUIz1U3M/GkKbXVUPFcuBeUn4chmcQoBfUjU+NqGt5kYxuqBd8DRaQ8QkgYI1BBj+unJwf2waAsjdQQUs8CdDh4gtAXw5VCBVoDCnsOIUrl3mAYspuLVBGKMHeBb2DYC8SSrz224v2/5j18htTAgrDbAP0RYsxA0v1uPhVn2katLV5RT6DCi7ig0bSXcLFgDWiOAek7DrPWsNe9fQ20j8mWBokt8LAfiXDFtt8DF79ElZZNDNq18Lk+QOxURUhForCfOhotkzRHAhEqS251YpWkq0wE5SIXYjNj0ranpQ+3GW31uuCS5Nuz21gXmymBSiEB/UI1YKqIVovUM+0qSaUBsBnA+yGabFqb2mkb1jJmxiPA8WIG5JQZqtM62yuGwTZwuUR4/IngNHg+EkgGh1bpdfKfowYMnGRSnHNNBiDC/UihbQk1c6Ic5+CZgeMzJMGep8KsQRO7JCGNqUNNrmuUdmWe85bk6Mx9LfXdaYKrTFBSIRdU0QdC18Y4YrXCUXd+j96kDfDQifCfLZyV6iOdwmasYC2d8tu60FUu5g0ZEDskS30JYeyDOBe0uXSMRJLZyIwBS+x0zCLVm6ZYNHR7+RcGLp8pceUOGY3Pwne0eHUwBJihowhtmbtB5nsxZZyj2bht0Bb2aKQbRiGkosLXNkKsxdIOD+8XcZdzUZ7Y5WioyBxUhGgqs4S1n76ELmu0zj7JRe0tEpjF1dDCw/8tXHGA8BGsPItEJvlYd+/qSWAzdLFD/qLhEozmxAsOkUGfY5W3ksqiz7PLmWE8H6611l/bO2tWmexIoMMMLo9OATpAryIMMWVrTZqX//xI9RmGwHI97u4+R8o4vM08vpgo6H4m+A7Ue48pNKxSXn+dF6MGQ/s8JjA3CBD2t7RaoaLkNZwO7xJ6gy0MNHePpU7b97IYancJzlswY01cMQMEYxsUD/ftPkKtoT6yhJfSSXituQpixRpR3AFbPfmJdoHHpbCkdy7tJjwO50zfM4yuu8r+sQH/kZWhd0CQS5+O4WU7lqBC8+6GLScnZCw2e6E0MGtPhWic0LwXRtOKUpBrIHkbowfvLN2+UMx0YGvKHE2RAKd0DqAJf3jKSDVZ8Fxk4DBbVxJv4QgqBzc6fK7q/S6sxK3oWGVD/im3I9w6oQR3mPDh/ODS1fTGJysGJ0w0UgYjBe4RYRrrJ28fHInoxhdsz5qiFIaZ9mbVnPkBddEvi8Bb9ODipiOzfdA7FuCKsKd9WjF8nzOfU4OAkCnSPM2pOa6D5DQoFjXfCmFUmt7DVXEPqIO8MpTPC4qbgcIwz2qjLdO8hhK05A3cIrU3cOXTDNlEALUZX9ETIZOckHtgOEXbCELY/J1DrO0jMqmgahVxZ3bod8ps7nPtHBG6ii0R9sTxinDxLlSOrj/bJKui7n0MzGMJZfjc8SufcKCbk3DW/vYd1eAKqcVuhOlG4Wwxr66OQ4M1dTCi5WToFIJrAoA6k4PaSZO7TtPVlh1f0ANOEc8Z5ch5fKre7lscVwIcNgmaWI/XrPYmY5pBJfb0cvHcO88Xh463aHSKUFzTVHgZzDE8CEO4Jc2SraBgOeKEXWPaBapjOkRiVfo1to4k3/YJL4tHT0e7ewcubV35G0GS78Mu7CDXDjJd6bfZbiDAIvRrhD21gkPM+r9D325KK8JspJf9VQn1NeWPLB2EOZoV0JUqoo3ghkXRrTx6tQO9SIHukc6DMjTp9zSIXIF/Q3wbOtSNfaYUf/PpAYsELBF4+KqGhIvgGFQwOpLAg/pZgAK+r8PshzbluaBCHBNJvza53vPfvmQBm8wW8kRYVpN2anY1HlJvJWFTIXDTuB8SBcGt2e5XSLrMKuyPIxIpWdSq83tQjeQNBuuTphLiw7N4Qe2lGWN556U4F/QZEYtfNPTJiUSaPEB53v/velGmBRE4pd3M3iHe9eezw+niwkUUv6Uzc+V4sqKVScI7sEwU48+sNZXnd5q3HyAW47PASRoGypLThNy1qnYzDSKXOUrkjMEWHR/1YU2s04JsONJAjgV0ElupvkwetS9s17NSq8huBlkpnMsij1m013vQqwQuB5e7gmUQqo1osOGJX7ieB5YaELhhSr02HLbjQaxgegDInwhF4CdoXkiYQSaWVtVwfOCo9NHvBi3EHCxI8MiOp5KLyE9+D97SUgtqc2N8GhBmJndXRffnVM7AiyhvTvEH0Z8FPKv0iyRx65FuOclUkxIprnpIioyGoM+JhrDyaNzQKU9uI6DJRC8h4PeDRvKE0dLJKcX8XBWpJ14N5Q+j/T0T5V51a0G/SxER6V10UHFFnsvOMHKwNO5qBI77KDlGdE3dIwPbsJ6I/Ip3GZPYpKcLajk8b+A0iJoclKf7HkqvJHNQWkEalpLRC0ThSJM7tUjW8O5bEu6eZaR60R6HVh5rE63Vc2D1kcafk+oAgrGcEGi92F47HmZw/3YjxYGy7gsOBs+7HRJqZHH2bCnSgx4L3Uet+fxKdy9GPCBgA3WZoWuyk+33TYpJ4+zfs3yeGi0pYBEBsFs6brNN49YRITCG87rgK2UjXCJZENpffaaGh0epIYhbnHlyJ1U+LTzsm402lyD2yutf7+LdIFxsm3Y7wXcZl2Twho9XfTt4F2XC3j5UIufT9RJ1aFLhM4AdQG1YXqVRgcfcDbSwRSvLjsv1TpmchvLaqx2YilZ4vwO+FJ2N67sCJNMn2q+XwKQHs70PWaK+Xu+liP+Np5YxYRM35YbXrterf7/T94he/+MUvfvGL/0n8PxO8HWcj0wB/AAAAAElFTkSuQmCC"
-LogoComision2="https://www.postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-blanco.png"
+LogoComision2="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-blanco.png"
 LogoMercadoTIC="https://upload.wikimedia.org/wikipedia/commons/4/41/Noun_project_network_icon_1365244_cc.svg"
 # Set page title and favicon.
 
@@ -376,15 +541,15 @@ st.markdown("""
 <div class="barra-superior">
     <div class="imagen-flotar" style="height: 70px; left: 10px; padding:15px">
         <a class="imagen-flotar" style="float:left;" href="https://www.crcom.gov.co" title="CRC">
-            <img src="https://www.postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-blanco.png" alt="CRC" style="height:40px">
+            <img src="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-blanco.png" alt="CRC" style="height:40px">
         </a>
         <a class="imagen-flotar" style="padding-left:10px;" href="https://www.postdata.gov.co" title="Postdata">
-            <img src="https://www.postdata.gov.co/sites/default/files/postdata-logo.png" alt="Inicio" style="height:40px">
+            <img src="https://postdata.gov.co/sites/default/files/postdata-logo.png" alt="Inicio" style="height:40px">
         </a>
     </div>
     <div class="imagen-flotar" style="height: 80px; left: 300px; padding:5px">
         <a class="imagen-flotar" href="https://www.crcom.gov.co" title="CRC">
-            <img src="https://www.postdata.gov.co/sites/default/files/bateria-indicadores.png" alt="CRC" style="">
+            <img src="https://postdata.gov.co/sites/default/files/bateria-indicadores.png" alt="CRC" style="">
         </a>
     </div>
 </div>""",unsafe_allow_html=True)
@@ -496,103 +661,47 @@ if select_ambito =='Nacional':
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-    **Donde**
-    -   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
-    -   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
-    -   $S_{i}$ es la participación de mercado de la i-ésima empresa.
-    -   $n$ es el número total de empresas consideradas.
-
-    De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración| Rango         |
-    |--------------|---------------|
-    | Baja         | $<0,45$       |
-    | Moderada     | $0,45 - 0,70$ |
-    | Alta         | $>0,70$       |
-                    
-                    
-    """)
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-    """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-    - $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-    - $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-    De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración   | Rango         |
-    |-----------------|---------------|
-    | Baja            | $<0,20$       |
-    | Moderada        | $0,20 - 0,50$ |
-    | Concentrada     | $>0,50 - 1$   |
-    | Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
 
 
             ## Cálculo de los indicadores
@@ -758,104 +867,47 @@ if select_ambito =='Nacional':
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                     
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
  
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -1090,164 +1142,52 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
-                if select_indicador == 'Media entrópica':
-                    st.write("### Media entrópica")
-                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
-                    with st.expander("Cálculo detallado de la media entrópica"):
-                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
--   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
-
--   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
-
--   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
-
-La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
-
-$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
-
-**Donde:**
-
--   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
-
-Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
-
-$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
-
-La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
-
-#### Descomposición multiplicativa de la media entrópica
-
-La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
-
-$$ME = ME_{D} * ME_{E} * ME_{I}$$
-
-**Donde:**
-
--   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
-
-$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
-$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
-
--   $ME_{E}$ corresponde al componente de concentración entre los submercados:
-
-$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
-
--   $ME_{I}$ corresponde al componente de interacción:
-
-$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
-$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
-
-***Donde a su vez de manera general:***
-
--   $w_{j}$ es:
-
-$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
-$$j = 1, 2, ..., p$$
-
--   $S_{i}$ es:
-
-$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
-$$i = 1, 2, ..., n$$
-
-                """)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                  
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(IntroMEntropica)
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(EcuInfoMEntropica)
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -1777,104 +1717,47 @@ $$i = 1, 2, ..., n$$
                 ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-                    """)
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                 
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
 
                 ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -2054,104 +1937,47 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 ## Información de los indicadores 
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-                    """)
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                    
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -2364,164 +2190,53 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
-                if select_indicador == 'Media entrópica':
-                    st.write("### Media entrópica")
-                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
-                    with st.expander("Cálculo detallado de la media entrópica"):
-                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
--   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
-
--   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
-
--   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
-
-La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
-
-$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
-
-**Donde:**
-
--   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
-
-Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
-
-$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
-
-La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
-
-#### Descomposición multiplicativa de la media entrópica
-
-La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
-
-$$ME = ME_{D} * ME_{E} * ME_{I}$$
-
-**Donde:**
-
--   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
-
-$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
-$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
-
--   $ME_{E}$ corresponde al componente de concentración entre los submercados:
-
-$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
-
--   $ME_{I}$ corresponde al componente de interacción:
-
-$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
-$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
-
-***Donde a su vez de manera general:***
-
--   $w_{j}$ es:
-
-$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
-$$j = 1, 2, ..., p$$
-
--   $S_{i}$ es:
-
-$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
-$$i = 1, 2, ..., n$$
-
-                """)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(IntroMEntropica)
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(EcuInfoMEntropica)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                   
 
                 ##Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -3046,106 +2761,50 @@ $$i = 1, 2, ..., n$$
             st.write('#### Agregación nacional')  
             select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
             
-            ## Información sobre los indicadores
+        ## Información sobre los indicadores
             if select_indicador == 'Stenbacka':
                 st.write("### Índice de Stenbacka")
-                st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                st.markdown(IntroStenbacka1)                   
                 with st.expander("Información adicional índice de Stenbacka"):
-                    st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                    st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                    st.write(r"""
-    **Donde**
-    -   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
-    -   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                    st.write(InfoStenb1)
+                    st.latex(EcuSten)
+                    st.write(InfoEcuSten,unsafe_allow_html=True)            
             if select_indicador == 'Concentración':
                 st.write("### Razón de concentración")
-                st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                st.markdown(IntroConcentracion)
                 with st.expander("Información adicional razón de concentración"):
-                    st.write("La concentración se calcula de la siguiente forma:")
-                    st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                    st.write(r""" **Donde**:
-    -   $S_{i}$ es la participación de mercado de la i-ésima empresa.
-    -   $n$ es el número total de empresas consideradas.
-
-    De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración| Rango         |
-    |--------------|---------------|
-    | Baja         | $<0,45$       |
-    | Moderada     | $0,45 - 0,70$ |
-    | Alta         | $>0,70$       |
-                    
-                    
-    """)
+                    st.write(InfoConcen)
+                    st.latex(EcuConcen)
+                    st.write(InfoEcuConcen)
             if select_indicador == 'IHH':
                 st.write("### Índice de Herfindahl-Hirschman")
-                st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                st.markdown(IntroIHH)            
                 with st.expander("Información adicional IHH"):
-                    st.write("La fórmula del IHH está dada como")
-                    st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                    st.write(r""" **Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-    """)
-            if select_indicador == 'Linda':         
+                    st.write(InfoIHH)
+                    st.latex(EcuIHH)
+                    st.write(InfoEcuIHH)
+            if select_indicador == 'Linda':
                 st.write("### Índice de Linda")               
-                st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                st.markdown(IntroLinda)                    
                 with st.expander("Información adicional indicador de linda"): 
-                    st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                    st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                    st.write(r"""**Donde**:
-    - $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-    - $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-    De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración   | Rango         |
-    |-----------------|---------------|
-    | Baja            | $<0,20$       |
-    | Moderada        | $0,20 - 0,50$ |
-    | Concentrada     | $>0,50 - 1$   |
-    | Alta            | $>1$          |""",unsafe_allow_html=True)
+                    st.write(InfoLinda)
+                    st.latex(EcuLinda)
+                    st.write(InfoEcuLinda,unsafe_allow_html=True)        
             if select_indicador == 'Penetración':
                 st.write("### Índice de penetración")
-                st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                st.markdown(IntroPentracion) 
                 with st.expander('Información adicional índice de penetración'):
-                    st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                    st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                    st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                        mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                        Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                    st.markdown(IntroPentracion)
+                    st.latex(EcuPenetracion)
+                    st.markdown(InfoEcuPenetracion)                    
             if select_indicador == 'Dominancia':
                 st.write("### Índice de dominancia")
-                st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                st.markdown(IntroDominancia)
                 with st.expander('Información adicional índice de dominancia'):
-                    st.write("La fórmula de la dominancia está dada como")
-                    st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                    st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                    st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                    st.write(InfoDominancia)
+                    st.latex(EcuDominancia)
+                    st.write(InfoEcuDominancia1)
+                    st.markdown(InfoEcuDominancia2)
         
             ## Cálculo de los indicadores
             if select_indicador == 'Stenbacka':
@@ -3299,107 +2958,50 @@ $$i = 1, 2, ..., n$$
             MUNI=st.selectbox('Escoja el municipio', MUNICIPIOS)
             PERIODOSMUNI=['2020-T3','2020-T4','2021-T1','2021-T2']
 
-            ## Información sobre los indicadores
+        ## Información sobre los indicadores
             if select_indicador == 'Stenbacka':
                 st.write("### Índice de Stenbacka")
-                st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                st.markdown(IntroStenbacka1)                   
                 with st.expander("Información adicional índice de Stenbacka"):
-                    st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                    st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                    st.write(r"""
-    **Donde**
-    -   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
-    -   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                    st.write(InfoStenb1)
+                    st.latex(EcuSten)
+                    st.write(InfoEcuSten,unsafe_allow_html=True)            
             if select_indicador == 'Concentración':
                 st.write("### Razón de concentración")
-                st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                st.markdown(IntroConcentracion)
                 with st.expander("Información adicional razón de concentración"):
-                    st.write("La concentración se calcula de la siguiente forma:")
-                    st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                    st.write(r""" **Donde**:
-    -   $S_{i}$ es la participación de mercado de la i-ésima empresa.
-    -   $n$ es el número total de empresas consideradas.
-
-    De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración| Rango         |
-    |--------------|---------------|
-    | Baja         | $<0,45$       |
-    | Moderada     | $0,45 - 0,70$ |
-    | Alta         | $>0,70$       |
-                    
-                    
-    """)
+                    st.write(InfoConcen)
+                    st.latex(EcuConcen)
+                    st.write(InfoEcuConcen)
             if select_indicador == 'IHH':
                 st.write("### Índice de Herfindahl-Hirschman")
-                st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                st.markdown(IntroIHH)            
                 with st.expander("Información adicional IHH"):
-                    st.write("La fórmula del IHH está dada como")
-                    st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                    st.write(r""" **Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-    """)
-            if select_indicador == 'Linda':         
+                    st.write(InfoIHH)
+                    st.latex(EcuIHH)
+                    st.write(InfoEcuIHH)
+            if select_indicador == 'Linda':
                 st.write("### Índice de Linda")               
-                st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                st.markdown(IntroLinda)                    
                 with st.expander("Información adicional indicador de linda"): 
-                    st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                    st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                    st.write(r"""**Donde**:
-    - $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-    - $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-    De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración   | Rango         |
-    |-----------------|---------------|
-    | Baja            | $<0,20$       |
-    | Moderada        | $0,20 - 0,50$ |
-    | Concentrada     | $>0,50 - 1$   |
-    | Alta            | $>1$          |""",unsafe_allow_html=True)
+                    st.write(InfoLinda)
+                    st.latex(EcuLinda)
+                    st.write(InfoEcuLinda,unsafe_allow_html=True)        
             if select_indicador == 'Penetración':
                 st.write("### Índice de penetración")
-                st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                st.markdown(IntroPentracion) 
                 with st.expander('Información adicional índice de penetración'):
-                    st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                    st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                    st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                        mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                        Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                    st.markdown(IntroPentracion)
+                    st.latex(EcuPenetracion)
+                    st.markdown(InfoEcuPenetracion)                    
             if select_indicador == 'Dominancia':
                 st.write("### Índice de dominancia")
-                st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                st.markdown(IntroDominancia)
                 with st.expander('Información adicional índice de dominancia'):
-                    st.write("La fórmula de la dominancia está dada como")
-                    st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                    st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                    st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-
+                    st.write(InfoDominancia)
+                    st.latex(EcuDominancia)
+                    st.write(InfoEcuDominancia1)
+                    st.markdown(InfoEcuDominancia2)
             ## Cálculo de los indicadores
             if select_indicador == 'Stenbacka':
                 gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
@@ -3639,167 +3241,57 @@ $$i = 1, 2, ..., n$$
             PERIODOSDPTO=['2020-T3','2020-T4','2021-T1','2021-T2']
             
 
-            ## Información sobre los indicadores
+        ## Información sobre los indicadores
             if select_indicador == 'Stenbacka':
                 st.write("### Índice de Stenbacka")
-                st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                st.markdown(IntroStenbacka1)                   
                 with st.expander("Información adicional índice de Stenbacka"):
-                    st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                    st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                    st.write(r"""
-    **Donde**
-    -   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
-    -   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                    st.write(InfoStenb1)
+                    st.latex(EcuSten)
+                    st.write(InfoEcuSten,unsafe_allow_html=True)            
             if select_indicador == 'Concentración':
                 st.write("### Razón de concentración")
-                st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                st.markdown(IntroConcentracion)
                 with st.expander("Información adicional razón de concentración"):
-                    st.write("La concentración se calcula de la siguiente forma:")
-                    st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                    st.write(r""" **Donde**:
-    -   $S_{i}$ es la participación de mercado de la i-ésima empresa.
-    -   $n$ es el número total de empresas consideradas.
-
-    De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración| Rango         |
-    |--------------|---------------|
-    | Baja         | $<0,45$       |
-    | Moderada     | $0,45 - 0,70$ |
-    | Alta         | $>0,70$       |
-                    
-                    
-    """)
+                    st.write(InfoConcen)
+                    st.latex(EcuConcen)
+                    st.write(InfoEcuConcen)
             if select_indicador == 'IHH':
                 st.write("### Índice de Herfindahl-Hirschman")
-                st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                st.markdown(IntroIHH)            
                 with st.expander("Información adicional IHH"):
-                    st.write("La fórmula del IHH está dada como")
-                    st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                    st.write(r""" **Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-    """)
-            if select_indicador == 'Linda':         
+                    st.write(InfoIHH)
+                    st.latex(EcuIHH)
+                    st.write(InfoEcuIHH)
+            if select_indicador == 'Linda':
                 st.write("### Índice de Linda")               
-                st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                st.markdown(IntroLinda)                    
                 with st.expander("Información adicional indicador de linda"): 
-                    st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                    st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                    st.write(r"""**Donde**:
-    - $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-    - $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-    De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración   | Rango         |
-    |-----------------|---------------|
-    | Baja            | $<0,20$       |
-    | Moderada        | $0,20 - 0,50$ |
-    | Concentrada     | $>0,50 - 1$   |
-    | Alta            | $>1$          |""",unsafe_allow_html=True)
-            if select_indicador == 'Media entrópica':
-                st.write("### Media entrópica")
-                st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
-                with st.expander("Cálculo detallado de la media entrópica"):
-                    st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
--   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
-
--   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
-
--   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
-
-La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
-
-$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
-
-**Donde:**
-
--   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
-
-Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
-
-$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
-
-La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
-
-#### Descomposición multiplicativa de la media entrópica
-
-La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
-
-$$ME = ME_{D} * ME_{E} * ME_{I}$$
-
-**Donde:**
-
--   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
-
-$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
-$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
-
--   $ME_{E}$ corresponde al componente de concentración entre los submercados:
-
-$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
-
--   $ME_{I}$ corresponde al componente de interacción:
-
-$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
-$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
-
-***Donde a su vez de manera general:***
-
--   $w_{j}$ es:
-
-$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
-$$j = 1, 2, ..., p$$
-
--   $S_{i}$ es:
-
-$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
-$$i = 1, 2, ..., n$$
-
-                """)   
+                    st.write(InfoLinda)
+                    st.latex(EcuLinda)
+                    st.write(InfoEcuLinda,unsafe_allow_html=True)        
             if select_indicador == 'Penetración':
                 st.write("### Índice de penetración")
-                st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                st.markdown(IntroPentracion) 
                 with st.expander('Información adicional índice de penetración'):
-                    st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                    st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                    st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                        mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                        Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                    st.markdown(IntroPentracion)
+                    st.latex(EcuPenetracion)
+                    st.markdown(InfoEcuPenetracion)                    
             if select_indicador == 'Dominancia':
                 st.write("### Índice de dominancia")
-                st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                st.markdown(IntroDominancia)
                 with st.expander('Información adicional índice de dominancia'):
-                    st.write("La fórmula de la dominancia está dada como")
-                    st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                    st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                    st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-
+                    st.write(InfoDominancia)
+                    st.latex(EcuDominancia)
+                    st.write(InfoEcuDominancia1)
+                    st.markdown(InfoEcuDominancia2)
+            if select_indicador == 'Media entrópica':
+                st.write("### Media entrópica")
+                st.write(IntroMEntropica)
+                with st.expander("Cálculo detallado de la media entrópica"):
+                    st.write(EcuInfoMEntropica)
+                    
+                    
             ## Cálculo de los indicadores
             if select_indicador == 'Stenbacka':
                 gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
@@ -4360,107 +3852,51 @@ if select_ambito =='Internacional':
             if select_dimension == 'Nacional':  
                 st.write('#### Agregación nacional')  
                 select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
-            ## Información sobre los indicadores                                
+            ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-    **Donde**
-    -   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
-    -   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
-    -   $S_{i}$ es la participación de mercado de la i-ésima empresa.
-    -   $n$ es el número total de empresas consideradas.
-
-    De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concetración | Rango         |
-    |--------------|---------------|
-    | Baja         | $<0,45$       |
-    | Moderada     | $0,45 - 0,70$ |
-    | Alta         | $>0,70$       |
-                    
-                    
-    """)
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-                    """)
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-    - $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-    - $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-    De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración   | Rango         |
-    |-----------------|---------------|
-    | Baja            | $<0,20$       |
-    | Moderada        | $0,20 - 0,50$ |
-    | Concentrada     | $>0,50 - 1$   |
-    | Alta            | $>1$          |""",unsafe_allow_html=True)        
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
+                        
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
                     gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
@@ -4623,104 +4059,47 @@ if select_ambito =='Internacional':
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                     
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
  
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -4955,164 +4334,53 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
-                if select_indicador == 'Media entrópica':
-                    st.write("### Media entrópica")
-                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
-                    with st.expander("Cálculo detallado de la media entrópica"):
-                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
--   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
-
--   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
-
--   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
-
-La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
-
-$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
-
-**Donde:**
-
--   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
-
-Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
-
-$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
-
-La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
-
-#### Descomposición multiplicativa de la media entrópica
-
-La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
-
-$$ME = ME_{D} * ME_{E} * ME_{I}$$
-
-**Donde:**
-
--   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
-
-$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
-$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
-
--   $ME_{E}$ corresponde al componente de concentración entre los submercados:
-
-$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
-
--   $ME_{I}$ corresponde al componente de interacción:
-
-$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
-$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
-
-***Donde a su vez de manera general:***
-
--   $w_{j}$ es:
-
-$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
-$$j = 1, 2, ..., p$$
-
--   $S_{i}$ es:
-
-$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
-$$i = 1, 2, ..., n$$
-
-                """)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(IntroMEntropica)
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(EcuInfoMEntropica)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                  
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -5644,107 +4912,51 @@ $$i = 1, 2, ..., n$$
              
             if select_dimension == 'Nacional':       
                 select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
-                ## Información sobre los indicadores
+            ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-                    """)
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                 
 
                 ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -5947,107 +5159,56 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 MUNI=st.selectbox('Escoja el municipio', MUNICIPIOS)
                 PERIODOSMUNI=['2020-T3','2020-T4','2021-T1','2021-T2']
                 
-                ## Información de los indicadores 
+            ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-                    """)
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(IntroMEntropica)
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(EcuInfoMEntropica)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                    
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -6260,164 +5421,53 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
-                if select_indicador == 'Media entrópica':
-                    st.write("### Media entrópica")
-                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
-                    with st.expander("Cálculo detallado de la media entrópica"):
-                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
--   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
-
--   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
-
--   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
-
-La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
-
-$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
-
-**Donde:**
-
--   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
-
-Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
-
-$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
-
-La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
-
-#### Descomposición multiplicativa de la media entrópica
-
-La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
-
-$$ME = ME_{D} * ME_{E} * ME_{I}$$
-
-**Donde:**
-
--   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
-
-$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
-$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
-
--   $ME_{E}$ corresponde al componente de concentración entre los submercados:
-
-$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
-
--   $ME_{I}$ corresponde al componente de interacción:
-
-$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
-$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
-
-***Donde a su vez de manera general:***
-
--   $w_{j}$ es:
-
-$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
-$$j = 1, 2, ..., p$$
-
--   $S_{i}$ es:
-
-$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
-$$i = 1, 2, ..., n$$
-
-                """)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(IntroMEntropica)
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(EcuInfoMEntropica)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                   
                 ##Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
                     gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
@@ -6943,106 +5993,50 @@ $$i = 1, 2, ..., n$$
             if select_dimension == 'Nacional':  
                 st.write('#### Agregación nacional')  
                 select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
-            ## Información sobre los indicadores                                
+            ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-    **Donde**
-    -   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
-    -   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
-    -   $S_{i}$ es la participación de mercado de la i-ésima empresa.
-    -   $n$ es el número total de empresas consideradas.
-
-    De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concetración | Rango         |
-    |--------------|---------------|
-    | Baja         | $<0,45$       |
-    | Moderada     | $0,45 - 0,70$ |
-    | Alta         | $>0,70$       |
-                    
-                    
-    """)
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-                    """)
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-    - $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-    - $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-    De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-    | Concentración   | Rango         |
-    |-----------------|---------------|
-    | Baja            | $<0,20$       |
-    | Moderada        | $0,20 - 0,50$ |
-    | Concentrada     | $>0,50 - 1$   |
-    | Alta            | $>1$          |""",unsafe_allow_html=True)        
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -7206,104 +6200,48 @@ $$i = 1, 2, ..., n$$
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                     
  
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -7538,164 +6476,53 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
-                if select_indicador == 'Media entrópica':
-                    st.write("### Media entrópica")
-                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
-                    with st.expander("Cálculo detallado de la media entrópica"):
-                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
--   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
-
--   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
-
--   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
-
-La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
-
-$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
-
-**Donde:**
-
--   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
-
-Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
-
-$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
-
-La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
-
-#### Descomposición multiplicativa de la media entrópica
-
-La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
-
-$$ME = ME_{D} * ME_{E} * ME_{I}$$
-
-**Donde:**
-
--   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
-
-$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
-$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
-
--   $ME_{E}$ corresponde al componente de concentración entre los submercados:
-
-$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
-
--   $ME_{I}$ corresponde al componente de interacción:
-
-$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
-$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
-
-***Donde a su vez de manera general:***
-
--   $w_{j}$ es:
-
-$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
-$$j = 1, 2, ..., p$$
-
--   $S_{i}$ es:
-
-$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
-$$i = 1, 2, ..., n$$
-
-                """)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(IntroMEntropica)
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(EcuInfoMEntropica)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                  
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -8226,107 +7053,50 @@ $$i = 1, 2, ..., n$$
                 
             if select_dimension == 'Nacional':       
                 select_indicador = st.sidebar.selectbox('Indicador',['Stenbacka', 'Concentración','IHH','Linda','Penetración','Dominancia'])
-                ## Información sobre los indicadores
+            ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-                    """)
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                 
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
 
                 ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -8530,107 +7300,51 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
                 MUNI=st.selectbox('Escoja el municipio', MUNICIPIOS)
                 PERIODOSMUNI=['2020-T3','2020-T4','2021-T1','2021-T2']
                 
-                ## Información de los indicadores 
+            ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
-
-    De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-    | Mercado                   | Rango          |
-    |---------------------------|----------------|
-    | Muy competitivo           | $<100$         |
-    | Desconcentrado            | $100 - 1500$   |
-    | Moderadamente concentrado | $>1500 - 2500$ |
-    | Altamente concentrado     | $>2500$        |                
-                    """)
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
                 if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                    
 
             ## Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
@@ -8849,164 +7563,53 @@ De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de co
             ## Información sobre los indicadores
                 if select_indicador == 'Stenbacka':
                     st.write("### Índice de Stenbacka")
-                    st.markdown("Este índice de dominancia es una medida para identificar cuándo una empresa podría tener posición dominante en un mercado determinado. Se considera la participación de mercado de las dos empresas con mayor participación y se calcula un umbral de cuota de mercado después del cual la empresa lider posiblemente ostentaría posición de dominio. Cualquier couta de mercado superior a dicho umbral podría significar una dominancia en el mercado.")
-                    #st.latex(r'''S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]''')       
+                    st.markdown(IntroStenbacka1)                   
                     with st.expander("Información adicional índice de Stenbacka"):
-                        st.write(r""" El índice de Stenbacka está dado por la siguiente ecuación""")
-                        st.latex(r"""S^{D}=\frac{1}{2}\left[1-\gamma(S_{1}^{2}-S_{2}^{2})\right]""")
-                        st.write(r"""
-**Donde**
--   $S^{2}_{1}$ y $S^{2}_{2}$ Corresponden a las participaciones de mercado de las dos empresas más grandes, respectivamente.
--   $\gamma$ es un parámetro de competencia que puede incluir aspectos como: existencia de compradores con poder de mercado, regulación económica, presencia de derechos de propiedad, barreras a la entrada, entre otros (Lis-Guitiérrez, 2013).                
-                    """,unsafe_allow_html=True)
+                        st.write(InfoStenb1)
+                        st.latex(EcuSten)
+                        st.write(InfoEcuSten,unsafe_allow_html=True)            
                 if select_indicador == 'Concentración':
                     st.write("### Razón de concentración")
-                    st.markdown("La razón de concentración es un índice que mide las participaciones acumuladas de las empresas lideres en el mercado. Toma valores entre 0 y 1.")            
+                    st.markdown(IntroConcentracion)
                     with st.expander("Información adicional razón de concentración"):
-                        st.write("La concentración se calcula de la siguiente forma:")
-                        st.latex(r''' CR_{n}=S_1+S_2+S_3+...+S_n=\sum_{i=1}^{n}S_{i}''')
-                        st.write(r""" **Donde**:
--   $S_{i}$ es la participación de mercado de la i-ésima empresa.
--   $n$ es el número total de empresas consideradas.
-
-De acuerdo con Stazhkova, Kotcofana & Protasov (2017), para un $n = 3$ se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concetración | Rango         |
-|--------------|---------------|
-| Baja         | $<0,45$       |
-| Moderada     | $0,45 - 0,70$ |
-| Alta         | $>0,70$       |
-                
-                
-""")
+                        st.write(InfoConcen)
+                        st.latex(EcuConcen)
+                        st.write(InfoEcuConcen)
                 if select_indicador == 'IHH':
                     st.write("### Índice de Herfindahl-Hirschman")
-                    st.markdown("El IHH es el índice más aceptado como medida de concentración de la oferta en un mercado. Su cálculo se expresa como la suma de los cuadrados de las participaciones de las empresas que componen el mercado. El índice máximo se obtiene para un monopolio y corresponde a 10000.")            
+                    st.markdown(IntroIHH)            
                     with st.expander("Información adicional IHH"):
-                        st.write("La fórmula del IHH está dada como")
-                        st.latex(r'''IHH=\sum_{i=1}^{n}S_{i}^{2}''')
-                        st.write(r"""**Donde:**
--   $S_{i}$ es la participación de mercado de la variable analizada.
--   $n$ es el número de empresas más grandes consideradas.
-
-De acuerdo con el Departamento de Justicia y la Comisión Federal de Comercio de Estados Unidos (2010), se puede categorizar a un mercado de acuerdo a los siguientes rangos de este índice:
-
-| Mercado                   | Rango          |
-|---------------------------|----------------|
-| Muy competitivo           | $<100$         |
-| Desconcentrado            | $100 - 1500$   |
-| Moderadamente concentrado | $>1500 - 2500$ |
-| Altamente concentrado     | $>2500$        |                
-                """)
-                if select_indicador == 'Linda':         
+                        st.write(InfoIHH)
+                        st.latex(EcuIHH)
+                        st.write(InfoEcuIHH)
+                if select_indicador == 'Linda':
                     st.write("### Índice de Linda")               
-                    st.markdown("Este índice es utilizado para medir la desigualdad entre diferentes cuotas de mercado e identificar posibles oligopolios. El índice tomará valores cercanos a 1 en la medida que la participación en el mercado del grupo de empresas grandes es mayor que la participación del grupo de empresas pequeñas.")                    
+                    st.markdown(IntroLinda)                    
                     with st.expander("Información adicional indicador de linda"): 
-                        st.write("El indicador de Linda está dado por la siguiente ecuación:")
-                        st.latex(r'''L = \frac{1}{N(N-1)} \sum_{i=1}^{N-1} (\frac{\overline{X}_{i}}{\overline{X}_{N-i}})''')
-                        st.write(r"""**Donde**:
-- $\overline{X}_{i}$ es la participación de mercado media de las primeras i-ésimas empresas.
-- $\overline{X}_{N-i}$ es la partipación de mercado media de las i-ésimas empresas restantes.
-
-De acuerdo con Martinez (2017), se pueden considerar los siguientes rangos de concentración para un mercado:
-
-| Concentración   | Rango         |
-|-----------------|---------------|
-| Baja            | $<0,20$       |
-| Moderada        | $0,20 - 0,50$ |
-| Concentrada     | $>0,50 - 1$   |
-| Alta            | $>1$          |""",unsafe_allow_html=True)
-                if select_indicador == 'Media entrópica':
-                    st.write("### Media entrópica")
-                    st.write(r"""La media entrópica es un índice que tiene los mismos límites superiores e inferiores del IHH/10000 (1/n a 1), donde n es el número de empresas en el mercado. El valor mayor de este índice es 1 y corresponde a una situación de monopolio. En el intermedio el índice tomará valores inferiores al IHH/10000 pero no muy distantes.""")
-                    with st.expander("Cálculo detallado de la media entrópica"):
-                        st.write(r""" Para un mercado dividido en submercados, la media entrópica se descompone en tres términos múltiplicativos:
--   **Concentración dentro del submercado:** donde cada submercado trendrá su cálculo de la media entrópica. Este factor, para el mercado en conjunto, tomará valores entre 0 y 1 que representa la concentración dentro del submercado en el conjunto del mercado.
-
--   **Concentración entre los submercados:** donde cada submercado tendrá su cuota de participación en el mercado total. Para el mercado en conjunto, este factor tomará valores entre 1/n y 1, siendo cercano a 1 en la medida que hayan pocos submercados, en relación al total, con una cuota de participación mayor en el mercado.
-
--   **Componente de interacción:** Este factor tomará valores mayores que 1. En cada submercado su valor crecerá exponencialmente en la medida que se trate de mercados pequeños atendidos en buena parte por una o pocas empresas grandes en el mercado total. Los valores más altos de este factor para el mercado total puden interpretarse como alertas para hacer un mayor seguimiento a los submercados correspondientes.             
-
-La media entrópica se descompone en tres terminos multiplicativos que resultan de aplicar su definición (ME) a la descomposición del índice de Theil (EI).En el cual, el índice de Theil (Theil, 1967), se representa como la suma de las participaciones del mercado multiplicada cada una por el logaritmo natural de su inverso:
-
-$$IE = \sum_{i=1}^{n} S_{i} ln\frac{1}{S_{i}}$$
-
-**Donde:**
-
--   $S_{i}$ corresponde a la participación de cada una de las empresas del mercado.
-
-Y por su parte, la media entrópica parte del exponencial del índice de entrópia de Theil ($e^{IE}$), que de acuerdo con Taagepera y Grofman (1981) corresponde a un número efectivo de empresas comparable con el número de empresas equivalentes que se obtienen como el inverso del índice IHH (10000/IHH). Para finalmente, hayar su cálculo a través del inverso del número efectivo de Taagepera y Grofman ($e^{-IE}$) de la siguiente manera:
-
-$$ME = e_{-IE} = \prod_{i=1}^{n} S_{i}^{\frac{S_{i}}{n_{i}}}$$
-
-La media entrópica, al contrario del índice IE, pero en la misma dirección del índice IHH, aumenta cuando crece la concentración, lo cual facilita su interpretación. El límite superior del IE (mínima concentración) es un valor que depende del número de competidores (ln(n); donde n es el número de competidores), mientras que los índices ME e IHH/10000 siempre producen un valor entre cero y uno, correspondiendo para ambos la mínima concentración a 1/n cuando hay n competidores, y tomando ambos el valor de uno (1) para un mercado monopólico (máxima concentración).
-
-#### Descomposición multiplicativa de la media entrópica
-
-La descomposición multiplicativa de la media entrópica se haya de la siguiente manera:
-
-$$ME = ME_{D} * ME_{E} * ME_{I}$$
-
-**Donde:**
-
--   $ME_{D}$ corresponde al componente de concentración dentro del submercado:
-
-$$ME_{D} = \prod_{j=1}^{p} ME_{D,j}^{w_{j}};$$
-$$ME_{D,j} = \prod_{i \in C_{j}}(\frac{S_{ij}}{n_{i}w_{j}})^{(\frac{S_{ij}}{w_{j}})}$$
-
--   $ME_{E}$ corresponde al componente de concentración entre los submercados:
-
-$$ME_{E} = \prod_{j=1}^{p} W_{j}^{w_{j}}$$
-
--   $ME_{I}$ corresponde al componente de interacción:
-
-$$ME_{I} = \prod_{j=1}^{p} ME_{I,j}^{w_{j}};$$
-$$ME_{I,j} = \prod_{i \in C_{j}}^{n} (\frac{S_{i}}{S_{ij}})^{(\frac{S_{ij}}{w_{j}})}$$
-
-***Donde a su vez de manera general:***
-
--   $w_{j}$ es:
-
-$$w_{j} = \sum_{i=1}^{n} S_{ij};$$
-$$j = 1, 2, ..., p$$
-
--   $S_{i}$ es:
-
-$$S_{i} = \sum_{j=1}^{p} S_{ij};$$
-$$i = 1, 2, ..., n$$
-
-                """)
+                        st.write(InfoLinda)
+                        st.latex(EcuLinda)
+                        st.write(InfoEcuLinda,unsafe_allow_html=True)        
                 if select_indicador == 'Penetración':
                     st.write("### Índice de penetración")
-                    st.markdown(" La penetración de mercado mide el grado de utilización o alcance de un producto o servicio en relación con el tamaño del mercado potencial estimado para ese producto o servicio.") 
+                    st.markdown(IntroPentracion) 
                     with st.expander('Información adicional índice de penetración'):
-                        st.markdown(r'''El indicador de penetración, de manera general, se puede definir como: ''')
-                        st.latex(r"""\textrm{Penetracion}(t)=\frac{\textrm{Transacciones}(t)}{\textrm{Tamaño total del mercado}(t)}""")
-                        st.markdown(r"""En donde las transacciones en el periodo t pueden representarse, en el caso de los mercados de comunicaciones,
-                    mediante variables como el número de líneas, accesos, conexiones, suscripciones tráfico o envíos.
-                    Por su parte, el tamaño total del mercado suele ser aproximado mediante variables demográficas como el número de habitantes u hogares, entre otras.""")                    
+                        st.markdown(IntroPentracion)
+                        st.latex(EcuPenetracion)
+                        st.markdown(InfoEcuPenetracion)                    
                 if select_indicador == 'Dominancia':
                     st.write("### Índice de dominancia")
-                    st.markdown("El índice de dominancia se calcula de forma similar al IHH, tomando, en lugar de las participaciones directas en el mercado, la participación de cada empresa en el cálculo original del IHH (Lis-Gutiérrez, 2013).")
+                    st.markdown(IntroDominancia)
                     with st.expander('Información adicional índice de dominancia'):
-                        st.write("La fórmula de la dominancia está dada como")
-                        st.latex(r'''ID=\sum_{i=1}^{n}h_{i}^{2}''')
-                        st.write(r""" **Donde:**
-    -   $h_{i}=S_{i}^{2}/IHH$                 
-    -   $S_{i}$ es la participación de mercado de la variable analizada.
-    -   $n$ es el número de empresas más grandes consideradas.
+                        st.write(InfoDominancia)
+                        st.latex(EcuDominancia)
+                        st.write(InfoEcuDominancia1)
+                        st.markdown(InfoEcuDominancia2)
+                if select_indicador == 'Media entrópica':
+                    st.write("### Media entrópica")
+                    st.write(IntroMEntropica)
+                    with st.expander("Cálculo detallado de la media entrópica"):
+                        st.write(EcuInfoMEntropica)
 
-    Igual que para el IHH, el rango de valores de éste índice está entre $1/n$ y $1$. Se han establecido rangos de niveles de concentración, asociados con barreras a la entrada, como se muestra en el siguiente cuadro.
-
-    | Concentración                           | Rango          |
-    |-----------------------------------------|----------------|
-    | Baja barreras a la entrada              | $<0.25$        |
-    | Nivel medio de barreras a la entrada    | $0.25 - 0.50$  |
-    | Nivel moderado de barreras a la entrada | $0.50 - 0.75$  |
-    | Altas barreras a la entrada             | $>0.75$        |                
-    """)
-                        st.markdown("*Fuente: Estos rangos se toman de “Concentración o desconcentración del mercado de telefonía móvil de Colombia: Una aproximación”. Martinez, O. J. (2017).*")
-                   
                 ##Cálculo de los indicadores
                 if select_indicador == 'Stenbacka':
                     gamma=st.slider('Seleccionar valor gamma',0.0,2.0,0.1)
