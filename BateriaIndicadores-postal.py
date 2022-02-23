@@ -143,12 +143,12 @@ def Linda(df,column,periodo):
 ##
 ##Definición funciones para graficar los indicadores:
 def PlotlyStenbacka(df):
-    empresasdf=df['empresa'].unique().tolist()
+    empresasdf=df['id_empresa'].unique().tolist()
     fig = make_subplots(rows=1, cols=1)
     dfStenbacka=df.groupby(['periodo'])['stenbacka'].mean().reset_index()
     for elem in empresasdf:
-        fig.add_trace(go.Scatter(x=df[df['empresa']==elem]['periodo'],
-        y=df[df['empresa']==elem]['participacion'],text=df[df['empresa']==elem]['empresa'],
+        fig.add_trace(go.Scatter(x=df[df['id_empresa']==elem]['periodo'],
+        y=df[df['id_empresa']==elem]['participacion'],text=df[df['id_empresa']==elem]['empresa'],
         mode='lines+markers',line = dict(width=0.8),name='',hovertemplate =
         '<br><b>Empresa</b>:<br>'+'%{text}'+
         '<br><b>Periodo</b>: %{x}<br>'+                         
@@ -157,27 +157,66 @@ def PlotlyStenbacka(df):
         hovertemplate =
         '<br><b>Periodo</b>: %{x}<br>'+                         
         '<br><b>Stenbacka</b>: %{y:.4f}<br>'))    
-    fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
-    fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="Participación (%)", row=1, col=1)
-    fig.update_layout(height=550,title="<b> Participación por periodo</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
+    fig.update_xaxes(tickangle=0, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  # Sets color of X-axis line
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='lightpink',
+    showticklabels=True)
+    fig.update_yaxes(tickfont=dict(family='Boston', color='black', size=12),titlefont_size=16, title_text="Participación", row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  # Sets color of X-axis line
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='lightpink',
+    showticklabels=True)
+    fig.update_layout(height=550,legend_title=None)
+    fig.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=20,
+    title={
+    'text': "<b> Participación e índice de Stenbacka por periodo</b>",
+    'y':0.9,
+    'x':0.5,
+    'xanchor': 'center',
+    'yanchor': 'top'})
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
     fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(192, 192, 192, 0.4)')
     fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(192, 192, 192, 0.4)')
     return fig
+
 def PlotlyConcentracion(df):    
     fig = make_subplots(rows=1,cols=1)
     fig.add_trace(go.Bar(x=df['periodo'], y=flatten(df.iloc[:, [conc]].values),hovertemplate =
     '<br><b>Periodo</b>: %{x}<br>'+                         
     '<br><b>Concentración</b>: %{y:.4f}<br>',name=''))
-    fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
-    fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="Concentración", row=1, col=1)
-    fig.update_layout(height=550,title="<b> Razón de concentración por periodo</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
+    fig.update_xaxes(tickangle=0,title_text=None,row=1, col=1)
+    fig.update_yaxes(titlefont_size=12, title_text="Concentración", row=1, col=1)
+    fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
+    fig.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=20,
+    title={
+    'text': "<b>Razón de concentración por periodo</b>",
+    'y':0.9,
+    'x':0.5,
+    'xanchor': 'center',
+    'yanchor': 'top'})    
+    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)
+    fig.update_yaxes(tickfont=dict(family='Boston', color='black', size=12),titlefont_size=16, title_text="Concentración", row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2, 
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)    
+    fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(0,0,0)',
                   marker_line_width=1.5, opacity=0.4)
-    if conc==3:              
+    if conc==3:
         fig.add_hline(y=0.44, line_dash="dot",
                   annotation_text="Baja", 
                   annotation_position="bottom left")
@@ -191,50 +230,40 @@ def PlotlyConcentracion(df):
     else:
         pass
     return fig
-def PlotlyPenetracion(df):
-    fig = make_subplots(rows=1,cols=1)
-    fig.add_trace(go.Bar(x=df['periodo'], y=df['penetracion'],
-                         hovertemplate =
-        '<br><b>Periodo</b>: %{x}<br>'+                         
-        '<br><b>Penetración</b>: %{y:.4f}<br>',name=''))
-    fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
-    fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="Penetración", row=1, col=1)
-    fig.update_layout(height=550,title="<b> Índice de penetración</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
-    fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_traces(marker_color='rgb(0,153,153)', marker_line_color='rgb(32,32,32)',
-                      marker_line_width=1.5, opacity=0.4)
-    return fig    
-def PlotlyDominancia(df):    
-    fig = make_subplots(rows=1,cols=1)
-    fig.add_trace(go.Bar(x=df['periodo'], y=df['Dominancia'],
-                         hovertemplate =
-        '<br><b>Periodo</b>: %{x}<br>'+                         
-        '<br><b>Dominancia</b>: %{y:.4f}<br>',name=''))
-    fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
-    fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="Dominancia", row=1, col=1)
-    fig.update_layout(height=550,title="<b> Índice de dominancia</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
-    fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_traces(marker_color='rgb(204,102,0)', marker_line_color='rgb(102,51,0)',
-                      marker_line_width=1.5, opacity=0.4)
-    return fig    
+
 def PlotlyIHH(df):    
     fig = make_subplots(rows=1,cols=1)
     fig.add_trace(go.Bar(x=df['periodo'], y=df['IHH'],
                          hovertemplate =
         '<br><b>Periodo</b>: %{x}<br>'+                         
         '<br><b>IHH</b>: %{y:.4f}<br>',name=''))
-    fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
-    fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="Concentración", row=1, col=1)
-    fig.update_layout(height=550,title="<b> Índice Herfindahl-Hirschman</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
+    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)
+    fig.update_yaxes(tickfont=dict(family='Boston', color='black', size=12),titlefont_size=16, title_text="IHH", row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2, 
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)        
+    fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_traces(marker_color='rgb(255,0,0)', marker_line_color='rgb(204,0,0)',
-                      marker_line_width=1.5, opacity=0.4)
+    fig.update_layout(height=550,legend_title=None)
+    fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+    fig.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=20,
+    title={
+    'text': "<b>Índice Herfindahl-Hirschman por periodo</b>",
+    'y':0.9,
+    'x':0.5,
+    'xanchor': 'center',
+    'yanchor': 'top'})    
+    fig.update_traces(marker_color='rgb(255,0,0)', marker_line_color='rgb(0,0,0)',
+                      marker_line_width=1.5, opacity=0.5)
     fig.add_hline(y=1500, line_dash="dot",
                   annotation_text="No concentrado", 
                   annotation_position="bottom left")
@@ -246,6 +275,73 @@ def PlotlyIHH(df):
         fillcolor="rgb(0,0,102)", opacity=0.6,
         layer="below", line_width=0,row=1, col=1,annotation_text="Concentrado",annotation_position="bottom left")
     return fig    
+
+def PlotlyDominancia(df):    
+    fig = make_subplots(rows=1,cols=1)
+    fig.add_trace(go.Bar(x=df['periodo'], y=df['Dominancia'],
+                         hovertemplate =
+        '<br><b>Periodo</b>: %{x}<br>'+                         
+        '<br><b>Dominancia</b>: %{y:.4f}<br>',name=''))
+    fig.update_layout(height=550,legend_title=None)
+    fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)
+    fig.update_yaxes(tickfont=dict(family='Boston', color='black', size=12),titlefont_size=16, title_text="Dominancia", row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2, 
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)        
+    fig.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=20,
+    title={
+    'text': "<b>Índice de dominancia por periodo</b>",
+    'y':0.9,
+    'x':0.5,
+    'xanchor': 'center',
+    'yanchor': 'top'}) 
+    fig.update_traces(marker_color='rgb(255,128,0)', marker_line_color='rgb(0,0,0)',
+                      marker_line_width=1.5, opacity=0.4)
+    return fig    
+  
+def PlotlyPenetracion(df):
+    fig = make_subplots(rows=1,cols=1)
+    fig.add_trace(go.Bar(x=df['periodo'], y=df['penetracion'],
+                         hovertemplate =
+        '<br><b>Periodo</b>: %{x}<br>'+                         
+        '<br><b>Penetración</b>: %{y:.4f}<br>',name=''))
+    fig.update_layout(height=550,legend_title=None)
+    fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)
+    fig.update_yaxes(tickfont=dict(family='Boston', color='black', size=12),titlefont_size=16, title_text="Penetración", row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2, 
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)        
+    fig.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=20,
+    title={
+    'text': "<b>Índice de penetración por periodo</b>",
+    'y':0.9,
+    'x':0.5,
+    'xanchor': 'center',
+    'yanchor': 'top'}) 
+    fig.update_traces(marker_color='rgb(0,153,153)', marker_line_color='rgb(0,0,0)',
+                      marker_line_width=1.5, opacity=0.4)
+    return fig    
+
 def PlotlyMEntropica(df):
     fig = make_subplots(rows=1, cols=1)
     fig.add_trace(go.Bar(x=df['periodo'],
@@ -253,17 +349,36 @@ def PlotlyMEntropica(df):
         name='',hovertemplate =
         '<br><b>Periodo</b>: %{x}<br>'+                         
         '<br><b>MEDIA ENTROPICA</b>: %{y:.4f}<br>')) 
-    fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
-    fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="MEDIA ENTROPICA", row=1, col=1)
-    fig.update_layout(height=550,title="<b>Evolución Media entrópica</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
+    fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_traces(marker_color='rgb(0,153,0)', marker_line_color='rgb(25,51,0)',
+    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)
+    fig.update_yaxes(tickfont=dict(family='Boston', color='black', size=12),titlefont_size=16, title_text="Media entrópica", row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2, 
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)        
+    fig.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=20,
+    title={
+    'text': "<b>Evolución Media entrópica por periodo</b>",
+    'y':0.9,
+    'x':0.5,
+    'xanchor': 'center',
+    'yanchor': 'top'}) 
+
+    fig.update_traces(marker_color='rgb(0,153,0)', marker_line_color='rgb(0,0,0)',
                       marker_line_width=1.5, opacity=0.5)
     return fig
+
 def PlotlyMentropicaTorta(df):
-    fig = px.pie(df, values='WJ', names='id_municipio', color_discrete_sequence=px.colors.sequential.RdBu)
+    fig = px.pie(df, values='WJ', names='municipio', color_discrete_sequence=px.colors.sequential.RdBu)
     fig.update_traces(textposition='inside')
     fig.update_layout(uniformtext_minsize=20, uniformtext_mode='hide',height=500, width=280)
     fig.update_traces(hoverinfo='label+percent', textinfo='value',
@@ -274,18 +389,37 @@ def PlotlyMentropicaTorta(df):
     y=0,
     x=0.1))
     return fig
+
 def PlotlyLinda(df):    
     fig = make_subplots(rows=1,cols=1)
     fig.add_trace(go.Bar(x=df['periodo'], y=flatten(df.iloc[:, [lind-1]].values),hovertemplate =
     '<br><b>Periodo</b>: %{x}<br>'+                         
     '<br><b>Linda</b>: %{y:.4f}<br>',name=''))
-    fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
-    fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="Linda", row=1, col=1)
-    fig.update_layout(height=550,title="<b> Índice de Linda por periodo</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
+    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)
+    fig.update_yaxes(tickfont=dict(family='Boston', color='black', size=12),titlefont_size=16, title_text="Linda", row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2, 
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)        
+    fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_yaxes(showgrid=True,gridwidth=1,range=[0,flatten(df.iloc[:, [lind-1]].values)],gridcolor='rgba(220, 220, 220, 0.4)',type="linear",rangemode="tozero")
-    fig.update_traces(marker_color='rgb(127,0,255)', marker_line_color='rgb(51,0,102)',
+    fig.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=20,
+    title={
+    'text': "<b>Índice de Linda por periodo</b>",
+    'y':0.9,
+    'x':0.5,
+    'xanchor': 'center',
+    'yanchor': 'top'})      
+    fig.update_yaxes(range=[0,flatten(df.iloc[:, [lind-1]].values)],type="linear",rangemode="tozero")
+    fig.update_traces(marker_color='rgb(127,0,255)', marker_line_color='rgb(0,0,0)',
                   marker_line_width=1.5, opacity=0.4)
     return fig
 def PlotlyLinda2(df):
@@ -293,13 +427,33 @@ def PlotlyLinda2(df):
     fig.add_trace(go.Bar(x=df['periodo'], y=df['Linda (2)'],hovertemplate =
     '<br><b>Periodo</b>: %{x}<br>'+                         
     '<br><b>Linda</b>: %{y:.4f}<br>',name=''))
-    fig.update_xaxes(tickangle=0, tickfont=dict(family='Helvetica', color='black', size=12),title_text=None,row=1, col=1)
-    fig.update_yaxes(tickfont=dict(family='Helvetica', color='black', size=14),titlefont_size=14, title_text="Linda", row=1, col=1)
-    fig.update_layout(height=550,title="<b> Índice de Linda por periodo</b>",title_x=0.5,legend_title=None,font=dict(family="Helvetica",color=" black"))
+    fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(220, 220, 220, 0.4)')
-    fig.update_yaxes(showgrid=True,gridwidth=1,range=[0,flatten(df.iloc[:, [lind-1]].values)],gridcolor='rgba(220, 220, 220, 0.4)',type="linear",rangemode="tozero")
-    fig.update_traces(marker_color='rgb(127,0,255)', marker_line_color='rgb(51,0,102)',
+    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2,  
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)
+    fig.update_yaxes(tickfont=dict(family='Boston', color='black', size=12),titlefont_size=16, title_text="Linda", row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    zeroline=True,linecolor = "#000000",zerolinewidth=2, 
+    showgrid = True, 
+    showline = True,
+    gridwidth=1,       
+    gridcolor='rgba(220, 220, 220, 0.4)',
+    showticklabels=True)        
+    fig.update_layout(height=550,legend_title=None)
+    fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+    fig.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=20,
+    title={
+    'text': "<b>Índice de Linda por periodo</b>",
+    'y':0.9,
+    'x':0.5,
+    'xanchor': 'center',
+    'yanchor': 'top'})      
+    fig.update_yaxes(type="log", tickvals=[0.5,0.7,0.8,0.9,1.0,1.5,2.0,3.0,5.0,10,50,100,250,500,750,1000])
+    fig.update_traces(marker_color='rgb(127,0,255)', marker_line_color='rgb(0,0,0)',
                   marker_line_width=1.5, opacity=0.4)        
     return fig                
 
