@@ -17,7 +17,6 @@ import folium
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
-
 ##
 
 ## Funciones a utilizar
@@ -38,6 +37,9 @@ def f(dat, c='#ffffb3'):
     return [f'background-color: {c}' for i in dat]
 def Average(list):
     return sum(list) / len(list)    
+@st.cache
+def convert_df(df):
+     return df.to_csv().encode('utf-8')
 
 ##Geojson
 gdf = gpd.read_file("colombia2.geo.json")
@@ -461,7 +463,6 @@ def PlotlyLinda2(df):
     fig.update_traces(marker_color='rgb(127,0,255)', marker_line_color='rgb(0,0,0)',
                   marker_line_width=1.5, opacity=0.4)        
     return fig                
-
 LogoComision="data:image/png;base64,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"
 LogoComision2="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-blanco.png"
 LogoMercadoTIC="https://upload.wikimedia.org/wikipedia/commons/4/41/Noun_project_network_icon_1365244_cc.svg"
@@ -1133,6 +1134,9 @@ if select_mercado == 'Telefonía local':
             TrafgroupPart.participacion=TrafgroupPart.participacion.round(3)
             InggroupPart.participacion=InggroupPart.participacion.round(3)
             LingroupPart.participacion=LingroupPart.participacion.round(3)            
+            TrafgroupPart=TrafgroupPart[TrafgroupPart['participacion']>0]
+            LingroupPart=LingroupPart[LingroupPart['participacion']>0]
+            InggroupPart=InggroupPart[InggroupPart['participacion']>0]
 
             #Gráficas
             fig1=PlotlyStenbacka(TrafgroupPart)
@@ -1142,12 +1146,15 @@ if select_mercado == 'Telefonía local':
             
             if select_variable == "Tráfico":
                 AgGrid(TrafgroupPart)
-                st.plotly_chart(fig1, use_container_width=True)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart),file_name='Sten_Traf_TelLoc.csv',mime='text/csv')
+                st.plotly_chart(fig1, use_container_width=True)                
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart),file_name='Sten_Ing_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig2, use_container_width=True)
             if select_variable == "Líneas":
                 AgGrid(LingroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart),file_name='Sten_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig3, use_container_width=True)
 
         if select_indicador == 'Concentración':
@@ -1166,18 +1173,21 @@ if select_mercado == 'Telefonía local':
                 conc=st.slider('Seleccionar el número de empresas',1,len(colsconTraf)-1,1,1)
                 fig4=PlotlyConcentracion(ConcTraf)
                 st.write(ConcTraf.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconTraf[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcTraf),file_name='Conc_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig4,use_container_width=True)
             if select_variable == "Ingresos":
                 colsconIng=ConcIng.columns.values.tolist()
                 conc=st.slider('Seleccione el número de empresas',1,len(colsconIng)-1,1,1)
                 fig5=PlotlyConcentracion(ConcIng)
                 st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcIng),file_name='Conc_Ing_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig5,use_container_width=True)
             if select_variable == "Líneas":
                 colsconLin=ConcLin.columns.values.tolist()
                 conc=st.slider('Seleccione el número de empresas',1,len(colsconLin)-1,1,1)
                 fig6=PlotlyConcentracion(ConcLin)
                 st.write(ConcLin.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconLin[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcLin),file_name='Conc_Lin_TelLoc.csv',mime='text/csv')                
                 st.plotly_chart(fig6,use_container_width=True)
     
         if select_indicador == 'IHH':
@@ -1200,9 +1210,12 @@ if select_mercado == 'Telefonía local':
             TrafgroupPart3=pd.concat(dfTrafico3)
             InggroupPart3=pd.concat(dfIngresos3)
             LingroupPart3=pd.concat(dfLineas3)
-            TrafgroupPart3.participacion=TrafgroupPart3.participacion.round(2)
-            InggroupPart3.participacion=InggroupPart3.participacion.round(2)
-            LingroupPart3.participacion=LingroupPart3.participacion.round(2)            
+            TrafgroupPart3.participacion=TrafgroupPart3.participacion.round(3)
+            InggroupPart3.participacion=InggroupPart3.participacion.round(3)
+            LingroupPart3.participacion=LingroupPart3.participacion.round(3)
+            TrafgroupPart3=TrafgroupPart3[TrafgroupPart3['participacion']>0]
+            InggroupPart3=InggroupPart3[InggroupPart3['participacion']>0]
+            LingroupPart3=LingroupPart3[LingroupPart3['participacion']>0]            
             IHHTraf=TrafgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
             IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
             IHHLin=LingroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
@@ -1215,12 +1228,15 @@ if select_mercado == 'Telefonía local':
             
             if select_variable == "Tráfico":
                 AgGrid(TrafgroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart3),file_name='IHH_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig7,use_container_width=True)
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart3),file_name='IHH_Ing_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig8,use_container_width=True)
             if select_variable == "Líneas":
                 AgGrid(LingroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart3),file_name='Lin_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig9,use_container_width=True)
                 
         if select_indicador == 'Linda':
@@ -1237,21 +1253,24 @@ if select_mercado == 'Telefonía local':
 
             if select_variable == "Tráfico":
                 LindconTraf=LindTraf.columns.values.tolist()
-                lind=st.slider('Seleccionar nivel',2,len(LindconTraf),2,1)
+                lind=st.slider('Seleccionar nivel',2,len(LindconTraf),2,1)                
                 fig10=PlotlyLinda(LindTraf)
                 st.write(LindTraf.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconTraf[lind-1]]))
+                st.download_button(label="Descargar CSV",data=convert_df(LindTraf),file_name='Linda_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig10,use_container_width=True)
             if select_variable == "Ingresos":
                 LindconIng=LindIng.columns.values.tolist()            
-                lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
+                lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)                
                 fig11=PlotlyLinda(LindIng)
                 st.write(LindIng.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                st.download_button(label="Descargar CSV",data=convert_df(LindIng),file_name='Linda_Ing_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig11,use_container_width=True)
             if select_variable == "Líneas":
                 LindconLin=LindLin.columns.values.tolist()            
-                lind=st.slider('Seleccionar nivel',2,len(LindconLin),2,1)
+                lind=st.slider('Seleccionar nivel',2,len(LindconLin),2,1)               
                 fig12=PlotlyLinda(LindLin)
                 st.write(LindLin.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconLin[lind-1]]))
+                st.download_button(label="Descargar CSV",data=convert_df(LindLin),file_name='Linda_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)                
 
         if select_indicador == 'Penetración':
@@ -1264,6 +1283,7 @@ if select_mercado == 'Telefonía local':
             if select_variable=='Líneas':
                 fig12=PlotlyPenetracion(PenetracionNac)
                 AgGrid(PenetracionNac[['periodo','lineas','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionNac[['periodo','lineas','hogares','penetracion']]),file_name='Pen_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
             if select_variable=='Tráfico':
                 st.write("El indicador de penetración sólo está definido para la variable de Líneas.")
@@ -1296,6 +1316,9 @@ if select_mercado == 'Telefonía local':
             TrafgroupPart4.participacion=TrafgroupPart4.participacion.round(2)
             InggroupPart4.participacion=InggroupPart4.participacion.round(2)
             LingroupPart4.participacion=LingroupPart4.participacion.round(2)
+            TrafgroupPart4=TrafgroupPart4[TrafgroupPart4['participacion']>0]
+            LingroupPart4=LingroupPart4[LingroupPart4['participacion']>0]
+            InggroupPart4=InggroupPart4[InggroupPart4['participacion']>0]
             DomTraf=TrafgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
             DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
             DomLin=LingroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
@@ -1308,12 +1331,15 @@ if select_mercado == 'Telefonía local':
             
             if select_variable == "Tráfico":
                 AgGrid(TrafgroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart4),file_name='Dom_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig13,use_container_width=True)
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart4),file_name='Dom_Ing_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig14,use_container_width=True)
             if select_variable == "Líneas":
                 AgGrid(LingroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart4),file_name='Dom_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig15,use_container_width=True)
                             
     if select_dimension == 'Municipal':
@@ -1395,7 +1421,10 @@ if select_mercado == 'Telefonía local':
                 dfLineas.append(prLi.sort_values(by='participacion',ascending=False))
             LingroupPart=pd.concat(dfLineas)
             
-
+            TrafgroupPart.participacion=TrafgroupPart.participacion.round(3)
+            LingroupPart.participacion=LingroupPart.participacion.round(3)              
+            TrafgroupPart=TrafgroupPart[TrafgroupPart['participacion']>0]
+            LingroupPart=LingroupPart[LingroupPart['participacion']>0]
             ##Graficas 
             
             fig1=PlotlyStenbacka(TrafgroupPart)
@@ -1403,6 +1432,7 @@ if select_mercado == 'Telefonía local':
                   
             if select_variable == "Tráfico":
                 AgGrid(TrafgroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart),file_name='Sten_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig1,use_container_width=True)
                 # st.markdown('#### Visualización municipal del Stenbacka')
                 # periodoME=st.selectbox('Escoja un periodo para calcular el Stenbacka', PERIODOSTRAF,len(PERIODOSTRAF)-1)
@@ -1469,6 +1499,7 @@ if select_mercado == 'Telefonía local':
                 
             if select_variable == "Líneas":
                 AgGrid(LingroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart),file_name='Sten_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig2,use_container_width=True)
    
         if select_indicador == 'Concentración':
@@ -1489,6 +1520,7 @@ if select_mercado == 'Telefonía local':
                 conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
                 fig3 = PlotlyConcentracion(ConcTraf) 
                 st.write(ConcTraf.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconTraf[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcTraf),file_name='Conc_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig3,use_container_width=True)   
             if select_variable == "Líneas":
                 colsconLin=ConcLin.columns.values.tolist()
@@ -1496,6 +1528,7 @@ if select_mercado == 'Telefonía local':
                 conc=st.slider('Seleccione el número de empresas',1,value2,1,1)
                 fig4 = PlotlyConcentracion(ConcLin)
                 st.write(ConcLin.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconLin[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcLin),file_name='Conc_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig4,use_container_width=True)   
 
         if select_indicador == 'IHH':            
@@ -1510,6 +1543,10 @@ if select_mercado == 'Telefonía local':
                 dfLineas3.append(prLi.sort_values(by='participacion',ascending=False))
             TrafgroupPart3=pd.concat(dfTrafico3)
             LingroupPart3=pd.concat(dfLineas3)
+            TrafgroupPart3.participacion=TrafgroupPart3.participacion.round(3)
+            LingroupPart3.participacion=LingroupPart3.participacion.round(3)
+            TrafgroupPart3=TrafgroupPart3[TrafgroupPart3['participacion']>0]
+            LingroupPart3=LingroupPart3[LingroupPart3['participacion']>0]              
             IHHTraf=TrafgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
             IHHLin=LingroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()    
             
@@ -1518,9 +1555,11 @@ if select_mercado == 'Telefonía local':
 
             if select_variable == "Tráfico":
                 st.write(TrafgroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart3),file_name='IHH_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig5,use_container_width=True)
             if select_variable == "Líneas":
                 st.write(LingroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart3),file_name='IHH_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig6,use_container_width=True)  
 
         if select_indicador == 'Linda':
@@ -1553,11 +1592,13 @@ if select_mercado == 'Telefonía local':
                     col1.write(dTraf)  
                     col2.write("**Índice de Linda**")
                     col2.write(LindTraf)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindTraf),file_name='Linda_Traf_TelLoc.csv',mime='text/csv')
                     st.plotly_chart(fig10,use_container_width=True)        
                 else:    
                     lind=st.slider('Seleccionar nivel',2,len(LindconTraf),2,1)
                     fig10=PlotlyLinda(LindTraf)
                     st.write(LindTraf.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconTraf[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindTraf),file_name='Linda_Traf_TelLoc.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         st.write(dTraf)                    
                     st.plotly_chart(fig10,use_container_width=True)
@@ -1574,11 +1615,13 @@ if select_mercado == 'Telefonía local':
                     col1.AgGrid(dLin)
                     col2.write("**Índice de Linda**")    
                     col2.AgGrid(LindLin)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindLin),file_name='Linda_Lin_TelLoc.csv',mime='text/csv')
                     st.plotly_chart(fig11,use_container_width=True)        
                 else:
                     lind=st.slider('Seleccionar nivel',2,len(LindconLin),2,1)
                     fig11=PlotlyLinda(LindLin)
                     st.write(LindLin.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconLin[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindLin),file_name='Linda_Lin_TelLoc.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         st.write(dLin)
                     st.plotly_chart(fig11,use_container_width=True)
@@ -1599,6 +1642,7 @@ if select_mercado == 'Telefonía local':
             if select_variable=='Líneas':
                 fig12=PlotlyPenetracion(PenetracionMuni)
                 AgGrid(PenetracionMuni[['periodo','codigo','lineas','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionMuni[['periodo','codigo','lineas','hogares','penetracion']]),file_name='Pen_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
             if select_variable=='Tráfico':
                 st.write("El indicador de penetración sólo está definido para la variable de Líneas.")
@@ -1621,7 +1665,8 @@ if select_mercado == 'Telefonía local':
             LingroupPart4=pd.concat(dfLineas4)
             TrafgroupPart4.participacion=TrafgroupPart4.participacion.round(2)
             LingroupPart4.participacion=LingroupPart4.participacion.round(2)
-            
+            TrafgroupPart4=TrafgroupPart4[TrafgroupPart4['participacion']>0]
+            LingroupPart4=LingroupPart4[LingroupPart4['participacion']>0]
             DomTraf=TrafgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
             DomLin=LingroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()    
             
@@ -1630,9 +1675,11 @@ if select_mercado == 'Telefonía local':
 
             if select_variable == "Tráfico":
                 st.write(TrafgroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart4),file_name='Dom_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig13,use_container_width=True)
             if select_variable == "Líneas":
                 st.write(LingroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart4),file_name='Dom_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig14,use_container_width=True)  
                                               
     if select_dimension == 'Departamental':
@@ -1718,14 +1765,18 @@ if select_mercado == 'Telefonía local':
                 prLi.insert(6,'stenbacka',Stenbacka(prLi,'lineas',gamma))
                 dfLineas.append(prLi.sort_values(by='participacion',ascending=False))
             LingroupPart=pd.concat(dfLineas)             
-          
-            ##Graficas 
-            
+            TrafgroupPart.participacion=TrafgroupPart.participacion.round(3)
+            LingroupPart.participacion=LingroupPart.participacion.round(3)            
+            TrafgroupPart=TrafgroupPart[TrafgroupPart['participacion']>0]
+            LingroupPart=LingroupPart[LingroupPart['participacion']>0]
+
+            ##Graficas             
             fig1=PlotlyStenbacka(TrafgroupPart)
             fig2=PlotlyStenbacka(LingroupPart)
             
             if select_variable == "Tráfico":
                 AgGrid(TrafgroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart),file_name='Sten_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig1,use_container_width=True)
                 st.markdown('#### Visualización departamental del Stenbacka')
                 periodoME=st.select_slider('Escoja un periodo para calcular el Stenbacka', PERIODOSTRAF,PERIODOSTRAF[-1])
@@ -1792,6 +1843,7 @@ if select_mercado == 'Telefonía local':
                 
             if select_variable == "Líneas":
                 AgGrid(LingroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart),file_name='Sten_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig2,use_container_width=True)     
 
                 st.markdown('#### Visualización departamental del Stenbacka')
@@ -1874,6 +1926,7 @@ if select_mercado == 'Telefonía local':
                 conc=st.slider('Seleccionar número de expresas ',1,value1,1,1)
                 fig3 = PlotlyConcentracion(ConcTraf) 
                 st.write(ConcTraf.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconTraf[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcTraf),file_name='Conc_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig3,use_container_width=True)   
             if select_variable == "Líneas":
                 colsconLin=ConcLin.columns.values.tolist()
@@ -1881,6 +1934,7 @@ if select_mercado == 'Telefonía local':
                 conc=st.slider('Seleccionar número de expresas ',1,value2,1,1)
                 fig4 = PlotlyConcentracion(ConcLin)
                 st.write(ConcLin.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconLin[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcLin),file_name='Conc_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig4,use_container_width=True)   
 
         if select_indicador == 'IHH':
@@ -1896,6 +1950,10 @@ if select_mercado == 'Telefonía local':
                 dfLineas3.append(prLi.sort_values(by='participacion',ascending=False))
             TrafgroupPart3=pd.concat(dfTrafico3)
             LingroupPart3=pd.concat(dfLineas3)
+            TrafgroupPart3.participacion=TrafgroupPart3.participacion.round(3)
+            LingroupPart3.participacion=LingroupPart3.participacion.round(3)
+            TrafgroupPart3=TrafgroupPart3[TrafgroupPart3['participacion']>0]
+            LingroupPart3=LingroupPart3[LingroupPart3['participacion']>0]            
             IHHTraf=TrafgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
             IHHLin=LingroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()    
             
@@ -1904,6 +1962,7 @@ if select_mercado == 'Telefonía local':
 
             if select_variable == "Tráfico":
                 AgGrid(TrafgroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart3),file_name='IHH_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig5,use_container_width=True)
                 st.markdown('#### Visualización departamental del IHH')
                 periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOSTRAF,PERIODOSTRAF[-1])
@@ -1969,6 +2028,7 @@ if select_mercado == 'Telefonía local':
               
             if select_variable == "Líneas":
                 AgGrid(LingroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart3),file_name='IHH_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig6,use_container_width=True)    
                 st.markdown('#### Visualización departamental del IHH')
                 periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOSLIN,PERIODOSLIN[-1])
@@ -2062,11 +2122,13 @@ if select_mercado == 'Telefonía local':
                     col1.write(dTraf)  
                     col2.write("**Índice de Linda**")
                     col2.write(LindTraf)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindTraf),file_name='Linda_Traf_TelLoc.csv',mime='text/csv')
                     st.plotly_chart(fig10,use_container_width=True)        
                 else:    
                     lind=st.slider('Seleccionar nivel',2,len(LindconTraf),2,1)
                     fig10=PlotlyLinda(LindTraf)
                     st.write(LindTraf.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconTraf[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindTraf),file_name='Linda_Traf_TelLoc.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         st.write(dTraf)                    
                     st.plotly_chart(fig10,use_container_width=True)
@@ -2083,11 +2145,13 @@ if select_mercado == 'Telefonía local':
                     col1.write(dLin)
                     col2.write("**Índice de Linda**")    
                     col2.write(LindLin)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindLin),file_name='Linda_Lin_TelLoc.csv',mime='text/csv')
                     st.plotly_chart(fig11,use_container_width=True)        
                 else:
                     lind=st.slider('Seleccionar nivel',2,len(LindconLin),2,1)
                     fig11=PlotlyLinda(LindLin)
                     st.write(LindLin.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconLin[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindLin),file_name='Linda_Lin_TelLoc.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         st.write(dLin)
                     st.plotly_chart(fig11,use_container_width=True)            
@@ -2114,6 +2178,7 @@ if select_mercado == 'Telefonía local':
             if select_variable == "Tráfico": 
                 st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
                 st.plotly_chart(fig7,use_container_width=True)
+                st.download_button(label="Descargar CSV",data=convert_df(MEDIAENTROPICATRAF),file_name='MedEntro_Traf_TelLoc.csv',mime='text/csv')
                 periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOSTRAF,PERIODOSTRAF[-1])
                 MEperiodTableTraf=MediaEntropica(Trafico[(Trafico['departamento']==DPTO)&(Trafico['periodo']==periodoME)],'trafico')[1]                
                 dfMap=[];
@@ -2191,6 +2256,7 @@ if select_mercado == 'Telefonía local':
             if select_variable == "Líneas":
                 st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
                 st.plotly_chart(fig8,use_container_width=True)
+                st.download_button(label="Descargar CSV",data=convert_df(MEDIAENTROPICALIN),file_name='MedEntro_Lin_TelLoc.csv',mime='text/csv')
                 periodoME2=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOSLIN,PERIODOSLIN[-1])
                 MEperiodTableLin=MediaEntropica(Lineas[(Lineas['departamento']==DPTO)&(Lineas['periodo']==periodoME2)],'lineas')[1] 
                 
@@ -2282,6 +2348,7 @@ if select_mercado == 'Telefonía local':
             if select_variable=='Líneas':
                 fig12=PlotlyPenetracion(PenetracionDpto)
                 AgGrid(PenetracionDpto[['periodo','departamento','lineas','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionDpto[['periodo','departamento','lineas','hogares','penetracion']]),file_name='Pen_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
             if select_variable=='Tráfico':
                 st.write("El indicador de penetración sólo está definido para la variable de Líneas.")
@@ -2305,6 +2372,8 @@ if select_mercado == 'Telefonía local':
             LingroupPart4=pd.concat(dfLineas4)
             TrafgroupPart4.participacion=TrafgroupPart4.participacion.round(2)
             LingroupPart4.participacion=LingroupPart4.participacion.round(2)
+            TrafgroupPart4=TrafgroupPart4[TrafgroupPart4['participacion']>0]
+            LingroupPart4=LingroupPart4[LingroupPart4['participacion']>0]
             DomTraf=TrafgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
             DomLin=LingroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()    
             
@@ -2313,6 +2382,7 @@ if select_mercado == 'Telefonía local':
 
             if select_variable == "Tráfico":
                 AgGrid(TrafgroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart4),file_name='Dom_Traf_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig13,use_container_width=True)
                 st.markdown('#### Visualización departamental de la dominancia')
                 periodoME=st.select_slider('Escoja un periodo para calcular la dominancia', PERIODOSTRAF,PERIODOSTRAF[-1])
@@ -2379,6 +2449,7 @@ if select_mercado == 'Telefonía local':
               
             if select_variable == "Líneas":
                 AgGrid(LingroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(LingroupPart4),file_name='Dom_Lin_TelLoc.csv',mime='text/csv')
                 st.plotly_chart(fig14,use_container_width=True)    
                 st.markdown('#### Visualización departamental de la dominancia')
                 periodoME=st.select_slider('Escoja un periodo para calcular la dominancia', PERIODOSlIN,PERIODOSLIN[-1])
@@ -2569,12 +2640,15 @@ if select_mercado == "Internet fijo":
             
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp),file_name='Sten_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig1a, use_container_width=True)
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes),file_name='Sten_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig1b, use_container_width=True)                                
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart),file_name='Sten_Ing_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig2, use_container_width=True)
 
         if select_indicador == 'Concentración':
@@ -2594,18 +2668,21 @@ if select_mercado == "Internet fijo":
                 conc=st.slider('Seleccionar el número de empresas',1,len(colsconAccCorp)-1,1,1)
                 fig4a=PlotlyConcentracion(ConcAccCorp)
                 st.write(ConcAccCorp.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconAccCorp[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcAccCorp),file_name='Conc_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig4a,use_container_width=True)
             if select_variable == "Accesos-residencial":
                 colsconAccRes=ConcAccRes.columns.values.tolist()
                 conc=st.slider('Seleccionar el número de empresas',1,len(colsconAccRes)-1,1,1)
                 fig4b=PlotlyConcentracion(ConcAccRes)
                 st.write(ConcAccRes.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconAccRes[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcAccRes),file_name='Conc_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig4b,use_container_width=True)                
             if select_variable == "Ingresos":
                 colsconIng=ConcIng.columns.values.tolist()
                 conc=st.slider('Seleccione el número de empresas',1,len(colsconIng)-1,1,1)
                 fig5=PlotlyConcentracion(ConcIng)
                 st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcIng),file_name='Conc_Ing_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig5,use_container_width=True)
 
         if select_indicador == 'IHH':
@@ -2630,7 +2707,12 @@ if select_mercado == "Internet fijo":
             AccgroupPartCorp3=pd.concat(dfAccesosCorp3)
             AccgroupPartRes3=pd.concat(dfAccesosRes3)
             InggroupPart3=pd.concat(dfIngresos3)
-            
+            AccgroupPartCorp3.participacion=AccgroupPartCorp3.participacion.round(3)
+            AccgroupPartRes3.participacion=AccgroupPartRes3.participacion.round(3)
+            InggroupPart3.participacion=InggroupPart3.participacion.round(3)
+            AccgroupPartCorp3=AccgroupPartCorp3[AccgroupPartCorp3['participacion']>0]
+            InggroupPart3=InggroupPart3[InggroupPart3['participacion']>0]
+            AccgroupPartRes3=AccgroupPartRes3[AccgroupPartRes3['participacion']>0]
             IHHAccCorp=AccgroupPartCorp3.groupby(['periodo'])['IHH'].mean().reset_index()
             IHHAccRes=AccgroupPartRes3.groupby(['periodo'])['IHH'].mean().reset_index()
             IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
@@ -2643,12 +2725,15 @@ if select_mercado == "Internet fijo":
             
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp3)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp3),file_name='IHH_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig7a,use_container_width=True)                
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes3)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes3),file_name='IHH_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig7b,use_container_width=True)                
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart3),file_name='IHH_Ing_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig8,use_container_width=True)
 
         if select_indicador == 'Linda':
@@ -2667,18 +2752,21 @@ if select_mercado == "Internet fijo":
                 lind=st.slider('Seleccionar nivel',2,len(LindconAccCorp),2,1)
                 fig10a=PlotlyLinda(LindAccCorp)
                 st.write(LindAccCorp.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconAccCorp[lind-1]]))
+                st.download_button(label="Descargar CSV",data=convert_df(LindAccCorp),file_name='Lind_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig10a,use_container_width=True)
             if select_variable == "Accesos-residencial":
                 LindconAccRes=LindAccRes.columns.values.tolist()
                 lind=st.slider('Seleccionar nivel',2,len(LindconAccRes),2,1)
                 fig10b=PlotlyLinda(LindAccRes)
                 st.write(LindAccRes.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconAccRes[lind-1]]))
+                st.download_button(label="Descargar CSV",data=convert_df(LindAccRes),file_name='Lind_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig10b,use_container_width=True)                
             if select_variable == "Ingresos":
                 LindconIng=LindIng.columns.values.tolist()            
                 lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
                 fig11=PlotlyLinda(LindIng)
                 st.write(LindIng.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                st.download_button(label="Descargar CSV",data=convert_df(LindIng),file_name='Lind_Ing_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig11,use_container_width=True)
 
         if select_indicador == 'Penetración':
@@ -2691,6 +2779,7 @@ if select_mercado == "Internet fijo":
             if select_variable=='Accesos-residencial':
                 fig12=PlotlyPenetracion(PenetracionNac)
                 AgGrid(PenetracionNac[['periodo','accesos','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionNac[['periodo','accesos','hogares','penetracion']]),file_name='Pen_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
             if select_variable=='Accesos-corporativo':
                 st.write("El indicador de penetración sólo está definido para la variable de Accesos-residencial.")
@@ -2724,6 +2813,9 @@ if select_mercado == "Internet fijo":
             AccgroupPartCorp4.participacion=AccgroupPartCorp4.participacion.round(2)
             AccgroupPartRes4.participacion=AccgroupPartRes4.participacion.round(2)
             InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+            AccgroupPartCorp4=AccgroupPartCorp4[AccgroupPartCorp4['participacion']>0]
+            AccgroupPartRes4=AccgroupPartRes4[AccgroupPartRes4['participacion']>0]
+            InggroupPart4=InggroupPart4[InggroupPart4['participacion']>0]
             
             DomAccCorp=AccgroupPartCorp4.groupby(['periodo'])['Dominancia'].mean().reset_index()
             DomAccRes=AccgroupPartRes4.groupby(['periodo'])['Dominancia'].mean().reset_index()
@@ -2737,12 +2829,15 @@ if select_mercado == "Internet fijo":
             
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp4)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp4),file_name='Dom_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig13,use_container_width=True)                
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes4)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes4),file_name='Dom_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig14,use_container_width=True)                
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart4),file_name='Dom_Ing_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig15,use_container_width=True)
  
     if select_dimension == 'Municipal':
@@ -2817,21 +2912,29 @@ if select_mercado == "Internet fijo":
                 prAccRes.insert(5,'participacion',Participacion(prAccRes,'accesos'))
                 prAccRes.insert(6,'stenbacka',Stenbacka(prAccRes,'accesos',gamma))
                 dfAccesosRes.append(prAccRes.sort_values(by='participacion',ascending=False))                
-            AccgroupPartCorp=pd.concat(dfAccesosCorp)
-            AccgroupPartRes=pd.concat(dfAccesosRes)
 
-            ##Graficas 
+
+            AccgroupPartCorp=pd.concat(dfAccesosCorp)
+            AccgroupPartCorp.participacion=AccgroupPartCorp.participacion.round(4)
+            AccgroupPartCorp=AccgroupPartCorp[AccgroupPartCorp['participacion']>0]
             
+            AccgroupPartRes=pd.concat(dfAccesosRes)
+            AccgroupPartRes.participacion=AccgroupPartRes.participacion.round(4)
+            AccgroupPartRes=AccgroupPartRes[AccgroupPartRes['participacion']>0]
+            
+
             fig1a=PlotlyStenbacka(AccgroupPartCorp)
-            fig1b=PlotlyStenbacka(AccgroupPartRes)
-                  
+            fig1b=PlotlyStenbacka(AccgroupPartRes)          
+            
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp)
-                st.plotly_chart(fig1a,use_container_width=True)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp),file_name='Sten_AccCorp_IntFijo.csv',mime='text/csv')
+                st.plotly_chart(fig1a, use_container_width=True)
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes)
-                st.plotly_chart(fig1b,use_container_width=True)                
-
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes),file_name='Sten_AccRes_IntFijo.csv',mime='text/csv')
+                st.plotly_chart(fig1b, use_container_width=True)                                
+               
         if select_indicador == 'Concentración':
             dflistAccCorp=[];dflistAccRes=[];
             
@@ -2849,6 +2952,7 @@ if select_mercado == "Internet fijo":
                 conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
                 fig3a = PlotlyConcentracion(ConcAccCorp) 
                 st.write(ConcAccCorp.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconAccCorp[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcAccCorp),file_name='Conc_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig3a,use_container_width=True) 
             if select_variable == "Accesos-residencial":
                 colsconAccRes=ConcAccRes.columns.values.tolist()
@@ -2856,6 +2960,7 @@ if select_mercado == "Internet fijo":
                 conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
                 fig3b = PlotlyConcentracion(ConcAccRes) 
                 st.write(ConcAccRes.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconAccRes[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcAccRes),file_name='Conc_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig3b,use_container_width=True)                 
 
         if select_indicador == 'IHH':            
@@ -2870,18 +2975,24 @@ if select_mercado == "Internet fijo":
                 dfAccesosRes3.append(prAcRes.sort_values(by='participacion',ascending=False))                    
 
             AccgroupPartCorp3=pd.concat(dfAccesosCorp3)
+            AccgroupPartCorp3.participacion=AccgroupPartCorp3.participacion.round(3)
+            AccgroupPartCorp3=AccgroupPartCorp3[AccgroupPartCorp3['participacion']>0]
             IHHAccCorp=AccgroupPartCorp3.groupby(['periodo'])['IHH'].mean().reset_index() 
             AccgroupPartRes3=pd.concat(dfAccesosRes3)
-            IHHAccRes=AccgroupPartRes3.groupby(['periodo'])['IHH'].mean().reset_index()             
+            AccgroupPartRes3.participacion=AccgroupPartRes3.participacion.round(3)
+            AccgroupPartCorp3=AccgroupPartCorp3[AccgroupPartCorp3['participacion']>0]
+            IHHAccRes=AccgroupPartRes3.groupby(['periodo'])['IHH'].mean().reset_index()                         
             
             fig5a=PlotlyIHH(IHHAccCorp)
             fig5b=PlotlyIHH(IHHAccRes)
 
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp3)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp3),file_name='IHH_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig5a,use_container_width=True)
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes3)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes3),file_name='IHH_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig5b,use_container_width=True)                
 
         if select_indicador == 'Linda':
@@ -2915,13 +3026,15 @@ if select_mercado == "Internet fijo":
                     col1.write(dAccCorp)  
                     col2.write("**Índice de Linda**")
                     col2.write(LindAccCorp)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindAccCorp),file_name='Lind_AccCorp_IntFijo.csv',mime='text/csv')
                     st.plotly_chart(fig10a,use_container_width=True)        
                 else:    
                     lind=st.slider('Seleccionar nivel',2,len(LindconAccCorp),2,1)
                     fig10a=PlotlyLinda(LindAccCorp)
                     st.write(LindAccCorp.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconAccCorp[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindAccCorp),file_name='Lind_AccCorp_IntFijo.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
-                        AgGrid(dAccCorp)                    
+                        AgGrid(dAccCorp)                         
                     st.plotly_chart(fig10a,use_container_width=True) 
 
             if select_variable == "Accesos-residencial":
@@ -2936,11 +3049,13 @@ if select_mercado == "Internet fijo":
                     col1.write(dAccRes)  
                     col2.write("**Índice de Linda**")
                     col2.write(LindAccRes)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindAccRes),file_name='Lind_AccRes_IntFijo.csv',mime='text/csv')              
                     st.plotly_chart(fig10b,use_container_width=True)        
                 else:    
                     lind=st.slider('Seleccionar nivel',2,len(LindconAccRes),2,1)
                     fig10b=PlotlyLinda(LindAccRes)
                     st.write(LindAccRes.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconAccRes[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindAccRes),file_name='Lind_AccRes_IntFijo.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         AgGrid(dAccRes)                    
                     st.plotly_chart(fig10b,use_container_width=True) 
@@ -2961,6 +3076,7 @@ if select_mercado == "Internet fijo":
             if select_variable=='Accesos-residencial':
                 fig12=PlotlyPenetracion(PenetracionMuni)
                 AgGrid(PenetracionMuni[['periodo','codigo','accesos','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionMuni[['periodo','codigo','accesos','hogares','penetracion']]),file_name='Pen_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
             if select_variable=='Accesos-corporativo':
                 st.write("El indicador de penetración sólo está definido para la variable de Accesos-residencial.")
@@ -2979,18 +3095,24 @@ if select_mercado == "Internet fijo":
                 dfAccesosRes4.append(prAcRes.sort_values(by='participacion',ascending=False))                    
 
             AccgroupPartCorp4=pd.concat(dfAccesosCorp4)
+            AccgroupPartCorp4.participacion=AccgroupPartCorp4.participacion.round(2)
+            AccgroupPartCorp4=AccgroupPartCorp4[AccgroupPartCorp4['participacion']>0]
             DomAccCorp=AccgroupPartCorp4.groupby(['periodo'])['Dominancia'].mean().reset_index() 
             AccgroupPartRes4=pd.concat(dfAccesosRes4)
+            AccgroupPartRes4.participacion=AccgroupPartRes4.participacion.round(2)
+            AccgroupPartRes4=AccgroupPartRes4[AccgroupPartRes4['participacion']>0]
             DomAccRes=AccgroupPartRes4.groupby(['periodo'])['Dominancia'].mean().reset_index()             
-            
+           
             fig13=PlotlyDominancia(DomAccCorp)
             fig14=PlotlyDominancia(DomAccRes)
 
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp4)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp4),file_name='Dom_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig13,use_container_width=True)
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes4)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes4),file_name='Dom_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig14,use_container_width=True)            
                 
     if select_dimension == 'Departamental':
@@ -3079,6 +3201,14 @@ if select_mercado == "Internet fijo":
                 dfAccesosRes.append(prAcRes.sort_values(by='participacion',ascending=False))                
             AccgroupPartRes=pd.concat(dfAccesosRes)            
 
+            AccgroupPartCorp=pd.concat(dfAccesosCorp)
+            AccgroupPartCorp.participacion=AccgroupPartCorp.participacion.round(4)
+            AccgroupPartCorp=AccgroupPartCorp[AccgroupPartCorp['participacion']>0]
+            
+            AccgroupPartRes=pd.concat(dfAccesosRes)
+            AccgroupPartRes.participacion=AccgroupPartRes.participacion.round(4)
+            AccgroupPartRes=AccgroupPartRes[AccgroupPartRes['participacion']>0]
+
             ##Graficas 
             
             fig1a=PlotlyStenbacka(AccgroupPartCorp)
@@ -3086,6 +3216,7 @@ if select_mercado == "Internet fijo":
 
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp),file_name='Sten_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig1a,use_container_width=True)
                 st.markdown('#### Visualización departamental del Stenbacka')
                 periodoME=st.select_slider('Escoja un periodo para calcular el Stenbacka', PERIODOSACC,PERIODOSACC[-1])
@@ -3150,6 +3281,7 @@ if select_mercado == "Internet fijo":
                                 
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes),file_name='Sten_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig1b,use_container_width=True)                
                 st.markdown('#### Visualización departamental del Stenbacka')
                 periodoME=st.select_slider('Escoja un periodo para calcular el Stenbacka', PERIODOSACCRES,PERIODOSACCRES[-1])
@@ -3230,6 +3362,7 @@ if select_mercado == "Internet fijo":
                 conc=st.slider('Seleccionar número de expresas ',1,value1,1,1)
                 fig3a = PlotlyConcentracion(ConcAccCorp) 
                 st.write(ConcAccCorp.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconAccCorp[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcAccCorp),file_name='Conc_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig3a,use_container_width=True)  
             if select_variable == "Accesos-residencial":
                 colsconAccRes=ConcAccRes.columns.values.tolist()
@@ -3237,6 +3370,7 @@ if select_mercado == "Internet fijo":
                 conc=st.slider('Seleccionar número de expresas ',1,value1,1,1)
                 fig3b = PlotlyConcentracion(ConcAccRes) 
                 st.write(ConcAccRes.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconAccRes[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcAccRes),file_name='Conc_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig3b,use_container_width=True)                  
 
         if select_indicador == 'IHH':
@@ -3252,15 +3386,20 @@ if select_mercado == "Internet fijo":
                 dfAccesosRes3.append(prAcRes.sort_values(by='participacion',ascending=False))
                 
             AccgroupPartCorp3=pd.concat(dfAccesosCorp3)
+            AccgroupPartCorp3.participacion=AccgroupPartCorp3.participacion.round(3)
+            AccgroupPartCorp3=AccgroupPartCorp3[AccgroupPartCorp3['participacion']>0]
+            IHHAccCorp=AccgroupPartCorp3.groupby(['periodo'])['IHH'].mean().reset_index() 
             AccgroupPartRes3=pd.concat(dfAccesosRes3)
-            IHHAccCorp=AccgroupPartCorp3.groupby(['periodo'])['IHH'].mean().reset_index()  
-            IHHAccRes=AccgroupPartRes3.groupby(['periodo'])['IHH'].mean().reset_index()              
+            AccgroupPartRes3.participacion=AccgroupPartRes3.participacion.round(3)
+            AccgroupPartCorp3=AccgroupPartCorp3[AccgroupPartCorp3['participacion']>0]
+            IHHAccRes=AccgroupPartRes3.groupby(['periodo'])['IHH'].mean().reset_index()            
             
             fig5a=PlotlyIHH(IHHAccCorp)
             fig5b=PlotlyIHH(IHHAccRes)
 
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp3)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp3),file_name='IHH_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig5a,use_container_width=True)
                 st.markdown('#### Visualización departamental del IHH')
                 periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOSACC,PERIODOSACC[-1])
@@ -3326,6 +3465,7 @@ if select_mercado == "Internet fijo":
                 
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes3)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes3),file_name='IHH_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig5b,use_container_width=True)    
                 st.markdown('#### Visualización departamental del IHH')
                 periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOSACCRES,PERIODOSACCRES[-1])
@@ -3421,11 +3561,13 @@ if select_mercado == "Internet fijo":
                     col1.write(dAccCorp)  
                     col2.write("**Índice de Linda**")
                     col2.write(LindAccCorp)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindAccCorp),file_name='Lind_AccCorp_IntFijo.csv',mime='text/csv')
                     st.plotly_chart(fig10a,use_container_width=True)        
                 else:    
                     lind=st.slider('Seleccionar nivel',2,len(LindconAccCorp),2,1)
                     fig10a=PlotlyLinda(LindAccCorp)
                     st.write(LindAccCorp.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconAccCorp[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindAccCorp),file_name='Lind_AccCorp_IntFijo.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         st.write(dAccCorp)                    
                     st.plotly_chart(fig10a,use_container_width=True)
@@ -3442,11 +3584,13 @@ if select_mercado == "Internet fijo":
                     col1.write(dAccRes)  
                     col2.write("**Índice de Linda**")
                     col2.write(LindAccRes)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindAccRes),file_name='Lind_AccRes_IntFijo.csv',mime='text/csv')
                     st.plotly_chart(fig10b,use_container_width=True)        
                 else:    
                     lind=st.slider('Seleccionar nivel',2,len(LindconAccRes),2,1)
                     fig10b=PlotlyLinda(LindAccRes)
                     st.write(LindAccRes.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconAccRes[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindAccRes),file_name='Lind_AccRes_IntFijo.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         st.write(dAccRes)                    
                     st.plotly_chart(fig10b,use_container_width=True)                    
@@ -3475,6 +3619,7 @@ if select_mercado == "Internet fijo":
             if select_variable == "Accesos-corporativo":
                 st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
                 st.plotly_chart(fig7a,use_container_width=True)
+                st.download_button(label="Descargar CSV",data=convert_df(MEDIAENTROPICAACCCORP),file_name='MedEntro_AccCorp_IntFijo.csv',mime='text/csv')
                 periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOSACC,PERIODOSACC[-1])
                 MEperiodTableAccCorp=MediaEntropica(AccesosIntCorp[(AccesosIntCorp['departamento']==DPTO)&(AccesosIntCorp['periodo']==periodoME)],'accesos')[1]                                 
                 dfMapCorp=[];
@@ -3550,6 +3695,7 @@ if select_mercado == "Internet fijo":
             if select_variable == "Accesos-residencial":
                 st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
                 st.plotly_chart(fig7b,use_container_width=True)
+                st.download_button(label="Descargar CSV",data=convert_df(MEDIAENTROPICAACCRES),file_name='MedEntro_AccRes_IntFijo.csv',mime='text/csv')
                 periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOSACCRES,PERIODOSACCRES[-1])
                 MEperiodTableAccRes=MediaEntropica(AccesosIntRes[(AccesosIntRes['departamento']==DPTO)&(AccesosIntRes['periodo']==periodoME)],'accesos')[1] 
                                 
@@ -3640,6 +3786,7 @@ if select_mercado == "Internet fijo":
             if select_variable=='Accesos-residencial':
                 fig12=PlotlyPenetracion(PenetracionDpto)
                 AgGrid(PenetracionDpto[['periodo','departamento','accesos','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionDpto[['periodo','departamento','accesos','hogares','penetracion']]),file_name='Pen_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
             if select_variable=='Accesos-corporativo':
                 st.write("El indicador de penetración sólo está definido para la variable de Accesos-residencial.")
@@ -3657,17 +3804,22 @@ if select_mercado == "Internet fijo":
                 prAcRes.insert(4,'IHH',IHH(prAcRes,'accesos'))
                 prAcRes.insert(5,'Dominancia',Dominancia(prAcRes,'accesos'))
                 dfAccesosRes4.append(prAcRes.sort_values(by='participacion',ascending=False))
-                
+
             AccgroupPartCorp4=pd.concat(dfAccesosCorp4)
+            AccgroupPartCorp4.participacion=AccgroupPartCorp4.participacion.round(2)
+            AccgroupPartCorp4=AccgroupPartCorp4[AccgroupPartCorp4['participacion']>0]
+            DomAccCorp=AccgroupPartCorp4.groupby(['periodo'])['Dominancia'].mean().reset_index() 
             AccgroupPartRes4=pd.concat(dfAccesosRes4)
-            DomAccCorp=AccgroupPartCorp4.groupby(['periodo'])['Dominancia'].mean().reset_index()  
-            DomAccRes=AccgroupPartRes4.groupby(['periodo'])['Dominancia'].mean().reset_index()              
-            
+            AccgroupPartRes4.participacion=AccgroupPartRes4.participacion.round(2)
+            AccgroupPartRes4=AccgroupPartRes4[AccgroupPartRes4['participacion']>0]
+            DomAccRes=AccgroupPartRes4.groupby(['periodo'])['Dominancia'].mean().reset_index() 
+                                        
             fig13=PlotlyDominancia(DomAccCorp)
             fig14=PlotlyDominancia(DomAccRes)
 
             if select_variable == "Accesos-corporativo":
                 AgGrid(AccgroupPartCorp4)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartCorp4),file_name='Dom_AccCorp_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig13,use_container_width=True)
                 st.markdown('#### Visualización departamental de la dominancia')
                 periodoME=st.select_slider('Escoja un periodo para calcular la dominancia', PERIODOSACC,PERIODOSACC[-1])
@@ -3734,6 +3886,7 @@ if select_mercado == "Internet fijo":
                 
             if select_variable == "Accesos-residencial":
                 AgGrid(AccgroupPartRes4)
+                st.download_button(label="Descargar CSV",data=convert_df(AccgroupPartRes4),file_name='Dom_AccRes_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig14,use_container_width=True)    
                 st.markdown('#### Visualización departamental de la dominancia')
                 periodoME=st.select_slider('Escoja un periodo para calcular la dominancia', PERIODOSACCRES,PERIODOSACCRES[-1])
@@ -3904,9 +4057,11 @@ if select_mercado == "Televisión por suscripción":
             
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart),file_name='Sten_Susc_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig1, use_container_width=True)
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart),file_name='Sten_Ing_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig2, use_container_width=True)    
                 
         if select_indicador == 'Concentración':
@@ -3924,12 +4079,14 @@ if select_mercado == "Televisión por suscripción":
                 conc=st.slider('Seleccionar el número de empresas',1,len(colsconSus)-1,1,1)
                 fig4=PlotlyConcentracion(ConcSus)
                 st.write(ConcSus.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconSus[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcSus),file_name='Conc_Sus_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig4,use_container_width=True)
             if select_variable == "Ingresos":
                 colsconIng=ConcIng.columns.values.tolist()
                 conc=st.slider('Seleccione el número de empresas',1,len(colsconIng)-1,1,1)
                 fig5=PlotlyConcentracion(ConcIng)
                 st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcIng),file_name='Conc_Ing_IntFijo.csv',mime='text/csv')
                 st.plotly_chart(fig5,use_container_width=True)
                 
         if select_indicador == 'IHH':
@@ -3948,6 +4105,13 @@ if select_mercado == "Televisión por suscripción":
 
             SusgroupPart3=pd.concat(dfSuscriptores3)
             InggroupPart3=pd.concat(dfIngresos3)
+
+            SusgroupPart3.participacion=SusgroupPart3.participacion.round(3)
+            InggroupPart3.participacion=InggroupPart3.participacion.round(3)
+
+            SusgroupPart3=SusgroupPart3[SusgroupPart3['participacion']>0]
+            InggroupPart3=InggroupPart3[InggroupPart3['participacion']>0]
+
             
             IHHSus=SusgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
             IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()                
@@ -3959,9 +4123,11 @@ if select_mercado == "Televisión por suscripción":
             
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart3),file_name='IHH_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig7,use_container_width=True)
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart3),file_name='IHH_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig8,use_container_width=True)
 
         if select_indicador == 'Linda':
@@ -3978,12 +4144,14 @@ if select_mercado == "Televisión por suscripción":
                 lind=st.slider('Seleccionar nivel',2,len(LindconSus),2,1)
                 fig10=PlotlyLinda(LindSus)
                 st.write(LindSus.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconSus[lind-1]]))
+                st.download_button(label="Descargar CSV",data=convert_df(LindSus),file_name='Lind_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig10,use_container_width=True)
             if select_variable == "Ingresos":
                 LindconIng=LindIng.columns.values.tolist()            
                 lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
                 fig11=PlotlyLinda(LindIng)
                 st.write(LindIng.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+                st.download_button(label="Descargar CSV",data=convert_df(LindIng),file_name='Lind_Ing_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig11,use_container_width=True)
 
         if select_indicador == 'Penetración':
@@ -3996,6 +4164,7 @@ if select_mercado == "Televisión por suscripción":
             if select_variable=='Suscriptores':
                 fig12=PlotlyPenetracion(PenetracionNac)
                 AgGrid(PenetracionNac[['periodo','suscriptores','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionNac[['periodo','suscriptores','hogares','penetracion']]),file_name='Pen_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
 
             if select_variable=='Ingresos':
@@ -4021,6 +4190,9 @@ if select_mercado == "Televisión por suscripción":
             SusgroupPart4.participacion=SusgroupPart4.participacion.round(2)
             InggroupPart4=pd.concat(dfIngresos4)
             InggroupPart4.participacion=InggroupPart4.participacion.round(2)
+
+            SusgroupPart4=SusgroupPart4[SusgroupPart4['participacion']>0]
+            InggroupPart4=InggroupPart4[InggroupPart4['participacion']>0]
             
             DomSus=SusgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()
             DomIng=InggroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()                
@@ -4032,9 +4204,11 @@ if select_mercado == "Televisión por suscripción":
             
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart4),file_name='Dom_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig13,use_container_width=True)
             if select_variable == "Ingresos":
                 AgGrid(InggroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(InggroupPart4),file_name='Dom_Ing_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig14,use_container_width=True)
             
     if select_dimension == 'Municipal':
@@ -4104,12 +4278,17 @@ if select_mercado == "Televisión por suscripción":
                 dfSuscriptores.append(prSus.sort_values(by='participacion',ascending=False))
             SusgroupPart=pd.concat(dfSuscriptores)
 
+            SusgroupPart=pd.concat(dfSuscriptores)
+            SusgroupPart.participacion=SusgroupPart.participacion.round(4)
+            SusgroupPart=SusgroupPart[SusgroupPart['participacion']>0]
+
             ##Graficas 
             
             fig1=PlotlyStenbacka(SusgroupPart)
                   
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart),file_name='Sten_Susc_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig1,use_container_width=True)
 
         if select_indicador == 'Concentración':
@@ -4126,6 +4305,7 @@ if select_mercado == "Televisión por suscripción":
                 conc=st.slider('Seleccione el número de empresas',1,value1,1,1)
                 fig3 = PlotlyConcentracion(ConcSus) 
                 st.write(ConcSus.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconSus[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcSus),file_name='Conc_Susc_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig3,use_container_width=True)  
                
         if select_indicador == 'IHH':            
@@ -4136,12 +4316,16 @@ if select_mercado == "Televisión por suscripción":
                 dfSuscriptores3.append(prSus.sort_values(by='participacion',ascending=False))
 
             SusgroupPart3=pd.concat(dfSuscriptores3)
+            SusgroupPart3=pd.concat(dfSuscriptores3)
+            SusgroupPart3.participacion=SusgroupPart3.participacion.round(3)
+            SusgroupPart3=SusgroupPart3[SusgroupPart3['participacion']>0]            
             IHHSus=SusgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()  
             
             fig5=PlotlyIHH(IHHSus)
 
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart3),file_name='IHH_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig5,use_container_width=True)               
                 
         if select_indicador == 'Linda':
@@ -4167,11 +4351,13 @@ if select_mercado == "Televisión por suscripción":
                     col1.write(dSus)  
                     col2.write("**Índice de Linda**")
                     col2.write(LindSus)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindSus),file_name='Lind_Sus_TVSus.csv',mime='text/csv')
                     st.plotly_chart(fig10,use_container_width=True)        
                 else:    
                     lind=st.slider('Seleccionar nivel',2,len(LindconSus),2,1)
                     fig10=PlotlyLinda(LindSus)
                     st.write(LindSus.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconSus[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindSus),file_name='Lind_Sus_TVSus.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         AgGrid(dSus)                    
                     st.plotly_chart(fig10,use_container_width=True) 
@@ -4192,6 +4378,7 @@ if select_mercado == "Televisión por suscripción":
             if select_variable=='Suscriptores':
                 fig12=PlotlyPenetracion(PenetracionMuni)
                 AgGrid(PenetracionMuni[['periodo','codigo','suscriptores','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionMuni[['periodo','codigo','suscriptores','hogares','penetracion']]),file_name='Pen_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
 
         if select_indicador == 'Dominancia':            
@@ -4204,12 +4391,14 @@ if select_mercado == "Televisión por suscripción":
 
             SusgroupPart4=pd.concat(dfSuscriptores4)
             SusgroupPart4.participacion=SusgroupPart4.participacion.round(2)
+            SusgroupPart4=SusgroupPart4[SusgroupPart4['participacion']>0]
             DomSus=SusgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()  
             
             fig13=PlotlyDominancia(DomSus)
 
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart4),file_name='Dom_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig13,use_container_width=True)               
                                     
     if select_dimension == 'Departamental':
@@ -4288,13 +4477,15 @@ if select_mercado == "Televisión por suscripción":
                 prSus.insert(6,'stenbacka',Stenbacka(prSus,'suscriptores',gamma))
                 dfSuscriptores.append(prSus.sort_values(by='participacion',ascending=False))
             SusgroupPart=pd.concat(dfSuscriptores) 
-
+            SusgroupPart.participacion=SusgroupPart.participacion.round(4)
+            SusgroupPart=SusgroupPart[SusgroupPart['participacion']>0]
             ##Graficas 
             
             fig1=PlotlyStenbacka(SusgroupPart)
 
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart),file_name='Sten_Susc_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig1,use_container_width=True)
                 st.markdown('#### Visualización departamental del Stenbacka')
                 periodoME=st.select_slider('Escoja un periodo para calcular el Stenbacka', PERIODOSSUS,PERIODOSSUS[-1])
@@ -4373,6 +4564,7 @@ if select_mercado == "Televisión por suscripción":
                 conc=st.slider('Seleccionar número de expresas ',1,value1,1,1)
                 fig3 = PlotlyConcentracion(ConcSus) 
                 st.write(ConcSus.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconSus[conc]]))
+                st.download_button(label="Descargar CSV",data=convert_df(ConcSus),file_name='Conc_Susc_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig3,use_container_width=True)  
                 
         if select_indicador == 'IHH':
@@ -4383,12 +4575,15 @@ if select_mercado == "Televisión por suscripción":
                 prSus.insert(4,'IHH',IHH(prSus,'suscriptores'))
                 dfSuscriptores3.append(prSus.sort_values(by='participacion',ascending=False))
             SusgroupPart3=pd.concat(dfSuscriptores3)
+            SusgroupPart3.participacion=SusgroupPart3.participacion.round(3)
+            SusgroupPart3=SusgroupPart3[SusgroupPart3['participacion']>0]            
             IHHSus=SusgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()    
             
             fig5=PlotlyIHH(IHHSus)
 
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart3)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart3),file_name='IHH_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig5,use_container_width=True)
                 st.markdown('#### Visualización departamental del IHH')
                 periodoME=st.select_slider('Escoja un periodo para calcular el IHH', PERIODOSSUS,PERIODOSSUS[-1])
@@ -4477,11 +4672,13 @@ if select_mercado == "Televisión por suscripción":
                     col1.write(dSus)  
                     col2.write("**Índice de Linda**")
                     col2.write(LindSus)
+                    col2.download_button(label="Descargar CSV",data=convert_df(LindSus),file_name='Lind_Sus_TVSus.csv',mime='text/csv')
                     st.plotly_chart(fig10,use_container_width=True)        
                 else:    
                     lind=st.slider('Seleccionar nivel',2,len(LindconSus),2,1)
                     fig10=PlotlyLinda(LindSus)
                     st.write(LindSus.fillna(np.nan).reset_index(drop=True).style.apply(f, axis=0, subset=[LindconSus[lind-1]]))
+                    st.download_button(label="Descargar CSV",data=convert_df(LindSus),file_name='Lind_Sus_TVSus.csv',mime='text/csv')
                     with st.expander("Mostrar datos"):
                         st.write(dSus)                    
                     st.plotly_chart(fig10,use_container_width=True)
@@ -4501,7 +4698,8 @@ if select_mercado == "Televisión por suscripción":
             
             if select_variable == "Suscriptores":
                 st.write(r"""##### <center>Visualización de la evolución de la media entrópica en el departamento seleccionado</center>""",unsafe_allow_html=True)
-                st.plotly_chart(fig7,use_container_width=True)      
+                st.plotly_chart(fig7,use_container_width=True) 
+                st.download_button(label="Descargar CSV",data=convert_df(MEDIAENTROPICASUS),file_name='MedEntro_Sus_TVSus.csv',mime='text/csv')                
                 periodoME=st.select_slider('Escoja un periodo para calcular la media entrópica', PERIODOSSUS,PERIODOSSUS[-1])
                 MEperiodTableSus=MediaEntropica(SuscriptoresTV[(SuscriptoresTV['departamento']==DPTO)&(SuscriptoresTV['periodo']==periodoME)],'suscriptores')[1] 
                 
@@ -4590,6 +4788,7 @@ if select_mercado == "Televisión por suscripción":
             if select_variable=='Suscriptores':
                 fig12=PlotlyPenetracion(PenetracionDpto)
                 AgGrid(PenetracionDpto[['periodo','departamento','suscriptores','hogares','penetracion']])
+                st.download_button(label="Descargar CSV",data=convert_df(PenetracionDpto[['periodo','departamento','suscriptores','hogares','penetracion']]),file_name='Pen_Sus_TVSus.csv',mime='text/csv')
                 st.plotly_chart(fig12,use_container_width=True)
                 
         if select_indicador == 'Dominancia':
@@ -4601,12 +4800,14 @@ if select_mercado == "Televisión por suscripción":
                 dfSuscriptores4.append(prSus.sort_values(by='participacion',ascending=False))
             SusgroupPart4=pd.concat(dfSuscriptores4)
             SusgroupPart4.participacion=SusgroupPart4.participacion.round(2)
+            SusgroupPart4=SusgroupPart4[SusgroupPart4['participacion']>0]
             DomSus=SusgroupPart4.groupby(['periodo'])['Dominancia'].mean().reset_index()    
             
             fig13=PlotlyDominancia(DomSus)
 
             if select_variable == "Suscriptores":
                 AgGrid(SusgroupPart4)
+                st.download_button(label="Descargar CSV",data=convert_df(SusgroupPart4),file_name='Dom_Sus_TVSus.csv',mime='text/csv')                
                 st.plotly_chart(fig13,use_container_width=True)
                 st.markdown('#### Visualización departamental de la dominancia')
                 periodoME=st.select_slider('Escoja un periodo para calcular la dominancia', PERIODOSSUS,PERIODOSSUS[-1])
@@ -4749,6 +4950,13 @@ if select_mercado == 'Telefonía móvil':
         InggroupPart=pd.concat(dfIngresos)
         AbogroupPart=pd.concat(dfAbonados)
 
+        TrafgroupPart.participacion=TrafgroupPart.participacion.round(3)
+        InggroupPart.participacion=InggroupPart.participacion.round(3)
+        AbogroupPart.participacion=AbogroupPart.participacion.round(3)            
+        TrafgroupPart=TrafgroupPart[TrafgroupPart['participacion']>0]
+        AbogroupPart=AbogroupPart[AbogroupPart['participacion']>0]
+        InggroupPart=InggroupPart[InggroupPart['participacion']>0]
+
         #Gráficas
         fig1=PlotlyStenbacka(TrafgroupPart)
         fig2=PlotlyStenbacka(InggroupPart)
@@ -4757,12 +4965,15 @@ if select_mercado == 'Telefonía móvil':
         
         if select_variable == "Tráfico":
             AgGrid(TrafgroupPart)
+            st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart),file_name='Sten_Traf_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig1, use_container_width=True)
         if select_variable == "Ingresos":
             AgGrid(InggroupPart)
+            st.download_button(label="Descargar CSV",data=convert_df(InggroupPart),file_name='Sten_Ing_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig2, use_container_width=True)
         if select_variable == "Abonados":
             AgGrid(AbogroupPart)
+            st.download_button(label="Descargar CSV",data=convert_df(AbogroupPart),file_name='Sten_Abo_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig3, use_container_width=True)    
             
     if select_indicador == 'Concentración':
@@ -4781,18 +4992,21 @@ if select_mercado == 'Telefonía móvil':
             conc=st.slider('Seleccionar el número de empresas',1,len(colsconTraf)-1,1,1)
             fig4=PlotlyConcentracion(ConcTraf)
             st.write(ConcTraf.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconTraf[conc]]))
+            st.download_button(label="Descargar CSV",data=convert_df(ConcTraf),file_name='Conc_Traf_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig4,use_container_width=True)
         if select_variable == "Ingresos":
             colsconIng=ConcIng.columns.values.tolist()
             conc=st.slider('Seleccione el número de empresas',1,len(colsconIng)-1,1,1)
             fig5=PlotlyConcentracion(ConcIng)
             st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+            st.download_button(label="Descargar CSV",data=convert_df(ConcIng),file_name='Conc_Ing_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig5,use_container_width=True)
         if select_variable == "Abonados":
             colsconAbo=ConcAbo.columns.values.tolist()
             conc=st.slider('Seleccione el número de empresas',1,len(colsconAbo)-1,1,1)
             fig6=PlotlyConcentracion(ConcAbo)
             st.write(ConcAbo.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconAbo[conc]]))
+            st.download_button(label="Descargar CSV",data=convert_df(ConcAbo),file_name='Conc_Abo_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig6,use_container_width=True)
 
     if select_indicador == 'IHH':
@@ -4815,6 +5029,13 @@ if select_mercado == 'Telefonía móvil':
         TrafgroupPart3=pd.concat(dfTrafico3)
         InggroupPart3=pd.concat(dfIngresos3)
         AbogroupPart3=pd.concat(dfAbonados3)
+        TrafgroupPart3.participacion=TrafgroupPart3.participacion.round(3)
+        InggroupPart3.participacion=InggroupPart3.participacion.round(3)
+        AbogroupPart3.participacion=AbogroupPart3.participacion.round(3)
+        TrafgroupPart3=TrafgroupPart3[TrafgroupPart3['participacion']>0]
+        InggroupPart3=InggroupPart3[InggroupPart3['participacion']>0]
+        AbogroupPart3=AbogroupPart3[AbogroupPart3['participacion']>0] 
+        
         IHHTraf=TrafgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
         IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
         IHHAbo=AbogroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
@@ -4827,12 +5048,15 @@ if select_mercado == 'Telefonía móvil':
         
         if select_variable == "Tráfico":
             AgGrid(TrafgroupPart3)
+            st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart3),file_name='IHH_Traf_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig7,use_container_width=True)
         if select_variable == "Ingresos":
             AgGrid(InggroupPart3)
+            st.download_button(label="Descargar CSV",data=convert_df(InggroupPart3),file_name='IHH_Ing_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig8,use_container_width=True)
         if select_variable == "Abonados":
             AgGrid(AbogroupPart3)
+            st.download_button(label="Descargar CSV",data=convert_df(AbogroupPart3),file_name='IHH_Abo_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig9,use_container_width=True)
             
     if select_indicador == 'Linda':
@@ -4852,18 +5076,21 @@ if select_mercado == 'Telefonía móvil':
             lind=st.slider('Seleccionar nivel',2,len(LindconTraf),2,1)
             fig10=PlotlyLinda(LindTraf)
             st.write(LindTraf.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconTraf[lind-1]]))
+            st.download_button(label="Descargar CSV",data=convert_df(LindTraf),file_name='Linda_Traf_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig10,use_container_width=True)
         if select_variable == "Ingresos":
             LindconIng=LindIng.columns.values.tolist()            
             lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
             fig11=PlotlyLinda(LindIng)
             st.write(LindIng.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+            st.download_button(label="Descargar CSV",data=convert_df(LindIng),file_name='Linda_Ing_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig11,use_container_width=True)
         if select_variable == "Abonados":
             LindconAbo=LindAbo.columns.values.tolist()            
             lind=st.slider('Seleccionar nivel',2,len(LindconAbo),2,1)
             fig12=PlotlyLinda(LindAbo)
             st.write(LindAbo.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconAbo[lind-1]]))
+            st.download_button(label="Descargar CSV",data=convert_df(LindAbo),file_name='Linda_Abo_Telmov.csv',mime='text/csv')
             st.plotly_chart(fig12,use_container_width=True)                           
 
 if select_mercado == 'Internet móvil':
@@ -4944,6 +5171,18 @@ if select_mercado == 'Internet móvil':
         InggroupPart=pd.concat(dfIngresos)
         AccgroupPart=pd.concat(dfAccesos)
 
+        AccgroupPart=pd.concat(dfAccesos)
+        AccgroupPart.participacion=AccgroupPart.participacion.round(4)
+        AccgroupPart=AccgroupPart[AccgroupPart['participacion']>0]
+        
+        TrafgroupPart=pd.concat(dfTrafico)
+        TrafgroupPart.participacion=TrafgroupPart.participacion.round(4)
+        TrafgroupPart=TrafgroupPart[TrafgroupPart['participacion']>0]
+        
+        InggroupPart=pd.concat(dfIngresos)
+        InggroupPart.participacion=InggroupPart.participacion.round(4)
+        InggroupPart=InggroupPart[InggroupPart['participacion']>0]
+
         #Gráficas
         fig1=PlotlyStenbacka(TrafgroupPart)
         fig2=PlotlyStenbacka(InggroupPart)
@@ -4952,12 +5191,15 @@ if select_mercado == 'Internet móvil':
                
         if select_variable == "Tráfico":
             AgGrid(TrafgroupPart)
+            st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart),file_name='Sten_Traf_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig1, use_container_width=True)
         if select_variable == "Ingresos":
             AgGrid(InggroupPart)
+            st.download_button(label="Descargar CSV",data=convert_df(InggroupPart),file_name='Sten_Ing_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig2, use_container_width=True)
         if select_variable == "Accesos":
             AgGrid(AccgroupPart)
+            st.download_button(label="Descargar CSV",data=convert_df(AccgroupPart),file_name='Sten_Acc_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig3, use_container_width=True)      
 
     if select_indicador == 'Concentración':
@@ -4976,18 +5218,21 @@ if select_mercado == 'Internet móvil':
             conc=st.slider('Seleccionar el número de empresas',1,len(colsconTraf)-1,1,1)
             fig4=PlotlyConcentracion(ConcTraf)
             st.write(ConcTraf.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconTraf[conc]]))
+            st.download_button(label="Descargar CSV",data=convert_df(ConcTraf),file_name='Conc_Traf_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig4,use_container_width=True)
         if select_variable == "Ingresos":
             colsconIng=ConcIng.columns.values.tolist()
             conc=st.slider('Seleccione el número de empresas',1,len(colsconIng)-1,1,1)
             fig5=PlotlyConcentracion(ConcIng)
             st.write(ConcIng.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconIng[conc]]))
+            st.download_button(label="Descargar CSV",data=convert_df(ConcIng),file_name='Conc_Ing_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig5,use_container_width=True)
         if select_variable == "Accesos":
             colsconAcc=ConcAcc.columns.values.tolist()
             conc=st.slider('Seleccione el número de empresas',1,len(colsconAcc)-1,1,1)
             fig6=PlotlyConcentracion(ConcAcc)
             st.write(ConcAcc.reset_index(drop=True).style.apply(f, axis=0, subset=[colsconAcc[conc]]))
+            st.download_button(label="Descargar CSV",data=convert_df(ConcAcc),file_name='Conc_Acc_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig6,use_container_width=True)
             
     if select_indicador == 'IHH':
@@ -5010,6 +5255,19 @@ if select_mercado == 'Internet móvil':
         TrafgroupPart3=pd.concat(dfTrafico3)
         InggroupPart3=pd.concat(dfIngresos3)
         AccgroupPart3=pd.concat(dfAccesos3)
+
+        AccgroupPart3=pd.concat(dfAccesos3)
+        AccgroupPart3.participacion=AccgroupPart3.participacion.round(4)
+        AccgroupPart3=AccgroupPart3[AccgroupPart3['participacion']>0]
+        
+        TrafgroupPart3=pd.concat(dfTrafico3)
+        TrafgroupPart3.participacion=TrafgroupPart3.participacion.round(4)
+        TrafgroupPart3=TrafgroupPart3[TrafgroupPart3['participacion']>0]
+        
+        InggroupPart3=pd.concat(dfIngresos3)
+        InggroupPart3.participacion=InggroupPart3.participacion.round(4)
+        InggroupPart3=InggroupPart3[InggroupPart3['participacion']>0]        
+        
         IHHTraf=TrafgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
         IHHIng=InggroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
         IHHAcc=AccgroupPart3.groupby(['periodo'])['IHH'].mean().reset_index()
@@ -5022,12 +5280,15 @@ if select_mercado == 'Internet móvil':
         
         if select_variable == "Tráfico":
             AgGrid(TrafgroupPart3)
+            st.download_button(label="Descargar CSV",data=convert_df(TrafgroupPart3),file_name='IHH_Traf_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig7,use_container_width=True)
         if select_variable == "Ingresos":
             AgGrid(InggroupPart3)
+            st.download_button(label="Descargar CSV",data=convert_df(InggroupPart3),file_name='IHH_Ing_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig8,use_container_width=True)
         if select_variable == "Accesos":
             AgGrid(AccgroupPart3)
+            st.download_button(label="Descargar CSV",data=convert_df(AccgroupPart3),file_name='IHH_Acc_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig9,use_container_width=True)
             
     if select_indicador == 'Linda':
@@ -5047,18 +5308,21 @@ if select_mercado == 'Internet móvil':
             lind=st.slider('Seleccionar nivel',2,len(LindconTraf),2,1)
             fig10=PlotlyLinda(LindTraf)
             st.write(LindTraf.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconTraf[lind-1]]))
+            st.download_button(label="Descargar CSV",data=convert_df(LindTraf),file_name='Lind_Traf_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig10,use_container_width=True)
         if select_variable == "Ingresos":
             LindconIng=LindIng.columns.values.tolist()            
             lind=st.slider('Seleccionar nivel',2,len(LindconIng),2,1)
             fig11=PlotlyLinda(LindIng)
             st.write(LindIng.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconIng[lind-1]]))
+            st.download_button(label="Descargar CSV",data=convert_df(LindIng),file_name='Lind_Ing_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig11,use_container_width=True)
         if select_variable == "Accesos":
             LindconAcc=LindAcc.columns.values.tolist()            
             lind=st.slider('Seleccionar nivel',2,len(LindconAcc),2,1)
             fig12=PlotlyLinda(LindAcc)
             st.write(LindAcc.reset_index(drop=True).style.apply(f, axis=0, subset=[LindconAcc[lind-1]]))
+            st.download_button(label="Descargar CSV",data=convert_df(LindAcc),file_name='Lind_Acc_Intmov.csv',mime='text/csv')
             st.plotly_chart(fig12,use_container_width=True)                
             
 
