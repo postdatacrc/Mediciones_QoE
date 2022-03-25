@@ -4460,7 +4460,10 @@ if select_mercado == "Televisión por suscripción":
             select_variable = st.selectbox('Variable',['Suscriptores']) 
 
         DEPARTAMENTOSSUS=sorted(SusdptoTV.departamento.unique().tolist())
-        DEPARTAMENTOSSUS.remove('NA')
+        if 'NA' in DEPARTAMENTOSSUS==True:
+            DEPARTAMENTOSSUS.remove('NA')
+        else:
+            pass
     
         with col2:
             DPTO=st.selectbox('Escoja el departamento', DEPARTAMENTOSSUS,5)   
