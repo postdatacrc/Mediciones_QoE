@@ -180,7 +180,7 @@ def PlotlyStenbacka(df):
     'xanchor': 'center',
     'yanchor': 'top'})
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90,showgrid=True, gridwidth=1, gridcolor='rgba(192, 192, 192, 0.4)')
+    fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='rgba(192, 192, 192, 0.4)')
     fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(192, 192, 192, 0.4)')
     return fig
 
@@ -722,7 +722,7 @@ def loadCorreo():
     return data
 @st.cache(allow_output_mutation=True)  
 def loadMExpresa():
-    data=pd.read_csv("https://raw.githubusercontent.com/sbermudezf/ComisionRegulacionComunicaciones/main/ING_ENV_ME_IC.csv",delimiter=';',error_bad_lines=False,encoding='latin1')
+    data=pd.read_csv("https://raw.githubusercontent.com/sbermudezf/ComisionRegulacionComunicaciones/main/ING_ENV_ME_IC2021.csv",delimiter=';',error_bad_lines=False,encoding='latin1')
     return data
 Correo=loadCorreo()
 MenExp=loadMExpresa()
@@ -779,7 +779,7 @@ if select_ambito =='Nacional':
             
             Documentos=Individual[Individual['tipo_objeto']=='Documentos']
             Documentos.drop(['anno','trimestre','id_tipo_envio','tipo_envio','id_tipo_objeto','id_ambito'],axis=1, inplace=True)
-            PERIODOS=['2020-T3','2020-T4','2021-T1','2021-T2']
+            PERIODOS=['2020-T3','2020-T4','2021-T1','2021-T2','2021-T3','2021-T4']
             DocumentosnacIng=Documentos.groupby(['periodo','empresa','id_empresa'])['ingresos'].sum().reset_index()
             DocumentosnacEnv=Documentos.groupby(['periodo','empresa','id_empresa'])['numero_total_envios'].sum().reset_index()
           
