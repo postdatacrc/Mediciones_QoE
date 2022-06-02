@@ -200,7 +200,7 @@ def PlotlyConcentracion(df):
     'x':0.5,
     'xanchor': 'center',
     'yanchor': 'top'})    
-    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    fig.update_xaxes(tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
     zeroline=True,linecolor = "#000000",zerolinewidth=2,  
     showgrid = True, 
     showline = True,
@@ -237,7 +237,7 @@ def PlotlyIHH(df):
                          hovertemplate =
         '<br><b>Periodo</b>: %{x}<br>'+                         
         '<br><b>IHH</b>: %{y:.4f}<br>',name=''))
-    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    fig.update_xaxes(tickangle=0, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
     zeroline=True,linecolor = "#000000",zerolinewidth=2,  
     showgrid = True, 
     showline = True,
@@ -284,7 +284,7 @@ def PlotlyDominancia(df):
         '<br><b>Dominancia</b>: %{y:.4f}<br>',name=''))
     fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    fig.update_xaxes(tickangle=0, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
     zeroline=True,linecolor = "#000000",zerolinewidth=2,  
     showgrid = True, 
     showline = True,
@@ -317,7 +317,7 @@ def PlotlyPenetracion(df):
         '<br><b>Penetración</b>: %{y:.4f}<br>',name=''))
     fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    fig.update_xaxes(tickangle=0, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
     zeroline=True,linecolor = "#000000",zerolinewidth=2,  
     showgrid = True, 
     showline = True,
@@ -351,7 +351,7 @@ def PlotlyMEntropica(df):
         '<br><b>MEDIA ENTROPICA</b>: %{y:.4f}<br>')) 
     fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    fig.update_xaxes(tickangle=0, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
     zeroline=True,linecolor = "#000000",zerolinewidth=2,  
     showgrid = True, 
     showline = True,
@@ -395,7 +395,7 @@ def PlotlyLinda(df):
     fig.add_trace(go.Bar(x=df['periodo'], y=flatten(df.iloc[:, [lind-1]].values),hovertemplate =
     '<br><b>Periodo</b>: %{x}<br>'+                         
     '<br><b>Linda</b>: %{y:.4f}<br>',name=''))
-    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    fig.update_xaxes(tickangle=0, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
     zeroline=True,linecolor = "#000000",zerolinewidth=2,  
     showgrid = True, 
     showline = True,
@@ -429,7 +429,7 @@ def PlotlyLinda2(df):
     '<br><b>Linda</b>: %{y:.4f}<br>',name=''))
     fig.update_layout(height=550,legend_title=None)
     fig.update_layout(showlegend=False,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_xaxes(tickangle=-90, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+    fig.update_xaxes(tickangle=0, tickfont=dict(family='Boston', color='black', size=12),title_text=None,row=1, col=1,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
     zeroline=True,linecolor = "#000000",zerolinewidth=2,  
     showgrid = True, 
     showline = True,
