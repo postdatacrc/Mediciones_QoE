@@ -1,0 +1,429 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+Tigo;Antioquia, Colombia;;Dec 2019;151058;46512;all;N/A;mean;46505;26;26425;10846;26.43;10.85
+Tigo;Arauca, Colombia;;Dec 2019;2;2;all;N/A;mean;2;12;8007;4085;8.01;4.09
+Tigo;Atlantico, Colombia;;Dec 2019;16845;4691;all;N/A;mean;4690;22;23228;7545;23.23;7.55
+Tigo;Bogota, Colombia;;Dec 2019;30240;10132;all;N/A;mean;10125;22;26948;12435;26.95;12.44
+Tigo;Bolivar, Colombia;;Dec 2019;15414;4679;all;N/A;mean;4676;28;19494;5468;19.49;5.47
+Tigo;Boyaca, Colombia;;Dec 2019;2291;737;all;N/A;mean;737;20;19266;4932;19.27;4.93
+Tigo;Caldas, Colombia;;Dec 2019;12438;3621;all;N/A;mean;3620;33;20339;9095;20.34;9.10
+Tigo;Cauca Department, Colombia;;Dec 2019;5219;1174;all;N/A;mean;1174;47;16427;7258;16.43;7.26
+Tigo;Cesar, Colombia;;Dec 2019;3929;1382;all;N/A;mean;1375;45;15144;3595;15.14;3.60
+Tigo;Choco, Colombia;;Dec 2019;213;42;all;N/A;mean;42;26;21346;4383;21.35;4.38
+Tigo;Cordoba, Colombia;;Dec 2019;4681;1651;all;N/A;mean;1648;40;17841;7923;17.84;7.92
+Tigo;Cundinamarca, Colombia;;Dec 2019;5881;1947;all;N/A;mean;1946;27;33167;25069;33.17;25.07
+Tigo;Huila, Colombia;;Dec 2019;2;2;all;N/A;mean;2;45;16809;7568;16.81;7.57
+Tigo;La Guajira, Colombia;;Dec 2019;8;5;all;N/A;mean;5;73;5145;6408;5.15;6.41
+Tigo;Magdalena, Colombia;;Dec 2019;4064;1358;all;N/A;mean;1357;23;19597;8213;19.60;8.21
+Tigo;Meta, Colombia;;Dec 2019;1860;649;all;N/A;mean;649;34;22641;5640;22.64;5.64
+Tigo;Narino, Colombia;;Dec 2019;1258;424;all;N/A;mean;424;34;23513;5296;23.51;5.30
+Tigo;North Santander, Colombia;;Dec 2019;5992;1638;all;N/A;mean;1637;44;19348;8979;19.35;8.98
+Tigo;Putumayo, Colombia;;Dec 2019;1;1;all;N/A;mean;1;18;6119;5770;6.12;5.77
+Tigo;Quindio, Colombia;;Dec 2019;6603;1952;all;N/A;mean;1952;36;15857;4989;15.86;4.99
+Tigo;Risaralda, Colombia;;Dec 2019;19333;5182;all;N/A;mean;5182;31;19803;8495;19.80;8.50
+Tigo;San Andrés and Providencia, Colombia;;Dec 2019;71;19;all;N/A;mean;18;131;1723;2280;1.72;2.28
+Tigo;Santander Department, Colombia;;Dec 2019;18344;5685;all;N/A;mean;5684;43;20555;6299;20.56;6.30
+Tigo;Sucre, Colombia;;Dec 2019;3628;1165;all;N/A;mean;1164;43;14722;4840;14.72;4.84
+Tigo;Tolima, Colombia;;Dec 2019;5813;1747;all;N/A;mean;1747;43;25020;13478;25.02;13.48
+Tigo;Valle del Cauca, Colombia;;Dec 2019;35405;9306;all;N/A;mean;9305;32;22711;11604;22.71;11.60
+Tigo;Vaupes, Colombia;;Dec 2019;6;4;all;N/A;mean;4;27;22930;5398;22.93;5.40
+EMCALI;Antioquia, Colombia;;Dec 2019;1;1;all;N/A;mean;1;3;32387;26964;32.39;26.96
+EMCALI;Cauca Department, Colombia;;Dec 2019;1;1;all;N/A;mean;1;27;3998;1521;4.00;1.52
+EMCALI;Valle del Cauca, Colombia;;Dec 2019;13815;4709;all;N/A;mean;4708;41;11560;6113;11.56;6.11
+Tigo;Antioquia, Colombia;;Jan 2020;156344;46619;all;N/A;mean;46619;31;26541;12405;26.54;12.41
+Tigo;Atlantico, Colombia;;Jan 2020;17941;5082;all;N/A;mean;5082;24;22131;7355;22.13;7.36
+Tigo;Bogota, Colombia;;Jan 2020;33623;10541;all;N/A;mean;10541;26;27187;14583;27.19;14.58
+Tigo;Bolivar, Colombia;;Jan 2020;15810;4588;all;N/A;mean;4588;35;19170;5275;19.17;5.28
+Tigo;Boyaca, Colombia;;Jan 2020;2755;853;all;N/A;mean;853;25;17384;4961;17.38;4.96
+Tigo;Caldas, Colombia;;Jan 2020;13841;3948;all;N/A;mean;3948;35;20157;8662;20.16;8.66
+Tigo;Cauca Department, Colombia;;Jan 2020;5196;1221;all;N/A;mean;1221;47;18648;10848;18.65;10.85
+Tigo;Cesar, Colombia;;Jan 2020;4918;1572;all;N/A;mean;1572;55;14719;3924;14.72;3.92
+Tigo;Choco, Colombia;;Jan 2020;43;11;all;N/A;mean;11;24;14233;3965;14.23;3.97
+Tigo;Cordoba, Colombia;;Jan 2020;5032;1707;all;N/A;mean;1707;46;14926;4672;14.93;4.67
+Tigo;Cundinamarca, Colombia;;Jan 2020;7292;1952;all;N/A;mean;1952;29;30839;23819;30.84;23.82
+Tigo;Huila, Colombia;;Jan 2020;72;17;all;N/A;mean;17;21;63640;67572;63.64;67.57
+Tigo;La Guajira, Colombia;;Jan 2020;13;11;all;N/A;mean;11;40;6410;4462;6.41;4.46
+Tigo;Magdalena, Colombia;;Jan 2020;5337;1558;all;N/A;mean;1558;37;19665;7527;19.67;7.53
+Tigo;Meta, Colombia;;Jan 2020;2102;739;all;N/A;mean;739;41;21145;4942;21.15;4.94
+Tigo;Narino, Colombia;;Jan 2020;1290;415;all;N/A;mean;415;36;21897;5892;21.90;5.89
+Tigo;North Santander, Colombia;;Jan 2020;7775;1953;all;N/A;mean;1953;62;18272;9210;18.27;9.21
+Tigo;Quindio, Colombia;;Jan 2020;6910;1975;all;N/A;mean;1975;38;16542;4643;16.54;4.64
+Tigo;Risaralda, Colombia;;Jan 2020;21451;5739;all;N/A;mean;5739;32;22537;10340;22.54;10.34
+Tigo;San Andrés and Providencia, Colombia;;Jan 2020;49;17;all;N/A;mean;17;70;1802;1838;1.80;1.84
+Tigo;Santander Department, Colombia;;Jan 2020;25868;6862;all;N/A;mean;6862;64;17492;5629;17.49;5.63
+Tigo;Sucre, Colombia;;Jan 2020;4052;1208;all;N/A;mean;1208;46;14387;4839;14.39;4.84
+Tigo;Tolima, Colombia;;Jan 2020;6362;1763;all;N/A;mean;1763;49;21070;12530;21.07;12.53
+Tigo;Valle del Cauca, Colombia;;Jan 2020;37996;9908;all;N/A;mean;9908;33;23254;12276;23.25;12.28
+Tigo;Vaupes, Colombia;;Jan 2020;6;5;all;N/A;mean;5;26;22314;3635;22.31;3.64
+Tigo;Vichada, Colombia;;Jan 2020;5;1;all;N/A;mean;1;22;10081;515;10.08;0.52
+EMCALI;Antioquia, Colombia;;Jan 2020;1;1;all;N/A;mean;1;18;6829;683;6.83;0.68
+EMCALI;Cauca Department, Colombia;;Jan 2020;29;8;all;N/A;mean;8;56;3080;2005;3.08;2.01
+EMCALI;Cundinamarca, Colombia;;Jan 2020;7;6;all;N/A;mean;6;23;9249;3331;9.25;3.33
+EMCALI;Magdalena, Colombia;;Jan 2020;7;3;all;N/A;mean;3;187;1500;421;1.50;0.42
+EMCALI;Valle del Cauca, Colombia;;Jan 2020;13003;4348;all;N/A;mean;4348;44;17873;14407;17.87;14.41
+Tigo;Antioquia, Colombia;;feb-20;169506;48855;all;N/A;mean;48855;24;29659;13493;29.66;13.49
+Tigo;Atlantico, Colombia;;feb-20;17448;4928;all;N/A;mean;4928;25;24419;7408;24.42;7.41
+Tigo;Bogota, Colombia;;feb-20;39827;11677;all;N/A;mean;11677;22;29951;16574;29.95;16.57
+Tigo;Bolivar, Colombia;;feb-20;16674;4453;all;N/A;mean;4453;29;22401;6808;22.40;6.81
+Tigo;Boyaca, Colombia;;feb-20;4032;1094;all;N/A;mean;1094;23;30117;18129;30.12;18.13
+Tigo;Caldas, Colombia;;feb-20;15042;4256;all;N/A;mean;4256;30;24102;11245;24.10;11.25
+Tigo;Cauca Department, Colombia;;feb-20;5494;1335;all;N/A;mean;1335;47;24646;16092;24.65;16.09
+Tigo;Cesar, Colombia;;feb-20;5278;1544;all;N/A;mean;1544;42;19097;5128;19.10;5.13
+Tigo;Choco, Colombia;;feb-20;80;39;all;N/A;mean;39;44;9424;3659;9.42;3.66
+Tigo;Cordoba, Colombia;;feb-20;5560;1819;all;N/A;mean;1819;41;17630;5982;17.63;5.98
+Tigo;Cundinamarca, Colombia;;feb-20;6854;2123;all;N/A;mean;2123;25;29950;20330;29.95;20.33
+Tigo;Huila, Colombia;;feb-20;5;5;all;N/A;mean;5;20;13356;3655;13.36;3.66
+Tigo;La Guajira, Colombia;;feb-20;11;7;all;N/A;mean;7;28;7388;7275;7.39;7.28
+Tigo;Magdalena, Colombia;;feb-20;6018;1648;all;N/A;mean;1648;28;31630;21791;31.63;21.79
+Tigo;Meta, Colombia;;feb-20;2329;626;all;N/A;mean;626;40;21625;5488;21.63;5.49
+Tigo;Narino, Colombia;;feb-20;1328;447;all;N/A;mean;447;34;22075;4638;22.08;4.64
+Tigo;North Santander, Colombia;;feb-20;7417;1818;all;N/A;mean;1818;48;22604;11297;22.60;11.30
+Tigo;Quindio, Colombia;;feb-20;8058;2157;all;N/A;mean;2157;33;20169;5352;20.17;5.35
+Tigo;Risaralda, Colombia;;feb-20;21763;5665;all;N/A;mean;5665;28;25257;13484;25.26;13.48
+Tigo;San Andrés and Providencia, Colombia;;feb-20;106;33;all;N/A;mean;33;132;857;933;0.86;0.93
+Tigo;Santander Department, Colombia;;feb-20;20979;6009;all;N/A;mean;6009;43;22065;7140;22.07;7.14
+Tigo;Sucre, Colombia;;feb-20;3882;1172;all;N/A;mean;1172;42;18664;5399;18.66;5.40
+Tigo;Tolima, Colombia;;feb-20;6712;1875;all;N/A;mean;1875;47;26009;14011;26.01;14.01
+Tigo;Valle del Cauca, Colombia;;feb-20;41027;9964;all;N/A;mean;9964;32;23525;12626;23.53;12.63
+EMCALI;Cauca Department, Colombia;;feb-20;21;8;all;N/A;mean;8;64;2619;1749;2.62;1.75
+EMCALI;Choco, Colombia;;feb-20;15;4;all;N/A;mean;4;37;2664;800;2.66;0.80
+EMCALI;Magdalena, Colombia;;feb-20;3;2;all;N/A;mean;2;14;4421;745;4.42;0.75
+EMCALI;Valle del Cauca, Colombia;;feb-20;12230;4381;all;N/A;mean;4381;38;31877;31547;31.88;31.55
+Tigo;Amazonas, Colombia;;mar-20;1;1;all;N/A;mean;1;16;8259;13744;8.26;13.74
+Tigo;Antioquia, Colombia;;mar-20;278373;75425;all;N/A;mean;75425;32;25205;9344;25.21;9.34
+Tigo;Atlantico, Colombia;;mar-20;43757;8734;all;N/A;mean;8734;25;19465;6707;19.47;6.71
+Tigo;Bogota, Colombia;;mar-20;96749;20688;all;N/A;mean;20688;42;20537;9456;20.54;9.46
+Tigo;Bolivar, Colombia;;mar-20;28779;6516;all;N/A;mean;6516;56;19796;5039;19.80;5.04
+Tigo;Boyaca, Colombia;;mar-20;6487;1497;all;N/A;mean;1497;46;17994;7613;17.99;7.61
+Tigo;Caldas, Colombia;;mar-20;30064;6954;all;N/A;mean;6954;45;18614;6357;18.61;6.36
+Tigo;Cauca Department, Colombia;;mar-20;9216;1808;all;N/A;mean;1808;73;20490;12387;20.49;12.39
+Tigo;Cesar, Colombia;;mar-20;9719;2241;all;N/A;mean;2241;67;15633;4169;15.63;4.17
+Tigo;Choco, Colombia;;mar-20;496;46;all;N/A;mean;46;48;16941;10383;16.94;10.38
+Tigo;Cordoba, Colombia;;mar-20;8369;2483;all;N/A;mean;2483;49;16530;5560;16.53;5.56
+Tigo;Cundinamarca, Colombia;;mar-20;14459;3810;all;N/A;mean;3810;36;21337;14399;21.34;14.40
+Tigo;Huila, Colombia;;mar-20;1;1;all;N/A;mean;1;52;10339;2005;10.34;2.01
+Tigo;La Guajira, Colombia;;mar-20;9;7;all;N/A;mean;7;22;5867;5092;5.87;5.09
+Tigo;Magdalena, Colombia;;mar-20;6969;1815;all;N/A;mean;1815;28;22666;11040;22.67;11.04
+Tigo;Meta, Colombia;;mar-20;4982;1037;all;N/A;mean;1037;72;19945;5307;19.95;5.31
+Tigo;Narino, Colombia;;mar-20;2369;620;all;N/A;mean;620;38;20360;4671;20.36;4.67
+Tigo;North Santander, Colombia;;mar-20;9752;2284;all;N/A;mean;2284;50;17082;7355;17.08;7.36
+Tigo;Putumayo, Colombia;;mar-20;2;2;all;N/A;mean;2;44;505;266;0.51;0.27
+Tigo;Quindio, Colombia;;mar-20;15502;3452;all;N/A;mean;3452;49;17015;4486;17.02;4.49
+Tigo;Risaralda, Colombia;;mar-20;42215;10604;all;N/A;mean;10604;38;18754;9076;18.75;9.08
+Tigo;San Andrés and Providencia, Colombia;;mar-20;69;17;all;N/A;mean;17;66;3100;2545;3.10;2.55
+Tigo;Santander Department, Colombia;;mar-20;31391;8327;all;N/A;mean;8327;47;20615;6579;20.62;6.58
+Tigo;Sucre, Colombia;;mar-20;6340;1884;all;N/A;mean;1884;60;16924;5403;16.92;5.40
+Tigo;Tolima, Colombia;;mar-20;16535;2981;all;N/A;mean;2981;60;19863;12839;19.86;12.84
+Tigo;Valle del Cauca, Colombia;;mar-20;68783;15136;all;N/A;mean;15136;45;18236;9230;18.24;9.23
+EMCALI;Antioquia, Colombia;;mar-20;1;1;all;N/A;mean;1;33;182;611;0.18;0.61
+EMCALI;Cauca Department, Colombia;;mar-20;320;95;all;N/A;mean;95;89;4658;1942;4.66;1.94
+EMCALI;Choco, Colombia;;mar-20;3;1;all;N/A;mean;1;41;9527;873;9.53;0.87
+EMCALI;Valle del Cauca, Colombia;;mar-20;20694;6403;all;N/A;mean;6403;51;15138;11222;15.14;11.22
+Tigo;Antioquia, Colombia;;Apr 2020;301219;74273;all;N/A;mean;74273;31;24851;7055;24.85;7.06
+Tigo;Arauca, Colombia;;Apr 2020;8;3;all;N/A;mean;3;13;40846;43039;40.85;43.04
+Tigo;Atlantico, Colombia;;Apr 2020;44248;9248;all;N/A;mean;9248;33;20597;5030;20.60;5.03
+Tigo;Bogota, Colombia;;Apr 2020;100446;21300;all;N/A;mean;21300;43;21367;7030;21.37;7.03
+Tigo;Bolivar, Colombia;;Apr 2020;38676;7912;all;N/A;mean;7912;49;17917;4154;17.92;4.15
+Tigo;Boyaca, Colombia;;Apr 2020;6512;1564;all;N/A;mean;1564;30;17800;5441;17.80;5.44
+Tigo;Caldas, Colombia;;Apr 2020;30024;6389;all;N/A;mean;6389;40;19122;4956;19.12;4.96
+Tigo;Caquetá, Colombia;;Apr 2020;8;1;all;N/A;mean;1;25;96301;48177;96.30;48.18
+Tigo;Casanare, Colombia;;Apr 2020;1;1;all;N/A;mean;1;25;36475;43259;36.48;43.26
+Tigo;Cauca Department, Colombia;;Apr 2020;10366;2103;all;N/A;mean;2103;58;18452;12849;18.45;12.85
+Tigo;Cesar, Colombia;;Apr 2020;10729;2475;all;N/A;mean;2475;58;15820;3945;15.82;3.95
+Tigo;Choco, Colombia;;Apr 2020;882;72;all;N/A;mean;72;37;16658;10417;16.66;10.42
+Tigo;Cordoba, Colombia;;Apr 2020;8224;2413;all;N/A;mean;2413;58;15301;4366;15.30;4.37
+Tigo;Cundinamarca, Colombia;;Apr 2020;18356;4750;all;N/A;mean;4750;43;15219;7778;15.22;7.78
+Tigo;Huila, Colombia;;Apr 2020;24;7;all;N/A;mean;7;27;53765;54127;53.77;54.13
+Tigo;Magdalena, Colombia;;Apr 2020;8070;1839;all;N/A;mean;1839;44;17512;5254;17.51;5.25
+Tigo;Meta, Colombia;;Apr 2020;4884;1011;all;N/A;mean;1011;66;20254;5379;20.25;5.38
+Tigo;Narino, Colombia;;Apr 2020;2646;671;all;N/A;mean;671;42;18301;4379;18.30;4.38
+Tigo;North Santander, Colombia;;Apr 2020;12623;2510;all;N/A;mean;2510;65;15742;7316;15.74;7.32
+Tigo;Putumayo, Colombia;;Apr 2020;3;2;all;N/A;mean;2;30;15278;11582;15.28;11.58
+Tigo;Quindio, Colombia;;Apr 2020;13920;3332;all;N/A;mean;3332;38;18241;4782;18.24;4.78
+Tigo;Risaralda, Colombia;;Apr 2020;38394;9503;all;N/A;mean;9503;37;20158;7657;20.16;7.66
+Tigo;San Andrés and Providencia, Colombia;;Apr 2020;53;8;all;N/A;mean;8;66;2280;5402;2.28;5.40
+Tigo;Santander Department, Colombia;;Apr 2020;49018;11265;all;N/A;mean;11265;65;18385;4802;18.39;4.80
+Tigo;Sucre, Colombia;;Apr 2020;6522;1931;all;N/A;mean;1931;66;16190;4262;16.19;4.26
+Tigo;Tolima, Colombia;;Apr 2020;10004;2398;all;N/A;mean;2398;57;21190;9303;21.19;9.30
+Tigo;Valle del Cauca, Colombia;;Apr 2020;71289;14680;all;N/A;mean;14680;44;17660;7432;17.66;7.43
+EMCALI;Antioquia, Colombia;;Apr 2020;2;1;all;N/A;mean;1;17;4333;507;4.33;0.51
+EMCALI;Cauca Department, Colombia;;Apr 2020;331;129;all;N/A;mean;129;58;7387;3789;7.39;3.79
+EMCALI;Valle del Cauca, Colombia;;Apr 2020;30519;7354;all;N/A;mean;7354;47;11512;7009;11.51;7.01
+Tigo;Antioquia, Colombia;;may-20;311290;77975;all;N/A;mean;77975;28;28562;8642;28.56;8.64
+Tigo;Arauca, Colombia;;may-20;4;2;all;N/A;mean;2;27;46585;43979;46.59;43.98
+Tigo;Atlantico, Colombia;;may-20;34241;8725;all;N/A;mean;8725;28;24321;5391;24.32;5.39
+Tigo;Bogota, Colombia;;may-20;91965;21819;all;N/A;mean;21819;29;25458;8334;25.46;8.33
+Tigo;Bolivar, Colombia;;may-20;40453;9356;all;N/A;mean;9356;45;19384;4765;19.38;4.77
+Tigo;Boyaca, Colombia;;may-20;7541;1736;all;N/A;mean;1736;29;18745;4873;18.75;4.87
+Tigo;Caldas, Colombia;;may-20;28359;6669;all;N/A;mean;6669;40;22458;6011;22.46;6.01
+Tigo;Caquetá, Colombia;;may-20;9;2;all;N/A;mean;2;24;100706;115941;100.71;115.94
+Tigo;Casanare, Colombia;;may-20;5;4;all;N/A;mean;4;26;32431;25528;32.43;25.53
+Tigo;Cauca Department, Colombia;;may-20;10984;2410;all;N/A;mean;2410;51;19442;11651;19.44;11.65
+Tigo;Cesar, Colombia;;may-20;14410;2952;all;N/A;mean;2952;62;16946;4403;16.95;4.40
+Tigo;Choco, Colombia;;may-20;372;79;all;N/A;mean;79;35;24155;12865;24.16;12.87
+Tigo;Cordoba, Colombia;;may-20;10149;2716;all;N/A;mean;2716;51;16996;5162;17.00;5.16
+Tigo;Cundinamarca, Colombia;;may-20;17863;4758;all;N/A;mean;4758;33;17008;6509;17.01;6.51
+Tigo;Huila, Colombia;;may-20;16;9;all;N/A;mean;9;25;24680;24810;24.68;24.81
+Tigo;La Guajira, Colombia;;may-20;1;1;all;N/A;mean;1;42;5123;4939;5.12;4.94
+Tigo;Magdalena, Colombia;;may-20;7222;1836;all;N/A;mean;1836;29;20648;6789;20.65;6.79
+Tigo;Meta, Colombia;;may-20;4116;989;all;N/A;mean;989;41;23077;5712;23.08;5.71
+Tigo;Narino, Colombia;;may-20;3754;884;all;N/A;mean;884;45;22899;6890;22.90;6.89
+Tigo;North Santander, Colombia;;may-20;11000;2366;all;N/A;mean;2366;54;17871;7939;17.87;7.94
+Tigo;Putumayo, Colombia;;may-20;71;3;all;N/A;mean;3;28;38906;46388;38.91;46.39
+Tigo;Quindio, Colombia;;may-20;13357;3456;all;N/A;mean;3456;42;22048;6182;22.05;6.18
+Tigo;Risaralda, Colombia;;may-20;38265;8996;all;N/A;mean;8996;38;23463;8114;23.46;8.11
+Tigo;San Andrés and Providencia, Colombia;;may-20;75;9;all;N/A;mean;9;74;2592;3098;2.59;3.10
+Tigo;Santander Department, Colombia;;may-20;47911;11866;all;N/A;mean;11866;56;21518;5366;21.52;5.37
+Tigo;Sucre, Colombia;;may-20;5565;1821;all;N/A;mean;1821;56;16983;4380;16.98;4.38
+Tigo;Tolima, Colombia;;may-20;11120;2597;all;N/A;mean;2597;59;21044;9856;21.04;9.86
+Tigo;Valle del Cauca, Colombia;;may-20;69423;15019;all;N/A;mean;15019;41;21120;8346;21.12;8.35
+EMCALI;Cauca Department, Colombia;;may-20;549;150;all;N/A;mean;150;48;6392;4773;6.39;4.77
+EMCALI;Valle del Cauca, Colombia;;may-20;27178;7277;all;N/A;mean;7277;43;12427;7555;12.43;7.56
+Tigo;Antioquia, Colombia;;jun-20;282120;73522;all;N/A;mean;73522;28;31253;9733;31.25;9.73
+Tigo;Atlantico, Colombia;;jun-20;32627;8082;all;N/A;mean;8082;26;26729;5849;26.73;5.85
+Tigo;Bogota, Colombia;;jun-20;77091;20467;all;N/A;mean;20467;24;29798;10320;29.80;10.32
+Tigo;Bolivar, Colombia;;jun-20;34576;8010;all;N/A;mean;8010;42;22982;5230;22.98;5.23
+Tigo;Boyaca, Colombia;;jun-20;6343;1645;all;N/A;mean;1645;29;21749;5346;21.75;5.35
+Tigo;Caldas, Colombia;;jun-20;27076;6488;all;N/A;mean;6488;36;25956;8359;25.96;8.36
+Tigo;Caquetá, Colombia;;jun-20;16;4;all;N/A;mean;4;28;95309;74055;95.31;74.06
+Tigo;Casanare, Colombia;;jun-20;3;1;all;N/A;mean;1;26;58332;30926;58.33;30.93
+Tigo;Cauca Department, Colombia;;jun-20;9902;2278;all;N/A;mean;2278;46;23203;11904;23.20;11.90
+Tigo;Cesar, Colombia;;jun-20;17439;2957;all;N/A;mean;2957;43;18177;4649;18.18;4.65
+Tigo;Choco, Colombia;;jun-20;143;34;all;N/A;mean;34;22;32611;10844;32.61;10.84
+Tigo;Cordoba, Colombia;;jun-20;9669;2699;all;N/A;mean;2699;46;18520;5087;18.52;5.09
+Tigo;Cundinamarca, Colombia;;jun-20;14950;3962;all;N/A;mean;3962;30;21212;8621;21.21;8.62
+Tigo;Huila, Colombia;;jun-20;6;6;all;N/A;mean;6;23;41702;43084;41.70;43.08
+Tigo;La Guajira, Colombia;;jun-20;1;1;all;N/A;mean;1;36;3803;1840;3.80;1.84
+Tigo;Magdalena, Colombia;;jun-20;7943;1868;all;N/A;mean;1868;30;22728;6671;22.73;6.67
+Tigo;Meta, Colombia;;jun-20;4136;994;all;N/A;mean;994;35;28146;5981;28.15;5.98
+Tigo;Narino, Colombia;;jun-20;3792;899;all;N/A;mean;899;40;22572;4535;22.57;4.54
+Tigo;North Santander, Colombia;;jun-20;9309;2157;all;N/A;mean;2157;47;22237;11649;22.24;11.65
+Tigo;Putumayo, Colombia;;jun-20;13;5;all;N/A;mean;5;37;34750;22543;34.75;22.54
+Tigo;Quindio, Colombia;;jun-20;13413;3505;all;N/A;mean;3505;37;24121;5704;24.12;5.70
+Tigo;Risaralda, Colombia;;jun-20;42226;9695;all;N/A;mean;9695;40;23661;8315;23.66;8.32
+Tigo;San Andrés and Providencia, Colombia;;jun-20;49;10;all;N/A;mean;10;58;2200;2581;2.20;2.58
+Tigo;Santander Department, Colombia;;jun-20;46731;10891;all;N/A;mean;10891;49;24592;5827;24.59;5.83
+Tigo;Sucre, Colombia;;jun-20;6973;1747;all;N/A;mean;1747;50;18833;5059;18.83;5.06
+Tigo;Tolima, Colombia;;jun-20;12672;2784;all;N/A;mean;2784;71;22898;9907;22.90;9.91
+Tigo;Valle del Cauca, Colombia;;jun-20;64241;14677;all;N/A;mean;14677;37;28693;13472;28.69;13.47
+EMCALI;Cauca Department, Colombia;;jun-20;123;30;all;N/A;mean;30;48;10497;7419;10.50;7.42
+EMCALI;Cundinamarca, Colombia;;jun-20;3;1;all;N/A;mean;1;32;6806;784;6.81;0.78
+EMCALI;Valle del Cauca, Colombia;;jun-20;19971;6094;all;N/A;mean;6094;44;13638;8818;13.64;8.82
+Tigo;Antioquia, Colombia;;jul-20;327024;83801;all;N/A;mean;83801;27;32609;10151;32.61;10.15
+Tigo;Arauca, Colombia;;jul-20;1;1;all;N/A;mean;1;18;34441;34540;34.44;34.54
+Tigo;Atlantico, Colombia;;jul-20;34069;8291;all;N/A;mean;8291;27;26338;5867;26.34;5.87
+Tigo;Bogota, Colombia;;jul-20;78852;20996;all;N/A;mean;20996;26;28512;8153;28.51;8.15
+Tigo;Bolivar, Colombia;;jul-20;38322;8947;all;N/A;mean;8947;46;23189;5853;23.19;5.85
+Tigo;Boyaca, Colombia;;jul-20;7247;1876;all;N/A;mean;1876;30;22613;8985;22.61;8.99
+Tigo;Caldas, Colombia;;jul-20;29556;7033;all;N/A;mean;7033;33;26185;8921;26.19;8.92
+Tigo;Caquetá, Colombia;;jul-20;3;2;all;N/A;mean;2;27;67541;21213;67.54;21.21
+Tigo;Casanare, Colombia;;jul-20;2;2;all;N/A;mean;2;18;31926;21757;31.93;21.76
+Tigo;Cauca Department, Colombia;;jul-20;10039;2338;all;N/A;mean;2338;51;26326;15259;26.33;15.26
+Tigo;Cesar, Colombia;;jul-20;11197;2549;all;N/A;mean;2549;41;18906;4448;18.91;4.45
+Tigo;Choco, Colombia;;jul-20;253;56;all;N/A;mean;56;41;26662;7831;26.66;7.83
+Tigo;Cordoba, Colombia;;jul-20;12049;3084;all;N/A;mean;3084;61;17075;4814;17.08;4.81
+Tigo;Cundinamarca, Colombia;;jul-20;14843;3976;all;N/A;mean;3976;33;25306;13436;25.31;13.44
+Tigo;Huila, Colombia;;jul-20;19;11;all;N/A;mean;11;27;30803;23115;30.80;23.12
+Tigo;Magdalena, Colombia;;jul-20;8191;1876;all;N/A;mean;1876;29;23300;6954;23.30;6.95
+Tigo;Meta, Colombia;;jul-20;4209;1069;all;N/A;mean;1069;37;28910;6519;28.91;6.52
+Tigo;Narino, Colombia;;jul-20;3689;926;all;N/A;mean;926;41;23275;6291;23.28;6.29
+Tigo;North Santander, Colombia;;jul-20;9844;2401;all;N/A;mean;2401;50;23844;9946;23.84;9.95
+Tigo;Putumayo, Colombia;;jul-20;7;3;all;N/A;mean;3;279;402;174;0.40;0.17
+Tigo;Quindio, Colombia;;jul-20;16841;3938;all;N/A;mean;3938;37;23804;5338;23.80;5.34
+Tigo;Risaralda, Colombia;;jul-20;48633;11712;all;N/A;mean;11712;41;25467;8169;25.47;8.17
+Tigo;San Andrés and Providencia, Colombia;;jul-20;35;8;all;N/A;mean;8;137;1165;1475;1.17;1.48
+Tigo;Santander Department, Colombia;;jul-20;54230;11829;all;N/A;mean;11829;59;25354;5756;25.35;5.76
+Tigo;Sucre, Colombia;;jul-20;10225;2284;all;N/A;mean;2284;86;15459;5165;15.46;5.17
+Tigo;Tolima, Colombia;;jul-20;14516;3041;all;N/A;mean;3041;58;20632;8673;20.63;8.67
+Tigo;Valle del Cauca, Colombia;;jul-20;62736;14797;all;N/A;mean;14797;35;27130;11487;27.13;11.49
+EMCALI;Antioquia, Colombia;;jul-20;2;2;all;N/A;mean;2;19;11558;793;11.56;0.79
+EMCALI;Cauca Department, Colombia;;jul-20;102;20;all;N/A;mean;20;44;8655;3302;8.66;3.30
+EMCALI;Valle del Cauca, Colombia;;jul-20;22724;6798;all;N/A;mean;6798;38;14411;9476;14.41;9.48
+Tigo;Antioquia, Colombia;;Aug 2020;323407;81842;all;N/A;mean;81842;29;32508;10505;32.51;10.51
+Tigo;Arauca, Colombia;;Aug 2020;3;1;all;N/A;mean;1;29;31897;34419;31.90;34.42
+Tigo;Atlantico, Colombia;;Aug 2020;33010;8142;all;N/A;mean;8142;23;29113;5973;29.11;5.97
+Tigo;Bogota, Colombia;;Aug 2020;95857;22045;all;N/A;mean;22045;40;29629;8263;29.63;8.26
+Tigo;Bolivar, Colombia;;Aug 2020;34332;8267;all;N/A;mean;8267;35;24691;5744;24.69;5.74
+Tigo;Boyaca, Colombia;;Aug 2020;8280;2041;all;N/A;mean;2041;32;22081;6768;22.08;6.77
+Tigo;Caldas, Colombia;;Aug 2020;32541;7061;all;N/A;mean;7061;34;26472;6959;26.47;6.96
+Tigo;Cauca Department, Colombia;;Aug 2020;10391;2246;all;N/A;mean;2246;46;26219;14720;26.22;14.72
+Tigo;Cesar, Colombia;;Aug 2020;12181;2859;all;N/A;mean;2859;38;19571;4636;19.57;4.64
+Tigo;Choco, Colombia;;Aug 2020;187;67;all;N/A;mean;67;32;27535;7190;27.54;7.19
+Tigo;Cordoba, Colombia;;Aug 2020;12454;3194;all;N/A;mean;3194;44;19081;4795;19.08;4.80
+Tigo;Cundinamarca, Colombia;;Aug 2020;15083;3386;all;N/A;mean;3386;40;24588;9492;24.59;9.49
+Tigo;Huila, Colombia;;Aug 2020;17;5;all;N/A;mean;5;28;22861;18735;22.86;18.74
+Tigo;Magdalena, Colombia;;Aug 2020;9156;2114;all;N/A;mean;2114;31;22644;7181;22.64;7.18
+Tigo;Meta, Colombia;;Aug 2020;6475;1245;all;N/A;mean;1245;49;29143;8380;29.14;8.38
+Tigo;Narino, Colombia;;Aug 2020;4038;867;all;N/A;mean;867;45;19983;6447;19.98;6.45
+Tigo;North Santander, Colombia;;Aug 2020;10791;2237;all;N/A;mean;2237;46;21886;8265;21.89;8.27
+Tigo;Putumayo, Colombia;;Aug 2020;11;5;all;N/A;mean;5;192;24127;16367;24.13;16.37
+Tigo;Quindio, Colombia;;Aug 2020;13786;3463;all;N/A;mean;3463;35;26663;5621;26.66;5.62
+Tigo;Risaralda, Colombia;;Aug 2020;49765;13000;all;N/A;mean;13000;40;23985;6987;23.99;6.99
+Tigo;San Andrés and Providencia, Colombia;;Aug 2020;25;7;all;N/A;mean;7;88;2898;2563;2.90;2.56
+Tigo;Santander Department, Colombia;;Aug 2020;54966;11528;all;N/A;mean;11528;43;28912;6248;28.91;6.25
+Tigo;Sucre, Colombia;;Aug 2020;8406;2246;all;N/A;mean;2246;47;18313;5483;18.31;5.48
+Tigo;Tolima, Colombia;;Aug 2020;12040;3425;all;N/A;mean;3425;54;20018;7768;20.02;7.77
+Tigo;Valle del Cauca, Colombia;;Aug 2020;63485;14119;all;N/A;mean;14119;32;28173;11683;28.17;11.68
+Tigo;Guaviare, Colombia;;Aug 2020;1;1;all;N/A;mean;1;26;14239;3130;14.24;3.13
+EMCALI;Antioquia, Colombia;;Aug 2020;4;4;all;N/A;mean;4;43;5093;785;5.09;0.79
+EMCALI;Cauca Department, Colombia;;Aug 2020;118;22;all;N/A;mean;22;48;13474;11419;13.47;11.42
+EMCALI;Cundinamarca, Colombia;;Aug 2020;1;1;all;N/A;mean;1;16;4355;613;4.36;0.61
+EMCALI;Valle del Cauca, Colombia;;Aug 2020;22067;6712;all;N/A;mean;6712;38;14517;9675;14.52;9.68
+Tigo;Amazonas, Colombia;;sep-20;1;1;all;N/A;mean;1;38;78324;39243;78.32;39.24
+Tigo;Antioquia, Colombia;;sep-20;288026;79244;all;N/A;mean;79244;25;34702;11656;34.70;11.66
+Tigo;Atlantico, Colombia;;sep-20;37430;9172;all;N/A;mean;9172;21;28281;7405;28.28;7.41
+Tigo;Bogota, Colombia;;sep-20;66045;19023;all;N/A;mean;19023;24;31858;9613;31.86;9.61
+Tigo;Bolivar, Colombia;;sep-20;31187;7959;all;N/A;mean;7959;29;25766;5985;25.77;5.99
+Tigo;Boyaca, Colombia;;sep-20;7579;1901;all;N/A;mean;1901;24;22288;6819;22.29;6.82
+Tigo;Caldas, Colombia;;sep-20;29547;6973;all;N/A;mean;6973;31;31979;8446;31.98;8.45
+Tigo;Caquetá, Colombia;;sep-20;1;1;all;N/A;mean;1;32;32584;34472;32.58;34.47
+Tigo;Casanare, Colombia;;sep-20;2;1;all;N/A;mean;1;170;4858;3067;4.86;3.07
+Tigo;Cauca Department, Colombia;;sep-20;12749;2502;all;N/A;mean;2502;45;34861;17951;34.86;17.95
+Tigo;Cesar, Colombia;;sep-20;17087;3235;all;N/A;mean;3235;39;21080;5473;21.08;5.47
+Tigo;Choco, Colombia;;sep-20;209;55;all;N/A;mean;55;32;20466;7417;20.47;7.42
+Tigo;Cordoba, Colombia;;sep-20;11839;3252;all;N/A;mean;3252;38;22228;6321;22.23;6.32
+Tigo;Cundinamarca, Colombia;;sep-20;10405;2769;all;N/A;mean;2769;26;28293;11752;28.29;11.75
+Tigo;Guainia, Colombia;;sep-20;3;1;all;N/A;mean;1;20;21484;6073;21.48;6.07
+Tigo;Huila, Colombia;;sep-20;9;6;all;N/A;mean;6;29;17472;22818;17.47;22.82
+Tigo;La Guajira, Colombia;;sep-20;1;1;all;N/A;mean;1;27;3098;4389;3.10;4.39
+Tigo;Magdalena, Colombia;;sep-20;9140;2107;all;N/A;mean;2107;24;23504;5935;23.50;5.94
+Tigo;Meta, Colombia;;sep-20;4060;1130;all;N/A;mean;1130;30;30466;8761;30.47;8.76
+Tigo;Narino, Colombia;;sep-20;4765;1078;all;N/A;mean;1078;44;21847;5636;21.85;5.64
+Tigo;North Santander, Colombia;;sep-20;9738;2355;all;N/A;mean;2355;43;23234;9496;23.23;9.50
+Tigo;Putumayo, Colombia;;sep-20;6;2;all;N/A;mean;2;365;1364;959;1.36;0.96
+Tigo;Quindio, Colombia;;sep-20;17592;3967;all;N/A;mean;3967;36;27826;6023;27.83;6.02
+Tigo;Risaralda, Colombia;;sep-20;48953;13349;all;N/A;mean;13349;37;29186;9726;29.19;9.73
+Tigo;San Andrés and Providencia, Colombia;;sep-20;1;1;all;N/A;mean;1;33;588;936;0.59;0.94
+Tigo;Santander Department, Colombia;;sep-20;57270;12775;all;N/A;mean;12775;45;29450;6824;29.45;6.82
+Tigo;Sucre, Colombia;;sep-20;8462;2560;all;N/A;mean;2560;40;20091;5640;20.09;5.64
+Tigo;Tolima, Colombia;;sep-20;11481;2887;all;N/A;mean;2887;56;21481;8212;21.48;8.21
+Tigo;Valle del Cauca, Colombia;;sep-20;84646;17344;all;N/A;mean;17344;35;33553;13670;33.55;13.67
+EMCALI;Antioquia, Colombia;;sep-20;1;1;all;N/A;mean;1;7;3493;622;3.49;0.62
+EMCALI;Cauca Department, Colombia;;sep-20;152;38;all;N/A;mean;38;59;10997;8338;11.00;8.34
+EMCALI;Choco, Colombia;;sep-20;27;11;all;N/A;mean;11;20;50513;71438;50.51;71.44
+EMCALI;Valle del Cauca, Colombia;;sep-20;22778;6795;all;N/A;mean;6795;36;19051;14490;19.05;14.49
+Tigo;Antioquia, Colombia;;oct-20;265113;75495;all;N/A;mean;75495;24;36522;13074;36.52;13.07
+Tigo;Arauca, Colombia;;oct-20;3;2;all;N/A;mean;2;32;29939;26334;29.94;26.33
+Tigo;Atlantico, Colombia;;oct-20;28560;8139;all;N/A;mean;8139;22;31626;7193;31.63;7.19
+Tigo;Bogota, Colombia;;oct-20;67505;19599;all;N/A;mean;19599;26;33916;12446;33.92;12.45
+Tigo;Bolivar, Colombia;;oct-20;29837;7780;all;N/A;mean;7780;28;27013;6574;27.01;6.57
+Tigo;Boyaca, Colombia;;oct-20;8167;2031;all;N/A;mean;2031;34;21605;6079;21.61;6.08
+Tigo;Caldas, Colombia;;oct-20;36040;7850;all;N/A;mean;7850;45;28063;8408;28.06;8.41
+Tigo;Caquetá, Colombia;;oct-20;3;3;all;N/A;mean;3;219;37004;11592;37.00;11.59
+Tigo;Casanare, Colombia;;oct-20;8;2;all;N/A;mean;2;34;15742;16030;15.74;16.03
+Tigo;Cauca Department, Colombia;;oct-20;10446;2339;all;N/A;mean;2339;44;27771;14807;27.77;14.81
+Tigo;Cesar, Colombia;;oct-20;14663;3084;all;N/A;mean;3084;35;23870;5594;23.87;5.59
+Tigo;Choco, Colombia;;oct-20;123;40;all;N/A;mean;40;25;42269;18134;42.27;18.13
+Tigo;Cordoba, Colombia;;oct-20;11277;3290;all;N/A;mean;3290;38;20826;5566;20.83;5.57
+Tigo;Cundinamarca, Colombia;;oct-20;10675;3030;all;N/A;mean;3030;28;29181;12373;29.18;12.37
+Tigo;Huila, Colombia;;oct-20;16;10;all;N/A;mean;10;28;27650;19532;27.65;19.53
+Tigo;Magdalena, Colombia;;oct-20;7760;2043;all;N/A;mean;2043;25;27119;7270;27.12;7.27
+Tigo;Meta, Colombia;;oct-20;4453;1252;all;N/A;mean;1252;33;28456;7597;28.46;7.60
+Tigo;Narino, Colombia;;oct-20;4032;981;all;N/A;mean;981;47;23421;6085;23.42;6.09
+Tigo;North Santander, Colombia;;oct-20;10130;2386;all;N/A;mean;2386;43;23199;9848;23.20;9.85
+Tigo;Putumayo, Colombia;;oct-20;4;4;all;N/A;mean;4;349;10849;9939;10.85;9.94
+Tigo;Quindio, Colombia;;oct-20;22870;4701;all;N/A;mean;4701;62;25941;6585;25.94;6.59
+Tigo;Risaralda, Colombia;;oct-20;46989;12998;all;N/A;mean;12998;39;26754;8656;26.75;8.66
+Tigo;San Andrés and Providencia, Colombia;;oct-20;1;1;all;N/A;mean;1;11;266;471;0.27;0.47
+Tigo;Santander Department, Colombia;;oct-20;57820;12220;all;N/A;mean;12220;42;30534;7671;30.53;7.67
+Tigo;Sucre, Colombia;;oct-20;8805;2706;all;N/A;mean;2706;39;20071;5145;20.07;5.15
+Tigo;Tolima, Colombia;;oct-20;8508;2365;all;N/A;mean;2365;60;27360;9970;27.36;9.97
+Tigo;Valle del Cauca, Colombia;;oct-20;60612;14787;all;N/A;mean;14787;29;34119;14543;34.12;14.54
+EMCALI;Antioquia, Colombia;;oct-20;1;1;all;N/A;mean;1;98;3811;406;3.81;0.41
+EMCALI;Cauca Department, Colombia;;oct-20;1;1;all;N/A;mean;1;14;4936;820;4.94;0.82
+EMCALI;Valle del Cauca, Colombia;;oct-20;23895;7051;all;N/A;mean;7051;43;19304;14109;19.30;14.11
+Tigo;Antioquia, Colombia;;nov-20;238586;69295;all;N/A;mean;69295;26;39489;14812;39.49;14.81
+Tigo;Arauca, Colombia;;nov-20;6;4;all;N/A;mean;4;26;7360;6888;7.36;6.89
+Tigo;Atlantico, Colombia;;nov-20;28799;8041;all;N/A;mean;8041;26;31444;7266;31.44;7.27
+Tigo;Bogota, Colombia;;nov-20;59264;17920;all;N/A;mean;17920;28;33050;11217;33.05;11.22
+Tigo;Bolivar, Colombia;;nov-20;25385;6729;all;N/A;mean;6729;34;27281;6485;27.28;6.49
+Tigo;Boyaca, Colombia;;nov-20;6277;1761;all;N/A;mean;1761;35;24524;6765;24.52;6.77
+Tigo;Caldas, Colombia;;nov-20;39529;7842;all;N/A;mean;7842;43;30645;8374;30.65;8.37
+Tigo;Caquetá, Colombia;;nov-20;9;4;all;N/A;mean;4;29;48563;42248;48.56;42.25
+Tigo;Casanare, Colombia;;nov-20;6;4;all;N/A;mean;4;40;25925;28628;25.93;28.63
+Tigo;Cauca Department, Colombia;;nov-20;8500;2082;all;N/A;mean;2082;45;30278;16559;30.28;16.56
+Tigo;Cesar, Colombia;;nov-20;10342;2624;all;N/A;mean;2624;43;25873;6401;25.87;6.40
+Tigo;Choco, Colombia;;nov-20;188;52;all;N/A;mean;52;33;37444;15997;37.44;16.00
+Tigo;Cordoba, Colombia;;nov-20;10801;3204;all;N/A;mean;3204;44;20798;6817;20.80;6.82
+Tigo;Cundinamarca, Colombia;;nov-20;8917;2601;all;N/A;mean;2601;28;31119;12470;31.12;12.47
+Tigo;Huila, Colombia;;nov-20;33;5;all;N/A;mean;5;27;28671;27969;28.67;27.97
+Tigo;Magdalena, Colombia;;nov-20;6328;1943;all;N/A;mean;1943;30;27249;7545;27.25;7.55
+Tigo;Meta, Colombia;;nov-20;5632;1257;all;N/A;mean;1257;59;30886;7147;30.89;7.15
+Tigo;Narino, Colombia;;nov-20;2611;749;all;N/A;mean;749;40;23584;6618;23.58;6.62
+Tigo;North Santander, Colombia;;nov-20;9849;2385;all;N/A;mean;2385;46;26443;13512;26.44;13.51
+Tigo;Putumayo, Colombia;;nov-20;9;5;all;N/A;mean;5;32;17109;23871;17.11;23.87
+Tigo;Quindio, Colombia;;nov-20;19704;4202;all;N/A;mean;4202;50;27769;5803;27.77;5.80
+Tigo;Risaralda, Colombia;;nov-20;44268;12363;all;N/A;mean;12363;42;29838;9842;29.84;9.84
+Tigo;Santander Department, Colombia;;nov-20;63695;12481;all;N/A;mean;12481;48;30597;6709;30.60;6.71
+Tigo;Sucre, Colombia;;nov-20;7707;2308;all;N/A;mean;2308;47;20276;5806;20.28;5.81
+Tigo;Tolima, Colombia;;nov-20;8786;2192;all;N/A;mean;2192;66;26478;10272;26.48;10.27
+Tigo;Valle del Cauca, Colombia;;nov-20;48943;12963;all;N/A;mean;12963;32;35533;16340;35.53;16.34
+Tigo;Vichada, Colombia;;nov-20;7;4;all;N/A;mean;4;61;9383;1090;9.38;1.09
+EMCALI;Antioquia, Colombia;;nov-20;16;8;all;N/A;mean;8;72;28365;24816;28.37;24.82
+EMCALI;Cauca Department, Colombia;;nov-20;49;20;all;N/A;mean;20;38;13361;11967;13.36;11.97
+EMCALI;Valle del Cauca, Colombia;;nov-20;19187;6089;all;N/A;mean;6089;37;21928;17953;21.93;17.95
+Tigo;Amazonas, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Tigo;Guainia, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Tigo;San Andrés and Providencia, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Tigo;Vaupes, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Tigo;Vichada, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Tigo;Guaviare, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Amazonas, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Antioquia, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Arauca, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Atlantico, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Bogota, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Bolivar, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Boyaca, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Caldas, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Caquetá, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Casanare, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Cesar, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Choco, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Cordoba, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Cundinamarca, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Guainia, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Huila, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;La Guajira, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Magdalena, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Meta, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Narino, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;North Santander, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Putumayo, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Quindio, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Risaralda, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;San Andrés and Providencia, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Santander Department, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Sucre, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Tolima, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Vaupes, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Vichada, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+EMCALI;Guaviare, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Tigo;Antioquia, Colombia;;Dec 2020;208202;59468;all;N/A;mean;59468;26;41312;15195;41.31;15.20
+Tigo;Arauca, Colombia;;Dec 2020;10;6;all;N/A;mean;6;27;27086;26854;27.09;26.85
+Tigo;Atlantico, Colombia;;Dec 2020;28131;7096;all;N/A;mean;7096;27;33871;6436;33.87;6.44
+Tigo;Bogota, Colombia;;Dec 2020;47755;14807;all;N/A;mean;14807;29;33586;11333;33.59;11.33
+Tigo;Bolivar, Colombia;;Dec 2020;21025;5850;all;N/A;mean;5850;32;28313;6955;28.31;6.96
+Tigo;Boyaca, Colombia;;Dec 2020;4983;1481;all;N/A;mean;1481;37;25944;8595;25.94;8.60
+Tigo;Caldas, Colombia;;Dec 2020;20803;5194;all;N/A;mean;5194;31;34124;9823;34.12;9.82
+Tigo;Caquetá, Colombia;;Dec 2020;5;3;all;N/A;mean;3;26;42603;39641;42.60;39.64
+Tigo;Casanare, Colombia;;Dec 2020;3;1;all;N/A;mean;1;21;17701;38491;17.70;38.49
+Tigo;Cauca Department, Colombia;;Dec 2020;6976;1893;all;N/A;mean;1893;41;29655;17191;29.66;17.19
+Tigo;Cesar, Colombia;;Dec 2020;8248;2191;all;N/A;mean;2191;37;28553;6771;28.55;6.77
+Tigo;Choco, Colombia;;Dec 2020;183;68;all;N/A;mean;68;37;33970;21703;33.97;21.70
+Tigo;Cordoba, Colombia;;Dec 2020;9462;2704;all;N/A;mean;2704;41;23505;6998;23.51;7.00
+Tigo;Cundinamarca, Colombia;;Dec 2020;9339;2483;all;N/A;mean;2483;27;32522;13743;32.52;13.74
+Tigo;Huila, Colombia;;Dec 2020;47;12;all;N/A;mean;12;27;21393;22523;21.39;22.52
+Tigo;La Guajira, Colombia;;Dec 2020;3;3;all;N/A;mean;3;29;29603;34103;29.60;34.10
+Tigo;Magdalena, Colombia;;Dec 2020;5538;1725;all;N/A;mean;1725;30;29246;7817;29.25;7.82
+Tigo;Meta, Colombia;;Dec 2020;3848;1061;all;N/A;mean;1061;45;31355;8261;31.36;8.26
+Tigo;Narino, Colombia;;Dec 2020;3485;861;all;N/A;mean;861;40;22672;7741;22.67;7.74
+Tigo;North Santander, Colombia;;Dec 2020;7312;1865;all;N/A;mean;1865;42;29522;14195;29.52;14.20
+Tigo;Putumayo, Colombia;;Dec 2020;28;6;all;N/A;mean;6;102;21341;29984;21.34;29.98
+Tigo;Quindio, Colombia;;Dec 2020;9649;2888;all;N/A;mean;2888;44;31048;8052;31.05;8.05
+Tigo;Risaralda, Colombia;;Dec 2020;34990;10163;all;N/A;mean;10163;40;28460;9340;28.46;9.34
+Tigo;Santander Department, Colombia;;Dec 2020;47578;9996;all;N/A;mean;9996;45;34997;7364;35.00;7.36
+Tigo;Sucre, Colombia;;Dec 2020;4210;1457;all;N/A;mean;1457;37;24684;7653;24.68;7.65
+Tigo;Tolima, Colombia;;Dec 2020;8051;2165;all;N/A;mean;2165;60;32329;15156;32.33;15.16
+Tigo;Valle del Cauca, Colombia;;Dec 2020;55081;12836;all;N/A;mean;12836;36;29158;12262;29.16;12.26
+EMCALI;Cauca Department, Colombia;;Dec 2020;55;15;all;N/A;mean;15;29;13511;11778;13.51;11.78
+EMCALI;Valle del Cauca, Colombia;;Dec 2020;15453;5113;all;N/A;mean;5113;38;26317;22144;26.32;22.14

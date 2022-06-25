@@ -1,0 +1,105 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Colombia;;Dec 2019;1676077;432382;all;N/A;mean;432382;41;28322;14496;28.32;14.50
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Dec 2019;11920;3204;all;N/A;mean;3204;63;22026;8878;22.03;8.88
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Dec 2019;11614;3774;all;N/A;mean;3774;39;24586;12407;24.59;12.41
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Dec 2019;4312;1150;all;N/A;mean;1150;39;19581;8373;19.58;8.37
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Dec 2019;12849;3380;all;N/A;mean;3380;45;21275;5330;21.28;5.33
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Dec 2019;9925;2859;all;N/A;mean;2859;46;23320;10491;23.32;10.49
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Dec 2019;26044;6382;all;N/A;mean;6382;40;24876;8840;24.88;8.84
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Dec 2019;14416;3825;all;N/A;mean;3825;53;20839;5988;20.84;5.99
+All Providers Combined;Colombia;;Jan 2020;1859339;471403;all;N/A;mean;471403;44;28398;15303;28.40;15.30
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Jan 2020;11776;3442;all;N/A;mean;3442;49;21958;9324;21.96;9.32
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Jan 2020;13260;3980;all;N/A;mean;3980;45;25068;13677;25.07;13.68
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Jan 2020;4642;1158;all;N/A;mean;1158;38;19405;8475;19.41;8.48
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Jan 2020;12002;3221;all;N/A;mean;3221;49;21746;5418;21.75;5.42
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Jan 2020;10192;2779;all;N/A;mean;2779;49;21821;10439;21.82;10.44
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Jan 2020;27655;6761;all;N/A;mean;6761;41;26112;10407;26.11;10.41
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Jan 2020;15685;4004;all;N/A;mean;4004;55;22037;6987;22.04;6.99
+All Providers Combined;Colombia;;feb-20;1944681;493070;all;N/A;mean;493070;39;31977;16586;31.98;16.59
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;feb-20;14191;4035;all;N/A;mean;4035;46;25413;13437;25.41;13.44
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;feb-20;13942;4078;all;N/A;mean;4078;38;31023;18153;31.02;18.15
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;feb-20;4400;1128;all;N/A;mean;1128;38;25530;13710;25.53;13.71
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;feb-20;14486;3563;all;N/A;mean;3563;45;27225;6169;27.23;6.17
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;feb-20;10375;2932;all;N/A;mean;2932;44;25289;10460;25.29;10.46
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;feb-20;29747;7256;all;N/A;mean;7256;38;28157;12258;28.16;12.26
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;feb-20;16152;4255;all;N/A;mean;4255;53;24500;8331;24.50;8.33
+All Providers Combined;Colombia;;mar-20;3309750;785318;all;N/A;mean;785318;45;28632;14544;28.63;14.54
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;mar-20;22718;5978;all;N/A;mean;5978;48;22994;11180;22.99;11.18
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;mar-20;18444;5196;all;N/A;mean;5196;42;32048;19895;32.05;19.90
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;mar-20;6783;1779;all;N/A;mean;1779;51;22519;8816;22.52;8.82
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;mar-20;22624;5410;all;N/A;mean;5410;53;24098;5229;24.10;5.23
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;mar-20;14632;3698;all;N/A;mean;3698;47;25404;11792;25.40;11.79
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;mar-20;48564;11987;all;N/A;mean;11987;45;22348;9266;22.35;9.27
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;mar-20;24409;5913;all;N/A;mean;5913;64;22294;6590;22.29;6.59
+All Providers Combined;Colombia;;Apr 2020;3959783;864322;all;N/A;mean;864322;47;28294;13581;28.29;13.58
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Apr 2020;25035;6238;all;N/A;mean;6238;53;19986;7101;19.99;7.10
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Apr 2020;19966;5198;all;N/A;mean;5198;46;26884;14640;26.88;14.64
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Apr 2020;6941;1742;all;N/A;mean;1742;48;20823;7169;20.82;7.17
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Apr 2020;22350;5244;all;N/A;mean;5244;50;22568;4915;22.57;4.92
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Apr 2020;15348;3930;all;N/A;mean;3930;51;21689;9735;21.69;9.74
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Apr 2020;47810;11279;all;N/A;mean;11279;46;23246;7365;23.25;7.37
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Apr 2020;24918;5976;all;N/A;mean;5976;59;20584;5061;20.58;5.06
+All Providers Combined;Colombia;;may-20;4204200;914025;all;N/A;mean;914025;45;30584;14950;30.58;14.95
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;may-20;28714;6705;all;N/A;mean;6705;54;20632;7983;20.63;7.98
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;may-20;20870;5139;all;N/A;mean;5139;42;29113;14558;29.11;14.56
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;may-20;6239;1699;all;N/A;mean;1699;44;23992;9248;23.99;9.25
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;may-20;19200;4718;all;N/A;mean;4718;50;24580;5465;24.58;5.47
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;may-20;16689;4157;all;N/A;mean;4157;52;23865;11017;23.87;11.02
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;may-20;46293;10415;all;N/A;mean;10415;45;27286;8185;27.29;8.19
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;may-20;26764;6279;all;N/A;mean;6279;57;21357;5685;21.36;5.69
+All Providers Combined;Colombia;;jun-20;3511363;817004;all;N/A;mean;817004;34;33350;16315;33.35;16.32
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;jun-20;25047;6031;all;N/A;mean;6031;49;22511;8811;22.51;8.81
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;jun-20;18633;4687;all;N/A;mean;4687;38;29467;13423;29.47;13.42
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;jun-20;7986;1792;all;N/A;mean;1792;47;22491;8422;22.49;8.42
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;jun-20;18828;4949;all;N/A;mean;4949;35;26979;6018;26.98;6.02
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;jun-20;14302;3828;all;N/A;mean;3828;44;24845;11346;24.85;11.35
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;jun-20;45645;10830;all;N/A;mean;10830;37;27587;8446;27.59;8.45
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;jun-20;22567;5712;all;N/A;mean;5712;42;23665;6460;23.67;6.46
+All Providers Combined;Colombia;;jul-20;3606397;861459;all;N/A;mean;861459;33;35376;16510;35.38;16.51
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;jul-20;26181;6426;all;N/A;mean;6426;47;23615;9209;23.62;9.21
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;jul-20;19089;4746;all;N/A;mean;4746;38;30074;14816;30.07;14.82
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;jul-20;9643;2117;all;N/A;mean;2117;78;20580;8661;20.58;8.66
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;jul-20;20932;5252;all;N/A;mean;5252;36;27552;5872;27.55;5.87
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;jul-20;18398;4684;all;N/A;mean;4684;54;23719;11213;23.72;11.21
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;jul-20;52472;13047;all;N/A;mean;13047;39;28191;8370;28.19;8.37
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;jul-20;22363;5861;all;N/A;mean;5861;42;26121;7014;26.12;7.01
+All Providers Combined;Colombia;;Aug 2020;3495419;843286;all;N/A;mean;843286;32;36632;16530;36.63;16.53
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Aug 2020;24561;6287;all;N/A;mean;6287;47;25201;9092;25.20;9.09
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Aug 2020;20254;5422;all;N/A;mean;5422;39;30818;14622;30.82;14.62
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Aug 2020;8498;2044;all;N/A;mean;2044;42;23160;9456;23.16;9.46
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Aug 2020;19913;5063;all;N/A;mean;5063;34;29724;6042;29.72;6.04
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Aug 2020;20634;5086;all;N/A;mean;5086;43;26752;14265;26.75;14.27
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Aug 2020;59279;15272;all;N/A;mean;15272;38;26553;7463;26.55;7.46
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Aug 2020;23465;5736;all;N/A;mean;5736;39;26950;6977;26.95;6.98
+All Providers Combined;Colombia;;sep-20;3092255;782006;all;N/A;mean;782006;30;38772;17955;38.77;17.96
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;sep-20;24237;6415;all;N/A;mean;6415;45;29140;12168;29.14;12.17
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;sep-20;21100;5566;all;N/A;mean;5566;37;31735;13682;31.74;13.68
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;sep-20;8049;2125;all;N/A;mean;2125;39;22352;7649;22.35;7.65
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;sep-20;20530;5179;all;N/A;mean;5179;36;30095;6376;30.10;6.38
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;sep-20;18838;4949;all;N/A;mean;4949;41;29217;12776;29.22;12.78
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;sep-20;58826;15739;all;N/A;mean;15739;37;29438;9201;29.44;9.20
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;sep-20;25891;6346;all;N/A;mean;6346;41;27854;7018;27.85;7.02
+All Providers Combined;Colombia;;oct-20;2897967;758815;all;N/A;mean;758815;31;40134;18147;40.13;18.15
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;oct-20;22615;6500;all;N/A;mean;6500;45;33351;14477;33.35;14.48
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;oct-20;18553;5275;all;N/A;mean;5275;37;32546;14412;32.55;14.41
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;oct-20;7338;2088;all;N/A;mean;2088;38;23248;7277;23.25;7.28
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;oct-20;24800;5856;all;N/A;mean;5856;50;29745;6440;29.75;6.44
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;oct-20;16784;4508;all;N/A;mean;4508;39;28051;11673;28.05;11.67
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;oct-20;56144;15456;all;N/A;mean;15456;37;30339;9582;30.34;9.58
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;oct-20;19959;5722;all;N/A;mean;5722;39;29591;7721;29.59;7.72
+All Providers Combined;Colombia;;nov-20;2711878;721840;all;N/A;mean;721840;31;42762;19685;42.76;19.69
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;nov-20;20175;5911;all;N/A;mean;5911;43;35400;16869;35.40;16.87
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;nov-20;16612;4764;all;N/A;mean;4764;40;32685;14330;32.69;14.33
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;nov-20;6763;1966;all;N/A;mean;1966;42;25735;10379;25.74;10.38
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;nov-20;24021;5730;all;N/A;mean;5730;44;32014;6466;32.01;6.47
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;nov-20;14767;4155;all;N/A;mean;4155;44;30600;14253;30.60;14.25
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;nov-20;51721;14560;all;N/A;mean;14560;40;31317;10110;31.32;10.11
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;nov-20;18434;5451;all;N/A;mean;5451;39;30362;8077;30.36;8.08
+All Providers Combined;Colombia;;Dec 2020;2304126;613689;all;N/A;mean;613689;31;44805;21077;44.81;21.08
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Dec 2020;18292;5232;all;N/A;mean;5232;42;37034;18132;37.03;18.13
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Dec 2020;15815;4324;all;N/A;mean;4324;41;36767;17702;36.77;17.70
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Dec 2020;4971;1595;all;N/A;mean;1595;35;33532;16864;33.53;16.86
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Dec 2020;13611;4143;all;N/A;mean;4143;40;36031;7564;36.03;7.56
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Dec 2020;13064;3547;all;N/A;mean;3547;40;32787;16207;32.79;16.21
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Dec 2020;40862;11952;all;N/A;mean;11952;37;32047;10361;32.05;10.36
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Dec 2020;16550;4854;all;N/A;mean;4854;39;30647;8803;30.65;8.80

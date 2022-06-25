@@ -1,0 +1,66 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Colombia;;Dec 2019;1676077;432382;all;N/A;mean;432382;41;28322;14496;28.32;14.50
+ETB;Colombia;;Dec 2019;148769;46912;all;N/A;mean;46895;24;38922;27331;38.92;27.33
+Movistar;Colombia;;Dec 2019;254844;69538;all;N/A;mean;69484;42;33573;32436;33.57;32.44
+Claro;Colombia;;Dec 2019;764333;198476;all;N/A;mean;198441;46;28762;8357;28.76;8.36
+Tigo;Colombia;;Dec 2019;353559;104090;all;N/A;mean;104061;29;24072;10068;24.07;10.07
+All Providers Combined;Colombia;;Jan 2020;1859339;471403;all;N/A;mean;471403;44;28398;15303;28.40;15.30
+ETB;Colombia;;Jan 2020;192070;56867;all;N/A;mean;56867;25;37923;27906;37.92;27.91
+Movistar;Colombia;;Jan 2020;273456;74762;all;N/A;mean;74762;44;32411;33564;32.41;33.56
+Claro;Colombia;;Jan 2020;828485;214396;all;N/A;mean;214396;47;29469;8677;29.47;8.68
+Tigo;Colombia;;Jan 2020;384369;108333;all;N/A;mean;108333;35;23781;10894;23.78;10.89
+All Providers Combined;Colombia;;feb-20;1944681;493070;all;N/A;mean;493070;39;31977;16586;31.98;16.59
+ETB;Colombia;;feb-20;196850;59630;all;N/A;mean;59630;22;40474;29346;40.47;29.35
+Movistar;Colombia;;feb-20;246312;71462;all;N/A;mean;71462;41;35732;34738;35.73;34.74
+Claro;Colombia;;feb-20;904711;231866;all;N/A;mean;231866;44;33465;9924;33.47;9.92
+Tigo;Colombia;;feb-20;408132;111468;all;N/A;mean;111468;28;26984;12532;26.98;12.53
+All Providers Combined;Colombia;;mar-20;3309750;785318;all;N/A;mean;785318;45;28632;14544;28.63;14.54
+ETB;Colombia;;mar-20;365921;103728;all;N/A;mean;103728;22;37415;25705;37.42;25.71
+Movistar;Colombia;;mar-20;403040;108400;all;N/A;mean;108400;41;39080;39937;39.08;39.94
+Claro;Colombia;;mar-20;1500090;364319;all;N/A;mean;364319;50;29210;7602;29.21;7.60
+Tigo;Colombia;;mar-20;735610;174730;all;N/A;mean;174730;39;21912;8673;21.91;8.67
+All Providers Combined;Colombia;;Apr 2020;3959783;864322;all;N/A;mean;864322;47;28294;13581;28.29;13.58
+ETB;Colombia;;Apr 2020;502060;118305;all;N/A;mean;118305;23;37946;26604;37.95;26.60
+Movistar;Colombia;;Apr 2020;477825;120170;all;N/A;mean;120170;42;40601;39922;40.60;39.92
+Claro;Colombia;;Apr 2020;1804497;397929;all;N/A;mean;397929;52;28220;6237;28.22;6.24
+Tigo;Colombia;;Apr 2020;795940;178534;all;N/A;mean;178534;40;21426;6561;21.43;6.56
+All Providers Combined;Colombia;;may-20;4204200;914025;all;N/A;mean;914025;45;30584;14950;30.58;14.95
+ETB;Colombia;;may-20;537884;124733;all;N/A;mean;124733;24;41675;28963;41.68;28.96
+Movistar;Colombia;;may-20;518419;131571;all;N/A;mean;131571;41;42141;42972;42.14;42.97
+Claro;Colombia;;may-20;1969204;426693;all;N/A;mean;426693;50;29840;6815;29.84;6.82
+Tigo;Colombia;;may-20;785269;184704;all;N/A;mean;184704;35;24734;7638;24.73;7.64
+All Providers Combined;Colombia;;jun-20;3511363;817004;all;N/A;mean;817004;34;33350;16315;33.35;16.32
+ETB;Colombia;;jun-20;474896;116339;all;N/A;mean;116339;23;45653;31444;45.65;31.44
+Movistar;Colombia;;jun-20;429127;114802;all;N/A;mean;114802;40;43620;45581;43.62;45.58
+Claro;Colombia;;jun-20;1529884;372737;all;N/A;mean;372737;29;32712;7460;32.71;7.46
+Tigo;Colombia;;jun-20;733660;176540;all;N/A;mean;176540;33;27888;8971;27.89;8.97
+All Providers Combined;Colombia;;jul-20;3606397;861459;all;N/A;mean;861459;33;35376;16510;35.38;16.51
+ETB;Colombia;;jul-20;501491;125100;all;N/A;mean;125100;21;48160;32165;48.16;32.17
+Movistar;Colombia;;jul-20;416137;116674;all;N/A;mean;116674;40;46173;46090;46.17;46.09
+Claro;Colombia;;jul-20;1524480;388546;all;N/A;mean;388546;28;35378;7676;35.38;7.68
+Tigo;Colombia;;jul-20;805537;192740;all;N/A;mean;192740;34;28574;8943;28.57;8.94
+All Providers Combined;Colombia;;Aug 2020;3495419;843286;all;N/A;mean;843286;32;36632;16530;36.63;16.53
+ETB;Colombia;;Aug 2020;406266;107375;all;N/A;mean;107375;17;50798;33725;50.80;33.73
+Movistar;Colombia;;Aug 2020;411549;117254;all;N/A;mean;117254;40;48055;47197;48.06;47.20
+Claro;Colombia;;Aug 2020;1531333;391914;all;N/A;mean;391914;27;36983;7672;36.98;7.67
+Tigo;Colombia;;Aug 2020;816157;190319;all;N/A;mean;190319;34;29138;8895;29.14;8.90
+All Providers Combined;Colombia;;sep-20;3092255;782006;all;N/A;mean;782006;30;38772;17955;38.77;17.96
+ETB;Colombia;;sep-20;336862;96396;all;N/A;mean;96396;16;54361;35826;54.36;35.83
+Movistar;Colombia;;sep-20;381516;112544;all;N/A;mean;112544;39;49907;49648;49.91;49.65
+Claro;Colombia;;sep-20;1288398;348512;all;N/A;mean;348512;26;39132;8430;39.13;8.43
+Tigo;Colombia;;sep-20;772356;191064;all;N/A;mean;191064;30;31554;10160;31.55;10.16
+All Providers Combined;Colombia;;oct-20;2897967;758815;all;N/A;mean;758815;31;40134;18147;40.13;18.15
+ETB;Colombia;;oct-20;297333;90396;all;N/A;mean;90396;18;56353;36866;56.35;36.87
+Movistar;Colombia;;oct-20;351600;104394;all;N/A;mean;104394;39;49680;47982;49.68;47.98
+Claro;Colombia;;oct-20;1225153;344276;all;N/A;mean;344276;27;41635;9300;41.64;9.30
+Tigo;Colombia;;oct-20;718003;184352;all;N/A;mean;184352;31;32447;11016;32.45;11.02
+All Providers Combined;Colombia;;nov-20;2711878;721840;all;N/A;mean;721840;31;42762;19685;42.76;19.69
+ETB;Colombia;;nov-20;295084;92267;all;N/A;mean;92267;17;61406;39808;61.41;39.81
+Movistar;Colombia;;nov-20;326605;99147;all;N/A;mean;99147;41;53063;51301;53.06;51.30
+Claro;Colombia;;nov-20;1137853;324124;all;N/A;mean;324124;28;43610;9670;43.61;9.67
+Tigo;Colombia;;nov-20;656939;170997;all;N/A;mean;170997;33;34168;11776;34.17;11.78
+All Providers Combined;Colombia;;Dec 2020;2304126;613689;all;N/A;mean;613689;31;44805;21077;44.81;21.08
+ETB;Colombia;;Dec 2020;237577;74219;all;N/A;mean;74219;17;63707;41236;63.71;41.24
+Movistar;Colombia;;Dec 2020;310314;91950;all;N/A;mean;91950;38;57098;56285;57.10;56.29
+Claro;Colombia;;Dec 2020;951688;272277;all;N/A;mean;272277;27;45999;10165;46.00;10.17
+Tigo;Colombia;;Dec 2020;546210;145124;all;N/A;mean;145124;32;35341;11988;35.34;11.99

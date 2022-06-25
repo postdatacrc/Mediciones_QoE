@@ -1,0 +1,46 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Colombia;;jul-21;3129689;830778;all;N/A;mean;830778;26;65155;30988;65.16;30.99
+Movistar;Colombia;;jul-21;420274;123579;all;N/A;mean;123579;31;83141;78337;83.14;78.34
+ETB;Colombia;;jul-21;341957;104572;all;N/A;mean;104572;15;88151;75228;88.15;75.23
+Claro;Colombia;;jul-21;1269943;362484;all;N/A;mean;362484;22;68019;12778;68.02;12.78
+Tigo;Colombia;;jul-21;741315;194913;all;N/A;mean;194913;29;52764;16733;52.76;16.73
+All Providers Combined;Colombia;;Aug 2021;3056615;827009;all;N/A;mean;827009;25;68441;34740;68.44;34.74
+Movistar;Colombia;;Aug 2021;430547;126549;all;N/A;mean;126549;31;88208;83058;88.21;83.06
+ETB;Colombia;;Aug 2021;355030;108357;all;N/A;mean;108357;17;93220;85147;93.22;85.15
+Claro;Colombia;;Aug 2021;1219944;357110;all;N/A;mean;357110;21;70499;14239;70.50;14.24
+Tigo;Colombia;;Aug 2021;708337;192195;all;N/A;mean;192195;26;55086;19031;55.09;19.03
+All Providers Combined;Colombia;;sep-21;2856581;753668;all;N/A;mean;753668;23;72190;36768;72.19;36.77
+Movistar;Colombia;;sep-21;391164;112514;all;N/A;mean;112514;31;93093;83728;93.09;83.73
+ETB;Colombia;;sep-21;319876;96944;all;N/A;mean;96944;14;97713;92664;97.71;92.66
+Claro;Colombia;;sep-21;1157214;323845;all;N/A;mean;323845;19;74246;16290;74.25;16.29
+Tigo;Colombia;;sep-21;655553;178315;all;N/A;mean;178315;24;59890;20295;59.89;20.30
+All Providers Combined;Colombia;;oct-21;2664542;753217;all;N/A;mean;753217;23;76255;40071;76.26;40.07
+Movistar;Colombia;;oct-21;396619;119866;all;N/A;mean;119866;29;106496;92876;106.50;92.88
+ETB;Colombia;;oct-21;298869;96586;all;N/A;mean;96586;14;100044;96434;100.04;96.43
+Claro;Colombia;;oct-21;1057229;321161;all;N/A;mean;321161;19;76154;18258;76.15;18.26
+Tigo;Colombia;;oct-21;596816;173584;all;N/A;mean;173584;23;63059;20553;63.06;20.55
+All Providers Combined;Colombia;;nov-21;2648674;745114;all;N/A;mean;745114;22;82097;46094;82.10;46.09
+Movistar;Colombia;;nov-21;406496;121836;all;N/A;mean;121836;27;126481;111146;126.48;111.15
+ETB;Colombia;;nov-21;323671;101920;all;N/A;mean;101920;14;102163;95530;102.16;95.53
+Claro;Colombia;;nov-21;1045122;311489;all;N/A;mean;311489;18;77672;22368;77.67;22.37
+Tigo;Colombia;;nov-21;563938;166783;all;N/A;mean;166783;23;67916;21956;67.92;21.96
+All Providers Combined;Colombia;;Dec 2021;2355211;684645;all;N/A;mean;684645;22;84820;46579;84.82;46.58
+Movistar;Colombia;;Dec 2021;348846;108278;all;N/A;mean;108278;27;129661;115689;129.66;115.69
+ETB;Colombia;;Dec 2021;275062;88595;all;N/A;mean;88595;15;101771;98510;101.77;98.51
+Claro;Colombia;;Dec 2021;949732;296887;all;N/A;mean;296887;18;82403;23478;82.40;23.48
+Tigo;Colombia;;Dec 2021;502597;153397;all;N/A;mean;153397;21;71849;22350;71.85;22.35
+All Providers Combined;Colombia;;Jan 2022;2575844;714047;all;N/A;mean;714047;22;86489;49307;86.49;49.31
+Movistar;Colombia;;Jan 2022;377373;113542;all;N/A;mean;113542;27;130769;119396;130.77;119.40
+ETB;Colombia;;Jan 2022;323198;99647;all;N/A;mean;99647;15;104392;101080;104.39;101.08
+Claro;Colombia;;Jan 2022;1017687;303569;all;N/A;mean;303569;19;83269;25427;83.27;25.43
+Tigo;Colombia;;Jan 2022;549549;159883;all;N/A;mean;159883;22;73911;22649;73.91;22.65
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;

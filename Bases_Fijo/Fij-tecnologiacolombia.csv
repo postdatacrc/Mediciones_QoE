@@ -1,0 +1,37 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Colombia;;jul-20;1385246;220934;all_wifi;N/A;mean;220934;33;30891;14311;30.89;14.31
+All Providers Combined;Colombia;;jul-20;39341;5823;ethernet;N/A;mean;5823;25;87799;66439;87.80;66.44
+All Providers Combined;Colombia;;Aug 2020;1402147;224291;all_wifi;N/A;mean;224291;31;32404;14582;32.40;14.58
+All Providers Combined;Colombia;;Aug 2020;45482;6789;ethernet;N/A;mean;6789;23;92298;67767;92.30;67.77
+All Providers Combined;Colombia;;sep-20;1242144;211039;all_wifi;N/A;mean;211039;29;32612;15169;32.61;15.17
+All Providers Combined;Colombia;;sep-20;43675;6799;ethernet;N/A;mean;6799;21;98330;62610;98.33;62.61
+All Providers Combined;Colombia;;oct-20;1075928;185890;all_wifi;N/A;mean;185890;29;32313;14520;32.31;14.52
+All Providers Combined;Colombia;;oct-20;39301;6208;ethernet;N/A;mean;6208;20;100278;56216;100.28;56.22
+All Providers Combined;Colombia;;nov-20;976433;177184;all_wifi;N/A;mean;177184;29;34811;15934;34.81;15.93
+All Providers Combined;Colombia;;nov-20;36595;6133;ethernet;N/A;mean;6133;20;105619;60105;105.62;60.11
+All Providers Combined;Colombia;;Dec 2020;923345;173051;all_wifi;N/A;mean;173051;28;37838;17811;37.84;17.81
+All Providers Combined;Colombia;;Dec 2020;29333;5262;ethernet;N/A;mean;5262;21;103100;58016;103.10;58.02
+All Providers Combined;Colombia;;Jan 2021;1108441;193674;all_wifi;N/A;mean;193674;29;37642;17274;37.64;17.27
+All Providers Combined;Colombia;;Jan 2021;26000;4509;ethernet;N/A;mean;4509;21;105674;56546;105.67;56.55
+All Providers Combined;Colombia;;feb-21;1121228;192510;all_wifi;N/A;mean;192510;27;40613;18176;40.61;18.18
+All Providers Combined;Colombia;;feb-21;21439;3326;ethernet;N/A;mean;3326;20;115000;62976;115.00;62.98
+All Providers Combined;Colombia;;mar-21;1112842;194907;all_wifi;N/A;mean;194907;26;43619;19332;43.62;19.33
+All Providers Combined;Colombia;;mar-21;21087;3256;ethernet;N/A;mean;3256;20;119772;66801;119.77;66.80
+All Providers Combined;Colombia;;Apr 2021;1127614;200567;all_wifi;N/A;mean;200567;25;48918;20827;48.92;20.83
+All Providers Combined;Colombia;;Apr 2021;22019;3378;ethernet;N/A;mean;3378;18;124310;71091;124.31;71.09
+All Providers Combined;Colombia;;may-21;1082300;194080;all_wifi;N/A;mean;194080;24;51553;21874;51.55;21.87
+All Providers Combined;Colombia;;may-21;22218;4198;ethernet;N/A;mean;4198;18;129580;73053;129.58;73.05
+All Providers Combined;Colombia;;jun-21;1047273;193431;all_wifi;N/A;mean;193431;24;55594;24856;55.59;24.86
+All Providers Combined;Colombia;;jun-21;42694;7417;ethernet;N/A;mean;7417;17;128200;75190;128.20;75.19
+All Providers Combined;Colombia;;jul-21;1113746;202716;all_wifi;N/A;mean;202716;23;58158;26302;58.16;26.30
+All Providers Combined;Colombia;;jul-21;51452;8254;ethernet;N/A;mean;8254;17;135266;80219;135.27;80.22
+All Providers Combined;Colombia;;Aug 2021;1058380;196173;all_wifi;N/A;mean;196173;22;62178;29645;62.18;29.65
+All Providers Combined;Colombia;;Aug 2021;53647;8509;ethernet;N/A;mean;8509;16;143865;93806;143.87;93.81
+All Providers Combined;Colombia;;sep-21;995618;185284;all_wifi;N/A;mean;185284;20;65762;31453;65.76;31.45
+All Providers Combined;Colombia;;sep-21;48810;8230;ethernet;N/A;mean;8230;15;148309;96648;148.31;96.65
+All Providers Combined;Colombia;;oct-21;937587;182262;all_wifi;N/A;mean;182262;20;70011;35016;70.01;35.02
+All Providers Combined;Colombia;;oct-21;45777;8146;ethernet;N/A;mean;8146;14;158041;107831;158.04;107.83
+All Providers Combined;Colombia;;nov-21;902744;177369;all_wifi;N/A;mean;177369;19;76414;40983;76.41;40.98
+All Providers Combined;Colombia;;nov-21;48179;8202;ethernet;N/A;mean;8202;13;173302;124876;173.30;124.88
+All Providers Combined;Colombia;;Dec 2021;847870;173829;all_wifi;N/A;mean;173829;19;78332;41935;78.33;41.94
+All Providers Combined;Colombia;;Dec 2021;42023;7554;ethernet;N/A;mean;7554;13;172986;124432;172.99;124.43

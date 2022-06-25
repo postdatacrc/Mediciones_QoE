@@ -1,0 +1,1073 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+ETB;Antioquia, Colombia;;Dec 2019;1547;399;all;N/A;mean;398;28;20556;19181;20.56;19.18
+ETB;Atlantico, Colombia;;Dec 2019;85;35;all;N/A;mean;35;30;37160;46229;37.16;46.23
+ETB;Bogota, Colombia;;Dec 2019;135388;43414;all;N/A;mean;43397;24;40361;27997;40.36;28.00
+ETB;Bolivar, Colombia;;Dec 2019;31;6;all;N/A;mean;6;124;20364;17510;20.36;17.51
+ETB;Boyaca, Colombia;;Dec 2019;421;103;all;N/A;mean;103;38;16737;21953;16.74;21.95
+ETB;Caldas, Colombia;;Dec 2019;27;10;all;N/A;mean;10;15;20488;28916;20.49;28.92
+ETB;Casanare, Colombia;;Dec 2019;2;1;all;N/A;mean;1;9;3401;6674;3.40;6.67
+ETB;Cauca Department, Colombia;;Dec 2019;16;4;all;N/A;mean;4;19;30142;48790;30.14;48.79
+ETB;Cesar, Colombia;;Dec 2019;1;1;all;N/A;mean;1;39;16511;13305;16.51;13.31
+ETB;Cordoba, Colombia;;Dec 2019;443;126;all;N/A;mean;126;41;11973;12998;11.97;13.00
+ETB;Cundinamarca, Colombia;;Dec 2019;6037;2153;all;N/A;mean;2153;33;27731;20664;27.73;20.66
+ETB;Huila, Colombia;;Dec 2019;251;88;all;N/A;mean;88;39;14346;14047;14.35;14.05
+ETB;La Guajira, Colombia;;Dec 2019;4;4;all;N/A;mean;4;37;22918;28129;22.92;28.13
+ETB;Magdalena, Colombia;;Dec 2019;279;51;all;N/A;mean;51;51;14907;16127;14.91;16.13
+ETB;Meta, Colombia;;Dec 2019;2018;547;all;N/A;mean;547;38;13516;11454;13.52;11.45
+ETB;Narino, Colombia;;Dec 2019;5;3;all;N/A;mean;3;71;4395;642;4.40;0.64
+ETB;North Santander, Colombia;;Dec 2019;1028;276;all;N/A;mean;276;36;29196;37311;29.20;37.31
+ETB;Quindio, Colombia;;Dec 2019;1;1;all;N/A;mean;1;23;2943;3057;2.94;3.06
+ETB;Risaralda, Colombia;;Dec 2019;82;37;all;N/A;mean;37;50;10698;7961;10.70;7.96
+ETB;Santander Department, Colombia;;Dec 2019;379;140;all;N/A;mean;140;24;17002;23526;17.00;23.53
+ETB;Sucre, Colombia;;Dec 2019;197;53;all;N/A;mean;53;36;13046;9697;13.05;9.70
+ETB;Tolima, Colombia;;Dec 2019;365;140;all;N/A;mean;140;22;9937;11140;9.94;11.14
+ETB;Valle del Cauca, Colombia;;Dec 2019;23;21;all;N/A;mean;21;10;17605;15121;17.61;15.12
+Movistar;Amazonas, Colombia;;Dec 2019;2;2;all;N/A;mean;2;385;693;166;0.69;0.17
+Movistar;Antioquia, Colombia;;Dec 2019;1016;538;all;N/A;mean;537;48;15114;13187;15.11;13.19
+Movistar;Arauca, Colombia;;Dec 2019;298;91;all;N/A;mean;91;49;7591;6100;7.59;6.10
+Movistar;Atlantico, Colombia;;Dec 2019;18864;6027;all;N/A;mean;6022;39;43820;43179;43.82;43.18
+Movistar;Bogota, Colombia;;Dec 2019;35869;10452;all;N/A;mean;10449;38;26936;24672;26.94;24.67
+Movistar;Bolivar, Colombia;;Dec 2019;16313;4763;all;N/A;mean;4759;37;42288;41773;42.29;41.77
+Movistar;Boyaca, Colombia;;Dec 2019;3737;1040;all;N/A;mean;1040;51;14291;11526;14.29;11.53
+Movistar;Caldas, Colombia;;Dec 2019;808;173;all;N/A;mean;173;48;6858;4538;6.86;4.54
+Movistar;Caquetá, Colombia;;Dec 2019;985;226;all;N/A;mean;226;49;8334;5399;8.33;5.40
+Movistar;Casanare, Colombia;;Dec 2019;452;125;all;N/A;mean;125;47;6964;2961;6.96;2.96
+Movistar;Cauca Department, Colombia;;Dec 2019;1668;564;all;N/A;mean;564;56;14095;11820;14.10;11.82
+Movistar;Cesar, Colombia;;Dec 2019;2692;700;all;N/A;mean;698;68;32594;34074;32.59;34.07
+Movistar;Choco, Colombia;;Dec 2019;676;182;all;N/A;mean;182;62;7250;3805;7.25;3.81
+Movistar;Cordoba, Colombia;;Dec 2019;2824;882;all;N/A;mean;881;69;21722;19438;21.72;19.44
+Movistar;Cundinamarca, Colombia;;Dec 2019;24568;8649;all;N/A;mean;8647;44;24761;22998;24.76;23.00
+Movistar;Huila, Colombia;;Dec 2019;9997;3159;all;N/A;mean;3159;53;17994;15295;17.99;15.30
+Movistar;La Guajira, Colombia;;Dec 2019;516;175;all;N/A;mean;175;88;8514;4020;8.51;4.02
+Movistar;Magdalena, Colombia;;Dec 2019;7008;2438;all;N/A;mean;2436;51;37092;36719;37.09;36.72
+Movistar;Meta, Colombia;;Dec 2019;4359;961;all;N/A;mean;961;31;36812;34354;36.81;34.35
+Movistar;Narino, Colombia;;Dec 2019;3374;706;all;N/A;mean;706;50;23480;21389;23.48;21.39
+Movistar;North Santander, Colombia;;Dec 2019;25542;7449;all;N/A;mean;7435;52;28208;26219;28.21;26.22
+Movistar;Putumayo, Colombia;;Dec 2019;390;63;all;N/A;mean;63;59;5294;1977;5.29;1.98
+Movistar;Quindio, Colombia;;Dec 2019;1301;279;all;N/A;mean;279;53;7045;3110;7.05;3.11
+Movistar;Risaralda, Colombia;;Dec 2019;204;58;all;N/A;mean;58;46;8280;5034;8.28;5.03
+Movistar;San Andrés and Providencia, Colombia;;Dec 2019;14;8;all;N/A;mean;8;195;864;690;0.86;0.69
+Movistar;Santander Department, Colombia;;Dec 2019;28056;8333;all;N/A;mean;8332;36;38681;37472;38.68;37.47
+Movistar;Sucre, Colombia;;Dec 2019;3844;1350;all;N/A;mean;1329;39;42835;44559;42.84;44.56
+Movistar;Tolima, Colombia;;Dec 2019;13997;4336;all;N/A;mean;4335;48;18245;15684;18.25;15.68
+Movistar;Valle del Cauca, Colombia;;Dec 2019;41752;11201;all;N/A;mean;11199;35;48298;49463;48.30;49.46
+Movistar;Guaviare, Colombia;;Dec 2019;2;1;all;N/A;mean;1;46;1444;2353;1.44;2.35
+Claro;Antioquia, Colombia;;Dec 2019;88158;24117;all;N/A;mean;24115;43;33101;10342;33.10;10.34
+Claro;Atlantico, Colombia;;Dec 2019;25220;7431;all;N/A;mean;7430;26;31520;8674;31.52;8.67
+Claro;Bogota, Colombia;;Dec 2019;311116;81778;all;N/A;mean;81768;43;29245;8789;29.25;8.79
+Claro;Bolivar, Colombia;;Dec 2019;10517;3436;all;N/A;mean;3435;28;28551;7381;28.55;7.38
+Claro;Boyaca, Colombia;;Dec 2019;7106;2250;all;N/A;mean;2249;39;22831;6103;22.83;6.10
+Claro;Caldas, Colombia;;Dec 2019;11647;3073;all;N/A;mean;3073;48;26023;7019;26.02;7.02
+Claro;Caquetá, Colombia;;Dec 2019;1993;437;all;N/A;mean;437;61;23621;7832;23.62;7.83
+Claro;Casanare, Colombia;;Dec 2019;3978;1183;all;N/A;mean;1183;59;23958;5402;23.96;5.40
+Claro;Cauca Department, Colombia;;Dec 2019;11839;3029;all;N/A;mean;3029;68;23420;5201;23.42;5.20
+Claro;Cesar, Colombia;;Dec 2019;10726;2313;all;N/A;mean;2311;52;22193;5630;22.19;5.63
+Claro;Choco, Colombia;;Dec 2019;66;28;all;N/A;mean;28;57;24003;9124;24.00;9.12
+Claro;Cordoba, Colombia;;Dec 2019;4207;1121;all;N/A;mean;1121;41;29979;6336;29.98;6.34
+Claro;Cundinamarca, Colombia;;Dec 2019;63047;17127;all;N/A;mean;17126;45;28973;9635;28.97;9.64
+Claro;Guainia, Colombia;;Dec 2019;3;1;all;N/A;mean;1;106;1871;654;1.87;0.65
+Claro;Huila, Colombia;;Dec 2019;15185;3364;all;N/A;mean;3364;67;22346;7379;22.35;7.38
+Claro;La Guajira, Colombia;;Dec 2019;3088;793;all;N/A;mean;787;51;23937;5387;23.94;5.39
+Claro;Magdalena, Colombia;;Dec 2019;5386;1832;all;N/A;mean;1828;29;29165;6486;29.17;6.49
+Claro;Meta, Colombia;;Dec 2019;13934;3639;all;N/A;mean;3639;42;26806;9278;26.81;9.28
+Claro;Narino, Colombia;;Dec 2019;7892;2345;all;N/A;mean;2343;75;21042;4608;21.04;4.61
+Claro;North Santander, Colombia;;Dec 2019;11744;3173;all;N/A;mean;3171;53;26940;6085;26.94;6.09
+Claro;Putumayo, Colombia;;Dec 2019;17;9;all;N/A;mean;9;55;17852;7672;17.85;7.67
+Claro;Quindio, Colombia;;Dec 2019;8252;2030;all;N/A;mean;2030;51;25893;6032;25.89;6.03
+Claro;Risaralda, Colombia;;Dec 2019;20455;4639;all;N/A;mean;4639;50;27890;6746;27.89;6.75
+Claro;San Andrés and Providencia, Colombia;;Dec 2019;5;3;all;N/A;mean;3;123;1106;8278;1.11;8.28
+Claro;Santander Department, Colombia;;Dec 2019;25395;7576;all;N/A;mean;7576;47;27212;8112;27.21;8.11
+Claro;Sucre, Colombia;;Dec 2019;1215;386;all;N/A;mean;386;30;27134;11016;27.13;11.02
+Claro;Tolima, Colombia;;Dec 2019;11458;3311;all;N/A;mean;3311;46;24895;7371;24.90;7.37
+Claro;Valle del Cauca, Colombia;;Dec 2019;90575;23779;all;N/A;mean;23775;57;28770;8253;28.77;8.25
+Claro;Vichada, Colombia;;Dec 2019;19;7;all;N/A;mean;7;94;1930;981;1.93;0.98
+ETB;Antioquia, Colombia;;Jan 2020;1863;531;all;N/A;mean;531;35;21636;18186;21.64;18.19
+ETB;Atlantico, Colombia;;Jan 2020;211;93;all;N/A;mean;93;25;30598;38663;30.60;38.66
+ETB;Bogota, Colombia;;Jan 2020;175445;52511;all;N/A;mean;52511;25;39293;28575;39.29;28.58
+ETB;Bolivar, Colombia;;Jan 2020;15;10;all;N/A;mean;10;73;19653;13620;19.65;13.62
+ETB;Boyaca, Colombia;;Jan 2020;498;144;all;N/A;mean;144;31;17531;23614;17.53;23.61
+ETB;Caldas, Colombia;;Jan 2020;53;14;all;N/A;mean;14;10;14431;23717;14.43;23.72
+ETB;Cauca Department, Colombia;;Jan 2020;10;6;all;N/A;mean;6;16;52135;55864;52.14;55.86
+ETB;Cesar, Colombia;;Jan 2020;4;4;all;N/A;mean;4;34;6110;6572;6.11;6.57
+ETB;Cordoba, Colombia;;Jan 2020;691;191;all;N/A;mean;191;42;12979;15811;12.98;15.81
+ETB;Cundinamarca, Colombia;;Jan 2020;7249;2593;all;N/A;mean;2593;28;30588;24687;30.59;24.69
+ETB;Guainia, Colombia;;Jan 2020;1;1;all;N/A;mean;1;29;3856;845;3.86;0.85
+ETB;Huila, Colombia;;Jan 2020;483;125;all;N/A;mean;125;53;12211;13451;12.21;13.45
+ETB;La Guajira, Colombia;;Jan 2020;1;1;all;N/A;mean;1;36;1931;1866;1.93;1.87
+ETB;Magdalena, Colombia;;Jan 2020;312;58;all;N/A;mean;58;45;16179;18042;16.18;18.04
+ETB;Meta, Colombia;;Jan 2020;2423;577;all;N/A;mean;577;59;12325;10770;12.33;10.77
+ETB;North Santander, Colombia;;Jan 2020;940;256;all;N/A;mean;256;43;17555;22516;17.56;22.52
+ETB;Quindio, Colombia;;Jan 2020;17;2;all;N/A;mean;2;16;3878;3765;3.88;3.77
+ETB;Risaralda, Colombia;;Jan 2020;328;57;all;N/A;mean;57;58;7674;8255;7.67;8.26
+ETB;Santander Department, Colombia;;Jan 2020;521;196;all;N/A;mean;196;32;19513;23261;19.51;23.26
+ETB;Sucre, Colombia;;Jan 2020;222;62;all;N/A;mean;62;44;6869;2724;6.87;2.72
+ETB;Tolima, Colombia;;Jan 2020;582;170;all;N/A;mean;170;29;10833;13605;10.83;13.61
+ETB;Valle del Cauca, Colombia;;Jan 2020;120;39;all;N/A;mean;39;52;9133;11180;9.13;11.18
+Movistar;Antioquia, Colombia;;Jan 2020;853;457;all;N/A;mean;457;52;20143;17445;20.14;17.45
+Movistar;Arauca, Colombia;;Jan 2020;281;86;all;N/A;mean;86;85;6734;3785;6.73;3.79
+Movistar;Atlantico, Colombia;;Jan 2020;19143;6034;all;N/A;mean;6034;40;43202;43300;43.20;43.30
+Movistar;Bogota, Colombia;;Jan 2020;43918;12486;all;N/A;mean;12486;39;27237;28033;27.24;28.03
+Movistar;Bolivar, Colombia;;Jan 2020;17380;5016;all;N/A;mean;5016;38;39434;41475;39.43;41.48
+Movistar;Boyaca, Colombia;;Jan 2020;4478;1254;all;N/A;mean;1254;55;12617;9986;12.62;9.99
+Movistar;Caldas, Colombia;;Jan 2020;622;182;all;N/A;mean;182;42;6476;3886;6.48;3.89
+Movistar;Caquetá, Colombia;;Jan 2020;1119;246;all;N/A;mean;246;51;8198;4549;8.20;4.55
+Movistar;Casanare, Colombia;;Jan 2020;496;128;all;N/A;mean;128;77;6779;2814;6.78;2.81
+Movistar;Cauca Department, Colombia;;Jan 2020;1458;530;all;N/A;mean;530;59;15866;15136;15.87;15.14
+Movistar;Cesar, Colombia;;Jan 2020;2284;628;all;N/A;mean;628;65;28188;30567;28.19;30.57
+Movistar;Choco, Colombia;;Jan 2020;719;171;all;N/A;mean;171;73;7127;4677;7.13;4.68
+Movistar;Cordoba, Colombia;;Jan 2020;2988;876;all;N/A;mean;876;74;21035;19155;21.04;19.16
+Movistar;Cundinamarca, Colombia;;Jan 2020;27787;9287;all;N/A;mean;9287;44;25179;26674;25.18;26.67
+Movistar;Huila, Colombia;;Jan 2020;11014;3385;all;N/A;mean;3385;55;16671;15279;16.67;15.28
+Movistar;La Guajira, Colombia;;Jan 2020;757;221;all;N/A;mean;221;93;10535;7524;10.54;7.52
+Movistar;Magdalena, Colombia;;Jan 2020;7096;2481;all;N/A;mean;2481;52;36825;38935;36.83;38.94
+Movistar;Meta, Colombia;;Jan 2020;4330;1020;all;N/A;mean;1020;29;37288;38920;37.29;38.92
+Movistar;Narino, Colombia;;Jan 2020;3163;756;all;N/A;mean;756;48;23747;21121;23.75;21.12
+Movistar;North Santander, Colombia;;Jan 2020;27600;8013;all;N/A;mean;8013;55;27078;26711;27.08;26.71
+Movistar;Putumayo, Colombia;;Jan 2020;336;53;all;N/A;mean;53;55;19882;15834;19.88;15.83
+Movistar;Quindio, Colombia;;Jan 2020;1166;328;all;N/A;mean;328;61;8723;4054;8.72;4.05
+Movistar;Risaralda, Colombia;;Jan 2020;279;74;all;N/A;mean;74;61;6978;3868;6.98;3.87
+Movistar;San Andrés and Providencia, Colombia;;Jan 2020;21;16;all;N/A;mean;16;150;628;600;0.63;0.60
+Movistar;Santander Department, Colombia;;Jan 2020;27069;8597;all;N/A;mean;8597;38;39997;39140;40.00;39.14
+Movistar;Sucre, Colombia;;Jan 2020;4253;1298;all;N/A;mean;1298;42;39220;41941;39.22;41.94
+Movistar;Tolima, Colombia;;Jan 2020;17164;4857;all;N/A;mean;4857;50;18843;17644;18.84;17.64
+Movistar;Valle del Cauca, Colombia;;Jan 2020;42403;11908;all;N/A;mean;11908;37;44319;50742;44.32;50.74
+Claro;Antioquia, Colombia;;Jan 2020;85770;24625;all;N/A;mean;24625;45;34608;10935;34.61;10.94
+Claro;Atlantico, Colombia;;Jan 2020;29820;8121;all;N/A;mean;8121;28;33630;10009;33.63;10.01
+Claro;Bogota, Colombia;;Jan 2020;352540;92168;all;N/A;mean;92168;45;30016;9374;30.02;9.37
+Claro;Bolivar, Colombia;;Jan 2020;10281;3372;all;N/A;mean;3372;30;28606;7801;28.61;7.80
+Claro;Boyaca, Colombia;;Jan 2020;9153;2549;all;N/A;mean;2549;51;23447;5839;23.45;5.84
+Claro;Caldas, Colombia;;Jan 2020;11494;2860;all;N/A;mean;2860;53;26596;7298;26.60;7.30
+Claro;Caquetá, Colombia;;Jan 2020;1999;469;all;N/A;mean;469;61;26156;7612;26.16;7.61
+Claro;Casanare, Colombia;;Jan 2020;4854;1410;all;N/A;mean;1410;63;25535;5806;25.54;5.81
+Claro;Cauca Department, Colombia;;Jan 2020;14640;3332;all;N/A;mean;3332;69;24641;5711;24.64;5.71
+Claro;Cesar, Colombia;;Jan 2020;13638;2568;all;N/A;mean;2568;56;20817;5752;20.82;5.75
+Claro;Choco, Colombia;;Jan 2020;43;29;all;N/A;mean;29;55;42067;6541;42.07;6.54
+Claro;Cordoba, Colombia;;Jan 2020;3992;1002;all;N/A;mean;1002;46;28191;7221;28.19;7.22
+Claro;Cundinamarca, Colombia;;Jan 2020;69759;18030;all;N/A;mean;18030;47;28924;9155;28.92;9.16
+Claro;Huila, Colombia;;Jan 2020;11900;3368;all;N/A;mean;3368;59;24390;7896;24.39;7.90
+Claro;La Guajira, Colombia;;Jan 2020;3680;897;all;N/A;mean;897;52;22660;5722;22.66;5.72
+Claro;Magdalena, Colombia;;Jan 2020;6217;1912;all;N/A;mean;1912;32;29380;7425;29.38;7.43
+Claro;Meta, Colombia;;Jan 2020;14123;3977;all;N/A;mean;3977;44;26442;7642;26.44;7.64
+Claro;Narino, Colombia;;Jan 2020;8132;2617;all;N/A;mean;2617;52;21093;4764;21.09;4.76
+Claro;North Santander, Colombia;;Jan 2020;12177;3151;all;N/A;mean;3151;55;27078;6112;27.08;6.11
+Claro;Putumayo, Colombia;;Jan 2020;11;7;all;N/A;mean;7;42;6760;6329;6.76;6.33
+Claro;Quindio, Colombia;;Jan 2020;7717;1941;all;N/A;mean;1941;56;26178;6079;26.18;6.08
+Claro;Risaralda, Colombia;;Jan 2020;21661;5195;all;N/A;mean;5195;56;27615;6959;27.62;6.96
+Claro;San Andrés and Providencia, Colombia;;Jan 2020;4;3;all;N/A;mean;3;84;1901;3775;1.90;3.78
+Claro;Santander Department, Colombia;;Jan 2020;26519;7577;all;N/A;mean;7577;49;27782;8012;27.78;8.01
+Claro;Sucre, Colombia;;Jan 2020;1355;436;all;N/A;mean;436;26;26358;10496;26.36;10.50
+Claro;Tolima, Colombia;;Jan 2020;12423;3252;all;N/A;mean;3252;43;26186;7619;26.19;7.62
+Claro;Valle del Cauca, Colombia;;Jan 2020;94451;25140;all;N/A;mean;25140;56;29271;8316;29.27;8.32
+Claro;Vaupes, Colombia;;Jan 2020;2;2;all;N/A;mean;2;4;93965;71727;93.97;71.73
+Claro;Vichada, Colombia;;Jan 2020;25;6;all;N/A;mean;6;104;3837;1201;3.84;1.20
+Claro;Guaviare, Colombia;;Jan 2020;4;2;all;N/A;mean;2;12;10558;12142;10.56;12.14
+ETB;Antioquia, Colombia;;feb-20;2266;717;all;N/A;mean;717;30;23968;20686;23.97;20.69
+ETB;Atlantico, Colombia;;feb-20;615;223;all;N/A;mean;223;33;21949;27327;21.95;27.33
+ETB;Bogota, Colombia;;feb-20;178777;54813;all;N/A;mean;54813;21;42045;30008;42.05;30.01
+ETB;Bolivar, Colombia;;feb-20;54;21;all;N/A;mean;21;28;21142;17222;21.14;17.22
+ETB;Boyaca, Colombia;;feb-20;372;150;all;N/A;mean;150;20;17816;23070;17.82;23.07
+ETB;Caldas, Colombia;;feb-20;24;12;all;N/A;mean;12;14;18935;29745;18.94;29.75
+ETB;Casanare, Colombia;;feb-20;1;1;all;N/A;mean;1;8;10165;10742;10.17;10.74
+ETB;Cauca Department, Colombia;;feb-20;278;40;all;N/A;mean;40;19;20300;48604;20.30;48.60
+ETB;Cesar, Colombia;;feb-20;2;2;all;N/A;mean;2;29;15592;13587;15.59;13.59
+ETB;Cordoba, Colombia;;feb-20;709;190;all;N/A;mean;190;39;12307;13789;12.31;13.79
+ETB;Cundinamarca, Colombia;;feb-20;7237;2757;all;N/A;mean;2757;25;30977;21715;30.98;21.72
+ETB;Huila, Colombia;;feb-20;283;106;all;N/A;mean;106;48;11465;12552;11.47;12.55
+ETB;La Guajira, Colombia;;feb-20;4;3;all;N/A;mean;3;32;11755;13261;11.76;13.26
+ETB;Magdalena, Colombia;;feb-20;183;57;all;N/A;mean;57;32;15793;20478;15.79;20.48
+ETB;Meta, Colombia;;feb-20;3060;636;all;N/A;mean;636;48;14147;13015;14.15;13.02
+ETB;Narino, Colombia;;feb-20;1;1;all;N/A;mean;1;75;2500;2105;2.50;2.11
+ETB;North Santander, Colombia;;feb-20;1140;361;all;N/A;mean;361;37;34022;58954;34.02;58.95
+ETB;Quindio, Colombia;;feb-20;13;3;all;N/A;mean;3;13;27571;29113;27.57;29.11
+ETB;Risaralda, Colombia;;feb-20;91;31;all;N/A;mean;31;31;11692;9400;11.69;9.40
+ETB;Santander Department, Colombia;;feb-20;741;216;all;N/A;mean;216;32;22260;27382;22.26;27.38
+ETB;Sucre, Colombia;;feb-20;176;66;all;N/A;mean;66;39;8963;4135;8.96;4.14
+ETB;Tolima, Colombia;;feb-20;570;172;all;N/A;mean;172;28;7804;8338;7.80;8.34
+ETB;Valle del Cauca, Colombia;;feb-20;128;54;all;N/A;mean;54;43;8539;15306;8.54;15.31
+Movistar;Antioquia, Colombia;;feb-20;1119;569;all;N/A;mean;569;48;19994;17775;19.99;17.78
+Movistar;Arauca, Colombia;;feb-20;317;80;all;N/A;mean;80;52;6581;4789;6.58;4.79
+Movistar;Atlantico, Colombia;;feb-20;15827;5558;all;N/A;mean;5558;39;45540;42604;45.54;42.60
+Movistar;Bogota, Colombia;;feb-20;42544;12540;all;N/A;mean;12540;36;30919;29152;30.92;29.15
+Movistar;Bolivar, Colombia;;feb-20;16798;4746;all;N/A;mean;4746;35;45857;44428;45.86;44.43
+Movistar;Boyaca, Colombia;;feb-20;5834;1458;all;N/A;mean;1458;55;13212;11143;13.21;11.14
+Movistar;Caldas, Colombia;;feb-20;821;169;all;N/A;mean;169;45;8248;8472;8.25;8.47
+Movistar;Caquetá, Colombia;;feb-20;1135;252;all;N/A;mean;252;46;10519;7441;10.52;7.44
+Movistar;Casanare, Colombia;;feb-20;647;144;all;N/A;mean;144;51;7905;3826;7.91;3.83
+Movistar;Cauca Department, Colombia;;feb-20;1753;624;all;N/A;mean;624;57;17385;15450;17.39;15.45
+Movistar;Cesar, Colombia;;feb-20;1709;547;all;N/A;mean;547;55;32391;30400;32.39;30.40
+Movistar;Choco, Colombia;;feb-20;621;157;all;N/A;mean;157;62;9042;5664;9.04;5.66
+Movistar;Cordoba, Colombia;;feb-20;2338;770;all;N/A;mean;770;69;23783;19080;23.78;19.08
+Movistar;Cundinamarca, Colombia;;feb-20;25222;8778;all;N/A;mean;8778;41;28256;27028;28.26;27.03
+Movistar;Huila, Colombia;;feb-20;10212;3101;all;N/A;mean;3101;53;18534;16767;18.53;16.77
+Movistar;La Guajira, Colombia;;feb-20;627;178;all;N/A;mean;178;78;12446;8953;12.45;8.95
+Movistar;Magdalena, Colombia;;feb-20;5488;2077;all;N/A;mean;2077;49;39563;37572;39.56;37.57
+Movistar;Meta, Colombia;;feb-20;3931;951;all;N/A;mean;951;29;40395;38805;40.40;38.81
+Movistar;Narino, Colombia;;feb-20;2834;691;all;N/A;mean;691;48;28294;26129;28.29;26.13
+Movistar;North Santander, Colombia;;feb-20;24086;7634;all;N/A;mean;7634;49;31586;29881;31.59;29.88
+Movistar;Putumayo, Colombia;;feb-20;210;56;all;N/A;mean;56;73;5496;2985;5.50;2.99
+Movistar;Quindio, Colombia;;feb-20;1340;263;all;N/A;mean;263;57;8327;4127;8.33;4.13
+Movistar;Risaralda, Colombia;;feb-20;335;70;all;N/A;mean;70;50;11183;7782;11.18;7.78
+Movistar;San Andrés and Providencia, Colombia;;feb-20;16;15;all;N/A;mean;15;188;426;902;0.43;0.90
+Movistar;Santander Department, Colombia;;feb-20;22500;8014;all;N/A;mean;8014;33;43760;42126;43.76;42.13
+Movistar;Sucre, Colombia;;feb-20;3445;1097;all;N/A;mean;1097;39;44135;44691;44.14;44.69
+Movistar;Tolima, Colombia;;feb-20;14886;4391;all;N/A;mean;4391;47;21514;19352;21.51;19.35
+Movistar;Valle del Cauca, Colombia;;feb-20;36803;11171;all;N/A;mean;11171;34;48304;51514;48.30;51.51
+Claro;Amazonas, Colombia;;feb-20;1;1;all;N/A;mean;1;5;17112;9975;17.11;9.98
+Claro;Antioquia, Colombia;;feb-20;92943;26372;all;N/A;mean;26372;40;38800;12159;38.80;12.16
+Claro;Atlantico, Colombia;;feb-20;29146;7727;all;N/A;mean;7727;33;39159;13296;39.16;13.30
+Claro;Bogota, Colombia;;feb-20;400579;103500;all;N/A;mean;103500;41;34274;10992;34.27;10.99
+Claro;Bolivar, Colombia;;feb-20;11114;3383;all;N/A;mean;3383;26;32406;8954;32.41;8.95
+Claro;Boyaca, Colombia;;feb-20;11177;3051;all;N/A;mean;3051;55;26927;7256;26.93;7.26
+Claro;Caldas, Colombia;;feb-20;12893;3024;all;N/A;mean;3024;50;31638;8227;31.64;8.23
+Claro;Caquetá, Colombia;;feb-20;4428;711;all;N/A;mean;711;60;25378;9058;25.38;9.06
+Claro;Casanare, Colombia;;feb-20;4495;1317;all;N/A;mean;1317;55;28582;6023;28.58;6.02
+Claro;Cauca Department, Colombia;;feb-20;14068;3530;all;N/A;mean;3530;62;27246;5875;27.25;5.88
+Claro;Cesar, Colombia;;feb-20;9245;2201;all;N/A;mean;2201;49;26726;6134;26.73;6.13
+Claro;Choco, Colombia;;feb-20;124;38;all;N/A;mean;38;54;43337;15962;43.34;15.96
+Claro;Cordoba, Colombia;;feb-20;4218;1147;all;N/A;mean;1147;40;33339;8325;33.34;8.33
+Claro;Cundinamarca, Colombia;;feb-20;77462;19908;all;N/A;mean;19908;44;32893;9561;32.89;9.56
+Claro;Huila, Colombia;;feb-20;13281;3518;all;N/A;mean;3518;54;27032;8129;27.03;8.13
+Claro;La Guajira, Colombia;;feb-20;3264;882;all;N/A;mean;882;44;29630;6191;29.63;6.19
+Claro;Magdalena, Colombia;;feb-20;6864;1880;all;N/A;mean;1880;30;31480;7486;31.48;7.49
+Claro;Meta, Colombia;;feb-20;15006;4091;all;N/A;mean;4091;39;29492;7094;29.49;7.09
+Claro;Narino, Colombia;;feb-20;9245;2850;all;N/A;mean;2850;52;23209;5351;23.21;5.35
+Claro;North Santander, Colombia;;feb-20;13061;3385;all;N/A;mean;3385;50;29688;6731;29.69;6.73
+Claro;Putumayo, Colombia;;feb-20;4;3;all;N/A;mean;3;88;8942;11461;8.94;11.46
+Claro;Quindio, Colombia;;feb-20;9194;2104;all;N/A;mean;2104;53;32334;6751;32.33;6.75
+Claro;Risaralda, Colombia;;feb-20;22543;5499;all;N/A;mean;5499;51;31130;7848;31.13;7.85
+Claro;San Andrés and Providencia, Colombia;;feb-20;3;1;all;N/A;mean;1;170;1749;1049;1.75;1.05
+Claro;Santander Department, Colombia;;feb-20;26347;7583;all;N/A;mean;7583;45;30635;8562;30.64;8.56
+Claro;Sucre, Colombia;;feb-20;1686;480;all;N/A;mean;480;28;34882;23406;34.88;23.41
+Claro;Tolima, Colombia;;feb-20;12945;3407;all;N/A;mean;3407;38;31048;9735;31.05;9.74
+Claro;Valle del Cauca, Colombia;;feb-20;99105;25883;all;N/A;mean;25883;53;32458;9007;32.46;9.01
+Claro;Vichada, Colombia;;feb-20;66;4;all;N/A;mean;4;98;1589;1299;1.59;1.30
+Claro;Guaviare, Colombia;;feb-20;1;1;all;N/A;mean;1;126;49278;28716;49.28;28.72
+ETB;Antioquia, Colombia;;mar-20;2308;731;all;N/A;mean;731;30;22072;17822;22.07;17.82
+ETB;Atlantico, Colombia;;mar-20;139;85;all;N/A;mean;85;42;19943;20944;19.94;20.94
+ETB;Bogota, Colombia;;mar-20;337786;97140;all;N/A;mean;97140;21;38424;26091;38.42;26.09
+ETB;Bolivar, Colombia;;mar-20;56;23;all;N/A;mean;23;28;60297;41728;60.30;41.73
+ETB;Boyaca, Colombia;;mar-20;892;331;all;N/A;mean;331;21;29716;25441;29.72;25.44
+ETB;Caldas, Colombia;;mar-20;11;9;all;N/A;mean;9;19;17954;19096;17.95;19.10
+ETB;Casanare, Colombia;;mar-20;1;1;all;N/A;mean;1;8;9517;10970;9.52;10.97
+ETB;Cauca Department, Colombia;;mar-20;428;47;all;N/A;mean;47;19;22134;37984;22.13;37.98
+ETB;Cesar, Colombia;;mar-20;56;8;all;N/A;mean;8;22;10249;9006;10.25;9.01
+ETB;Choco, Colombia;;mar-20;2;1;all;N/A;mean;1;11;8940;8387;8.94;8.39
+ETB;Cordoba, Colombia;;mar-20;1929;362;all;N/A;mean;362;30;10316;13665;10.32;13.67
+ETB;Cundinamarca, Colombia;;mar-20;13354;4870;all;N/A;mean;4870;25;32425;22416;32.43;22.42
+ETB;Huila, Colombia;;mar-20;464;143;all;N/A;mean;143;50;12512;11445;12.51;11.45
+ETB;La Guajira, Colombia;;mar-20;1;1;all;N/A;mean;1;30;15877;17350;15.88;17.35
+ETB;Magdalena, Colombia;;mar-20;337;68;all;N/A;mean;68;51;15591;17111;15.59;17.11
+ETB;Meta, Colombia;;mar-20;3823;878;all;N/A;mean;878;51;13409;13729;13.41;13.73
+ETB;Narino, Colombia;;mar-20;2;1;all;N/A;mean;1;3;47312;42808;47.31;42.81
+ETB;North Santander, Colombia;;mar-20;1377;407;all;N/A;mean;407;42;26941;46035;26.94;46.04
+ETB;Quindio, Colombia;;mar-20;6;3;all;N/A;mean;3;13;25144;32308;25.14;32.31
+ETB;Risaralda, Colombia;;mar-20;232;42;all;N/A;mean;42;62;4711;5171;4.71;5.17
+ETB;Santander Department, Colombia;;mar-20;1128;318;all;N/A;mean;318;50;15507;19954;15.51;19.95
+ETB;Sucre, Colombia;;mar-20;317;99;all;N/A;mean;99;59;6331;2809;6.33;2.81
+ETB;Tolima, Colombia;;mar-20;910;222;all;N/A;mean;222;37;6399;8366;6.40;8.37
+ETB;Valle del Cauca, Colombia;;mar-20;18;12;all;N/A;mean;12;40;20947;25621;20.95;25.62
+Movistar;Amazonas, Colombia;;mar-20;3;2;all;N/A;mean;2;477;308;153;0.31;0.15
+Movistar;Antioquia, Colombia;;mar-20;1518;741;all;N/A;mean;741;50;22888;22332;22.89;22.33
+Movistar;Arauca, Colombia;;mar-20;419;106;all;N/A;mean;106;58;6389;4855;6.39;4.86
+Movistar;Atlantico, Colombia;;mar-20;31123;9327;all;N/A;mean;9327;42;49816;52314;49.82;52.31
+Movistar;Bogota, Colombia;;mar-20;75185;21125;all;N/A;mean;21125;39;33395;32628;33.40;32.63
+Movistar;Bolivar, Colombia;;mar-20;24909;6809;all;N/A;mean;6809;39;47559;51863;47.56;51.86
+Movistar;Boyaca, Colombia;;mar-20;5925;1693;all;N/A;mean;1693;56;14707;14303;14.71;14.30
+Movistar;Caldas, Colombia;;mar-20;1089;229;all;N/A;mean;229;53;10093;8071;10.09;8.07
+Movistar;Caquetá, Colombia;;mar-20;1785;361;all;N/A;mean;361;55;8916;7262;8.92;7.26
+Movistar;Casanare, Colombia;;mar-20;693;148;all;N/A;mean;148;67;7807;4671;7.81;4.67
+Movistar;Cauca Department, Colombia;;mar-20;2695;976;all;N/A;mean;976;62;17449;15676;17.45;15.68
+Movistar;Cesar, Colombia;;mar-20;2432;830;all;N/A;mean;830;57;39665;38695;39.67;38.70
+Movistar;Choco, Colombia;;mar-20;1024;194;all;N/A;mean;194;60;8335;5715;8.34;5.72
+Movistar;Cordoba, Colombia;;mar-20;3768;1131;all;N/A;mean;1131;62;28552;26364;28.55;26.36
+Movistar;Cundinamarca, Colombia;;mar-20;45052;15157;all;N/A;mean;15157;40;30711;30945;30.71;30.95
+Movistar;Huila, Colombia;;mar-20;15090;4162;all;N/A;mean;4162;55;18634;17923;18.63;17.92
+Movistar;La Guajira, Colombia;;mar-20;834;225;all;N/A;mean;225;85;16231;13626;16.23;13.63
+Movistar;Magdalena, Colombia;;mar-20;8753;3286;all;N/A;mean;3286;50;45789;50369;45.79;50.37
+Movistar;Meta, Colombia;;mar-20;5474;1187;all;N/A;mean;1187;31;44088;45571;44.09;45.57
+Movistar;Narino, Colombia;;mar-20;3935;836;all;N/A;mean;836;57;31120;25066;31.12;25.07
+Movistar;North Santander, Colombia;;mar-20;36575;10519;all;N/A;mean;10519;47;36121;32902;36.12;32.90
+Movistar;Putumayo, Colombia;;mar-20;228;71;all;N/A;mean;71;61;5145;2346;5.15;2.35
+Movistar;Quindio, Colombia;;mar-20;1558;358;all;N/A;mean;358;56;9379;6583;9.38;6.58
+Movistar;Risaralda, Colombia;;mar-20;526;77;all;N/A;mean;77;52;7325;12833;7.33;12.83
+Movistar;San Andrés and Providencia, Colombia;;mar-20;15;9;all;N/A;mean;9;252;784;1287;0.78;1.29
+Movistar;Santander Department, Colombia;;mar-20;39664;11955;all;N/A;mean;11955;35;45291;37949;45.29;37.95
+Movistar;Sucre, Colombia;;mar-20;5155;1702;all;N/A;mean;1702;37;48300;53465;48.30;53.47
+Movistar;Tolima, Colombia;;mar-20;23719;6163;all;N/A;mean;6163;48;16377;18306;16.38;18.31
+Movistar;Valle del Cauca, Colombia;;mar-20;58442;17178;all;N/A;mean;17178;33;56395;65049;56.40;65.05
+Claro;Antioquia, Colombia;;mar-20;154976;40767;all;N/A;mean;40767;47;34678;9032;34.68;9.03
+Claro;Atlantico, Colombia;;mar-20;45903;12607;all;N/A;mean;12607;36;34420;8618;34.42;8.62
+Claro;Bogota, Colombia;;mar-20;706722;173832;all;N/A;mean;173832;48;29394;7922;29.39;7.92
+Claro;Bolivar, Colombia;;mar-20;16628;4735;all;N/A;mean;4735;34;29520;6918;29.52;6.92
+Claro;Boyaca, Colombia;;mar-20;14989;3947;all;N/A;mean;3947;56;25594;7203;25.59;7.20
+Claro;Caldas, Colombia;;mar-20;19570;4495;all;N/A;mean;4495;59;26223;7095;26.22;7.10
+Claro;Caquetá, Colombia;;mar-20;3579;681;all;N/A;mean;681;63;26717;7434;26.72;7.43
+Claro;Casanare, Colombia;;mar-20;7734;2022;all;N/A;mean;2022;71;24005;5778;24.01;5.78
+Claro;Cauca Department, Colombia;;mar-20;21294;5128;all;N/A;mean;5128;67;24912;5161;24.91;5.16
+Claro;Cesar, Colombia;;mar-20;15482;3182;all;N/A;mean;3182;59;23322;5548;23.32;5.55
+Claro;Choco, Colombia;;mar-20;1;1;all;N/A;mean;1;21;8341;3497;8.34;3.50
+Claro;Cordoba, Colombia;;mar-20;5258;1417;all;N/A;mean;1417;41;32115;7455;32.12;7.46
+Claro;Cundinamarca, Colombia;;mar-20;126946;30264;all;N/A;mean;30264;51;28538;7641;28.54;7.64
+Claro;Guainia, Colombia;;mar-20;3;2;all;N/A;mean;2;115;434;3170;0.43;3.17
+Claro;Huila, Colombia;;mar-20;23200;4851;all;N/A;mean;4851;78;21549;6800;21.55;6.80
+Claro;La Guajira, Colombia;;mar-20;6931;1349;all;N/A;mean;1349;61;20446;5922;20.45;5.92
+Claro;Magdalena, Colombia;;mar-20;8382;2409;all;N/A;mean;2409;32;29959;6513;29.96;6.51
+Claro;Meta, Colombia;;mar-20;22156;5608;all;N/A;mean;5608;49;27531;6837;27.53;6.84
+Claro;Narino, Colombia;;mar-20;13721;4027;all;N/A;mean;4027;52;22050;4695;22.05;4.70
+Claro;North Santander, Colombia;;mar-20;18133;4438;all;N/A;mean;4438;52;26470;6084;26.47;6.08
+Claro;Putumayo, Colombia;;mar-20;13;5;all;N/A;mean;5;122;6323;4844;6.32;4.84
+Claro;Quindio, Colombia;;mar-20;13050;3118;all;N/A;mean;3118;58;29158;5597;29.16;5.60
+Claro;Risaralda, Colombia;;mar-20;39645;8518;all;N/A;mean;8518;54;25331;6902;25.33;6.90
+Claro;San Andrés and Providencia, Colombia;;mar-20;3;3;all;N/A;mean;3;70;1527;8140;1.53;8.14
+Claro;Santander Department, Colombia;;mar-20;45406;11535;all;N/A;mean;11535;52;26447;7253;26.45;7.25
+Claro;Sucre, Colombia;;mar-20;2148;607;all;N/A;mean;607;27;28876;8306;28.88;8.31
+Claro;Tolima, Colombia;;mar-20;19053;4826;all;N/A;mean;4826;49;27702;8511;27.70;8.51
+Claro;Valle del Cauca, Colombia;;mar-20;148972;37104;all;N/A;mean;37104;57;28566;7430;28.57;7.43
+Claro;Vaupes, Colombia;;mar-20;12;3;all;N/A;mean;3;13;52054;45410;52.05;45.41
+Claro;Vichada, Colombia;;mar-20;46;6;all;N/A;mean;6;84;9549;2963;9.55;2.96
+Claro;Guaviare, Colombia;;mar-20;1;1;all;N/A;mean;1;17;21599;15926;21.60;15.93
+ETB;Antioquia, Colombia;;Apr 2020;1898;488;all;N/A;mean;488;41;16668;16371;16.67;16.37
+ETB;Atlantico, Colombia;;Apr 2020;31;17;all;N/A;mean;17;39;21374;27411;21.37;27.41
+ETB;Bogota, Colombia;;Apr 2020;468969;112142;all;N/A;mean;112142;22;38702;26945;38.70;26.95
+ETB;Bolivar, Colombia;;Apr 2020;26;7;all;N/A;mean;7;29;75602;48465;75.60;48.47
+ETB;Boyaca, Colombia;;Apr 2020;904;269;all;N/A;mean;269;36;24310;22184;24.31;22.18
+ETB;Caldas, Colombia;;Apr 2020;2;2;all;N/A;mean;2;23;4118;20475;4.12;20.48
+ETB;Cauca Department, Colombia;;Apr 2020;42;8;all;N/A;mean;8;20;15793;17201;15.79;17.20
+ETB;Cesar, Colombia;;Apr 2020;108;10;all;N/A;mean;10;95;5996;4245;6.00;4.25
+ETB;Cordoba, Colombia;;Apr 2020;2137;375;all;N/A;mean;375;26;16557;34231;16.56;34.23
+ETB;Cundinamarca, Colombia;;Apr 2020;17321;5365;all;N/A;mean;5365;20;38384;27050;38.38;27.05
+ETB;Guainia, Colombia;;Apr 2020;2;1;all;N/A;mean;1;67;5505;92;5.51;0.09
+ETB;Huila, Colombia;;Apr 2020;615;164;all;N/A;mean;164;73;8368;8394;8.37;8.39
+ETB;Magdalena, Colombia;;Apr 2020;344;53;all;N/A;mean;53;65;14310;14266;14.31;14.27
+ETB;Meta, Colombia;;Apr 2020;4486;881;all;N/A;mean;881;49;12006;12593;12.01;12.59
+ETB;North Santander, Colombia;;Apr 2020;1567;274;all;N/A;mean;274;54;15407;20369;15.41;20.37
+ETB;Quindio, Colombia;;Apr 2020;10;5;all;N/A;mean;5;44;24908;20956;24.91;20.96
+ETB;Risaralda, Colombia;;Apr 2020;296;56;all;N/A;mean;56;79;7137;11663;7.14;11.66
+ETB;Santander Department, Colombia;;Apr 2020;1727;303;all;N/A;mean;303;63;13018;11271;13.02;11.27
+ETB;Sucre, Colombia;;Apr 2020;230;72;all;N/A;mean;72;41;8704;4326;8.70;4.33
+ETB;Tolima, Colombia;;Apr 2020;1136;178;all;N/A;mean;178;32;9040;9728;9.04;9.73
+ETB;Valle del Cauca, Colombia;;Apr 2020;33;14;all;N/A;mean;14;26;17887;19827;17.89;19.83
+Movistar;Antioquia, Colombia;;Apr 2020;1390;657;all;N/A;mean;657;45;32939;29769;32.94;29.77
+Movistar;Arauca, Colombia;;Apr 2020;435;90;all;N/A;mean;90;54;4824;2556;4.82;2.56
+Movistar;Atlantico, Colombia;;Apr 2020;33700;9528;all;N/A;mean;9528;43;50633;49926;50.63;49.93
+Movistar;Bogota, Colombia;;Apr 2020;102098;25857;all;N/A;mean;25857;38;34108;32866;34.11;32.87
+Movistar;Bolivar, Colombia;;Apr 2020;26033;6723;all;N/A;mean;6723;40;50277;51730;50.28;51.73
+Movistar;Boyaca, Colombia;;Apr 2020;7965;1931;all;N/A;mean;1931;61;11149;8705;11.15;8.71
+Movistar;Caldas, Colombia;;Apr 2020;1537;246;all;N/A;mean;246;55;10083;9892;10.08;9.89
+Movistar;Caquetá, Colombia;;Apr 2020;1964;378;all;N/A;mean;378;55;10870;10068;10.87;10.07
+Movistar;Casanare, Colombia;;Apr 2020;957;168;all;N/A;mean;168;56;7070;3442;7.07;3.44
+Movistar;Cauca Department, Colombia;;Apr 2020;2606;977;all;N/A;mean;977;54;23562;22829;23.56;22.83
+Movistar;Cesar, Colombia;;Apr 2020;5652;1802;all;N/A;mean;1802;61;41786;40136;41.79;40.14
+Movistar;Choco, Colombia;;Apr 2020;1010;225;all;N/A;mean;225;64;9759;6646;9.76;6.65
+Movistar;Cordoba, Colombia;;Apr 2020;4786;1235;all;N/A;mean;1235;62;25805;24055;25.81;24.06
+Movistar;Cundinamarca, Colombia;;Apr 2020;55137;16685;all;N/A;mean;16685;42;31094;30386;31.09;30.39
+Movistar;Guainia, Colombia;;Apr 2020;4;1;all;N/A;mean;1;14;39124;51553;39.12;51.55
+Movistar;Huila, Colombia;;Apr 2020;17438;4831;all;N/A;mean;4831;58;20813;20409;20.81;20.41
+Movistar;La Guajira, Colombia;;Apr 2020;986;230;all;N/A;mean;230;100;7645;5178;7.65;5.18
+Movistar;Magdalena, Colombia;;Apr 2020;11688;3766;all;N/A;mean;3766;52;43814;42476;43.81;42.48
+Movistar;Meta, Colombia;;Apr 2020;7376;1267;all;N/A;mean;1267;32;47198;47817;47.20;47.82
+Movistar;Narino, Colombia;;Apr 2020;4161;877;all;N/A;mean;877;55;35769;23452;35.77;23.45
+Movistar;North Santander, Colombia;;Apr 2020;39843;10663;all;N/A;mean;10663;46;35635;33823;35.64;33.82
+Movistar;Putumayo, Colombia;;Apr 2020;186;71;all;N/A;mean;71;108;8299;5416;8.30;5.42
+Movistar;Quindio, Colombia;;Apr 2020;1682;358;all;N/A;mean;358;68;10219;7534;10.22;7.53
+Movistar;Risaralda, Colombia;;Apr 2020;377;78;all;N/A;mean;78;72;9326;12191;9.33;12.19
+Movistar;San Andrés and Providencia, Colombia;;Apr 2020;28;14;all;N/A;mean;14;133;1053;2343;1.05;2.34
+Movistar;Santander Department, Colombia;;Apr 2020;48134;13814;all;N/A;mean;13814;35;48474;39210;48.47;39.21
+Movistar;Sucre, Colombia;;Apr 2020;4878;1509;all;N/A;mean;1509;41;46612;48772;46.61;48.77
+Movistar;Tolima, Colombia;;Apr 2020;22971;6167;all;N/A;mean;6167;50;20625;19925;20.63;19.93
+Movistar;Valle del Cauca, Colombia;;Apr 2020;67412;18358;all;N/A;mean;18358;35;59952;66689;59.95;66.69
+Claro;Antioquia, Colombia;;Apr 2020;166113;39660;all;N/A;mean;39660;51;33250;6979;33.25;6.98
+Claro;Arauca, Colombia;;Apr 2020;8;1;all;N/A;mean;1;67;4736;2661;4.74;2.66
+Claro;Atlantico, Colombia;;Apr 2020;51686;12717;all;N/A;mean;12717;36;31920;6499;31.92;6.50
+Claro;Bogota, Colombia;;Apr 2020;927807;199944;all;N/A;mean;199944;50;28728;6350;28.73;6.35
+Claro;Bolivar, Colombia;;Apr 2020;18961;5023;all;N/A;mean;5023;33;28171;6222;28.17;6.22
+Claro;Boyaca, Colombia;;Apr 2020;16684;4071;all;N/A;mean;4071;63;23100;5551;23.10;5.55
+Claro;Caldas, Colombia;;Apr 2020;23732;5015;all;N/A;mean;5015;63;24146;6050;24.15;6.05
+Claro;Caquetá, Colombia;;Apr 2020;4180;798;all;N/A;mean;798;59;18163;6416;18.16;6.42
+Claro;Casanare, Colombia;;Apr 2020;8499;2124;all;N/A;mean;2124;69;24152;5374;24.15;5.37
+Claro;Cauca Department, Colombia;;Apr 2020;21057;5195;all;N/A;mean;5195;70;23458;4992;23.46;4.99
+Claro;Cesar, Colombia;;Apr 2020;15869;3195;all;N/A;mean;3195;55;22200;4852;22.20;4.85
+Claro;Choco, Colombia;;Apr 2020;1;1;all;N/A;mean;1;281;96;2182;0.10;2.18
+Claro;Cordoba, Colombia;;Apr 2020;4158;1251;all;N/A;mean;1251;40;30795;6514;30.80;6.51
+Claro;Cundinamarca, Colombia;;Apr 2020;158764;33609;all;N/A;mean;33609;52;28061;6342;28.06;6.34
+Claro;Huila, Colombia;;Apr 2020;20812;4696;all;N/A;mean;4696;68;22489;6267;22.49;6.27
+Claro;La Guajira, Colombia;;Apr 2020;4886;1176;all;N/A;mean;1176;56;23634;5539;23.63;5.54
+Claro;Magdalena, Colombia;;Apr 2020;8359;2541;all;N/A;mean;2541;34;27804;6101;27.80;6.10
+Claro;Meta, Colombia;;Apr 2020;25156;6227;all;N/A;mean;6227;49;25748;6416;25.75;6.42
+Claro;Narino, Colombia;;Apr 2020;15551;4246;all;N/A;mean;4246;56;19906;4423;19.91;4.42
+Claro;North Santander, Colombia;;Apr 2020;18048;4628;all;N/A;mean;4628;50;26763;5675;26.76;5.68
+Claro;Putumayo, Colombia;;Apr 2020;4;2;all;N/A;mean;2;89;480;463;0.48;0.46
+Claro;Quindio, Colombia;;Apr 2020;13946;3059;all;N/A;mean;3059;59;25889;4936;25.89;4.94
+Claro;Risaralda, Colombia;;Apr 2020;45816;9353;all;N/A;mean;9353;56;25706;6181;25.71;6.18
+Claro;San Andrés and Providencia, Colombia;;Apr 2020;8;2;all;N/A;mean;2;111;1469;1861;1.47;1.86
+Claro;Santander Department, Colombia;;Apr 2020;54615;13056;all;N/A;mean;13056;52;24992;6024;24.99;6.02
+Claro;Sucre, Colombia;;Apr 2020;2126;483;all;N/A;mean;483;29;25839;6527;25.84;6.53
+Claro;Tolima, Colombia;;Apr 2020;21333;4797;all;N/A;mean;4797;57;24660;5977;24.66;5.98
+Claro;Valle del Cauca, Colombia;;Apr 2020;156122;37267;all;N/A;mean;37267;61;26860;6214;26.86;6.21
+Claro;Vichada, Colombia;;Apr 2020;21;4;all;N/A;mean;4;96;23980;4580;23.98;4.58
+Claro;Guaviare, Colombia;;Apr 2020;1;1;all;N/A;mean;1;38;5758;784;5.76;0.78
+ETB;Antioquia, Colombia;;may-20;1740;410;all;N/A;mean;410;41;19946;14619;19.95;14.62
+ETB;Atlantico, Colombia;;may-20;61;21;all;N/A;mean;21;30;11262;13386;11.26;13.39
+ETB;Bogota, Colombia;;may-20;503930;118332;all;N/A;mean;118332;23;42555;29397;42.56;29.40
+ETB;Bolivar, Colombia;;may-20;17;6;all;N/A;mean;6;30;18194;30020;18.19;30.02
+ETB;Boyaca, Colombia;;may-20;1204;333;all;N/A;mean;333;33;19492;21379;19.49;21.38
+ETB;Caldas, Colombia;;may-20;1;1;all;N/A;mean;1;35;1629;3452;1.63;3.45
+ETB;Casanare, Colombia;;may-20;18;10;all;N/A;mean;10;37;4582;4187;4.58;4.19
+ETB;Cauca Department, Colombia;;may-20;120;27;all;N/A;mean;27;17;21721;23239;21.72;23.24
+ETB;Cesar, Colombia;;may-20;3;3;all;N/A;mean;3;43;14984;11791;14.98;11.79
+ETB;Cordoba, Colombia;;may-20;1620;403;all;N/A;mean;403;29;18218;27796;18.22;27.80
+ETB;Cundinamarca, Colombia;;may-20;17045;5144;all;N/A;mean;5144;21;40206;27665;40.21;27.67
+ETB;Huila, Colombia;;may-20;618;140;all;N/A;mean;140;76;8383;7713;8.38;7.71
+ETB;La Guajira, Colombia;;may-20;3;3;all;N/A;mean;3;64;15588;12159;15.59;12.16
+ETB;Magdalena, Colombia;;may-20;299;59;all;N/A;mean;59;44;20008;20593;20.01;20.59
+ETB;Meta, Colombia;;may-20;5490;995;all;N/A;mean;995;40;13774;15574;13.77;15.57
+ETB;Narino, Colombia;;may-20;3;1;all;N/A;mean;1;35;7978;7455;7.98;7.46
+ETB;North Santander, Colombia;;may-20;1481;286;all;N/A;mean;286;43;21689;27471;21.69;27.47
+ETB;Putumayo, Colombia;;may-20;1;1;all;N/A;mean;1;14;11618;15449;11.62;15.45
+ETB;Quindio, Colombia;;may-20;33;13;all;N/A;mean;13;63;21977;19660;21.98;19.66
+ETB;Risaralda, Colombia;;may-20;122;44;all;N/A;mean;44;66;4297;4339;4.30;4.34
+ETB;Santander Department, Colombia;;may-20;2424;399;all;N/A;mean;399;49;11009;9556;11.01;9.56
+ETB;Sucre, Colombia;;may-20;327;73;all;N/A;mean;73;37;9536;4510;9.54;4.51
+ETB;Tolima, Colombia;;may-20;1122;215;all;N/A;mean;215;39;8380;8530;8.38;8.53
+ETB;Valle del Cauca, Colombia;;may-20;99;35;all;N/A;mean;35;51;18352;16806;18.35;16.81
+Movistar;Amazonas, Colombia;;may-20;5;4;all;N/A;mean;4;142;1090;333;1.09;0.33
+Movistar;Antioquia, Colombia;;may-20;2025;883;all;N/A;mean;883;45;35990;36136;35.99;36.14
+Movistar;Arauca, Colombia;;may-20;450;123;all;N/A;mean;123;55;5238;4254;5.24;4.25
+Movistar;Atlantico, Colombia;;may-20;38591;11420;all;N/A;mean;11420;43;51789;52045;51.79;52.05
+Movistar;Bogota, Colombia;;may-20;111193;28377;all;N/A;mean;28377;36;36588;37452;36.59;37.45
+Movistar;Bolivar, Colombia;;may-20;27302;6372;all;N/A;mean;6372;39;53562;56136;53.56;56.14
+Movistar;Boyaca, Colombia;;may-20;9310;2135;all;N/A;mean;2135;56;15587;13294;15.59;13.29
+Movistar;Caldas, Colombia;;may-20;899;302;all;N/A;mean;302;43;36184;39294;36.18;39.29
+Movistar;Caquetá, Colombia;;may-20;2905;506;all;N/A;mean;506;52;17833;17146;17.83;17.15
+Movistar;Casanare, Colombia;;may-20;1283;188;all;N/A;mean;188;50;7268;4176;7.27;4.18
+Movistar;Cauca Department, Colombia;;may-20;2932;964;all;N/A;mean;964;62;19575;16341;19.58;16.34
+Movistar;Cesar, Colombia;;may-20;7589;2139;all;N/A;mean;2139;65;43252;42782;43.25;42.78
+Movistar;Choco, Colombia;;may-20;925;226;all;N/A;mean;226;94;6461;2542;6.46;2.54
+Movistar;Cordoba, Colombia;;may-20;5170;1506;all;N/A;mean;1506;55;27630;25834;27.63;25.83
+Movistar;Cundinamarca, Colombia;;may-20;65399;18928;all;N/A;mean;18928;40;32998;34937;33.00;34.94
+Movistar;Guainia, Colombia;;may-20;3;2;all;N/A;mean;2;15;32363;34487;32.36;34.49
+Movistar;Huila, Colombia;;may-20;20618;5401;all;N/A;mean;5401;56;20715;19901;20.72;19.90
+Movistar;La Guajira, Colombia;;may-20;1154;224;all;N/A;mean;224;97;6034;4128;6.03;4.13
+Movistar;Magdalena, Colombia;;may-20;13408;3899;all;N/A;mean;3899;55;39941;38270;39.94;38.27
+Movistar;Meta, Colombia;;may-20;7105;1329;all;N/A;mean;1329;28;47779;48178;47.78;48.18
+Movistar;Narino, Colombia;;may-20;4988;939;all;N/A;mean;939;53;32630;30933;32.63;30.93
+Movistar;North Santander, Colombia;;may-20;34422;10086;all;N/A;mean;10086;46;37827;38518;37.83;38.52
+Movistar;Putumayo, Colombia;;may-20;327;81;all;N/A;mean;81;60;9859;6270;9.86;6.27
+Movistar;Quindio, Colombia;;may-20;1368;318;all;N/A;mean;318;56;7340;2739;7.34;2.74
+Movistar;Risaralda, Colombia;;may-20;354;75;all;N/A;mean;75;53;12623;11876;12.62;11.88
+Movistar;San Andrés and Providencia, Colombia;;may-20;119;40;all;N/A;mean;40;135;2117;1965;2.12;1.97
+Movistar;Santander Department, Colombia;;may-20;54528;15434;all;N/A;mean;15434;34;50613;44488;50.61;44.49
+Movistar;Sucre, Colombia;;may-20;4876;1530;all;N/A;mean;1530;38;44747;47882;44.75;47.88
+Movistar;Tolima, Colombia;;may-20;25723;7181;all;N/A;mean;7181;48;28474;28598;28.47;28.60
+Movistar;Valle del Cauca, Colombia;;may-20;67670;19454;all;N/A;mean;19454;36;59862;67527;59.86;67.53
+Claro;Antioquia, Colombia;;may-20;155785;39721;all;N/A;mean;39721;46;35628;8196;35.63;8.20
+Claro;Arauca, Colombia;;may-20;2;1;all;N/A;mean;1;16;2838;3030;2.84;3.03
+Claro;Atlantico, Colombia;;may-20;52844;12902;all;N/A;mean;12902;32;35204;7395;35.20;7.40
+Claro;Bogota, Colombia;;may-20;1027883;216380;all;N/A;mean;216380;49;30148;6906;30.15;6.91
+Claro;Bolivar, Colombia;;may-20;18529;5259;all;N/A;mean;5259;30;30240;6419;30.24;6.42
+Claro;Boyaca, Colombia;;may-20;21061;4584;all;N/A;mean;4584;67;22549;5727;22.55;5.73
+Claro;Caldas, Colombia;;may-20;19605;4714;all;N/A;mean;4714;54;27726;6354;27.73;6.35
+Claro;Caquetá, Colombia;;may-20;6120;1086;all;N/A;mean;1086;61;18325;5744;18.33;5.74
+Claro;Casanare, Colombia;;may-20;13235;2803;all;N/A;mean;2803;78;22547;5472;22.55;5.47
+Claro;Cauca Department, Colombia;;may-20;22545;5462;all;N/A;mean;5462;65;23534;5116;23.53;5.12
+Claro;Cesar, Colombia;;may-20;15761;3279;all;N/A;mean;3279;63;23431;6224;23.43;6.22
+Claro;Choco, Colombia;;may-20;2;1;all;N/A;mean;1;2;204628;100858;204.63;100.86
+Claro;Cordoba, Colombia;;may-20;6005;1418;all;N/A;mean;1418;51;28792;7190;28.79;7.19
+Claro;Cundinamarca, Colombia;;may-20;194137;38037;all;N/A;mean;38037;52;29393;6664;29.39;6.66
+Claro;Huila, Colombia;;may-20;24977;5546;all;N/A;mean;5546;68;24332;7557;24.33;7.56
+Claro;La Guajira, Colombia;;may-20;4626;1074;all;N/A;mean;1074;57;26296;5701;26.30;5.70
+Claro;Magdalena, Colombia;;may-20;13272;3908;all;N/A;mean;3908;34;30695;6492;30.70;6.49
+Claro;Meta, Colombia;;may-20;27091;6586;all;N/A;mean;6586;47;28116;7029;28.12;7.03
+Claro;Narino, Colombia;;may-20;17659;4556;all;N/A;mean;4556;58;21547;4894;21.55;4.89
+Claro;North Santander, Colombia;;may-20;19389;4920;all;N/A;mean;4920;50;28037;5571;28.04;5.57
+Claro;Putumayo, Colombia;;may-20;9;4;all;N/A;mean;4;150;2910;1748;2.91;1.75
+Claro;Quindio, Colombia;;may-20;11258;2663;all;N/A;mean;2663;57;27463;5962;27.46;5.96
+Claro;Risaralda, Colombia;;may-20;39957;9106;all;N/A;mean;9106;54;30058;6644;30.06;6.64
+Claro;San Andrés and Providencia, Colombia;;may-20;16;2;all;N/A;mean;2;141;2166;1416;2.17;1.42
+Claro;Santander Department, Colombia;;may-20;60138;14302;all;N/A;mean;14302;50;27715;6699;27.72;6.70
+Claro;Sucre, Colombia;;may-20;1995;484;all;N/A;mean;484;31;30671;7220;30.67;7.22
+Claro;Tolima, Colombia;;may-20;24169;5610;all;N/A;mean;5610;50;26679;6587;26.68;6.59
+Claro;Valle del Cauca, Colombia;;may-20;170803;40019;all;N/A;mean;40019;57;28314;6713;28.31;6.71
+Claro;Vaupes, Colombia;;may-20;2;2;all;N/A;mean;2;22;27004;14575;27.00;14.58
+Claro;Vichada, Colombia;;may-20;5;4;all;N/A;mean;4;80;836;1063;0.84;1.06
+ETB;Antioquia, Colombia;;jun-20;1527;394;all;N/A;mean;394;36;24700;19956;24.70;19.96
+ETB;Atlantico, Colombia;;jun-20;110;29;all;N/A;mean;29;21;20546;18757;20.55;18.76
+ETB;Bogota, Colombia;;jun-20;446856;110441;all;N/A;mean;110441;22;46786;32077;46.79;32.08
+ETB;Bolivar, Colombia;;jun-20;5;4;all;N/A;mean;4;35;22823;17467;22.82;17.47
+ETB;Boyaca, Colombia;;jun-20;922;270;all;N/A;mean;270;29;18441;21899;18.44;21.90
+ETB;Caldas, Colombia;;jun-20;15;6;all;N/A;mean;6;29;24726;22948;24.73;22.95
+ETB;Casanare, Colombia;;jun-20;66;36;all;N/A;mean;36;22;9205;7087;9.21;7.09
+ETB;Cauca Department, Colombia;;jun-20;83;37;all;N/A;mean;37;27;21398;19011;21.40;19.01
+ETB;Cesar, Colombia;;jun-20;3;2;all;N/A;mean;2;15;21734;23255;21.73;23.26
+ETB;Choco, Colombia;;jun-20;1;1;all;N/A;mean;1;583;2944;955;2.94;0.96
+ETB;Cordoba, Colombia;;jun-20;2313;456;all;N/A;mean;456;25;12435;15920;12.44;15.92
+ETB;Cundinamarca, Colombia;;jun-20;14655;4351;all;N/A;mean;4351;24;39867;27347;39.87;27.35
+ETB;Huila, Colombia;;jun-20;404;131;all;N/A;mean;131;53;10965;11210;10.97;11.21
+ETB;Magdalena, Colombia;;jun-20;428;65;all;N/A;mean;65;49;17790;19531;17.79;19.53
+ETB;Meta, Colombia;;jun-20;3613;856;all;N/A;mean;856;41;12218;11489;12.22;11.49
+ETB;Narino, Colombia;;jun-20;1;1;all;N/A;mean;1;50;6081;564;6.08;0.56
+ETB;North Santander, Colombia;;jun-20;1166;274;all;N/A;mean;274;36;13928;16798;13.93;16.80
+ETB;Quindio, Colombia;;jun-20;2;1;all;N/A;mean;1;56;9431;9392;9.43;9.39
+ETB;Risaralda, Colombia;;jun-20;112;33;all;N/A;mean;33;60;2094;2388;2.09;2.39
+ETB;Santander Department, Colombia;;jun-20;945;266;all;N/A;mean;266;39;16404;24530;16.40;24.53
+ETB;Sucre, Colombia;;jun-20;272;81;all;N/A;mean;81;71;7588;3261;7.59;3.26
+ETB;Tolima, Colombia;;jun-20;1201;229;all;N/A;mean;229;26;10041;10268;10.04;10.27
+ETB;Valle del Cauca, Colombia;;jun-20;12;7;all;N/A;mean;7;45;10992;12212;10.99;12.21
+Movistar;Amazonas, Colombia;;jun-20;1;1;all;N/A;mean;1;187;1431;975;1.43;0.98
+Movistar;Antioquia, Colombia;;jun-20;1377;596;all;N/A;mean;596;48;26239;27576;26.24;27.58
+Movistar;Arauca, Colombia;;jun-20;371;98;all;N/A;mean;98;59;5271;2021;5.27;2.02
+Movistar;Atlantico, Colombia;;jun-20;32287;10361;all;N/A;mean;10361;45;49123;48317;49.12;48.32
+Movistar;Bogota, Colombia;;jun-20;90866;23897;all;N/A;mean;23897;34;39983;41019;39.98;41.02
+Movistar;Bolivar, Colombia;;jun-20;22916;5963;all;N/A;mean;5963;37;54011;57515;54.01;57.52
+Movistar;Boyaca, Colombia;;jun-20;8906;2139;all;N/A;mean;2139;55;17739;14820;17.74;14.82
+Movistar;Caldas, Colombia;;jun-20;521;188;all;N/A;mean;188;45;33176;38593;33.18;38.59
+Movistar;Caquetá, Colombia;;jun-20;2008;447;all;N/A;mean;447;38;21825;22198;21.83;22.20
+Movistar;Casanare, Colombia;;jun-20;1201;186;all;N/A;mean;186;55;9755;6577;9.76;6.58
+Movistar;Cauca Department, Colombia;;jun-20;1962;742;all;N/A;mean;742;58;18053;16777;18.05;16.78
+Movistar;Cesar, Colombia;;jun-20;7003;1981;all;N/A;mean;1981;64;44599;44011;44.60;44.01
+Movistar;Choco, Colombia;;jun-20;919;278;all;N/A;mean;278;70;7318;3893;7.32;3.89
+Movistar;Cordoba, Colombia;;jun-20;5760;1754;all;N/A;mean;1754;54;26705;30024;26.71;30.02
+Movistar;Cundinamarca, Colombia;;jun-20;55955;16207;all;N/A;mean;16207;37;36630;40440;36.63;40.44
+Movistar;Huila, Colombia;;jun-20;17223;5061;all;N/A;mean;5061;54;20892;20233;20.89;20.23
+Movistar;La Guajira, Colombia;;jun-20;768;202;all;N/A;mean;202;102;9519;7476;9.52;7.48
+Movistar;Magdalena, Colombia;;jun-20;9364;2902;all;N/A;mean;2902;56;37512;34623;37.51;34.62
+Movistar;Meta, Colombia;;jun-20;5411;1216;all;N/A;mean;1216;31;48708;49514;48.71;49.51
+Movistar;Narino, Colombia;;jun-20;4254;850;all;N/A;mean;850;61;32550;31746;32.55;31.75
+Movistar;North Santander, Colombia;;jun-20;28457;9009;all;N/A;mean;9009;42;41878;42831;41.88;42.83
+Movistar;Putumayo, Colombia;;jun-20;242;64;all;N/A;mean;64;107;11749;5942;11.75;5.94
+Movistar;Quindio, Colombia;;jun-20;1300;315;all;N/A;mean;315;58;7830;3693;7.83;3.69
+Movistar;Risaralda, Colombia;;jun-20;159;39;all;N/A;mean;39;62;5816;2531;5.82;2.53
+Movistar;San Andrés and Providencia, Colombia;;jun-20;64;25;all;N/A;mean;25;163;1101;1849;1.10;1.85
+Movistar;Santander Department, Colombia;;jun-20;44073;13052;all;N/A;mean;13052;33;53898;53643;53.90;53.64
+Movistar;Sucre, Colombia;;jun-20;3101;976;all;N/A;mean;976;43;35224;41625;35.22;41.63
+Movistar;Tolima, Colombia;;jun-20;21289;6035;all;N/A;mean;6035;42;31764;33018;31.76;33.02
+Movistar;Valle del Cauca, Colombia;;jun-20;56342;16892;all;N/A;mean;16892;35;59723;68440;59.72;68.44
+Movistar;Guaviare, Colombia;;jun-20;5;3;all;N/A;mean;3;42;5591;2946;5.59;2.95
+Claro;Antioquia, Colombia;;jun-20;136811;37382;all;N/A;mean;37382;34;38044;9239;38.04;9.24
+Claro;Atlantico, Colombia;;jun-20;55387;14506;all;N/A;mean;14506;28;36476;7539;36.48;7.54
+Claro;Bogota, Colombia;;jun-20;766509;183686;all;N/A;mean;183686;24;33380;7590;33.38;7.59
+Claro;Bolivar, Colombia;;jun-20;9207;2238;all;N/A;mean;2238;26;32443;7733;32.44;7.73
+Claro;Boyaca, Colombia;;jun-20;16547;4007;all;N/A;mean;4007;35;26827;6555;26.83;6.56
+Claro;Caldas, Colombia;;jun-20;16696;4210;all;N/A;mean;4210;32;30662;6765;30.66;6.77
+Claro;Caquetá, Colombia;;jun-20;5601;1137;all;N/A;mean;1137;31;23243;6830;23.24;6.83
+Claro;Casanare, Colombia;;jun-20;8208;2309;all;N/A;mean;2309;31;28831;6439;28.83;6.44
+Claro;Cauca Department, Colombia;;jun-20;18557;4854;all;N/A;mean;4854;44;25638;5765;25.64;5.77
+Claro;Cesar, Colombia;;jun-20;7733;2185;all;N/A;mean;2185;42;32084;6929;32.08;6.93
+Claro;Choco, Colombia;;jun-20;1;1;all;N/A;mean;1;2;165136;96935;165.14;96.94
+Claro;Cordoba, Colombia;;jun-20;4706;1328;all;N/A;mean;1328;38;33268;7018;33.27;7.02
+Claro;Cundinamarca, Colombia;;jun-20;138622;32225;all;N/A;mean;32225;26;32001;6931;32.00;6.93
+Claro;Huila, Colombia;;jun-20;19520;4895;all;N/A;mean;4895;37;25864;7537;25.86;7.54
+Claro;La Guajira, Colombia;;jun-20;5992;1332;all;N/A;mean;1332;58;27276;5915;27.28;5.92
+Claro;Magdalena, Colombia;;jun-20;12851;3916;all;N/A;mean;3916;31;32089;7058;32.09;7.06
+Claro;Meta, Colombia;;jun-20;22585;5772;all;N/A;mean;5772;29;29138;7691;29.14;7.69
+Claro;Narino, Colombia;;jun-20;15199;4079;all;N/A;mean;4079;51;23098;5213;23.10;5.21
+Claro;North Santander, Colombia;;jun-20;19280;5042;all;N/A;mean;5042;38;31317;6193;31.32;6.19
+Claro;Putumayo, Colombia;;jun-20;10;4;all;N/A;mean;4;153;3004;1933;3.00;1.93
+Claro;Quindio, Colombia;;jun-20;11112;2788;all;N/A;mean;2788;36;29405;6611;29.41;6.61
+Claro;Risaralda, Colombia;;jun-20;32269;7932;all;N/A;mean;7932;34;32253;7074;32.25;7.07
+Claro;San Andrés and Providencia, Colombia;;jun-20;31;3;all;N/A;mean;3;67;1620;2937;1.62;2.94
+Claro;Santander Department, Colombia;;jun-20;51695;13243;all;N/A;mean;13243;33;30793;7447;30.79;7.45
+Claro;Sucre, Colombia;;jun-20;1842;392;all;N/A;mean;392;29;30446;8022;30.45;8.02
+Claro;Tolima, Colombia;;jun-20;17804;4791;all;N/A;mean;4791;32;28748;7014;28.75;7.01
+Claro;Valle del Cauca, Colombia;;jun-20;134795;35416;all;N/A;mean;35416;36;30315;7534;30.32;7.53
+Claro;Vaupes, Colombia;;jun-20;1;1;all;N/A;mean;1;17;3625;14483;3.63;14.48
+Claro;Vichada, Colombia;;jun-20;1;1;all;N/A;mean;1;90;107;1096;0.11;1.10
+Claro;Guaviare, Colombia;;jun-20;1;1;all;N/A;mean;1;19;41634;15481;41.63;15.48
+ETB;Antioquia, Colombia;;jul-20;2773;631;all;N/A;mean;631;37;25421;22504;25.42;22.50
+ETB;Atlantico, Colombia;;jul-20;225;56;all;N/A;mean;56;26;13766;13903;13.77;13.90
+ETB;Bogota, Colombia;;jul-20;468648;118536;all;N/A;mean;118536;20;49410;32793;49.41;32.79
+ETB;Bolivar, Colombia;;jul-20;28;10;all;N/A;mean;10;88;22707;28142;22.71;28.14
+ETB;Boyaca, Colombia;;jul-20;953;285;all;N/A;mean;285;33;16423;15371;16.42;15.37
+ETB;Caldas, Colombia;;jul-20;71;31;all;N/A;mean;31;37;9909;9020;9.91;9.02
+ETB;Casanare, Colombia;;jul-20;146;67;all;N/A;mean;67;29;10313;8842;10.31;8.84
+ETB;Cauca Department, Colombia;;jul-20;62;32;all;N/A;mean;32;20;21454;21626;21.45;21.63
+ETB;Cesar, Colombia;;jul-20;6;3;all;N/A;mean;3;64;46390;50107;46.39;50.11
+ETB;Cordoba, Colombia;;jul-20;2648;431;all;N/A;mean;431;25;11154;17264;11.15;17.26
+ETB;Cundinamarca, Colombia;;jul-20;14692;4557;all;N/A;mean;4557;25;43379;28223;43.38;28.22
+ETB;Huila, Colombia;;jul-20;551;136;all;N/A;mean;136;69;9169;9379;9.17;9.38
+ETB;Magdalena, Colombia;;jul-20;748;87;all;N/A;mean;87;47;12490;17951;12.49;17.95
+ETB;Meta, Colombia;;jul-20;5831;1078;all;N/A;mean;1078;45;14126;15110;14.13;15.11
+ETB;Narino, Colombia;;jul-20;1;1;all;N/A;mean;1;4;47447;45980;47.45;45.98
+ETB;North Santander, Colombia;;jul-20;1370;292;all;N/A;mean;292;37;16092;19634;16.09;19.63
+ETB;Quindio, Colombia;;jul-20;7;1;all;N/A;mean;1;15;15401;16501;15.40;16.50
+ETB;Risaralda, Colombia;;jul-20;175;51;all;N/A;mean;51;66;2219;2809;2.22;2.81
+ETB;Santander Department, Colombia;;jul-20;1042;346;all;N/A;mean;346;33;26327;30610;26.33;30.61
+ETB;Sucre, Colombia;;jul-20;156;50;all;N/A;mean;50;74;4973;2168;4.97;2.17
+ETB;Tolima, Colombia;;jul-20;844;192;all;N/A;mean;192;29;12660;13588;12.66;13.59
+ETB;Valle del Cauca, Colombia;;jul-20;9;3;all;N/A;mean;3;20;131184;111507;131.18;111.51
+ETB;Guaviare, Colombia;;jul-20;4;1;all;N/A;mean;1;558;1422;727;1.42;0.73
+Movistar;Amazonas, Colombia;;jul-20;10;3;all;N/A;mean;3;201;422;711;0.42;0.71
+Movistar;Antioquia, Colombia;;jul-20;1607;661;all;N/A;mean;661;50;22958;22098;22.96;22.10
+Movistar;Arauca, Colombia;;jul-20;350;100;all;N/A;mean;100;84;5302;4462;5.30;4.46
+Movistar;Atlantico, Colombia;;jul-20;36263;11293;all;N/A;mean;11293;52;50239;46689;50.24;46.69
+Movistar;Bogota, Colombia;;jul-20;83755;23119;all;N/A;mean;23119;32;43569;42954;43.57;42.95
+Movistar;Bolivar, Colombia;;jul-20;21383;5863;all;N/A;mean;5863;39;54663;56269;54.66;56.27
+Movistar;Boyaca, Colombia;;jul-20;9241;2347;all;N/A;mean;2347;56;16463;15264;16.46;15.26
+Movistar;Caldas, Colombia;;jul-20;465;130;all;N/A;mean;130;58;8665;7598;8.67;7.60
+Movistar;Caquetá, Colombia;;jul-20;1841;411;all;N/A;mean;411;43;16850;17127;16.85;17.13
+Movistar;Casanare, Colombia;;jul-20;789;148;all;N/A;mean;148;54;8219;9245;8.22;9.25
+Movistar;Cauca Department, Colombia;;jul-20;1846;741;all;N/A;mean;741;58;19985;17564;19.99;17.56
+Movistar;Cesar, Colombia;;jul-20;5844;1904;all;N/A;mean;1904;64;47351;47190;47.35;47.19
+Movistar;Choco, Colombia;;jul-20;1052;295;all;N/A;mean;295;59;8451;5519;8.45;5.52
+Movistar;Cordoba, Colombia;;jul-20;7989;2329;all;N/A;mean;2329;51;32934;34575;32.93;34.58
+Movistar;Cundinamarca, Colombia;;jul-20;49141;15985;all;N/A;mean;15985;34;40068;41095;40.07;41.10
+Movistar;Huila, Colombia;;jul-20;18293;5372;all;N/A;mean;5372;55;22000;20975;22.00;20.98
+Movistar;La Guajira, Colombia;;jul-20;910;215;all;N/A;mean;215;102;8458;6839;8.46;6.84
+Movistar;Magdalena, Colombia;;jul-20;9472;2959;all;N/A;mean;2959;62;41396;39170;41.40;39.17
+Movistar;Meta, Colombia;;jul-20;6303;1332;all;N/A;mean;1332;27;48324;47122;48.32;47.12
+Movistar;Narino, Colombia;;jul-20;4525;1055;all;N/A;mean;1055;54;31010;33456;31.01;33.46
+Movistar;North Santander, Colombia;;jul-20;26092;8183;all;N/A;mean;8183;55;41082;39931;41.08;39.93
+Movistar;Putumayo, Colombia;;jul-20;195;60;all;N/A;mean;60;61;9721;7175;9.72;7.18
+Movistar;Quindio, Colombia;;jul-20;932;286;all;N/A;mean;286;60;7293;3252;7.29;3.25
+Movistar;Risaralda, Colombia;;jul-20;181;55;all;N/A;mean;55;45;22901;20987;22.90;20.99
+Movistar;San Andrés and Providencia, Colombia;;jul-20;47;23;all;N/A;mean;23;175;3723;4806;3.72;4.81
+Movistar;Santander Department, Colombia;;jul-20;48344;14647;all;N/A;mean;14647;33;55416;53348;55.42;53.35
+Movistar;Sucre, Colombia;;jul-20;2129;640;all;N/A;mean;640;50;44218;48497;44.22;48.50
+Movistar;Tolima, Colombia;;jul-20;19486;5742;all;N/A;mean;5742;39;34018;33858;34.02;33.86
+Movistar;Valle del Cauca, Colombia;;jul-20;52630;16742;all;N/A;mean;16742;34;63655;68475;63.66;68.48
+Movistar;Guaviare, Colombia;;jul-20;2;2;all;N/A;mean;2;29;6431;2105;6.43;2.11
+Claro;Antioquia, Colombia;;jul-20;136996;39381;all;N/A;mean;39381;34;40423;9696;40.42;9.70
+Claro;Atlantico, Colombia;;jul-20;62086;17043;all;N/A;mean;17043;27;37378;7780;37.38;7.78
+Claro;Bogota, Colombia;;jul-20;740217;187737;all;N/A;mean;187737;23;36044;7648;36.04;7.65
+Claro;Bolivar, Colombia;;jul-20;9142;2213;all;N/A;mean;2213;26;33857;8724;33.86;8.72
+Claro;Boyaca, Colombia;;jul-20;16389;4257;all;N/A;mean;4257;33;29015;6560;29.02;6.56
+Claro;Caldas, Colombia;;jul-20;21402;4911;all;N/A;mean;4911;32;31333;6858;31.33;6.86
+Claro;Caquetá, Colombia;;jul-20;9178;1394;all;N/A;mean;1394;33;19882;7270;19.88;7.27
+Claro;Casanare, Colombia;;jul-20;9097;2462;all;N/A;mean;2462;29;31843;6667;31.84;6.67
+Claro;Cauca Department, Colombia;;jul-20;18576;4989;all;N/A;mean;4989;45;28842;5999;28.84;6.00
+Claro;Cesar, Colombia;;jul-20;10615;2737;all;N/A;mean;2737;42;33462;7079;33.46;7.08
+Claro;Choco, Colombia;;jul-20;30;14;all;N/A;mean;14;30;42233;6800;42.23;6.80
+Claro;Cordoba, Colombia;;jul-20;5569;1435;all;N/A;mean;1435;43;32049;6808;32.05;6.81
+Claro;Cundinamarca, Colombia;;jul-20;139446;34525;all;N/A;mean;34525;25;34854;7056;34.85;7.06
+Claro;Huila, Colombia;;jul-20;18255;5176;all;N/A;mean;5176;40;28732;7789;28.73;7.79
+Claro;La Guajira, Colombia;;jul-20;6896;1401;all;N/A;mean;1401;59;28547;6335;28.55;6.34
+Claro;Magdalena, Colombia;;jul-20;8569;2464;all;N/A;mean;2464;31;32499;7071;32.50;7.07
+Claro;Meta, Colombia;;jul-20;21695;5990;all;N/A;mean;5990;27;33179;8380;33.18;8.38
+Claro;Narino, Colombia;;jul-20;15426;4253;all;N/A;mean;4253;49;24421;5164;24.42;5.16
+Claro;North Santander, Colombia;;jul-20;18777;5124;all;N/A;mean;5124;37;33362;6608;33.36;6.61
+Claro;Putumayo, Colombia;;jul-20;45;6;all;N/A;mean;6;122;6182;6750;6.18;6.75
+Claro;Quindio, Colombia;;jul-20;11194;2884;all;N/A;mean;2884;35;31689;6780;31.69;6.78
+Claro;Risaralda, Colombia;;jul-20;35813;8781;all;N/A;mean;8781;33;32312;7172;32.31;7.17
+Claro;San Andrés and Providencia, Colombia;;jul-20;60;3;all;N/A;mean;3;72;4987;3303;4.99;3.30
+Claro;Santander Department, Colombia;;jul-20;56869;14552;all;N/A;mean;14552;31;33804;8187;33.80;8.19
+Claro;Sucre, Colombia;;jul-20;1711;451;all;N/A;mean;451;38;32448;9193;32.45;9.19
+Claro;Tolima, Colombia;;jul-20;18362;5151;all;N/A;mean;5151;27;32186;7402;32.19;7.40
+Claro;Valle del Cauca, Colombia;;jul-20;131659;36268;all;N/A;mean;36268;35;35215;8183;35.22;8.18
+Claro;Vaupes, Colombia;;jul-20;8;3;all;N/A;mean;3;20;21924;11915;21.92;11.92
+Claro;Vichada, Colombia;;jul-20;1;1;all;N/A;mean;1;47;5482;676;5.48;0.68
+ETB;Antioquia, Colombia;;Aug 2020;2129;472;all;N/A;mean;472;33;24693;20474;24.69;20.47
+ETB;Atlantico, Colombia;;Aug 2020;709;181;all;N/A;mean;181;30;11428;8408;11.43;8.41
+ETB;Bogota, Colombia;;Aug 2020;376281;101268;all;N/A;mean;101268;16;52426;34630;52.43;34.63
+ETB;Bolivar, Colombia;;Aug 2020;24;9;all;N/A;mean;9;21;22438;27133;22.44;27.13
+ETB;Boyaca, Colombia;;Aug 2020;626;204;all;N/A;mean;204;23;18798;17484;18.80;17.48
+ETB;Caldas, Colombia;;Aug 2020;24;11;all;N/A;mean;11;18;26130;25640;26.13;25.64
+ETB;Casanare, Colombia;;Aug 2020;41;28;all;N/A;mean;28;15;15232;12929;15.23;12.93
+ETB;Cauca Department, Colombia;;Aug 2020;77;45;all;N/A;mean;45;16;14946;14611;14.95;14.61
+ETB;Cesar, Colombia;;Aug 2020;14;7;all;N/A;mean;7;21;27220;21380;27.22;21.38
+ETB;Cordoba, Colombia;;Aug 2020;2458;433;all;N/A;mean;433;24;13153;17283;13.15;17.28
+ETB;Cundinamarca, Colombia;;Aug 2020;12864;3758;all;N/A;mean;3758;24;40550;26750;40.55;26.75
+ETB;Huila, Colombia;;Aug 2020;623;126;all;N/A;mean;126;61;7487;6522;7.49;6.52
+ETB;Magdalena, Colombia;;Aug 2020;876;90;all;N/A;mean;90;42;11560;19560;11.56;19.56
+ETB;Meta, Colombia;;Aug 2020;4902;1039;all;N/A;mean;1039;38;14195;12532;14.20;12.53
+ETB;Narino, Colombia;;Aug 2020;3;2;all;N/A;mean;2;9;8725;5564;8.73;5.56
+ETB;North Santander, Colombia;;Aug 2020;951;215;all;N/A;mean;215;30;12530;16509;12.53;16.51
+ETB;Quindio, Colombia;;Aug 2020;1;1;all;N/A;mean;1;15;19721;24830;19.72;24.83
+ETB;Risaralda, Colombia;;Aug 2020;192;69;all;N/A;mean;69;59;2265;2407;2.27;2.41
+ETB;Santander Department, Colombia;;Aug 2020;1175;348;all;N/A;mean;348;35;24795;24197;24.80;24.20
+ETB;Sucre, Colombia;;Aug 2020;247;62;all;N/A;mean;62;72;4934;1396;4.93;1.40
+ETB;Tolima, Colombia;;Aug 2020;882;220;all;N/A;mean;220;29;13612;13943;13.61;13.94
+ETB;Valle del Cauca, Colombia;;Aug 2020;49;11;all;N/A;mean;11;32;39127;39653;39.13;39.65
+Movistar;Antioquia, Colombia;;Aug 2020;979;456;all;N/A;mean;456;40;25698;24550;25.70;24.55
+Movistar;Arauca, Colombia;;Aug 2020;181;57;all;N/A;mean;57;89;5338;4890;5.34;4.89
+Movistar;Atlantico, Colombia;;Aug 2020;34966;11522;all;N/A;mean;11522;52;52740;49680;52.74;49.68
+Movistar;Bogota, Colombia;;Aug 2020;80825;22911;all;N/A;mean;22911;29;47211;45649;47.21;45.65
+Movistar;Bolivar, Colombia;;Aug 2020;21204;6037;all;N/A;mean;6037;40;55104;56696;55.10;56.70
+Movistar;Boyaca, Colombia;;Aug 2020;10327;2462;all;N/A;mean;2462;59;16171;13046;16.17;13.05
+Movistar;Caldas, Colombia;;Aug 2020;805;141;all;N/A;mean;141;40;7569;6850;7.57;6.85
+Movistar;Caquetá, Colombia;;Aug 2020;2286;416;all;N/A;mean;416;41;14307;18995;14.31;19.00
+Movistar;Casanare, Colombia;;Aug 2020;636;140;all;N/A;mean;140;54;6764;2688;6.76;2.69
+Movistar;Cauca Department, Colombia;;Aug 2020;1787;777;all;N/A;mean;777;53;25768;23982;25.77;23.98
+Movistar;Cesar, Colombia;;Aug 2020;6784;2030;all;N/A;mean;2030;62;48892;48142;48.89;48.14
+Movistar;Choco, Colombia;;Aug 2020;1108;333;all;N/A;mean;333;69;6280;3199;6.28;3.20
+Movistar;Cordoba, Colombia;;Aug 2020;11390;3120;all;N/A;mean;3120;46;38441;43557;38.44;43.56
+Movistar;Cundinamarca, Colombia;;Aug 2020;42237;13871;all;N/A;mean;13871;34;39557;38707;39.56;38.71
+Movistar;Huila, Colombia;;Aug 2020;17305;5388;all;N/A;mean;5388;53;22380;20483;22.38;20.48
+Movistar;La Guajira, Colombia;;Aug 2020;799;178;all;N/A;mean;178;106;6466;3113;6.47;3.11
+Movistar;Magdalena, Colombia;;Aug 2020;10325;3400;all;N/A;mean;3400;62;41426;39165;41.43;39.17
+Movistar;Meta, Colombia;;Aug 2020;6156;1381;all;N/A;mean;1381;27;44436;45437;44.44;45.44
+Movistar;Narino, Colombia;;Aug 2020;3893;973;all;N/A;mean;973;55;32451;30467;32.45;30.47
+Movistar;North Santander, Colombia;;Aug 2020;26523;8182;all;N/A;mean;8182;63;43926;38221;43.93;38.22
+Movistar;Putumayo, Colombia;;Aug 2020;288;55;all;N/A;mean;55;83;6485;3346;6.49;3.35
+Movistar;Quindio, Colombia;;Aug 2020;847;296;all;N/A;mean;296;55;7909;3284;7.91;3.28
+Movistar;Risaralda, Colombia;;Aug 2020;182;47;all;N/A;mean;47;45;19911;16144;19.91;16.14
+Movistar;San Andrés and Providencia, Colombia;;Aug 2020;57;19;all;N/A;mean;19;80;6855;8665;6.86;8.67
+Movistar;Santander Department, Colombia;;Aug 2020;55132;16230;all;N/A;mean;16230;35;55189;52164;55.19;52.16
+Movistar;Sucre, Colombia;;Aug 2020;1634;448;all;N/A;mean;448;53;38090;39703;38.09;39.70
+Movistar;Tolima, Colombia;;Aug 2020;16292;5078;all;N/A;mean;5078;39;36870;37253;36.87;37.25
+Movistar;Valle del Cauca, Colombia;;Aug 2020;52589;16918;all;N/A;mean;16918;32;65439;70258;65.44;70.26
+Claro;Antioquia, Colombia;;Aug 2020;142868;40150;all;N/A;mean;40150;33;42132;9756;42.13;9.76
+Claro;Arauca, Colombia;;Aug 2020;1;1;all;N/A;mean;1;77;5056;706;5.06;0.71
+Claro;Atlantico, Colombia;;Aug 2020;55088;15105;all;N/A;mean;15105;27;38937;8737;38.94;8.74
+Claro;Bogota, Colombia;;Aug 2020;703322;182298;all;N/A;mean;182298;22;37876;7491;37.88;7.49
+Claro;Bolivar, Colombia;;Aug 2020;11175;2986;all;N/A;mean;2986;30;33431;8460;33.43;8.46
+Claro;Boyaca, Colombia;;Aug 2020;19672;4683;all;N/A;mean;4683;31;30859;6735;30.86;6.74
+Claro;Caldas, Colombia;;Aug 2020;21620;5191;all;N/A;mean;5191;32;31704;6645;31.70;6.65
+Claro;Caquetá, Colombia;;Aug 2020;10420;1500;all;N/A;mean;1500;34;20956;6818;20.96;6.82
+Claro;Casanare, Colombia;;Aug 2020;8862;2366;all;N/A;mean;2366;30;33699;7038;33.70;7.04
+Claro;Cauca Department, Colombia;;Aug 2020;18584;5037;all;N/A;mean;5037;42;30523;6167;30.52;6.17
+Claro;Cesar, Colombia;;Aug 2020;9329;2269;all;N/A;mean;2269;44;34122;6859;34.12;6.86
+Claro;Choco, Colombia;;Aug 2020;34;11;all;N/A;mean;11;68;56905;6824;56.91;6.82
+Claro;Cordoba, Colombia;;Aug 2020;6098;1585;all;N/A;mean;1585;40;32682;6726;32.68;6.73
+Claro;Cundinamarca, Colombia;;Aug 2020;132574;33200;all;N/A;mean;33200;24;36414;7111;36.41;7.11
+Claro;Huila, Colombia;;Aug 2020;23629;6190;all;N/A;mean;6190;35;31260;7760;31.26;7.76
+Claro;La Guajira, Colombia;;Aug 2020;5370;1339;all;N/A;mean;1339;47;32451;8253;32.45;8.25
+Claro;Magdalena, Colombia;;Aug 2020;20117;6402;all;N/A;mean;6402;30;37745;7083;37.75;7.08
+Claro;Meta, Colombia;;Aug 2020;22644;6181;all;N/A;mean;6181;26;34730;8417;34.73;8.42
+Claro;Narino, Colombia;;Aug 2020;16049;4406;all;N/A;mean;4406;49;26637;5640;26.64;5.64
+Claro;North Santander, Colombia;;Aug 2020;19928;5372;all;N/A;mean;5372;38;35293;6760;35.29;6.76
+Claro;Putumayo, Colombia;;Aug 2020;14;4;all;N/A;mean;4;102;7783;3035;7.78;3.04
+Claro;Quindio, Colombia;;Aug 2020;12367;2880;all;N/A;mean;2880;34;32842;6741;32.84;6.74
+Claro;Risaralda, Colombia;;Aug 2020;41586;9670;all;N/A;mean;9670;32;32867;7387;32.87;7.39
+Claro;San Andrés and Providencia, Colombia;;Aug 2020;1;1;all;N/A;mean;1;36;4152;3395;4.15;3.40
+Claro;Santander Department, Colombia;;Aug 2020;69648;17078;all;N/A;mean;17078;32;35005;7806;35.01;7.81
+Claro;Sucre, Colombia;;Aug 2020;2278;510;all;N/A;mean;510;39;33355;7508;33.36;7.51
+Claro;Tolima, Colombia;;Aug 2020;19266;5215;all;N/A;mean;5215;28;32664;7208;32.66;7.21
+Claro;Valle del Cauca, Colombia;;Aug 2020;138482;38866;all;N/A;mean;38866;34;36665;8255;36.67;8.26
+ETB;Antioquia, Colombia;;sep-20;1681;503;all;N/A;mean;503;30;35523;26771;35.52;26.77
+ETB;Atlantico, Colombia;;sep-20;593;191;all;N/A;mean;191;26;13772;11875;13.77;11.88
+ETB;Bogota, Colombia;;sep-20;308857;90188;all;N/A;mean;90188;16;56436;36963;56.44;36.96
+ETB;Bolivar, Colombia;;sep-20;30;16;all;N/A;mean;16;60;34535;40186;34.54;40.19
+ETB;Boyaca, Colombia;;sep-20;1015;247;all;N/A;mean;247;22;14771;11301;14.77;11.30
+ETB;Caldas, Colombia;;sep-20;16;7;all;N/A;mean;7;11;20835;18120;20.84;18.12
+ETB;Casanare, Colombia;;sep-20;35;28;all;N/A;mean;28;12;15219;13614;15.22;13.61
+ETB;Cauca Department, Colombia;;sep-20;100;48;all;N/A;mean;48;16;13014;10393;13.01;10.39
+ETB;Cesar, Colombia;;sep-20;13;7;all;N/A;mean;7;27;12520;14601;12.52;14.60
+ETB;Cordoba, Colombia;;sep-20;1875;444;all;N/A;mean;444;23;14941;18542;14.94;18.54
+ETB;Cundinamarca, Colombia;;sep-20;12852;3494;all;N/A;mean;3494;21;39746;26978;39.75;26.98
+ETB;Huila, Colombia;;sep-20;443;131;all;N/A;mean;131;40;12930;13714;12.93;13.71
+ETB;La Guajira, Colombia;;sep-20;1;1;all;N/A;mean;1;24;16480;21097;16.48;21.10
+ETB;Magdalena, Colombia;;sep-20;624;91;all;N/A;mean;91;37;14490;16177;14.49;16.18
+ETB;Meta, Colombia;;sep-20;4782;1168;all;N/A;mean;1168;36;15442;14185;15.44;14.19
+ETB;Narino, Colombia;;sep-20;16;7;all;N/A;mean;7;24;51536;30623;51.54;30.62
+ETB;North Santander, Colombia;;sep-20;898;222;all;N/A;mean;222;31;15518;16589;15.52;16.59
+ETB;Risaralda, Colombia;;sep-20;137;46;all;N/A;mean;46;46;2668;2810;2.67;2.81
+ETB;Santander Department, Colombia;;sep-20;1082;217;all;N/A;mean;217;40;33134;31804;33.13;31.80
+ETB;Sucre, Colombia;;sep-20;406;100;all;N/A;mean;100;48;5617;2204;5.62;2.20
+ETB;Tolima, Colombia;;sep-20;983;247;all;N/A;mean;247;33;11641;11166;11.64;11.17
+ETB;Valle del Cauca, Colombia;;sep-20;62;27;all;N/A;mean;27;59;27300;27986;27.30;27.99
+ETB;Guaviare, Colombia;;sep-20;3;1;all;N/A;mean;1;10;11745;10000;11.75;10.00
+Movistar;Antioquia, Colombia;;sep-20;926;457;all;N/A;mean;457;50;24243;21959;24.24;21.96
+Movistar;Arauca, Colombia;;sep-20;340;111;all;N/A;mean;111;96;7785;7029;7.79;7.03
+Movistar;Atlantico, Colombia;;sep-20;31531;10897;all;N/A;mean;10897;51;52785;51500;52.79;51.50
+Movistar;Bogota, Colombia;;sep-20;73975;21584;all;N/A;mean;21584;28;50593;49055;50.59;49.06
+Movistar;Bolivar, Colombia;;sep-20;18747;5559;all;N/A;mean;5559;44;55556;57787;55.56;57.79
+Movistar;Boyaca, Colombia;;sep-20;9212;2314;all;N/A;mean;2314;56;18165;16126;18.17;16.13
+Movistar;Caldas, Colombia;;sep-20;551;158;all;N/A;mean;158;35;20412;19646;20.41;19.65
+Movistar;Caquetá, Colombia;;sep-20;1370;313;all;N/A;mean;313;47;19690;16389;19.69;16.39
+Movistar;Casanare, Colombia;;sep-20;681;151;all;N/A;mean;151;54;7974;5810;7.97;5.81
+Movistar;Cauca Department, Colombia;;sep-20;1838;717;all;N/A;mean;717;50;33219;33079;33.22;33.08
+Movistar;Cesar, Colombia;;sep-20;7023;2085;all;N/A;mean;2085;62;47081;47280;47.08;47.28
+Movistar;Choco, Colombia;;sep-20;927;303;all;N/A;mean;303;78;10733;6955;10.73;6.96
+Movistar;Cordoba, Colombia;;sep-20;9121;2940;all;N/A;mean;2940;45;42509;41660;42.51;41.66
+Movistar;Cundinamarca, Colombia;;sep-20;35914;12132;all;N/A;mean;12132;34;41466;39848;41.47;39.85
+Movistar;Guainia, Colombia;;sep-20;2;1;all;N/A;mean;1;9;8411;6307;8.41;6.31
+Movistar;Huila, Colombia;;sep-20;17701;5503;all;N/A;mean;5503;51;25046;23159;25.05;23.16
+Movistar;La Guajira, Colombia;;sep-20;1007;242;all;N/A;mean;242;92;13515;10310;13.52;10.31
+Movistar;Magdalena, Colombia;;sep-20;9948;3269;all;N/A;mean;3269;62;41598;39291;41.60;39.29
+Movistar;Meta, Colombia;;sep-20;5061;1256;all;N/A;mean;1256;26;44707;45815;44.71;45.82
+Movistar;Narino, Colombia;;sep-20;4075;1139;all;N/A;mean;1139;49;42828;40977;42.83;40.98
+Movistar;North Santander, Colombia;;sep-20;23726;7657;all;N/A;mean;7657;54;45374;46119;45.37;46.12
+Movistar;Putumayo, Colombia;;sep-20;245;56;all;N/A;mean;56;55;5236;2915;5.24;2.92
+Movistar;Quindio, Colombia;;sep-20;979;311;all;N/A;mean;311;62;7785;3820;7.79;3.82
+Movistar;Risaralda, Colombia;;sep-20;239;55;all;N/A;mean;55;53;22013;22909;22.01;22.91
+Movistar;San Andrés and Providencia, Colombia;;sep-20;19;12;all;N/A;mean;12;212;4221;8480;4.22;8.48
+Movistar;Santander Department, Colombia;;sep-20;54293;16697;all;N/A;mean;16697;33;55707;54404;55.71;54.40
+Movistar;Sucre, Colombia;;sep-20;1352;311;all;N/A;mean;311;62;25605;23703;25.61;23.70
+Movistar;Tolima, Colombia;;sep-20;16487;5031;all;N/A;mean;5031;36;38558;38534;38.56;38.53
+Movistar;Valle del Cauca, Colombia;;sep-20;50767;16419;all;N/A;mean;16419;32;67992;71724;67.99;71.72
+Movistar;Guaviare, Colombia;;sep-20;2;1;all;N/A;mean;1;10;17484;18463;17.48;18.46
+Claro;Antioquia, Colombia;;sep-20;122094;36018;all;N/A;mean;36018;32;44394;11117;44.39;11.12
+Claro;Arauca, Colombia;;sep-20;1;1;all;N/A;mean;1;54;396;3854;0.40;3.85
+Claro;Atlantico, Colombia;;sep-20;42934;11949;all;N/A;mean;11949;24;39918;10141;39.92;10.14
+Claro;Bogota, Colombia;;sep-20;554522;153923;all;N/A;mean;153923;21;40371;8224;40.37;8.22
+Claro;Bolivar, Colombia;;sep-20;9250;2520;all;N/A;mean;2520;26;35147;9516;35.15;9.52
+Claro;Boyaca, Colombia;;sep-20;17139;4359;all;N/A;mean;4359;27;34082;7300;34.08;7.30
+Claro;Caldas, Colombia;;sep-20;21400;5346;all;N/A;mean;5346;32;32341;6948;32.34;6.95
+Claro;Caquetá, Colombia;;sep-20;4437;1015;all;N/A;mean;1015;34;28115;8769;28.12;8.77
+Claro;Casanare, Colombia;;sep-20;8351;2142;all;N/A;mean;2142;28;35344;7085;35.34;7.09
+Claro;Cauca Department, Colombia;;sep-20;20485;5264;all;N/A;mean;5264;43;31343;6379;31.34;6.38
+Claro;Cesar, Colombia;;sep-20;8427;2283;all;N/A;mean;2283;40;35461;7642;35.46;7.64
+Claro;Choco, Colombia;;sep-20;5;4;all;N/A;mean;4;27;57025;36203;57.03;36.20
+Claro;Cordoba, Colombia;;sep-20;6382;1718;all;N/A;mean;1718;37;36568;7257;36.57;7.26
+Claro;Cundinamarca, Colombia;;sep-20;104126;28371;all;N/A;mean;28371;23;39335;7944;39.34;7.94
+Claro;Guainia, Colombia;;sep-20;2;1;all;N/A;mean;1;22;9729;1759;9.73;1.76
+Claro;Huila, Colombia;;sep-20;17609;5217;all;N/A;mean;5217;34;32536;8655;32.54;8.66
+Claro;La Guajira, Colombia;;sep-20;4724;1283;all;N/A;mean;1283;45;35188;7272;35.19;7.27
+Claro;Magdalena, Colombia;;sep-20;28840;8820;all;N/A;mean;8820;28;40655;7353;40.66;7.35
+Claro;Meta, Colombia;;sep-20;19414;5350;all;N/A;mean;5350;26;37731;9311;37.73;9.31
+Claro;Narino, Colombia;;sep-20;15172;4317;all;N/A;mean;4317;48;28501;6177;28.50;6.18
+Claro;North Santander, Colombia;;sep-20;18771;5109;all;N/A;mean;5109;39;36483;6902;36.48;6.90
+Claro;Putumayo, Colombia;;sep-20;8;5;all;N/A;mean;5;141;5377;3164;5.38;3.16
+Claro;Quindio, Colombia;;sep-20;9850;2699;all;N/A;mean;2699;36;32854;7208;32.85;7.21
+Claro;Risaralda, Colombia;;sep-20;39140;9509;all;N/A;mean;9509;33;34495;8275;34.50;8.28
+Claro;Santander Department, Colombia;;sep-20;66497;16795;all;N/A;mean;16795;30;38205;8643;38.21;8.64
+Claro;Sucre, Colombia;;sep-20;1860;538;all;N/A;mean;538;33;33132;8207;33.13;8.21
+Claro;Tolima, Colombia;;sep-20;16256;4588;all;N/A;mean;4588;25;34728;7574;34.73;7.57
+Claro;Valle del Cauca, Colombia;;sep-20;130133;37124;all;N/A;mean;37124;32;37811;8929;37.81;8.93
+Claro;Vichada, Colombia;;sep-20;3;2;all;N/A;mean;2;67;2149;2415;2.15;2.42
+Claro;Guaviare, Colombia;;sep-20;4;2;all;N/A;mean;2;62;4701;3494;4.70;3.49
+ETB;Antioquia, Colombia;;oct-20;1542;478;all;N/A;mean;478;29;28971;23324;28.97;23.32
+ETB;Atlantico, Colombia;;oct-20;639;218;all;N/A;mean;218;27;19435;19577;19.44;19.58
+ETB;Bogota, Colombia;;oct-20;273204;84536;all;N/A;mean;84536;17;58484;38009;58.48;38.01
+ETB;Bolivar, Colombia;;oct-20;1;1;all;N/A;mean;1;18;25815;37906;25.82;37.91
+ETB;Boyaca, Colombia;;oct-20;559;199;all;N/A;mean;199;26;33261;25780;33.26;25.78
+ETB;Caldas, Colombia;;oct-20;49;18;all;N/A;mean;18;83;13759;15847;13.76;15.85
+ETB;Casanare, Colombia;;oct-20;20;13;all;N/A;mean;13;24;7253;7509;7.25;7.51
+ETB;Cauca Department, Colombia;;oct-20;84;29;all;N/A;mean;29;17;19458;14083;19.46;14.08
+ETB;Cesar, Colombia;;oct-20;3;1;all;N/A;mean;1;18;7268;8627;7.27;8.63
+ETB;Cordoba, Colombia;;oct-20;1757;393;all;N/A;mean;393;23;14292;16912;14.29;16.91
+ETB;Cundinamarca, Colombia;;oct-20;10415;3146;all;N/A;mean;3146;21;41308;28369;41.31;28.37
+ETB;Huila, Colombia;;oct-20;377;113;all;N/A;mean;113;40;11821;12130;11.82;12.13
+ETB;Magdalena, Colombia;;oct-20;685;127;all;N/A;mean;127;37;14388;18759;14.39;18.76
+ETB;Meta, Colombia;;oct-20;4786;1216;all;N/A;mean;1216;34;18723;15945;18.72;15.95
+ETB;Narino, Colombia;;oct-20;26;13;all;N/A;mean;13;18;57820;45489;57.82;45.49
+ETB;North Santander, Colombia;;oct-20;894;195;all;N/A;mean;195;33;14493;18037;14.49;18.04
+ETB;Risaralda, Colombia;;oct-20;94;46;all;N/A;mean;46;49;5090;4436;5.09;4.44
+ETB;Santander Department, Colombia;;oct-20;844;268;all;N/A;mean;268;33;15652;15870;15.65;15.87
+ETB;Sucre, Colombia;;oct-20;170;57;all;N/A;mean;57;48;4759;1979;4.76;1.98
+ETB;Tolima, Colombia;;oct-20;922;239;all;N/A;mean;239;40;11562;11919;11.56;11.92
+ETB;Valle del Cauca, Colombia;;oct-20;35;19;all;N/A;mean;19;15;34650;25639;34.65;25.64
+Movistar;Antioquia, Colombia;;oct-20;853;419;all;N/A;mean;419;43;27802;23656;27.80;23.66
+Movistar;Arauca, Colombia;;oct-20;456;102;all;N/A;mean;102;132;4766;1510;4.77;1.51
+Movistar;Atlantico, Colombia;;oct-20;27146;9839;all;N/A;mean;9839;53;53119;51607;53.12;51.61
+Movistar;Bogota, Colombia;;oct-20;72053;20876;all;N/A;mean;20876;29;50680;49182;50.68;49.18
+Movistar;Bolivar, Colombia;;oct-20;16847;5006;all;N/A;mean;5006;47;52138;51770;52.14;51.77
+Movistar;Boyaca, Colombia;;oct-20;8350;2091;all;N/A;mean;2091;52;15558;13002;15.56;13.00
+Movistar;Caldas, Colombia;;oct-20;589;155;all;N/A;mean;155;49;16070;17223;16.07;17.22
+Movistar;Caquetá, Colombia;;oct-20;1215;294;all;N/A;mean;294;47;11518;10848;11.52;10.85
+Movistar;Casanare, Colombia;;oct-20;571;124;all;N/A;mean;124;63;8432;6442;8.43;6.44
+Movistar;Cauca Department, Colombia;;oct-20;1674;675;all;N/A;mean;675;61;27385;25837;27.39;25.84
+Movistar;Cesar, Colombia;;oct-20;6144;1853;all;N/A;mean;1853;65;47551;46023;47.55;46.02
+Movistar;Choco, Colombia;;oct-20;1444;345;all;N/A;mean;345;69;9632;7047;9.63;7.05
+Movistar;Cordoba, Colombia;;oct-20;8112;2569;all;N/A;mean;2569;48;40208;37594;40.21;37.59
+Movistar;Cundinamarca, Colombia;;oct-20;35073;12640;all;N/A;mean;12640;34;43623;42346;43.62;42.35
+Movistar;Huila, Colombia;;oct-20;16885;5099;all;N/A;mean;5099;49;22318;19687;22.32;19.69
+Movistar;La Guajira, Colombia;;oct-20;858;248;all;N/A;mean;248;88;13615;9466;13.62;9.47
+Movistar;Magdalena, Colombia;;oct-20;8817;2832;all;N/A;mean;2832;65;42484;38348;42.48;38.35
+Movistar;Meta, Colombia;;oct-20;4882;1213;all;N/A;mean;1213;29;40269;38805;40.27;38.81
+Movistar;Narino, Colombia;;oct-20;5483;1614;all;N/A;mean;1614;47;51810;42620;51.81;42.62
+Movistar;North Santander, Colombia;;oct-20;20645;6931;all;N/A;mean;6931;47;46862;45534;46.86;45.53
+Movistar;Putumayo, Colombia;;oct-20;274;77;all;N/A;mean;77;70;16159;14995;16.16;15.00
+Movistar;Quindio, Colombia;;oct-20;1009;303;all;N/A;mean;303;60;5676;1371;5.68;1.37
+Movistar;Risaralda, Colombia;;oct-20;155;40;all;N/A;mean;40;59;7514;4463;7.51;4.46
+Movistar;San Andrés and Providencia, Colombia;;oct-20;17;11;all;N/A;mean;11;94;2174;1450;2.17;1.45
+Movistar;Santander Department, Colombia;;oct-20;45548;14408;all;N/A;mean;14408;32;55909;53842;55.91;53.84
+Movistar;Sucre, Colombia;;oct-20;1177;256;all;N/A;mean;256;63;27783;25035;27.78;25.04
+Movistar;Tolima, Colombia;;oct-20;16295;4845;all;N/A;mean;4845;35;39789;39314;39.79;39.31
+Movistar;Valle del Cauca, Colombia;;oct-20;45079;14268;all;N/A;mean;14268;31;67736;66879;67.74;66.88
+Movistar;Vichada, Colombia;;oct-20;1;1;all;N/A;mean;1;22;4851;868;4.85;0.87
+Movistar;Guaviare, Colombia;;oct-20;78;29;all;N/A;mean;29;20;26517;52876;26.52;52.88
+Claro;Antioquia, Colombia;;oct-20;112160;34791;all;N/A;mean;34791;31;46312;12239;46.31;12.24
+Claro;Atlantico, Colombia;;oct-20;40292;12072;all;N/A;mean;12072;26;42706;10808;42.71;10.81
+Claro;Bogota, Colombia;;oct-20;539679;155178;all;N/A;mean;155178;22;42801;9163;42.80;9.16
+Claro;Bolivar, Colombia;;oct-20;7954;2260;all;N/A;mean;2260;26;38066;10983;38.07;10.98
+Claro;Boyaca, Colombia;;oct-20;15254;4222;all;N/A;mean;4222;26;36160;8313;36.16;8.31
+Claro;Caldas, Colombia;;oct-20;21388;5405;all;N/A;mean;5405;33;34170;7752;34.17;7.75
+Claro;Caquetá, Colombia;;oct-20;4137;930;all;N/A;mean;930;35;28241;8367;28.24;8.37
+Claro;Casanare, Colombia;;oct-20;7802;2133;all;N/A;mean;2133;27;35965;7136;35.97;7.14
+Claro;Cauca Department, Colombia;;oct-20;16093;4672;all;N/A;mean;4672;41;33909;6643;33.91;6.64
+Claro;Cesar, Colombia;;oct-20;6388;1686;all;N/A;mean;1686;39;38860;8868;38.86;8.87
+Claro;Choco, Colombia;;oct-20;1;1;all;N/A;mean;1;4;156158;195701;156.16;195.70
+Claro;Cordoba, Colombia;;oct-20;5346;1486;all;N/A;mean;1486;35;38300;9132;38.30;9.13
+Claro;Cundinamarca, Colombia;;oct-20;101940;28466;all;N/A;mean;28466;24;41767;8966;41.77;8.97
+Claro;Huila, Colombia;;oct-20;17232;5005;all;N/A;mean;5005;34;34895;9626;34.90;9.63
+Claro;La Guajira, Colombia;;oct-20;4809;1316;all;N/A;mean;1316;53;33852;7444;33.85;7.44
+Claro;Magdalena, Colombia;;oct-20;25770;8500;all;N/A;mean;8500;28;42605;8194;42.61;8.19
+Claro;Meta, Colombia;;oct-20;17385;5226;all;N/A;mean;5226;27;39606;9596;39.61;9.60
+Claro;Narino, Colombia;;oct-20;12825;4085;all;N/A;mean;4085;47;30136;6117;30.14;6.12
+Claro;North Santander, Colombia;;oct-20;17085;4845;all;N/A;mean;4845;40;38729;7688;38.73;7.69
+Claro;Putumayo, Colombia;;oct-20;22;7;all;N/A;mean;7;153;3709;3309;3.71;3.31
+Claro;Quindio, Colombia;;oct-20;10168;2719;all;N/A;mean;2719;34;36261;7726;36.26;7.73
+Claro;Risaralda, Colombia;;oct-20;37494;9583;all;N/A;mean;9583;32;37112;8673;37.11;8.67
+Claro;San Andrés and Providencia, Colombia;;oct-20;4;2;all;N/A;mean;2;68;1617;2245;1.62;2.25
+Claro;Santander Department, Colombia;;oct-20;61005;16450;all;N/A;mean;16450;29;41243;9641;41.24;9.64
+Claro;Sucre, Colombia;;oct-20;2079;518;all;N/A;mean;518;36;36181;8664;36.18;8.66
+Claro;Tolima, Colombia;;oct-20;20132;5467;all;N/A;mean;5467;38;33610;8398;33.61;8.40
+Claro;Valle del Cauca, Colombia;;oct-20;120580;35219;all;N/A;mean;35219;30;42057;9975;42.06;9.98
+Claro;Guaviare, Colombia;;oct-20;8;1;all;N/A;mean;1;50;6197;4179;6.20;4.18
+ETB;Antioquia, Colombia;;nov-20;1172;452;all;N/A;mean;452;24;34919;32532;34.92;32.53
+ETB;Atlantico, Colombia;;nov-20;404;168;all;N/A;mean;168;27;27649;27246;27.65;27.25
+ETB;Bogota, Colombia;;nov-20;272562;86567;all;N/A;mean;86567;16;63496;40777;63.50;40.78
+ETB;Bolivar, Colombia;;nov-20;18;6;all;N/A;mean;6;223;16410;17081;16.41;17.08
+ETB;Boyaca, Colombia;;nov-20;936;272;all;N/A;mean;272;24;11519;9448;11.52;9.45
+ETB;Caldas, Colombia;;nov-20;23;9;all;N/A;mean;9;30;17460;15984;17.46;15.98
+ETB;Casanare, Colombia;;nov-20;18;11;all;N/A;mean;11;21;6775;6691;6.78;6.69
+ETB;Cauca Department, Colombia;;nov-20;109;47;all;N/A;mean;47;18;24966;22942;24.97;22.94
+ETB;Cesar, Colombia;;nov-20;3;2;all;N/A;mean;2;27;4604;3682;4.60;3.68
+ETB;Cordoba, Colombia;;nov-20;2103;413;all;N/A;mean;413;23;16119;17544;16.12;17.54
+ETB;Cundinamarca, Colombia;;nov-20;10451;3286;all;N/A;mean;3286;22;41162;28475;41.16;28.48
+ETB;Huila, Colombia;;nov-20;152;61;all;N/A;mean;61;50;12552;14466;12.55;14.47
+ETB;Magdalena, Colombia;;nov-20;454;126;all;N/A;mean;126;40;13436;16210;13.44;16.21
+ETB;Meta, Colombia;;nov-20;4056;1176;all;N/A;mean;1176;34;37087;35581;37.09;35.58
+ETB;Narino, Colombia;;nov-20;1;1;all;N/A;mean;1;69;3411;3109;3.41;3.11
+ETB;North Santander, Colombia;;nov-20;514;166;all;N/A;mean;166;28;21613;22946;21.61;22.95
+ETB;Risaralda, Colombia;;nov-20;149;37;all;N/A;mean;37;53;2175;2050;2.18;2.05
+ETB;Santander Department, Colombia;;nov-20;556;188;all;N/A;mean;188;29;27357;26380;27.36;26.38
+ETB;Sucre, Colombia;;nov-20;234;46;all;N/A;mean;46;65;6356;5695;6.36;5.70
+ETB;Tolima, Colombia;;nov-20;836;204;all;N/A;mean;204;29;10081;10005;10.08;10.01
+ETB;Valle del Cauca, Colombia;;nov-20;30;20;all;N/A;mean;20;16;33210;36077;33.21;36.08
+Movistar;Antioquia, Colombia;;nov-20;1429;590;all;N/A;mean;590;49;36976;36144;36.98;36.14
+Movistar;Arauca, Colombia;;nov-20;200;75;all;N/A;mean;75;106;9747;3763;9.75;3.76
+Movistar;Atlantico, Colombia;;nov-20;22845;8831;all;N/A;mean;8831;57;56333;53563;56.33;53.56
+Movistar;Bogota, Colombia;;nov-20;71711;21248;all;N/A;mean;21248;28;55289;54058;55.29;54.06
+Movistar;Bolivar, Colombia;;nov-20;13137;4544;all;N/A;mean;4544;55;54712;53799;54.71;53.80
+Movistar;Boyaca, Colombia;;nov-20;8384;2125;all;N/A;mean;2125;55;15857;12503;15.86;12.50
+Movistar;Caldas, Colombia;;nov-20;674;158;all;N/A;mean;158;53;15186;13941;15.19;13.94
+Movistar;Caquetá, Colombia;;nov-20;1484;313;all;N/A;mean;313;48;17321;17366;17.32;17.37
+Movistar;Casanare, Colombia;;nov-20;772;134;all;N/A;mean;134;50;9433;4291;9.43;4.29
+Movistar;Cauca Department, Colombia;;nov-20;1373;512;all;N/A;mean;512;63;17323;12701;17.32;12.70
+Movistar;Cesar, Colombia;;nov-20;5658;1752;all;N/A;mean;1752;65;53070;49977;53.07;49.98
+Movistar;Choco, Colombia;;nov-20;1160;355;all;N/A;mean;355;68;8243;4728;8.24;4.73
+Movistar;Cordoba, Colombia;;nov-20;7131;2331;all;N/A;mean;2331;61;41368;38310;41.37;38.31
+Movistar;Cundinamarca, Colombia;;nov-20;30921;10989;all;N/A;mean;10989;33;45053;44889;45.05;44.89
+Movistar;Huila, Colombia;;nov-20;15423;4514;all;N/A;mean;4514;53;22369;20216;22.37;20.22
+Movistar;La Guajira, Colombia;;nov-20;643;218;all;N/A;mean;218;81;15269;11411;15.27;11.41
+Movistar;Magdalena, Colombia;;nov-20;7797;2667;all;N/A;mean;2667;66;41806;37677;41.81;37.68
+Movistar;Meta, Colombia;;nov-20;4295;1110;all;N/A;mean;1110;29;43094;41505;43.09;41.51
+Movistar;Narino, Colombia;;nov-20;4165;1355;all;N/A;mean;1355;42;58209;50413;58.21;50.41
+Movistar;North Santander, Colombia;;nov-20;16725;5998;all;N/A;mean;5998;55;50305;46519;50.31;46.52
+Movistar;Putumayo, Colombia;;nov-20;216;71;all;N/A;mean;71;58;14336;11023;14.34;11.02
+Movistar;Quindio, Colombia;;nov-20;996;271;all;N/A;mean;271;57;7092;2924;7.09;2.92
+Movistar;Risaralda, Colombia;;nov-20;149;30;all;N/A;mean;30;50;5884;2599;5.88;2.60
+Movistar;San Andrés and Providencia, Colombia;;nov-20;18;11;all;N/A;mean;11;112;2304;2018;2.30;2.02
+Movistar;Santander Department, Colombia;;nov-20;45451;14366;all;N/A;mean;14366;33;59301;57659;59.30;57.66
+Movistar;Sucre, Colombia;;nov-20;1268;292;all;N/A;mean;292;61;37699;31649;37.70;31.65
+Movistar;Tolima, Colombia;;nov-20;13751;4206;all;N/A;mean;4206;37;43296;42668;43.30;42.67
+Movistar;Valle del Cauca, Colombia;;nov-20;45455;14353;all;N/A;mean;14353;33;71524;71037;71.52;71.04
+Movistar;Guaviare, Colombia;;nov-20;263;73;all;N/A;mean;73;26;12358;26314;12.36;26.31
+Claro;Antioquia, Colombia;;nov-20;107298;33279;all;N/A;mean;33279;32;48716;12254;48.72;12.25
+Claro;Atlantico, Colombia;;nov-20;32809;10404;all;N/A;mean;10404;27;43663;11261;43.66;11.26
+Claro;Bogota, Colombia;;nov-20;499866;146436;all;N/A;mean;146436;23;45116;9616;45.12;9.62
+Claro;Bolivar, Colombia;;nov-20;8215;2413;all;N/A;mean;2413;27;38732;10037;38.73;10.04
+Claro;Boyaca, Colombia;;nov-20;14770;3859;all;N/A;mean;3859;29;36776;8031;36.78;8.03
+Claro;Caldas, Colombia;;nov-20;23370;5482;all;N/A;mean;5482;42;34868;8929;34.87;8.93
+Claro;Caquetá, Colombia;;nov-20;3179;921;all;N/A;mean;921;33;29130;7482;29.13;7.48
+Claro;Casanare, Colombia;;nov-20;6539;2030;all;N/A;mean;2030;28;39096;7460;39.10;7.46
+Claro;Cauca Department, Colombia;;nov-20;14080;4484;all;N/A;mean;4484;40;34505;6857;34.51;6.86
+Claro;Cesar, Colombia;;nov-20;6236;1825;all;N/A;mean;1825;39;38831;8517;38.83;8.52
+Claro;Cordoba, Colombia;;nov-20;4735;1290;all;N/A;mean;1290;34;43540;10584;43.54;10.58
+Claro;Cundinamarca, Colombia;;nov-20;92573;26541;all;N/A;mean;26541;23;44524;9673;44.52;9.67
+Claro;Huila, Colombia;;nov-20;17160;4685;all;N/A;mean;4685;35;36815;9428;36.82;9.43
+Claro;La Guajira, Colombia;;nov-20;5029;1300;all;N/A;mean;1300;56;34299;7603;34.30;7.60
+Claro;Magdalena, Colombia;;nov-20;22176;7547;all;N/A;mean;7547;30;43795;8006;43.80;8.01
+Claro;Meta, Colombia;;nov-20;16316;5062;all;N/A;mean;5062;26;41270;10377;41.27;10.38
+Claro;Narino, Colombia;;nov-20;11851;3776;all;N/A;mean;3776;47;31171;6557;31.17;6.56
+Claro;North Santander, Colombia;;nov-20;17861;4826;all;N/A;mean;4826;47;39516;8054;39.52;8.05
+Claro;Putumayo, Colombia;;nov-20;1;1;all;N/A;mean;1;73;10429;4201;10.43;4.20
+Claro;Quindio, Colombia;;nov-20;9895;2676;all;N/A;mean;2676;37;38034;8083;38.03;8.08
+Claro;Risaralda, Colombia;;nov-20;31303;8200;all;N/A;mean;8200;34;37841;8907;37.84;8.91
+Claro;San Andrés and Providencia, Colombia;;nov-20;3;2;all;N/A;mean;2;100;716;234;0.72;0.23
+Claro;Santander Department, Colombia;;nov-20;60695;16117;all;N/A;mean;16117;30;43527;9391;43.53;9.39
+Claro;Sucre, Colombia;;nov-20;1520;436;all;N/A;mean;436;32;38373;12914;38.37;12.91
+Claro;Tolima, Colombia;;nov-20;16354;4707;all;N/A;mean;4707;37;34943;8922;34.94;8.92
+Claro;Valle del Cauca, Colombia;;nov-20;113829;33267;all;N/A;mean;33267;32;42839;10294;42.84;10.29
+Claro;Vichada, Colombia;;nov-20;4;1;all;N/A;mean;1;52;2264;338;2.26;0.34
+ETB;Arauca, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Caquetá, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Choco, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Guainia, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;La Guajira, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Quindio, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Vaupes, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Vichada, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Guaviare, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Movistar;Guainia, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Movistar;Vaupes, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Movistar;Vichada, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Claro;Amazonas, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Claro;Choco, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+Claro;Vichada, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Amazonas, Colombia;;Dec 2020;;;all;N/A;mean;;;;;;
+ETB;Antioquia, Colombia;;Dec 2020;1122;344;all;N/A;mean;344;26;26591;24287;26.59;24.29
+ETB;Atlantico, Colombia;;Dec 2020;617;220;all;N/A;mean;220;28;20095;17424;20.10;17.42
+ETB;Bogota, Colombia;;Dec 2020;219947;69489;all;N/A;mean;69489;17;66180;42471;66.18;42.47
+ETB;Bolivar, Colombia;;Dec 2020;11;7;all;N/A;mean;7;31;53896;54539;53.90;54.54
+ETB;Boyaca, Colombia;;Dec 2020;788;246;all;N/A;mean;246;26;15822;18591;15.82;18.59
+ETB;Caldas, Colombia;;Dec 2020;26;8;all;N/A;mean;8;47;12437;12201;12.44;12.20
+ETB;Casanare, Colombia;;Dec 2020;27;20;all;N/A;mean;20;46;9354;10097;9.35;10.10
+ETB;Cauca Department, Colombia;;Dec 2020;64;24;all;N/A;mean;24;32;16393;14067;16.39;14.07
+ETB;Cesar, Colombia;;Dec 2020;1;1;all;N/A;mean;1;20;20793;25406;20.79;25.41
+ETB;Cordoba, Colombia;;Dec 2020;977;323;all;N/A;mean;323;22;15472;17132;15.47;17.13
+ETB;Cundinamarca, Colombia;;Dec 2020;8008;2609;all;N/A;mean;2609;27;43213;31094;43.21;31.09
+ETB;Huila, Colombia;;Dec 2020;310;82;all;N/A;mean;82;28;12508;12108;12.51;12.11
+ETB;Magdalena, Colombia;;Dec 2020;468;108;all;N/A;mean;108;36;11618;13665;11.62;13.67
+ETB;Meta, Colombia;;Dec 2020;3025;914;all;N/A;mean;914;42;21280;18846;21.28;18.85
+ETB;Narino, Colombia;;Dec 2020;53;21;all;N/A;mean;21;9;15848;17640;15.85;17.64
+ETB;North Santander, Colombia;;Dec 2020;536;177;all;N/A;mean;177;29;23727;24961;23.73;24.96
+ETB;Putumayo, Colombia;;Dec 2020;1;1;all;N/A;mean;1;14;46473;32186;46.47;32.19
+ETB;Risaralda, Colombia;;Dec 2020;188;41;all;N/A;mean;41;52;5201;6817;5.20;6.82
+ETB;San Andrés and Providencia, Colombia;;Dec 2020;1;1;all;N/A;mean;1;110;32518;25228;32.52;25.23
+ETB;Santander Department, Colombia;;Dec 2020;489;134;all;N/A;mean;134;38;18183;17354;18.18;17.35
+ETB;Sucre, Colombia;;Dec 2020;150;34;all;N/A;mean;34;44;6667;2211;6.67;2.21
+ETB;Tolima, Colombia;;Dec 2020;659;175;all;N/A;mean;175;34;10831;12587;10.83;12.59
+ETB;Valle del Cauca, Colombia;;Dec 2020;21;10;all;N/A;mean;10;17;10558;13937;10.56;13.94
+Movistar;Amazonas, Colombia;;Dec 2020;4;3;all;N/A;mean;3;70;463;390;0.46;0.39
+Movistar;Antioquia, Colombia;;Dec 2020;3012;827;all;N/A;mean;827;32;80689;80173;80.69;80.17
+Movistar;Arauca, Colombia;;Dec 2020;211;73;all;N/A;mean;73;70;10339;4839;10.34;4.84
+Movistar;Atlantico, Colombia;;Dec 2020;24547;8402;all;N/A;mean;8402;50;62529;58926;62.53;58.93
+Movistar;Bogota, Colombia;;Dec 2020;64115;18854;all;N/A;mean;18854;28;58272;58499;58.27;58.50
+Movistar;Bolivar, Colombia;;Dec 2020;14055;4554;all;N/A;mean;4554;47;61177;60560;61.18;60.56
+Movistar;Boyaca, Colombia;;Dec 2020;7172;2008;all;N/A;mean;2008;54;17916;15737;17.92;15.74
+Movistar;Caldas, Colombia;;Dec 2020;510;118;all;N/A;mean;118;60;17064;16062;17.06;16.06
+Movistar;Caquetá, Colombia;;Dec 2020;806;191;all;N/A;mean;191;49;16519;15741;16.52;15.74
+Movistar;Casanare, Colombia;;Dec 2020;769;141;all;N/A;mean;141;55;8145;4817;8.15;4.82
+Movistar;Cauca Department, Colombia;;Dec 2020;1078;429;all;N/A;mean;429;60;20099;16207;20.10;16.21
+Movistar;Cesar, Colombia;;Dec 2020;4198;1466;all;N/A;mean;1466;58;53076;50066;53.08;50.07
+Movistar;Choco, Colombia;;Dec 2020;1922;388;all;N/A;mean;388;56;11656;8202;11.66;8.20
+Movistar;Cordoba, Colombia;;Dec 2020;6368;2084;all;N/A;mean;2084;54;44913;41595;44.91;41.60
+Movistar;Cundinamarca, Colombia;;Dec 2020;29175;9521;all;N/A;mean;9521;33;46663;47709;46.66;47.71
+Movistar;Huila, Colombia;;Dec 2020;14857;4441;all;N/A;mean;4441;52;25331;23223;25.33;23.22
+Movistar;La Guajira, Colombia;;Dec 2020;537;164;all;N/A;mean;164;84;11959;8868;11.96;8.87
+Movistar;Magdalena, Colombia;;Dec 2020;7040;2526;all;N/A;mean;2526;59;48982;44040;48.98;44.04
+Movistar;Meta, Colombia;;Dec 2020;4378;1071;all;N/A;mean;1071;29;44995;43160;45.00;43.16
+Movistar;Narino, Colombia;;Dec 2020;4125;1371;all;N/A;mean;1371;43;53789;49559;53.79;49.56
+Movistar;North Santander, Colombia;;Dec 2020;16005;5308;all;N/A;mean;5308;50;51133;46696;51.13;46.70
+Movistar;Putumayo, Colombia;;Dec 2020;133;55;all;N/A;mean;55;58;9918;11158;9.92;11.16
+Movistar;Quindio, Colombia;;Dec 2020;779;282;all;N/A;mean;282;49;8813;3927;8.81;3.93
+Movistar;Risaralda, Colombia;;Dec 2020;121;40;all;N/A;mean;40;60;10572;7224;10.57;7.22
+Movistar;San Andrés and Providencia, Colombia;;Dec 2020;20;11;all;N/A;mean;11;87;2442;1403;2.44;1.40
+Movistar;Santander Department, Colombia;;Dec 2020;42293;12742;all;N/A;mean;12742;32;61515;60992;61.52;60.99
+Movistar;Sucre, Colombia;;Dec 2020;1197;378;all;N/A;mean;378;46;46829;43566;46.83;43.57
+Movistar;Tolima, Colombia;;Dec 2020;13010;3914;all;N/A;mean;3914;33;46843;48020;46.84;48.02
+Movistar;Valle del Cauca, Colombia;;Dec 2020;45044;14051;all;N/A;mean;14051;31;77982;80013;77.98;80.01
+Movistar;Guaviare, Colombia;;Dec 2020;158;56;all;N/A;mean;56;24;16536;28630;16.54;28.63
+Claro;Antioquia, Colombia;;Dec 2020;90913;28316;all;N/A;mean;28316;32;50466;13018;50.47;13.02
+Claro;Arauca, Colombia;;Dec 2020;1;1;all;N/A;mean;1;52;214;15934;0.21;15.93
+Claro;Atlantico, Colombia;;Dec 2020;30467;9441;all;N/A;mean;9441;25;46737;12207;46.74;12.21
+Claro;Bogota, Colombia;;Dec 2020;415325;122107;all;N/A;mean;122107;22;47720;10152;47.72;10.15
+Claro;Bolivar, Colombia;;Dec 2020;7162;2256;all;N/A;mean;2256;24;41417;10191;41.42;10.19
+Claro;Boyaca, Colombia;;Dec 2020;11826;3145;all;N/A;mean;3145;29;39493;8941;39.49;8.94
+Claro;Caldas, Colombia;;Dec 2020;15322;3980;all;N/A;mean;3980;35;41444;8639;41.44;8.64
+Claro;Caquetá, Colombia;;Dec 2020;3047;823;all;N/A;mean;823;34;29922;8280;29.92;8.28
+Claro;Casanare, Colombia;;Dec 2020;5034;1660;all;N/A;mean;1660;29;39575;8162;39.58;8.16
+Claro;Cauca Department, Colombia;;Dec 2020;12006;3725;all;N/A;mean;3725;40;36999;7687;37.00;7.69
+Claro;Cesar, Colombia;;Dec 2020;4769;1407;all;N/A;mean;1407;38;38319;8525;38.32;8.53
+Claro;Cordoba, Colombia;;Dec 2020;3691;1089;all;N/A;mean;1089;32;44614;10141;44.61;10.14
+Claro;Cundinamarca, Colombia;;Dec 2020;83112;23484;all;N/A;mean;23484;24;45665;9941;45.67;9.94
+Claro;Guainia, Colombia;;Dec 2020;2;2;all;N/A;mean;2;45;3775;3956;3.78;3.96
+Claro;Huila, Colombia;;Dec 2020;15322;4238;all;N/A;mean;4238;39;36342;9704;36.34;9.70
+Claro;La Guajira, Colombia;;Dec 2020;2739;954;all;N/A;mean;954;45;38955;8583;38.96;8.58
+Claro;Magdalena, Colombia;;Dec 2020;19896;6686;all;N/A;mean;6686;32;46661;8707;46.66;8.71
+Claro;Meta, Colombia;;Dec 2020;13966;4106;all;N/A;mean;4106;24;44055;10850;44.06;10.85
+Claro;Narino, Colombia;;Dec 2020;9654;3073;all;N/A;mean;3073;45;34864;7159;34.86;7.16
+Claro;North Santander, Colombia;;Dec 2020;15196;4107;all;N/A;mean;4107;47;40011;8213;40.01;8.21
+Claro;Putumayo, Colombia;;Dec 2020;15;5;all;N/A;mean;5;136;2872;2222;2.87;2.22
+Claro;Quindio, Colombia;;Dec 2020;8121;2290;all;N/A;mean;2290;38;40955;9279;40.96;9.28
+Claro;Risaralda, Colombia;;Dec 2020;25383;6805;all;N/A;mean;6805;33;41746;9285;41.75;9.29
+Claro;San Andrés and Providencia, Colombia;;Dec 2020;4;2;all;N/A;mean;2;67;1300;2709;1.30;2.71
+Claro;Santander Department, Colombia;;Dec 2020;49251;12792;all;N/A;mean;12792;30;45250;9844;45.25;9.84
+Claro;Sucre, Colombia;;Dec 2020;1347;405;all;N/A;mean;405;31;42330;14753;42.33;14.75
+Claro;Tolima, Colombia;;Dec 2020;11255;3650;all;N/A;mean;3650;33;39193;9808;39.19;9.81
+Claro;Valle del Cauca, Colombia;;Dec 2020;96743;29024;all;N/A;mean;29024;30;44820;10440;44.82;10.44
+Claro;Vaupes, Colombia;;Dec 2020;1;1;all;N/A;mean;1;0;53492;27995;53.49;28.00
+Claro;Guaviare, Colombia;;Dec 2020;1;1;all;N/A;mean;1;63;204;1877;0.20;1.88

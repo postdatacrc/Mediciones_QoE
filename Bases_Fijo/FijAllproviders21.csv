@@ -1,0 +1,644 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Amazonas, Colombia;;jun-20;9;4;all;N/A;mean;4;342;881;651;0.88;0.65
+All Providers Combined;Antioquia, Colombia;;jun-20;447302;115590;all;N/A;mean;115590;34;32171;9546;32.17;9.55
+All Providers Combined;Arauca, Colombia;;jun-20;3466;710;all;N/A;mean;710;41;6463;4768;6.46;4.77
+All Providers Combined;Atlantico, Colombia;;jun-20;147323;38156;all;N/A;mean;38156;40;32956;17397;32.96;17.40
+All Providers Combined;Bogota, Colombia;;jun-20;1432055;340597;all;N/A;mean;340597;27;37137;17687;37.14;17.69
+All Providers Combined;Bolivar, Colombia;;jun-20;71676;16533;all;N/A;mean;16533;41;34567;24163;34.57;24.16
+All Providers Combined;Boyaca, Colombia;;jun-20;42864;9757;all;N/A;mean;9757;40;20740;9527;20.74;9.53
+All Providers Combined;Caldas, Colombia;;jun-20;48671;11305;all;N/A;mean;11305;35;27003;8428;27.00;8.43
+All Providers Combined;Caquetá, Colombia;;jun-20;8842;1776;all;N/A;mean;1776;38;21190;11673;21.19;11.67
+All Providers Combined;Casanare, Colombia;;jun-20;15333;3479;all;N/A;mean;3479;40;21500;6677;21.50;6.68
+All Providers Combined;Cauca Department, Colombia;;jun-20;49459;11396;all;N/A;mean;11396;45;20547;9554;20.55;9.55
+All Providers Combined;Cesar, Colombia;;jun-20;38189;7833;all;N/A;mean;7833;50;27511;15787;27.51;15.79
+All Providers Combined;Choco, Colombia;;jun-20;1944;451;all;N/A;mean;451;79;11472;5827;11.47;5.83
+All Providers Combined;Cordoba, Colombia;;jun-20;28175;6924;all;N/A;mean;6924;48;21523;12528;21.52;12.53
+All Providers Combined;Cundinamarca, Colombia;;jun-20;256409;62812;all;N/A;mean;62812;33;30698;17106;30.70;17.11
+All Providers Combined;Guainia, Colombia;;jun-20;4;1;all;N/A;mean;1;50;36005;5780;36.01;5.78
+All Providers Combined;Huila, Colombia;;jun-20;46802;11562;all;N/A;mean;11562;47;21292;13479;21.29;13.48
+All Providers Combined;La Guajira, Colombia;;jun-20;9395;1915;all;N/A;mean;1915;67;21113;6004;21.11;6.00
+All Providers Combined;Magdalena, Colombia;;jun-20;40798;10577;all;N/A;mean;10577;44;28147;14801;28.15;14.80
+All Providers Combined;Meta, Colombia;;jun-20;42843;9801;all;N/A;mean;9801;34;27595;13467;27.60;13.47
+All Providers Combined;Narino, Colombia;;jun-20;41582;8853;all;N/A;mean;8853;52;19483;8944;19.48;8.94
+All Providers Combined;North Santander, Colombia;;jun-20;62672;16894;all;N/A;mean;16894;45;34389;26228;34.39;26.23
+All Providers Combined;Putumayo, Colombia;;jun-20;5076;1028;all;N/A;mean;1028;54;11063;9804;11.06;9.80
+All Providers Combined;Quindio, Colombia;;jun-20;27075;6561;all;N/A;mean;6561;39;25419;6142;25.42;6.14
+All Providers Combined;Risaralda, Colombia;;jun-20;80851;18265;all;N/A;mean;18265;38;26774;8091;26.77;8.09
+All Providers Combined;San Andrés and Providencia, Colombia;;jun-20;1158;184;all;N/A;mean;184;119;3709;4272;3.71;4.27
+All Providers Combined;Santander Department, Colombia;;jun-20;173437;40687;all;N/A;mean;40687;42;34395;21912;34.40;21.91
+All Providers Combined;Sucre, Colombia;;jun-20;14362;3503;all;N/A;mean;3503;51;23191;15765;23.19;15.77
+All Providers Combined;Tolima, Colombia;;jun-20;57594;14229;all;N/A;mean;14229;45;27712;18655;27.71;18.66
+All Providers Combined;Valle del Cauca, Colombia;;jun-20;289212;73077;all;N/A;mean;73077;38;34764;22640;34.76;22.64
+All Providers Combined;Vaupes, Colombia;;jun-20;1;1;all;N/A;mean;1;17;3625;14483;3.63;14.48
+All Providers Combined;Vichada, Colombia;;jun-20;2;2;all;N/A;mean;2;69;382;620;0.38;0.62
+All Providers Combined;Guaviare, Colombia;;jun-20;1051;135;all;N/A;mean;135;58;5402;5177;5.40;5.18
+All Providers Combined;Amazonas, Colombia;;jul-20;43;11;all;N/A;mean;11;333;1028;933;1.03;0.93
+All Providers Combined;Antioquia, Colombia;;jul-20;497695;129118;all;N/A;mean;129118;34;33543;9891;33.54;9.89
+All Providers Combined;Arauca, Colombia;;jul-20;3458;690;all;N/A;mean;690;50;7679;5782;7.68;5.78
+All Providers Combined;Atlantico, Colombia;;jul-20;156538;41326;all;N/A;mean;41326;40;34338;17159;34.34;17.16
+All Providers Combined;Bogota, Colombia;;jul-20;1421569;352721;all;N/A;mean;352721;25;39744;18134;39.74;18.13
+All Providers Combined;Bolivar, Colombia;;jul-20;77547;17692;all;N/A;mean;17692;44;33802;22732;33.80;22.73
+All Providers Combined;Boyaca, Colombia;;jul-20;47819;11135;all;N/A;mean;11135;39;21250;10209;21.25;10.21
+All Providers Combined;Caldas, Colombia;;jul-20;56876;12691;all;N/A;mean;12691;34;26941;8205;26.94;8.21
+All Providers Combined;Caquetá, Colombia;;jul-20;12170;2001;all;N/A;mean;2001;42;18032;10432;18.03;10.43
+All Providers Combined;Casanare, Colombia;;jul-20;15333;3633;all;N/A;mean;3633;35;24439;7677;24.44;7.68
+All Providers Combined;Cauca Department, Colombia;;jul-20;49369;11613;all;N/A;mean;11613;45;23206;11052;23.21;11.05
+All Providers Combined;Cesar, Colombia;;jul-20;32793;7985;all;N/A;mean;7985;50;28847;15519;28.85;15.52
+All Providers Combined;Choco, Colombia;;jul-20;2213;502;all;N/A;mean;502;60;11128;6441;11.13;6.44
+All Providers Combined;Cordoba, Colombia;;jul-20;34359;8007;all;N/A;mean;8007;55;22670;14469;22.67;14.47
+All Providers Combined;Cundinamarca, Colombia;;jul-20;254193;65768;all;N/A;mean;65768;34;33446;17173;33.45;17.17
+All Providers Combined;Huila, Colombia;;jul-20;48319;12397;all;N/A;mean;12397;47;23004;13786;23.00;13.79
+All Providers Combined;La Guajira, Colombia;;jul-20;10076;2153;all;N/A;mean;2153;69;21177;6884;21.18;6.88
+All Providers Combined;Magdalena, Colombia;;jul-20;37587;9301;all;N/A;mean;9301;48;28613;17263;28.61;17.26
+All Providers Combined;Meta, Colombia;;jul-20;46537;10552;all;N/A;mean;10552;33;29561;13762;29.56;13.76
+All Providers Combined;Narino, Colombia;;jul-20;44089;9518;all;N/A;mean;9518;49;20874;9981;20.87;9.98
+All Providers Combined;North Santander, Colombia;;jul-20;62179;16589;all;N/A;mean;16589;52;33968;23525;33.97;23.53
+All Providers Combined;Putumayo, Colombia;;jul-20;4445;899;all;N/A;mean;899;59;11654;10166;11.65;10.17
+All Providers Combined;Quindio, Colombia;;jul-20;30731;7071;all;N/A;mean;7071;38;25995;5897;26.00;5.90
+All Providers Combined;Risaralda, Colombia;;jul-20;90343;21069;all;N/A;mean;21069;38;27797;8180;27.80;8.18
+All Providers Combined;San Andrés and Providencia, Colombia;;jul-20;1001;196;all;N/A;mean;196;98;4572;6146;4.57;6.15
+All Providers Combined;Santander Department, Colombia;;jul-20;191518;44794;all;N/A;mean;44794;44;36313;22380;36.31;22.38
+All Providers Combined;Sucre, Colombia;;jul-20;16227;3744;all;N/A;mean;3744;75;21475;13381;21.48;13.38
+All Providers Combined;Tolima, Colombia;;jul-20;58960;14708;all;N/A;mean;14708;41;28975;18105;28.98;18.11
+All Providers Combined;Valle del Cauca, Colombia;;jul-20;282627;74626;all;N/A;mean;74626;36;37619;22440;37.62;22.44
+All Providers Combined;Vaupes, Colombia;;jul-20;8;3;all;N/A;mean;3;20;21924;11915;21.92;11.92
+All Providers Combined;Vichada, Colombia;;jul-20;2;2;all;N/A;mean;2;44;24376;21424;24.38;21.42
+All Providers Combined;Guaviare, Colombia;;jul-20;936;171;all;N/A;mean;171;52;12420;11980;12.42;11.98
+All Providers Combined;Antioquia, Colombia;;Aug 2020;499645;128339;all;N/A;mean;128339;34;33997;10122;34.00;10.12
+All Providers Combined;Arauca, Colombia;;Aug 2020;2463;541;all;N/A;mean;541;68;7368;6449;7.37;6.45
+All Providers Combined;Atlantico, Colombia;;Aug 2020;146134;39244;all;N/A;mean;39244;40;36310;19137;36.31;19.14
+All Providers Combined;Bogota, Colombia;;Aug 2020;1300658;330519;all;N/A;mean;330519;24;41483;18124;41.48;18.12
+All Providers Combined;Bolivar, Colombia;;Aug 2020;72395;17753;all;N/A;mean;17753;39;35389;23239;35.39;23.24
+All Providers Combined;Boyaca, Colombia;;Aug 2020;51802;11689;all;N/A;mean;11689;39;22107;9421;22.11;9.42
+All Providers Combined;Caldas, Colombia;;Aug 2020;59496;12883;all;N/A;mean;12883;34;27260;6942;27.26;6.94
+All Providers Combined;Caquetá, Colombia;;Aug 2020;14185;2118;all;N/A;mean;2118;42;19030;10620;19.03;10.62
+All Providers Combined;Casanare, Colombia;;Aug 2020;14233;3401;all;N/A;mean;3401;34;25532;6805;25.53;6.81
+All Providers Combined;Cauca Department, Colombia;;Aug 2020;48903;11486;all;N/A;mean;11486;42;24422;10935;24.42;10.94
+All Providers Combined;Cesar, Colombia;;Aug 2020;33242;7950;all;N/A;mean;7950;48;29695;16695;29.70;16.70
+All Providers Combined;Choco, Colombia;;Aug 2020;1879;552;all;N/A;mean;552;82;11297;4853;11.30;4.85
+All Providers Combined;Cordoba, Colombia;;Aug 2020;39258;9092;all;N/A;mean;9092;46;26369;18983;26.37;18.98
+All Providers Combined;Cundinamarca, Colombia;;Aug 2020;232773;59858;all;N/A;mean;59858;33;34113;15786;34.11;15.79
+All Providers Combined;Guainia, Colombia;;Aug 2020;3;2;all;N/A;mean;2;56;4051;2208;4.05;2.21
+All Providers Combined;Huila, Colombia;;Aug 2020;52258;13599;all;N/A;mean;13599;43;24635;13201;24.64;13.20
+All Providers Combined;La Guajira, Colombia;;Aug 2020;8610;1997;all;N/A;mean;1997;61;23817;7217;23.82;7.22
+All Providers Combined;Magdalena, Colombia;;Aug 2020;51494;14191;all;N/A;mean;14191;43;32017;14876;32.02;14.88
+All Providers Combined;Meta, Colombia;;Aug 2020;49892;11026;all;N/A;mean;11026;32;30374;13666;30.37;13.67
+All Providers Combined;Narino, Colombia;;Aug 2020;40401;9349;all;N/A;mean;9349;49;21657;9601;21.66;9.60
+All Providers Combined;North Santander, Colombia;;Aug 2020;65535;16907;all;N/A;mean;16907;57;35548;22314;35.55;22.31
+All Providers Combined;Putumayo, Colombia;;Aug 2020;3877;742;all;N/A;mean;742;58;12195;9867;12.20;9.87
+All Providers Combined;Quindio, Colombia;;Aug 2020;28473;6657;all;N/A;mean;6657;37;28103;6163;28.10;6.16
+All Providers Combined;Risaralda, Colombia;;Aug 2020;96933;23217;all;N/A;mean;23217;37;27412;7527;27.41;7.53
+All Providers Combined;San Andrés and Providencia, Colombia;;Aug 2020;842;183;all;N/A;mean;183;81;9623;10937;9.62;10.94
+All Providers Combined;Santander Department, Colombia;;Aug 2020;210842;48441;all;N/A;mean;48441;39;38040;22461;38.04;22.46
+All Providers Combined;Sucre, Colombia;;Aug 2020;14496;3564;all;N/A;mean;3564;49;21714;10432;21.71;10.43
+All Providers Combined;Tolima, Colombia;;Aug 2020;52242;14359;all;N/A;mean;14359;40;29666;17911;29.67;17.91
+All Providers Combined;Valle del Cauca, Colombia;;Aug 2020;289948;76752;all;N/A;mean;76752;34;38807;22407;38.81;22.41
+All Providers Combined;Vichada, Colombia;;Aug 2020;5;4;all;N/A;mean;4;75;3540;2867;3.54;2.87
+All Providers Combined;Guaviare, Colombia;;Aug 2020;473;96;all;N/A;mean;96;43;9415;4637;9.42;4.64
+All Providers Combined;Amazonas, Colombia;;sep-20;11;7;all;N/A;mean;7;214;14091;8622;14.09;8.62
+All Providers Combined;Antioquia, Colombia;;sep-20;430979;118194;all;N/A;mean;118194;30;36838;11615;36.84;11.62
+All Providers Combined;Arauca, Colombia;;sep-20;1802;386;all;N/A;mean;386;71;8386;6696;8.39;6.70
+All Providers Combined;Atlantico, Colombia;;sep-20;134819;36793;all;N/A;mean;36793;39;35651;20517;35.65;20.52
+All Providers Combined;Bogota, Colombia;;sep-20;1050507;288536;all;N/A;mean;288536;22;44363;19861;44.36;19.86
+All Providers Combined;Bolivar, Colombia;;sep-20;64800;16381;all;N/A;mean;16381;35;36223;23858;36.22;23.86
+All Providers Combined;Boyaca, Colombia;;sep-20;46941;10795;all;N/A;mean;10795;34;24113;10536;24.11;10.54
+All Providers Combined;Caldas, Colombia;;sep-20;56182;13107;all;N/A;mean;13107;32;30657;8072;30.66;8.07
+All Providers Combined;Caquetá, Colombia;;sep-20;7297;1644;all;N/A;mean;1644;46;24841;11571;24.84;11.57
+All Providers Combined;Casanare, Colombia;;sep-20;14871;3212;all;N/A;mean;3212;34;26403;7069;26.40;7.07
+All Providers Combined;Cauca Department, Colombia;;sep-20;54730;12235;all;N/A;mean;12235;41;27001;12178;27.00;12.18
+All Providers Combined;Cesar, Colombia;;sep-20;39454;8543;all;N/A;mean;8543;47;29559;16690;29.56;16.69
+All Providers Combined;Choco, Colombia;;sep-20;1568;466;all;N/A;mean;466;83;12511;8324;12.51;8.32
+All Providers Combined;Cordoba, Colombia;;sep-20;37387;9236;all;N/A;mean;9236;42;29209;18269;29.21;18.27
+All Providers Combined;Cundinamarca, Colombia;;sep-20;190375;51757;all;N/A;mean;51757;28;36466;16965;36.47;16.97
+All Providers Combined;Guainia, Colombia;;sep-20;10;5;all;N/A;mean;5;39;22532;4919;22.53;4.92
+All Providers Combined;Huila, Colombia;;sep-20;48093;12905;all;N/A;mean;12905;42;25668;15357;25.67;15.36
+All Providers Combined;La Guajira, Colombia;;sep-20;8378;2064;all;N/A;mean;2064;54;25364;7892;25.36;7.89
+All Providers Combined;Magdalena, Colombia;;sep-20;58555;16142;all;N/A;mean;16142;38;35161;13684;35.16;13.68
+All Providers Combined;Meta, Colombia;;sep-20;40290;9851;all;N/A;mean;9851;29;32007;14650;32.01;14.65
+All Providers Combined;Narino, Colombia;;sep-20;37626;9328;all;N/A;mean;9328;46;25271;12314;25.27;12.31
+All Providers Combined;North Santander, Colombia;;sep-20;60748;16440;all;N/A;mean;16440;52;36190;25718;36.19;25.72
+All Providers Combined;Putumayo, Colombia;;sep-20;3561;775;all;N/A;mean;775;53;11833;11216;11.83;11.22
+All Providers Combined;Quindio, Colombia;;sep-20;29778;6942;all;N/A;mean;6942;38;28670;6569;28.67;6.57
+All Providers Combined;Risaralda, Colombia;;sep-20;94014;23470;all;N/A;mean;23470;36;30861;9547;30.86;9.55
+All Providers Combined;San Andrés and Providencia, Colombia;;sep-20;386;117;all;N/A;mean;117;75;5235;6421;5.24;6.42
+All Providers Combined;Santander Department, Colombia;;sep-20;204680;49396;all;N/A;mean;49396;38;39676;23693;39.68;23.69
+All Providers Combined;Sucre, Colombia;;sep-20;13785;3790;all;N/A;mean;3790;43;20865;7638;20.87;7.64
+All Providers Combined;Tolima, Colombia;;sep-20;48248;13170;all;N/A;mean;13170;45;31720;19386;31.72;19.39
+All Providers Combined;Valle del Cauca, Colombia;;sep-20;302165;77619;all;N/A;mean;77619;34;41166;23756;41.17;23.76
+All Providers Combined;Vichada, Colombia;;sep-20;14;6;all;N/A;mean;6;63;2051;2034;2.05;2.03
+All Providers Combined;Guaviare, Colombia;;sep-20;475;65;all;N/A;mean;65;33;9419;5452;9.42;5.45
+All Providers Combined;Amazonas, Colombia;;oct-20;33;19;all;N/A;mean;19;266;2116;2973;2.12;2.97
+All Providers Combined;Antioquia, Colombia;;oct-20;403316;115255;all;N/A;mean;115255;30;38048;12669;38.05;12.67
+All Providers Combined;Arauca, Colombia;;oct-20;1444;365;all;N/A;mean;365;75;7978;5708;7.98;5.71
+All Providers Combined;Atlantico, Colombia;;oct-20;115394;34275;all;N/A;mean;34275;39;37831;20540;37.83;20.54
+All Providers Combined;Bogota, Colombia;;oct-20;994579;283301;all;N/A;mean;283301;23;46320;20532;46.32;20.53
+All Providers Combined;Bolivar, Colombia;;oct-20;61850;15799;all;N/A;mean;15799;38;35296;21415;35.30;21.42
+All Providers Combined;Boyaca, Colombia;;oct-20;42699;10455;all;N/A;mean;10455;34;25169;10697;25.17;10.70
+All Providers Combined;Caldas, Colombia;;oct-20;62342;13995;all;N/A;mean;13995;40;29246;8405;29.25;8.41
+All Providers Combined;Caquetá, Colombia;;oct-20;7158;1577;all;N/A;mean;1577;42;21947;11322;21.95;11.32
+All Providers Combined;Casanare, Colombia;;oct-20;13196;3143;all;N/A;mean;3143;32;26734;6987;26.73;6.99
+All Providers Combined;Cauca Department, Colombia;;oct-20;44907;11022;all;N/A;mean;11022;41;26751;11577;26.75;11.58
+All Providers Combined;Cesar, Colombia;;oct-20;35056;7809;all;N/A;mean;7809;45;30149;16686;30.15;16.69
+All Providers Combined;Choco, Colombia;;oct-20;2174;486;all;N/A;mean;486;86;12629;8502;12.63;8.50
+All Providers Combined;Cordoba, Colombia;;oct-20;34115;8484;all;N/A;mean;8484;42;27744;16373;27.74;16.37
+All Providers Combined;Cundinamarca, Colombia;;oct-20;182701;52730;all;N/A;mean;52730;29;38174;18257;38.17;18.26
+All Providers Combined;Guainia, Colombia;;oct-20;1;1;all;N/A;mean;1;65;51037;8231;51.04;8.23
+All Providers Combined;Huila, Colombia;;oct-20;45626;12186;all;N/A;mean;12186;42;25565;14221;25.57;14.22
+All Providers Combined;La Guajira, Colombia;;oct-20;7818;2177;all;N/A;mean;2177;56;25066;9192;25.07;9.19
+All Providers Combined;Magdalena, Colombia;;oct-20;52577;15442;all;N/A;mean;15442;39;36590;14016;36.59;14.02
+All Providers Combined;Meta, Colombia;;oct-20;37044;9814;all;N/A;mean;9814;30;32608;14009;32.61;14.01
+All Providers Combined;Narino, Colombia;;oct-20;37893;9692;all;N/A;mean;9692;44;28473;14081;28.47;14.08
+All Providers Combined;North Santander, Colombia;;oct-20;55387;15227;all;N/A;mean;15227;48;37747;25599;37.75;25.60
+All Providers Combined;Putumayo, Colombia;;oct-20;4610;949;all;N/A;mean;949;45;13321;11228;13.32;11.23
+All Providers Combined;Quindio, Colombia;;oct-20;35685;7761;all;N/A;mean;7761;53;28368;7002;28.37;7.00
+All Providers Combined;Risaralda, Colombia;;oct-20;90870;23220;all;N/A;mean;23220;36;30780;9238;30.78;9.24
+All Providers Combined;San Andrés and Providencia, Colombia;;oct-20;741;164;all;N/A;mean;164;77;4914;6443;4.91;6.44
+All Providers Combined;Santander Department, Colombia;;oct-20;189815;46007;all;N/A;mean;46007;37;40501;22922;40.50;22.92
+All Providers Combined;Sucre, Colombia;;oct-20;14233;3912;all;N/A;mean;3912;42;21175;7257;21.18;7.26
+All Providers Combined;Tolima, Colombia;;oct-20;49023;13423;all;N/A;mean;13423;52;33110;19700;33.11;19.70
+All Providers Combined;Valle del Cauca, Colombia;;oct-20;264927;71718;all;N/A;mean;71718;32;42886;23085;42.89;23.09
+All Providers Combined;Vichada, Colombia;;oct-20;11;7;all;N/A;mean;7;44;4428;2770;4.43;2.77
+All Providers Combined;Guaviare, Colombia;;oct-20;492;87;all;N/A;mean;87;33;15249;21272;15.25;21.27
+All Providers Combined;Antioquia, Colombia;;nov-20;372265;107188;all;N/A;mean;107188;31;41125;14103;41.13;14.10
+All Providers Combined;Arauca, Colombia;;nov-20;1691;406;all;N/A;mean;406;69;10515;6387;10.52;6.39
+All Providers Combined;Atlantico, Colombia;;nov-20;104252;31269;all;N/A;mean;31269;40;38995;21045;39.00;21.05
+All Providers Combined;Bogota, Colombia;;nov-20;950270;276124;all;N/A;mean;276124;23;49645;22431;49.65;22.43
+All Providers Combined;Bolivar, Colombia;;nov-20;53134;14488;all;N/A;mean;14488;44;36184;21796;36.18;21.80
+All Providers Combined;Boyaca, Colombia;;nov-20;38932;9793;all;N/A;mean;9793;36;25050;10277;25.05;10.28
+All Providers Combined;Caldas, Colombia;;nov-20;67568;14088;all;N/A;mean;14088;42;30968;8834;30.97;8.83
+All Providers Combined;Caquetá, Colombia;;nov-20;6847;1634;all;N/A;mean;1634;43;25411;14305;25.41;14.31
+All Providers Combined;Casanare, Colombia;;nov-20;11653;3052;all;N/A;mean;3052;33;28968;7650;28.97;7.65
+All Providers Combined;Cauca Department, Colombia;;nov-20;38888;10189;all;N/A;mean;10189;40;26979;11236;26.98;11.24
+All Providers Combined;Cesar, Colombia;;nov-20;28267;7138;all;N/A;mean;7138;48;33390;18357;33.39;18.36
+All Providers Combined;Choco, Colombia;;nov-20;2007;532;all;N/A;mean;532;76;14281;8989;14.28;8.99
+All Providers Combined;Cordoba, Colombia;;nov-20;33048;8129;all;N/A;mean;8129;47;28556;17185;28.56;17.19
+All Providers Combined;Cundinamarca, Colombia;;nov-20;165100;48298;all;N/A;mean;48298;29;40561;19464;40.56;19.46
+All Providers Combined;Guainia, Colombia;;nov-20;7;2;all;N/A;mean;2;80;1173;836;1.17;0.84
+All Providers Combined;Huila, Colombia;;nov-20;43390;11297;all;N/A;mean;11297;44;26301;14196;26.30;14.20
+All Providers Combined;La Guajira, Colombia;;nov-20;8430;2186;all;N/A;mean;2186;57;25666;10333;25.67;10.33
+All Providers Combined;Magdalena, Colombia;;nov-20;47664;14515;all;N/A;mean;14515;41;36597;14141;36.60;14.14
+All Providers Combined;Meta, Colombia;;nov-20;36511;9502;all;N/A;mean;9502;33;36019;16502;36.02;16.50
+All Providers Combined;Narino, Colombia;;nov-20;35003;9074;all;N/A;mean;9074;43;30400;17448;30.40;17.45
+All Providers Combined;North Santander, Colombia;;nov-20;50550;13967;all;N/A;mean;13967;54;39863;25625;39.86;25.63
+All Providers Combined;Putumayo, Colombia;;nov-20;4580;1016;all;N/A;mean;1016;40;17449;18961;17.45;18.96
+All Providers Combined;Quindio, Colombia;;nov-20;31926;7200;all;N/A;mean;7200;45;30499;6891;30.50;6.89
+All Providers Combined;Risaralda, Colombia;;nov-20;82285;21529;all;N/A;mean;21529;38;32054;9980;32.05;9.98
+All Providers Combined;San Andrés and Providencia, Colombia;;nov-20;333;105;all;N/A;mean;105;78;4485;6946;4.49;6.95
+All Providers Combined;Santander Department, Colombia;;nov-20;190154;45418;all;N/A;mean;45418;38;42760;24069;42.76;24.07
+All Providers Combined;Sucre, Colombia;;nov-20;12550;3400;all;N/A;mean;3400;48;22371;9284;22.37;9.28
+All Providers Combined;Tolima, Colombia;;nov-20;42642;11732;all;N/A;mean;11732;46;34439;21025;34.44;21.03
+All Providers Combined;Valle del Cauca, Colombia;;nov-20;243659;67434;all;N/A;mean;67434;33;45079;25728;45.08;25.73
+All Providers Combined;Vichada, Colombia;;nov-20;20;10;all;N/A;mean;10;66;5959;1778;5.96;1.78
+All Providers Combined;Guaviare, Colombia;;nov-20;604;131;all;N/A;mean;131;33;12206;18190;12.21;18.19
+All Providers Combined;Amazonas, Colombia;;Dec 2020;5;4;all;N/A;mean;4;69;424;409;0.42;0.41
+All Providers Combined;Antioquia, Colombia;;Dec 2020;322837;91518;all;N/A;mean;91518;31;43294;15133;43.29;15.13
+All Providers Combined;Arauca, Colombia;;Dec 2020;1426;371;all;N/A;mean;371;54;16111;8521;16.11;8.52
+All Providers Combined;Atlantico, Colombia;;Dec 2020;98684;28061;all;N/A;mean;28061;38;43107;23392;43.11;23.39
+All Providers Combined;Bogota, Colombia;;Dec 2020;788520;228759;all;N/A;mean;228759;23;51917;23482;51.92;23.48
+All Providers Combined;Bolivar, Colombia;;Dec 2020;47414;13153;all;N/A;mean;13153;41;40354;25607;40.35;25.61
+All Providers Combined;Boyaca, Colombia;;Dec 2020;33394;8817;all;N/A;mean;8817;37;25794;11867;25.79;11.87
+All Providers Combined;Caldas, Colombia;;Dec 2020;40833;9965;all;N/A;mean;9965;34;34907;9577;34.91;9.58
+All Providers Combined;Caquetá, Colombia;;Dec 2020;5458;1368;all;N/A;mean;1368;43;26479;12087;26.48;12.09
+All Providers Combined;Casanare, Colombia;;Dec 2020;9745;2645;all;N/A;mean;2645;34;28569;8665;28.57;8.67
+All Providers Combined;Cauca Department, Colombia;;Dec 2020;31954;8830;all;N/A;mean;8830;39;27897;12616;27.90;12.62
+All Providers Combined;Cesar, Colombia;;Dec 2020;22692;5931;all;N/A;mean;5931;44;34000;18519;34.00;18.52
+All Providers Combined;Choco, Colombia;;Dec 2020;2650;564;all;N/A;mean;564;67;14239;10393;14.24;10.39
+All Providers Combined;Cordoba, Colombia;;Dec 2020;27112;7063;all;N/A;mean;7063;46;30564;18183;30.56;18.18
+All Providers Combined;Cundinamarca, Colombia;;Dec 2020;149686;42630;all;N/A;mean;42630;29;41568;20216;41.57;20.22
+All Providers Combined;Guainia, Colombia;;Dec 2020;14;6;all;N/A;mean;6;71;15128;4217;15.13;4.22
+All Providers Combined;Huila, Colombia;;Dec 2020;40365;10815;all;N/A;mean;10815;46;26964;15450;26.96;15.45
+All Providers Combined;La Guajira, Colombia;;Dec 2020;5538;1688;all;N/A;mean;1688;53;26935;9173;26.94;9.17
+All Providers Combined;Magdalena, Colombia;;Dec 2020;43346;13283;all;N/A;mean;13283;41;38870;15510;38.87;15.51
+All Providers Combined;Meta, Colombia;;Dec 2020;30372;7999;all;N/A;mean;7999;32;35536;15387;35.54;15.39
+All Providers Combined;Narino, Colombia;;Dec 2020;29798;7914;all;N/A;mean;7914;42;31793;17622;31.79;17.62
+All Providers Combined;North Santander, Colombia;;Dec 2020;44454;12227;all;N/A;mean;12227;51;40479;25862;40.48;25.86
+All Providers Combined;Putumayo, Colombia;;Dec 2020;4737;1007;all;N/A;mean;1007;45;12727;13498;12.73;13.50
+All Providers Combined;Quindio, Colombia;;Dec 2020;19809;5556;all;N/A;mean;5556;43;33428;8717;33.43;8.72
+All Providers Combined;Risaralda, Colombia;;Dec 2020;66465;17820;all;N/A;mean;17820;38;32967;10005;32.97;10.01
+All Providers Combined;San Andrés and Providencia, Colombia;;Dec 2020;395;121;all;N/A;mean;121;62;4057;5102;4.06;5.10
+All Providers Combined;Santander Department, Colombia;;Dec 2020;156388;37642;all;N/A;mean;37642;36;45467;26539;45.47;26.54
+All Providers Combined;Sucre, Colombia;;Dec 2020;8185;2526;all;N/A;mean;2526;41;28464;14140;28.46;14.14
+All Providers Combined;Tolima, Colombia;;Dec 2020;36203;10633;all;N/A;mean;10633;43;37790;24842;37.79;24.84
+All Providers Combined;Valle del Cauca, Colombia;;Dec 2020;228699;62145;all;N/A;mean;62145;33;46530;27818;46.53;27.82
+All Providers Combined;Vaupes, Colombia;;Dec 2020;1;1;all;N/A;mean;1;0;53492;27995;53.49;28.00
+All Providers Combined;Vichada, Colombia;;Dec 2020;4;2;all;N/A;mean;2;69;874;1435;0.87;1.44
+All Providers Combined;Guaviare, Colombia;;Dec 2020;505;109;all;N/A;mean;109;25;13747;17604;13.75;17.60
+All Providers Combined;Amazonas, Colombia;;Jan 2021;7;4;all;N/A;mean;4;87;271;290;0.27;0.29
+All Providers Combined;Antioquia, Colombia;;Jan 2021;399280;108809;all;N/A;mean;108809;30;44700;14002;44.70;14.00
+All Providers Combined;Arauca, Colombia;;Jan 2021;1705;454;all;N/A;mean;454;40;12158;9918;12.16;9.92
+All Providers Combined;Atlantico, Colombia;;Jan 2021;106184;31017;all;N/A;mean;31017;38;43589;23668;43.59;23.67
+All Providers Combined;Bogota, Colombia;;Jan 2021;1071329;293429;all;N/A;mean;293429;23;52631;20732;52.63;20.73
+All Providers Combined;Bolivar, Colombia;;Jan 2021;53527;14199;all;N/A;mean;14199;41;42079;25108;42.08;25.11
+All Providers Combined;Boyaca, Colombia;;Jan 2021;38952;9551;all;N/A;mean;9551;36;26522;10780;26.52;10.78
+All Providers Combined;Caldas, Colombia;;Jan 2021;48760;11304;all;N/A;mean;11304;39;34587;10110;34.59;10.11
+All Providers Combined;Caquetá, Colombia;;Jan 2021;6926;1698;all;N/A;mean;1698;42;29248;12411;29.25;12.41
+All Providers Combined;Casanare, Colombia;;Jan 2021;12636;3156;all;N/A;mean;3156;33;29094;7671;29.09;7.67
+All Providers Combined;Cauca Department, Colombia;;Jan 2021;38660;9921;all;N/A;mean;9921;42;29560;12170;29.56;12.17
+All Providers Combined;Cesar, Colombia;;Jan 2021;22355;5938;all;N/A;mean;5938;52;35401;20365;35.40;20.37
+All Providers Combined;Choco, Colombia;;Jan 2021;3410;809;all;N/A;mean;809;68;14341;10751;14.34;10.75
+All Providers Combined;Cordoba, Colombia;;Jan 2021;31127;8086;all;N/A;mean;8086;57;30756;19345;30.76;19.35
+All Providers Combined;Cundinamarca, Colombia;;Jan 2021;213708;58524;all;N/A;mean;58524;26;42425;16113;42.43;16.11
+All Providers Combined;Guainia, Colombia;;Jan 2021;21;10;all;N/A;mean;10;80;19773;5385;19.77;5.39
+All Providers Combined;Huila, Colombia;;Jan 2021;46133;11789;all;N/A;mean;11789;41;25575;14364;25.58;14.36
+All Providers Combined;La Guajira, Colombia;;Jan 2021;7289;1972;all;N/A;mean;1972;57;26603;8877;26.60;8.88
+All Providers Combined;Magdalena, Colombia;;Jan 2021;53552;15793;all;N/A;mean;15793;42;38639;13868;38.64;13.87
+All Providers Combined;Meta, Colombia;;Jan 2021;38980;9508;all;N/A;mean;9508;31;34826;13580;34.83;13.58
+All Providers Combined;Narino, Colombia;;Jan 2021;36269;8686;all;N/A;mean;8686;43;31074;14399;31.07;14.40
+All Providers Combined;North Santander, Colombia;;Jan 2021;52330;13707;all;N/A;mean;13707;51;42601;23872;42.60;23.87
+All Providers Combined;Putumayo, Colombia;;Jan 2021;4839;1162;all;N/A;mean;1162;44;14808;11793;14.81;11.79
+All Providers Combined;Quindio, Colombia;;Jan 2021;25356;6538;all;N/A;mean;6538;43;32776;8503;32.78;8.50
+All Providers Combined;Risaralda, Colombia;;Jan 2021;100460;25220;all;N/A;mean;25220;55;32491;9019;32.49;9.02
+All Providers Combined;San Andrés and Providencia, Colombia;;Jan 2021;420;142;all;N/A;mean;142;71;3578;3520;3.58;3.52
+All Providers Combined;Santander Department, Colombia;;Jan 2021;190681;45044;all;N/A;mean;45044;37;45350;24085;45.35;24.09
+All Providers Combined;Sucre, Colombia;;Jan 2021;14243;3520;all;N/A;mean;3520;106;25023;12753;25.02;12.75
+All Providers Combined;Tolima, Colombia;;Jan 2021;44980;12208;all;N/A;mean;12208;38;38934;20768;38.93;20.77
+All Providers Combined;Valle del Cauca, Colombia;;Jan 2021;263198;69038;all;N/A;mean;69038;32;44858;27398;44.86;27.40
+All Providers Combined;Vichada, Colombia;;Jan 2021;13;4;all;N/A;mean;4;58;1863;3108;1.86;3.11
+All Providers Combined;Guaviare, Colombia;;Jan 2021;509;100;all;N/A;mean;100;29;13125;12898;13.13;12.90
+All Providers Combined;Amazonas, Colombia;;feb-21;171;29;all;N/A;mean;29;298;877;631;0.88;0.63
+All Providers Combined;Antioquia, Colombia;;feb-21;446922;121675;all;N/A;mean;121675;32;45947;15581;45.95;15.58
+All Providers Combined;Arauca, Colombia;;feb-21;2895;644;all;N/A;mean;644;45;10300;7461;10.30;7.46
+All Providers Combined;Atlantico, Colombia;;feb-21;123454;34860;all;N/A;mean;34860;39;44113;23266;44.11;23.27
+All Providers Combined;Bogota, Colombia;;feb-21;1154764;325403;all;N/A;mean;325403;21;55385;23129;55.39;23.13
+All Providers Combined;Bolivar, Colombia;;feb-21;51878;13246;all;N/A;mean;13246;39;40247;23627;40.25;23.63
+All Providers Combined;Boyaca, Colombia;;feb-21;48661;11516;all;N/A;mean;11516;34;30388;14135;30.39;14.14
+All Providers Combined;Caldas, Colombia;;feb-21;56709;12966;all;N/A;mean;12966;35;35301;11114;35.30;11.11
+All Providers Combined;Caquetá, Colombia;;feb-21;7324;1837;all;N/A;mean;1837;49;29459;12559;29.46;12.56
+All Providers Combined;Casanare, Colombia;;feb-21;14709;3421;all;N/A;mean;3421;34;30070;8078;30.07;8.08
+All Providers Combined;Cauca Department, Colombia;;feb-21;42310;10720;all;N/A;mean;10720;43;32862;13521;32.86;13.52
+All Providers Combined;Cesar, Colombia;;feb-21;26987;6658;all;N/A;mean;6658;47;36969;20534;36.97;20.53
+All Providers Combined;Choco, Colombia;;feb-21;3950;928;all;N/A;mean;928;64;16298;10174;16.30;10.17
+All Providers Combined;Cordoba, Colombia;;feb-21;40533;9790;all;N/A;mean;9790;44;31403;23221;31.40;23.22
+All Providers Combined;Cundinamarca, Colombia;;feb-21;227750;64712;all;N/A;mean;64712;26;43446;16533;43.45;16.53
+All Providers Combined;Guainia, Colombia;;feb-21;30;9;all;N/A;mean;9;60;7225;3147;7.23;3.15
+All Providers Combined;Huila, Colombia;;feb-21;53471;13352;all;N/A;mean;13352;45;28414;15628;28.41;15.63
+All Providers Combined;La Guajira, Colombia;;feb-21;9054;2355;all;N/A;mean;2355;54;29869;8733;29.87;8.73
+All Providers Combined;Magdalena, Colombia;;feb-21;55441;16823;all;N/A;mean;16823;39;41825;14326;41.83;14.33
+All Providers Combined;Meta, Colombia;;feb-21;39729;10088;all;N/A;mean;10088;31;37374;14763;37.37;14.76
+All Providers Combined;Narino, Colombia;;feb-21;40691;10049;all;N/A;mean;10049;42;32824;16210;32.82;16.21
+All Providers Combined;North Santander, Colombia;;feb-21;55890;14650;all;N/A;mean;14650;57;42499;25345;42.50;25.35
+All Providers Combined;Putumayo, Colombia;;feb-21;5258;1272;all;N/A;mean;1272;46;14257;13929;14.26;13.93
+All Providers Combined;Quindio, Colombia;;feb-21;28509;6981;all;N/A;mean;6981;36;33788;8518;33.79;8.52
+All Providers Combined;Risaralda, Colombia;;feb-21;102045;25477;all;N/A;mean;25477;46;32648;9903;32.65;9.90
+All Providers Combined;San Andrés and Providencia, Colombia;;feb-21;455;166;all;N/A;mean;166;148;1844;1989;1.84;1.99
+All Providers Combined;Santander Department, Colombia;;feb-21;227176;52266;all;N/A;mean;52266;33;45958;24710;45.96;24.71
+All Providers Combined;Sucre, Colombia;;feb-21;15699;3936;all;N/A;mean;3936;56;27313;12302;27.31;12.30
+All Providers Combined;Tolima, Colombia;;feb-21;46425;12705;all;N/A;mean;12705;34;41843;23832;41.84;23.83
+All Providers Combined;Valle del Cauca, Colombia;;feb-21;263253;72700;all;N/A;mean;72700;35;47383;26500;47.38;26.50
+All Providers Combined;Vichada, Colombia;;feb-21;94;29;all;N/A;mean;29;213;1264;1366;1.26;1.37
+All Providers Combined;Guaviare, Colombia;;feb-21;228;60;all;N/A;mean;60;32;7202;5761;7.20;5.76
+All Providers Combined;Amazonas, Colombia;;mar-21;107;39;all;N/A;mean;39;217;1773;628;1.77;0.63
+All Providers Combined;Antioquia, Colombia;;mar-21;449847;124477;all;N/A;mean;124477;30;49700;17700;49.70;17.70
+All Providers Combined;Arauca, Colombia;;mar-21;2843;720;all;N/A;mean;720;41;11173;9624;11.17;9.62
+All Providers Combined;Atlantico, Colombia;;mar-21;123453;35160;all;N/A;mean;35160;39;46190;23900;46.19;23.90
+All Providers Combined;Bogota, Colombia;;mar-21;1126666;318372;all;N/A;mean;318372;20;59444;25930;59.44;25.93
+All Providers Combined;Bolivar, Colombia;;mar-21;45316;11872;all;N/A;mean;11872;39;42594;26082;42.59;26.08
+All Providers Combined;Boyaca, Colombia;;mar-21;49347;12135;all;N/A;mean;12135;35;32046;16199;32.05;16.20
+All Providers Combined;Caldas, Colombia;;mar-21;54811;12863;all;N/A;mean;12863;35;37482;12029;37.48;12.03
+All Providers Combined;Caquetá, Colombia;;mar-21;7609;1918;all;N/A;mean;1918;49;27407;11445;27.41;11.45
+All Providers Combined;Casanare, Colombia;;mar-21;15627;3600;all;N/A;mean;3600;32;32758;9802;32.76;9.80
+All Providers Combined;Cauca Department, Colombia;;mar-21;41928;10809;all;N/A;mean;10809;42;35528;14673;35.53;14.67
+All Providers Combined;Cesar, Colombia;;mar-21;29376;7687;all;N/A;mean;7687;46;38236;17220;38.24;17.22
+All Providers Combined;Choco, Colombia;;mar-21;4255;814;all;N/A;mean;814;65;13601;11525;13.60;11.53
+All Providers Combined;Cordoba, Colombia;;mar-21;32919;8894;all;N/A;mean;8894;48;33627;18935;33.63;18.94
+All Providers Combined;Cundinamarca, Colombia;;mar-21;207328;56983;all;N/A;mean;56983;26;45741;19381;45.74;19.38
+All Providers Combined;Guainia, Colombia;;mar-21;11;4;all;N/A;mean;4;61;32137;29987;32.14;29.99
+All Providers Combined;Huila, Colombia;;mar-21;50252;12761;all;N/A;mean;12761;47;29142;14727;29.14;14.73
+All Providers Combined;La Guajira, Colombia;;mar-21;8570;2337;all;N/A;mean;2337;52;31070;8752;31.07;8.75
+All Providers Combined;Magdalena, Colombia;;mar-21;59956;17499;all;N/A;mean;17499;38;45332;15838;45.33;15.84
+All Providers Combined;Meta, Colombia;;mar-21;41580;10748;all;N/A;mean;10748;28;43091;20115;43.09;20.12
+All Providers Combined;Narino, Colombia;;mar-21;43632;10707;all;N/A;mean;10707;42;32758;15296;32.76;15.30
+All Providers Combined;North Santander, Colombia;;mar-21;55023;14656;all;N/A;mean;14656;51;47217;27869;47.22;27.87
+All Providers Combined;Putumayo, Colombia;;mar-21;5908;1409;all;N/A;mean;1409;43;17514;15069;17.51;15.07
+All Providers Combined;Quindio, Colombia;;mar-21;30315;7925;all;N/A;mean;7925;36;34973;10052;34.97;10.05
+All Providers Combined;Risaralda, Colombia;;mar-21;91280;23412;all;N/A;mean;23412;34;36209;10954;36.21;10.95
+All Providers Combined;San Andrés and Providencia, Colombia;;mar-21;804;234;all;N/A;mean;234;146;2644;2363;2.64;2.36
+All Providers Combined;Santander Department, Colombia;;mar-21;201062;48635;all;N/A;mean;48635;33;50449;28386;50.45;28.39
+All Providers Combined;Sucre, Colombia;;mar-21;12013;3182;all;N/A;mean;3182;41;30572;14342;30.57;14.34
+All Providers Combined;Tolima, Colombia;;mar-21;46192;12644;all;N/A;mean;12644;31;46043;27204;46.04;27.20
+All Providers Combined;Valle del Cauca, Colombia;;mar-21;262167;73646;all;N/A;mean;73646;37;50035;26211;50.04;26.21
+All Providers Combined;Vichada, Colombia;;mar-21;142;45;all;N/A;mean;45;163;2098;1676;2.10;1.68
+All Providers Combined;Guaviare, Colombia;;mar-21;277;79;all;N/A;mean;79;34;9153;6846;9.15;6.85
+All Providers Combined;Amazonas, Colombia;;Apr 2021;8;6;all;N/A;mean;6;75;777;708;0.78;0.71
+All Providers Combined;Antioquia, Colombia;;Apr 2021;515215;135782;all;N/A;mean;135782;29;49838;16338;49.84;16.34
+All Providers Combined;Arauca, Colombia;;Apr 2021;2819;798;all;N/A;mean;798;38;12027;9419;12.03;9.42
+All Providers Combined;Atlantico, Colombia;;Apr 2021;143335;39428;all;N/A;mean;39428;38;48780;23826;48.78;23.83
+All Providers Combined;Bogota, Colombia;;Apr 2021;1244178;345938;all;N/A;mean;345938;20;63700;29631;63.70;29.63
+All Providers Combined;Bolivar, Colombia;;Apr 2021;44315;12310;all;N/A;mean;12310;37;44747;26622;44.75;26.62
+All Providers Combined;Boyaca, Colombia;;Apr 2021;51544;12413;all;N/A;mean;12413;35;36686;19152;36.69;19.15
+All Providers Combined;Caldas, Colombia;;Apr 2021;69522;14050;all;N/A;mean;14050;42;38073;11173;38.07;11.17
+All Providers Combined;Caquetá, Colombia;;Apr 2021;8065;1900;all;N/A;mean;1900;51;22348;10791;22.35;10.79
+All Providers Combined;Casanare, Colombia;;Apr 2021;14365;3398;all;N/A;mean;3398;31;33696;10637;33.70;10.64
+All Providers Combined;Cauca Department, Colombia;;Apr 2021;40887;10179;all;N/A;mean;10179;39;36819;15134;36.82;15.13
+All Providers Combined;Cesar, Colombia;;Apr 2021;30016;8019;all;N/A;mean;8019;46;42042;18602;42.04;18.60
+All Providers Combined;Choco, Colombia;;Apr 2021;3458;771;all;N/A;mean;771;62;13925;10338;13.93;10.34
+All Providers Combined;Cordoba, Colombia;;Apr 2021;33398;8931;all;N/A;mean;8931;45;36335;20168;36.34;20.17
+All Providers Combined;Cundinamarca, Colombia;;Apr 2021;213805;58748;all;N/A;mean;58748;26;48333;20706;48.33;20.71
+All Providers Combined;Guainia, Colombia;;Apr 2021;8;3;all;N/A;mean;3;62;31266;16017;31.27;16.02
+All Providers Combined;Huila, Colombia;;Apr 2021;43504;11780;all;N/A;mean;11780;46;29975;15409;29.98;15.41
+All Providers Combined;La Guajira, Colombia;;Apr 2021;8209;2293;all;N/A;mean;2293;52;32260;8591;32.26;8.59
+All Providers Combined;Magdalena, Colombia;;Apr 2021;53142;15656;all;N/A;mean;15656;38;45731;17269;45.73;17.27
+All Providers Combined;Meta, Colombia;;Apr 2021;38992;10326;all;N/A;mean;10326;26;42597;16769;42.60;16.77
+All Providers Combined;Narino, Colombia;;Apr 2021;44703;10822;all;N/A;mean;10822;43;36182;17200;36.18;17.20
+All Providers Combined;North Santander, Colombia;;Apr 2021;56236;15496;all;N/A;mean;15496;49;49603;26776;49.60;26.78
+All Providers Combined;Putumayo, Colombia;;Apr 2021;6155;1416;all;N/A;mean;1416;52;17343;15843;17.34;15.84
+All Providers Combined;Quindio, Colombia;;Apr 2021;28774;7861;all;N/A;mean;7861;34;36187;10045;36.19;10.05
+All Providers Combined;Risaralda, Colombia;;Apr 2021;84789;22677;all;N/A;mean;22677;34;38468;11068;38.47;11.07
+All Providers Combined;San Andrés and Providencia, Colombia;;Apr 2021;345;97;all;N/A;mean;97;39;3758;2069;3.76;2.07
+All Providers Combined;Santander Department, Colombia;;Apr 2021;194919;46347;all;N/A;mean;46347;35;52343;29496;52.34;29.50
+All Providers Combined;Sucre, Colombia;;Apr 2021;11764;3035;all;N/A;mean;3035;36;31526;11986;31.53;11.99
+All Providers Combined;Tolima, Colombia;;Apr 2021;44426;12517;all;N/A;mean;12517;31;46028;27503;46.03;27.50
+All Providers Combined;Valle del Cauca, Colombia;;Apr 2021;260663;73115;all;N/A;mean;73115;34;53438;28764;53.44;28.76
+All Providers Combined;Vaupes, Colombia;;Apr 2021;19;14;all;N/A;mean;14;48;32171;5431;32.17;5.43
+All Providers Combined;Vichada, Colombia;;Apr 2021;49;10;all;N/A;mean;10;78;3399;1934;3.40;1.93
+All Providers Combined;Guaviare, Colombia;;Apr 2021;456;116;all;N/A;mean;116;37;11137;11834;11.14;11.83
+All Providers Combined;Amazonas, Colombia;;may-21;15;4;all;N/A;mean;4;51;13166;16738;13.17;16.74
+All Providers Combined;Antioquia, Colombia;;may-21;496494;136556;all;N/A;mean;136556;26;54931;17883;54.93;17.88
+All Providers Combined;Arauca, Colombia;;may-21;3439;790;all;N/A;mean;790;42;10974;8774;10.97;8.77
+All Providers Combined;Atlantico, Colombia;;may-21;145704;40493;all;N/A;mean;40493;35;52482;23065;52.48;23.07
+All Providers Combined;Bogota, Colombia;;may-21;1157317;325340;all;N/A;mean;325340;20;66705;31379;66.71;31.38
+All Providers Combined;Bolivar, Colombia;;may-21;49682;13369;all;N/A;mean;13369;35;47450;23743;47.45;23.74
+All Providers Combined;Boyaca, Colombia;;may-21;55878;13347;all;N/A;mean;13347;37;38578;20388;38.58;20.39
+All Providers Combined;Caldas, Colombia;;may-21;61768;13133;all;N/A;mean;13133;36;43707;11690;43.71;11.69
+All Providers Combined;Caquetá, Colombia;;may-21;10705;2125;all;N/A;mean;2125;45;21428;12670;21.43;12.67
+All Providers Combined;Casanare, Colombia;;may-21;11811;3079;all;N/A;mean;3079;30;39056;10705;39.06;10.71
+All Providers Combined;Cauca Department, Colombia;;may-21;36773;8941;all;N/A;mean;8941;39;36844;13470;36.84;13.47
+All Providers Combined;Cesar, Colombia;;may-21;28995;7754;all;N/A;mean;7754;41;44604;18453;44.60;18.45
+All Providers Combined;Choco, Colombia;;may-21;4501;761;all;N/A;mean;761;63;19431;13759;19.43;13.76
+All Providers Combined;Cordoba, Colombia;;may-21;31053;8119;all;N/A;mean;8119;41;41547;21333;41.55;21.33
+All Providers Combined;Cundinamarca, Colombia;;may-21;198643;54502;all;N/A;mean;54502;24;49910;20147;49.91;20.15
+All Providers Combined;Guainia, Colombia;;may-21;3;2;all;N/A;mean;2;49;46806;45584;46.81;45.58
+All Providers Combined;Huila, Colombia;;may-21;47236;11976;all;N/A;mean;11976;42;34015;18546;34.02;18.55
+All Providers Combined;La Guajira, Colombia;;may-21;8525;2410;all;N/A;mean;2410;51;36862;9047;36.86;9.05
+All Providers Combined;Magdalena, Colombia;;may-21;36666;10727;all;N/A;mean;10727;41;43711;19933;43.71;19.93
+All Providers Combined;Meta, Colombia;;may-21;38686;9837;all;N/A;mean;9837;26;46487;18412;46.49;18.41
+All Providers Combined;Narino, Colombia;;may-21;40537;9866;all;N/A;mean;9866;41;37005;17624;37.01;17.62
+All Providers Combined;North Santander, Colombia;;may-21;54888;15211;all;N/A;mean;15211;47;53433;27868;53.43;27.87
+All Providers Combined;Putumayo, Colombia;;may-21;4861;1135;all;N/A;mean;1135;42;22015;20321;22.02;20.32
+All Providers Combined;Quindio, Colombia;;may-21;26804;6949;all;N/A;mean;6949;32;39988;11983;39.99;11.98
+All Providers Combined;Risaralda, Colombia;;may-21;114849;29051;all;N/A;mean;29051;37;37527;10393;37.53;10.39
+All Providers Combined;San Andrés and Providencia, Colombia;;may-21;616;109;all;N/A;mean;109;44;4835;4149;4.84;4.15
+All Providers Combined;Santander Department, Colombia;;may-21;191847;46575;all;N/A;mean;46575;34;57468;32053;57.47;32.05
+All Providers Combined;Sucre, Colombia;;may-21;11779;3231;all;N/A;mean;3231;38;34710;13719;34.71;13.72
+All Providers Combined;Tolima, Colombia;;may-21;45736;12305;all;N/A;mean;12305;31;48392;28540;48.39;28.54
+All Providers Combined;Valle del Cauca, Colombia;;may-21;262780;70445;all;N/A;mean;70445;36;55054;29456;55.05;29.46
+All Providers Combined;Vaupes, Colombia;;may-21;20;11;all;N/A;mean;11;47;38896;5157;38.90;5.16
+All Providers Combined;Vichada, Colombia;;may-21;14;4;all;N/A;mean;4;75;1708;2114;1.71;2.11
+All Providers Combined;Guaviare, Colombia;;may-21;679;149;all;N/A;mean;149;57;15473;12366;15.47;12.37
+All Providers Combined;Guainia, Colombia;;jun-21;;;all;N/A;mean;;;;;;
+All Providers Combined;Amazonas, Colombia;;jun-21;16;6;all;N/A;mean;6;63;2230;971;2.23;0.97
+All Providers Combined;Antioquia, Colombia;;jun-21;481711;134266;all;N/A;mean;134266;25;59717;19818;59.72;19.82
+All Providers Combined;Arauca, Colombia;;jun-21;3306;849;all;N/A;mean;849;49;14850;12656;14.85;12.66
+All Providers Combined;Atlantico, Colombia;;jun-21;131665;37867;all;N/A;mean;37867;35;57645;27248;57.65;27.25
+All Providers Combined;Bogota, Colombia;;jun-21;1001877;294339;all;N/A;mean;294339;19;72439;36543;72.44;36.54
+All Providers Combined;Bolivar, Colombia;;jun-21;45644;12478;all;N/A;mean;12478;36;52814;28761;52.81;28.76
+All Providers Combined;Boyaca, Colombia;;jun-21;57608;14266;all;N/A;mean;14266;35;41319;23311;41.32;23.31
+All Providers Combined;Caldas, Colombia;;jun-21;57549;14638;all;N/A;mean;14638;33;46527;12870;46.53;12.87
+All Providers Combined;Caquetá, Colombia;;jun-21;8914;2025;all;N/A;mean;2025;39;27897;12976;27.90;12.98
+All Providers Combined;Casanare, Colombia;;jun-21;13880;3381;all;N/A;mean;3381;31;37641;9830;37.64;9.83
+All Providers Combined;Cauca Department, Colombia;;jun-21;34896;9032;all;N/A;mean;9032;36;42872;14617;42.87;14.62
+All Providers Combined;Cesar, Colombia;;jun-21;30444;7426;all;N/A;mean;7426;45;47796;20982;47.80;20.98
+All Providers Combined;Choco, Colombia;;jun-21;3478;760;all;N/A;mean;760;76;18334;12253;18.33;12.25
+All Providers Combined;Cordoba, Colombia;;jun-21;29957;7938;all;N/A;mean;7938;43;42337;23417;42.34;23.42
+All Providers Combined;Cundinamarca, Colombia;;jun-21;191439;54786;all;N/A;mean;54786;23;55300;22205;55.30;22.21
+All Providers Combined;Huila, Colombia;;jun-21;49791;13263;all;N/A;mean;13263;37;40753;19962;40.75;19.96
+All Providers Combined;La Guajira, Colombia;;jun-21;8575;2308;all;N/A;mean;2308;54;39097;9355;39.10;9.36
+All Providers Combined;Magdalena, Colombia;;jun-21;36971;10271;all;N/A;mean;10271;46;42916;22743;42.92;22.74
+All Providers Combined;Meta, Colombia;;jun-21;36414;9592;all;N/A;mean;9592;25;49800;20616;49.80;20.62
+All Providers Combined;Narino, Colombia;;jun-21;42014;10487;all;N/A;mean;10487;38;40365;18604;40.37;18.60
+All Providers Combined;North Santander, Colombia;;jun-21;56472;14817;all;N/A;mean;14817;45;57363;28481;57.36;28.48
+All Providers Combined;Putumayo, Colombia;;jun-21;4675;1011;all;N/A;mean;1011;40;20769;18440;20.77;18.44
+All Providers Combined;Quindio, Colombia;;jun-21;26191;6976;all;N/A;mean;6976;32;44075;12347;44.08;12.35
+All Providers Combined;Risaralda, Colombia;;jun-21;68936;18361;all;N/A;mean;18361;29;50122;13092;50.12;13.09
+All Providers Combined;San Andrés and Providencia, Colombia;;jun-21;741;162;all;N/A;mean;162;63;4732;4117;4.73;4.12
+All Providers Combined;Santander Department, Colombia;;jun-21;199608;47839;all;N/A;mean;47839;33;60697;34958;60.70;34.96
+All Providers Combined;Sucre, Colombia;;jun-21;13187;3643;all;N/A;mean;3643;47;37212;16631;37.21;16.63
+All Providers Combined;Tolima, Colombia;;jun-21;52686;13975;all;N/A;mean;13975;30;52623;29364;52.62;29.36
+All Providers Combined;Valle del Cauca, Colombia;;jun-21;249014;70351;all;N/A;mean;70351;30;61985;34861;61.99;34.86
+All Providers Combined;Vaupes, Colombia;;jun-21;6;4;all;N/A;mean;4;46;70895;8114;70.90;8.11
+All Providers Combined;Vichada, Colombia;;jun-21;24;8;all;N/A;mean;8;44;35067;39160;35.07;39.16
+All Providers Combined;Guaviare, Colombia;;jun-21;935;200;all;N/A;mean;200;33;21052;14959;21.05;14.96
+All Providers Combined;Amazonas, Colombia;;jul-21;7;5;all;N/A;mean;5;74;1198;607;1.20;0.61
+All Providers Combined;Antioquia, Colombia;;jul-21;454567;127866;all;N/A;mean;127866;25;64837;22393;64.84;22.39
+All Providers Combined;Arauca, Colombia;;jul-21;3274;852;all;N/A;mean;852;66;11555;7499;11.56;7.50
+All Providers Combined;Atlantico, Colombia;;jul-21;135427;39812;all;N/A;mean;39812;32;62895;29323;62.90;29.32
+All Providers Combined;Bogota, Colombia;;jul-21;1082469;311691;all;N/A;mean;311691;18;76179;39994;76.18;39.99
+All Providers Combined;Bolivar, Colombia;;jul-21;46565;12889;all;N/A;mean;12889;33;57029;30980;57.03;30.98
+All Providers Combined;Boyaca, Colombia;;jul-21;53177;14215;all;N/A;mean;14215;32;42379;23071;42.38;23.07
+All Providers Combined;Caldas, Colombia;;jul-21;79814;19872;all;N/A;mean;19872;44;43641;11854;43.64;11.85
+All Providers Combined;Caquetá, Colombia;;jul-21;12071;2383;all;N/A;mean;2383;38;43635;19226;43.64;19.23
+All Providers Combined;Casanare, Colombia;;jul-21;14972;3873;all;N/A;mean;3873;29;39629;14137;39.63;14.14
+All Providers Combined;Cauca Department, Colombia;;jul-21;41405;10386;all;N/A;mean;10386;34;43554;15685;43.55;15.69
+All Providers Combined;Cesar, Colombia;;jul-21;29832;7718;all;N/A;mean;7718;45;54203;25021;54.20;25.02
+All Providers Combined;Choco, Colombia;;jul-21;2656;724;all;N/A;mean;724;63;20120;13924;20.12;13.92
+All Providers Combined;Cordoba, Colombia;;jul-21;29743;8099;all;N/A;mean;8099;44;46002;24873;46.00;24.87
+All Providers Combined;Cundinamarca, Colombia;;jul-21;229275;66298;all;N/A;mean;66298;22;58849;22164;58.85;22.16
+All Providers Combined;Guainia, Colombia;;jul-21;1;1;all;N/A;mean;1;7;2725;15518;2.73;15.52
+All Providers Combined;Huila, Colombia;;jul-21;51729;13417;all;N/A;mean;13417;39;39478;21761;39.48;21.76
+All Providers Combined;La Guajira, Colombia;;jul-21;7400;2169;all;N/A;mean;2169;53;43582;9649;43.58;9.65
+All Providers Combined;Magdalena, Colombia;;jul-21;40332;11241;all;N/A;mean;11241;41;45532;22953;45.53;22.95
+All Providers Combined;Meta, Colombia;;jul-21;43459;11156;all;N/A;mean;11156;26;53431;22342;53.43;22.34
+All Providers Combined;Narino, Colombia;;jul-21;44238;11312;all;N/A;mean;11312;40;42424;18554;42.42;18.55
+All Providers Combined;North Santander, Colombia;;jul-21;55243;14659;all;N/A;mean;14659;44;61482;32711;61.48;32.71
+All Providers Combined;Putumayo, Colombia;;jul-21;5340;1024;all;N/A;mean;1024;44;17009;16158;17.01;16.16
+All Providers Combined;Quindio, Colombia;;jul-21;28537;7526;all;N/A;mean;7526;43;45466;14447;45.47;14.45
+All Providers Combined;Risaralda, Colombia;;jul-21;69573;18498;all;N/A;mean;18498;29;53281;14436;53.28;14.44
+All Providers Combined;San Andrés and Providencia, Colombia;;jul-21;991;178;all;N/A;mean;178;42;4546;3779;4.55;3.78
+All Providers Combined;Santander Department, Colombia;;jul-21;203437;50094;all;N/A;mean;50094;33;63621;34949;63.62;34.95
+All Providers Combined;Sucre, Colombia;;jul-21;12431;3567;all;N/A;mean;3567;49;38611;16460;38.61;16.46
+All Providers Combined;Tolima, Colombia;;jul-21;50331;13989;all;N/A;mean;13989;31;55192;31773;55.19;31.77
+All Providers Combined;Valle del Cauca, Colombia;;jul-21;264010;72907;all;N/A;mean;72907;30;65835;36263;65.84;36.26
+All Providers Combined;Vaupes, Colombia;;jul-21;22;10;all;N/A;mean;10;45;37829;8197;37.83;8.20
+All Providers Combined;Vichada, Colombia;;jul-21;9;5;all;N/A;mean;5;74;19753;20023;19.75;20.02
+All Providers Combined;Guaviare, Colombia;;jul-21;1142;267;all;N/A;mean;267;34;18455;15105;18.46;15.11
+All Providers Combined;Amazonas, Colombia;;Aug 2021;1;1;all;N/A;mean;1;77;1774;686;1.77;0.69
+All Providers Combined;Antioquia, Colombia;;Aug 2021;424097;124531;all;N/A;mean;124531;23;68231;25342;68.23;25.34
+All Providers Combined;Arauca, Colombia;;Aug 2021;3875;995;all;N/A;mean;995;44;13049;7411;13.05;7.41
+All Providers Combined;Atlantico, Colombia;;Aug 2021;126046;37290;all;N/A;mean;37290;32;64340;33167;64.34;33.17
+All Providers Combined;Bogota, Colombia;;Aug 2021;1093517;318248;all;N/A;mean;318248;18;80430;45192;80.43;45.19
+All Providers Combined;Bolivar, Colombia;;Aug 2021;51479;13677;all;N/A;mean;13677;35;59888;31639;59.89;31.64
+All Providers Combined;Boyaca, Colombia;;Aug 2021;50177;13887;all;N/A;mean;13887;26;44933;24788;44.93;24.79
+All Providers Combined;Caldas, Colombia;;Aug 2021;69233;19011;all;N/A;mean;19011;34;48538;13158;48.54;13.16
+All Providers Combined;Caquetá, Colombia;;Aug 2021;13549;2637;all;N/A;mean;2637;42;44153;23614;44.15;23.61
+All Providers Combined;Casanare, Colombia;;Aug 2021;13657;3609;all;N/A;mean;3609;25;43927;16819;43.93;16.82
+All Providers Combined;Cauca Department, Colombia;;Aug 2021;41350;10564;all;N/A;mean;10564;31;46234;19429;46.23;19.43
+All Providers Combined;Cesar, Colombia;;Aug 2021;27067;7363;all;N/A;mean;7363;42;55956;26789;55.96;26.79
+All Providers Combined;Choco, Colombia;;Aug 2021;2343;669;all;N/A;mean;669;65;15326;10855;15.33;10.86
+All Providers Combined;Cordoba, Colombia;;Aug 2021;30918;8557;all;N/A;mean;8557;41;51574;30744;51.57;30.74
+All Providers Combined;Cundinamarca, Colombia;;Aug 2021;189579;58538;all;N/A;mean;58538;21;62011;26183;62.01;26.18
+All Providers Combined;Guainia, Colombia;;Aug 2021;12;5;all;N/A;mean;5;25;13181;25221;13.18;25.22
+All Providers Combined;Huila, Colombia;;Aug 2021;47661;12758;all;N/A;mean;12758;39;43060;23914;43.06;23.91
+All Providers Combined;La Guajira, Colombia;;Aug 2021;6588;2010;all;N/A;mean;2010;48;42711;10447;42.71;10.45
+All Providers Combined;Magdalena, Colombia;;Aug 2021;38316;11951;all;N/A;mean;11951;39;54372;24138;54.37;24.14
+All Providers Combined;Meta, Colombia;;Aug 2021;40466;10765;all;N/A;mean;10765;25;53753;23954;53.75;23.95
+All Providers Combined;Narino, Colombia;;Aug 2021;43255;10839;all;N/A;mean;10839;35;45943;21408;45.94;21.41
+All Providers Combined;North Santander, Colombia;;Aug 2021;59128;15570;all;N/A;mean;15570;40;61565;33592;61.57;33.59
+All Providers Combined;Putumayo, Colombia;;Aug 2021;3634;971;all;N/A;mean;971;40;20222;19358;20.22;19.36
+All Providers Combined;Quindio, Colombia;;Aug 2021;24615;6698;all;N/A;mean;6698;28;52768;16149;52.77;16.15
+All Providers Combined;Risaralda, Colombia;;Aug 2021;67603;18299;all;N/A;mean;18299;28;56494;14595;56.49;14.60
+All Providers Combined;San Andrés and Providencia, Colombia;;Aug 2021;685;142;all;N/A;mean;142;38;4441;3292;4.44;3.29
+All Providers Combined;Santander Department, Colombia;;Aug 2021;226569;53131;all;N/A;mean;53131;35;62723;37453;62.72;37.45
+All Providers Combined;Sucre, Colombia;;Aug 2021;13298;3722;all;N/A;mean;3722;45;39983;18625;39.98;18.63
+All Providers Combined;Tolima, Colombia;;Aug 2021;46645;13435;all;N/A;mean;13435;28;58755;34543;58.76;34.54
+All Providers Combined;Valle del Cauca, Colombia;;Aug 2021;260787;73684;all;N/A;mean;73684;27;67470;38001;67.47;38.00
+All Providers Combined;Vaupes, Colombia;;Aug 2021;7;4;all;N/A;mean;4;44;73688;10630;73.69;10.63
+All Providers Combined;Vichada, Colombia;;Aug 2021;9;5;all;N/A;mean;5;81;2102;1270;2.10;1.27
+All Providers Combined;Guaviare, Colombia;;Aug 2021;1468;292;all;N/A;mean;292;35;16927;15852;16.93;15.85
+All Providers Combined;Amazonas, Colombia;;sep-21;1;1;all;N/A;mean;1;68;1048;728;1.05;0.73
+All Providers Combined;Antioquia, Colombia;;sep-21;414099;117686;all;N/A;mean;117686;21;72436;28126;72.44;28.13
+All Providers Combined;Arauca, Colombia;;sep-21;3901;993;all;N/A;mean;993;48;12234;9074;12.23;9.07
+All Providers Combined;Atlantico, Colombia;;sep-21;116770;31688;all;N/A;mean;31688;33;64127;35728;64.13;35.73
+All Providers Combined;Bogota, Colombia;;sep-21;1041573;292737;all;N/A;mean;292737;16;84832;48580;84.83;48.58
+All Providers Combined;Bolivar, Colombia;;sep-21;55859;14910;all;N/A;mean;14910;35;61246;28026;61.25;28.03
+All Providers Combined;Boyaca, Colombia;;sep-21;47503;12572;all;N/A;mean;12572;24;47368;26721;47.37;26.72
+All Providers Combined;Caldas, Colombia;;sep-21;61841;16536;all;N/A;mean;16536;33;54263;14269;54.26;14.27
+All Providers Combined;Caquetá, Colombia;;sep-21;9716;2119;all;N/A;mean;2119;37;45864;24112;45.86;24.11
+All Providers Combined;Casanare, Colombia;;sep-21;12471;3089;all;N/A;mean;3089;24;46279;13048;46.28;13.05
+All Providers Combined;Cauca Department, Colombia;;sep-21;40559;10063;all;N/A;mean;10063;28;52603;21946;52.60;21.95
+All Providers Combined;Cesar, Colombia;;sep-21;23558;6487;all;N/A;mean;6487;42;57540;26237;57.54;26.24
+All Providers Combined;Choco, Colombia;;sep-21;2082;556;all;N/A;mean;556;62;12720;8277;12.72;8.28
+All Providers Combined;Cordoba, Colombia;;sep-21;32267;7786;all;N/A;mean;7786;42;50368;28450;50.37;28.45
+All Providers Combined;Cundinamarca, Colombia;;sep-21;162048;45808;all;N/A;mean;45808;20;62387;30015;62.39;30.02
+All Providers Combined;Guainia, Colombia;;sep-21;6;5;all;N/A;mean;5;47;8397;3999;8.40;4.00
+All Providers Combined;Huila, Colombia;;sep-21;41071;10711;all;N/A;mean;10711;35;43884;23403;43.88;23.40
+All Providers Combined;La Guajira, Colombia;;sep-21;5879;1840;all;N/A;mean;1840;46;43843;10265;43.84;10.27
+All Providers Combined;Magdalena, Colombia;;sep-21;35220;11286;all;N/A;mean;11286;38;57600;28844;57.60;28.84
+All Providers Combined;Meta, Colombia;;sep-21;40801;10463;all;N/A;mean;10463;30;54695;25977;54.70;25.98
+All Providers Combined;Narino, Colombia;;sep-21;36070;9538;all;N/A;mean;9538;33;49872;24879;49.87;24.88
+All Providers Combined;North Santander, Colombia;;sep-21;50644;13830;all;N/A;mean;13830;40;66493;31431;66.49;31.43
+All Providers Combined;Putumayo, Colombia;;sep-21;3576;925;all;N/A;mean;925;37;22567;20724;22.57;20.72
+All Providers Combined;Quindio, Colombia;;sep-21;22916;6143;all;N/A;mean;6143;28;57590;19797;57.59;19.80
+All Providers Combined;Risaralda, Colombia;;sep-21;72417;19348;all;N/A;mean;19348;27;60520;16027;60.52;16.03
+All Providers Combined;San Andrés and Providencia, Colombia;;sep-21;502;93;all;N/A;mean;93;18;5347;4217;5.35;4.22
+All Providers Combined;Santander Department, Colombia;;sep-21;180456;44563;all;N/A;mean;44563;33;67898;35732;67.90;35.73
+All Providers Combined;Sucre, Colombia;;sep-21;14116;3577;all;N/A;mean;3577;60;40757;17395;40.76;17.40
+All Providers Combined;Tolima, Colombia;;sep-21;46131;12312;all;N/A;mean;12312;28;61200;36675;61.20;36.68
+All Providers Combined;Valle del Cauca, Colombia;;sep-21;243097;67650;all;N/A;mean;67650;27;70447;37655;70.45;37.66
+All Providers Combined;Vichada, Colombia;;sep-21;9;5;all;N/A;mean;5;49;2185;1801;2.19;1.80
+All Providers Combined;Guaviare, Colombia;;sep-21;1285;266;all;N/A;mean;266;36;23457;20771;23.46;20.77
+All Providers Combined;Antioquia, Colombia;;oct-21;401355;118975;all;N/A;mean;118975;21;75719;29766;75.72;29.77
+All Providers Combined;Arauca, Colombia;;oct-21;2581;771;all;N/A;mean;771;40;16923;10145;16.92;10.15
+All Providers Combined;Atlantico, Colombia;;oct-21;102091;30995;all;N/A;mean;30995;31;69898;38927;69.90;38.93
+All Providers Combined;Bogota, Colombia;;oct-21;951018;289034;all;N/A;mean;289034;16;88951;52787;88.95;52.79
+All Providers Combined;Bolivar, Colombia;;oct-21;50326;15000;all;N/A;mean;15000;30;67464;32763;67.46;32.76
+All Providers Combined;Boyaca, Colombia;;oct-21;44230;13027;all;N/A;mean;13027;24;49362;27219;49.36;27.22
+All Providers Combined;Caldas, Colombia;;oct-21;62847;16926;all;N/A;mean;16926;37;54046;15106;54.05;15.11
+All Providers Combined;Caquetá, Colombia;;oct-21;10365;2325;all;N/A;mean;2325;32;49289;23537;49.29;23.54
+All Providers Combined;Casanare, Colombia;;oct-21;10014;2932;all;N/A;mean;2932;27;50059;13291;50.06;13.29
+All Providers Combined;Cauca Department, Colombia;;oct-21;36971;9973;all;N/A;mean;9973;29;54025;25284;54.03;25.28
+All Providers Combined;Cesar, Colombia;;oct-21;22019;6387;all;N/A;mean;6387;39;63016;28206;63.02;28.21
+All Providers Combined;Choco, Colombia;;oct-21;2290;693;all;N/A;mean;693;65;19690;17681;19.69;17.68
+All Providers Combined;Cordoba, Colombia;;oct-21;27425;7384;all;N/A;mean;7384;38;54361;29978;54.36;29.98
+All Providers Combined;Cundinamarca, Colombia;;oct-21;160196;46855;all;N/A;mean;46855;20;64532;29464;64.53;29.46
+All Providers Combined;Guainia, Colombia;;oct-21;15;6;all;N/A;mean;6;45;27469;25371;27.47;25.37
+All Providers Combined;Huila, Colombia;;oct-21;36230;10255;all;N/A;mean;10255;33;46198;24268;46.20;24.27
+All Providers Combined;La Guajira, Colombia;;oct-21;5951;1891;all;N/A;mean;1891;44;47520;12875;47.52;12.88
+All Providers Combined;Magdalena, Colombia;;oct-21;43011;13927;all;N/A;mean;13927;44;60878;32556;60.88;32.56
+All Providers Combined;Meta, Colombia;;oct-21;40701;11196;all;N/A;mean;11196;25;66092;35754;66.09;35.75
+All Providers Combined;Narino, Colombia;;oct-21;32662;9316;all;N/A;mean;9316;31;53779;27537;53.78;27.54
+All Providers Combined;North Santander, Colombia;;oct-21;47694;13333;all;N/A;mean;13333;42;70783;26382;70.78;26.38
+All Providers Combined;Putumayo, Colombia;;oct-21;3488;924;all;N/A;mean;924;35;25376;22393;25.38;22.39
+All Providers Combined;Quindio, Colombia;;oct-21;24525;7074;all;N/A;mean;7074;26;56729;20727;56.73;20.73
+All Providers Combined;Risaralda, Colombia;;oct-21;67342;19187;all;N/A;mean;19187;27;62279;18072;62.28;18.07
+All Providers Combined;San Andrés and Providencia, Colombia;;oct-21;401;118;all;N/A;mean;118;34;4284;3121;4.28;3.12
+All Providers Combined;Santander Department, Colombia;;oct-21;155407;42969;all;N/A;mean;42969;31;74100;42479;74.10;42.48
+All Providers Combined;Sucre, Colombia;;oct-21;12301;3467;all;N/A;mean;3467;40;44524;20344;44.52;20.34
+All Providers Combined;Tolima, Colombia;;oct-21;45619;12986;all;N/A;mean;12986;28;65312;40216;65.31;40.22
+All Providers Combined;Valle del Cauca, Colombia;;oct-21;231248;68058;all;N/A;mean;68058;26;76552;43600;76.55;43.60
+All Providers Combined;Vichada, Colombia;;oct-21;7;2;all;N/A;mean;2;65;5307;1256;5.31;1.26
+All Providers Combined;Guaviare, Colombia;;oct-21;851;201;all;N/A;mean;201;42;15027;13418;15.03;13.42
+All Providers Combined;Antioquia, Colombia;;nov-21;390674;118165;all;N/A;mean;118165;21;81458;33906;81.46;33.91
+All Providers Combined;Arauca, Colombia;;nov-21;2927;871;all;N/A;mean;871;36;17169;9632;17.17;9.63
+All Providers Combined;Atlantico, Colombia;;nov-21;104294;30209;all;N/A;mean;30209;31;80318;48516;80.32;48.52
+All Providers Combined;Bogota, Colombia;;nov-21;973210;289838;all;N/A;mean;289838;16;93578;59244;93.58;59.24
+All Providers Combined;Bolivar, Colombia;;nov-21;48891;15060;all;N/A;mean;15060;30;75866;41204;75.87;41.20
+All Providers Combined;Boyaca, Colombia;;nov-21;42374;12223;all;N/A;mean;12223;23;54118;33248;54.12;33.25
+All Providers Combined;Caldas, Colombia;;nov-21;47500;14520;all;N/A;mean;14520;31;59099;16147;59.10;16.15
+All Providers Combined;Caquetá, Colombia;;nov-21;11214;2610;all;N/A;mean;2610;27;58603;27954;58.60;27.95
+All Providers Combined;Casanare, Colombia;;nov-21;9756;2621;all;N/A;mean;2621;24;47985;13245;47.99;13.25
+All Providers Combined;Cauca Department, Colombia;;nov-21;34653;9535;all;N/A;mean;9535;28;55852;24842;55.85;24.84
+All Providers Combined;Cesar, Colombia;;nov-21;21318;6142;all;N/A;mean;6142;38;71412;36677;71.41;36.68
+All Providers Combined;Choco, Colombia;;nov-21;1992;612;all;N/A;mean;612;59;20230;17934;20.23;17.93
+All Providers Combined;Cordoba, Colombia;;nov-21;27379;7318;all;N/A;mean;7318;40;60404;34958;60.40;34.96
+All Providers Combined;Cundinamarca, Colombia;;nov-21;158606;46816;all;N/A;mean;46816;19;67296;33677;67.30;33.68
+All Providers Combined;Guainia, Colombia;;nov-21;5;1;all;N/A;mean;1;40;40183;5649;40.18;5.65
+All Providers Combined;Huila, Colombia;;nov-21;38621;10007;all;N/A;mean;10007;30;47775;26101;47.78;26.10
+All Providers Combined;La Guajira, Colombia;;nov-21;4971;1667;all;N/A;mean;1667;44;50454;14842;50.45;14.84
+All Providers Combined;Magdalena, Colombia;;nov-21;42323;14021;all;N/A;mean;14021;36;68385;37498;68.39;37.50
+All Providers Combined;Meta, Colombia;;nov-21;40084;11151;all;N/A;mean;11151;22;73803;45809;73.80;45.81
+All Providers Combined;Narino, Colombia;;nov-21;29250;8487;all;N/A;mean;8487;32;56837;28114;56.84;28.11
+All Providers Combined;North Santander, Colombia;;nov-21;45869;12975;all;N/A;mean;12975;42;79037;32591;79.04;32.59
+All Providers Combined;Putumayo, Colombia;;nov-21;3220;937;all;N/A;mean;937;35;24724;21345;24.72;21.35
+All Providers Combined;Quindio, Colombia;;nov-21;22334;6288;all;N/A;mean;6288;27;61640;23071;61.64;23.07
+All Providers Combined;Risaralda, Colombia;;nov-21;62452;18061;all;N/A;mean;18061;26;66279;19985;66.28;19.99
+All Providers Combined;San Andrés and Providencia, Colombia;;nov-21;329;102;all;N/A;mean;102;22;6039;5544;6.04;5.54
+All Providers Combined;Santander Department, Colombia;;nov-21;168013;44337;all;N/A;mean;44337;32;79183;47368;79.18;47.37
+All Providers Combined;Sucre, Colombia;;nov-21;8401;2796;all;N/A;mean;2796;34;57715;25531;57.72;25.53
+All Providers Combined;Tolima, Colombia;;nov-21;43305;12111;all;N/A;mean;12111;27;67720;44834;67.72;44.83
+All Providers Combined;Valle del Cauca, Colombia;;nov-21;231138;68575;all;N/A;mean;68575;25;85778;51566;85.78;51.57
+All Providers Combined;Vichada, Colombia;;nov-21;11;6;all;N/A;mean;6;57;7498;3160;7.50;3.16
+All Providers Combined;Guaviare, Colombia;;nov-21;957;242;all;N/A;mean;242;33;31918;33609;31.92;33.61
+All Providers Combined;Antioquia, Colombia;;Dec 2021;353201;109854;all;N/A;mean;109854;19;86015;34991;86.02;34.99
+All Providers Combined;Arauca, Colombia;;Dec 2021;2768;926;all;N/A;mean;926;37;17881;8828;17.88;8.83
+All Providers Combined;Atlantico, Colombia;;Dec 2021;82365;25123;all;N/A;mean;25123;31;80530;48175;80.53;48.18
+All Providers Combined;Bogota, Colombia;;Dec 2021;832319;260579;all;N/A;mean;260579;16;95823;60735;95.82;60.74
+All Providers Combined;Bolivar, Colombia;;Dec 2021;44909;13868;all;N/A;mean;13868;27;78195;42562;78.20;42.56
+All Providers Combined;Boyaca, Colombia;;Dec 2021;39080;11948;all;N/A;mean;11948;24;55221;32912;55.22;32.91
+All Providers Combined;Caldas, Colombia;;Dec 2021;47949;14566;all;N/A;mean;14566;31;64194;17359;64.19;17.36
+All Providers Combined;Caquetá, Colombia;;Dec 2021;7778;1886;all;N/A;mean;1886;29;58912;30975;58.91;30.98
+All Providers Combined;Casanare, Colombia;;Dec 2021;9728;2699;all;N/A;mean;2699;23;53182;16582;53.18;16.58
+All Providers Combined;Cauca Department, Colombia;;Dec 2021;31167;8527;all;N/A;mean;8527;26;56434;21949;56.43;21.95
+All Providers Combined;Cesar, Colombia;;Dec 2021;18794;5953;all;N/A;mean;5953;35;75072;35463;75.07;35.46
+All Providers Combined;Choco, Colombia;;Dec 2021;2021;598;all;N/A;mean;598;66;13218;11143;13.22;11.14
+All Providers Combined;Cordoba, Colombia;;Dec 2021;23680;6477;all;N/A;mean;6477;34;67826;36830;67.83;36.83
+All Providers Combined;Cundinamarca, Colombia;;Dec 2021;141257;44603;all;N/A;mean;44603;19;72306;35969;72.31;35.97
+All Providers Combined;Guainia, Colombia;;Dec 2021;5;4;all;N/A;mean;4;25;65594;20523;65.59;20.52
+All Providers Combined;Huila, Colombia;;Dec 2021;44772;10682;all;N/A;mean;10682;29;50131;27460;50.13;27.46
+All Providers Combined;La Guajira, Colombia;;Dec 2021;5040;1710;all;N/A;mean;1710;46;58690;17558;58.69;17.56
+All Providers Combined;Magdalena, Colombia;;Dec 2021;43264;14718;all;N/A;mean;14718;31;75408;36825;75.41;36.83
+All Providers Combined;Meta, Colombia;;Dec 2021;36393;10616;all;N/A;mean;10616;21;77056;51798;77.06;51.80
+All Providers Combined;Narino, Colombia;;Dec 2021;27099;7942;all;N/A;mean;7942;31;58177;26915;58.18;26.92
+All Providers Combined;North Santander, Colombia;;Dec 2021;38856;11532;all;N/A;mean;11532;39;82839;32241;82.84;32.24
+All Providers Combined;Putumayo, Colombia;;Dec 2021;3177;890;all;N/A;mean;890;33;26189;20247;26.19;20.25
+All Providers Combined;Quindio, Colombia;;Dec 2021;19426;5926;all;N/A;mean;5926;29;61509;23891;61.51;23.89
+All Providers Combined;Risaralda, Colombia;;Dec 2021;59531;17541;all;N/A;mean;17541;26;67313;21703;67.31;21.70
+All Providers Combined;San Andrés and Providencia, Colombia;;Dec 2021;453;138;all;N/A;mean;138;20;10545;12933;10.55;12.93
+All Providers Combined;Santander Department, Colombia;;Dec 2021;140699;39265;all;N/A;mean;39265;29;85903;46971;85.90;46.97
+All Providers Combined;Sucre, Colombia;;Dec 2021;9099;2803;all;N/A;mean;2803;36;51545;21930;51.55;21.93
+All Providers Combined;Tolima, Colombia;;Dec 2021;40630;11809;all;N/A;mean;11809;26;71619;49526;71.62;49.53
+All Providers Combined;Valle del Cauca, Colombia;;Dec 2021;220451;65936;all;N/A;mean;65936;24;86968;49018;86.97;49.02
+All Providers Combined;Vichada, Colombia;;Dec 2021;6;6;all;N/A;mean;6;92;6601;3317;6.60;3.32
+All Providers Combined;Guaviare, Colombia;;Dec 2021;1387;221;all;N/A;mean;221;45;32124;35886;32.12;35.89
+All Providers Combined;Vaupes, Colombia;;Jan 2022;;;all;N/A;mean;;;;;;
+All Providers Combined;Amazonas, Colombia;;Jan 2022;2;2;all;N/A;mean;2;67;583;337;0.58;0.34
+All Providers Combined;Antioquia, Colombia;;Jan 2022;387172;113913;all;N/A;mean;113913;21;85869;36494;85.87;36.49
+All Providers Combined;Arauca, Colombia;;Jan 2022;3820;993;all;N/A;mean;993;31;16625;10037;16.63;10.04
+All Providers Combined;Atlantico, Colombia;;Jan 2022;91627;26306;all;N/A;mean;26306;31;83864;52015;83.86;52.02
+All Providers Combined;Bogota, Colombia;;Jan 2022;892625;271602;all;N/A;mean;271602;15;98725;64574;98.73;64.57
+All Providers Combined;Bolivar, Colombia;;Jan 2022;41374;12425;all;N/A;mean;12425;30;80074;45601;80.07;45.60
+All Providers Combined;Boyaca, Colombia;;Jan 2022;40398;11477;all;N/A;mean;11477;23;55174;34695;55.17;34.70
+All Providers Combined;Caldas, Colombia;;Jan 2022;50846;13776;all;N/A;mean;13776;35;66475;19291;66.48;19.29
+All Providers Combined;Caquetá, Colombia;;Jan 2022;8937;2089;all;N/A;mean;2089;28;52552;32741;52.55;32.74
+All Providers Combined;Casanare, Colombia;;Jan 2022;9285;2528;all;N/A;mean;2528;25;54560;17430;54.56;17.43
+All Providers Combined;Cauca Department, Colombia;;Jan 2022;32390;8323;all;N/A;mean;8323;26;55478;22263;55.48;22.26
+All Providers Combined;Cesar, Colombia;;Jan 2022;19393;5609;all;N/A;mean;5609;36;78315;36800;78.32;36.80
+All Providers Combined;Choco, Colombia;;Jan 2022;1693;547;all;N/A;mean;547;64;14200;10070;14.20;10.07
+All Providers Combined;Cordoba, Colombia;;Jan 2022;22712;6135;all;N/A;mean;6135;34;67111;37768;67.11;37.77
+All Providers Combined;Cundinamarca, Colombia;;Jan 2022;185539;56626;all;N/A;mean;56626;19;77210;39069;77.21;39.07
+All Providers Combined;Guainia, Colombia;;Jan 2022;19;11;all;N/A;mean;11;28;31792;29548;31.79;29.55
+All Providers Combined;Huila, Colombia;;Jan 2022;35902;9684;all;N/A;mean;9684;34;48997;25114;49.00;25.11
+All Providers Combined;La Guajira, Colombia;;Jan 2022;4903;1584;all;N/A;mean;1584;47;57121;17747;57.12;17.75
+All Providers Combined;Magdalena, Colombia;;Jan 2022;50510;16361;all;N/A;mean;16361;35;77198;38811;77.20;38.81
+All Providers Combined;Meta, Colombia;;Jan 2022;39743;10883;all;N/A;mean;10883;21;78100;51290;78.10;51.29
+All Providers Combined;Narino, Colombia;;Jan 2022;30762;7981;all;N/A;mean;7981;33;53465;28531;53.47;28.53
+All Providers Combined;North Santander, Colombia;;Jan 2022;37805;11145;all;N/A;mean;11145;39;77453;32681;77.45;32.68
+All Providers Combined;Putumayo, Colombia;;Jan 2022;3949;853;all;N/A;mean;853;34;23864;18793;23.86;18.79
+All Providers Combined;Quindio, Colombia;;Jan 2022;19500;5620;all;N/A;mean;5620;29;64763;23592;64.76;23.59
+All Providers Combined;Risaralda, Colombia;;Jan 2022;61608;17567;all;N/A;mean;17567;26;68936;23267;68.94;23.27
+All Providers Combined;San Andrés and Providencia, Colombia;;Jan 2022;433;139;all;N/A;mean;139;25;7506;6243;7.51;6.24
+All Providers Combined;Santander Department, Colombia;;Jan 2022;146246;39253;all;N/A;mean;39253;30;84925;49128;84.93;49.13
+All Providers Combined;Sucre, Colombia;;Jan 2022;9429;3018;all;N/A;mean;3018;38;50782;20134;50.78;20.13
+All Providers Combined;Tolima, Colombia;;Jan 2022;45232;12762;all;N/A;mean;12762;27;74290;50766;74.29;50.77
+All Providers Combined;Valle del Cauca, Colombia;;Jan 2022;232273;65993;all;N/A;mean;65993;26;86584;51007;86.58;51.01
+All Providers Combined;Vichada, Colombia;;Jan 2022;52;6;all;N/A;mean;6;82;2154;494;2.15;0.49
+All Providers Combined;Guaviare, Colombia;;Jan 2022;1030;193;all;N/A;mean;193;37;19377;20004;19.38;20.00

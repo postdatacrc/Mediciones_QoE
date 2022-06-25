@@ -1,0 +1,64 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;jul-21;24035;6349;all;N/A;mean;6349;37;49549;14601;49.55;14.60
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;jul-21;19873;5454;all;N/A;mean;5454;35;55735;23948;55.74;23.95
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;jul-21;7375;2079;all;N/A;mean;2079;43;45152;17593;45.15;17.59
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;jul-21;17927;4954;all;N/A;mean;4954;45;53303;14008;53.30;14.01
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;jul-21;16127;4816;all;N/A;mean;4816;37;57602;29284;57.60;29.28
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;jul-21;35959;9972;all;N/A;mean;9972;28;53768;14948;53.77;14.95
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;jul-21;22676;5998;all;N/A;mean;5998;31;50793;11489;50.79;11.49
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Aug 2021;23370;6138;all;N/A;mean;6138;31;53816;17143;53.82;17.14
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Aug 2021;16078;4938;all;N/A;mean;4938;35;58278;23701;58.28;23.70
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Aug 2021;7381;2098;all;N/A;mean;2098;41;47437;21449;47.44;21.45
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Aug 2021;16406;4890;all;N/A;mean;4890;28;59289;15909;59.29;15.91
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Aug 2021;18317;5454;all;N/A;mean;5454;36;63534;37240;63.53;37.24
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Aug 2021;38128;10690;all;N/A;mean;10690;28;55758;15147;55.76;15.15
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Aug 2021;22792;5950;all;N/A;mean;5950;29;52474;13302;52.47;13.30
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;sep-21;17835;5130;all;N/A;mean;5130;29;57912;20156;57.91;20.16
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;sep-21;14559;4480;all;N/A;mean;4480;32;61963;25136;61.96;25.14
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;sep-21;7170;2107;all;N/A;mean;2107;56;49510;19011;49.51;19.01
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;sep-21;15434;4423;all;N/A;mean;4423;27;64120;20117;64.12;20.12
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;sep-21;18956;4769;all;N/A;mean;4769;37;62103;33563;62.10;33.56
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;sep-21;39709;10726;all;N/A;mean;10726;27;60636;16279;60.64;16.28
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;sep-21;21595;5424;all;N/A;mean;5424;25;58867;14276;58.87;14.28
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;oct-21;16718;4986;all;N/A;mean;4986;28;60875;21752;60.88;21.75
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;oct-21;19500;5826;all;N/A;mean;5826;45;62842;28434;62.84;28.43
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;oct-21;6267;2071;all;N/A;mean;2071;32;52132;21598;52.13;21.60
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;oct-21;15143;4636;all;N/A;mean;4636;26;68522;22031;68.52;22.03
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;oct-21;16447;4441;all;N/A;mean;4441;32;66009;35461;66.01;35.46
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;oct-21;31249;8948;all;N/A;mean;8948;27;63450;17450;63.45;17.45
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;oct-21;17708;5225;all;N/A;mean;5225;26;59287;15335;59.29;15.34
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;nov-21;14306;4602;all;N/A;mean;4602;28;64739;22921;64.74;22.92
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;nov-21;16622;5092;all;N/A;mean;5092;34;70922;35512;70.92;35.51
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;nov-21;5328;1812;all;N/A;mean;1812;28;63896;26915;63.90;26.92
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;nov-21;13687;4181;all;N/A;mean;4181;26;73132;24331;73.13;24.33
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;nov-21;15851;4351;all;N/A;mean;4351;35;75117;43817;75.12;43.82
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;nov-21;28606;8418;all;N/A;mean;8418;25;66067;18934;66.07;18.93
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;nov-21;17779;5191;all;N/A;mean;5191;25;60326;16603;60.33;16.60
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Dec 2021;15359;4759;all;N/A;mean;4759;27;67003;24002;67.00;24.00
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Dec 2021;14743;4429;all;N/A;mean;4429;30;73030;35392;73.03;35.39
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Dec 2021;5512;1754;all;N/A;mean;1754;29;60398;23973;60.40;23.97
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Dec 2021;12372;3963;all;N/A;mean;3963;29;72508;25573;72.51;25.57
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Dec 2021;14643;4134;all;N/A;mean;4134;30;81471;45254;81.47;45.25
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Dec 2021;29942;9044;all;N/A;mean;9044;25;68304;20858;68.30;20.86
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Dec 2021;16610;4904;all;N/A;mean;4904;24;63910;16339;63.91;16.34
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Jan 2022;15471;4548;all;N/A;mean;4548;30;63488;24333;63.49;24.33
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Jan 2022;14788;4402;all;N/A;mean;4402;32;79302;38157;79.30;38.16
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Jan 2022;5795;1945;all;N/A;mean;1945;29;61215;20952;61.22;20.95
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Jan 2022;11395;3401;all;N/A;mean;3401;29;78232;24608;78.23;24.61
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Jan 2022;15229;4225;all;N/A;mean;4225;29;80683;44067;80.68;44.07
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Jan 2022;31605;9513;all;N/A;mean;9513;25;71589;24051;71.59;24.05
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Jan 2022;17390;4766;all;N/A;mean;4766;25;66258;19146;66.26;19.15
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;

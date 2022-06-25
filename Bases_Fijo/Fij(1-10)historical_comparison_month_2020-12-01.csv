@@ -1,0 +1,131 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Bogotá, Bogota, Colombia;;Dec 2019;528898;145496;all;N/A;mean;145496;39;31797;15745;31.80;15.75
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Dec 2019;40091;12121;all;N/A;mean;12121;37;34010;24688;34.01;24.69
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Dec 2019;135467;36326;all;N/A;mean;36326;45;32497;20279;32.50;20.28
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Dec 2019;162240;49504;all;N/A;mean;49504;35;29861;12075;29.86;12.08
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2019;63301;18547;all;N/A;mean;18547;37;30263;18563;30.26;18.56
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Dec 2019;30305;8644;all;N/A;mean;8644;31;30261;19753;30.26;19.75
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Dec 2019;17743;4708;all;N/A;mean;4708;38;27759;13631;27.76;13.63
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Dec 2019;26094;7476;all;N/A;mean;7476;45;21715;12464;21.72;12.46
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Dec 2019;18648;5002;all;N/A;mean;5002;39;23288;7647;23.29;7.65
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Dec 2019;7572;2149;all;N/A;mean;2149;33;22243;8660;22.24;8.66
+All Providers Combined;Bogotá, Bogota, Colombia;;Jan 2020;636035;170345;all;N/A;mean;170345;40;31588;16671;31.59;16.67
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Jan 2020;43461;13102;all;N/A;mean;13102;44;34693;25419;34.69;25.42
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Jan 2020;136013;36825;all;N/A;mean;36825;45;33252;22232;33.25;22.23
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Jan 2020;165777;49248;all;N/A;mean;49248;41;30780;13677;30.78;13.68
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2020;69555;19934;all;N/A;mean;19934;38;30385;18693;30.39;18.69
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Jan 2020;31714;8676;all;N/A;mean;8676;34;29584;20445;29.58;20.45
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Jan 2020;19014;5191;all;N/A;mean;5191;41;27476;13244;27.48;13.24
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Jan 2020;29708;7704;all;N/A;mean;7704;45;22068;13655;22.07;13.66
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Jan 2020;19707;5177;all;N/A;mean;5177;42;23918;8016;23.92;8.02
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Jan 2020;9411;2564;all;N/A;mean;2564;46;22194;8360;22.19;8.36
+All Providers Combined;Bogotá, Bogota, Colombia;;feb-20;685128;183041;all;N/A;mean;183041;37;35489;18089;35.49;18.09
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;feb-20;38749;12648;all;N/A;mean;12648;42;37994;26655;37.99;26.66
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;feb-20;136737;37127;all;N/A;mean;37127;42;36405;23809;36.41;23.81
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;feb-20;186602;54241;all;N/A;mean;54241;34;33200;15077;33.20;15.08
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-20;64883;18878;all;N/A;mean;18878;38;33389;20061;33.39;20.06
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;feb-20;32158;8646;all;N/A;mean;8646;30;34107;22719;34.11;22.72
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;feb-20;19887;5198;all;N/A;mean;5198;38;29935;12345;29.94;12.35
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;feb-20;27956;7385;all;N/A;mean;7385;43;25728;14392;25.73;14.39
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;feb-20;22071;5649;all;N/A;mean;5649;37;28971;10167;28.97;10.17
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;feb-20;12028;3055;all;N/A;mean;3055;49;25501;9815;25.50;9.82
+All Providers Combined;Bogotá, Bogota, Colombia;;mar-20;1263183;316613;all;N/A;mean;316613;41;31135;15070;31.14;15.07
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;mar-20;65484;18844;all;N/A;mean;18844;45;36344;23184;36.34;23.18
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;mar-20;217067;56283;all;N/A;mean;56283;47;34312;24238;34.31;24.24
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;mar-20;274854;78368;all;N/A;mean;78368;43;28895;10610;28.90;10.61
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-20;116493;31252;all;N/A;mean;31252;42;31664;20159;31.66;20.16
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;mar-20;50040;12205;all;N/A;mean;12205;43;34098;25885;34.10;25.89
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;mar-20;30318;7212;all;N/A;mean;7212;48;28887;13094;28.89;13.09
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;mar-20;47013;10686;all;N/A;mean;10686;50;20385;12612;20.39;12.61
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;mar-20;40338;9309;all;N/A;mean;9309;50;21994;6219;21.99;6.22
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;mar-20;15331;3924;all;N/A;mean;3924;53;23967;9127;23.97;9.13
+All Providers Combined;Bogotá, Bogota, Colombia;;Apr 2020;1669769;367686;all;N/A;mean;367686;43;30798;14303;30.80;14.30
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Apr 2020;82681;22371;all;N/A;mean;22371;49;36098;22071;36.10;22.07
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Apr 2020;245810;60477;all;N/A;mean;60477;49;33154;22823;33.15;22.82
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Apr 2020;292106;75753;all;N/A;mean;75753;45;27786;7617;27.79;7.62
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2020;132377;33441;all;N/A;mean;33441;46;29280;17198;29.28;17.20
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Apr 2020;63141;14193;all;N/A;mean;14193;38;33895;25284;33.90;25.28
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Apr 2020;34353;7807;all;N/A;mean;7807;47;28529;12747;28.53;12.75
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Apr 2020;44536;10829;all;N/A;mean;10829;50;23282;14154;23.28;14.15
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Apr 2020;44858;9597;all;N/A;mean;9597;49;21706;5344;21.71;5.34
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Apr 2020;15808;3912;all;N/A;mean;3912;55;23473;8180;23.47;8.18
+All Providers Combined;Bogotá, Bogota, Colombia;;may-20;1810274;391655;all;N/A;mean;391655;42;33138;15654;33.14;15.65
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;may-20;91755;24917;all;N/A;mean;24917;52;38794;25726;38.79;25.73
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;may-20;252173;61671;all;N/A;mean;61671;47;34923;23917;34.92;23.92
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;may-20;302902;79754;all;N/A;mean;79754;37;31497;9345;31.50;9.35
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;may-20;124388;32403;all;N/A;mean;32403;43;34175;20420;34.18;20.42
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;may-20;67033;15543;all;N/A;mean;15543;36;34107;24563;34.11;24.56
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;may-20;35143;8119;all;N/A;mean;8119;42;30902;13887;30.90;13.89
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;may-20;51843;12672;all;N/A;mean;12672;50;27048;17926;27.05;17.93
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;may-20;39529;9383;all;N/A;mean;9383;44;25208;5794;25.21;5.79
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;may-20;18571;4320;all;N/A;mean;4320;59;24552;10220;24.55;10.22
+All Providers Combined;Bogotá, Bogota, Colombia;;jun-20;1429409;340064;all;N/A;mean;340064;27;37177;17705;37.18;17.71
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;jun-20;77426;21543;all;N/A;mean;21543;41;42603;30982;42.60;30.98
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;jun-20;198004;53398;all;N/A;mean;53398;35;37741;25720;37.74;25.72
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;jun-20;273583;75895;all;N/A;mean;75895;34;33662;10378;33.66;10.38
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-20;112899;29953;all;N/A;mean;29953;40;34932;19768;34.93;19.77
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;jun-20;54147;13554;all;N/A;mean;13554;34;37545;26774;37.55;26.77
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;jun-20;29733;7346;all;N/A;mean;7346;29;32139;14436;32.14;14.44
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;jun-20;43611;11115;all;N/A;mean;11115;45;28265;17864;28.27;17.86
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;jun-20;35455;8688;all;N/A;mean;8688;32;28508;7268;28.51;7.27
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;jun-20;16349;3936;all;N/A;mean;3936;33;29016;12258;29.02;12.26
+All Providers Combined;Bogotá, Bogota, Colombia;;jul-20;1420473;352489;all;N/A;mean;352489;25;39752;18131;39.75;18.13
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;jul-20;84463;23271;all;N/A;mean;23271;41;46031;32481;46.03;32.48
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;jul-20;193838;54111;all;N/A;mean;54111;32;41173;25704;41.17;25.70
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;jul-20;292044;82477;all;N/A;mean;82477;34;34831;10758;34.83;10.76
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-20;115769;31699;all;N/A;mean;31699;41;36722;19885;36.72;19.89
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;jul-20;55233;13945;all;N/A;mean;13945;35;37758;25976;37.76;25.98
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;jul-20;29115;7568;all;N/A;mean;7568;29;35093;14711;35.09;14.71
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;jul-20;44366;11511;all;N/A;mean;11511;38;31397;19425;31.40;19.43
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;jul-20;41080;9582;all;N/A;mean;9582;32;28534;6938;28.53;6.94
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;jul-20;19232;4596;all;N/A;mean;4596;31;29183;12256;29.18;12.26
+All Providers Combined;Bogotá, Bogota, Colombia;;Aug 2020;1295591;329439;all;N/A;mean;329439;24;41513;18151;41.51;18.15
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Aug 2020;96666;26443;all;N/A;mean;26443;37;46704;31460;46.70;31.46
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Aug 2020;198883;56987;all;N/A;mean;56987;32;41954;25394;41.95;25.39
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Aug 2020;285639;79127;all;N/A;mean;79127;35;34948;11234;34.95;11.23
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2020;109121;30307;all;N/A;mean;30307;40;38832;22638;38.83;22.64
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Aug 2020;54328;13807;all;N/A;mean;13807;35;39513;27212;39.51;27.21
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Aug 2020;32557;8119;all;N/A;mean;8119;30;35520;14254;35.52;14.25
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Aug 2020;39684;10730;all;N/A;mean;10730;36;33829;20890;33.83;20.89
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Aug 2020;42932;9827;all;N/A;mean;9827;31;30567;6774;30.57;6.77
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Aug 2020;22134;5189;all;N/A;mean;5189;30;29861;11057;29.86;11.06
+All Providers Combined;Bogotá, Bogota, Colombia;;sep-20;1049792;288394;all;N/A;mean;288394;22;44368;19861;44.37;19.86
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;sep-20;90613;25514;all;N/A;mean;25514;34;49196;34678;49.20;34.68
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;sep-20;207276;57069;all;N/A;mean;57069;32;44039;26521;44.04;26.52
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;sep-20;235768;69362;all;N/A;mean;69362;29;39188;13733;39.19;13.73
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-20;93354;26892;all;N/A;mean;26892;41;38665;25414;38.67;25.41
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;sep-20;50476;13087;all;N/A;mean;13087;32;40002;27285;40.00;27.29
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;sep-20;26732;7151;all;N/A;mean;7151;26;37926;15950;37.93;15.95
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;sep-20;37858;10093;all;N/A;mean;10093;36;34215;21107;34.22;21.11
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;sep-20;40535;10045;all;N/A;mean;10045;31;33279;7059;33.28;7.06
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;sep-20;18972;4695;all;N/A;mean;4695;25;32971;12067;32.97;12.07
+All Providers Combined;Bogotá, Bogota, Colombia;;oct-20;994213;283216;all;N/A;mean;283216;23;46325;20530;46.33;20.53
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;oct-20;80881;22771;all;N/A;mean;22771;35;49811;33256;49.81;33.26
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;oct-20;185590;52946;all;N/A;mean;52946;30;46095;25131;46.10;25.13
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;oct-20;224309;68675;all;N/A;mean;68675;30;39892;14495;39.89;14.50
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-20;82054;24946;all;N/A;mean;24946;40;40180;25182;40.18;25.18
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;oct-20;46991;12553;all;N/A;mean;12553;37;38692;23835;38.69;23.84
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;oct-20;24948;7038;all;N/A;mean;7038;29;38303;14347;38.30;14.35
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;oct-20;39959;10753;all;N/A;mean;10753;42;34505;20496;34.51;20.50
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;oct-20;47037;11064;all;N/A;mean;11064;39;31270;7560;31.27;7.56
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;oct-20;18414;4620;all;N/A;mean;4620;26;33202;11485;33.20;11.49
+All Providers Combined;Bogotá, Bogota, Colombia;;nov-20;949967;276061;all;N/A;mean;276061;23;49640;22428;49.64;22.43
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;nov-20;88185;24322;all;N/A;mean;24322;34;50578;30777;50.58;30.78
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;nov-20;166327;48681;all;N/A;mean;48681;31;49140;28471;49.14;28.47
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;nov-20;206109;63114;all;N/A;mean;63114;30;43935;16789;43.94;16.79
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-20;72055;22238;all;N/A;mean;22238;41;41813;26038;41.81;26.04
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;nov-20;39791;11453;all;N/A;mean;11453;44;39960;24411;39.96;24.41
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;nov-20;25075;6963;all;N/A;mean;6963;32;39682;14601;39.68;14.60
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;nov-20;35139;9553;all;N/A;mean;9553;44;36178;22243;36.18;22.24
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;nov-20;52927;11318;all;N/A;mean;11318;42;33083;8183;33.08;8.18
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;nov-20;15170;4204;all;N/A;mean;4204;28;34468;11895;34.47;11.90
+All Providers Combined;Bogotá, Bogota, Colombia;;Dec 2020;788290;228707;all;N/A;mean;228707;23;51919;23481;51.92;23.48
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Dec 2020;74334;20840;all;N/A;mean;20840;33;52813;32813;52.81;32.81
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Dec 2020;157930;44698;all;N/A;mean;44698;31;51179;30707;51.18;30.71
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Dec 2020;180642;54566;all;N/A;mean;54566;30;46896;18205;46.90;18.21
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2020;67358;20260;all;N/A;mean;20260;38;45981;28393;45.98;28.39
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Dec 2020;36490;10594;all;N/A;mean;10594;40;44045;28526;44.05;28.53
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Dec 2020;20368;5648;all;N/A;mean;5648;30;42522;16177;42.52;16.18
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Dec 2020;27866;8054;all;N/A;mean;8054;39;40831;26599;40.83;26.60
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Dec 2020;29242;7739;all;N/A;mean;7739;32;38771;9049;38.77;9.05
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Dec 2020;11259;3239;all;N/A;mean;3239;28;37513;13515;37.51;13.52
