@@ -1,4 +1,4 @@
-﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
 All Providers Combined;Colombia;;Jan 2018;1529360;772892;all;N/A;mean;383877;54;11141;4662;11.14;4.66
 All Providers Combined;Colombia;;feb-18;1611753;797852;all;N/A;mean;390769;55;11663;5253;11.66;5.25
 All Providers Combined;Colombia;;mar-18;1638001;835723;all;N/A;mean;405034;50;11906;5201;11.91;5.20
