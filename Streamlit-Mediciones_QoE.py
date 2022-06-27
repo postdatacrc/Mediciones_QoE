@@ -103,14 +103,14 @@ def Seccion3Fijo():
     Ciudades3Fijo=pd.concat([df3_1Fijo,df3_2Fijo,df3_3Fijo,df3_4Fijo,df3_5Fijo,df3_6Fijo,df3_7Fijo,df3_8Fijo,df3_9Fijo,df3_10Fijo])#Unir los dataframes
     return Ciudades3Fijo
 Ciudades3Fijo=Seccion3Fijo()    
-#Ciudades3Fijo['Aggregate Date']=Ciudades3Fijo['Aggregate Date'].replace(" ", "-").str.title() #Unir espacios blancos 
+Ciudades3Fijo['Aggregate Date']=Ciudades3Fijo['Aggregate Date'].replace(" ", "-").str.title() #Unir espacios blancos 
 Ciudades3Fijo['Location']=Ciudades3Fijo['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
-#FeAntig3Fijo=Ciudades3Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
-#FeCorre3Fijo=pd.date_range('2018-01-01','2022-01-01', 
-#              freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
-#diction3Fijo=dict(zip(FeAntig3Fijo, FeCorre3Fijo))
-#Ciudades3Fijo['Aggregate Date'].replace(diction3Fijo, inplace=True) #Reemplazar fechas antiguas por nuevas
-#Ciudades3Fijo['Aggregate Date'] = Ciudades3Fijo['Aggregate Date'].astype('datetime64[D]') 
+FeAntig3Fijo=Ciudades3Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
+FeCorre3Fijo=pd.date_range('2018-01-01','2022-01-01', 
+              freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
+diction3Fijo=dict(zip(FeAntig3Fijo, FeCorre3Fijo))
+Ciudades3Fijo['Aggregate Date'].replace(diction3Fijo, inplace=True) #Reemplazar fechas antiguas por nuevas
+Ciudades3Fijo['Aggregate Date'] = Ciudades3Fijo['Aggregate Date'].astype('datetime64[D]') 
 Ciudades3Fijo['year']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).year
 Ciudades3Fijo['month']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).month
 Ciudades3Fijo=Ciudades3Fijo.drop(['Device','Platform','Technology Type','Metric Type','Provider'], axis=1)
