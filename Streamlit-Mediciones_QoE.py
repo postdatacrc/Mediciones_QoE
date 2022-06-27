@@ -31,28 +31,35 @@ st.title("Mediciones de calidad desde la experiencia del usuario")
 pathFijo='https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Fijo/'
 
 ####Primera sección - Fijo
-Colombia1Fijo=pd.read_csv(pathFijo+"Fij-historical_comparison_month(Colombia).csv", delimiter=',')
-FeAntig1Fijo=Colombia1Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
-FeCorre1Fijo=pd.date_range('2018-01-01','2022-01-01', 
-              freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
-diction1Fijo=dict(zip(FeAntig1Fijo, FeCorre1Fijo))
-Colombia1Fijo['Aggregate Date'].replace(diction1Fijo, inplace=True) #Reemplazar fechas antiguas por nuevas
-Colombia1Fijo['Aggregate Date'] =pd.to_datetime(Colombia1Fijo['Aggregate Date']).dt.floor('d') 
-Colombia1Fijo['month']=pd.DatetimeIndex(Colombia1Fijo['Aggregate Date']).month#Guardar el mes
-Colombia1Fijo['year']=pd.DatetimeIndex(Colombia1Fijo['Aggregate Date']).year
-Colombia1Fijo = Colombia1Fijo.drop(['Location','Platform','Technology Type','Metric Type','Provider'],axis=1)
+@st.cache(allow_output_mutation=True)
+def Seccion1Fijo():
+    Colombia1Fijo=pd.read_csv(pathFijo+"Fij-historical_comparison_month(Colombia).csv", delimiter=',')
+    FeAntig1Fijo=Colombia1Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
+    FeCorre1Fijo=pd.date_range('2018-01-01','2022-01-01', 
+                  freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
+    diction1Fijo=dict(zip(FeAntig1Fijo, FeCorre1Fijo))
+    Colombia1Fijo['Aggregate Date'].replace(diction1Fijo, inplace=True) #Reemplazar fechas antiguas por nuevas
+    Colombia1Fijo['Aggregate Date'] =pd.to_datetime(Colombia1Fijo['Aggregate Date']).dt.floor('d') 
+    Colombia1Fijo['month']=pd.DatetimeIndex(Colombia1Fijo['Aggregate Date']).month#Guardar el mes
+    Colombia1Fijo['year']=pd.DatetimeIndex(Colombia1Fijo['Aggregate Date']).year
+    Colombia1Fijo = Colombia1Fijo.drop(['Location','Platform','Technology Type','Metric Type','Provider'],axis=1)
+    return Colombia1Fijo
+Colombia1Fijo=Seccion1Fijo()
 
 ####Segunda sección - Fijo
-df2_1Fijo=pd.read_csv(pathFijo+'Fij-ETBMOVCLA-historical_2018-12-01.csv',delimiter=';')
-df2_2Fijo=pd.read_csv(pathFijo+'Fij-ETBMOVCLA-historical_2019-12-01.csv',delimiter=';')
-df2_3Fijo=pd.read_csv(pathFijo+'Fij-ETBMOVCLA-historical_2020-12-01.csv',delimiter=';')
-df2_4Fijo=pd.read_csv(pathFijo+'Fij-ETBMOVCLA-historical_2022-01-01.csv',delimiter=';')
-df2_5Fijo=pd.read_csv(pathFijo+'Fij-TIGOEMCALI-historical_2018-12-01.csv',delimiter=';')
-df2_6Fijo=pd.read_csv(pathFijo+'Fij-TIGOEMCALI-historical_2019-12-01.csv',delimiter=';')
-df2_7Fijo=pd.read_csv(pathFijo+'Fij-TIGOEMCALI-historical_2020-12-01.csv',delimiter=';')
-df2_8Fijo=pd.read_csv(pathFijo+'Fij-TIGOEMCALI-historical_2022-01-01.csv',delimiter=';').dropna(how='all') 
-
-OpCiud2Fijo=pd.concat([df2_1Fijo,df2_2Fijo,df2_3Fijo,df2_4Fijo,df2_5Fijo,df2_6Fijo,df2_7Fijo,df2_8Fijo])
+@st.cache(allow_output_mutation=True)
+def Seccion2Fijo():
+    df2_1Fijo=pd.read_csv(pathFijo+'Fij-ETBMOVCLA-historical_2018-12-01.csv',delimiter=';')
+    df2_2Fijo=pd.read_csv(pathFijo+'Fij-ETBMOVCLA-historical_2019-12-01.csv',delimiter=';')
+    df2_3Fijo=pd.read_csv(pathFijo+'Fij-ETBMOVCLA-historical_2020-12-01.csv',delimiter=';')
+    df2_4Fijo=pd.read_csv(pathFijo+'Fij-ETBMOVCLA-historical_2022-01-01.csv',delimiter=';')
+    df2_5Fijo=pd.read_csv(pathFijo+'Fij-TIGOEMCALI-historical_2018-12-01.csv',delimiter=';')
+    df2_6Fijo=pd.read_csv(pathFijo+'Fij-TIGOEMCALI-historical_2019-12-01.csv',delimiter=';')
+    df2_7Fijo=pd.read_csv(pathFijo+'Fij-TIGOEMCALI-historical_2020-12-01.csv',delimiter=';')
+    df2_8Fijo=pd.read_csv(pathFijo+'Fij-TIGOEMCALI-historical_2022-01-01.csv',delimiter=';').dropna(how='all') 
+    OpCiud2Fijo=pd.concat([df2_1Fijo,df2_2Fijo,df2_3Fijo,df2_4Fijo,df2_5Fijo,df2_6Fijo,df2_7Fijo,df2_8Fijo])
+    return OpCiud2Fijo
+OpCiud2Fijo=Seccion2Fijo()    
 OpCiud2Fijo['Location']=OpCiud2Fijo['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
 FeAntig2Fijo=OpCiud2Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
 FeCorre2Fijo=pd.date_range('2018-01-01','2022-01-01', 
@@ -81,44 +88,51 @@ OpCiud2Fijo=OpCiud2Fijo[OpCiud2Fijo['Test Count']>30]
 gdf2=gdf2.rename(columns={"NOMBRE_DPT":'Location'})
 
 ####Tercera sección - Fijo
-df3_1Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2018-12-01.csv',delimiter=';')
-df3_2Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2019-12-01.csv',delimiter=';')
-df3_3Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2020-12-01.csv',delimiter=';')
-df3_4Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2021-06-01.csv',delimiter=';')
-df3_5Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2022-01-01.csv',delimiter=';')
-df3_6Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2018-12-01.csv',delimiter=';')
-df3_7Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2019-12-01.csv',delimiter=';')
-df3_8Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2020-12-01.csv',delimiter=';')
-df3_9Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2021-06-01.csv',delimiter=';')
-df3_10Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2022-01-01.csv',delimiter=';')
-from functools import reduce
-Ciudades3Fijo=reduce(lambda x,y: pd.merge(x,y,how='outer'), [df3_1Fijo,df3_2Fijo,df3_3Fijo,df3_4Fijo,df3_5Fijo,df3_6Fijo,df3_7Fijo,df3_8Fijo,df3_9Fijo,df3_10Fijo])#Unir los dataframes
-Ciudades3Fijo['Aggregate Date']=Ciudades3Fijo['Aggregate Date'].str.replace(" ", "-").str.title() #Unir espacios blancos 
+@st.cache(allow_output_mutation=True)
+def Seccion3Fijo():
+    df3_1Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2018-12-01.csv',delimiter=';')
+    df3_2Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2019-12-01.csv',delimiter=';')
+    df3_3Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2020-12-01.csv',delimiter=';')
+    df3_4Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2021-06-01.csv',delimiter=';')
+    df3_5Fijo=pd.read_csv(pathFijo+'Fij(1-10)historical_comparison_month_2022-01-01.csv',delimiter=';')
+    df3_6Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2018-12-01.csv',delimiter=';')
+    df3_7Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2019-12-01.csv',delimiter=';')
+    df3_8Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2020-12-01.csv',delimiter=';')
+    df3_9Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2021-06-01.csv',delimiter=';')
+    df3_10Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2022-01-01.csv',delimiter=';')
+    from functools import reduce
+    Ciudades3Fijo=reduce(lambda x,y: pd.merge(x,y,how='outer'), [df3_1Fijo,df3_2Fijo,df3_3Fijo,df3_4Fijo,df3_5Fijo,df3_6Fijo,df3_7Fijo,df3_8Fijo,df3_9Fijo,df3_10Fijo])#Unir los dataframes
+    return Ciudades3Fijo
+Ciudades3Fijo=Seccion3Fijo()    
+#Ciudades3Fijo['Aggregate Date']=Ciudades3Fijo['Aggregate Date'].replace(" ", "-").str.title() #Unir espacios blancos 
 Ciudades3Fijo['Location']=Ciudades3Fijo['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
-FeAntig3Fijo=Ciudades3Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
-FeCorre3Fijo=pd.date_range('2018-01-01','2022-01-01', 
-              freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
-diction3Fijo=dict(zip(FeAntig3Fijo, FeCorre3Fijo))
-Ciudades3Fijo['Aggregate Date'].replace(diction3Fijo, inplace=True) #Reemplazar fechas antiguas por nuevas
-Ciudades3Fijo['Aggregate Date'] = Ciudades3Fijo['Aggregate Date'].astype('datetime64[D]') 
+#FeAntig3Fijo=Ciudades3Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
+#FeCorre3Fijo=pd.date_range('2018-01-01','2022-01-01', 
+#              freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
+#diction3Fijo=dict(zip(FeAntig3Fijo, FeCorre3Fijo))
+#Ciudades3Fijo['Aggregate Date'].replace(diction3Fijo, inplace=True) #Reemplazar fechas antiguas por nuevas
+#Ciudades3Fijo['Aggregate Date'] = Ciudades3Fijo['Aggregate Date'].astype('datetime64[D]') 
 Ciudades3Fijo['year']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).year
 Ciudades3Fijo['month']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).month
 Ciudades3Fijo=Ciudades3Fijo.drop(['Device','Platform','Technology Type','Metric Type','Provider'], axis=1)
 
 
 ####Cuarta sección - Fijo
-df4_1Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2018-12-01OP.csv',delimiter=';')
-cols_to_changeFijo=['Download Speed Mbps']
-if df4_1Fijo['Download Speed Mbps'].dtypes !='float64':
-    for col in cols_to_changeFijo:
-        df4_1Fijo[col]=df4_1Fijo[col].str.replace(',','.')
-        df4_1Fijo[col]=df4_1Fijo[col].astype(float)
-df4_2Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2019-12-01OP.csv',delimiter=';')
-df4_3Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2020-12-01OP.csv',delimiter=';')
-df4_4Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2021-06-01OP.csv',delimiter=';')
-df4_5Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2022-01-01OP.csv',delimiter=';').dropna(how='all')
-
-Operadores4Fijo=pd.concat([df4_1Fijo,df4_2Fijo,df4_3Fijo,df4_4Fijo,df4_5Fijo])
+@st.cache(allow_output_mutation=True)
+def Seccion4Fijo():
+    df4_1Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2018-12-01OP.csv',delimiter=';')
+    cols_to_changeFijo=['Download Speed Mbps']
+    if df4_1Fijo['Download Speed Mbps'].dtypes !='float64':
+        for col in cols_to_changeFijo:
+            df4_1Fijo[col]=df4_1Fijo[col].str.replace(',','.')
+            df4_1Fijo[col]=df4_1Fijo[col].astype(float)
+    df4_2Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2019-12-01OP.csv',delimiter=';')
+    df4_3Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2020-12-01OP.csv',delimiter=';')
+    df4_4Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2021-06-01OP.csv',delimiter=';')
+    df4_5Fijo=pd.read_csv(pathFijo+'Fij-historical_comparison_month_2022-01-01OP.csv',delimiter=';').dropna(how='all')
+    Operadores4Fijo=pd.concat([df4_1Fijo,df4_2Fijo,df4_3Fijo,df4_4Fijo,df4_5Fijo])
+    return Operadores4Fijo
+Operadores4Fijo=Seccion4Fijo()    
 FeAntig4Fijo=Operadores4Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
 FeCorre4Fijo=pd.date_range('2018-01-01','2022-01-01', 
               freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
@@ -146,37 +160,6 @@ if select_servicio == 'Internet fijo':
             fig1Fijo = make_subplots(rows=1, cols=1)
             fig1Fijo.add_trace(go.Scatter(x=Downspeed1Fijo['Aggregate Date'].values, y=Downspeed1Fijo['Download Speed Mbps'].values,
                                      line=dict(color='blue', width=2),name=' ',mode='lines+markers',fill='tonexty', fillcolor='rgba(0,0,255,0.2)'),row=1, col=1)
-            fig1Fijo.add_shape(type="line",
-                x0='2018-06-01', y0=0, x1='2018-06-01', y1=12.99,
-                line=dict(color="RoyalBlue",width=2,dash="dot"))
-            fig1Fijo.add_shape(type="line",
-                x0='2018-12-01', y0=0, x1='2018-12-01', y1=15.99,
-                line=dict(color="RoyalBlue",width=2,dash="dot"))
-            fig1Fijo.add_shape(type="line",
-                x0='2019-06-01', y0=0, x1='2019-06-01', y1=19.34,
-                line=dict(color="RoyalBlue",width=2,dash="dot"))
-            fig1Fijo.add_shape(type="line",
-                x0='2019-12-01', y0=0, x1='2019-12-01', y1=28.32,
-                line=dict(color="RoyalBlue",width=2,dash="dot"))
-            fig1Fijo.add_shape(type="line",
-                x0='2020-06-01', y0=0, x1='2020-06-01', y1=33.35,
-                line=dict(color="RoyalBlue",width=2,dash="dot"))
-            fig1Fijo.add_shape(type="line",
-                x0='2020-12-01', y0=0, x1='2020-12-01', y1=44.81,
-                line=dict(color="RoyalBlue",width=2,dash="dot"))
-            fig1Fijo.add_shape(type="line",
-                x0='2021-06-01', y0=0, x1='2021-06-01', y1=61.62,
-                line=dict(color="RoyalBlue",width=2,dash="dot"))
-            fig1Fijo.add_shape(type="line",
-                x0='2021-12-01', y0=0, x1='2021-12-01', y1=84.82,
-                line=dict(color="RoyalBlue",width=2,dash="dot"))
-            fig1Fijo.add_trace(go.Scatter(name=' ',
-                x=['2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01'],
-                y=[15.9, 18.5, 24,31.4,38,47.8,68,87.5],
-                text=["12,99",
-                      "15,99",
-                      "19,3","28,32","33,35","44,81","61,62","84,82"],
-                mode="text"))
             fig1Fijo.update_xaxes(tickvals=['2018-01-01','2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01'])
             fig1Fijo.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=18),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
@@ -212,7 +195,14 @@ if select_servicio == 'Internet fijo':
             Colombia2Fijo['Location'] = Colombia2Fijo['Location'].str.upper()
             Colombia2Fijo['Location'] = Colombia2Fijo['Location'].replace({'SANTANDER DEPARTMENT':'SANTANDER','CAUCA DEPARTMENT':'CAUCA','SAN ANDRÉS AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA','NORTH SANTANDER':'NORTE DE SANTANDER','CAQUETÁ':'CAQUETA'})
             Colombia2Fijo=Colombia2Fijo[Colombia2Fijo['Test Count']>30]
-            Col2Fijo=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==12)].groupby(['Location'])['Download Speed Mbps'].mean()
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                año_opFijo = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            with col2:
+                mes_opFijo = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                
+            Col2Fijo=Colombia2Fijo[(Colombia2Fijo['year']==año_opFijo)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Download Speed Mbps'].mean()
             Col2Fijo=round(Col2Fijo,2)
             departamentos_df2Fijo=gdf2.merge(Col2Fijo, on='Location')
             departamentos_df2Fijo=departamentos_df2Fijo.sort_values(by='Download Speed Mbps')
@@ -225,7 +215,7 @@ if select_servicio == 'Internet fijo':
             choropleth=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=departamentos_df2Fijo,
-                bins=[0,5,15,25,50,75,100],
+                #bins=[0,5,15,25,50,75,100],
                 columns=['Location', 'Download Speed Mbps'],
                 key_on='feature.properties.NOMBRE_DPT',
                 fill_color='YlGnBu', 
@@ -264,7 +254,7 @@ if select_servicio == 'Internet fijo':
             colombia_map1Fijo.keep_in_front(NIL)
             col1, col2 ,col3= st.columns([1.5,4,1])
             with col2:
-                st.markdown("<center><b>Gráfico 2. Velocidad promedio de descarga de internet fijo en Colombia por departamento (diciembre de 2021) (en Mbps)</b></center>",
+                st.markdown("<center><b>Gráfico 2. Velocidad promedio de descarga de internet fijo en Colombia por departamento (en Mbps)</b></center>",
                 unsafe_allow_html=True)
                 folium_static(colombia_map1Fijo,width=480) 
                 
@@ -352,8 +342,8 @@ if select_servicio == 'Internet fijo':
                         color=dict_coloresFijo[location],
                         opacity=0.7,
                         size=Dic20[Dic20['Location']==location]['Latency'].values,
-                    )
-                ,showlegend=False),row=1, col=1)
+                    ),
+                text=Dic20[Dic20['Location']==location]['Latency'].values,showlegend=False),row=1, col=1)
                 
             for location in Dic21List:
                 fig4Fijo.add_trace(go.Scatter(
@@ -363,8 +353,8 @@ if select_servicio == 'Internet fijo':
                         color=dict_coloresFijo[location],
                         opacity=0.7,
                         size=Dic21[Dic21['Location']==location]['Latency'].values,
-                    )
-                ),row=1, col=2)
+                    ),
+                text=Dic21[Dic21['Location']==location]['Latency'].values),row=1, col=2)
 
             fig4Fijo.add_shape(type="line",
                 x0=52.81, y0=0, x1=52.81, y1=32.81,
@@ -412,37 +402,7 @@ if select_servicio == 'Internet fijo':
                 text=["Valor máximo<br>diciembre 2020"],
                 textposition="bottom center"
             ),row=1,col=2)
-            fig4Fijo.add_trace(go.Scatter(
-                x=[15],
-                y=[45],
-                showlegend=False,
-                mode="text",
-                name="Text",
-                text=["Latencia (ms)"],
-                textposition="bottom center"
-            ),row=1,col=2)
-            fig4Fijo.add_trace(go.Scatter(
-                x=[6.5],
-                y=[40.2],
-                showlegend=False,
-                mode="text",
-                name="Text",
-                text=["33"],
-                textposition="bottom center"
-            ),row=1,col=2)
-            fig4Fijo.add_trace(go.Scatter(
-                x=[16],
-                y=[38.7],
-                showlegend=False,
-                mode="text",
-                name="Text",
-                text=["16"],
-                textposition="bottom center"
-            ),row=1,col=2)
-            fig4Fijo.add_shape(
-                dict(type="circle", x0=69.5-68, y0=15+22, x1=80-68, y1=20+22), row=1, col=2, line_color="rgb(51,51,255)",line_width=0.7)
-            fig4Fijo.add_shape(
-                dict(type="circle", x0=94-80, y0=60-21, x1=98-80, y1=62-21), row=1, col=2, line_color="rgb(255,51,51)",line_width=0.7)
+
 
             fig4Fijo.update_xaxes(tickangle=0,range=[0,110],tickfont=dict(family='Arial', color='black', size=16),ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
@@ -454,7 +414,7 @@ if select_servicio == 'Internet fijo':
             fig4Fijo.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
             'text': "<b> Diagrama de burbujas para velocidad de descarga, carga y latencia <br> en el internet fijo por ciudad</b>",
-            'y':0.9,
+            'y':0.95,
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
@@ -464,7 +424,6 @@ if select_servicio == 'Internet fijo':
             fig4Fijo.update_yaxes(showspikes=True,range=[0,70],title_text=None, row=1, col=2)
             fig4Fijo.update_layout(legend=dict(y=0.95,x=0.001,orientation='v'))
             st.plotly_chart(fig4Fijo, use_container_width=True)
-
             
         if dimension_Vel_descarga_Fijo == 'Operadores': 
             TodosDescarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Download Speed Mbps'].mean().reset_index()
@@ -500,7 +459,7 @@ if select_servicio == 'Internet fijo':
                         color='white',
                         size=4,line=dict(color='rgb(153,51,255)',width=1)),mode='lines+markers',name='Tigo'),row=1, col=1)
 
-            fig3Fijo.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=14),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
+            fig3Fijo.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=12),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
             fig3Fijo.update_yaxes(tickfont=dict(family='Arial', color='black', size=14),titlefont_size=14, title_text='Velocidad descarga promedio<br>(Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
@@ -713,3 +672,136 @@ if select_servicio == 'Internet fijo':
             folium_static(dualmap1_1Fijo,width=900) 
             folium_static(dualmap1_2Fijo,width=900) 
            
+            etb=Operadores4Fijo[Operadores4Fijo['Provider']=='ETB'][['Latency','Download Speed Mbps','Upload Speed Mbps','year']]
+            claro=Operadores4Fijo[Operadores4Fijo['Provider']=='Claro'][['Latency','Download Speed Mbps','Upload Speed Mbps','year']]
+            movistar=Operadores4Fijo[Operadores4Fijo['Provider']=='Movistar'][['Latency','Download Speed Mbps','Upload Speed Mbps','year']]
+            tigo=Operadores4Fijo[Operadores4Fijo['Provider']=='Tigo'][['Latency','Download Speed Mbps','Upload Speed Mbps','year']]     
+
+            dict_color_periodos={2018:'rgb(213,3,85)',2019:'rgb(255,152,0)',2020:'rgb(44,198,190)',2021:'rgb(72,68,242)'}
+            fig5Fijo = make_subplots(rows=2, cols=2,subplot_titles=("<b>ETB</b>",
+                "<b>CLARO</b>","<b>MOVISTAR</b>","<b>TIGO</b>"),vertical_spacing=0.1)  
+            for año in [2018,2019,2020,2021]:  
+                fig5Fijo.add_trace(go.Scatter(
+                x=etb[etb['year']==año]['Download Speed Mbps'].values, y=etb[etb['year']==año]['Upload Speed Mbps'].values,showlegend=True, name=año,
+                mode='markers',
+                marker=dict(
+                    color=dict_color_periodos[año],
+                    opacity=0.7,
+                    size=0.5*etb[etb['year']==año]['Latency'].values,
+                ),legendgroup = '1',
+                text=0.5*etb[etb['year']==año]['Latency'].values),row=1, col=1)
+
+                fig5Fijo.add_trace(go.Scatter(
+                x=claro[claro['year']==año]['Download Speed Mbps'].values, y=claro[claro['year']==año]['Upload Speed Mbps'].values,showlegend=False, name=año,
+                mode='markers',
+                marker=dict(
+                    color=dict_color_periodos[año],
+                    opacity=0.7,
+                    size=0.5*claro[claro['year']==año]['Latency'].values,
+                ),legendgroup = '1',
+                text=0.5*claro[claro['year']==año]['Latency'].values),row=1, col=2)
+
+                fig5Fijo.add_trace(go.Scatter(
+                x=movistar[movistar['year']==año]['Download Speed Mbps'].values, y=movistar[movistar['year']==año]['Upload Speed Mbps'].values,showlegend=False, name=año,
+                mode='markers',
+                marker=dict(
+                    color=dict_color_periodos[año],
+                    opacity=0.7,
+                    size=0.5*movistar[movistar['year']==año]['Latency'].values,
+                ),legendgroup = '1',
+                text=0.5*movistar[movistar['year']==año]['Latency'].values),row=2, col=1)
+                
+                fig5Fijo.add_trace(go.Scatter(
+                x=tigo[tigo['year']==año]['Download Speed Mbps'].values, y=tigo[tigo['year']==año]['Upload Speed Mbps'].values,showlegend=False, name=año,
+                mode='markers',
+                marker=dict(
+                    color=dict_color_periodos[año],
+                    opacity=0.7,
+                    size=0.5*tigo[tigo['year']==año]['Latency'].values,
+                ),legendgroup = '1',
+                text=0.5*tigo[tigo['year']==año]['Latency'].values),row=2, col=2)    
+                
+            fig5Fijo.add_shape(type="line",
+                x0=0, y0=0, x1=135, y1=135,
+                line=dict(
+                    color="indianred",
+                    width=4,
+                    dash="dot",
+                ),row=1,col=1)
+            fig5Fijo.add_shape(type="line",
+                x0=0, y0=0, x1=135, y1=135,
+                line=dict(
+                    color="indianred",
+                    width=4,
+                    dash="dot",
+                ),row=1,col=2)
+            fig5Fijo.add_shape(type="line",
+                x0=0, y0=0, x1=135, y1=135,
+                line=dict(
+                    color="indianred",
+                    width=4,
+                    dash="dot",
+                ),row=2,col=1)
+            fig5Fijo.add_shape(type="line",
+                x0=0, y0=0, x1=135, y1=135,
+                line=dict(
+                    color="indianred",
+                    width=4,
+                    dash="dot",
+                ),row=2,col=2)
+            ###################################
+
+
+            fig5Fijo.update_xaxes(range=[0,135],tickangle=0,tickfont=dict(family='Arial', color='black', size=16),ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig5Fijo.update_yaxes(range=[0,135],tickfont=dict(family='Arial', color='black', size=16),titlefont_size=16,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig5Fijo.update_traces(textfont_size=14)
+            fig5Fijo.update_layout(height=700,legend_title=None)
+            fig5Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig5Fijo.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b> Diagrama de burbujas para velocidad de descarga, carga y latencia <br> en el internet fijo por operador</b>",
+            'y':0.95,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})  
+            fig5Fijo.update_xaxes(row=1, col=1,title_text=None)
+            fig5Fijo.update_yaxes(row=1, col=2,title_text=None)
+            fig5Fijo.update_yaxes(row=2, col=2,title_text=None)
+            fig5Fijo.update_xaxes(row=1, col=2,title_text=None)
+            fig5Fijo.update_xaxes(row=2, col=1,title_text='Velocidad de descarga (Mbps)')
+            fig5Fijo.update_xaxes(row=2, col=2,title_text='Velocidad de descarga (Mbps)')
+            fig5Fijo.update_yaxes(title_text="Velocidad de carga (Mbps)", row=1, col=1)
+            fig5Fijo.update_yaxes(title_text="Velocidad de carga (Mbps)", row=2, col=1)
+            fig5Fijo.update_layout(legend=dict(yanchor="top",y=1,xanchor="left",x=0.01))
+            st.plotly_chart(fig5Fijo, use_container_width=True)  
+
+    if select_indicador== 'Velocidad de carga':
+        dimension_Vel_carga_Fijo = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)
+        if dimension_Vel_carga_Fijo == 'Histórico Colombia':
+            Upspeed1Fijo=Colombia1Fijo.groupby(['Aggregate Date'])['Upload Speed Mbps'].mean().reset_index()
+            Upspeed1Fijo=Upspeed1Fijo[Upspeed1Fijo['Aggregate Date']<'2022-01-01']
+            fig6Fijo = make_subplots(rows=1, cols=1)
+            fig6Fijo.add_trace(go.Scatter(x=Upspeed1Fijo['Aggregate Date'].values, y=Upspeed1Fijo['Upload Speed Mbps'].values,
+                                     line=dict(color='red', width=2),mode='lines+markers',fill='tonexty', fillcolor='rgba(255,0,0,0.2)'),row=1, col=1)
+            fig6Fijo.update_xaxes(tickvals=['2018-01-01','2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01'])
+            fig6Fijo.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=18),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig6Fijo.update_yaxes(tickfont=dict(family='Arial', color='black', size=18),titlefont_size=18, title_text='Velocidad carga<br>(Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig6Fijo.update_traces(textfont_size=18)
+            fig6Fijo.update_layout(height=500,legend_title=None)
+            #fig.update_layout(legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1))
+            fig6Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
+            fig6Fijo.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Gráfico 6. Velocidad promedio mensual de carga de Internet fijo<br>en Colombia (2018-2021) (en Mbps)</b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})  
+            st.plotly_chart(fig6Fijo, use_container_width=True)  
+            st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
+            
+            
