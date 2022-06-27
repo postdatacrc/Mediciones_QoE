@@ -102,7 +102,8 @@ def Seccion3Fijo():
     df3_10Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2022-01-01.csv',delimiter=';')
     Ciudades3Fijo=pd.concat([df3_1Fijo,df3_2Fijo,df3_3Fijo,df3_4Fijo,df3_5Fijo,df3_6Fijo,df3_7Fijo,df3_8Fijo,df3_9Fijo,df3_10Fijo])#Unir los dataframes
     return Ciudades3Fijo
-Ciudades3Fijo=Seccion3Fijo()    
+Ciudades3Fijo=Seccion3Fijo()
+Ciudades3Fijo['Aggregate Date']=Ciudades3Fijo['Aggregate Date'].astype('str')    
 Ciudades3Fijo['Aggregate Date']=Ciudades3Fijo['Aggregate Date'].replace(" ", "-").str.title() #Unir espacios blancos 
 Ciudades3Fijo['Location']=Ciudades3Fijo['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
 FeAntig3Fijo=Ciudades3Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
@@ -110,7 +111,7 @@ FeCorre3Fijo=pd.date_range('2018-01-01','2022-01-01',
               freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
 diction3Fijo=dict(zip(FeAntig3Fijo, FeCorre3Fijo))
 Ciudades3Fijo['Aggregate Date'].replace(diction3Fijo, inplace=True) #Reemplazar fechas antiguas por nuevas
-Ciudades3Fijo['Aggregate Date'] = Ciudades3Fijo['Aggregate Date'].astype('datetime64[D]') 
+Ciudades3Fijo['Aggregate Date'] = pd.to_datetime(Ciudades3Fijo['Aggregate Date'],errors='coerce')
 Ciudades3Fijo['year']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).year
 Ciudades3Fijo['month']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).month
 Ciudades3Fijo=Ciudades3Fijo.drop(['Device','Platform','Technology Type','Metric Type','Provider'], axis=1)
@@ -224,7 +225,9 @@ if select_servicio == 'Internet fijo':
             departamentos_df2Fijo=departamentos_df2Fijo.sort_values(by='Download Speed Mbps')
 
             # create a plain world map
-            colombia_map1Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+            colombia_map1Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
             for tile in tiles:
                 folium.TileLayer(tile).add_to(colombia_map1Fijo)
@@ -268,7 +271,7 @@ if select_servicio == 'Internet fijo':
             )
             colombia_map1Fijo.add_child(NIL)
             colombia_map1Fijo.keep_in_front(NIL)
-            col1, col2 ,col3= st.columns([1.5,4,1])
+            col1, col2 ,col3= st.columns([1,4,1])
             with col2:
                 st.markdown("<center><b> Velocidad promedio de descarga de internet fijo en Colombia por departamento (en Mbps)</b></center>",
                 unsafe_allow_html=True)
@@ -487,7 +490,9 @@ if select_servicio == 'Internet fijo':
             final_df4Fijo=gdf2.merge(Proveedor4Fijo, on='Location')
             
 
-            dualmap1_1Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+            dualmap1_1Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
             ########
             choropleth=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -570,7 +575,9 @@ if select_servicio == 'Internet fijo':
             FloatImage(url1, bottom=5, left=1).add_to(dualmap1_1Fijo.m1)
             FloatImage(url2, bottom=5, left=53).add_to(dualmap1_1Fijo.m2)
 
-            dualmap1_2Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+            dualmap1_2Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
             ########
             choropleth=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -801,7 +808,9 @@ if select_servicio == 'Internet fijo':
             departamentos_df2bFijo=gdf2.merge(Col2bFijo, on='Location')
             departamentos_df2bFijo=departamentos_df2bFijo.sort_values(by='Upload Speed Mbps')  
 
-            colombia_map2Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+            colombia_map2Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
             for tile in tiles:
                 folium.TileLayer(tile).add_to(colombia_map2Fijo)
@@ -845,7 +854,7 @@ if select_servicio == 'Internet fijo':
             )
             colombia_map2Fijo.add_child(NIL)
             colombia_map2Fijo.keep_in_front(NIL)
-            col1, col2 ,col3= st.columns([1.5,4,1])
+            col1, col2 ,col3= st.columns([1,4,1])
             with col2:
                 st.markdown("<center><b>Velocidad promedio de carga de internet fijo en Colombia por departamento (en Mbps)</b></center>",
                 unsafe_allow_html=True)
@@ -1207,7 +1216,9 @@ if select_servicio == 'Internet fijo':
             departamentosLat_df2Fijo=gdf2.merge(ColLat2, on='Location')
             departamentosLat_df2Fijo=departamentosLat_df2Fijo.sort_values(by='Latency')
             
-            colombia_map3Fijo = folium.Map(height=600,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
+            colombia_map3Fijo = folium.Map(height=600,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
             for tile in tiles:
                 folium.TileLayer(tile).add_to(colombia_map3Fijo)
@@ -1262,7 +1273,7 @@ if select_servicio == 'Internet fijo':
              fill_opacity=1
                ).add_to(colombia_map3Fijo)
 
-            col1, col2 ,col3= st.columns([1.5,4,1])
+            col1, col2 ,col3= st.columns([1,4,1])
             with col2:
                 st.markdown("<center><b>Latenicia promedio internet fijo en Colombia por departamento (en Mbps)</b></center>",
                 unsafe_allow_html=True)
