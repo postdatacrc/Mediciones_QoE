@@ -408,14 +408,19 @@ if select_servicio == 'Internet fijo':
         if dimension_Vel_descarga_Fijo == 'Operadores': 
             TodosDescarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Download Speed Mbps'].mean().reset_index()
             TodosDescarga4Fijo=TodosDescarga4Fijo[TodosDescarga4Fijo['Aggregate Date']<'2022-01-01']
+            TodosDescarga4Fijo['Aggregate Date']=TodosDescarga4Fijo['Aggregate Date'].astype('str')
             ETBDescarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='ETB'].groupby(['Aggregate Date'])['Download Speed Mbps'].mean().reset_index()
             ETBDescarga4Fijo=ETBDescarga4Fijo[ETBDescarga4Fijo['Aggregate Date']<'2022-01-01']
+            ETBDescarga4Fijo['Aggregate Date']=ETBDescarga4Fijo['Aggregate Date'].astype('str')
             MOVISTARDescarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Movistar'].groupby(['Aggregate Date'])['Download Speed Mbps'].mean().reset_index()
             MOVISTARDescarga4Fijo=MOVISTARDescarga4Fijo[MOVISTARDescarga4Fijo['Aggregate Date']<'2022-01-01']
+            MOVISTARDescarga4Fijo['Aggregate Date']=MOVISTARDescarga4Fijo['Aggregate Date'].astype('str')
             CLARODescarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Claro'].groupby(['Aggregate Date'])['Download Speed Mbps'].mean().reset_index()
             CLARODescarga4Fijo=CLARODescarga4Fijo[CLARODescarga4Fijo['Aggregate Date']<'2022-01-01']
+            CLARODescarga4Fijo['Aggregate Date']=CLARODescarga4Fijo['Aggregate Date'].astype('str')
             TIGODescarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Tigo'].groupby(['Aggregate Date'])['Download Speed Mbps'].mean().reset_index()
             TIGODescarga4Fijo=TIGODescarga4Fijo[TIGODescarga4Fijo['Aggregate Date']<'2022-01-01']
+            TIGODescarga4Fijo['Aggregate Date']=TIGODescarga4Fijo['Aggregate Date'].astype('str')
             
             JuntosDescarga4Fijo=pd.concat([TodosDescarga4Fijo,ETBDescarga4Fijo,MOVISTARDescarga4Fijo,CLARODescarga4Fijo,TIGODescarga4Fijo])
         
@@ -915,14 +920,19 @@ if select_servicio == 'Internet fijo':
         if dimension_Vel_carga_Fijo == 'Operadores':   
             TodosCarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Upload Speed Mbps'].mean().reset_index()
             TodosCarga4Fijo=TodosCarga4Fijo[TodosCarga4Fijo['Aggregate Date']<'2022-01-01']
+            TodosCarga4Fijo['Aggregate Date']=TodosCarga4Fijo['Aggregate Date'].astype('str')
             ETBCarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='ETB'].groupby(['Aggregate Date'])['Upload Speed Mbps'].mean().reset_index()
             ETBCarga4Fijo=ETBCarga4Fijo[ETBCarga4Fijo['Aggregate Date']<'2022-01-01']
+            ETBCarga4Fijo['Aggregate Date']=ETBCarga4Fijo['Aggregate Date'].astype('str')
             MOVISTARCarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Movistar'].groupby(['Aggregate Date'])['Upload Speed Mbps'].mean().reset_index()
             MOVISTARCarga4Fijo=MOVISTARCarga4Fijo[MOVISTARCarga4Fijo['Aggregate Date']<'2022-01-01']
+            MOVISTARCarga4Fijo['Aggregate Date']=MOVISTARCarga4Fijo['Aggregate Date'].astype('str')
             CLAROCarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Claro'].groupby(['Aggregate Date'])['Upload Speed Mbps'].mean().reset_index()
             CLAROCarga4Fijo=CLAROCarga4Fijo[CLAROCarga4Fijo['Aggregate Date']<'2022-01-01']
+            CLAROCarga4Fijo['Aggregate Date']=CLAROCarga4Fijo['Aggregate Date'].astype('str')
             TIGOCarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Tigo'].groupby(['Aggregate Date'])['Upload Speed Mbps'].mean().reset_index()
-            TIGOCarga4Fijo=TIGOCarga4Fijo[TIGOCarga4Fijo['Aggregate Date']<'2022-01-01']        
+            TIGOCarga4Fijo=TIGOCarga4Fijo[TIGOCarga4Fijo['Aggregate Date']<'2022-01-01']  
+            TIGOCarga4Fijo['Aggregate Date']=TIGOCarga4Fijo['Aggregate Date'].astype('str')            
 
             JuntosCarga4Fijo=pd.concat([TodosCarga4Fijo,ETBCarga4Fijo,MOVISTARCarga4Fijo,CLAROCarga4Fijo,TIGOCarga4Fijo])
             
@@ -1164,6 +1174,7 @@ if select_servicio == 'Internet fijo':
         if dimension_Latencia_Fijo == 'Histórico Colombia':    
             Latency1Fijo=Colombia1Fijo.groupby(['Aggregate Date'])['Latency'].mean().reset_index()
             Latency1Fijo=Latency1Fijo[Latency1Fijo['Aggregate Date']<'2022-01-01']
+            Latency1Fijo['Aggregate Date']=Latency1Fijo['Aggregate Date'].astype('str')
             fig9Fijo = make_subplots(rows=1, cols=1)
             fig9Fijo.add_trace(go.Scatter(x=Latency1Fijo['Aggregate Date'].values, y=Latency1Fijo['Latency'].values,
                          line=dict(color='purple', width=2),mode='lines+markers',fill='tonexty', fillcolor='rgba(153,0,153,0.2)'),row=1, col=1)
@@ -1322,14 +1333,19 @@ if select_servicio == 'Internet fijo':
         if dimension_Latencia_Fijo == 'Operadores':  
             TodosLatencia4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Latency'].mean().reset_index()
             TodosLatencia4Fijo=TodosLatencia4Fijo[TodosLatencia4Fijo['Aggregate Date']<'2022-01-01']
+            TodosLatencia4Fijo['Aggregate Date']=TodosLatencia4Fijo['Aggregate Date'].astype('str')
             ETBLatencia4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='ETB'].groupby(['Aggregate Date'])['Latency'].mean().reset_index()
             ETBLatencia4Fijo=ETBLatencia4Fijo[ETBLatencia4Fijo['Aggregate Date']<'2022-01-01']
+            ETBLatencia4Fijo['Aggregate Date']=ETBLatencia4Fijo['Aggregate Date'].astype('str')
             MOVISTARLatencia4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Movistar'].groupby(['Aggregate Date'])['Latency'].mean().reset_index()
             MOVISTARLatencia4Fijo=MOVISTARLatencia4Fijo[MOVISTARLatencia4Fijo['Aggregate Date']<'2022-01-01']
+            MOVISTARLatencia4Fijo['Aggregate Date']=MOVISTARLatencia4Fijo['Aggregate Date'].astype('str')
             CLAROLatencia4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Claro'].groupby(['Aggregate Date'])['Latency'].mean().reset_index()
             CLAROLatencia4Fijo=CLAROLatencia4Fijo[CLAROLatencia4Fijo['Aggregate Date']<'2022-01-01']
+            CLAROLatencia4Fijo['Aggregate Date']=CLAROLatencia4Fijo['Aggregate Date'].astype('str')
             TIGOLatencia4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='Tigo'].groupby(['Aggregate Date'])['Latency'].mean().reset_index()
             TIGOLatencia4Fijo=TIGOLatencia4Fijo[TIGOLatencia4Fijo['Aggregate Date']<'2022-01-01']
+            TIGOLatencia4Fijo['Aggregate Date']=TIGOLatencia4Fijo['Aggregate Date'].astype('str')
             
             JuntosLatencia4Fijo=pd.concat([TodosLatencia4Fijo,ETBLatencia4Fijo,MOVISTARLatencia4Fijo,CLAROLatencia4Fijo,TIGOLatencia4Fijo])
             
