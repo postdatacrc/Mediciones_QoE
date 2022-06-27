@@ -100,8 +100,7 @@ def Seccion3Fijo():
     df3_8Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2020-12-01.csv',delimiter=';')
     df3_9Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2021-06-01.csv',delimiter=';')
     df3_10Fijo=pd.read_csv(pathFijo+'Fij(11-17)historical_comparison_month_2022-01-01.csv',delimiter=';')
-    from functools import reduce
-    Ciudades3Fijo=reduce(lambda x,y: pd.merge(x,y,how='outer'), [df3_1Fijo,df3_2Fijo,df3_3Fijo,df3_4Fijo,df3_5Fijo,df3_6Fijo,df3_7Fijo,df3_8Fijo,df3_9Fijo,df3_10Fijo])#Unir los dataframes
+    Ciudades3Fijo=pd.concat([df3_1Fijo,df3_2Fijo,df3_3Fijo,df3_4Fijo,df3_5Fijo,df3_6Fijo,df3_7Fijo,df3_8Fijo,df3_9Fijo,df3_10Fijo])#Unir los dataframes
     return Ciudades3Fijo
 Ciudades3Fijo=Seccion3Fijo()    
 #Ciudades3Fijo['Aggregate Date']=Ciudades3Fijo['Aggregate Date'].replace(" ", "-").str.title() #Unir espacios blancos 
