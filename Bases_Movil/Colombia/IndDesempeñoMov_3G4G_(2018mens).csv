@@ -1,0 +1,37 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+All Providers Combined,Colombia,,Jan 2018,24019,8322,N/A,3g,mean,8322,83,3482,1066,3.48,1.07
+All Providers Combined,Colombia,,Jan 2018,41182,17004,N/A,lte,mean,17004,46,21514,10777,21.51,10.78
+All Providers Combined,Colombia,,Jan 2018,65425,23027,N/A,cellular,mean,23027,58,16041,7837,16.04,7.84
+All Providers Combined,Colombia,,feb-18,21389,7479,N/A,3g,mean,7479,80,3537,1099,3.54,1.1
+All Providers Combined,Colombia,,feb-18,41462,16820,N/A,lte,mean,16820,47,19889,11639,19.89,11.64
+All Providers Combined,Colombia,,feb-18,63031,22270,N/A,cellular,mean,22270,58,15231,8650,15.23,8.65
+All Providers Combined,Colombia,,mar-18,24800,8765,N/A,3g,mean,8765,79,3507,1088,3.51,1.09
+All Providers Combined,Colombia,,mar-18,44952,18269,N/A,lte,mean,18269,43,21527,11800,21.53,11.8
+All Providers Combined,Colombia,,mar-18,70001,24587,N/A,cellular,mean,24587,55,16140,8604,16.14,8.6
+All Providers Combined,Colombia,,Apr 2018,23458,8177,N/A,3g,mean,8177,75,3596,1069,3.6,1.07
+All Providers Combined,Colombia,,Apr 2018,44134,18159,N/A,lte,mean,18159,43,21185,11635,21.19,11.64
+All Providers Combined,Colombia,,Apr 2018,67851,23904,N/A,cellular,mean,23904,53,16189,8650,16.19,8.65
+All Providers Combined,Colombia,,may-18,22748,7783,N/A,3g,mean,7783,76,3648,1073,3.65,1.07
+All Providers Combined,Colombia,,may-18,45143,18291,N/A,lte,mean,18291,43,20713,11698,20.71,11.7
+All Providers Combined,Colombia,,may-18,68261,23763,N/A,cellular,mean,23763,53,16055,8818,16.06,8.82
+All Providers Combined,Colombia,,jun-18,20769,7196,N/A,3g,mean,7196,73,3636,1049,3.64,1.05
+All Providers Combined,Colombia,,jun-18,42220,16903,N/A,lte,mean,16903,43,20193,11606,20.19,11.61
+All Providers Combined,Colombia,,jun-18,63482,22026,N/A,cellular,mean,22026,53,15631,8715,15.63,8.72
+All Providers Combined,Colombia,,jul-18,22079,7618,N/A,3g,mean,7618,74,3555,1021,3.56,1.02
+All Providers Combined,Colombia,,jul-18,44421,18379,N/A,lte,mean,18379,43,20115,11929,20.12,11.93
+All Providers Combined,Colombia,,jul-18,66810,23682,N/A,cellular,mean,23682,52,15705,9029,15.71,9.03
+All Providers Combined,Colombia,,Aug 2018,22339,7747,N/A,3g,mean,7747,74,3691,1049,3.69,1.05
+All Providers Combined,Colombia,,Aug 2018,49398,19673,N/A,lte,mean,19673,44,20800,11855,20.8,11.86
+All Providers Combined,Colombia,,Aug 2018,72051,24988,N/A,cellular,mean,24988,53,16439,9111,16.44,9.11
+All Providers Combined,Colombia,,sep-18,24957,8528,N/A,3g,mean,8528,74,3838,1077,3.84,1.08
+All Providers Combined,Colombia,,sep-18,57998,22665,N/A,lte,mean,22665,44,21206,11819,21.21,11.82
+All Providers Combined,Colombia,,sep-18,83395,28241,N/A,cellular,mean,28241,53,17005,9239,17.01,9.24
+All Providers Combined,Colombia,,oct-18,28245,9317,N/A,3g,mean,9317,79,3867,1105,3.87,1.11
+All Providers Combined,Colombia,,oct-18,73113,25784,N/A,lte,mean,25784,49,20920,11719,20.92,11.72
+All Providers Combined,Colombia,,oct-18,102020,31468,N/A,cellular,mean,31468,57,17078,9323,17.08,9.32
+All Providers Combined,Colombia,,nov-18,25527,8548,N/A,3g,mean,8548,83,3859,1118,3.86,1.12
+All Providers Combined,Colombia,,nov-18,69427,24154,N/A,lte,mean,24154,51,20936,11756,20.94,11.76
+All Providers Combined,Colombia,,nov-18,95412,29627,N/A,cellular,mean,29627,59,17073,9357,17.07,9.36
+All Providers Combined,Colombia,,Dec 2018,20912,7913,N/A,3g,mean,7913,88,3668,1076,3.67,1.08
+All Providers Combined,Colombia,,Dec 2018,59610,22499,N/A,lte,mean,22499,47,21600,11878,21.6,11.88
+All Providers Combined,Colombia,,Dec 2018,80844,27617,N/A,cellular,mean,27617,57,17542,9456,17.54,9.46

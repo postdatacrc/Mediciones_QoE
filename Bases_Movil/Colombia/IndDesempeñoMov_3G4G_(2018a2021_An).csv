@@ -1,0 +1,13 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+All Providers Combined,Colombia,,2018,281098,64901,N/A,3g,mean,64901,77,3672,1070,3.67,1.07
+All Providers Combined,Colombia,,2018,612945,140775,N/A,lte,mean,140775,46,20621,11475,20.62,11.48
+All Providers Combined,Colombia,,2018,898303,174543,N/A,cellular,mean,174543,55,16207,8788,16.21,8.79
+All Providers Combined,Colombia,,2019,208076,54825,N/A,3g,mean,54825,77,3772,1085,3.77,1.09
+All Providers Combined,Colombia,,2019,870096,192242,N/A,lte,mean,192242,45,20027,12005,20.03,12.01
+All Providers Combined,Colombia,,2019,1080603,216614,N/A,cellular,mean,216614,50,17449,10292,17.45,10.29
+All Providers Combined,Colombia,,2020,177390,53804,N/A,3g,mean,53804,70,3660,814,3.66,0.81
+All Providers Combined,Colombia,,2020,1195774,252431,N/A,lte,mean,252431,43,19918,11070,19.92,11.07
+All Providers Combined,Colombia,,2020,1384415,276537,N/A,cellular,mean,276537,46,18161,9937,18.16,9.94
+All Providers Combined,Colombia,,2021,177135,47488,N/A,3g,mean,47488,73,3693,927,3.69,0.93
+All Providers Combined,Colombia,,2021,1474076,242852,N/A,lte,mean,242852,47,18081,10615,18.08,10.62
+All Providers Combined,Colombia,,2021,1761338,277283,N/A,cellular,mean,277283,49,17608,9926,17.61,9.93
