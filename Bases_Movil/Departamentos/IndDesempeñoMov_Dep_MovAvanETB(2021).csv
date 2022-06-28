@@ -1,0 +1,1019 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+Movistar,"Amazonas, Colombia",,Jan 2021,22,9,N/A,cellular,mean,9,71,1984,3323,1.98,3.32
+Movistar,"Antioquia, Colombia",,Jan 2021,2631,919,N/A,cellular,mean,919,49,14282,7939,14.28,7.94
+Movistar,"Arauca, Colombia",,Jan 2021,181,56,N/A,cellular,mean,56,55,9589,8427,9.59,8.43
+Movistar,"Atlantico, Colombia",,Jan 2021,1873,731,N/A,cellular,mean,731,36,20039,10346,20.04,10.35
+Movistar,"Bogota, Colombia",,Jan 2021,8523,3487,N/A,cellular,mean,3487,31,14989,9253,14.99,9.25
+Movistar,"Bolivar, Colombia",,Jan 2021,643,300,N/A,cellular,mean,300,38,15119,8365,15.12,8.37
+Movistar,"Boyaca, Colombia",,Jan 2021,689,245,N/A,cellular,mean,245,57,10473,5575,10.47,5.58
+Movistar,"Caldas, Colombia",,Jan 2021,333,150,N/A,cellular,mean,150,60,11178,7192,11.18,7.19
+Movistar,"Caquetá, Colombia",,Jan 2021,50,36,N/A,cellular,mean,36,54,8232,3663,8.23,3.66
+Movistar,"Casanare, Colombia",,Jan 2021,261,63,N/A,cellular,mean,63,48,11846,5840,11.85,5.84
+Movistar,"Cauca Department, Colombia",,Jan 2021,361,138,N/A,cellular,mean,138,51,13910,8393,13.91,8.39
+Movistar,"Cesar, Colombia",,Jan 2021,924,216,N/A,cellular,mean,216,78,12163,7872,12.16,7.87
+Movistar,"Choco, Colombia",,Jan 2021,71,21,N/A,cellular,mean,21,71,8281,6598,8.28,6.6
+Movistar,"Cordoba, Colombia",,Jan 2021,429,132,N/A,cellular,mean,132,62,15765,9258,15.77,9.26
+Movistar,"Cundinamarca, Colombia",,Jan 2021,2183,814,N/A,cellular,mean,814,43,9126,4962,9.13,4.96
+Movistar,"Huila, Colombia",,Jan 2021,515,211,N/A,cellular,mean,211,45,13196,6721,13.2,6.72
+Movistar,"La Guajira, Colombia",,Jan 2021,401,119,N/A,cellular,mean,119,36,9964,7849,9.96,7.85
+Movistar,"Magdalena, Colombia",,Jan 2021,457,158,N/A,cellular,mean,158,94,14709,8428,14.71,8.43
+Movistar,"Meta, Colombia",,Jan 2021,473,188,N/A,cellular,mean,188,46,13267,6432,13.27,6.43
+Movistar,"Narino, Colombia",,Jan 2021,535,173,N/A,cellular,mean,173,53,12852,10519,12.85,10.52
+Movistar,"North Santander, Colombia",,Jan 2021,560,203,N/A,cellular,mean,203,48,8755,7220,8.76,7.22
+Movistar,"Putumayo, Colombia",,Jan 2021,47,24,N/A,cellular,mean,24,165,8004,4590,8,4.59
+Movistar,"Quindio, Colombia",,Jan 2021,378,136,N/A,cellular,mean,136,60,12119,7893,12.12,7.89
+Movistar,"Risaralda, Colombia",,Jan 2021,412,175,N/A,cellular,mean,175,56,13025,7701,13.03,7.7
+Movistar,"San Andrés and Providencia, Colombia",,Jan 2021,428,99,N/A,cellular,mean,99,109,5505,5529,5.51,5.53
+Movistar,"Santander Department, Colombia",,Jan 2021,2506,870,N/A,cellular,mean,870,53,11240,7599,11.24,7.6
+Movistar,"Sucre, Colombia",,Jan 2021,251,67,N/A,cellular,mean,67,45,16241,10073,16.24,10.07
+Movistar,"Tolima, Colombia",,Jan 2021,769,274,N/A,cellular,mean,274,41,12911,5452,12.91,5.45
+Movistar,"Valle del Cauca, Colombia",,Jan 2021,6705,2302,N/A,cellular,mean,2302,41,14934,9928,14.93,9.93
+Movistar,"Vichada, Colombia",,Jan 2021,7,2,N/A,cellular,mean,2,139,619,789,0.62,0.79
+Movistar,"Guaviare, Colombia",,Jan 2021,40,21,N/A,cellular,mean,21,43,24963,12881,24.96,12.88
+Avantel,"Amazonas, Colombia",,Jan 2021,5,4,N/A,cellular,mean,4,847,279,1545,0.28,1.55
+Avantel,"Antioquia, Colombia",,Jan 2021,865,229,N/A,cellular,mean,229,33,20399,9568,20.4,9.57
+Avantel,"Arauca, Colombia",,Jan 2021,65,6,N/A,cellular,mean,6,45,4029,9760,4.03,9.76
+Avantel,"Atlantico, Colombia",,Jan 2021,846,145,N/A,cellular,mean,145,36,21996,12772,22,12.77
+Avantel,"Bogota, Colombia",,Jan 2021,5552,1728,N/A,cellular,mean,1728,30,18062,10719,18.06,10.72
+Avantel,"Bolivar, Colombia",,Jan 2021,133,32,N/A,cellular,mean,32,32,30913,17550,30.91,17.55
+Avantel,"Boyaca, Colombia",,Jan 2021,29,16,N/A,cellular,mean,16,40,5871,5713,5.87,5.71
+Avantel,"Caldas, Colombia",,Jan 2021,131,5,N/A,cellular,mean,5,50,10811,1436,10.81,1.44
+Avantel,"Caquetá, Colombia",,Jan 2021,5,4,N/A,cellular,mean,4,36,19775,8334,19.78,8.33
+Avantel,"Casanare, Colombia",,Jan 2021,3,3,N/A,cellular,mean,3,33,3290,1663,3.29,1.66
+Avantel,"Cauca Department, Colombia",,Jan 2021,14,5,N/A,cellular,mean,5,34,24757,9218,24.76,9.22
+Avantel,"Cesar, Colombia",,Jan 2021,28,17,N/A,cellular,mean,17,41,17213,4519,17.21,4.52
+Avantel,"Choco, Colombia",,Jan 2021,22,2,N/A,cellular,mean,2,30,16976,15282,16.98,15.28
+Avantel,"Cordoba, Colombia",,Jan 2021,30,8,N/A,cellular,mean,8,53,14361,8081,14.36,8.08
+Avantel,"Cundinamarca, Colombia",,Jan 2021,604,246,N/A,cellular,mean,246,35,13701,8927,13.7,8.93
+Avantel,"Huila, Colombia",,Jan 2021,14,7,N/A,cellular,mean,7,61,4144,5141,4.14,5.14
+Avantel,"La Guajira, Colombia",,Jan 2021,19,7,N/A,cellular,mean,7,52,8515,8374,8.52,8.37
+Avantel,"Magdalena, Colombia",,Jan 2021,72,23,N/A,cellular,mean,23,41,22610,8624,22.61,8.62
+Avantel,"Meta, Colombia",,Jan 2021,65,38,N/A,cellular,mean,38,38,15422,7834,15.42,7.83
+Avantel,"Narino, Colombia",,Jan 2021,51,5,N/A,cellular,mean,5,50,8341,4246,8.34,4.25
+Avantel,"North Santander, Colombia",,Jan 2021,337,44,N/A,cellular,mean,44,32,26862,13087,26.86,13.09
+Avantel,"Putumayo, Colombia",,Jan 2021,3,2,N/A,cellular,mean,2,21,14468,16279,14.47,16.28
+Avantel,"Quindio, Colombia",,Jan 2021,9,4,N/A,cellular,mean,4,33,5636,6330,5.64,6.33
+Avantel,"Risaralda, Colombia",,Jan 2021,20,5,N/A,cellular,mean,5,69,3531,6396,3.53,6.4
+Avantel,"San Andrés and Providencia, Colombia",,Jan 2021,172,6,N/A,cellular,mean,6,684,2530,2402,2.53,2.4
+Avantel,"Santander Department, Colombia",,Jan 2021,660,91,N/A,cellular,mean,91,37,25437,12719,25.44,12.72
+Avantel,"Sucre, Colombia",,Jan 2021,34,5,N/A,cellular,mean,5,74,25691,9666,25.69,9.67
+Avantel,"Tolima, Colombia",,Jan 2021,89,24,N/A,cellular,mean,24,33,17611,6911,17.61,6.91
+Avantel,"Valle del Cauca, Colombia",,Jan 2021,709,131,N/A,cellular,mean,131,33,21287,11081,21.29,11.08
+Avantel,"Vichada, Colombia",,Jan 2021,1,1,N/A,cellular,mean,1,868,134,267,0.13,0.27
+Avantel,"Guaviare, Colombia",,Jan 2021,3,2,N/A,cellular,mean,2,32,13420,4553,13.42,4.55
+ETB,"Antioquia, Colombia",,Jan 2021,166,35,N/A,cellular,mean,35,40,9785,6576,9.79,6.58
+ETB,"Atlantico, Colombia",,Jan 2021,105,34,N/A,cellular,mean,34,44,11108,7292,11.11,7.29
+ETB,"Bogota, Colombia",,Jan 2021,1473,588,N/A,cellular,mean,588,30,15506,9484,15.51,9.48
+ETB,"Bolivar, Colombia",,Jan 2021,34,12,N/A,cellular,mean,12,45,12049,10204,12.05,10.2
+ETB,"Boyaca, Colombia",,Jan 2021,10,7,N/A,cellular,mean,7,34,18038,10669,18.04,10.67
+ETB,"Caldas, Colombia",,Jan 2021,12,3,N/A,cellular,mean,3,39,9338,4008,9.34,4.01
+ETB,"Casanare, Colombia",,Jan 2021,3,1,N/A,cellular,mean,1,38,7472,5722,7.47,5.72
+ETB,"Cauca Department, Colombia",,Jan 2021,17,9,N/A,cellular,mean,9,38,15147,5036,15.15,5.04
+ETB,"Cesar, Colombia",,Jan 2021,14,2,N/A,cellular,mean,2,44,15664,5500,15.66,5.5
+ETB,"Cordoba, Colombia",,Jan 2021,11,6,N/A,cellular,mean,6,146,5618,2993,5.62,2.99
+ETB,"Cundinamarca, Colombia",,Jan 2021,159,54,N/A,cellular,mean,54,34,13004,7251,13,7.25
+ETB,"Huila, Colombia",,Jan 2021,2,2,N/A,cellular,mean,2,21,6628,12745,6.63,12.75
+ETB,"La Guajira, Colombia",,Jan 2021,5,2,N/A,cellular,mean,2,37,13556,7141,13.56,7.14
+ETB,"Magdalena, Colombia",,Jan 2021,19,7,N/A,cellular,mean,7,54,6521,4991,6.52,4.99
+ETB,"Meta, Colombia",,Jan 2021,33,8,N/A,cellular,mean,8,33,7299,4773,7.3,4.77
+ETB,"Narino, Colombia",,Jan 2021,40,4,N/A,cellular,mean,4,53,16579,14977,16.58,14.98
+ETB,"North Santander, Colombia",,Jan 2021,14,8,N/A,cellular,mean,8,30,11376,7426,11.38,7.43
+ETB,"Quindio, Colombia",,Jan 2021,9,6,N/A,cellular,mean,6,65,6693,6273,6.69,6.27
+ETB,"Risaralda, Colombia",,Jan 2021,9,7,N/A,cellular,mean,7,41,9233,6933,9.23,6.93
+ETB,"San Andrés and Providencia, Colombia",,Jan 2021,2,1,N/A,cellular,mean,1,146,4653,6431,4.65,6.43
+ETB,"Santander Department, Colombia",,Jan 2021,37,19,N/A,cellular,mean,19,42,12013,5431,12.01,5.43
+ETB,"Sucre, Colombia",,Jan 2021,5,2,N/A,cellular,mean,2,38,8624,18880,8.62,18.88
+ETB,"Tolima, Colombia",,Jan 2021,32,4,N/A,cellular,mean,4,60,4132,4609,4.13,4.61
+ETB,"Valle del Cauca, Colombia",,Jan 2021,293,69,N/A,cellular,mean,69,33,13504,8525,13.5,8.53
+Movistar,"Amazonas, Colombia",,feb-21,3,3,N/A,cellular,mean,3,115,2153,349,2.15,0.35
+Movistar,"Antioquia, Colombia",,feb-21,2303,916,N/A,cellular,mean,916,60,12660,8352,12.66,8.35
+Movistar,"Arauca, Colombia",,feb-21,125,39,N/A,cellular,mean,39,57,9211,6409,9.21,6.41
+Movistar,"Atlantico, Colombia",,feb-21,2147,784,N/A,cellular,mean,784,35,17571,10746,17.57,10.75
+Movistar,"Bogota, Colombia",,feb-21,9013,3558,N/A,cellular,mean,3558,33,14809,9189,14.81,9.19
+Movistar,"Bolivar, Colombia",,feb-21,655,244,N/A,cellular,mean,244,39,16985,8438,16.99,8.44
+Movistar,"Boyaca, Colombia",,feb-21,540,233,N/A,cellular,mean,233,46,9845,5268,9.85,5.27
+Movistar,"Caldas, Colombia",,feb-21,350,140,N/A,cellular,mean,140,58,11508,7259,11.51,7.26
+Movistar,"Caquetá, Colombia",,feb-21,105,38,N/A,cellular,mean,38,46,7424,5768,7.42,5.77
+Movistar,"Casanare, Colombia",,feb-21,234,69,N/A,cellular,mean,69,48,10523,4812,10.52,4.81
+Movistar,"Cauca Department, Colombia",,feb-21,336,129,N/A,cellular,mean,129,48,15011,9214,15.01,9.21
+Movistar,"Cesar, Colombia",,feb-21,716,204,N/A,cellular,mean,204,64,15252,8490,15.25,8.49
+Movistar,"Choco, Colombia",,feb-21,65,16,N/A,cellular,mean,16,63,5706,4917,5.71,4.92
+Movistar,"Cordoba, Colombia",,feb-21,413,147,N/A,cellular,mean,147,41,15546,10112,15.55,10.11
+Movistar,"Cundinamarca, Colombia",,feb-21,1834,749,N/A,cellular,mean,749,35,10540,6176,10.54,6.18
+Movistar,"Guainia, Colombia",,feb-21,1,1,N/A,cellular,mean,1,53,147,451,0.15,0.45
+Movistar,"Huila, Colombia",,feb-21,361,193,N/A,cellular,mean,193,47,12664,5482,12.66,5.48
+Movistar,"La Guajira, Colombia",,feb-21,426,109,N/A,cellular,mean,109,43,10562,7430,10.56,7.43
+Movistar,"Magdalena, Colombia",,feb-21,323,163,N/A,cellular,mean,163,34,15170,8450,15.17,8.45
+Movistar,"Meta, Colombia",,feb-21,394,188,N/A,cellular,mean,188,47,12391,6585,12.39,6.59
+Movistar,"Narino, Colombia",,feb-21,509,183,N/A,cellular,mean,183,52,13754,9818,13.75,9.82
+Movistar,"North Santander, Colombia",,feb-21,498,210,N/A,cellular,mean,210,44,10229,7314,10.23,7.31
+Movistar,"Putumayo, Colombia",,feb-21,29,18,N/A,cellular,mean,18,52,10180,4628,10.18,4.63
+Movistar,"Quindio, Colombia",,feb-21,335,120,N/A,cellular,mean,120,60,11260,8248,11.26,8.25
+Movistar,"Risaralda, Colombia",,feb-21,359,154,N/A,cellular,mean,154,46,13027,7265,13.03,7.27
+Movistar,"San Andrés and Providencia, Colombia",,feb-21,263,69,N/A,cellular,mean,69,116,7453,7907,7.45,7.91
+Movistar,"Santander Department, Colombia",,feb-21,2567,895,N/A,cellular,mean,895,50,11570,6726,11.57,6.73
+Movistar,"Sucre, Colombia",,feb-21,173,63,N/A,cellular,mean,63,39,19584,9787,19.58,9.79
+Movistar,"Tolima, Colombia",,feb-21,558,218,N/A,cellular,mean,218,40,15891,6929,15.89,6.93
+Movistar,"Valle del Cauca, Colombia",,feb-21,6436,2218,N/A,cellular,mean,2218,44,14774,9868,14.77,9.87
+Movistar,"Vaupes, Colombia",,feb-21,4,2,N/A,cellular,mean,2,67,2219,2180,2.22,2.18
+Movistar,"Vichada, Colombia",,feb-21,4,3,N/A,cellular,mean,3,135,1171,431,1.17,0.43
+Movistar,"Guaviare, Colombia",,feb-21,57,25,N/A,cellular,mean,25,45,19116,9579,19.12,9.58
+Avantel,"Amazonas, Colombia",,feb-21,2,1,N/A,cellular,mean,1,867,102,1527,0.1,1.53
+Avantel,"Antioquia, Colombia",,feb-21,930,233,N/A,cellular,mean,233,36,19333,9975,19.33,9.98
+Avantel,"Arauca, Colombia",,feb-21,43,8,N/A,cellular,mean,8,32,6042,13881,6.04,13.88
+Avantel,"Atlantico, Colombia",,feb-21,1145,180,N/A,cellular,mean,180,40,22847,12148,22.85,12.15
+Avantel,"Bogota, Colombia",,feb-21,6447,1929,N/A,cellular,mean,1929,30,16902,10193,16.9,10.19
+Avantel,"Bolivar, Colombia",,feb-21,130,39,N/A,cellular,mean,39,37,33534,14982,33.53,14.98
+Avantel,"Boyaca, Colombia",,feb-21,39,16,N/A,cellular,mean,16,55,6031,5612,6.03,5.61
+Avantel,"Caldas, Colombia",,feb-21,65,8,N/A,cellular,mean,8,43,11060,4231,11.06,4.23
+Avantel,"Caquetá, Colombia",,feb-21,5,2,N/A,cellular,mean,2,38,32635,7945,32.64,7.95
+Avantel,"Casanare, Colombia",,feb-21,15,5,N/A,cellular,mean,5,48,3832,5387,3.83,5.39
+Avantel,"Cauca Department, Colombia",,feb-21,17,6,N/A,cellular,mean,6,38,3119,3506,3.12,3.51
+Avantel,"Cesar, Colombia",,feb-21,87,16,N/A,cellular,mean,16,44,22643,10658,22.64,10.66
+Avantel,"Choco, Colombia",,feb-21,22,2,N/A,cellular,mean,2,36,7680,7790,7.68,7.79
+Avantel,"Cordoba, Colombia",,feb-21,28,9,N/A,cellular,mean,9,53,15826,9246,15.83,9.25
+Avantel,"Cundinamarca, Colombia",,feb-21,684,247,N/A,cellular,mean,247,29,13489,7774,13.49,7.77
+Avantel,"Guainia, Colombia",,feb-21,1,1,N/A,cellular,mean,1,859,242,806,0.24,0.81
+Avantel,"Huila, Colombia",,feb-21,5,3,N/A,cellular,mean,3,38,7188,8072,7.19,8.07
+Avantel,"La Guajira, Colombia",,feb-21,24,4,N/A,cellular,mean,4,45,9477,7839,9.48,7.84
+Avantel,"Magdalena, Colombia",,feb-21,79,23,N/A,cellular,mean,23,39,32102,15287,32.1,15.29
+Avantel,"Meta, Colombia",,feb-21,93,26,N/A,cellular,mean,26,59,23087,7231,23.09,7.23
+Avantel,"Narino, Colombia",,feb-21,119,6,N/A,cellular,mean,6,40,11702,7685,11.7,7.69
+Avantel,"North Santander, Colombia",,feb-21,426,69,N/A,cellular,mean,69,33,21316,13377,21.32,13.38
+Avantel,"Putumayo, Colombia",,feb-21,2,2,N/A,cellular,mean,2,33,9475,13242,9.48,13.24
+Avantel,"Quindio, Colombia",,feb-21,25,9,N/A,cellular,mean,9,52,4562,3449,4.56,3.45
+Avantel,"Risaralda, Colombia",,feb-21,9,6,N/A,cellular,mean,6,75,2456,963,2.46,0.96
+Avantel,"San Andrés and Providencia, Colombia",,feb-21,78,8,N/A,cellular,mean,8,905,3309,3113,3.31,3.11
+Avantel,"Santander Department, Colombia",,feb-21,549,90,N/A,cellular,mean,90,33,25496,14255,25.5,14.26
+Avantel,"Sucre, Colombia",,feb-21,11,3,N/A,cellular,mean,3,38,37571,20913,37.57,20.91
+Avantel,"Tolima, Colombia",,feb-21,232,31,N/A,cellular,mean,31,29,20952,10025,20.95,10.03
+Avantel,"Valle del Cauca, Colombia",,feb-21,631,130,N/A,cellular,mean,130,35,19555,10404,19.56,10.4
+Avantel,"Vaupes, Colombia",,feb-21,1,1,N/A,cellular,mean,1,714,781,880,0.78,0.88
+ETB,"Antioquia, Colombia",,feb-21,72,30,N/A,cellular,mean,30,50,10506,7308,10.51,7.31
+ETB,"Atlantico, Colombia",,feb-21,70,27,N/A,cellular,mean,27,44,6759,6502,6.76,6.5
+ETB,"Bogota, Colombia",,feb-21,1284,573,N/A,cellular,mean,573,30,16255,9292,16.26,9.29
+ETB,"Bolivar, Colombia",,feb-21,7,5,N/A,cellular,mean,5,45,10059,10831,10.06,10.83
+ETB,"Boyaca, Colombia",,feb-21,5,4,N/A,cellular,mean,4,57,10347,7851,10.35,7.85
+ETB,"Caldas, Colombia",,feb-21,30,7,N/A,cellular,mean,7,49,10673,4462,10.67,4.46
+ETB,"Caquetá, Colombia",,feb-21,1,1,N/A,cellular,mean,1,25,16205,6319,16.21,6.32
+ETB,"Casanare, Colombia",,feb-21,4,2,N/A,cellular,mean,2,42,13625,1288,13.63,1.29
+ETB,"Cauca Department, Colombia",,feb-21,16,7,N/A,cellular,mean,7,44,18457,8305,18.46,8.31
+ETB,"Cesar, Colombia",,feb-21,1,1,N/A,cellular,mean,1,34,14867,13476,14.87,13.48
+ETB,"Cordoba, Colombia",,feb-21,21,9,N/A,cellular,mean,9,51,5991,3852,5.99,3.85
+ETB,"Cundinamarca, Colombia",,feb-21,85,46,N/A,cellular,mean,46,32,12694,6923,12.69,6.92
+ETB,"Huila, Colombia",,feb-21,5,3,N/A,cellular,mean,3,21,10381,5571,10.38,5.57
+ETB,"La Guajira, Colombia",,feb-21,1,1,N/A,cellular,mean,1,95,8199,7164,8.2,7.16
+ETB,"Magdalena, Colombia",,feb-21,54,11,N/A,cellular,mean,11,42,8442,6123,8.44,6.12
+ETB,"Meta, Colombia",,feb-21,11,3,N/A,cellular,mean,3,35,2990,3402,2.99,3.4
+ETB,"Narino, Colombia",,feb-21,97,6,N/A,cellular,mean,6,37,10940,8102,10.94,8.1
+ETB,"North Santander, Colombia",,feb-21,18,5,N/A,cellular,mean,5,39,4809,3678,4.81,3.68
+ETB,"Quindio, Colombia",,feb-21,3,2,N/A,cellular,mean,2,37,29738,14911,29.74,14.91
+ETB,"Risaralda, Colombia",,feb-21,14,7,N/A,cellular,mean,7,44,5807,4563,5.81,4.56
+ETB,"San Andrés and Providencia, Colombia",,feb-21,1,1,N/A,cellular,mean,1,193,12397,460,12.4,0.46
+ETB,"Santander Department, Colombia",,feb-21,24,12,N/A,cellular,mean,12,36,6871,4944,6.87,4.94
+ETB,"Sucre, Colombia",,feb-21,4,2,N/A,cellular,mean,2,54,4778,9338,4.78,9.34
+ETB,"Tolima, Colombia",,feb-21,2,2,N/A,cellular,mean,2,22,9857,18022,9.86,18.02
+ETB,"Valle del Cauca, Colombia",,feb-21,146,46,N/A,cellular,mean,46,35,13264,7653,13.26,7.65
+Movistar,"Amazonas, Colombia",,mar-21,1,1,N/A,cellular,mean,1,60,955,3043,0.96,3.04
+Movistar,"Antioquia, Colombia",,mar-21,2721,1046,N/A,cellular,mean,1046,66,10871,7350,10.87,7.35
+Movistar,"Arauca, Colombia",,mar-21,123,47,N/A,cellular,mean,47,63,10617,7451,10.62,7.45
+Movistar,"Atlantico, Colombia",,mar-21,2112,756,N/A,cellular,mean,756,31,19926,10951,19.93,10.95
+Movistar,"Bogota, Colombia",,mar-21,9505,3842,N/A,cellular,mean,3842,32,14969,9863,14.97,9.86
+Movistar,"Bolivar, Colombia",,mar-21,777,299,N/A,cellular,mean,299,37,17352,8963,17.35,8.96
+Movistar,"Boyaca, Colombia",,mar-21,703,232,N/A,cellular,mean,232,48,8970,5249,8.97,5.25
+Movistar,"Caldas, Colombia",,mar-21,453,145,N/A,cellular,mean,145,60,13547,8268,13.55,8.27
+Movistar,"Caquetá, Colombia",,mar-21,174,43,N/A,cellular,mean,43,50,8877,7149,8.88,7.15
+Movistar,"Casanare, Colombia",,mar-21,306,90,N/A,cellular,mean,90,39,12290,6422,12.29,6.42
+Movistar,"Cauca Department, Colombia",,mar-21,364,139,N/A,cellular,mean,139,47,15288,9629,15.29,9.63
+Movistar,"Cesar, Colombia",,mar-21,773,283,N/A,cellular,mean,283,42,15618,8786,15.62,8.79
+Movistar,"Choco, Colombia",,mar-21,45,30,N/A,cellular,mean,30,134,5595,4540,5.6,4.54
+Movistar,"Cordoba, Colombia",,mar-21,377,119,N/A,cellular,mean,119,39,17278,9610,17.28,9.61
+Movistar,"Cundinamarca, Colombia",,mar-21,2194,805,N/A,cellular,mean,805,41,8862,5609,8.86,5.61
+Movistar,"Guainia, Colombia",,mar-21,2,2,N/A,cellular,mean,2,62,1910,557,1.91,0.56
+Movistar,"Huila, Colombia",,mar-21,462,207,N/A,cellular,mean,207,48,13255,5339,13.26,5.34
+Movistar,"La Guajira, Colombia",,mar-21,432,93,N/A,cellular,mean,93,40,7987,7682,7.99,7.68
+Movistar,"Magdalena, Colombia",,mar-21,499,232,N/A,cellular,mean,232,38,18010,9856,18.01,9.86
+Movistar,"Meta, Colombia",,mar-21,548,211,N/A,cellular,mean,211,39,12513,6732,12.51,6.73
+Movistar,"Narino, Colombia",,mar-21,581,204,N/A,cellular,mean,204,55,13815,11085,13.82,11.09
+Movistar,"North Santander, Colombia",,mar-21,625,255,N/A,cellular,mean,255,50,11055,7770,11.06,7.77
+Movistar,"Putumayo, Colombia",,mar-21,78,26,N/A,cellular,mean,26,62,7650,4808,7.65,4.81
+Movistar,"Quindio, Colombia",,mar-21,359,137,N/A,cellular,mean,137,58,12935,8378,12.94,8.38
+Movistar,"Risaralda, Colombia",,mar-21,369,173,N/A,cellular,mean,173,46,12375,7280,12.38,7.28
+Movistar,"San Andrés and Providencia, Colombia",,mar-21,286,82,N/A,cellular,mean,82,104,7205,6144,7.21,6.14
+Movistar,"Santander Department, Colombia",,mar-21,3683,999,N/A,cellular,mean,999,47,12897,7456,12.9,7.46
+Movistar,"Sucre, Colombia",,mar-21,193,75,N/A,cellular,mean,75,44,20221,10001,20.22,10
+Movistar,"Tolima, Colombia",,mar-21,597,257,N/A,cellular,mean,257,38,16783,7399,16.78,7.4
+Movistar,"Valle del Cauca, Colombia",,mar-21,6561,2231,N/A,cellular,mean,2231,49,15283,10035,15.28,10.04
+Movistar,"Vaupes, Colombia",,mar-21,1,1,N/A,cellular,mean,1,92,198,3945,0.2,3.95
+Movistar,"Vichada, Colombia",,mar-21,5,3,N/A,cellular,mean,3,92,1054,3318,1.05,3.32
+Movistar,"Guaviare, Colombia",,mar-21,76,29,N/A,cellular,mean,29,37,13803,7501,13.8,7.5
+Avantel,"Antioquia, Colombia",,mar-21,1294,243,N/A,cellular,mean,243,39,14285,8338,14.29,8.34
+Avantel,"Arauca, Colombia",,mar-21,26,7,N/A,cellular,mean,7,27,6460,9615,6.46,9.62
+Avantel,"Atlantico, Colombia",,mar-21,1196,194,N/A,cellular,mean,194,41,17344,10501,17.34,10.5
+Avantel,"Bogota, Colombia",,mar-21,9031,2195,N/A,cellular,mean,2195,31,11714,7573,11.71,7.57
+Avantel,"Bolivar, Colombia",,mar-21,189,46,N/A,cellular,mean,46,36,18100,9307,18.1,9.31
+Avantel,"Boyaca, Colombia",,mar-21,86,30,N/A,cellular,mean,30,54,10318,7917,10.32,7.92
+Avantel,"Caldas, Colombia",,mar-21,38,10,N/A,cellular,mean,10,131,3713,2144,3.71,2.14
+Avantel,"Caquetá, Colombia",,mar-21,5,4,N/A,cellular,mean,4,47,15422,5442,15.42,5.44
+Avantel,"Casanare, Colombia",,mar-21,11,3,N/A,cellular,mean,3,32,25542,16045,25.54,16.05
+Avantel,"Cauca Department, Colombia",,mar-21,17,8,N/A,cellular,mean,8,29,21742,9595,21.74,9.6
+Avantel,"Cesar, Colombia",,mar-21,44,15,N/A,cellular,mean,15,53,12090,5047,12.09,5.05
+Avantel,"Choco, Colombia",,mar-21,5,3,N/A,cellular,mean,3,63,5918,2997,5.92,3
+Avantel,"Cordoba, Colombia",,mar-21,32,7,N/A,cellular,mean,7,62,12972,7216,12.97,7.22
+Avantel,"Cundinamarca, Colombia",,mar-21,1023,265,N/A,cellular,mean,265,30,9076,6752,9.08,6.75
+Avantel,"Huila, Colombia",,mar-21,49,6,N/A,cellular,mean,6,128,19998,11580,20,11.58
+Avantel,"La Guajira, Colombia",,mar-21,26,5,N/A,cellular,mean,5,79,7512,4575,7.51,4.58
+Avantel,"Magdalena, Colombia",,mar-21,253,34,N/A,cellular,mean,34,55,18083,12376,18.08,12.38
+Avantel,"Meta, Colombia",,mar-21,116,40,N/A,cellular,mean,40,32,16494,8049,16.49,8.05
+Avantel,"Narino, Colombia",,mar-21,56,5,N/A,cellular,mean,5,38,24027,7281,24.03,7.28
+Avantel,"North Santander, Colombia",,mar-21,667,87,N/A,cellular,mean,87,47,16667,9712,16.67,9.71
+Avantel,"Putumayo, Colombia",,mar-21,6,3,N/A,cellular,mean,3,88,862,1108,0.86,1.11
+Avantel,"Quindio, Colombia",,mar-21,29,7,N/A,cellular,mean,7,52,17981,6385,17.98,6.39
+Avantel,"Risaralda, Colombia",,mar-21,14,9,N/A,cellular,mean,9,53,9073,5355,9.07,5.36
+Avantel,"San Andrés and Providencia, Colombia",,mar-21,45,5,N/A,cellular,mean,5,690,4110,2874,4.11,2.87
+Avantel,"Santander Department, Colombia",,mar-21,690,113,N/A,cellular,mean,113,32,19830,11190,19.83,11.19
+Avantel,"Sucre, Colombia",,mar-21,31,5,N/A,cellular,mean,5,45,27881,17981,27.88,17.98
+Avantel,"Tolima, Colombia",,mar-21,213,30,N/A,cellular,mean,30,28,17712,7587,17.71,7.59
+Avantel,"Valle del Cauca, Colombia",,mar-21,676,130,N/A,cellular,mean,130,34,20485,10902,20.49,10.9
+Avantel,"Vaupes, Colombia",,mar-21,1,1,N/A,cellular,mean,1,798,282,2520,0.28,2.52
+Avantel,"Guaviare, Colombia",,mar-21,11,1,N/A,cellular,mean,1,61,2430,1417,2.43,1.42
+ETB,"Antioquia, Colombia",,mar-21,71,22,N/A,cellular,mean,22,43,9609,7240,9.61,7.24
+ETB,"Atlantico, Colombia",,mar-21,45,23,N/A,cellular,mean,23,46,10126,9226,10.13,9.23
+ETB,"Bogota, Colombia",,mar-21,1376,568,N/A,cellular,mean,568,33,16566,9007,16.57,9.01
+ETB,"Bolivar, Colombia",,mar-21,23,11,N/A,cellular,mean,11,47,11909,6715,11.91,6.72
+ETB,"Boyaca, Colombia",,mar-21,4,4,N/A,cellular,mean,4,244,4791,825,4.79,0.83
+ETB,"Caldas, Colombia",,mar-21,5,3,N/A,cellular,mean,3,52,5875,5014,5.88,5.01
+ETB,"Casanare, Colombia",,mar-21,3,1,N/A,cellular,mean,1,30,9202,7148,9.2,7.15
+ETB,"Cauca Department, Colombia",,mar-21,21,10,N/A,cellular,mean,10,31,20187,13895,20.19,13.9
+ETB,"Cesar, Colombia",,mar-21,1,1,N/A,cellular,mean,1,65,25881,5255,25.88,5.26
+ETB,"Cordoba, Colombia",,mar-21,8,5,N/A,cellular,mean,5,47,9116,8175,9.12,8.18
+ETB,"Cundinamarca, Colombia",,mar-21,110,54,N/A,cellular,mean,54,36,9734,6433,9.73,6.43
+ETB,"Huila, Colombia",,mar-21,5,2,N/A,cellular,mean,2,45,7241,2818,7.24,2.82
+ETB,"La Guajira, Colombia",,mar-21,1,1,N/A,cellular,mean,1,35,4928,5497,4.93,5.5
+ETB,"Magdalena, Colombia",,mar-21,42,5,N/A,cellular,mean,5,41,3246,2899,3.25,2.9
+ETB,"Meta, Colombia",,mar-21,26,10,N/A,cellular,mean,10,30,13173,9802,13.17,9.8
+ETB,"Narino, Colombia",,mar-21,35,4,N/A,cellular,mean,4,57,4436,5213,4.44,5.21
+ETB,"North Santander, Colombia",,mar-21,6,3,N/A,cellular,mean,3,29,10967,5451,10.97,5.45
+ETB,"Quindio, Colombia",,mar-21,4,3,N/A,cellular,mean,3,47,36569,15976,36.57,15.98
+ETB,"Risaralda, Colombia",,mar-21,16,6,N/A,cellular,mean,6,119,8593,9068,8.59,9.07
+ETB,"San Andrés and Providencia, Colombia",,mar-21,1,1,N/A,cellular,mean,1,48,7293,6413,7.29,6.41
+ETB,"Santander Department, Colombia",,mar-21,44,21,N/A,cellular,mean,21,38,6533,3017,6.53,3.02
+ETB,"Sucre, Colombia",,mar-21,5,3,N/A,cellular,mean,3,41,3811,3852,3.81,3.85
+ETB,"Tolima, Colombia",,mar-21,14,5,N/A,cellular,mean,5,23,21471,6915,21.47,6.92
+ETB,"Valle del Cauca, Colombia",,mar-21,139,45,N/A,cellular,mean,45,38,12071,7465,12.07,7.47
+Movistar,"Amazonas, Colombia",,Apr 2021,4,2,N/A,cellular,mean,2,90,1594,2033,1.59,2.03
+Movistar,"Antioquia, Colombia",,Apr 2021,3977,1158,N/A,cellular,mean,1158,62,12160,7732,12.16,7.73
+Movistar,"Arauca, Colombia",,Apr 2021,291,59,N/A,cellular,mean,59,59,9877,6298,9.88,6.3
+Movistar,"Atlantico, Colombia",,Apr 2021,4011,913,N/A,cellular,mean,913,36,16067,10234,16.07,10.23
+Movistar,"Bogota, Colombia",,Apr 2021,12627,4454,N/A,cellular,mean,4454,41,15112,9699,15.11,9.7
+Movistar,"Bolivar, Colombia",,Apr 2021,906,290,N/A,cellular,mean,290,40,14764,7706,14.76,7.71
+Movistar,"Boyaca, Colombia",,Apr 2021,900,287,N/A,cellular,mean,287,46,9873,5318,9.87,5.32
+Movistar,"Caldas, Colombia",,Apr 2021,640,189,N/A,cellular,mean,189,59,13299,9029,13.3,9.03
+Movistar,"Caquetá, Colombia",,Apr 2021,151,58,N/A,cellular,mean,58,51,10993,6205,10.99,6.21
+Movistar,"Casanare, Colombia",,Apr 2021,328,95,N/A,cellular,mean,95,44,10967,6140,10.97,6.14
+Movistar,"Cauca Department, Colombia",,Apr 2021,499,165,N/A,cellular,mean,165,51,12044,8239,12.04,8.24
+Movistar,"Cesar, Colombia",,Apr 2021,997,317,N/A,cellular,mean,317,53,11882,7496,11.88,7.5
+Movistar,"Choco, Colombia",,Apr 2021,76,27,N/A,cellular,mean,27,72,9699,4572,9.7,4.57
+Movistar,"Cordoba, Colombia",,Apr 2021,455,122,N/A,cellular,mean,122,48,16928,9731,16.93,9.73
+Movistar,"Cundinamarca, Colombia",,Apr 2021,2589,924,N/A,cellular,mean,924,44,10789,5945,10.79,5.95
+Movistar,"Guainia, Colombia",,Apr 2021,5,3,N/A,cellular,mean,3,63,2051,713,2.05,0.71
+Movistar,"Huila, Colombia",,Apr 2021,634,237,N/A,cellular,mean,237,44,13707,6551,13.71,6.55
+Movistar,"La Guajira, Colombia",,Apr 2021,479,97,N/A,cellular,mean,97,54,7381,7317,7.38,7.32
+Movistar,"Magdalena, Colombia",,Apr 2021,820,280,N/A,cellular,mean,280,45,16143,9322,16.14,9.32
+Movistar,"Meta, Colombia",,Apr 2021,718,240,N/A,cellular,mean,240,42,13290,6861,13.29,6.86
+Movistar,"Narino, Colombia",,Apr 2021,697,205,N/A,cellular,mean,205,50,13361,10393,13.36,10.39
+Movistar,"North Santander, Colombia",,Apr 2021,675,259,N/A,cellular,mean,259,49,12079,7132,12.08,7.13
+Movistar,"Putumayo, Colombia",,Apr 2021,64,22,N/A,cellular,mean,22,58,8755,5344,8.76,5.34
+Movistar,"Quindio, Colombia",,Apr 2021,545,158,N/A,cellular,mean,158,56,13428,7634,13.43,7.63
+Movistar,"Risaralda, Colombia",,Apr 2021,451,206,N/A,cellular,mean,206,47,12901,8155,12.9,8.16
+Movistar,"San Andrés and Providencia, Colombia",,Apr 2021,417,83,N/A,cellular,mean,83,116,7496,6872,7.5,6.87
+Movistar,"Santander Department, Colombia",,Apr 2021,4337,1152,N/A,cellular,mean,1152,49,15270,8192,15.27,8.19
+Movistar,"Sucre, Colombia",,Apr 2021,311,76,N/A,cellular,mean,76,47,15884,8223,15.88,8.22
+Movistar,"Tolima, Colombia",,Apr 2021,694,297,N/A,cellular,mean,297,42,15719,6362,15.72,6.36
+Movistar,"Valle del Cauca, Colombia",,Apr 2021,8672,2650,N/A,cellular,mean,2650,48,15311,10317,15.31,10.32
+Movistar,"Vaupes, Colombia",,Apr 2021,4,2,N/A,cellular,mean,2,83,1344,2294,1.34,2.29
+Movistar,"Vichada, Colombia",,Apr 2021,7,4,N/A,cellular,mean,4,243,578,1991,0.58,1.99
+Movistar,"Guaviare, Colombia",,Apr 2021,55,26,N/A,cellular,mean,26,39,9895,6731,9.9,6.73
+Avantel,"Amazonas, Colombia",,Apr 2021,6,2,N/A,cellular,mean,2,769,299,706,0.3,0.71
+Avantel,"Antioquia, Colombia",,Apr 2021,1139,221,N/A,cellular,mean,221,30,14500,8515,14.5,8.52
+Avantel,"Arauca, Colombia",,Apr 2021,35,6,N/A,cellular,mean,6,41,4093,5732,4.09,5.73
+Avantel,"Atlantico, Colombia",,Apr 2021,635,111,N/A,cellular,mean,111,38,14373,10329,14.37,10.33
+Avantel,"Bogota, Colombia",,Apr 2021,6136,1603,N/A,cellular,mean,1603,29,11062,6955,11.06,6.96
+Avantel,"Bolivar, Colombia",,Apr 2021,179,35,N/A,cellular,mean,35,37,16554,8185,16.55,8.19
+Avantel,"Boyaca, Colombia",,Apr 2021,48,14,N/A,cellular,mean,14,30,13545,11668,13.55,11.67
+Avantel,"Caldas, Colombia",,Apr 2021,7,6,N/A,cellular,mean,6,79,3274,2639,3.27,2.64
+Avantel,"Caquetá, Colombia",,Apr 2021,45,7,N/A,cellular,mean,7,39,22040,13152,22.04,13.15
+Avantel,"Casanare, Colombia",,Apr 2021,8,3,N/A,cellular,mean,3,38,33180,15588,33.18,15.59
+Avantel,"Cauca Department, Colombia",,Apr 2021,33,10,N/A,cellular,mean,10,54,8765,5536,8.77,5.54
+Avantel,"Cesar, Colombia",,Apr 2021,37,18,N/A,cellular,mean,18,41,15201,7796,15.2,7.8
+Avantel,"Choco, Colombia",,Apr 2021,23,4,N/A,cellular,mean,4,49,9445,5477,9.45,5.48
+Avantel,"Cordoba, Colombia",,Apr 2021,45,6,N/A,cellular,mean,6,68,11869,4448,11.87,4.45
+Avantel,"Cundinamarca, Colombia",,Apr 2021,834,227,N/A,cellular,mean,227,30,9242,6506,9.24,6.51
+Avantel,"Guainia, Colombia",,Apr 2021,2,1,N/A,cellular,mean,1,369,196,1269,0.2,1.27
+Avantel,"Huila, Colombia",,Apr 2021,12,8,N/A,cellular,mean,8,39,11619,7612,11.62,7.61
+Avantel,"La Guajira, Colombia",,Apr 2021,17,2,N/A,cellular,mean,2,49,7673,2775,7.67,2.78
+Avantel,"Magdalena, Colombia",,Apr 2021,60,20,N/A,cellular,mean,20,39,15932,11864,15.93,11.86
+Avantel,"Meta, Colombia",,Apr 2021,78,27,N/A,cellular,mean,27,33,13980,5698,13.98,5.7
+Avantel,"Narino, Colombia",,Apr 2021,3,2,N/A,cellular,mean,2,99,8140,2337,8.14,2.34
+Avantel,"North Santander, Colombia",,Apr 2021,343,75,N/A,cellular,mean,75,39,16994,10680,16.99,10.68
+Avantel,"Putumayo, Colombia",,Apr 2021,1,1,N/A,cellular,mean,1,21,7259,7091,7.26,7.09
+Avantel,"Quindio, Colombia",,Apr 2021,11,4,N/A,cellular,mean,4,31,11046,7102,11.05,7.1
+Avantel,"Risaralda, Colombia",,Apr 2021,17,6,N/A,cellular,mean,6,47,11021,6766,11.02,6.77
+Avantel,"San Andrés and Providencia, Colombia",,Apr 2021,99,8,N/A,cellular,mean,8,516,8712,2261,8.71,2.26
+Avantel,"Santander Department, Colombia",,Apr 2021,372,62,N/A,cellular,mean,62,26,18328,12287,18.33,12.29
+Avantel,"Sucre, Colombia",,Apr 2021,11,2,N/A,cellular,mean,2,58,21080,10128,21.08,10.13
+Avantel,"Tolima, Colombia",,Apr 2021,119,30,N/A,cellular,mean,30,30,11898,6272,11.9,6.27
+Avantel,"Valle del Cauca, Colombia",,Apr 2021,425,107,N/A,cellular,mean,107,33,17297,9502,17.3,9.5
+Avantel,"Vichada, Colombia",,Apr 2021,1,1,N/A,cellular,mean,1,581,3622,216,3.62,0.22
+ETB,"Antioquia, Colombia",,Apr 2021,74,38,N/A,cellular,mean,38,39,7793,4708,7.79,4.71
+ETB,"Atlantico, Colombia",,Apr 2021,124,32,N/A,cellular,mean,32,43,11286,6465,11.29,6.47
+ETB,"Bogota, Colombia",,Apr 2021,1525,583,N/A,cellular,mean,583,46,16571,8502,16.57,8.5
+ETB,"Bolivar, Colombia",,Apr 2021,21,4,N/A,cellular,mean,4,43,7999,1840,8,1.84
+ETB,"Boyaca, Colombia",,Apr 2021,8,6,N/A,cellular,mean,6,38,13854,6754,13.85,6.75
+ETB,"Caldas, Colombia",,Apr 2021,9,7,N/A,cellular,mean,7,34,12740,7288,12.74,7.29
+ETB,"Casanare, Colombia",,Apr 2021,3,2,N/A,cellular,mean,2,31,6435,5711,6.44,5.71
+ETB,"Cauca Department, Colombia",,Apr 2021,20,5,N/A,cellular,mean,5,43,8367,2525,8.37,2.53
+ETB,"Cesar, Colombia",,Apr 2021,6,1,N/A,cellular,mean,1,92,7149,739,7.15,0.74
+ETB,"Choco, Colombia",,Apr 2021,1,1,N/A,cellular,mean,1,44,9161,9032,9.16,9.03
+ETB,"Cordoba, Colombia",,Apr 2021,8,4,N/A,cellular,mean,4,59,3969,5003,3.97,5
+ETB,"Cundinamarca, Colombia",,Apr 2021,129,52,N/A,cellular,mean,52,36,12482,7827,12.48,7.83
+ETB,"Huila, Colombia",,Apr 2021,1,1,N/A,cellular,mean,1,19,7481,5877,7.48,5.88
+ETB,"La Guajira, Colombia",,Apr 2021,2,2,N/A,cellular,mean,2,48,7654,6283,7.65,6.28
+ETB,"Magdalena, Colombia",,Apr 2021,11,3,N/A,cellular,mean,3,50,5829,3012,5.83,3.01
+ETB,"Meta, Colombia",,Apr 2021,5,4,N/A,cellular,mean,4,29,10942,5182,10.94,5.18
+ETB,"Narino, Colombia",,Apr 2021,2,2,N/A,cellular,mean,2,38,29484,10790,29.48,10.79
+ETB,"North Santander, Colombia",,Apr 2021,25,6,N/A,cellular,mean,6,34,17839,5308,17.84,5.31
+ETB,"Quindio, Colombia",,Apr 2021,8,4,N/A,cellular,mean,4,37,7328,4623,7.33,4.62
+ETB,"Risaralda, Colombia",,Apr 2021,10,7,N/A,cellular,mean,7,47,10276,7620,10.28,7.62
+ETB,"San Andrés and Providencia, Colombia",,Apr 2021,6,3,N/A,cellular,mean,3,169,12096,2245,12.1,2.25
+ETB,"Santander Department, Colombia",,Apr 2021,33,18,N/A,cellular,mean,18,32,13075,7513,13.08,7.51
+ETB,"Sucre, Colombia",,Apr 2021,16,4,N/A,cellular,mean,4,57,6659,4738,6.66,4.74
+ETB,"Tolima, Colombia",,Apr 2021,7,5,N/A,cellular,mean,5,27,38522,18313,38.52,18.31
+ETB,"Valle del Cauca, Colombia",,Apr 2021,166,62,N/A,cellular,mean,62,38,13458,7302,13.46,7.3
+Movistar,"Amazonas, Colombia",,may-21,7,4,N/A,cellular,mean,4,73,1352,1003,1.35,1
+Movistar,"Antioquia, Colombia",,may-21,3717,1107,N/A,cellular,mean,1107,55,11710,8565,11.71,8.57
+Movistar,"Arauca, Colombia",,may-21,170,51,N/A,cellular,mean,51,59,14988,5828,14.99,5.83
+Movistar,"Atlantico, Colombia",,may-21,2989,945,N/A,cellular,mean,945,37,17291,10109,17.29,10.11
+Movistar,"Bogota, Colombia",,may-21,10945,4142,N/A,cellular,mean,4142,44,14675,9303,14.68,9.3
+Movistar,"Bolivar, Colombia",,may-21,653,270,N/A,cellular,mean,270,41,17906,8950,17.91,8.95
+Movistar,"Boyaca, Colombia",,may-21,657,217,N/A,cellular,mean,217,42,9379,5143,9.38,5.14
+Movistar,"Caldas, Colombia",,may-21,460,165,N/A,cellular,mean,165,52,14055,9158,14.06,9.16
+Movistar,"Caquetá, Colombia",,may-21,151,56,N/A,cellular,mean,56,58,9107,6272,9.11,6.27
+Movistar,"Casanare, Colombia",,may-21,322,68,N/A,cellular,mean,68,43,10480,5117,10.48,5.12
+Movistar,"Cauca Department, Colombia",,may-21,311,113,N/A,cellular,mean,113,52,12512,9646,12.51,9.65
+Movistar,"Cesar, Colombia",,may-21,616,249,N/A,cellular,mean,249,51,11242,7727,11.24,7.73
+Movistar,"Choco, Colombia",,may-21,105,29,N/A,cellular,mean,29,75,11402,5427,11.4,5.43
+Movistar,"Cordoba, Colombia",,may-21,348,112,N/A,cellular,mean,112,45,13885,7666,13.89,7.67
+Movistar,"Cundinamarca, Colombia",,may-21,1943,766,N/A,cellular,mean,766,34,10140,6085,10.14,6.09
+Movistar,"Guainia, Colombia",,may-21,20,3,N/A,cellular,mean,3,82,1328,357,1.33,0.36
+Movistar,"Huila, Colombia",,may-21,560,187,N/A,cellular,mean,187,48,14082,7298,14.08,7.3
+Movistar,"La Guajira, Colombia",,may-21,675,103,N/A,cellular,mean,103,46,10576,7485,10.58,7.49
+Movistar,"Magdalena, Colombia",,may-21,725,217,N/A,cellular,mean,217,45,14352,8436,14.35,8.44
+Movistar,"Meta, Colombia",,may-21,615,182,N/A,cellular,mean,182,39,10956,6778,10.96,6.78
+Movistar,"Narino, Colombia",,may-21,404,178,N/A,cellular,mean,178,49,11861,9871,11.86,9.87
+Movistar,"North Santander, Colombia",,may-21,1023,330,N/A,cellular,mean,330,46,13117,7607,13.12,7.61
+Movistar,"Putumayo, Colombia",,may-21,48,21,N/A,cellular,mean,21,49,8155,5411,8.16,5.41
+Movistar,"Quindio, Colombia",,may-21,347,120,N/A,cellular,mean,120,54,12350,8338,12.35,8.34
+Movistar,"Risaralda, Colombia",,may-21,366,160,N/A,cellular,mean,160,43,11987,8173,11.99,8.17
+Movistar,"San Andrés and Providencia, Colombia",,may-21,310,79,N/A,cellular,mean,79,121,7283,7008,7.28,7.01
+Movistar,"Santander Department, Colombia",,may-21,2674,923,N/A,cellular,mean,923,52,16388,8730,16.39,8.73
+Movistar,"Sucre, Colombia",,may-21,236,74,N/A,cellular,mean,74,41,16041,10365,16.04,10.37
+Movistar,"Tolima, Colombia",,may-21,649,254,N/A,cellular,mean,254,36,17106,7208,17.11,7.21
+Movistar,"Valle del Cauca, Colombia",,may-21,6414,2201,N/A,cellular,mean,2201,48,15007,10632,15.01,10.63
+Movistar,"Vaupes, Colombia",,may-21,7,3,N/A,cellular,mean,3,125,240,2054,0.24,2.05
+Movistar,"Vichada, Colombia",,may-21,10,5,N/A,cellular,mean,5,102,1271,1772,1.27,1.77
+Movistar,"Guaviare, Colombia",,may-21,45,20,N/A,cellular,mean,20,41,15454,8263,15.45,8.26
+Avantel,"Amazonas, Colombia",,may-21,8,1,N/A,cellular,mean,1,759,779,1104,0.78,1.1
+Avantel,"Antioquia, Colombia",,may-21,682,137,N/A,cellular,mean,137,28,13751,10157,13.75,10.16
+Avantel,"Arauca, Colombia",,may-21,41,8,N/A,cellular,mean,8,28,5468,9175,5.47,9.18
+Avantel,"Atlantico, Colombia",,may-21,216,45,N/A,cellular,mean,45,34,17001,11546,17,11.55
+Avantel,"Bogota, Colombia",,may-21,2182,850,N/A,cellular,mean,850,30,12173,6781,12.17,6.78
+Avantel,"Bolivar, Colombia",,may-21,160,26,N/A,cellular,mean,26,37,16006,9013,16.01,9.01
+Avantel,"Boyaca, Colombia",,may-21,21,12,N/A,cellular,mean,12,28,10163,7336,10.16,7.34
+Avantel,"Caldas, Colombia",,may-21,5,4,N/A,cellular,mean,4,43,13351,5835,13.35,5.84
+Avantel,"Caquetá, Colombia",,may-21,7,4,N/A,cellular,mean,4,33,11527,4824,11.53,4.82
+Avantel,"Casanare, Colombia",,may-21,1,1,N/A,cellular,mean,1,46,3561,1393,3.56,1.39
+Avantel,"Cauca Department, Colombia",,may-21,11,6,N/A,cellular,mean,6,44,13317,6389,13.32,6.39
+Avantel,"Cesar, Colombia",,may-21,44,9,N/A,cellular,mean,9,42,14390,11377,14.39,11.38
+Avantel,"Choco, Colombia",,may-21,17,2,N/A,cellular,mean,2,26,25461,4680,25.46,4.68
+Avantel,"Cordoba, Colombia",,may-21,10,3,N/A,cellular,mean,3,49,28673,10006,28.67,10.01
+Avantel,"Cundinamarca, Colombia",,may-21,337,97,N/A,cellular,mean,97,27,11487,6671,11.49,6.67
+Avantel,"Guainia, Colombia",,may-21,5,1,N/A,cellular,mean,1,821,687,1319,0.69,1.32
+Avantel,"Huila, Colombia",,may-21,8,4,N/A,cellular,mean,4,37,16721,5561,16.72,5.56
+Avantel,"La Guajira, Colombia",,may-21,32,3,N/A,cellular,mean,3,67,18548,4750,18.55,4.75
+Avantel,"Magdalena, Colombia",,may-21,26,7,N/A,cellular,mean,7,33,25804,11962,25.8,11.96
+Avantel,"Meta, Colombia",,may-21,108,15,N/A,cellular,mean,15,25,14027,7743,14.03,7.74
+Avantel,"Narino, Colombia",,may-21,1,1,N/A,cellular,mean,1,36,1234,718,1.23,0.72
+Avantel,"North Santander, Colombia",,may-21,217,40,N/A,cellular,mean,40,36,17384,10212,17.38,10.21
+Avantel,"Quindio, Colombia",,may-21,1,1,N/A,cellular,mean,1,37,5737,9731,5.74,9.73
+Avantel,"Risaralda, Colombia",,may-21,12,1,N/A,cellular,mean,1,33,33955,23500,33.96,23.5
+Avantel,"San Andrés and Providencia, Colombia",,may-21,135,10,N/A,cellular,mean,10,644,10751,1891,10.75,1.89
+Avantel,"Santander Department, Colombia",,may-21,192,32,N/A,cellular,mean,32,30,14157,7852,14.16,7.85
+Avantel,"Sucre, Colombia",,may-21,2,1,N/A,cellular,mean,1,37,39891,8783,39.89,8.78
+Avantel,"Tolima, Colombia",,may-21,30,16,N/A,cellular,mean,16,34,17664,5309,17.66,5.31
+Avantel,"Valle del Cauca, Colombia",,may-21,218,55,N/A,cellular,mean,55,37,22026,11219,22.03,11.22
+Avantel,"Vaupes, Colombia",,may-21,35,4,N/A,cellular,mean,4,685,640,2284,0.64,2.28
+Avantel,"Guaviare, Colombia",,may-21,5,2,N/A,cellular,mean,2,24,11257,4321,11.26,4.32
+ETB,"Antioquia, Colombia",,may-21,42,22,N/A,cellular,mean,22,54,7931,4738,7.93,4.74
+ETB,"Atlantico, Colombia",,may-21,90,31,N/A,cellular,mean,31,44,9495,7841,9.5,7.84
+ETB,"Bogota, Colombia",,may-21,1274,470,N/A,cellular,mean,470,48,15820,8440,15.82,8.44
+ETB,"Bolivar, Colombia",,may-21,11,6,N/A,cellular,mean,6,46,8889,5898,8.89,5.9
+ETB,"Boyaca, Colombia",,may-21,1,1,N/A,cellular,mean,1,31,4946,6234,4.95,6.23
+ETB,"Caldas, Colombia",,may-21,14,4,N/A,cellular,mean,4,58,4773,3666,4.77,3.67
+ETB,"Casanare, Colombia",,may-21,3,1,N/A,cellular,mean,1,28,8932,6458,8.93,6.46
+ETB,"Cauca Department, Colombia",,may-21,16,4,N/A,cellular,mean,4,48,8498,6581,8.5,6.58
+ETB,"Cesar, Colombia",,may-21,2,1,N/A,cellular,mean,1,41,9991,15278,9.99,15.28
+ETB,"Choco, Colombia",,may-21,2,1,N/A,cellular,mean,1,45,8845,8844,8.85,8.84
+ETB,"Cordoba, Colombia",,may-21,2,2,N/A,cellular,mean,2,44,19900,2815,19.9,2.82
+ETB,"Cundinamarca, Colombia",,may-21,108,57,N/A,cellular,mean,57,50,11085,7897,11.09,7.9
+ETB,"Huila, Colombia",,may-21,2,2,N/A,cellular,mean,2,27,7780,6331,7.78,6.33
+ETB,"La Guajira, Colombia",,may-21,1,1,N/A,cellular,mean,1,55,46565,29945,46.57,29.95
+ETB,"Magdalena, Colombia",,may-21,39,5,N/A,cellular,mean,5,42,4142,3276,4.14,3.28
+ETB,"Meta, Colombia",,may-21,7,5,N/A,cellular,mean,5,30,20950,8056,20.95,8.06
+ETB,"Narino, Colombia",,may-21,4,1,N/A,cellular,mean,1,34,42099,30638,42.1,30.64
+ETB,"North Santander, Colombia",,may-21,38,3,N/A,cellular,mean,3,35,6778,4973,6.78,4.97
+ETB,"Quindio, Colombia",,may-21,9,4,N/A,cellular,mean,4,58,7547,4356,7.55,4.36
+ETB,"Risaralda, Colombia",,may-21,9,5,N/A,cellular,mean,5,49,6093,5762,6.09,5.76
+ETB,"Santander Department, Colombia",,may-21,36,17,N/A,cellular,mean,17,40,18308,8332,18.31,8.33
+ETB,"Sucre, Colombia",,may-21,2,1,N/A,cellular,mean,1,59,5954,1718,5.95,1.72
+ETB,"Tolima, Colombia",,may-21,6,2,N/A,cellular,mean,2,28,7534,2592,7.53,2.59
+ETB,"Valle del Cauca, Colombia",,may-21,92,51,N/A,cellular,mean,51,43,13717,7849,13.72,7.85
+Movistar,"Amazonas, Colombia",,jun-21,8,5,N/A,cellular,mean,5,77,2622,875,2.62,0.88
+Movistar,"Antioquia, Colombia",,jun-21,2977,1043,N/A,cellular,mean,1043,52,14479,8678,14.48,8.68
+Movistar,"Arauca, Colombia",,jun-21,254,63,N/A,cellular,mean,63,59,10897,6382,10.9,6.38
+Movistar,"Atlantico, Colombia",,jun-21,2521,926,N/A,cellular,mean,926,34,17750,9881,17.75,9.88
+Movistar,"Bogota, Colombia",,jun-21,9815,3880,N/A,cellular,mean,3880,46,14581,9661,14.58,9.66
+Movistar,"Bolivar, Colombia",,jun-21,604,261,N/A,cellular,mean,261,35,17019,9184,17.02,9.18
+Movistar,"Boyaca, Colombia",,jun-21,741,242,N/A,cellular,mean,242,42,9981,5048,9.98,5.05
+Movistar,"Caldas, Colombia",,jun-21,410,157,N/A,cellular,mean,157,52,12936,8546,12.94,8.55
+Movistar,"Caquetá, Colombia",,jun-21,88,51,N/A,cellular,mean,51,48,7449,6286,7.45,6.29
+Movistar,"Casanare, Colombia",,jun-21,342,72,N/A,cellular,mean,72,38,13893,6522,13.89,6.52
+Movistar,"Cauca Department, Colombia",,jun-21,324,130,N/A,cellular,mean,130,47,13575,9506,13.58,9.51
+Movistar,"Cesar, Colombia",,jun-21,701,217,N/A,cellular,mean,217,54,12969,8711,12.97,8.71
+Movistar,"Choco, Colombia",,jun-21,117,25,N/A,cellular,mean,25,75,15696,6579,15.7,6.58
+Movistar,"Cordoba, Colombia",,jun-21,262,83,N/A,cellular,mean,83,39,16796,10659,16.8,10.66
+Movistar,"Cundinamarca, Colombia",,jun-21,2024,766,N/A,cellular,mean,766,45,10317,6366,10.32,6.37
+Movistar,"Guainia, Colombia",,jun-21,6,4,N/A,cellular,mean,4,81,2526,552,2.53,0.55
+Movistar,"Huila, Colombia",,jun-21,519,190,N/A,cellular,mean,190,52,15623,8440,15.62,8.44
+Movistar,"La Guajira, Colombia",,jun-21,416,81,N/A,cellular,mean,81,42,12475,10143,12.48,10.14
+Movistar,"Magdalena, Colombia",,jun-21,723,190,N/A,cellular,mean,190,36,15020,8485,15.02,8.49
+Movistar,"Meta, Colombia",,jun-21,493,174,N/A,cellular,mean,174,39,12903,6625,12.9,6.63
+Movistar,"Narino, Colombia",,jun-21,417,171,N/A,cellular,mean,171,48,12527,9662,12.53,9.66
+Movistar,"North Santander, Colombia",,jun-21,1661,346,N/A,cellular,mean,346,50,12728,7767,12.73,7.77
+Movistar,"Putumayo, Colombia",,jun-21,63,25,N/A,cellular,mean,25,49,8395,6483,8.4,6.48
+Movistar,"Quindio, Colombia",,jun-21,529,155,N/A,cellular,mean,155,59,11901,8840,11.9,8.84
+Movistar,"Risaralda, Colombia",,jun-21,594,168,N/A,cellular,mean,168,43,12674,7148,12.67,7.15
+Movistar,"San Andrés and Providencia, Colombia",,jun-21,455,100,N/A,cellular,mean,100,124,10129,9157,10.13,9.16
+Movistar,"Santander Department, Colombia",,jun-21,2318,896,N/A,cellular,mean,896,48,16388,9171,16.39,9.17
+Movistar,"Sucre, Colombia",,jun-21,285,88,N/A,cellular,mean,88,37,16349,7455,16.35,7.46
+Movistar,"Tolima, Colombia",,jun-21,755,311,N/A,cellular,mean,311,39,17842,7927,17.84,7.93
+Movistar,"Valle del Cauca, Colombia",,jun-21,6032,2233,N/A,cellular,mean,2233,43,16054,10642,16.05,10.64
+Movistar,"Vaupes, Colombia",,jun-21,20,6,N/A,cellular,mean,6,96,306,3044,0.31,3.04
+Movistar,"Vichada, Colombia",,jun-21,2,2,N/A,cellular,mean,2,96,1388,1192,1.39,1.19
+Movistar,"Guaviare, Colombia",,jun-21,62,26,N/A,cellular,mean,26,44,13546,7479,13.55,7.48
+Avantel,"Amazonas, Colombia",,jun-21,1,1,N/A,cellular,mean,1,1367,333,524,0.33,0.52
+Avantel,"Antioquia, Colombia",,jun-21,1048,112,N/A,cellular,mean,112,32,15535,8602,15.54,8.6
+Avantel,"Arauca, Colombia",,jun-21,100,6,N/A,cellular,mean,6,40,5724,7607,5.72,7.61
+Avantel,"Atlantico, Colombia",,jun-21,247,31,N/A,cellular,mean,31,38,24141,13163,24.14,13.16
+Avantel,"Bogota, Colombia",,jun-21,1468,533,N/A,cellular,mean,533,28,13431,7319,13.43,7.32
+Avantel,"Bolivar, Colombia",,jun-21,18,9,N/A,cellular,mean,9,48,17251,6210,17.25,6.21
+Avantel,"Boyaca, Colombia",,jun-21,8,7,N/A,cellular,mean,7,37,10722,9965,10.72,9.97
+Avantel,"Caldas, Colombia",,jun-21,4,2,N/A,cellular,mean,2,53,15959,12513,15.96,12.51
+Avantel,"Caquetá, Colombia",,jun-21,9,3,N/A,cellular,mean,3,27,18185,7140,18.19,7.14
+Avantel,"Casanare, Colombia",,jun-21,1,1,N/A,cellular,mean,1,43,670,1575,0.67,1.58
+Avantel,"Cauca Department, Colombia",,jun-21,55,5,N/A,cellular,mean,5,25,18824,9023,18.82,9.02
+Avantel,"Cesar, Colombia",,jun-21,27,4,N/A,cellular,mean,4,42,25981,12806,25.98,12.81
+Avantel,"Choco, Colombia",,jun-21,4,1,N/A,cellular,mean,1,20,28413,7611,28.41,7.61
+Avantel,"Cordoba, Colombia",,jun-21,15,4,N/A,cellular,mean,4,70,9580,3525,9.58,3.53
+Avantel,"Cundinamarca, Colombia",,jun-21,254,84,N/A,cellular,mean,84,26,13105,7273,13.11,7.27
+Avantel,"Guainia, Colombia",,jun-21,1,1,N/A,cellular,mean,1,75,1352,1613,1.35,1.61
+Avantel,"La Guajira, Colombia",,jun-21,37,3,N/A,cellular,mean,3,37,56181,12934,56.18,12.93
+Avantel,"Magdalena, Colombia",,jun-21,27,7,N/A,cellular,mean,7,46,19458,9947,19.46,9.95
+Avantel,"Meta, Colombia",,jun-21,24,12,N/A,cellular,mean,12,37,15184,5984,15.18,5.98
+Avantel,"Narino, Colombia",,jun-21,1,1,N/A,cellular,mean,1,24,11238,4824,11.24,4.82
+Avantel,"North Santander, Colombia",,jun-21,116,27,N/A,cellular,mean,27,70,16502,9445,16.5,9.45
+Avantel,"Putumayo, Colombia",,jun-21,1,1,N/A,cellular,mean,1,75,219,223,0.22,0.22
+Avantel,"Quindio, Colombia",,jun-21,1,1,N/A,cellular,mean,1,75,4573,1707,4.57,1.71
+Avantel,"Risaralda, Colombia",,jun-21,11,5,N/A,cellular,mean,5,57,11077,6662,11.08,6.66
+Avantel,"San Andrés and Providencia, Colombia",,jun-21,186,17,N/A,cellular,mean,17,632,13297,2612,13.3,2.61
+Avantel,"Santander Department, Colombia",,jun-21,148,23,N/A,cellular,mean,23,33,18742,11709,18.74,11.71
+Avantel,"Sucre, Colombia",,jun-21,4,1,N/A,cellular,mean,1,64,3165,1100,3.17,1.1
+Avantel,"Tolima, Colombia",,jun-21,8,5,N/A,cellular,mean,5,36,8460,4556,8.46,4.56
+Avantel,"Valle del Cauca, Colombia",,jun-21,189,39,N/A,cellular,mean,39,23,23769,11003,23.77,11
+Avantel,"Vaupes, Colombia",,jun-21,39,3,N/A,cellular,mean,3,618,1032,1962,1.03,1.96
+Avantel,"Guaviare, Colombia",,jun-21,18,1,N/A,cellular,mean,1,37,8680,4063,8.68,4.06
+ETB,"Antioquia, Colombia",,jun-21,63,25,N/A,cellular,mean,25,45,7470,4460,7.47,4.46
+ETB,"Atlantico, Colombia",,jun-21,115,18,N/A,cellular,mean,18,46,7878,6422,7.88,6.42
+ETB,"Bogota, Colombia",,jun-21,1082,410,N/A,cellular,mean,410,37,14187,8637,14.19,8.64
+ETB,"Bolivar, Colombia",,jun-21,6,5,N/A,cellular,mean,5,50,8731,11890,8.73,11.89
+ETB,"Boyaca, Colombia",,jun-21,1,1,N/A,cellular,mean,1,37,7931,20,7.93,0.02
+ETB,"Caldas, Colombia",,jun-21,1,1,N/A,cellular,mean,1,78,9042,6010,9.04,6.01
+ETB,"Cauca Department, Colombia",,jun-21,18,5,N/A,cellular,mean,5,40,17455,6603,17.46,6.6
+ETB,"Cesar, Colombia",,jun-21,2,2,N/A,cellular,mean,2,74,37579,11585,37.58,11.59
+ETB,"Cordoba, Colombia",,jun-21,4,3,N/A,cellular,mean,3,48,14004,3894,14,3.89
+ETB,"Cundinamarca, Colombia",,jun-21,71,48,N/A,cellular,mean,48,30,11292,6571,11.29,6.57
+ETB,"Huila, Colombia",,jun-21,5,3,N/A,cellular,mean,3,40,12658,6654,12.66,6.65
+ETB,"La Guajira, Colombia",,jun-21,1,1,N/A,cellular,mean,1,47,22915,15798,22.92,15.8
+ETB,"Magdalena, Colombia",,jun-21,57,5,N/A,cellular,mean,5,38,5796,3949,5.8,3.95
+ETB,"Meta, Colombia",,jun-21,20,6,N/A,cellular,mean,6,38,7302,5046,7.3,5.05
+ETB,"Narino, Colombia",,jun-21,1,1,N/A,cellular,mean,1,30,26898,28834,26.9,28.83
+ETB,"North Santander, Colombia",,jun-21,13,3,N/A,cellular,mean,3,33,3840,5076,3.84,5.08
+ETB,"Quindio, Colombia",,jun-21,2,2,N/A,cellular,mean,2,32,24281,13235,24.28,13.24
+ETB,"Risaralda, Colombia",,jun-21,5,3,N/A,cellular,mean,3,55,5741,6424,5.74,6.42
+ETB,"Santander Department, Colombia",,jun-21,20,7,N/A,cellular,mean,7,39,15875,6923,15.88,6.92
+ETB,"Sucre, Colombia",,jun-21,2,1,N/A,cellular,mean,1,40,7960,5714,7.96,5.71
+ETB,"Tolima, Colombia",,jun-21,5,3,N/A,cellular,mean,3,40,21734,8400,21.73,8.4
+ETB,"Valle del Cauca, Colombia",,jun-21,96,32,N/A,cellular,mean,32,33,18499,8896,18.5,8.9
+Movistar,"Amazonas, Colombia",,jul-21,26,4,N/A,cellular,mean,4,94,1863,750,1.86,0.75
+Movistar,"Antioquia, Colombia",,jul-21,4153,1193,N/A,cellular,mean,1193,49,15564,8681,15.56,8.68
+Movistar,"Arauca, Colombia",,jul-21,170,52,N/A,cellular,mean,52,60,9737,6297,9.74,6.3
+Movistar,"Atlantico, Colombia",,jul-21,2280,817,N/A,cellular,mean,817,32,18835,11398,18.84,11.4
+Movistar,"Bogota, Colombia",,jul-21,10226,4154,N/A,cellular,mean,4154,36,14717,9479,14.72,9.48
+Movistar,"Bolivar, Colombia",,jul-21,775,327,N/A,cellular,mean,327,34,15412,8483,15.41,8.48
+Movistar,"Boyaca, Colombia",,jul-21,618,216,N/A,cellular,mean,216,43,8678,4947,8.68,4.95
+Movistar,"Caldas, Colombia",,jul-21,465,170,N/A,cellular,mean,170,53,14945,9835,14.95,9.84
+Movistar,"Caquetá, Colombia",,jul-21,125,50,N/A,cellular,mean,50,55,8142,6308,8.14,6.31
+Movistar,"Casanare, Colombia",,jul-21,226,78,N/A,cellular,mean,78,38,13791,6884,13.79,6.88
+Movistar,"Cauca Department, Colombia",,jul-21,498,156,N/A,cellular,mean,156,52,11813,8119,11.81,8.12
+Movistar,"Cesar, Colombia",,jul-21,636,230,N/A,cellular,mean,230,43,12001,8968,12,8.97
+Movistar,"Choco, Colombia",,jul-21,49,22,N/A,cellular,mean,22,59,10930,4421,10.93,4.42
+Movistar,"Cordoba, Colombia",,jul-21,283,85,N/A,cellular,mean,85,42,15464,8143,15.46,8.14
+Movistar,"Cundinamarca, Colombia",,jul-21,1827,763,N/A,cellular,mean,763,38,10829,6499,10.83,6.5
+Movistar,"Guainia, Colombia",,jul-21,19,2,N/A,cellular,mean,2,83,1080,255,1.08,0.26
+Movistar,"Huila, Colombia",,jul-21,544,205,N/A,cellular,mean,205,45,14245,6634,14.25,6.63
+Movistar,"La Guajira, Colombia",,jul-21,449,110,N/A,cellular,mean,110,52,8150,8463,8.15,8.46
+Movistar,"Magdalena, Colombia",,jul-21,553,205,N/A,cellular,mean,205,36,13804,7652,13.8,7.65
+Movistar,"Meta, Colombia",,jul-21,543,213,N/A,cellular,mean,213,45,10568,6076,10.57,6.08
+Movistar,"Narino, Colombia",,jul-21,715,190,N/A,cellular,mean,190,50,11796,9947,11.8,9.95
+Movistar,"North Santander, Colombia",,jul-21,1099,306,N/A,cellular,mean,306,50,14320,8214,14.32,8.21
+Movistar,"Putumayo, Colombia",,jul-21,109,27,N/A,cellular,mean,27,48,7458,7425,7.46,7.43
+Movistar,"Quindio, Colombia",,jul-21,390,147,N/A,cellular,mean,147,57,12258,8113,12.26,8.11
+Movistar,"Risaralda, Colombia",,jul-21,474,199,N/A,cellular,mean,199,47,11130,6802,11.13,6.8
+Movistar,"San Andrés and Providencia, Colombia",,jul-21,275,78,N/A,cellular,mean,78,101,10356,10567,10.36,10.57
+Movistar,"Santander Department, Colombia",,jul-21,3777,1016,N/A,cellular,mean,1016,50,15601,8756,15.6,8.76
+Movistar,"Sucre, Colombia",,jul-21,369,85,N/A,cellular,mean,85,36,16411,8135,16.41,8.14
+Movistar,"Tolima, Colombia",,jul-21,657,251,N/A,cellular,mean,251,44,17858,7496,17.86,7.5
+Movistar,"Valle del Cauca, Colombia",,jul-21,5628,2203,N/A,cellular,mean,2203,42,17640,11127,17.64,11.13
+Movistar,"Vaupes, Colombia",,jul-21,3,1,N/A,cellular,mean,1,99,259,4869,0.26,4.87
+Movistar,"Vichada, Colombia",,jul-21,7,3,N/A,cellular,mean,3,76,340,896,0.34,0.9
+Movistar,"Guaviare, Colombia",,jul-21,60,26,N/A,cellular,mean,26,38,9962,7010,9.96,7.01
+Avantel,"Antioquia, Colombia",,jul-21,447,73,N/A,cellular,mean,73,32,18011,9247,18.01,9.25
+Avantel,"Arauca, Colombia",,jul-21,11,5,N/A,cellular,mean,5,31,15417,9237,15.42,9.24
+Avantel,"Atlantico, Colombia",,jul-21,90,28,N/A,cellular,mean,28,45,20331,11760,20.33,11.76
+Avantel,"Bogota, Colombia",,jul-21,1171,415,N/A,cellular,mean,415,26,16890,9434,16.89,9.43
+Avantel,"Bolivar, Colombia",,jul-21,44,14,N/A,cellular,mean,14,32,16367,7488,16.37,7.49
+Avantel,"Boyaca, Colombia",,jul-21,31,6,N/A,cellular,mean,6,29,12930,6653,12.93,6.65
+Avantel,"Caldas, Colombia",,jul-21,33,3,N/A,cellular,mean,3,40,14262,6563,14.26,6.56
+Avantel,"Caquetá, Colombia",,jul-21,22,6,N/A,cellular,mean,6,32,18848,8769,18.85,8.77
+Avantel,"Casanare, Colombia",,jul-21,11,3,N/A,cellular,mean,3,35,18646,5340,18.65,5.34
+Avantel,"Cauca Department, Colombia",,jul-21,1,1,N/A,cellular,mean,1,79,458,491,0.46,0.49
+Avantel,"Cesar, Colombia",,jul-21,12,3,N/A,cellular,mean,3,40,17105,5013,17.11,5.01
+Avantel,"Choco, Colombia",,jul-21,39,4,N/A,cellular,mean,4,41,16804,6635,16.8,6.64
+Avantel,"Cordoba, Colombia",,jul-21,11,2,N/A,cellular,mean,2,71,12517,6126,12.52,6.13
+Avantel,"Cundinamarca, Colombia",,jul-21,143,55,N/A,cellular,mean,55,24,16815,8551,16.82,8.55
+Avantel,"Huila, Colombia",,jul-21,4,2,N/A,cellular,mean,2,25,16059,8465,16.06,8.47
+Avantel,"La Guajira, Colombia",,jul-21,29,5,N/A,cellular,mean,5,60,17927,6880,17.93,6.88
+Avantel,"Magdalena, Colombia",,jul-21,13,5,N/A,cellular,mean,5,54,11787,6231,11.79,6.23
+Avantel,"Meta, Colombia",,jul-21,10,7,N/A,cellular,mean,7,64,14722,7535,14.72,7.54
+Avantel,"Narino, Colombia",,jul-21,3,1,N/A,cellular,mean,1,34,11303,3421,11.3,3.42
+Avantel,"North Santander, Colombia",,jul-21,92,28,N/A,cellular,mean,28,37,16967,9459,16.97,9.46
+Avantel,"Quindio, Colombia",,jul-21,26,2,N/A,cellular,mean,2,34,15183,6920,15.18,6.92
+Avantel,"San Andrés and Providencia, Colombia",,jul-21,55,8,N/A,cellular,mean,8,555,9611,1363,9.61,1.36
+Avantel,"Santander Department, Colombia",,jul-21,92,18,N/A,cellular,mean,18,31,21919,11881,21.92,11.88
+Avantel,"Sucre, Colombia",,jul-21,18,3,N/A,cellular,mean,3,48,11705,5072,11.71,5.07
+Avantel,"Tolima, Colombia",,jul-21,33,7,N/A,cellular,mean,7,38,8735,4230,8.74,4.23
+Avantel,"Valle del Cauca, Colombia",,jul-21,202,23,N/A,cellular,mean,23,30,18112,7342,18.11,7.34
+Avantel,"Vichada, Colombia",,jul-21,1,1,N/A,cellular,mean,1,819,656,2054,0.66,2.05
+Avantel,"Guaviare, Colombia",,jul-21,4,1,N/A,cellular,mean,1,35,12727,9104,12.73,9.1
+ETB,"Antioquia, Colombia",,jul-21,83,24,N/A,cellular,mean,24,44,7938,4552,7.94,4.55
+ETB,"Atlantico, Colombia",,jul-21,68,28,N/A,cellular,mean,28,43,10079,7522,10.08,7.52
+ETB,"Bogota, Colombia",,jul-21,958,425,N/A,cellular,mean,425,35,14371,6579,14.37,6.58
+ETB,"Bolivar, Colombia",,jul-21,12,5,N/A,cellular,mean,5,37,7362,6244,7.36,6.24
+ETB,"Boyaca, Colombia",,jul-21,4,4,N/A,cellular,mean,4,42,8147,5290,8.15,5.29
+ETB,"Caldas, Colombia",,jul-21,10,6,N/A,cellular,mean,6,55,4718,2798,4.72,2.8
+ETB,"Casanare, Colombia",,jul-21,1,1,N/A,cellular,mean,1,76,3472,192,3.47,0.19
+ETB,"Cauca Department, Colombia",,jul-21,16,5,N/A,cellular,mean,5,220,18993,3846,18.99,3.85
+ETB,"Cesar, Colombia",,jul-21,1,1,N/A,cellular,mean,1,44,17742,3033,17.74,3.03
+ETB,"Cordoba, Colombia",,jul-21,3,3,N/A,cellular,mean,3,54,7139,4210,7.14,4.21
+ETB,"Cundinamarca, Colombia",,jul-21,135,57,N/A,cellular,mean,57,31,15344,4857,15.34,4.86
+ETB,"Huila, Colombia",,jul-21,3,2,N/A,cellular,mean,2,66,11996,6671,12,6.67
+ETB,"La Guajira, Colombia",,jul-21,1,1,N/A,cellular,mean,1,34,4482,8593,4.48,8.59
+ETB,"Magdalena, Colombia",,jul-21,32,7,N/A,cellular,mean,7,45,10324,5168,10.32,5.17
+ETB,"Meta, Colombia",,jul-21,10,8,N/A,cellular,mean,8,31,20076,2404,20.08,2.4
+ETB,"Narino, Colombia",,jul-21,20,4,N/A,cellular,mean,4,40,10442,8239,10.44,8.24
+ETB,"North Santander, Colombia",,jul-21,3,3,N/A,cellular,mean,3,28,13817,3697,13.82,3.7
+ETB,"Quindio, Colombia",,jul-21,2,2,N/A,cellular,mean,2,43,10278,2645,10.28,2.65
+ETB,"Risaralda, Colombia",,jul-21,13,5,N/A,cellular,mean,5,44,6079,4745,6.08,4.75
+ETB,"Santander Department, Colombia",,jul-21,35,9,N/A,cellular,mean,9,38,9524,4996,9.52,5
+ETB,"Sucre, Colombia",,jul-21,4,1,N/A,cellular,mean,1,35,7589,6108,7.59,6.11
+ETB,"Tolima, Colombia",,jul-21,7,3,N/A,cellular,mean,3,30,6887,4767,6.89,4.77
+ETB,"Valle del Cauca, Colombia",,jul-21,97,43,N/A,cellular,mean,43,31,14263,5312,14.26,5.31
+Movistar,"Amazonas, Colombia",,Aug 2021,22,6,N/A,cellular,mean,6,89,1556,1842,1.56,1.84
+Movistar,"Antioquia, Colombia",,Aug 2021,3165,1154,N/A,cellular,mean,1154,51,15335,8240,15.34,8.24
+Movistar,"Arauca, Colombia",,Aug 2021,143,40,N/A,cellular,mean,40,63,10498,8100,10.5,8.1
+Movistar,"Atlantico, Colombia",,Aug 2021,1816,715,N/A,cellular,mean,715,30,19258,10959,19.26,10.96
+Movistar,"Bogota, Colombia",,Aug 2021,9480,3888,N/A,cellular,mean,3888,30,13628,9128,13.63,9.13
+Movistar,"Bolivar, Colombia",,Aug 2021,536,262,N/A,cellular,mean,262,33,18278,9736,18.28,9.74
+Movistar,"Boyaca, Colombia",,Aug 2021,768,202,N/A,cellular,mean,202,49,8966,5879,8.97,5.88
+Movistar,"Caldas, Colombia",,Aug 2021,541,183,N/A,cellular,mean,183,52,15505,9734,15.51,9.73
+Movistar,"Caquetá, Colombia",,Aug 2021,174,61,N/A,cellular,mean,61,57,5849,5375,5.85,5.38
+Movistar,"Casanare, Colombia",,Aug 2021,307,68,N/A,cellular,mean,68,48,8690,5383,8.69,5.38
+Movistar,"Cauca Department, Colombia",,Aug 2021,325,146,N/A,cellular,mean,146,51,12377,7750,12.38,7.75
+Movistar,"Cesar, Colombia",,Aug 2021,640,189,N/A,cellular,mean,189,54,12454,8812,12.45,8.81
+Movistar,"Choco, Colombia",,Aug 2021,77,31,N/A,cellular,mean,31,66,11019,5909,11.02,5.91
+Movistar,"Cordoba, Colombia",,Aug 2021,342,94,N/A,cellular,mean,94,47,14459,8931,14.46,8.93
+Movistar,"Cundinamarca, Colombia",,Aug 2021,1725,760,N/A,cellular,mean,760,32,11005,6481,11.01,6.48
+Movistar,"Guainia, Colombia",,Aug 2021,6,2,N/A,cellular,mean,2,65,5156,842,5.16,0.84
+Movistar,"Huila, Colombia",,Aug 2021,579,187,N/A,cellular,mean,187,44,12842,6691,12.84,6.69
+Movistar,"La Guajira, Colombia",,Aug 2021,334,85,N/A,cellular,mean,85,46,9028,8235,9.03,8.24
+Movistar,"Magdalena, Colombia",,Aug 2021,451,157,N/A,cellular,mean,157,38,17139,8074,17.14,8.07
+Movistar,"Meta, Colombia",,Aug 2021,510,177,N/A,cellular,mean,177,43,12884,6414,12.88,6.41
+Movistar,"Narino, Colombia",,Aug 2021,669,186,N/A,cellular,mean,186,59,12061,9138,12.06,9.14
+Movistar,"North Santander, Colombia",,Aug 2021,1104,304,N/A,cellular,mean,304,53,14221,8861,14.22,8.86
+Movistar,"Putumayo, Colombia",,Aug 2021,110,29,N/A,cellular,mean,29,49,8395,7418,8.4,7.42
+Movistar,"Quindio, Colombia",,Aug 2021,524,153,N/A,cellular,mean,153,57,12466,7755,12.47,7.76
+Movistar,"Risaralda, Colombia",,Aug 2021,808,167,N/A,cellular,mean,167,45,13697,7133,13.7,7.13
+Movistar,"San Andrés and Providencia, Colombia",,Aug 2021,251,88,N/A,cellular,mean,88,98,12221,11423,12.22,11.42
+Movistar,"Santander Department, Colombia",,Aug 2021,4276,1035,N/A,cellular,mean,1035,52,16662,9658,16.66,9.66
+Movistar,"Sucre, Colombia",,Aug 2021,250,75,N/A,cellular,mean,75,38,18256,10427,18.26,10.43
+Movistar,"Tolima, Colombia",,Aug 2021,770,240,N/A,cellular,mean,240,38,15699,6504,15.7,6.5
+Movistar,"Valle del Cauca, Colombia",,Aug 2021,5291,2043,N/A,cellular,mean,2043,44,17422,10946,17.42,10.95
+Movistar,"Vaupes, Colombia",,Aug 2021,1,1,N/A,cellular,mean,1,97,512,6211,0.51,6.21
+Movistar,"Vichada, Colombia",,Aug 2021,6,3,N/A,cellular,mean,3,85,1422,567,1.42,0.57
+Movistar,"Guaviare, Colombia",,Aug 2021,36,17,N/A,cellular,mean,17,39,12169,9311,12.17,9.31
+Avantel,"Amazonas, Colombia",,Aug 2021,1,1,N/A,cellular,mean,1,901,739,266,0.74,0.27
+Avantel,"Antioquia, Colombia",,Aug 2021,622,49,N/A,cellular,mean,49,25,19779,11032,19.78,11.03
+Avantel,"Arauca, Colombia",,Aug 2021,5,2,N/A,cellular,mean,2,29,9237,10838,9.24,10.84
+Avantel,"Atlantico, Colombia",,Aug 2021,362,23,N/A,cellular,mean,23,35,26265,13581,26.27,13.58
+Avantel,"Bogota, Colombia",,Aug 2021,801,290,N/A,cellular,mean,290,28,18404,10013,18.4,10.01
+Avantel,"Bolivar, Colombia",,Aug 2021,119,16,N/A,cellular,mean,16,31,23553,8902,23.55,8.9
+Avantel,"Boyaca, Colombia",,Aug 2021,4,2,N/A,cellular,mean,2,47,3462,6111,3.46,6.11
+Avantel,"Caldas, Colombia",,Aug 2021,48,5,N/A,cellular,mean,5,40,7765,3209,7.77,3.21
+Avantel,"Caquetá, Colombia",,Aug 2021,5,3,N/A,cellular,mean,3,21,20734,10942,20.73,10.94
+Avantel,"Cauca Department, Colombia",,Aug 2021,139,3,N/A,cellular,mean,3,33,20957,6598,20.96,6.6
+Avantel,"Cesar, Colombia",,Aug 2021,4,2,N/A,cellular,mean,2,31,54831,23280,54.83,23.28
+Avantel,"Cordoba, Colombia",,Aug 2021,1,1,N/A,cellular,mean,1,37,40456,23244,40.46,23.24
+Avantel,"Cundinamarca, Colombia",,Aug 2021,74,49,N/A,cellular,mean,49,27,13680,9299,13.68,9.3
+Avantel,"Huila, Colombia",,Aug 2021,186,7,N/A,cellular,mean,7,27,23655,11984,23.66,11.98
+Avantel,"La Guajira, Colombia",,Aug 2021,9,1,N/A,cellular,mean,1,40,14374,9429,14.37,9.43
+Avantel,"Meta, Colombia",,Aug 2021,56,6,N/A,cellular,mean,6,21,42553,20725,42.55,20.73
+Avantel,"North Santander, Colombia",,Aug 2021,40,15,N/A,cellular,mean,15,35,21454,11157,21.45,11.16
+Avantel,"Quindio, Colombia",,Aug 2021,94,1,N/A,cellular,mean,1,25,21552,9815,21.55,9.82
+Avantel,"San Andrés and Providencia, Colombia",,Aug 2021,24,3,N/A,cellular,mean,3,575,12069,1816,12.07,1.82
+Avantel,"Santander Department, Colombia",,Aug 2021,221,20,N/A,cellular,mean,20,35,23326,12578,23.33,12.58
+Avantel,"Sucre, Colombia",,Aug 2021,114,2,N/A,cellular,mean,2,40,43396,15957,43.4,15.96
+Avantel,"Tolima, Colombia",,Aug 2021,291,8,N/A,cellular,mean,8,31,15973,6831,15.97,6.83
+Avantel,"Valle del Cauca, Colombia",,Aug 2021,401,27,N/A,cellular,mean,27,28,22050,12405,22.05,12.41
+Avantel,"Guaviare, Colombia",,Aug 2021,3,1,N/A,cellular,mean,1,38,5069,4159,5.07,4.16
+ETB,"Antioquia, Colombia",,Aug 2021,95,16,N/A,cellular,mean,16,44,7347,3989,7.35,3.99
+ETB,"Atlantico, Colombia",,Aug 2021,85,20,N/A,cellular,mean,20,40,7368,5265,7.37,5.27
+ETB,"Bogota, Colombia",,Aug 2021,890,375,N/A,cellular,mean,375,34,13785,6635,13.79,6.64
+ETB,"Bolivar, Colombia",,Aug 2021,19,6,N/A,cellular,mean,6,51,6904,3324,6.9,3.32
+ETB,"Boyaca, Colombia",,Aug 2021,2,2,N/A,cellular,mean,2,64,2098,2816,2.1,2.82
+ETB,"Caldas, Colombia",,Aug 2021,2,2,N/A,cellular,mean,2,62,15165,11469,15.17,11.47
+ETB,"Casanare, Colombia",,Aug 2021,3,1,N/A,cellular,mean,1,34,8406,2621,8.41,2.62
+ETB,"Cauca Department, Colombia",,Aug 2021,25,8,N/A,cellular,mean,8,38,24099,9134,24.1,9.13
+ETB,"Cesar, Colombia",,Aug 2021,2,1,N/A,cellular,mean,1,63,909,318,0.91,0.32
+ETB,"Cordoba, Colombia",,Aug 2021,1,1,N/A,cellular,mean,1,62,8063,5308,8.06,5.31
+ETB,"Cundinamarca, Colombia",,Aug 2021,80,34,N/A,cellular,mean,34,31,9427,4050,9.43,4.05
+ETB,"Huila, Colombia",,Aug 2021,4,2,N/A,cellular,mean,2,30,8604,5186,8.6,5.19
+ETB,"Magdalena, Colombia",,Aug 2021,50,5,N/A,cellular,mean,5,42,7003,3024,7,3.02
+ETB,"Meta, Colombia",,Aug 2021,4,2,N/A,cellular,mean,2,32,24999,9500,25,9.5
+ETB,"Narino, Colombia",,Aug 2021,17,4,N/A,cellular,mean,4,35,20344,13424,20.34,13.42
+ETB,"North Santander, Colombia",,Aug 2021,2,2,N/A,cellular,mean,2,24,6006,3672,6.01,3.67
+ETB,"Quindio, Colombia",,Aug 2021,8,5,N/A,cellular,mean,5,41,11162,7693,11.16,7.69
+ETB,"Risaralda, Colombia",,Aug 2021,1,1,N/A,cellular,mean,1,41,8347,136,8.35,0.14
+ETB,"San Andrés and Providencia, Colombia",,Aug 2021,2,2,N/A,cellular,mean,2,125,7082,3769,7.08,3.77
+ETB,"Santander Department, Colombia",,Aug 2021,9,6,N/A,cellular,mean,6,33,17316,8518,17.32,8.52
+ETB,"Sucre, Colombia",,Aug 2021,10,4,N/A,cellular,mean,4,43,14129,11422,14.13,11.42
+ETB,"Tolima, Colombia",,Aug 2021,6,6,N/A,cellular,mean,6,47,17575,6271,17.58,6.27
+ETB,"Valle del Cauca, Colombia",,Aug 2021,77,28,N/A,cellular,mean,28,34,13873,8211,13.87,8.21
+Movistar,"Amazonas, Colombia",,sep-21,14,5,N/A,cellular,mean,5,253,1770,844,1.77,0.84
+Movistar,"Antioquia, Colombia",,sep-21,3503,1179,N/A,cellular,mean,1179,47,16303,8531,16.3,8.53
+Movistar,"Arauca, Colombia",,sep-21,115,47,N/A,cellular,mean,47,65,8870,6223,8.87,6.22
+Movistar,"Atlantico, Colombia",,sep-21,1746,634,N/A,cellular,mean,634,32,20204,10860,20.2,10.86
+Movistar,"Bogota, Colombia",,sep-21,9256,3742,N/A,cellular,mean,3742,30,13739,9135,13.74,9.14
+Movistar,"Bolivar, Colombia",,sep-21,563,262,N/A,cellular,mean,262,36,17604,9097,17.6,9.1
+Movistar,"Boyaca, Colombia",,sep-21,939,213,N/A,cellular,mean,213,46,8629,5121,8.63,5.12
+Movistar,"Caldas, Colombia",,sep-21,383,147,N/A,cellular,mean,147,50,14338,9618,14.34,9.62
+Movistar,"Caquetá, Colombia",,sep-21,115,57,N/A,cellular,mean,57,55,6235,6186,6.24,6.19
+Movistar,"Casanare, Colombia",,sep-21,167,60,N/A,cellular,mean,60,39,8355,5222,8.36,5.22
+Movistar,"Cauca Department, Colombia",,sep-21,318,131,N/A,cellular,mean,131,51,13064,9673,13.06,9.67
+Movistar,"Cesar, Colombia",,sep-21,487,170,N/A,cellular,mean,170,39,12861,8602,12.86,8.6
+Movistar,"Choco, Colombia",,sep-21,59,22,N/A,cellular,mean,22,67,9767,5966,9.77,5.97
+Movistar,"Cordoba, Colombia",,sep-21,205,86,N/A,cellular,mean,86,39,13064,7568,13.06,7.57
+Movistar,"Cundinamarca, Colombia",,sep-21,1565,709,N/A,cellular,mean,709,32,11230,6540,11.23,6.54
+Movistar,"Huila, Colombia",,sep-21,445,172,N/A,cellular,mean,172,45,15238,7599,15.24,7.6
+Movistar,"La Guajira, Colombia",,sep-21,277,72,N/A,cellular,mean,72,45,11386,8889,11.39,8.89
+Movistar,"Magdalena, Colombia",,sep-21,392,156,N/A,cellular,mean,156,36,17285,9049,17.29,9.05
+Movistar,"Meta, Colombia",,sep-21,464,175,N/A,cellular,mean,175,45,12641,7170,12.64,7.17
+Movistar,"Narino, Colombia",,sep-21,440,171,N/A,cellular,mean,171,54,14133,10117,14.13,10.12
+Movistar,"North Santander, Colombia",,sep-21,1240,283,N/A,cellular,mean,283,53,17468,10080,17.47,10.08
+Movistar,"Putumayo, Colombia",,sep-21,63,23,N/A,cellular,mean,23,59,7773,5707,7.77,5.71
+Movistar,"Quindio, Colombia",,sep-21,404,133,N/A,cellular,mean,133,50,14210,8424,14.21,8.42
+Movistar,"Risaralda, Colombia",,sep-21,500,177,N/A,cellular,mean,177,45,11394,6963,11.39,6.96
+Movistar,"San Andrés and Providencia, Colombia",,sep-21,225,71,N/A,cellular,mean,71,107,11397,10251,11.4,10.25
+Movistar,"Santander Department, Colombia",,sep-21,3129,921,N/A,cellular,mean,921,53,15816,9117,15.82,9.12
+Movistar,"Sucre, Colombia",,sep-21,151,61,N/A,cellular,mean,61,36,18589,8959,18.59,8.96
+Movistar,"Tolima, Colombia",,sep-21,580,216,N/A,cellular,mean,216,37,16252,7046,16.25,7.05
+Movistar,"Valle del Cauca, Colombia",,sep-21,4764,1907,N/A,cellular,mean,1907,47,17637,10924,17.64,10.92
+Movistar,"Vaupes, Colombia",,sep-21,1,1,N/A,cellular,mean,1,80,904,60,0.9,0.06
+Movistar,"Guaviare, Colombia",,sep-21,33,12,N/A,cellular,mean,12,54,10119,9895,10.12,9.9
+Avantel,"Amazonas, Colombia",,sep-21,6,2,N/A,cellular,mean,2,462,625,746,0.63,0.75
+Avantel,"Antioquia, Colombia",,sep-21,390,29,N/A,cellular,mean,29,22,19451,13830,19.45,13.83
+Avantel,"Atlantico, Colombia",,sep-21,403,12,N/A,cellular,mean,12,34,23632,16477,23.63,16.48
+Avantel,"Bogota, Colombia",,sep-21,326,138,N/A,cellular,mean,138,26,17556,10542,17.56,10.54
+Avantel,"Bolivar, Colombia",,sep-21,84,8,N/A,cellular,mean,8,33,23558,14122,23.56,14.12
+Avantel,"Boyaca, Colombia",,sep-21,2,1,N/A,cellular,mean,1,20,3652,3453,3.65,3.45
+Avantel,"Caldas, Colombia",,sep-21,7,3,N/A,cellular,mean,3,27,5387,1547,5.39,1.55
+Avantel,"Caquetá, Colombia",,sep-21,142,2,N/A,cellular,mean,2,21,46436,15118,46.44,15.12
+Avantel,"Cauca Department, Colombia",,sep-21,71,3,N/A,cellular,mean,3,32,28023,7488,28.02,7.49
+Avantel,"Cesar, Colombia",,sep-21,52,3,N/A,cellular,mean,3,47,18673,7925,18.67,7.93
+Avantel,"Choco, Colombia",,sep-21,5,2,N/A,cellular,mean,2,42,14505,10343,14.51,10.34
+Avantel,"Cordoba, Colombia",,sep-21,147,2,N/A,cellular,mean,2,42,30356,11221,30.36,11.22
+Avantel,"Cundinamarca, Colombia",,sep-21,116,17,N/A,cellular,mean,17,29,19378,8634,19.38,8.63
+Avantel,"Huila, Colombia",,sep-21,66,3,N/A,cellular,mean,3,83,19594,7208,19.59,7.21
+Avantel,"La Guajira, Colombia",,sep-21,31,1,N/A,cellular,mean,1,41,14373,11042,14.37,11.04
+Avantel,"Magdalena, Colombia",,sep-21,20,2,N/A,cellular,mean,2,30,19931,15338,19.93,15.34
+Avantel,"Meta, Colombia",,sep-21,122,2,N/A,cellular,mean,2,24,48377,15354,48.38,15.35
+Avantel,"Narino, Colombia",,sep-21,37,2,N/A,cellular,mean,2,34,11669,5010,11.67,5.01
+Avantel,"North Santander, Colombia",,sep-21,129,11,N/A,cellular,mean,11,28,16796,11695,16.8,11.7
+Avantel,"Quindio, Colombia",,sep-21,51,2,N/A,cellular,mean,2,26,24663,11084,24.66,11.08
+Avantel,"San Andrés and Providencia, Colombia",,sep-21,20,4,N/A,cellular,mean,4,651,6698,2076,6.7,2.08
+Avantel,"Santander Department, Colombia",,sep-21,143,9,N/A,cellular,mean,9,24,25517,15093,25.52,15.09
+Avantel,"Sucre, Colombia",,sep-21,11,1,N/A,cellular,mean,1,42,25840,8490,25.84,8.49
+Avantel,"Tolima, Colombia",,sep-21,6,1,N/A,cellular,mean,1,27,24422,14235,24.42,14.24
+Avantel,"Valle del Cauca, Colombia",,sep-21,337,11,N/A,cellular,mean,11,31,21600,12166,21.6,12.17
+Avantel,"Guaviare, Colombia",,sep-21,32,1,N/A,cellular,mean,1,19,42215,19069,42.22,19.07
+ETB,"Antioquia, Colombia",,sep-21,18,12,N/A,cellular,mean,12,71,10824,6863,10.82,6.86
+ETB,"Atlantico, Colombia",,sep-21,46,19,N/A,cellular,mean,19,41,9316,7745,9.32,7.75
+ETB,"Bogota, Colombia",,sep-21,751,357,N/A,cellular,mean,357,33,13189,7378,13.19,7.38
+ETB,"Bolivar, Colombia",,sep-21,3,3,N/A,cellular,mean,3,52,8636,6145,8.64,6.15
+ETB,"Boyaca, Colombia",,sep-21,4,4,N/A,cellular,mean,4,37,7430,3655,7.43,3.66
+ETB,"Caldas, Colombia",,sep-21,2,2,N/A,cellular,mean,2,93,30041,6599,30.04,6.6
+ETB,"Casanare, Colombia",,sep-21,32,2,N/A,cellular,mean,2,31,24132,11699,24.13,11.7
+ETB,"Cauca Department, Colombia",,sep-21,25,5,N/A,cellular,mean,5,46,23788,9896,23.79,9.9
+ETB,"Cordoba, Colombia",,sep-21,1,1,N/A,cellular,mean,1,61,20167,2049,20.17,2.05
+ETB,"Cundinamarca, Colombia",,sep-21,86,29,N/A,cellular,mean,29,38,11187,4696,11.19,4.7
+ETB,"Huila, Colombia",,sep-21,6,3,N/A,cellular,mean,3,53,13065,6355,13.07,6.36
+ETB,"Magdalena, Colombia",,sep-21,16,5,N/A,cellular,mean,5,44,14237,3939,14.24,3.94
+ETB,"Meta, Colombia",,sep-21,7,4,N/A,cellular,mean,4,35,6854,2705,6.85,2.71
+ETB,"Narino, Colombia",,sep-21,4,3,N/A,cellular,mean,3,60,15606,10930,15.61,10.93
+ETB,"North Santander, Colombia",,sep-21,3,1,N/A,cellular,mean,1,54,2646,3233,2.65,3.23
+ETB,"Quindio, Colombia",,sep-21,1,1,N/A,cellular,mean,1,27,37875,11520,37.88,11.52
+ETB,"Risaralda, Colombia",,sep-21,7,4,N/A,cellular,mean,4,40,9061,7632,9.06,7.63
+ETB,"San Andrés and Providencia, Colombia",,sep-21,1,1,N/A,cellular,mean,1,115,4674,4966,4.67,4.97
+ETB,"Santander Department, Colombia",,sep-21,8,6,N/A,cellular,mean,6,59,8774,7388,8.77,7.39
+ETB,"Sucre, Colombia",,sep-21,1,1,N/A,cellular,mean,1,61,2966,3518,2.97,3.52
+ETB,"Tolima, Colombia",,sep-21,6,3,N/A,cellular,mean,3,24,29564,13303,29.56,13.3
+ETB,"Valle del Cauca, Colombia",,sep-21,56,24,N/A,cellular,mean,24,33,16550,6908,16.55,6.91
+Movistar,"Amazonas, Colombia",,oct-21,26,9,N/A,cellular,mean,9,235,1182,1037,1.18,1.04
+Movistar,"Antioquia, Colombia",,oct-21,3031,1178,N/A,cellular,mean,1178,48,15658,8102,15.66,8.1
+Movistar,"Arauca, Colombia",,oct-21,189,51,N/A,cellular,mean,51,65,8129,6293,8.13,6.29
+Movistar,"Atlantico, Colombia",,oct-21,1617,635,N/A,cellular,mean,635,32,19177,11071,19.18,11.07
+Movistar,"Bogota, Colombia",,oct-21,9573,3528,N/A,cellular,mean,3528,29,14273,8661,14.27,8.66
+Movistar,"Bolivar, Colombia",,oct-21,636,277,N/A,cellular,mean,277,35,17704,8939,17.7,8.94
+Movistar,"Boyaca, Colombia",,oct-21,840,234,N/A,cellular,mean,234,55,7249,4393,7.25,4.39
+Movistar,"Caldas, Colombia",,oct-21,389,145,N/A,cellular,mean,145,53,13064,9541,13.06,9.54
+Movistar,"Caquetá, Colombia",,oct-21,110,43,N/A,cellular,mean,43,51,5283,5060,5.28,5.06
+Movistar,"Casanare, Colombia",,oct-21,196,65,N/A,cellular,mean,65,39,7724,5525,7.72,5.53
+Movistar,"Cauca Department, Colombia",,oct-21,276,111,N/A,cellular,mean,111,46,13089,9509,13.09,9.51
+Movistar,"Cesar, Colombia",,oct-21,511,194,N/A,cellular,mean,194,42,13348,7851,13.35,7.85
+Movistar,"Choco, Colombia",,oct-21,71,20,N/A,cellular,mean,20,84,14546,7296,14.55,7.3
+Movistar,"Cordoba, Colombia",,oct-21,247,88,N/A,cellular,mean,88,37,18471,9176,18.47,9.18
+Movistar,"Cundinamarca, Colombia",,oct-21,1682,746,N/A,cellular,mean,746,32,10444,5899,10.44,5.9
+Movistar,"Guainia, Colombia",,oct-21,4,1,N/A,cellular,mean,1,87,2289,225,2.29,0.23
+Movistar,"Huila, Colombia",,oct-21,340,174,N/A,cellular,mean,174,49,12338,6273,12.34,6.27
+Movistar,"La Guajira, Colombia",,oct-21,267,73,N/A,cellular,mean,73,46,12262,8357,12.26,8.36
+Movistar,"Magdalena, Colombia",,oct-21,373,182,N/A,cellular,mean,182,38,13980,7445,13.98,7.45
+Movistar,"Meta, Colombia",,oct-21,554,181,N/A,cellular,mean,181,42,11989,6028,11.99,6.03
+Movistar,"Narino, Colombia",,oct-21,432,158,N/A,cellular,mean,158,52,12101,9595,12.1,9.6
+Movistar,"North Santander, Colombia",,oct-21,785,245,N/A,cellular,mean,245,56,20433,9797,20.43,9.8
+Movistar,"Putumayo, Colombia",,oct-21,31,12,N/A,cellular,mean,12,58,14892,7400,14.89,7.4
+Movistar,"Quindio, Colombia",,oct-21,369,144,N/A,cellular,mean,144,57,11579,7601,11.58,7.6
+Movistar,"Risaralda, Colombia",,oct-21,676,183,N/A,cellular,mean,183,51,10976,7151,10.98,7.15
+Movistar,"San Andrés and Providencia, Colombia",,oct-21,184,53,N/A,cellular,mean,53,90,11931,9501,11.93,9.5
+Movistar,"Santander Department, Colombia",,oct-21,2678,936,N/A,cellular,mean,936,52,17425,9717,17.43,9.72
+Movistar,"Sucre, Colombia",,oct-21,141,68,N/A,cellular,mean,68,36,17284,8211,17.28,8.21
+Movistar,"Tolima, Colombia",,oct-21,621,252,N/A,cellular,mean,252,39,14806,6512,14.81,6.51
+Movistar,"Valle del Cauca, Colombia",,oct-21,4842,1834,N/A,cellular,mean,1834,45,17708,10926,17.71,10.93
+Movistar,"Vichada, Colombia",,oct-21,5,3,N/A,cellular,mean,3,107,480,1596,0.48,1.6
+Movistar,"Guaviare, Colombia",,oct-21,90,23,N/A,cellular,mean,23,43,17924,8716,17.92,8.72
+Avantel,"Amazonas, Colombia",,oct-21,2,1,N/A,cellular,mean,1,780,84,448,0.08,0.45
+Avantel,"Antioquia, Colombia",,oct-21,139,21,N/A,cellular,mean,21,27,26542,15124,26.54,15.12
+Avantel,"Atlantico, Colombia",,oct-21,30,5,N/A,cellular,mean,5,40,19266,10742,19.27,10.74
+Avantel,"Bogota, Colombia",,oct-21,158,71,N/A,cellular,mean,71,24,19940,10237,19.94,10.24
+Avantel,"Bolivar, Colombia",,oct-21,15,3,N/A,cellular,mean,3,35,23213,9222,23.21,9.22
+Avantel,"Boyaca, Colombia",,oct-21,4,2,N/A,cellular,mean,2,44,2890,5354,2.89,5.35
+Avantel,"Caldas, Colombia",,oct-21,1,1,N/A,cellular,mean,1,24,21488,5658,21.49,5.66
+Avantel,"Casanare, Colombia",,oct-21,122,1,N/A,cellular,mean,1,22,36907,13099,36.91,13.1
+Avantel,"Cauca Department, Colombia",,oct-21,41,1,N/A,cellular,mean,1,27,20485,8490,20.49,8.49
+Avantel,"Cesar, Colombia",,oct-21,438,5,N/A,cellular,mean,5,38,22778,11169,22.78,11.17
+Avantel,"Cordoba, Colombia",,oct-21,34,1,N/A,cellular,mean,1,31,28842,10814,28.84,10.81
+Avantel,"Cundinamarca, Colombia",,oct-21,9,8,N/A,cellular,mean,8,18,23898,8076,23.9,8.08
+Avantel,"La Guajira, Colombia",,oct-21,104,2,N/A,cellular,mean,2,44,16935,10183,16.94,10.18
+Avantel,"Magdalena, Colombia",,oct-21,1,1,N/A,cellular,mean,1,31,47136,21103,47.14,21.1
+Avantel,"Meta, Colombia",,oct-21,10,1,N/A,cellular,mean,1,15,62133,20073,62.13,20.07
+Avantel,"Narino, Colombia",,oct-21,161,1,N/A,cellular,mean,1,33,28486,10015,28.49,10.02
+Avantel,"North Santander, Colombia",,oct-21,30,8,N/A,cellular,mean,8,28,17527,10052,17.53,10.05
+Avantel,"Putumayo, Colombia",,oct-21,75,1,N/A,cellular,mean,1,39,15804,10977,15.8,10.98
+Avantel,"Quindio, Colombia",,oct-21,12,2,N/A,cellular,mean,2,25,31757,22819,31.76,22.82
+Avantel,"Risaralda, Colombia",,oct-21,6,1,N/A,cellular,mean,1,29,18166,7634,18.17,7.63
+Avantel,"San Andrés and Providencia, Colombia",,oct-21,1,1,N/A,cellular,mean,1,652,5099,1085,5.1,1.09
+Avantel,"Santander Department, Colombia",,oct-21,28,6,N/A,cellular,mean,6,26,22343,12479,22.34,12.48
+Avantel,"Tolima, Colombia",,oct-21,3,1,N/A,cellular,mean,1,24,10541,8676,10.54,8.68
+Avantel,"Valle del Cauca, Colombia",,oct-21,71,10,N/A,cellular,mean,10,30,22866,12823,22.87,12.82
+ETB,"Antioquia, Colombia",,oct-21,23,13,N/A,cellular,mean,13,39,8969,7488,8.97,7.49
+ETB,"Atlantico, Colombia",,oct-21,42,22,N/A,cellular,mean,22,45,9940,7739,9.94,7.74
+ETB,"Bogota, Colombia",,oct-21,764,333,N/A,cellular,mean,333,31,11990,7991,11.99,7.99
+ETB,"Bolivar, Colombia",,oct-21,25,9,N/A,cellular,mean,9,41,12699,7210,12.7,7.21
+ETB,"Boyaca, Colombia",,oct-21,8,7,N/A,cellular,mean,7,33,13319,7926,13.32,7.93
+ETB,"Caldas, Colombia",,oct-21,4,3,N/A,cellular,mean,3,58,4211,3560,4.21,3.56
+ETB,"Casanare, Colombia",,oct-21,15,2,N/A,cellular,mean,2,52,15603,6388,15.6,6.39
+ETB,"Cauca Department, Colombia",,oct-21,18,7,N/A,cellular,mean,7,29,23634,11859,23.63,11.86
+ETB,"Cesar, Colombia",,oct-21,3,3,N/A,cellular,mean,3,59,13528,10335,13.53,10.34
+ETB,"Cordoba, Colombia",,oct-21,2,2,N/A,cellular,mean,2,41,14086,4623,14.09,4.62
+ETB,"Cundinamarca, Colombia",,oct-21,74,31,N/A,cellular,mean,31,35,10018,8073,10.02,8.07
+ETB,"Huila, Colombia",,oct-21,2,2,N/A,cellular,mean,2,29,9009,8781,9.01,8.78
+ETB,"La Guajira, Colombia",,oct-21,1,1,N/A,cellular,mean,1,48,7866,5492,7.87,5.49
+ETB,"Magdalena, Colombia",,oct-21,14,2,N/A,cellular,mean,2,65,1890,2732,1.89,2.73
+ETB,"Meta, Colombia",,oct-21,12,5,N/A,cellular,mean,5,29,14771,8770,14.77,8.77
+ETB,"Narino, Colombia",,oct-21,1,1,N/A,cellular,mean,1,29,6427,8195,6.43,8.2
+ETB,"North Santander, Colombia",,oct-21,11,5,N/A,cellular,mean,5,30,11972,4144,11.97,4.14
+ETB,"Quindio, Colombia",,oct-21,10,3,N/A,cellular,mean,3,87,34683,15597,34.68,15.6
+ETB,"Santander Department, Colombia",,oct-21,7,5,N/A,cellular,mean,5,38,18391,13394,18.39,13.39
+ETB,"Sucre, Colombia",,oct-21,1,1,N/A,cellular,mean,1,37,811,848,0.81,0.85
+ETB,"Tolima, Colombia",,oct-21,13,7,N/A,cellular,mean,7,29,9331,3804,9.33,3.8
+ETB,"Valle del Cauca, Colombia",,oct-21,39,23,N/A,cellular,mean,23,43,8589,5270,8.59,5.27
+Movistar,"Amazonas, Colombia",,nov-21,12,5,N/A,cellular,mean,5,195,1596,1144,1.6,1.14
+Movistar,"Antioquia, Colombia",,nov-21,2663,1142,N/A,cellular,mean,1142,53,15453,7779,15.45,7.78
+Movistar,"Arauca, Colombia",,nov-21,90,37,N/A,cellular,mean,37,73,7902,6009,7.9,6.01
+Movistar,"Atlantico, Colombia",,nov-21,1483,589,N/A,cellular,mean,589,33,19883,10381,19.88,10.38
+Movistar,"Bogota, Colombia",,nov-21,11556,3350,N/A,cellular,mean,3350,29,13689,8642,13.69,8.64
+Movistar,"Bolivar, Colombia",,nov-21,596,269,N/A,cellular,mean,269,33,18211,9241,18.21,9.24
+Movistar,"Boyaca, Colombia",,nov-21,920,202,N/A,cellular,mean,202,43,9910,5375,9.91,5.38
+Movistar,"Caldas, Colombia",,nov-21,390,110,N/A,cellular,mean,110,53,13861,7482,13.86,7.48
+Movistar,"Caquetá, Colombia",,nov-21,130,48,N/A,cellular,mean,48,52,5106,4216,5.11,4.22
+Movistar,"Casanare, Colombia",,nov-21,131,52,N/A,cellular,mean,52,37,13641,6922,13.64,6.92
+Movistar,"Cauca Department, Colombia",,nov-21,315,107,N/A,cellular,mean,107,58,12165,9398,12.17,9.4
+Movistar,"Cesar, Colombia",,nov-21,694,172,N/A,cellular,mean,172,41,10524,7628,10.52,7.63
+Movistar,"Choco, Colombia",,nov-21,36,19,N/A,cellular,mean,19,136,11112,6037,11.11,6.04
+Movistar,"Cordoba, Colombia",,nov-21,192,77,N/A,cellular,mean,77,37,17589,8632,17.59,8.63
+Movistar,"Cundinamarca, Colombia",,nov-21,1676,698,N/A,cellular,mean,698,35,10439,6263,10.44,6.26
+Movistar,"Guainia, Colombia",,nov-21,1,1,N/A,cellular,mean,1,58,799,766,0.8,0.77
+Movistar,"Huila, Colombia",,nov-21,411,182,N/A,cellular,mean,182,46,14684,6752,14.68,6.75
+Movistar,"La Guajira, Colombia",,nov-21,333,77,N/A,cellular,mean,77,44,10847,7228,10.85,7.23
+Movistar,"Magdalena, Colombia",,nov-21,344,145,N/A,cellular,mean,145,39,14960,7818,14.96,7.82
+Movistar,"Meta, Colombia",,nov-21,338,160,N/A,cellular,mean,160,38,12271,6654,12.27,6.65
+Movistar,"Narino, Colombia",,nov-21,395,135,N/A,cellular,mean,135,53,10914,9313,10.91,9.31
+Movistar,"North Santander, Colombia",,nov-21,666,239,N/A,cellular,mean,239,56,16399,9158,16.4,9.16
+Movistar,"Putumayo, Colombia",,nov-21,73,17,N/A,cellular,mean,17,48,7786,8086,7.79,8.09
+Movistar,"Quindio, Colombia",,nov-21,270,107,N/A,cellular,mean,107,46,14399,8592,14.4,8.59
+Movistar,"Risaralda, Colombia",,nov-21,432,165,N/A,cellular,mean,165,46,14388,8125,14.39,8.13
+Movistar,"San Andrés and Providencia, Colombia",,nov-21,243,65,N/A,cellular,mean,65,124,11041,10998,11.04,11
+Movistar,"Santander Department, Colombia",,nov-21,3056,860,N/A,cellular,mean,860,52,16516,8977,16.52,8.98
+Movistar,"Sucre, Colombia",,nov-21,101,46,N/A,cellular,mean,46,34,19153,9716,19.15,9.72
+Movistar,"Tolima, Colombia",,nov-21,528,224,N/A,cellular,mean,224,41,16343,7507,16.34,7.51
+Movistar,"Valle del Cauca, Colombia",,nov-21,5025,1860,N/A,cellular,mean,1860,47,16936,10111,16.94,10.11
+Movistar,"Vaupes, Colombia",,nov-21,1,1,N/A,cellular,mean,1,35,7233,1059,7.23,1.06
+Movistar,"Vichada, Colombia",,nov-21,5,2,N/A,cellular,mean,2,75,2933,700,2.93,0.7
+Movistar,"Guaviare, Colombia",,nov-21,73,25,N/A,cellular,mean,25,47,11294,8059,11.29,8.06
+Avantel,"Antioquia, Colombia",,nov-21,106,13,N/A,cellular,mean,13,24,27826,15718,27.83,15.72
+Avantel,"Atlantico, Colombia",,nov-21,11,5,N/A,cellular,mean,5,31,25586,16309,25.59,16.31
+Avantel,"Bogota, Colombia",,nov-21,220,65,N/A,cellular,mean,65,22,23694,11281,23.69,11.28
+Avantel,"Bolivar, Colombia",,nov-21,8,2,N/A,cellular,mean,2,31,26447,11315,26.45,11.32
+Avantel,"Boyaca, Colombia",,nov-21,6,1,N/A,cellular,mean,1,15,34196,19462,34.2,19.46
+Avantel,"Caldas, Colombia",,nov-21,18,1,N/A,cellular,mean,1,23,25098,21412,25.1,21.41
+Avantel,"Casanare, Colombia",,nov-21,6,1,N/A,cellular,mean,1,22,40676,19934,40.68,19.93
+Avantel,"Cesar, Colombia",,nov-21,41,2,N/A,cellular,mean,2,34,26595,20427,26.6,20.43
+Avantel,"Cordoba, Colombia",,nov-21,58,1,N/A,cellular,mean,1,35,24763,8352,24.76,8.35
+Avantel,"Cundinamarca, Colombia",,nov-21,16,9,N/A,cellular,mean,9,25,27309,15046,27.31,15.05
+Avantel,"Magdalena, Colombia",,nov-21,1,1,N/A,cellular,mean,1,38,5901,1505,5.9,1.51
+Avantel,"Narino, Colombia",,nov-21,2,1,N/A,cellular,mean,1,29,14676,6726,14.68,6.73
+Avantel,"North Santander, Colombia",,nov-21,9,4,N/A,cellular,mean,4,26,28488,12003,28.49,12
+Avantel,"Risaralda, Colombia",,nov-21,8,1,N/A,cellular,mean,1,24,23696,20734,23.7,20.73
+Avantel,"San Andrés and Providencia, Colombia",,nov-21,5,2,N/A,cellular,mean,2,422,11494,2156,11.49,2.16
+Avantel,"Santander Department, Colombia",,nov-21,49,6,N/A,cellular,mean,6,28,29594,12958,29.59,12.96
+Avantel,"Valle del Cauca, Colombia",,nov-21,29,6,N/A,cellular,mean,6,21,28835,15626,28.84,15.63
+ETB,"Antioquia, Colombia",,nov-21,49,13,N/A,cellular,mean,13,56,7666,5519,7.67,5.52
+ETB,"Atlantico, Colombia",,nov-21,56,18,N/A,cellular,mean,18,44,7794,6697,7.79,6.7
+ETB,"Bogota, Colombia",,nov-21,566,248,N/A,cellular,mean,248,34,13114,7706,13.11,7.71
+ETB,"Bolivar, Colombia",,nov-21,6,4,N/A,cellular,mean,4,41,3751,1039,3.75,1.04
+ETB,"Boyaca, Colombia",,nov-21,2,2,N/A,cellular,mean,2,29,14116,9746,14.12,9.75
+ETB,"Caldas, Colombia",,nov-21,15,2,N/A,cellular,mean,2,40,1941,1637,1.94,1.64
+ETB,"Casanare, Colombia",,nov-21,13,3,N/A,cellular,mean,3,35,19596,8942,19.6,8.94
+ETB,"Cauca Department, Colombia",,nov-21,5,3,N/A,cellular,mean,3,35,6921,4183,6.92,4.18
+ETB,"Cesar, Colombia",,nov-21,1,1,N/A,cellular,mean,1,78,6704,1317,6.7,1.32
+ETB,"Cordoba, Colombia",,nov-21,1,1,N/A,cellular,mean,1,98,1590,6346,1.59,6.35
+ETB,"Cundinamarca, Colombia",,nov-21,38,24,N/A,cellular,mean,24,38,11766,5253,11.77,5.25
+ETB,"Huila, Colombia",,nov-21,5,2,N/A,cellular,mean,2,44,10970,7579,10.97,7.58
+ETB,"La Guajira, Colombia",,nov-21,2,2,N/A,cellular,mean,2,52,20508,14029,20.51,14.03
+ETB,"Magdalena, Colombia",,nov-21,3,3,N/A,cellular,mean,3,40,21637,9118,21.64,9.12
+ETB,"Meta, Colombia",,nov-21,9,3,N/A,cellular,mean,3,25,15111,7051,15.11,7.05
+ETB,"Narino, Colombia",,nov-21,3,1,N/A,cellular,mean,1,43,9441,9497,9.44,9.5
+ETB,"North Santander, Colombia",,nov-21,8,3,N/A,cellular,mean,3,31,7712,1832,7.71,1.83
+ETB,"Risaralda, Colombia",,nov-21,2,2,N/A,cellular,mean,2,51,27853,14887,27.85,14.89
+ETB,"San Andrés and Providencia, Colombia",,nov-21,1,1,N/A,cellular,mean,1,120,5308,938,5.31,0.94
+ETB,"Santander Department, Colombia",,nov-21,5,5,N/A,cellular,mean,5,42,12342,6709,12.34,6.71
+ETB,"Sucre, Colombia",,nov-21,2,1,N/A,cellular,mean,1,43,7169,1841,7.17,1.84
+ETB,"Tolima, Colombia",,nov-21,4,3,N/A,cellular,mean,3,41,27060,10654,27.06,10.65
+ETB,"Valle del Cauca, Colombia",,nov-21,32,18,N/A,cellular,mean,18,61,9186,6448,9.19,6.45
+Movistar,"Guainia, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Movistar,"Vichada, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Amazonas, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Arauca, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Choco, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Guainia, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Huila, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Narino, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Putumayo, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Quindio, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Risaralda, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Tolima, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Vaupes, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Vichada, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Avantel,"Guaviare, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Amazonas, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Arauca, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Caquetá, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Choco, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Cordoba, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Guainia, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"San Andrés and Providencia, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Vaupes, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Vichada, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+ETB,"Guaviare, Colombia",,Dec 2021,,,N/A,cellular,mean,,,,,,
+Movistar,"Amazonas, Colombia",,Dec 2021,16,5,N/A,cellular,mean,5,92,2453,1021,2.45,1.02
+Movistar,"Antioquia, Colombia",,Dec 2021,2835,1105,N/A,cellular,mean,1105,50,16594,8952,16.59,8.95
+Movistar,"Arauca, Colombia",,Dec 2021,78,40,N/A,cellular,mean,40,63,9378,6865,9.38,6.87
+Movistar,"Atlantico, Colombia",,Dec 2021,1421,556,N/A,cellular,mean,556,32,20095,11540,20.1,11.54
+Movistar,"Bogota, Colombia",,Dec 2021,10651,3201,N/A,cellular,mean,3201,34,14033,9425,14.03,9.43
+Movistar,"Bolivar, Colombia",,Dec 2021,537,261,N/A,cellular,mean,261,35,17581,9521,17.58,9.52
+Movistar,"Boyaca, Colombia",,Dec 2021,724,226,N/A,cellular,mean,226,52,10266,5470,10.27,5.47
+Movistar,"Caldas, Colombia",,Dec 2021,304,130,N/A,cellular,mean,130,49,13398,9583,13.4,9.58
+Movistar,"Caquetá, Colombia",,Dec 2021,92,48,N/A,cellular,mean,48,56,4828,6953,4.83,6.95
+Movistar,"Casanare, Colombia",,Dec 2021,139,57,N/A,cellular,mean,57,40,9215,6271,9.22,6.27
+Movistar,"Cauca Department, Colombia",,Dec 2021,291,112,N/A,cellular,mean,112,46,10069,7580,10.07,7.58
+Movistar,"Cesar, Colombia",,Dec 2021,281,143,N/A,cellular,mean,143,49,12738,8795,12.74,8.8
+Movistar,"Choco, Colombia",,Dec 2021,32,17,N/A,cellular,mean,17,97,5765,3865,5.77,3.87
+Movistar,"Cordoba, Colombia",,Dec 2021,132,75,N/A,cellular,mean,75,40,15449,9488,15.45,9.49
+Movistar,"Cundinamarca, Colombia",,Dec 2021,1657,648,N/A,cellular,mean,648,38,11192,6544,11.19,6.54
+Movistar,"Huila, Colombia",,Dec 2021,453,186,N/A,cellular,mean,186,53,12298,6911,12.3,6.91
+Movistar,"La Guajira, Colombia",,Dec 2021,317,81,N/A,cellular,mean,81,42,15382,9276,15.38,9.28
+Movistar,"Magdalena, Colombia",,Dec 2021,443,160,N/A,cellular,mean,160,40,14530,7791,14.53,7.79
+Movistar,"Meta, Colombia",,Dec 2021,323,175,N/A,cellular,mean,175,45,11656,6776,11.66,6.78
+Movistar,"Narino, Colombia",,Dec 2021,498,187,N/A,cellular,mean,187,51,14755,11301,14.76,11.3
+Movistar,"North Santander, Colombia",,Dec 2021,528,234,N/A,cellular,mean,234,53,15550,9470,15.55,9.47
+Movistar,"Putumayo, Colombia",,Dec 2021,45,20,N/A,cellular,mean,20,53,7978,6874,7.98,6.87
+Movistar,"Quindio, Colombia",,Dec 2021,256,135,N/A,cellular,mean,135,41,15792,9375,15.79,9.38
+Movistar,"Risaralda, Colombia",,Dec 2021,369,154,N/A,cellular,mean,154,42,11967,8007,11.97,8.01
+Movistar,"San Andrés and Providencia, Colombia",,Dec 2021,249,86,N/A,cellular,mean,86,114,10480,9923,10.48,9.92
+Movistar,"Santander Department, Colombia",,Dec 2021,2359,809,N/A,cellular,mean,809,54,18497,9968,18.5,9.97
+Movistar,"Sucre, Colombia",,Dec 2021,317,107,N/A,cellular,mean,107,39,17537,8458,17.54,8.46
+Movistar,"Tolima, Colombia",,Dec 2021,549,240,N/A,cellular,mean,240,46,15591,7303,15.59,7.3
+Movistar,"Valle del Cauca, Colombia",,Dec 2021,4497,1798,N/A,cellular,mean,1798,46,18158,10842,18.16,10.84
+Movistar,"Vaupes, Colombia",,Dec 2021,9,2,N/A,cellular,mean,2,68,2942,1520,2.94,1.52
+Movistar,"Guaviare, Colombia",,Dec 2021,75,22,N/A,cellular,mean,22,41,13717,9941,13.72,9.94
+Avantel,"Antioquia, Colombia",,Dec 2021,128,18,N/A,cellular,mean,18,23,20595,13452,20.6,13.45
+Avantel,"Atlantico, Colombia",,Dec 2021,10,2,N/A,cellular,mean,2,33,22369,18299,22.37,18.3
+Avantel,"Bogota, Colombia",,Dec 2021,119,42,N/A,cellular,mean,42,20,18329,11191,18.33,11.19
+Avantel,"Bolivar, Colombia",,Dec 2021,26,4,N/A,cellular,mean,4,76,29305,14901,29.31,14.9
+Avantel,"Boyaca, Colombia",,Dec 2021,20,3,N/A,cellular,mean,3,23,20529,11898,20.53,11.9
+Avantel,"Caldas, Colombia",,Dec 2021,9,1,N/A,cellular,mean,1,21,35105,16913,35.11,16.91
+Avantel,"Caquetá, Colombia",,Dec 2021,2,1,N/A,cellular,mean,1,77,34,534,0.03,0.53
+Avantel,"Casanare, Colombia",,Dec 2021,5,1,N/A,cellular,mean,1,25,17679,10296,17.68,10.3
+Avantel,"Cauca Department, Colombia",,Dec 2021,1,1,N/A,cellular,mean,1,98,308,275,0.31,0.28
+Avantel,"Cesar, Colombia",,Dec 2021,76,1,N/A,cellular,mean,1,35,31860,17728,31.86,17.73
+Avantel,"Cordoba, Colombia",,Dec 2021,12,1,N/A,cellular,mean,1,31,23501,10099,23.5,10.1
+Avantel,"Cundinamarca, Colombia",,Dec 2021,22,10,N/A,cellular,mean,10,22,19204,10492,19.2,10.49
+Avantel,"La Guajira, Colombia",,Dec 2021,130,3,N/A,cellular,mean,3,87,18981,13986,18.98,13.99
+Avantel,"Magdalena, Colombia",,Dec 2021,35,1,N/A,cellular,mean,1,31,49551,20770,49.55,20.77
+Avantel,"Meta, Colombia",,Dec 2021,2,2,N/A,cellular,mean,2,16,13379,10662,13.38,10.66
+Avantel,"North Santander, Colombia",,Dec 2021,18,5,N/A,cellular,mean,5,35,17124,9797,17.12,9.8
+Avantel,"San Andrés and Providencia, Colombia",,Dec 2021,1,1,N/A,cellular,mean,1,652,18331,2060,18.33,2.06
+Avantel,"Santander Department, Colombia",,Dec 2021,3,3,N/A,cellular,mean,3,21,21028,14269,21.03,14.27
+Avantel,"Sucre, Colombia",,Dec 2021,37,1,N/A,cellular,mean,1,40,21559,8495,21.56,8.5
+Avantel,"Valle del Cauca, Colombia",,Dec 2021,6,4,N/A,cellular,mean,4,23,12767,10846,12.77,10.85
+ETB,"Antioquia, Colombia",,Dec 2021,23,11,N/A,cellular,mean,11,56,7490,4563,7.49,4.56
+ETB,"Atlantico, Colombia",,Dec 2021,52,23,N/A,cellular,mean,23,45,6838,5529,6.84,5.53
+ETB,"Bogota, Colombia",,Dec 2021,613,274,N/A,cellular,mean,274,33,14158,9014,14.16,9.01
+ETB,"Bolivar, Colombia",,Dec 2021,24,11,N/A,cellular,mean,11,39,16039,12771,16.04,12.77
+ETB,"Boyaca, Colombia",,Dec 2021,5,4,N/A,cellular,mean,4,62,23562,9648,23.56,9.65
+ETB,"Caldas, Colombia",,Dec 2021,9,3,N/A,cellular,mean,3,62,11656,6695,11.66,6.7
+ETB,"Casanare, Colombia",,Dec 2021,19,2,N/A,cellular,mean,2,34,25797,9932,25.8,9.93
+ETB,"Cauca Department, Colombia",,Dec 2021,9,5,N/A,cellular,mean,5,41,20535,10453,20.54,10.45
+ETB,"Cesar, Colombia",,Dec 2021,10,3,N/A,cellular,mean,3,49,14319,3189,14.32,3.19
+ETB,"Cundinamarca, Colombia",,Dec 2021,84,39,N/A,cellular,mean,39,39,10336,5477,10.34,5.48
+ETB,"Huila, Colombia",,Dec 2021,1,1,N/A,cellular,mean,1,108,3851,881,3.85,0.88
+ETB,"La Guajira, Colombia",,Dec 2021,1,1,N/A,cellular,mean,1,46,47919,18859,47.92,18.86
+ETB,"Magdalena, Colombia",,Dec 2021,73,1,N/A,cellular,mean,1,36,3979,3986,3.98,3.99
+ETB,"Meta, Colombia",,Dec 2021,13,8,N/A,cellular,mean,8,29,13022,7386,13.02,7.39
+ETB,"Narino, Colombia",,Dec 2021,1,1,N/A,cellular,mean,1,43,50400,27544,50.4,27.54
+ETB,"North Santander, Colombia",,Dec 2021,13,1,N/A,cellular,mean,1,32,4949,2868,4.95,2.87
+ETB,"Putumayo, Colombia",,Dec 2021,1,1,N/A,cellular,mean,1,35,8529,7058,8.53,7.06
+ETB,"Quindio, Colombia",,Dec 2021,4,3,N/A,cellular,mean,3,59,9905,5491,9.91,5.49
+ETB,"Risaralda, Colombia",,Dec 2021,3,3,N/A,cellular,mean,3,74,9523,4764,9.52,4.76
+ETB,"Santander Department, Colombia",,Dec 2021,3,2,N/A,cellular,mean,2,79,4866,4183,4.87,4.18
+ETB,"Sucre, Colombia",,Dec 2021,2,2,N/A,cellular,mean,2,58,4955,2878,4.96,2.88
+ETB,"Tolima, Colombia",,Dec 2021,11,9,N/A,cellular,mean,9,49,15398,4478,15.4,4.48
+ETB,"Valle del Cauca, Colombia",,Dec 2021,61,30,N/A,cellular,mean,30,88,11581,5914,11.58,5.91

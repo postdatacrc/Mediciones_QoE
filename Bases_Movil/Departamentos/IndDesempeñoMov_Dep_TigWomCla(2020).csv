@@ -1,0 +1,760 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+Claro,"Amazonas, Colombia",,Jan 2020,26,14,N/A,cellular,mean,14,76,2115,6210,2.12,6.21
+Claro,"Antioquia, Colombia",,Jan 2020,3883,2119,N/A,cellular,mean,2119,72,21902,12893,21.9,12.89
+Claro,"Arauca, Colombia",,Jan 2020,49,28,N/A,cellular,mean,28,62,3956,8906,3.96,8.91
+Claro,"Atlantico, Colombia",,Jan 2020,953,444,N/A,cellular,mean,444,41,28614,16061,28.61,16.06
+Claro,"Bogota, Colombia",,Jan 2020,11793,6261,N/A,cellular,mean,6261,54,19223,14383,19.22,14.38
+Claro,"Bolivar, Colombia",,Jan 2020,620,298,N/A,cellular,mean,298,57,22542,14410,22.54,14.41
+Claro,"Boyaca, Colombia",,Jan 2020,864,429,N/A,cellular,mean,429,60,16937,11773,16.94,11.77
+Claro,"Caldas, Colombia",,Jan 2020,493,276,N/A,cellular,mean,276,70,25284,13701,25.28,13.7
+Claro,"Caquetá, Colombia",,Jan 2020,132,68,N/A,cellular,mean,68,79,16070,12259,16.07,12.26
+Claro,"Casanare, Colombia",,Jan 2020,278,128,N/A,cellular,mean,128,51,19020,13450,19.02,13.45
+Claro,"Cauca Department, Colombia",,Jan 2020,351,167,N/A,cellular,mean,167,66,23621,12693,23.62,12.69
+Claro,"Cesar, Colombia",,Jan 2020,304,142,N/A,cellular,mean,142,49,25740,14110,25.74,14.11
+Claro,"Choco, Colombia",,Jan 2020,165,51,N/A,cellular,mean,51,96,8838,8493,8.84,8.49
+Claro,"Cordoba, Colombia",,Jan 2020,193,109,N/A,cellular,mean,109,68,23863,14478,23.86,14.48
+Claro,"Cundinamarca, Colombia",,Jan 2020,2117,1160,N/A,cellular,mean,1160,50,18633,11021,18.63,11.02
+Claro,"Guainia, Colombia",,Jan 2020,32,4,N/A,cellular,mean,4,61,4506,6815,4.51,6.82
+Claro,"Huila, Colombia",,Jan 2020,369,183,N/A,cellular,mean,183,59,22622,11082,22.62,11.08
+Claro,"La Guajira, Colombia",,Jan 2020,154,70,N/A,cellular,mean,70,55,17065,11711,17.07,11.71
+Claro,"Magdalena, Colombia",,Jan 2020,441,196,N/A,cellular,mean,196,55,20640,11477,20.64,11.48
+Claro,"Meta, Colombia",,Jan 2020,700,380,N/A,cellular,mean,380,56,17605,13036,17.61,13.04
+Claro,"Narino, Colombia",,Jan 2020,180,120,N/A,cellular,mean,120,76,21930,11144,21.93,11.14
+Claro,"North Santander, Colombia",,Jan 2020,394,227,N/A,cellular,mean,227,52,17677,11409,17.68,11.41
+Claro,"Putumayo, Colombia",,Jan 2020,82,40,N/A,cellular,mean,40,63,13544,13600,13.54,13.6
+Claro,"Quindio, Colombia",,Jan 2020,239,141,N/A,cellular,mean,141,75,19782,13133,19.78,13.13
+Claro,"Risaralda, Colombia",,Jan 2020,512,286,N/A,cellular,mean,286,71,20840,12409,20.84,12.41
+Claro,"San Andrés and Providencia, Colombia",,Jan 2020,78,33,N/A,cellular,mean,33,101,3443,7901,3.44,7.9
+Claro,"Santander Department, Colombia",,Jan 2020,867,387,N/A,cellular,mean,387,54,21408,11882,21.41,11.88
+Claro,"Sucre, Colombia",,Jan 2020,157,81,N/A,cellular,mean,81,67,20313,10339,20.31,10.34
+Claro,"Tolima, Colombia",,Jan 2020,599,316,N/A,cellular,mean,316,55,19831,12058,19.83,12.06
+Claro,"Valle del Cauca, Colombia",,Jan 2020,1860,979,N/A,cellular,mean,979,68,25383,13476,25.38,13.48
+Claro,"Vaupes, Colombia",,Jan 2020,3,2,N/A,cellular,mean,2,64,3212,14306,3.21,14.31
+Claro,"Vichada, Colombia",,Jan 2020,5,5,N/A,cellular,mean,5,61,1219,5010,1.22,5.01
+Claro,"Guaviare, Colombia",,Jan 2020,12,8,N/A,cellular,mean,8,71,1766,10341,1.77,10.34
+Tigo,"Antioquia, Colombia",,Jan 2020,3708,1403,N/A,cellular,mean,1403,40,16152,9267,16.15,9.27
+Tigo,"Atlantico, Colombia",,Jan 2020,1761,824,N/A,cellular,mean,824,36,15489,10269,15.49,10.27
+Tigo,"Bogota, Colombia",,Jan 2020,5095,2293,N/A,cellular,mean,2293,29,20251,11492,20.25,11.49
+Tigo,"Bolivar, Colombia",,Jan 2020,458,237,N/A,cellular,mean,237,36,14588,9655,14.59,9.66
+Tigo,"Boyaca, Colombia",,Jan 2020,171,86,N/A,cellular,mean,86,53,17056,8650,17.06,8.65
+Tigo,"Caldas, Colombia",,Jan 2020,130,81,N/A,cellular,mean,81,37,18361,10884,18.36,10.88
+Tigo,"Caquetá, Colombia",,Jan 2020,3,2,N/A,cellular,mean,2,326,3464,570,3.46,0.57
+Tigo,"Casanare, Colombia",,Jan 2020,25,13,N/A,cellular,mean,13,31,19003,10913,19,10.91
+Tigo,"Cauca Department, Colombia",,Jan 2020,128,54,N/A,cellular,mean,54,49,19291,9428,19.29,9.43
+Tigo,"Cesar, Colombia",,Jan 2020,191,73,N/A,cellular,mean,73,55,15170,7330,15.17,7.33
+Tigo,"Choco, Colombia",,Jan 2020,9,4,N/A,cellular,mean,4,50,34357,16219,34.36,16.22
+Tigo,"Cordoba, Colombia",,Jan 2020,215,95,N/A,cellular,mean,95,69,10817,8372,10.82,8.37
+Tigo,"Cundinamarca, Colombia",,Jan 2020,677,353,N/A,cellular,mean,353,35,15766,8247,15.77,8.25
+Tigo,"Huila, Colombia",,Jan 2020,48,27,N/A,cellular,mean,27,44,6682,12012,6.68,12.01
+Tigo,"La Guajira, Colombia",,Jan 2020,142,57,N/A,cellular,mean,57,89,7138,7809,7.14,7.81
+Tigo,"Magdalena, Colombia",,Jan 2020,270,122,N/A,cellular,mean,122,40,7280,6474,7.28,6.47
+Tigo,"Meta, Colombia",,Jan 2020,112,57,N/A,cellular,mean,57,38,22783,10087,22.78,10.09
+Tigo,"Narino, Colombia",,Jan 2020,80,50,N/A,cellular,mean,50,46,23790,15308,23.79,15.31
+Tigo,"North Santander, Colombia",,Jan 2020,196,74,N/A,cellular,mean,74,43,14609,9079,14.61,9.08
+Tigo,"Putumayo, Colombia",,Jan 2020,3,1,N/A,cellular,mean,1,51,4544,223,4.54,0.22
+Tigo,"Quindio, Colombia",,Jan 2020,193,81,N/A,cellular,mean,81,40,23017,12572,23.02,12.57
+Tigo,"Risaralda, Colombia",,Jan 2020,214,108,N/A,cellular,mean,108,33,16684,9317,16.68,9.32
+Tigo,"San Andrés and Providencia, Colombia",,Jan 2020,33,10,N/A,cellular,mean,10,88,997,5526,1,5.53
+Tigo,"Santander Department, Colombia",,Jan 2020,583,244,N/A,cellular,mean,244,45,14559,10234,14.56,10.23
+Tigo,"Sucre, Colombia",,Jan 2020,124,62,N/A,cellular,mean,62,48,12864,7781,12.86,7.78
+Tigo,"Tolima, Colombia",,Jan 2020,191,79,N/A,cellular,mean,79,64,21625,8994,21.63,8.99
+Tigo,"Valle del Cauca, Colombia",,Jan 2020,1272,501,N/A,cellular,mean,501,43,24762,12823,24.76,12.82
+Claro,"Amazonas, Colombia",,feb-20,10,6,N/A,cellular,mean,6,183,4965,5222,4.97,5.22
+Claro,"Antioquia, Colombia",,feb-20,4264,2244,N/A,cellular,mean,2244,68,21200,13100,21.2,13.1
+Claro,"Arauca, Colombia",,feb-20,44,22,N/A,cellular,mean,22,66,3753,11216,3.75,11.22
+Claro,"Atlantico, Colombia",,feb-20,1248,467,N/A,cellular,mean,467,53,24780,14939,24.78,14.94
+Claro,"Bogota, Colombia",,feb-20,13460,6643,N/A,cellular,mean,6643,55,16937,14212,16.94,14.21
+Claro,"Bolivar, Colombia",,feb-20,680,249,N/A,cellular,mean,249,66,24865,14565,24.87,14.57
+Claro,"Boyaca, Colombia",,feb-20,699,371,N/A,cellular,mean,371,54,19456,14435,19.46,14.44
+Claro,"Caldas, Colombia",,feb-20,420,242,N/A,cellular,mean,242,72,23798,13879,23.8,13.88
+Claro,"Caquetá, Colombia",,feb-20,240,84,N/A,cellular,mean,84,72,18226,13522,18.23,13.52
+Claro,"Casanare, Colombia",,feb-20,362,124,N/A,cellular,mean,124,49,19209,16017,19.21,16.02
+Claro,"Cauca Department, Colombia",,feb-20,245,150,N/A,cellular,mean,150,67,20628,12345,20.63,12.35
+Claro,"Cesar, Colombia",,feb-20,329,149,N/A,cellular,mean,149,55,24681,12044,24.68,12.04
+Claro,"Choco, Colombia",,feb-20,83,43,N/A,cellular,mean,43,107,6780,10151,6.78,10.15
+Claro,"Cordoba, Colombia",,feb-20,311,133,N/A,cellular,mean,133,67,23291,12879,23.29,12.88
+Claro,"Cundinamarca, Colombia",,feb-20,2112,1055,N/A,cellular,mean,1055,49,18858,12310,18.86,12.31
+Claro,"Guainia, Colombia",,feb-20,36,8,N/A,cellular,mean,8,69,1775,8246,1.78,8.25
+Claro,"Huila, Colombia",,feb-20,347,179,N/A,cellular,mean,179,58,18575,11744,18.58,11.74
+Claro,"La Guajira, Colombia",,feb-20,165,72,N/A,cellular,mean,72,66,17155,9328,17.16,9.33
+Claro,"Magdalena, Colombia",,feb-20,297,156,N/A,cellular,mean,156,55,23777,14077,23.78,14.08
+Claro,"Meta, Colombia",,feb-20,712,324,N/A,cellular,mean,324,58,17176,14650,17.18,14.65
+Claro,"Narino, Colombia",,feb-20,166,115,N/A,cellular,mean,115,72,23901,15942,23.9,15.94
+Claro,"North Santander, Colombia",,feb-20,357,224,N/A,cellular,mean,224,54,16232,11891,16.23,11.89
+Claro,"Putumayo, Colombia",,feb-20,128,41,N/A,cellular,mean,41,73,14669,8552,14.67,8.55
+Claro,"Quindio, Colombia",,feb-20,252,136,N/A,cellular,mean,136,69,24893,13881,24.89,13.88
+Claro,"Risaralda, Colombia",,feb-20,520,303,N/A,cellular,mean,303,72,23100,14368,23.1,14.37
+Claro,"San Andrés and Providencia, Colombia",,feb-20,97,33,N/A,cellular,mean,33,147,3649,9167,3.65,9.17
+Claro,"Santander Department, Colombia",,feb-20,667,323,N/A,cellular,mean,323,52,20798,11881,20.8,11.88
+Claro,"Sucre, Colombia",,feb-20,169,74,N/A,cellular,mean,74,75,20174,12681,20.17,12.68
+Claro,"Tolima, Colombia",,feb-20,446,199,N/A,cellular,mean,199,51,22480,12554,22.48,12.55
+Claro,"Valle del Cauca, Colombia",,feb-20,1652,958,N/A,cellular,mean,958,66,25031,13624,25.03,13.62
+Claro,"Vaupes, Colombia",,feb-20,4,2,N/A,cellular,mean,2,83,1044,6725,1.04,6.73
+Claro,"Vichada, Colombia",,feb-20,17,3,N/A,cellular,mean,3,67,1553,4047,1.55,4.05
+Claro,"Guaviare, Colombia",,feb-20,9,7,N/A,cellular,mean,7,53,9268,14730,9.27,14.73
+Tigo,"Antioquia, Colombia",,feb-20,3628,1426,N/A,cellular,mean,1426,38,15326,8995,15.33,9
+Tigo,"Atlantico, Colombia",,feb-20,2076,802,N/A,cellular,mean,802,39,15763,10141,15.76,10.14
+Tigo,"Bogota, Colombia",,feb-20,5214,2278,N/A,cellular,mean,2278,31,18309,11103,18.31,11.1
+Tigo,"Bolivar, Colombia",,feb-20,398,201,N/A,cellular,mean,201,46,13124,8895,13.12,8.9
+Tigo,"Boyaca, Colombia",,feb-20,135,59,N/A,cellular,mean,59,84,17849,9111,17.85,9.11
+Tigo,"Caldas, Colombia",,feb-20,144,64,N/A,cellular,mean,64,46,22018,13184,22.02,13.18
+Tigo,"Casanare, Colombia",,feb-20,30,12,N/A,cellular,mean,12,31,22208,13011,22.21,13.01
+Tigo,"Cauca Department, Colombia",,feb-20,123,42,N/A,cellular,mean,42,51,21603,13148,21.6,13.15
+Tigo,"Cesar, Colombia",,feb-20,142,56,N/A,cellular,mean,56,63,13889,5721,13.89,5.72
+Tigo,"Choco, Colombia",,feb-20,5,3,N/A,cellular,mean,3,83,22765,10357,22.77,10.36
+Tigo,"Cordoba, Colombia",,feb-20,155,77,N/A,cellular,mean,77,42,13309,9100,13.31,9.1
+Tigo,"Cundinamarca, Colombia",,feb-20,549,286,N/A,cellular,mean,286,37,13902,8214,13.9,8.21
+Tigo,"Huila, Colombia",,feb-20,57,22,N/A,cellular,mean,22,50,5618,7054,5.62,7.05
+Tigo,"La Guajira, Colombia",,feb-20,63,38,N/A,cellular,mean,38,84,10163,9253,10.16,9.25
+Tigo,"Magdalena, Colombia",,feb-20,210,114,N/A,cellular,mean,114,50,8988,8198,8.99,8.2
+Tigo,"Meta, Colombia",,feb-20,112,40,N/A,cellular,mean,40,42,18633,10749,18.63,10.75
+Tigo,"Narino, Colombia",,feb-20,107,34,N/A,cellular,mean,34,49,26292,16172,26.29,16.17
+Tigo,"North Santander, Colombia",,feb-20,141,58,N/A,cellular,mean,58,54,14885,9309,14.89,9.31
+Tigo,"Quindio, Colombia",,feb-20,213,94,N/A,cellular,mean,94,44,19453,12313,19.45,12.31
+Tigo,"Risaralda, Colombia",,feb-20,183,97,N/A,cellular,mean,97,39,17575,11139,17.58,11.14
+Tigo,"San Andrés and Providencia, Colombia",,feb-20,20,9,N/A,cellular,mean,9,134,1697,5622,1.7,5.62
+Tigo,"Santander Department, Colombia",,feb-20,559,209,N/A,cellular,mean,209,46,13114,9722,13.11,9.72
+Tigo,"Sucre, Colombia",,feb-20,130,59,N/A,cellular,mean,59,42,12770,6648,12.77,6.65
+Tigo,"Tolima, Colombia",,feb-20,156,64,N/A,cellular,mean,64,34,19068,9065,19.07,9.07
+Tigo,"Valle del Cauca, Colombia",,feb-20,1201,521,N/A,cellular,mean,521,42,24033,13039,24.03,13.04
+Claro,"Amazonas, Colombia",,mar-20,13,8,N/A,cellular,mean,8,81,2254,5800,2.25,5.8
+Claro,"Antioquia, Colombia",,mar-20,5571,2898,N/A,cellular,mean,2898,68,21218,12779,21.22,12.78
+Claro,"Arauca, Colombia",,mar-20,39,25,N/A,cellular,mean,25,80,3701,9290,3.7,9.29
+Claro,"Atlantico, Colombia",,mar-20,1431,629,N/A,cellular,mean,629,42,25761,13723,25.76,13.72
+Claro,"Bogota, Colombia",,mar-20,18278,8842,N/A,cellular,mean,8842,54,17575,13774,17.58,13.77
+Claro,"Bolivar, Colombia",,mar-20,613,287,N/A,cellular,mean,287,58,24961,14078,24.96,14.08
+Claro,"Boyaca, Colombia",,mar-20,1039,449,N/A,cellular,mean,449,60,16308,12198,16.31,12.2
+Claro,"Caldas, Colombia",,mar-20,559,317,N/A,cellular,mean,317,81,24185,14092,24.19,14.09
+Claro,"Caquetá, Colombia",,mar-20,256,90,N/A,cellular,mean,90,75,19413,13386,19.41,13.39
+Claro,"Casanare, Colombia",,mar-20,390,150,N/A,cellular,mean,150,54,12610,12327,12.61,12.33
+Claro,"Cauca Department, Colombia",,mar-20,360,189,N/A,cellular,mean,189,69,20164,10399,20.16,10.4
+Claro,"Cesar, Colombia",,mar-20,370,188,N/A,cellular,mean,188,60,22786,10330,22.79,10.33
+Claro,"Choco, Colombia",,mar-20,145,56,N/A,cellular,mean,56,127,9035,10536,9.04,10.54
+Claro,"Cordoba, Colombia",,mar-20,266,131,N/A,cellular,mean,131,71,22022,13529,22.02,13.53
+Claro,"Cundinamarca, Colombia",,mar-20,3475,1486,N/A,cellular,mean,1486,57,16293,10415,16.29,10.42
+Claro,"Guainia, Colombia",,mar-20,17,7,N/A,cellular,mean,7,65,3778,4792,3.78,4.79
+Claro,"Huila, Colombia",,mar-20,567,193,N/A,cellular,mean,193,65,19270,9874,19.27,9.87
+Claro,"La Guajira, Colombia",,mar-20,194,70,N/A,cellular,mean,70,52,16991,10606,16.99,10.61
+Claro,"Magdalena, Colombia",,mar-20,442,186,N/A,cellular,mean,186,44,21775,12647,21.78,12.65
+Claro,"Meta, Colombia",,mar-20,967,420,N/A,cellular,mean,420,61,15648,13946,15.65,13.95
+Claro,"Narino, Colombia",,mar-20,368,138,N/A,cellular,mean,138,75,24348,12844,24.35,12.84
+Claro,"North Santander, Colombia",,mar-20,483,259,N/A,cellular,mean,259,58,16529,12206,16.53,12.21
+Claro,"Putumayo, Colombia",,mar-20,145,45,N/A,cellular,mean,45,69,15343,12818,15.34,12.82
+Claro,"Quindio, Colombia",,mar-20,282,137,N/A,cellular,mean,137,72,24311,14486,24.31,14.49
+Claro,"Risaralda, Colombia",,mar-20,624,344,N/A,cellular,mean,344,70,21114,12959,21.11,12.96
+Claro,"San Andrés and Providencia, Colombia",,mar-20,98,29,N/A,cellular,mean,29,153,8255,8170,8.26,8.17
+Claro,"Santander Department, Colombia",,mar-20,874,406,N/A,cellular,mean,406,62,21562,12578,21.56,12.58
+Claro,"Sucre, Colombia",,mar-20,146,75,N/A,cellular,mean,75,63,24595,12444,24.6,12.44
+Claro,"Tolima, Colombia",,mar-20,464,246,N/A,cellular,mean,246,56,21662,12544,21.66,12.54
+Claro,"Valle del Cauca, Colombia",,mar-20,2347,1185,N/A,cellular,mean,1185,69,25573,13192,25.57,13.19
+Claro,"Vichada, Colombia",,mar-20,9,5,N/A,cellular,mean,5,71,1628,2741,1.63,2.74
+Claro,"Guaviare, Colombia",,mar-20,29,13,N/A,cellular,mean,13,63,8675,12283,8.68,12.28
+Tigo,"Antioquia, Colombia",,mar-20,4176,1709,N/A,cellular,mean,1709,39,16242,8886,16.24,8.89
+Tigo,"Atlantico, Colombia",,mar-20,2322,1082,N/A,cellular,mean,1082,35,15764,9484,15.76,9.48
+Tigo,"Bogota, Colombia",,mar-20,6597,2848,N/A,cellular,mean,2848,40,16968,10630,16.97,10.63
+Tigo,"Bolivar, Colombia",,mar-20,469,217,N/A,cellular,mean,217,50,14761,8619,14.76,8.62
+Tigo,"Boyaca, Colombia",,mar-20,187,72,N/A,cellular,mean,72,50,15172,7369,15.17,7.37
+Tigo,"Caldas, Colombia",,mar-20,283,110,N/A,cellular,mean,110,37,18429,11423,18.43,11.42
+Tigo,"Caquetá, Colombia",,mar-20,6,1,N/A,cellular,mean,1,26,6552,20167,6.55,20.17
+Tigo,"Casanare, Colombia",,mar-20,69,20,N/A,cellular,mean,20,48,17529,8603,17.53,8.6
+Tigo,"Cauca Department, Colombia",,mar-20,206,73,N/A,cellular,mean,73,54,17134,7924,17.13,7.92
+Tigo,"Cesar, Colombia",,mar-20,144,70,N/A,cellular,mean,70,54,14360,7688,14.36,7.69
+Tigo,"Choco, Colombia",,mar-20,10,3,N/A,cellular,mean,3,82,30578,11632,30.58,11.63
+Tigo,"Cordoba, Colombia",,mar-20,231,108,N/A,cellular,mean,108,39,14402,9516,14.4,9.52
+Tigo,"Cundinamarca, Colombia",,mar-20,1093,418,N/A,cellular,mean,418,43,13089,8559,13.09,8.56
+Tigo,"Huila, Colombia",,mar-20,85,26,N/A,cellular,mean,26,45,6393,10497,6.39,10.5
+Tigo,"La Guajira, Colombia",,mar-20,117,59,N/A,cellular,mean,59,62,10568,7900,10.57,7.9
+Tigo,"Magdalena, Colombia",,mar-20,309,134,N/A,cellular,mean,134,35,11145,7176,11.15,7.18
+Tigo,"Meta, Colombia",,mar-20,126,44,N/A,cellular,mean,44,45,13783,9596,13.78,9.6
+Tigo,"Narino, Colombia",,mar-20,166,55,N/A,cellular,mean,55,50,24745,14004,24.75,14
+Tigo,"North Santander, Colombia",,mar-20,138,74,N/A,cellular,mean,74,71,14609,9873,14.61,9.87
+Tigo,"Putumayo, Colombia",,mar-20,1,1,N/A,cellular,mean,1,31,9078,25799,9.08,25.8
+Tigo,"Quindio, Colombia",,mar-20,204,84,N/A,cellular,mean,84,48,17974,10689,17.97,10.69
+Tigo,"Risaralda, Colombia",,mar-20,149,97,N/A,cellular,mean,97,41,14102,7993,14.1,7.99
+Tigo,"San Andrés and Providencia, Colombia",,mar-20,20,5,N/A,cellular,mean,5,184,3073,1749,3.07,1.75
+Tigo,"Santander Department, Colombia",,mar-20,533,223,N/A,cellular,mean,223,49,14530,10019,14.53,10.02
+Tigo,"Sucre, Colombia",,mar-20,116,68,N/A,cellular,mean,68,42,16094,8603,16.09,8.6
+Tigo,"Tolima, Colombia",,mar-20,159,73,N/A,cellular,mean,73,48,16572,7494,16.57,7.49
+Tigo,"Valle del Cauca, Colombia",,mar-20,1594,526,N/A,cellular,mean,526,55,23245,12970,23.25,12.97
+Claro,"Amazonas, Colombia",,Apr 2020,20,8,N/A,cellular,mean,8,95,631,8543,0.63,8.54
+Claro,"Antioquia, Colombia",,Apr 2020,6526,2978,N/A,cellular,mean,2978,70,21831,11806,21.83,11.81
+Claro,"Arauca, Colombia",,Apr 2020,73,35,N/A,cellular,mean,35,73,5490,7864,5.49,7.86
+Claro,"Atlantico, Colombia",,Apr 2020,1516,662,N/A,cellular,mean,662,39,28382,12732,28.38,12.73
+Claro,"Bogota, Colombia",,Apr 2020,23765,10635,N/A,cellular,mean,10635,52,19024,11083,19.02,11.08
+Claro,"Bolivar, Colombia",,Apr 2020,619,323,N/A,cellular,mean,323,56,25837,10179,25.84,10.18
+Claro,"Boyaca, Colombia",,Apr 2020,1191,547,N/A,cellular,mean,547,56,16205,12770,16.21,12.77
+Claro,"Caldas, Colombia",,Apr 2020,735,360,N/A,cellular,mean,360,72,25496,14049,25.5,14.05
+Claro,"Caquetá, Colombia",,Apr 2020,183,105,N/A,cellular,mean,105,69,18373,11192,18.37,11.19
+Claro,"Casanare, Colombia",,Apr 2020,485,193,N/A,cellular,mean,193,59,14110,10343,14.11,10.34
+Claro,"Cauca Department, Colombia",,Apr 2020,368,195,N/A,cellular,mean,195,70,21801,9730,21.8,9.73
+Claro,"Cesar, Colombia",,Apr 2020,580,237,N/A,cellular,mean,237,51,23550,9588,23.55,9.59
+Claro,"Choco, Colombia",,Apr 2020,170,72,N/A,cellular,mean,72,108,10663,9904,10.66,9.9
+Claro,"Cordoba, Colombia",,Apr 2020,469,195,N/A,cellular,mean,195,72,22320,11078,22.32,11.08
+Claro,"Cundinamarca, Colombia",,Apr 2020,5295,1861,N/A,cellular,mean,1861,57,16143,9009,16.14,9.01
+Claro,"Guainia, Colombia",,Apr 2020,47,7,N/A,cellular,mean,7,69,1894,8576,1.89,8.58
+Claro,"Huila, Colombia",,Apr 2020,727,269,N/A,cellular,mean,269,66,21816,9967,21.82,9.97
+Claro,"La Guajira, Colombia",,Apr 2020,194,82,N/A,cellular,mean,82,61,15098,9231,15.1,9.23
+Claro,"Magdalena, Colombia",,Apr 2020,472,201,N/A,cellular,mean,201,47,24143,10946,24.14,10.95
+Claro,"Meta, Colombia",,Apr 2020,1037,485,N/A,cellular,mean,485,61,17380,12973,17.38,12.97
+Claro,"Narino, Colombia",,Apr 2020,347,165,N/A,cellular,mean,165,74,24327,11626,24.33,11.63
+Claro,"North Santander, Colombia",,Apr 2020,696,308,N/A,cellular,mean,308,56,19900,13245,19.9,13.25
+Claro,"Putumayo, Colombia",,Apr 2020,152,65,N/A,cellular,mean,65,68,17992,10026,17.99,10.03
+Claro,"Quindio, Colombia",,Apr 2020,521,180,N/A,cellular,mean,180,73,24578,12604,24.58,12.6
+Claro,"Risaralda, Colombia",,Apr 2020,769,373,N/A,cellular,mean,373,73,22232,10740,22.23,10.74
+Claro,"San Andrés and Providencia, Colombia",,Apr 2020,338,44,N/A,cellular,mean,44,90,9587,8867,9.59,8.87
+Claro,"Santander Department, Colombia",,Apr 2020,1346,542,N/A,cellular,mean,542,59,22895,9969,22.9,9.97
+Claro,"Sucre, Colombia",,Apr 2020,160,91,N/A,cellular,mean,91,82,22698,10873,22.7,10.87
+Claro,"Tolima, Colombia",,Apr 2020,588,295,N/A,cellular,mean,295,53,23947,11744,23.95,11.74
+Claro,"Valle del Cauca, Colombia",,Apr 2020,3189,1603,N/A,cellular,mean,1603,72,24479,11434,24.48,11.43
+Claro,"Vaupes, Colombia",,Apr 2020,4,1,N/A,cellular,mean,1,64,3363,11172,3.36,11.17
+Claro,"Vichada, Colombia",,Apr 2020,11,6,N/A,cellular,mean,6,69,2136,3918,2.14,3.92
+Claro,"Guaviare, Colombia",,Apr 2020,36,15,N/A,cellular,mean,15,69,8595,10736,8.6,10.74
+Tigo,"Antioquia, Colombia",,Apr 2020,4016,1625,N/A,cellular,mean,1625,37,18847,9463,18.85,9.46
+Tigo,"Arauca, Colombia",,Apr 2020,2,1,N/A,cellular,mean,1,84,671,509,0.67,0.51
+Tigo,"Atlantico, Colombia",,Apr 2020,2519,1094,N/A,cellular,mean,1094,34,18001,9681,18,9.68
+Tigo,"Bogota, Colombia",,Apr 2020,7097,2982,N/A,cellular,mean,2982,34,18479,10402,18.48,10.4
+Tigo,"Bolivar, Colombia",,Apr 2020,503,229,N/A,cellular,mean,229,38,14391,8999,14.39,9
+Tigo,"Boyaca, Colombia",,Apr 2020,158,61,N/A,cellular,mean,61,45,20361,9139,20.36,9.14
+Tigo,"Caldas, Colombia",,Apr 2020,330,97,N/A,cellular,mean,97,40,20521,10852,20.52,10.85
+Tigo,"Caquetá, Colombia",,Apr 2020,32,2,N/A,cellular,mean,2,36,13673,2946,13.67,2.95
+Tigo,"Casanare, Colombia",,Apr 2020,111,28,N/A,cellular,mean,28,57,12332,7192,12.33,7.19
+Tigo,"Cauca Department, Colombia",,Apr 2020,180,58,N/A,cellular,mean,58,56,14282,7886,14.28,7.89
+Tigo,"Cesar, Colombia",,Apr 2020,152,77,N/A,cellular,mean,77,68,18393,9317,18.39,9.32
+Tigo,"Choco, Colombia",,Apr 2020,26,4,N/A,cellular,mean,4,70,17972,4473,17.97,4.47
+Tigo,"Cordoba, Colombia",,Apr 2020,258,124,N/A,cellular,mean,124,44,16281,9996,16.28,10
+Tigo,"Cundinamarca, Colombia",,Apr 2020,1151,500,N/A,cellular,mean,500,33,14122,9127,14.12,9.13
+Tigo,"Huila, Colombia",,Apr 2020,71,23,N/A,cellular,mean,23,68,8627,10411,8.63,10.41
+Tigo,"La Guajira, Colombia",,Apr 2020,163,64,N/A,cellular,mean,64,44,14593,8410,14.59,8.41
+Tigo,"Magdalena, Colombia",,Apr 2020,296,126,N/A,cellular,mean,126,37,13597,8167,13.6,8.17
+Tigo,"Meta, Colombia",,Apr 2020,94,42,N/A,cellular,mean,42,55,14967,8917,14.97,8.92
+Tigo,"Narino, Colombia",,Apr 2020,160,59,N/A,cellular,mean,59,48,21288,12292,21.29,12.29
+Tigo,"North Santander, Colombia",,Apr 2020,141,79,N/A,cellular,mean,79,46,13577,8542,13.58,8.54
+Tigo,"Putumayo, Colombia",,Apr 2020,1,1,N/A,cellular,mean,1,56,8378,1675,8.38,1.68
+Tigo,"Quindio, Colombia",,Apr 2020,192,79,N/A,cellular,mean,79,44,21419,11964,21.42,11.96
+Tigo,"Risaralda, Colombia",,Apr 2020,180,86,N/A,cellular,mean,86,36,17853,9054,17.85,9.05
+Tigo,"San Andrés and Providencia, Colombia",,Apr 2020,5,4,N/A,cellular,mean,4,77,5472,1424,5.47,1.42
+Tigo,"Santander Department, Colombia",,Apr 2020,701,287,N/A,cellular,mean,287,46,14884,9359,14.88,9.36
+Tigo,"Sucre, Colombia",,Apr 2020,157,74,N/A,cellular,mean,74,51,15113,7292,15.11,7.29
+Tigo,"Tolima, Colombia",,Apr 2020,141,73,N/A,cellular,mean,73,37,20901,10271,20.9,10.27
+Tigo,"Valle del Cauca, Colombia",,Apr 2020,1547,520,N/A,cellular,mean,520,44,23370,12236,23.37,12.24
+Claro,"Amazonas, Colombia",,may-20,17,3,N/A,cellular,mean,3,185,1109,13377,1.11,13.38
+Claro,"Antioquia, Colombia",,may-20,6589,3046,N/A,cellular,mean,3046,67,22268,9206,22.27,9.21
+Claro,"Arauca, Colombia",,may-20,76,40,N/A,cellular,mean,40,68,3993,7166,3.99,7.17
+Claro,"Atlantico, Colombia",,may-20,2343,832,N/A,cellular,mean,832,41,25931,8971,25.93,8.97
+Claro,"Bogota, Colombia",,may-20,24817,10840,N/A,cellular,mean,10840,53,19169,9725,19.17,9.73
+Claro,"Bolivar, Colombia",,may-20,629,346,N/A,cellular,mean,346,55,25616,9200,25.62,9.2
+Claro,"Boyaca, Colombia",,may-20,1358,596,N/A,cellular,mean,596,64,17773,10299,17.77,10.3
+Claro,"Caldas, Colombia",,may-20,1207,339,N/A,cellular,mean,339,67,25628,9884,25.63,9.88
+Claro,"Caquetá, Colombia",,may-20,204,115,N/A,cellular,mean,115,63,20751,8960,20.75,8.96
+Claro,"Casanare, Colombia",,may-20,505,213,N/A,cellular,mean,213,64,14699,10301,14.7,10.3
+Claro,"Cauca Department, Colombia",,may-20,405,213,N/A,cellular,mean,213,63,21026,8169,21.03,8.17
+Claro,"Cesar, Colombia",,may-20,1245,249,N/A,cellular,mean,249,52,24730,8685,24.73,8.69
+Claro,"Choco, Colombia",,may-20,137,57,N/A,cellular,mean,57,107,8404,7393,8.4,7.39
+Claro,"Cordoba, Colombia",,may-20,462,195,N/A,cellular,mean,195,68,22930,9306,22.93,9.31
+Claro,"Cundinamarca, Colombia",,may-20,5401,2034,N/A,cellular,mean,2034,57,16440,7960,16.44,7.96
+Claro,"Guainia, Colombia",,may-20,11,6,N/A,cellular,mean,6,67,2787,4246,2.79,4.25
+Claro,"Huila, Colombia",,may-20,513,278,N/A,cellular,mean,278,61,21981,9055,21.98,9.06
+Claro,"La Guajira, Colombia",,may-20,248,83,N/A,cellular,mean,83,55,16648,7031,16.65,7.03
+Claro,"Magdalena, Colombia",,may-20,607,207,N/A,cellular,mean,207,46,22730,8799,22.73,8.8
+Claro,"Meta, Colombia",,may-20,1209,493,N/A,cellular,mean,493,63,16675,9843,16.68,9.84
+Claro,"Narino, Colombia",,may-20,391,167,N/A,cellular,mean,167,109,23045,8465,23.05,8.47
+Claro,"North Santander, Colombia",,may-20,619,289,N/A,cellular,mean,289,51,18590,10713,18.59,10.71
+Claro,"Putumayo, Colombia",,may-20,126,59,N/A,cellular,mean,59,68,15299,7886,15.3,7.89
+Claro,"Quindio, Colombia",,may-20,1006,192,N/A,cellular,mean,192,67,25483,10565,25.48,10.57
+Claro,"Risaralda, Colombia",,may-20,651,315,N/A,cellular,mean,315,69,22826,6278,22.83,6.28
+Claro,"San Andrés and Providencia, Colombia",,may-20,168,42,N/A,cellular,mean,42,82,10946,7160,10.95,7.16
+Claro,"Santander Department, Colombia",,may-20,1159,501,N/A,cellular,mean,501,56,20691,8860,20.69,8.86
+Claro,"Sucre, Colombia",,may-20,303,105,N/A,cellular,mean,105,62,21666,9058,21.67,9.06
+Claro,"Tolima, Colombia",,may-20,764,344,N/A,cellular,mean,344,48,25698,9559,25.7,9.56
+Claro,"Valle del Cauca, Colombia",,may-20,3347,1345,N/A,cellular,mean,1345,68,25534,9297,25.53,9.3
+Claro,"Vaupes, Colombia",,may-20,1,1,N/A,cellular,mean,1,88,418,112,0.42,0.11
+Claro,"Vichada, Colombia",,may-20,7,4,N/A,cellular,mean,4,64,2264,6530,2.26,6.53
+Claro,"Guaviare, Colombia",,may-20,54,13,N/A,cellular,mean,13,62,10243,8638,10.24,8.64
+Tigo,"Antioquia, Colombia",,may-20,3812,1758,N/A,cellular,mean,1758,36,18465,9548,18.47,9.55
+Tigo,"Atlantico, Colombia",,may-20,2565,1108,N/A,cellular,mean,1108,39,18209,10480,18.21,10.48
+Tigo,"Bogota, Colombia",,may-20,7488,2998,N/A,cellular,mean,2998,34,19198,10400,19.2,10.4
+Tigo,"Bolivar, Colombia",,may-20,590,275,N/A,cellular,mean,275,38,17701,9601,17.7,9.6
+Tigo,"Boyaca, Colombia",,may-20,140,71,N/A,cellular,mean,71,40,18064,8492,18.06,8.49
+Tigo,"Caldas, Colombia",,may-20,268,87,N/A,cellular,mean,87,38,21138,10883,21.14,10.88
+Tigo,"Caquetá, Colombia",,may-20,12,6,N/A,cellular,mean,6,44,8310,2321,8.31,2.32
+Tigo,"Casanare, Colombia",,may-20,80,23,N/A,cellular,mean,23,37,15242,8520,15.24,8.52
+Tigo,"Cauca Department, Colombia",,may-20,217,74,N/A,cellular,mean,74,46,13564,11168,13.56,11.17
+Tigo,"Cesar, Colombia",,may-20,170,83,N/A,cellular,mean,83,48,17883,7058,17.88,7.06
+Tigo,"Choco, Colombia",,may-20,18,3,N/A,cellular,mean,3,39,33767,10422,33.77,10.42
+Tigo,"Cordoba, Colombia",,may-20,246,124,N/A,cellular,mean,124,121,12859,8495,12.86,8.5
+Tigo,"Cundinamarca, Colombia",,may-20,1347,533,N/A,cellular,mean,533,42,16639,9087,16.64,9.09
+Tigo,"Huila, Colombia",,may-20,64,31,N/A,cellular,mean,31,37,6805,11693,6.81,11.69
+Tigo,"La Guajira, Colombia",,may-20,227,85,N/A,cellular,mean,85,67,12733,7310,12.73,7.31
+Tigo,"Magdalena, Colombia",,may-20,392,137,N/A,cellular,mean,137,39,14628,7643,14.63,7.64
+Tigo,"Meta, Colombia",,may-20,107,44,N/A,cellular,mean,44,44,15361,6994,15.36,6.99
+Tigo,"Narino, Colombia",,may-20,184,64,N/A,cellular,mean,64,45,22530,11674,22.53,11.67
+Tigo,"North Santander, Colombia",,may-20,130,72,N/A,cellular,mean,72,65,16452,8060,16.45,8.06
+Tigo,"Putumayo, Colombia",,may-20,1,1,N/A,cellular,mean,1,57,8396,1608,8.4,1.61
+Tigo,"Quindio, Colombia",,may-20,143,72,N/A,cellular,mean,72,55,20417,10844,20.42,10.84
+Tigo,"Risaralda, Colombia",,may-20,155,97,N/A,cellular,mean,97,31,21599,11559,21.6,11.56
+Tigo,"San Andrés and Providencia, Colombia",,may-20,41,9,N/A,cellular,mean,9,191,4258,2579,4.26,2.58
+Tigo,"Santander Department, Colombia",,may-20,561,240,N/A,cellular,mean,240,46,15776,10168,15.78,10.17
+Tigo,"Sucre, Colombia",,may-20,158,94,N/A,cellular,mean,94,69,15037,7023,15.04,7.02
+Tigo,"Tolima, Colombia",,may-20,149,67,N/A,cellular,mean,67,42,19955,7278,19.96,7.28
+Tigo,"Valle del Cauca, Colombia",,may-20,1071,473,N/A,cellular,mean,473,40,25109,12519,25.11,12.52
+Tigo,"Vichada, Colombia",,may-20,1,1,N/A,cellular,mean,1,78,349,4449,0.35,4.45
+Claro,"Amazonas, Colombia",,jun-20,94,10,N/A,cellular,mean,10,68,5911,11274,5.91,11.27
+Claro,"Antioquia, Colombia",,jun-20,5580,2752,N/A,cellular,mean,2752,49,23160,9431,23.16,9.43
+Claro,"Arauca, Colombia",,jun-20,67,39,N/A,cellular,mean,39,61,3862,7577,3.86,7.58
+Claro,"Atlantico, Colombia",,jun-20,1395,660,N/A,cellular,mean,660,43,26497,9489,26.5,9.49
+Claro,"Bogota, Colombia",,jun-20,18918,8441,N/A,cellular,mean,8441,44,20276,9854,20.28,9.85
+Claro,"Bolivar, Colombia",,jun-20,643,316,N/A,cellular,mean,316,54,24221,8839,24.22,8.84
+Claro,"Boyaca, Colombia",,jun-20,1093,489,N/A,cellular,mean,489,46,19305,9745,19.31,9.75
+Claro,"Caldas, Colombia",,jun-20,654,320,N/A,cellular,mean,320,52,25654,9931,25.65,9.93
+Claro,"Caquetá, Colombia",,jun-20,287,95,N/A,cellular,mean,95,69,17383,7498,17.38,7.5
+Claro,"Casanare, Colombia",,jun-20,439,178,N/A,cellular,mean,178,46,17307,9435,17.31,9.44
+Claro,"Cauca Department, Colombia",,jun-20,328,181,N/A,cellular,mean,181,52,22404,8753,22.4,8.75
+Claro,"Cesar, Colombia",,jun-20,472,202,N/A,cellular,mean,202,56,23483,8008,23.48,8.01
+Claro,"Choco, Colombia",,jun-20,120,59,N/A,cellular,mean,59,79,12104,8889,12.1,8.89
+Claro,"Cordoba, Colombia",,jun-20,310,168,N/A,cellular,mean,168,67,22232,9270,22.23,9.27
+Claro,"Cundinamarca, Colombia",,jun-20,4325,1683,N/A,cellular,mean,1683,47,19330,8435,19.33,8.44
+Claro,"Guainia, Colombia",,jun-20,15,3,N/A,cellular,mean,3,57,4801,7200,4.8,7.2
+Claro,"Huila, Colombia",,jun-20,436,201,N/A,cellular,mean,201,46,22850,10450,22.85,10.45
+Claro,"La Guajira, Colombia",,jun-20,204,89,N/A,cellular,mean,89,53,18374,10011,18.37,10.01
+Claro,"Magdalena, Colombia",,jun-20,879,174,N/A,cellular,mean,174,51,23710,9108,23.71,9.11
+Claro,"Meta, Colombia",,jun-20,944,437,N/A,cellular,mean,437,45,18934,10024,18.93,10.02
+Claro,"Narino, Colombia",,jun-20,409,154,N/A,cellular,mean,154,63,23006,9204,23.01,9.2
+Claro,"North Santander, Colombia",,jun-20,541,279,N/A,cellular,mean,279,49,17627,8762,17.63,8.76
+Claro,"Putumayo, Colombia",,jun-20,109,57,N/A,cellular,mean,57,68,18165,7043,18.17,7.04
+Claro,"Quindio, Colombia",,jun-20,396,181,N/A,cellular,mean,181,70,22351,10640,22.35,10.64
+Claro,"Risaralda, Colombia",,jun-20,571,317,N/A,cellular,mean,317,56,23474,6968,23.47,6.97
+Claro,"San Andrés and Providencia, Colombia",,jun-20,142,31,N/A,cellular,mean,31,80,6736,5219,6.74,5.22
+Claro,"Santander Department, Colombia",,jun-20,1301,474,N/A,cellular,mean,474,46,20415,8296,20.42,8.3
+Claro,"Sucre, Colombia",,jun-20,184,92,N/A,cellular,mean,92,64,20348,7428,20.35,7.43
+Claro,"Tolima, Colombia",,jun-20,583,291,N/A,cellular,mean,291,39,24689,8547,24.69,8.55
+Claro,"Valle del Cauca, Colombia",,jun-20,2345,1173,N/A,cellular,mean,1173,52,24523,9619,24.52,9.62
+Claro,"Vaupes, Colombia",,jun-20,2,1,N/A,cellular,mean,1,52,1906,367,1.91,0.37
+Claro,"Vichada, Colombia",,jun-20,14,4,N/A,cellular,mean,4,67,499,2624,0.5,2.62
+Claro,"Guaviare, Colombia",,jun-20,36,14,N/A,cellular,mean,14,47,11914,9909,11.91,9.91
+Tigo,"Antioquia, Colombia",,jun-20,3744,1708,N/A,cellular,mean,1708,37,19668,9718,19.67,9.72
+Tigo,"Arauca, Colombia",,jun-20,1,1,N/A,cellular,mean,1,63,1912,37,1.91,0.04
+Tigo,"Atlantico, Colombia",,jun-20,1692,826,N/A,cellular,mean,826,36,20027,10879,20.03,10.88
+Tigo,"Bogota, Colombia",,jun-20,6114,2531,N/A,cellular,mean,2531,34,21403,10938,21.4,10.94
+Tigo,"Bolivar, Colombia",,jun-20,474,226,N/A,cellular,mean,226,45,19437,9607,19.44,9.61
+Tigo,"Boyaca, Colombia",,jun-20,169,62,N/A,cellular,mean,62,39,15002,6220,15,6.22
+Tigo,"Caldas, Colombia",,jun-20,280,93,N/A,cellular,mean,93,56,19585,9740,19.59,9.74
+Tigo,"Caquetá, Colombia",,jun-20,1,1,N/A,cellular,mean,1,43,16685,31054,16.69,31.05
+Tigo,"Casanare, Colombia",,jun-20,74,20,N/A,cellular,mean,20,40,18325,8145,18.33,8.15
+Tigo,"Cauca Department, Colombia",,jun-20,81,47,N/A,cellular,mean,47,44,23260,13297,23.26,13.3
+Tigo,"Cesar, Colombia",,jun-20,129,67,N/A,cellular,mean,67,44,18662,8723,18.66,8.72
+Tigo,"Choco, Colombia",,jun-20,21,2,N/A,cellular,mean,2,53,17656,9100,17.66,9.1
+Tigo,"Cordoba, Colombia",,jun-20,240,111,N/A,cellular,mean,111,52,13555,8508,13.56,8.51
+Tigo,"Cundinamarca, Colombia",,jun-20,1160,486,N/A,cellular,mean,486,33,19563,10093,19.56,10.09
+Tigo,"Huila, Colombia",,jun-20,87,29,N/A,cellular,mean,29,47,6319,5381,6.32,5.38
+Tigo,"La Guajira, Colombia",,jun-20,161,60,N/A,cellular,mean,60,105,15090,8239,15.09,8.24
+Tigo,"Magdalena, Colombia",,jun-20,340,127,N/A,cellular,mean,127,45,15823,7962,15.82,7.96
+Tigo,"Meta, Colombia",,jun-20,103,40,N/A,cellular,mean,40,37,19090,7169,19.09,7.17
+Tigo,"Narino, Colombia",,jun-20,150,53,N/A,cellular,mean,53,49,21256,12081,21.26,12.08
+Tigo,"North Santander, Colombia",,jun-20,122,64,N/A,cellular,mean,64,42,16713,10971,16.71,10.97
+Tigo,"Quindio, Colombia",,jun-20,139,59,N/A,cellular,mean,59,48,19980,10564,19.98,10.56
+Tigo,"Risaralda, Colombia",,jun-20,176,84,N/A,cellular,mean,84,41,16093,8057,16.09,8.06
+Tigo,"San Andrés and Providencia, Colombia",,jun-20,40,7,N/A,cellular,mean,7,446,5922,5782,5.92,5.78
+Tigo,"Santander Department, Colombia",,jun-20,715,255,N/A,cellular,mean,255,46,15205,9379,15.21,9.38
+Tigo,"Sucre, Colombia",,jun-20,118,74,N/A,cellular,mean,74,55,18572,7679,18.57,7.68
+Tigo,"Tolima, Colombia",,jun-20,104,51,N/A,cellular,mean,51,36,24978,9172,24.98,9.17
+Tigo,"Valle del Cauca, Colombia",,jun-20,888,429,N/A,cellular,mean,429,43,27224,13048,27.22,13.05
+Claro,"Amazonas, Colombia",,jul-20,51,10,N/A,cellular,mean,10,67,6359,12670,6.36,12.67
+Claro,"Antioquia, Colombia",,jul-20,6073,2988,N/A,cellular,mean,2988,50,22299,9147,22.3,9.15
+Claro,"Arauca, Colombia",,jul-20,95,37,N/A,cellular,mean,37,59,5715,8075,5.72,8.08
+Claro,"Atlantico, Colombia",,jul-20,1404,741,N/A,cellular,mean,741,41,26846,10059,26.85,10.06
+Claro,"Bogota, Colombia",,jul-20,21005,8943,N/A,cellular,mean,8943,42,19933,9686,19.93,9.69
+Claro,"Bolivar, Colombia",,jul-20,664,311,N/A,cellular,mean,311,50,24287,9359,24.29,9.36
+Claro,"Boyaca, Colombia",,jul-20,1269,528,N/A,cellular,mean,528,48,18060,8578,18.06,8.58
+Claro,"Caldas, Colombia",,jul-20,624,360,N/A,cellular,mean,360,56,26937,10202,26.94,10.2
+Claro,"Caquetá, Colombia",,jul-20,196,104,N/A,cellular,mean,104,62,20029,8784,20.03,8.78
+Claro,"Casanare, Colombia",,jul-20,442,176,N/A,cellular,mean,176,53,15874,9351,15.87,9.35
+Claro,"Cauca Department, Colombia",,jul-20,367,175,N/A,cellular,mean,175,55,22642,9032,22.64,9.03
+Claro,"Cesar, Colombia",,jul-20,427,208,N/A,cellular,mean,208,53,23059,7866,23.06,7.87
+Claro,"Choco, Colombia",,jul-20,272,62,N/A,cellular,mean,62,76,9893,7311,9.89,7.31
+Claro,"Cordoba, Colombia",,jul-20,511,197,N/A,cellular,mean,197,63,21287,9478,21.29,9.48
+Claro,"Cundinamarca, Colombia",,jul-20,4499,1855,N/A,cellular,mean,1855,45,17874,7839,17.87,7.84
+Claro,"Guainia, Colombia",,jul-20,44,4,N/A,cellular,mean,4,62,1395,8959,1.4,8.96
+Claro,"Huila, Colombia",,jul-20,434,211,N/A,cellular,mean,211,51,23641,9867,23.64,9.87
+Claro,"La Guajira, Colombia",,jul-20,159,67,N/A,cellular,mean,67,55,19268,8968,19.27,8.97
+Claro,"Magdalena, Colombia",,jul-20,381,185,N/A,cellular,mean,185,45,22927,8238,22.93,8.24
+Claro,"Meta, Colombia",,jul-20,985,442,N/A,cellular,mean,442,46,18542,9618,18.54,9.62
+Claro,"Narino, Colombia",,jul-20,348,160,N/A,cellular,mean,160,63,22719,9308,22.72,9.31
+Claro,"North Santander, Colombia",,jul-20,494,267,N/A,cellular,mean,267,48,18327,8773,18.33,8.77
+Claro,"Putumayo, Colombia",,jul-20,165,62,N/A,cellular,mean,62,65,12383,7306,12.38,7.31
+Claro,"Quindio, Colombia",,jul-20,338,181,N/A,cellular,mean,181,52,26507,10317,26.51,10.32
+Claro,"Risaralda, Colombia",,jul-20,735,359,N/A,cellular,mean,359,57,23142,7185,23.14,7.19
+Claro,"San Andrés and Providencia, Colombia",,jul-20,219,46,N/A,cellular,mean,46,76,8024,7534,8.02,7.53
+Claro,"Santander Department, Colombia",,jul-20,976,461,N/A,cellular,mean,461,47,19516,7295,19.52,7.3
+Claro,"Sucre, Colombia",,jul-20,164,83,N/A,cellular,mean,83,65,19620,7601,19.62,7.6
+Claro,"Tolima, Colombia",,jul-20,725,299,N/A,cellular,mean,299,38,22838,8027,22.84,8.03
+Claro,"Valle del Cauca, Colombia",,jul-20,2041,1079,N/A,cellular,mean,1079,50,25253,9159,25.25,9.16
+Claro,"Vaupes, Colombia",,jul-20,4,2,N/A,cellular,mean,2,78,12800,9838,12.8,9.84
+Claro,"Vichada, Colombia",,jul-20,4,3,N/A,cellular,mean,3,61,2703,10900,2.7,10.9
+Claro,"Guaviare, Colombia",,jul-20,24,12,N/A,cellular,mean,12,50,7966,7351,7.97,7.35
+Tigo,"Antioquia, Colombia",,jul-20,3491,1697,N/A,cellular,mean,1697,41,19894,9914,19.89,9.91
+Tigo,"Arauca, Colombia",,jul-20,3,2,N/A,cellular,mean,2,76,7000,1113,7,1.11
+Tigo,"Atlantico, Colombia",,jul-20,2097,885,N/A,cellular,mean,885,35,21831,11305,21.83,11.31
+Tigo,"Bogota, Colombia",,jul-20,6882,2775,N/A,cellular,mean,2775,35,22692,11837,22.69,11.84
+Tigo,"Bolivar, Colombia",,jul-20,440,210,N/A,cellular,mean,210,40,20299,10472,20.3,10.47
+Tigo,"Boyaca, Colombia",,jul-20,90,56,N/A,cellular,mean,56,40,17746,8224,17.75,8.22
+Tigo,"Caldas, Colombia",,jul-20,224,91,N/A,cellular,mean,91,39,16983,10996,16.98,11
+Tigo,"Caquetá, Colombia",,jul-20,3,2,N/A,cellular,mean,2,31,8449,13175,8.45,13.18
+Tigo,"Casanare, Colombia",,jul-20,182,26,N/A,cellular,mean,26,34,20771,10578,20.77,10.58
+Tigo,"Cauca Department, Colombia",,jul-20,73,35,N/A,cellular,mean,35,46,17114,6784,17.11,6.78
+Tigo,"Cesar, Colombia",,jul-20,183,71,N/A,cellular,mean,71,64,17231,9174,17.23,9.17
+Tigo,"Choco, Colombia",,jul-20,12,2,N/A,cellular,mean,2,37,28351,8857,28.35,8.86
+Tigo,"Cordoba, Colombia",,jul-20,302,133,N/A,cellular,mean,133,64,14671,9257,14.67,9.26
+Tigo,"Cundinamarca, Colombia",,jul-20,1338,518,N/A,cellular,mean,518,40,19742,10636,19.74,10.64
+Tigo,"Huila, Colombia",,jul-20,58,31,N/A,cellular,mean,31,43,5611,10103,5.61,10.1
+Tigo,"La Guajira, Colombia",,jul-20,167,62,N/A,cellular,mean,62,73,12586,10479,12.59,10.48
+Tigo,"Magdalena, Colombia",,jul-20,238,106,N/A,cellular,mean,106,67,14044,6468,14.04,6.47
+Tigo,"Meta, Colombia",,jul-20,116,51,N/A,cellular,mean,51,50,17886,8937,17.89,8.94
+Tigo,"Narino, Colombia",,jul-20,160,42,N/A,cellular,mean,42,41,25297,13780,25.3,13.78
+Tigo,"North Santander, Colombia",,jul-20,182,67,N/A,cellular,mean,67,48,18532,9916,18.53,9.92
+Tigo,"Putumayo, Colombia",,jul-20,1,1,N/A,cellular,mean,1,64,6648,1613,6.65,1.61
+Tigo,"Quindio, Colombia",,jul-20,175,67,N/A,cellular,mean,67,43,26458,14702,26.46,14.7
+Tigo,"Risaralda, Colombia",,jul-20,285,114,N/A,cellular,mean,114,53,18038,9251,18.04,9.25
+Tigo,"San Andrés and Providencia, Colombia",,jul-20,13,7,N/A,cellular,mean,7,71,5962,5688,5.96,5.69
+Tigo,"Santander Department, Colombia",,jul-20,599,265,N/A,cellular,mean,265,43,17988,10452,17.99,10.45
+Tigo,"Sucre, Colombia",,jul-20,183,89,N/A,cellular,mean,89,60,14743,7517,14.74,7.52
+Tigo,"Tolima, Colombia",,jul-20,202,88,N/A,cellular,mean,88,34,23585,11461,23.59,11.46
+Tigo,"Valle del Cauca, Colombia",,jul-20,925,413,N/A,cellular,mean,413,39,26737,12739,26.74,12.74
+Claro,"Amazonas, Colombia",,Aug 2020,100,12,N/A,cellular,mean,12,68,6600,8714,6.6,8.71
+Claro,"Antioquia, Colombia",,Aug 2020,6353,2962,N/A,cellular,mean,2962,55,21809,8351,21.81,8.35
+Claro,"Arauca, Colombia",,Aug 2020,104,44,N/A,cellular,mean,44,70,3056,8222,3.06,8.22
+Claro,"Atlantico, Colombia",,Aug 2020,1571,766,N/A,cellular,mean,766,45,24605,9416,24.61,9.42
+Claro,"Bogota, Colombia",,Aug 2020,19663,8706,N/A,cellular,mean,8706,43,20484,9662,20.48,9.66
+Claro,"Bolivar, Colombia",,Aug 2020,610,310,N/A,cellular,mean,310,54,24174,8640,24.17,8.64
+Claro,"Boyaca, Colombia",,Aug 2020,1390,591,N/A,cellular,mean,591,52,18376,8545,18.38,8.55
+Claro,"Caldas, Colombia",,Aug 2020,640,351,N/A,cellular,mean,351,59,26235,9576,26.24,9.58
+Claro,"Caquetá, Colombia",,Aug 2020,177,100,N/A,cellular,mean,100,68,20267,8241,20.27,8.24
+Claro,"Casanare, Colombia",,Aug 2020,352,176,N/A,cellular,mean,176,42,17952,9788,17.95,9.79
+Claro,"Cauca Department, Colombia",,Aug 2020,431,200,N/A,cellular,mean,200,54,21859,7760,21.86,7.76
+Claro,"Cesar, Colombia",,Aug 2020,363,185,N/A,cellular,mean,185,56,24061,7587,24.06,7.59
+Claro,"Choco, Colombia",,Aug 2020,214,55,N/A,cellular,mean,55,85,10005,6483,10.01,6.48
+Claro,"Cordoba, Colombia",,Aug 2020,385,174,N/A,cellular,mean,174,77,22181,8643,22.18,8.64
+Claro,"Cundinamarca, Colombia",,Aug 2020,4724,1921,N/A,cellular,mean,1921,46,17982,7415,17.98,7.42
+Claro,"Guainia, Colombia",,Aug 2020,32,8,N/A,cellular,mean,8,66,2751,4889,2.75,4.89
+Claro,"Huila, Colombia",,Aug 2020,371,195,N/A,cellular,mean,195,50,24306,9255,24.31,9.26
+Claro,"La Guajira, Colombia",,Aug 2020,199,85,N/A,cellular,mean,85,61,16486,7281,16.49,7.28
+Claro,"Magdalena, Colombia",,Aug 2020,344,188,N/A,cellular,mean,188,46,24811,9454,24.81,9.45
+Claro,"Meta, Colombia",,Aug 2020,900,404,N/A,cellular,mean,404,47,19538,9958,19.54,9.96
+Claro,"Narino, Colombia",,Aug 2020,335,170,N/A,cellular,mean,170,70,23693,8593,23.69,8.59
+Claro,"North Santander, Colombia",,Aug 2020,739,295,N/A,cellular,mean,295,54,18178,8348,18.18,8.35
+Claro,"Putumayo, Colombia",,Aug 2020,140,56,N/A,cellular,mean,56,65,16142,8103,16.14,8.1
+Claro,"Quindio, Colombia",,Aug 2020,433,170,N/A,cellular,mean,170,54,23709,9610,23.71,9.61
+Claro,"Risaralda, Colombia",,Aug 2020,648,323,N/A,cellular,mean,323,58,23267,7149,23.27,7.15
+Claro,"San Andrés and Providencia, Colombia",,Aug 2020,321,47,N/A,cellular,mean,47,82,5061,8885,5.06,8.89
+Claro,"Santander Department, Colombia",,Aug 2020,1499,528,N/A,cellular,mean,528,48,20596,8213,20.6,8.21
+Claro,"Sucre, Colombia",,Aug 2020,268,114,N/A,cellular,mean,114,63,23311,9573,23.31,9.57
+Claro,"Tolima, Colombia",,Aug 2020,754,339,N/A,cellular,mean,339,42,23217,7776,23.22,7.78
+Claro,"Valle del Cauca, Colombia",,Aug 2020,2027,1137,N/A,cellular,mean,1137,55,24762,9032,24.76,9.03
+Claro,"Vaupes, Colombia",,Aug 2020,2,1,N/A,cellular,mean,1,55,16154,9640,16.15,9.64
+Claro,"Vichada, Colombia",,Aug 2020,11,6,N/A,cellular,mean,6,57,2009,3489,2.01,3.49
+Claro,"Guaviare, Colombia",,Aug 2020,31,15,N/A,cellular,mean,15,70,9532,10527,9.53,10.53
+Tigo,"Antioquia, Colombia",,Aug 2020,3634,1691,N/A,cellular,mean,1691,44,21941,10745,21.94,10.75
+Tigo,"Arauca, Colombia",,Aug 2020,2,2,N/A,cellular,mean,2,73,5365,645,5.37,0.65
+Tigo,"Atlantico, Colombia",,Aug 2020,1955,862,N/A,cellular,mean,862,39,24205,12212,24.21,12.21
+Tigo,"Bogota, Colombia",,Aug 2020,6360,2663,N/A,cellular,mean,2663,34,24451,12305,24.45,12.31
+Tigo,"Bolivar, Colombia",,Aug 2020,644,267,N/A,cellular,mean,267,45,25816,12765,25.82,12.77
+Tigo,"Boyaca, Colombia",,Aug 2020,123,55,N/A,cellular,mean,55,50,20083,12116,20.08,12.12
+Tigo,"Caldas, Colombia",,Aug 2020,313,98,N/A,cellular,mean,98,41,18236,10570,18.24,10.57
+Tigo,"Caquetá, Colombia",,Aug 2020,1,1,N/A,cellular,mean,1,20,7294,29125,7.29,29.13
+Tigo,"Casanare, Colombia",,Aug 2020,72,21,N/A,cellular,mean,21,39,18955,8458,18.96,8.46
+Tigo,"Cauca Department, Colombia",,Aug 2020,77,37,N/A,cellular,mean,37,46,18396,9512,18.4,9.51
+Tigo,"Cesar, Colombia",,Aug 2020,96,56,N/A,cellular,mean,56,47,16747,8379,16.75,8.38
+Tigo,"Choco, Colombia",,Aug 2020,8,2,N/A,cellular,mean,2,30,17861,14254,17.86,14.25
+Tigo,"Cordoba, Colombia",,Aug 2020,263,131,N/A,cellular,mean,131,57,18931,8294,18.93,8.29
+Tigo,"Cundinamarca, Colombia",,Aug 2020,1493,487,N/A,cellular,mean,487,98,19459,10743,19.46,10.74
+Tigo,"Huila, Colombia",,Aug 2020,65,23,N/A,cellular,mean,23,42,6072,12511,6.07,12.51
+Tigo,"La Guajira, Colombia",,Aug 2020,135,54,N/A,cellular,mean,54,69,18400,10994,18.4,10.99
+Tigo,"Magdalena, Colombia",,Aug 2020,291,128,N/A,cellular,mean,128,50,17786,9034,17.79,9.03
+Tigo,"Meta, Colombia",,Aug 2020,201,59,N/A,cellular,mean,59,43,22226,10237,22.23,10.24
+Tigo,"Narino, Colombia",,Aug 2020,98,48,N/A,cellular,mean,48,48,22997,14274,23,14.27
+Tigo,"North Santander, Colombia",,Aug 2020,159,65,N/A,cellular,mean,65,48,19059,9074,19.06,9.07
+Tigo,"Quindio, Colombia",,Aug 2020,154,78,N/A,cellular,mean,78,50,22268,12028,22.27,12.03
+Tigo,"Risaralda, Colombia",,Aug 2020,215,103,N/A,cellular,mean,103,39,20040,9934,20.04,9.93
+Tigo,"San Andrés and Providencia, Colombia",,Aug 2020,43,9,N/A,cellular,mean,9,76,5433,6424,5.43,6.42
+Tigo,"Santander Department, Colombia",,Aug 2020,537,236,N/A,cellular,mean,236,49,17608,10195,17.61,10.2
+Tigo,"Sucre, Colombia",,Aug 2020,119,71,N/A,cellular,mean,71,50,18414,9217,18.41,9.22
+Tigo,"Tolima, Colombia",,Aug 2020,153,72,N/A,cellular,mean,72,35,25211,11657,25.21,11.66
+Tigo,"Valle del Cauca, Colombia",,Aug 2020,885,404,N/A,cellular,mean,404,39,26666,12656,26.67,12.66
+Claro,"Amazonas, Colombia",,sep-20,52,15,N/A,cellular,mean,15,81,3072,9465,3.07,9.47
+Claro,"Antioquia, Colombia",,sep-20,6511,2761,N/A,cellular,mean,2761,50,21602,9391,21.6,9.39
+Claro,"Arauca, Colombia",,sep-20,136,42,N/A,cellular,mean,42,77,4927,8820,4.93,8.82
+Claro,"Atlantico, Colombia",,sep-20,2042,874,N/A,cellular,mean,874,44,24683,9967,24.68,9.97
+Claro,"Bogota, Colombia",,sep-20,16744,7683,N/A,cellular,mean,7683,42,20249,9707,20.25,9.71
+Claro,"Bolivar, Colombia",,sep-20,716,354,N/A,cellular,mean,354,52,25229,10368,25.23,10.37
+Claro,"Boyaca, Colombia",,sep-20,1989,578,N/A,cellular,mean,578,67,16057,9150,16.06,9.15
+Claro,"Caldas, Colombia",,sep-20,696,328,N/A,cellular,mean,328,54,25647,9751,25.65,9.75
+Claro,"Caquetá, Colombia",,sep-20,142,81,N/A,cellular,mean,81,60,26034,10989,26.03,10.99
+Claro,"Casanare, Colombia",,sep-20,419,170,N/A,cellular,mean,170,44,16413,8892,16.41,8.89
+Claro,"Cauca Department, Colombia",,sep-20,303,174,N/A,cellular,mean,174,53,21349,8353,21.35,8.35
+Claro,"Cesar, Colombia",,sep-20,377,198,N/A,cellular,mean,198,52,22298,8999,22.3,9
+Claro,"Choco, Colombia",,sep-20,132,63,N/A,cellular,mean,63,85,12925,6146,12.93,6.15
+Claro,"Cordoba, Colombia",,sep-20,406,200,N/A,cellular,mean,200,72,16723,9735,16.72,9.74
+Claro,"Cundinamarca, Colombia",,sep-20,4459,1789,N/A,cellular,mean,1789,49,18014,7629,18.01,7.63
+Claro,"Guainia, Colombia",,sep-20,8,3,N/A,cellular,mean,3,63,2328,4930,2.33,4.93
+Claro,"Huila, Colombia",,sep-20,492,229,N/A,cellular,mean,229,46,25029,9693,25.03,9.69
+Claro,"La Guajira, Colombia",,sep-20,159,76,N/A,cellular,mean,76,58,13745,5708,13.75,5.71
+Claro,"Magdalena, Colombia",,sep-20,855,191,N/A,cellular,mean,191,44,24628,9494,24.63,9.49
+Claro,"Meta, Colombia",,sep-20,871,434,N/A,cellular,mean,434,52,20299,9271,20.3,9.27
+Claro,"Narino, Colombia",,sep-20,357,172,N/A,cellular,mean,172,66,22266,9209,22.27,9.21
+Claro,"North Santander, Colombia",,sep-20,723,262,N/A,cellular,mean,262,51,18172,8619,18.17,8.62
+Claro,"Putumayo, Colombia",,sep-20,120,55,N/A,cellular,mean,55,66,15732,7390,15.73,7.39
+Claro,"Quindio, Colombia",,sep-20,310,167,N/A,cellular,mean,167,60,23464,10649,23.46,10.65
+Claro,"Risaralda, Colombia",,sep-20,605,323,N/A,cellular,mean,323,62,21519,6932,21.52,6.93
+Claro,"San Andrés and Providencia, Colombia",,sep-20,174,46,N/A,cellular,mean,46,83,3754,8459,3.75,8.46
+Claro,"Santander Department, Colombia",,sep-20,1303,474,N/A,cellular,mean,474,52,21716,7482,21.72,7.48
+Claro,"Sucre, Colombia",,sep-20,379,119,N/A,cellular,mean,119,66,16487,8162,16.49,8.16
+Claro,"Tolima, Colombia",,sep-20,843,411,N/A,cellular,mean,411,45,24917,7861,24.92,7.86
+Claro,"Valle del Cauca, Colombia",,sep-20,2491,1017,N/A,cellular,mean,1017,51,26554,9837,26.55,9.84
+Claro,"Vichada, Colombia",,sep-20,1,1,N/A,cellular,mean,1,82,384,15577,0.38,15.58
+Claro,"Guaviare, Colombia",,sep-20,25,13,N/A,cellular,mean,13,49,6879,7759,6.88,7.76
+Tigo,"Antioquia, Colombia",,sep-20,3539,1630,N/A,cellular,mean,1630,39,21698,10533,21.7,10.53
+Tigo,"Atlantico, Colombia",,sep-20,2169,998,N/A,cellular,mean,998,35,25495,12633,25.5,12.63
+Tigo,"Bogota, Colombia",,sep-20,5371,2411,N/A,cellular,mean,2411,36,25543,12764,25.54,12.76
+Tigo,"Bolivar, Colombia",,sep-20,470,234,N/A,cellular,mean,234,44,25738,11986,25.74,11.99
+Tigo,"Boyaca, Colombia",,sep-20,180,76,N/A,cellular,mean,76,46,15914,9442,15.91,9.44
+Tigo,"Caldas, Colombia",,sep-20,306,106,N/A,cellular,mean,106,40,19055,11698,19.06,11.7
+Tigo,"Casanare, Colombia",,sep-20,68,19,N/A,cellular,mean,19,41,17567,9958,17.57,9.96
+Tigo,"Cauca Department, Colombia",,sep-20,112,48,N/A,cellular,mean,48,60,19666,8468,19.67,8.47
+Tigo,"Cesar, Colombia",,sep-20,165,75,N/A,cellular,mean,75,52,24052,8016,24.05,8.02
+Tigo,"Choco, Colombia",,sep-20,7,2,N/A,cellular,mean,2,23,40480,18232,40.48,18.23
+Tigo,"Cordoba, Colombia",,sep-20,323,146,N/A,cellular,mean,146,52,19288,8949,19.29,8.95
+Tigo,"Cundinamarca, Colombia",,sep-20,1245,545,N/A,cellular,mean,545,37,19759,11039,19.76,11.04
+Tigo,"Huila, Colombia",,sep-20,56,27,N/A,cellular,mean,27,59,5776,11791,5.78,11.79
+Tigo,"La Guajira, Colombia",,sep-20,148,62,N/A,cellular,mean,62,68,21220,11164,21.22,11.16
+Tigo,"Magdalena, Colombia",,sep-20,248,124,N/A,cellular,mean,124,46,15767,9152,15.77,9.15
+Tigo,"Meta, Colombia",,sep-20,140,60,N/A,cellular,mean,60,56,22218,11171,22.22,11.17
+Tigo,"Narino, Colombia",,sep-20,110,43,N/A,cellular,mean,43,53,24459,12030,24.46,12.03
+Tigo,"North Santander, Colombia",,sep-20,114,62,N/A,cellular,mean,62,58,22180,11114,22.18,11.11
+Tigo,"Quindio, Colombia",,sep-20,165,84,N/A,cellular,mean,84,57,20710,11435,20.71,11.44
+Tigo,"Risaralda, Colombia",,sep-20,227,104,N/A,cellular,mean,104,39,19713,10874,19.71,10.87
+Tigo,"San Andrés and Providencia, Colombia",,sep-20,27,4,N/A,cellular,mean,4,71,5826,7598,5.83,7.6
+Tigo,"Santander Department, Colombia",,sep-20,470,231,N/A,cellular,mean,231,50,19154,10847,19.15,10.85
+Tigo,"Sucre, Colombia",,sep-20,194,78,N/A,cellular,mean,78,57,19764,9025,19.76,9.03
+Tigo,"Tolima, Colombia",,sep-20,151,79,N/A,cellular,mean,79,38,21891,8933,21.89,8.93
+Tigo,"Valle del Cauca, Colombia",,sep-20,971,453,N/A,cellular,mean,453,39,27078,13207,27.08,13.21
+Claro,"Amazonas, Colombia",,oct-20,35,11,N/A,cellular,mean,11,76,3715,6093,3.72,6.09
+Claro,"Antioquia, Colombia",,oct-20,5927,2758,N/A,cellular,mean,2758,51,20350,9153,20.35,9.15
+Claro,"Arauca, Colombia",,oct-20,92,36,N/A,cellular,mean,36,80,3587,6320,3.59,6.32
+Claro,"Atlantico, Colombia",,oct-20,2589,868,N/A,cellular,mean,868,44,23132,9232,23.13,9.23
+Claro,"Bogota, Colombia",,oct-20,15449,7100,N/A,cellular,mean,7100,40,19942,10222,19.94,10.22
+Claro,"Bolivar, Colombia",,oct-20,938,349,N/A,cellular,mean,349,50,24588,10264,24.59,10.26
+Claro,"Boyaca, Colombia",,oct-20,1567,548,N/A,cellular,mean,548,49,18192,8792,18.19,8.79
+Claro,"Caldas, Colombia",,oct-20,682,346,N/A,cellular,mean,346,58,23547,9703,23.55,9.7
+Claro,"Caquetá, Colombia",,oct-20,140,86,N/A,cellular,mean,86,61,19735,9232,19.74,9.23
+Claro,"Casanare, Colombia",,oct-20,401,175,N/A,cellular,mean,175,48,17158,8590,17.16,8.59
+Claro,"Cauca Department, Colombia",,oct-20,531,178,N/A,cellular,mean,178,54,21593,9175,21.59,9.18
+Claro,"Cesar, Colombia",,oct-20,495,214,N/A,cellular,mean,214,47,21431,8230,21.43,8.23
+Claro,"Choco, Colombia",,oct-20,118,60,N/A,cellular,mean,60,73,10342,6607,10.34,6.61
+Claro,"Cordoba, Colombia",,oct-20,389,185,N/A,cellular,mean,185,67,15017,9452,15.02,9.45
+Claro,"Cundinamarca, Colombia",,oct-20,4725,1847,N/A,cellular,mean,1847,46,16885,7940,16.89,7.94
+Claro,"Guainia, Colombia",,oct-20,7,5,N/A,cellular,mean,5,57,2454,6290,2.45,6.29
+Claro,"Huila, Colombia",,oct-20,416,218,N/A,cellular,mean,218,58,22837,8826,22.84,8.83
+Claro,"La Guajira, Colombia",,oct-20,196,71,N/A,cellular,mean,71,57,16343,8470,16.34,8.47
+Claro,"Magdalena, Colombia",,oct-20,951,226,N/A,cellular,mean,226,48,21937,8738,21.94,8.74
+Claro,"Meta, Colombia",,oct-20,941,416,N/A,cellular,mean,416,49,19202,10253,19.2,10.25
+Claro,"Narino, Colombia",,oct-20,288,148,N/A,cellular,mean,148,65,23633,9101,23.63,9.1
+Claro,"North Santander, Colombia",,oct-20,1135,307,N/A,cellular,mean,307,54,20710,8762,20.71,8.76
+Claro,"Putumayo, Colombia",,oct-20,75,41,N/A,cellular,mean,41,75,14719,6938,14.72,6.94
+Claro,"Quindio, Colombia",,oct-20,425,230,N/A,cellular,mean,230,56,21907,9436,21.91,9.44
+Claro,"Risaralda, Colombia",,oct-20,688,376,N/A,cellular,mean,376,54,21355,7716,21.36,7.72
+Claro,"San Andrés and Providencia, Colombia",,oct-20,188,51,N/A,cellular,mean,51,82,3410,6696,3.41,6.7
+Claro,"Santander Department, Colombia",,oct-20,1816,500,N/A,cellular,mean,500,46,20185,8374,20.19,8.37
+Claro,"Sucre, Colombia",,oct-20,299,125,N/A,cellular,mean,125,65,17022,9394,17.02,9.39
+Claro,"Tolima, Colombia",,oct-20,1109,393,N/A,cellular,mean,393,48,22145,7957,22.15,7.96
+Claro,"Valle del Cauca, Colombia",,oct-20,2366,1147,N/A,cellular,mean,1147,48,24620,9289,24.62,9.29
+Claro,"Vichada, Colombia",,oct-20,7,4,N/A,cellular,mean,4,60,1786,5617,1.79,5.62
+Claro,"Guaviare, Colombia",,oct-20,24,12,N/A,cellular,mean,12,62,10271,11229,10.27,11.23
+Tigo,"Antioquia, Colombia",,oct-20,3603,1586,N/A,cellular,mean,1586,38,21684,11025,21.68,11.03
+Tigo,"Arauca, Colombia",,oct-20,3,1,N/A,cellular,mean,1,71,4659,346,4.66,0.35
+Tigo,"Atlantico, Colombia",,oct-20,2332,1171,N/A,cellular,mean,1171,41,22820,11964,22.82,11.96
+Tigo,"Bogota, Colombia",,oct-20,5528,2467,N/A,cellular,mean,2467,35,27883,13509,27.88,13.51
+Tigo,"Bolivar, Colombia",,oct-20,605,250,N/A,cellular,mean,250,42,26199,12507,26.2,12.51
+Tigo,"Boyaca, Colombia",,oct-20,229,107,N/A,cellular,mean,107,41,15359,9071,15.36,9.07
+Tigo,"Caldas, Colombia",,oct-20,301,114,N/A,cellular,mean,114,37,19980,12790,19.98,12.79
+Tigo,"Caquetá, Colombia",,oct-20,1,1,N/A,cellular,mean,1,27,5620,13075,5.62,13.08
+Tigo,"Casanare, Colombia",,oct-20,27,12,N/A,cellular,mean,12,33,22321,10745,22.32,10.75
+Tigo,"Cauca Department, Colombia",,oct-20,155,69,N/A,cellular,mean,69,46,18923,11146,18.92,11.15
+Tigo,"Cesar, Colombia",,oct-20,175,69,N/A,cellular,mean,69,49,34956,14100,34.96,14.1
+Tigo,"Choco, Colombia",,oct-20,5,2,N/A,cellular,mean,2,59,12424,3276,12.42,3.28
+Tigo,"Cordoba, Colombia",,oct-20,301,134,N/A,cellular,mean,134,50,23156,11155,23.16,11.16
+Tigo,"Cundinamarca, Colombia",,oct-20,1290,593,N/A,cellular,mean,593,41,15522,10875,15.52,10.88
+Tigo,"Huila, Colombia",,oct-20,52,23,N/A,cellular,mean,23,48,9635,11489,9.64,11.49
+Tigo,"La Guajira, Colombia",,oct-20,259,82,N/A,cellular,mean,82,52,21854,10552,21.85,10.55
+Tigo,"Magdalena, Colombia",,oct-20,348,135,N/A,cellular,mean,135,44,17230,10737,17.23,10.74
+Tigo,"Meta, Colombia",,oct-20,228,62,N/A,cellular,mean,62,47,23401,13005,23.4,13.01
+Tigo,"Narino, Colombia",,oct-20,88,44,N/A,cellular,mean,44,69,22034,11935,22.03,11.94
+Tigo,"North Santander, Colombia",,oct-20,166,80,N/A,cellular,mean,80,52,21944,10453,21.94,10.45
+Tigo,"Quindio, Colombia",,oct-20,188,91,N/A,cellular,mean,91,42,22375,12790,22.38,12.79
+Tigo,"Risaralda, Colombia",,oct-20,249,108,N/A,cellular,mean,108,49,19357,10294,19.36,10.29
+Tigo,"San Andrés and Providencia, Colombia",,oct-20,49,11,N/A,cellular,mean,11,205,5911,7690,5.91,7.69
+Tigo,"Santander Department, Colombia",,oct-20,981,274,N/A,cellular,mean,274,46,21076,11959,21.08,11.96
+Tigo,"Sucre, Colombia",,oct-20,162,77,N/A,cellular,mean,77,70,19998,10886,20,10.89
+Tigo,"Tolima, Colombia",,oct-20,231,98,N/A,cellular,mean,98,45,18865,10627,18.87,10.63
+Tigo,"Valle del Cauca, Colombia",,oct-20,964,395,N/A,cellular,mean,395,45,25762,12378,25.76,12.38
+Claro,"Amazonas, Colombia",,nov-20,29,13,N/A,cellular,mean,13,98,3410,8376,3.41,8.38
+Claro,"Antioquia, Colombia",,nov-20,9086,2765,N/A,cellular,mean,2765,55,18485,8757,18.49,8.76
+Claro,"Arauca, Colombia",,nov-20,94,30,N/A,cellular,mean,30,87,3196,6946,3.2,6.95
+Claro,"Atlantico, Colombia",,nov-20,2351,939,N/A,cellular,mean,939,50,22878,9131,22.88,9.13
+Claro,"Bogota, Colombia",,nov-20,15426,6566,N/A,cellular,mean,6566,49,17749,9749,17.75,9.75
+Claro,"Bolivar, Colombia",,nov-20,825,347,N/A,cellular,mean,347,61,21535,9096,21.54,9.1
+Claro,"Boyaca, Colombia",,nov-20,1682,510,N/A,cellular,mean,510,68,11827,8155,11.83,8.16
+Claro,"Caldas, Colombia",,nov-20,859,338,N/A,cellular,mean,338,63,20991,9497,20.99,9.5
+Claro,"Caquetá, Colombia",,nov-20,159,87,N/A,cellular,mean,87,77,15377,8570,15.38,8.57
+Claro,"Casanare, Colombia",,nov-20,460,178,N/A,cellular,mean,178,63,11624,8408,11.62,8.41
+Claro,"Cauca Department, Colombia",,nov-20,669,168,N/A,cellular,mean,168,65,18530,8125,18.53,8.13
+Claro,"Cesar, Colombia",,nov-20,443,215,N/A,cellular,mean,215,59,17537,8195,17.54,8.2
+Claro,"Choco, Colombia",,nov-20,174,62,N/A,cellular,mean,62,106,6344,6955,6.34,6.96
+Claro,"Cordoba, Colombia",,nov-20,396,172,N/A,cellular,mean,172,74,12390,9303,12.39,9.3
+Claro,"Cundinamarca, Colombia",,nov-20,4344,1642,N/A,cellular,mean,1642,57,14479,7373,14.48,7.37
+Claro,"Guainia, Colombia",,nov-20,1,1,N/A,cellular,mean,1,89,615,578,0.62,0.58
+Claro,"Huila, Colombia",,nov-20,525,209,N/A,cellular,mean,209,69,16190,8972,16.19,8.97
+Claro,"La Guajira, Colombia",,nov-20,179,87,N/A,cellular,mean,87,72,13456,6483,13.46,6.48
+Claro,"Magdalena, Colombia",,nov-20,405,193,N/A,cellular,mean,193,52,19588,8627,19.59,8.63
+Claro,"Meta, Colombia",,nov-20,1065,398,N/A,cellular,mean,398,66,13008,10106,13.01,10.11
+Claro,"Narino, Colombia",,nov-20,241,132,N/A,cellular,mean,132,68,22536,9988,22.54,9.99
+Claro,"North Santander, Colombia",,nov-20,680,296,N/A,cellular,mean,296,69,14714,7630,14.71,7.63
+Claro,"Putumayo, Colombia",,nov-20,206,59,N/A,cellular,mean,59,85,10038,6353,10.04,6.35
+Claro,"Quindio, Colombia",,nov-20,408,218,N/A,cellular,mean,218,67,19631,8584,19.63,8.58
+Claro,"Risaralda, Colombia",,nov-20,830,364,N/A,cellular,mean,364,67,17879,6873,17.88,6.87
+Claro,"San Andrés and Providencia, Colombia",,nov-20,454,72,N/A,cellular,mean,72,94,2258,7985,2.26,7.99
+Claro,"Santander Department, Colombia",,nov-20,1312,470,N/A,cellular,mean,470,59,17102,8766,17.1,8.77
+Claro,"Sucre, Colombia",,nov-20,273,118,N/A,cellular,mean,118,74,12152,8473,12.15,8.47
+Claro,"Tolima, Colombia",,nov-20,812,333,N/A,cellular,mean,333,55,19420,8687,19.42,8.69
+Claro,"Valle del Cauca, Colombia",,nov-20,2567,1055,N/A,cellular,mean,1055,52,23782,9768,23.78,9.77
+Claro,"Vaupes, Colombia",,nov-20,2,2,N/A,cellular,mean,2,74,1817,9614,1.82,9.61
+Claro,"Vichada, Colombia",,nov-20,6,4,N/A,cellular,mean,4,80,275,8946,0.28,8.95
+Claro,"Guaviare, Colombia",,nov-20,70,19,N/A,cellular,mean,19,72,7815,9765,7.82,9.77
+WOM,"Bogota, Colombia",,nov-20,71,9,N/A,cellular,mean,9,29,19871,17174,19.87,17.17
+WOM,"Caquetá, Colombia",,nov-20,8,2,N/A,cellular,mean,2,603,19082,3813,19.08,3.81
+WOM,"Cundinamarca, Colombia",,nov-20,34,5,N/A,cellular,mean,5,245,18825,7030,18.83,7.03
+Tigo,"Antioquia, Colombia",,nov-20,3545,1595,N/A,cellular,mean,1595,41,24107,12747,24.11,12.75
+Tigo,"Arauca, Colombia",,nov-20,6,1,N/A,cellular,mean,1,76,4976,1068,4.98,1.07
+Tigo,"Atlantico, Colombia",,nov-20,2611,1095,N/A,cellular,mean,1095,52,18903,13707,18.9,13.71
+Tigo,"Bogota, Colombia",,nov-20,4605,2249,N/A,cellular,mean,2249,34,28516,13952,28.52,13.95
+Tigo,"Bolivar, Colombia",,nov-20,701,329,N/A,cellular,mean,329,52,25616,12904,25.62,12.9
+Tigo,"Boyaca, Colombia",,nov-20,229,94,N/A,cellular,mean,94,39,18241,11044,18.24,11.04
+Tigo,"Caldas, Colombia",,nov-20,283,103,N/A,cellular,mean,103,36,17200,11749,17.2,11.75
+Tigo,"Caquetá, Colombia",,nov-20,3,1,N/A,cellular,mean,1,74,5466,822,5.47,0.82
+Tigo,"Casanare, Colombia",,nov-20,39,19,N/A,cellular,mean,19,104,14326,8976,14.33,8.98
+Tigo,"Cauca Department, Colombia",,nov-20,115,53,N/A,cellular,mean,53,50,18741,10549,18.74,10.55
+Tigo,"Cesar, Colombia",,nov-20,268,82,N/A,cellular,mean,82,53,22035,10414,22.04,10.41
+Tigo,"Choco, Colombia",,nov-20,1,1,N/A,cellular,mean,1,103,180,5,0.18,0.01
+Tigo,"Cordoba, Colombia",,nov-20,321,130,N/A,cellular,mean,130,74,19714,10611,19.71,10.61
+Tigo,"Cundinamarca, Colombia",,nov-20,1028,480,N/A,cellular,mean,480,36,16175,11189,16.18,11.19
+Tigo,"Huila, Colombia",,nov-20,47,27,N/A,cellular,mean,27,47,11882,11076,11.88,11.08
+Tigo,"La Guajira, Colombia",,nov-20,183,76,N/A,cellular,mean,76,59,15247,12262,15.25,12.26
+Tigo,"Magdalena, Colombia",,nov-20,387,171,N/A,cellular,mean,171,49,14272,12268,14.27,12.27
+Tigo,"Meta, Colombia",,nov-20,138,53,N/A,cellular,mean,53,51,16738,13402,16.74,13.4
+Tigo,"Narino, Colombia",,nov-20,57,29,N/A,cellular,mean,29,68,22736,11661,22.74,11.66
+Tigo,"North Santander, Colombia",,nov-20,146,59,N/A,cellular,mean,59,50,21061,10231,21.06,10.23
+Tigo,"Putumayo, Colombia",,nov-20,13,2,N/A,cellular,mean,2,64,8178,1729,8.18,1.73
+Tigo,"Quindio, Colombia",,nov-20,173,92,N/A,cellular,mean,92,51,20240,12657,20.24,12.66
+Tigo,"Risaralda, Colombia",,nov-20,299,124,N/A,cellular,mean,124,40,21414,12651,21.41,12.65
+Tigo,"San Andrés and Providencia, Colombia",,nov-20,153,27,N/A,cellular,mean,27,78,9147,9581,9.15,9.58
+Tigo,"Santander Department, Colombia",,nov-20,592,225,N/A,cellular,mean,225,42,19391,11047,19.39,11.05
+Tigo,"Sucre, Colombia",,nov-20,276,106,N/A,cellular,mean,106,249,19679,9354,19.68,9.35
+Tigo,"Tolima, Colombia",,nov-20,207,90,N/A,cellular,mean,90,58,22314,14180,22.31,14.18
+Tigo,"Valle del Cauca, Colombia",,nov-20,821,409,N/A,cellular,mean,409,41,26552,13784,26.55,13.78
+Claro,"Vaupes, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Amazonas, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Antioquia, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Arauca, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Atlantico, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Bolivar, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Boyaca, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Caldas, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Caquetá, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Casanare, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Cauca Department, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Cesar, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Choco, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Cordoba, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Guainia, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Huila, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Magdalena, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Meta, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Narino, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"North Santander, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Quindio, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Risaralda, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"San Andrés and Providencia, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Santander Department, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Sucre, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Tolima, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Valle del Cauca, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Vaupes, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Vichada, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+WOM,"Guaviare, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+Tigo,"Amazonas, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+Tigo,"Guainia, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+Tigo,"Vaupes, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+Tigo,"Vichada, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+Tigo,"Guaviare, Colombia",,Dec 2020,,,N/A,cellular,mean,,,,,,
+Claro,"Amazonas, Colombia",,Dec 2020,47,12,N/A,cellular,mean,12,132,5107,7507,5.11,7.51
+Claro,"Antioquia, Colombia",,Dec 2020,8789,2643,N/A,cellular,mean,2643,56,17656,9125,17.66,9.13
+Claro,"Arauca, Colombia",,Dec 2020,80,38,N/A,cellular,mean,38,75,1984,7511,1.98,7.51
+Claro,"Atlantico, Colombia",,Dec 2020,1977,809,N/A,cellular,mean,809,49,20800,10569,20.8,10.57
+Claro,"Bogota, Colombia",,Dec 2020,13428,5894,N/A,cellular,mean,5894,44,17410,10047,17.41,10.05
+Claro,"Bolivar, Colombia",,Dec 2020,988,367,N/A,cellular,mean,367,57,21221,10360,21.22,10.36
+Claro,"Boyaca, Colombia",,Dec 2020,1738,604,N/A,cellular,mean,604,71,10778,9045,10.78,9.05
+Claro,"Caldas, Colombia",,Dec 2020,775,348,N/A,cellular,mean,348,81,16716,9646,16.72,9.65
+Claro,"Caquetá, Colombia",,Dec 2020,104,63,N/A,cellular,mean,63,72,12969,8480,12.97,8.48
+Claro,"Casanare, Colombia",,Dec 2020,427,168,N/A,cellular,mean,168,58,10365,8259,10.37,8.26
+Claro,"Cauca Department, Colombia",,Dec 2020,416,174,N/A,cellular,mean,174,64,17090,9086,17.09,9.09
+Claro,"Cesar, Colombia",,Dec 2020,482,194,N/A,cellular,mean,194,54,15827,8332,15.83,8.33
+Claro,"Choco, Colombia",,Dec 2020,317,67,N/A,cellular,mean,67,142,4969,5283,4.97,5.28
+Claro,"Cordoba, Colombia",,Dec 2020,600,172,N/A,cellular,mean,172,71,9483,8844,9.48,8.84
+Claro,"Cundinamarca, Colombia",,Dec 2020,4391,1642,N/A,cellular,mean,1642,53,13440,7862,13.44,7.86
+Claro,"Guainia, Colombia",,Dec 2020,9,3,N/A,cellular,mean,3,67,2338,4883,2.34,4.88
+Claro,"Huila, Colombia",,Dec 2020,430,208,N/A,cellular,mean,208,56,15010,8901,15.01,8.9
+Claro,"La Guajira, Colombia",,Dec 2020,188,75,N/A,cellular,mean,75,72,12292,6911,12.29,6.91
+Claro,"Magdalena, Colombia",,Dec 2020,508,220,N/A,cellular,mean,220,55,16776,8232,16.78,8.23
+Claro,"Meta, Colombia",,Dec 2020,1811,404,N/A,cellular,mean,404,53,14617,10127,14.62,10.13
+Claro,"Narino, Colombia",,Dec 2020,252,136,N/A,cellular,mean,136,64,20569,7887,20.57,7.89
+Claro,"North Santander, Colombia",,Dec 2020,798,263,N/A,cellular,mean,263,68,12276,7977,12.28,7.98
+Claro,"Putumayo, Colombia",,Dec 2020,114,54,N/A,cellular,mean,54,77,7589,6717,7.59,6.72
+Claro,"Quindio, Colombia",,Dec 2020,320,203,N/A,cellular,mean,203,79,16759,9238,16.76,9.24
+Claro,"Risaralda, Colombia",,Dec 2020,571,283,N/A,cellular,mean,283,81,16641,7390,16.64,7.39
+Claro,"San Andrés and Providencia, Colombia",,Dec 2020,416,69,N/A,cellular,mean,69,97,2177,6470,2.18,6.47
+Claro,"Santander Department, Colombia",,Dec 2020,1090,445,N/A,cellular,mean,445,51,16398,7943,16.4,7.94
+Claro,"Sucre, Colombia",,Dec 2020,292,135,N/A,cellular,mean,135,65,9853,8133,9.85,8.13
+Claro,"Tolima, Colombia",,Dec 2020,1530,401,N/A,cellular,mean,401,48,16263,8193,16.26,8.19
+Claro,"Valle del Cauca, Colombia",,Dec 2020,2637,1075,N/A,cellular,mean,1075,54,19628,9077,19.63,9.08
+Claro,"Vichada, Colombia",,Dec 2020,3,3,N/A,cellular,mean,3,44,4198,3143,4.2,3.14
+Claro,"Guaviare, Colombia",,Dec 2020,26,11,N/A,cellular,mean,11,42,9539,8762,9.54,8.76
+WOM,"Bogota, Colombia",,Dec 2020,62,6,N/A,cellular,mean,6,19,23542,19114,23.54,19.11
+WOM,"Cundinamarca, Colombia",,Dec 2020,1,1,N/A,cellular,mean,1,59,2083,12,2.08,0.01
+WOM,"La Guajira, Colombia",,Dec 2020,146,3,N/A,cellular,mean,3,619,26648,4020,26.65,4.02
+WOM,"Putumayo, Colombia",,Dec 2020,3,1,N/A,cellular,mean,1,593,16664,1897,16.66,1.9
+Tigo,"Antioquia, Colombia",,Dec 2020,3939,1634,N/A,cellular,mean,1634,34,24332,12758,24.33,12.76
+Tigo,"Arauca, Colombia",,Dec 2020,7,2,N/A,cellular,mean,2,87,4071,552,4.07,0.55
+Tigo,"Atlantico, Colombia",,Dec 2020,2113,1033,N/A,cellular,mean,1033,39,22614,12812,22.61,12.81
+Tigo,"Bogota, Colombia",,Dec 2020,3847,1951,N/A,cellular,mean,1951,31,28989,13587,28.99,13.59
+Tigo,"Bolivar, Colombia",,Dec 2020,532,270,N/A,cellular,mean,270,40,25276,13209,25.28,13.21
+Tigo,"Boyaca, Colombia",,Dec 2020,230,119,N/A,cellular,mean,119,35,17777,12435,17.78,12.44
+Tigo,"Caldas, Colombia",,Dec 2020,395,133,N/A,cellular,mean,133,37,19113,12943,19.11,12.94
+Tigo,"Caquetá, Colombia",,Dec 2020,2,1,N/A,cellular,mean,1,42,249,200,0.25,0.2
+Tigo,"Casanare, Colombia",,Dec 2020,18,6,N/A,cellular,mean,6,33,20873,13528,20.87,13.53
+Tigo,"Cauca Department, Colombia",,Dec 2020,133,54,N/A,cellular,mean,54,46,15149,10195,15.15,10.2
+Tigo,"Cesar, Colombia",,Dec 2020,242,82,N/A,cellular,mean,82,42,26981,12765,26.98,12.77
+Tigo,"Choco, Colombia",,Dec 2020,6,4,N/A,cellular,mean,4,58,23630,5102,23.63,5.1
+Tigo,"Cordoba, Colombia",,Dec 2020,347,150,N/A,cellular,mean,150,52,21256,10904,21.26,10.9
+Tigo,"Cundinamarca, Colombia",,Dec 2020,1380,537,N/A,cellular,mean,537,33,19735,12766,19.74,12.77
+Tigo,"Huila, Colombia",,Dec 2020,56,31,N/A,cellular,mean,31,60,6404,10312,6.4,10.31
+Tigo,"La Guajira, Colombia",,Dec 2020,500,110,N/A,cellular,mean,110,49,22033,14666,22.03,14.67
+Tigo,"Magdalena, Colombia",,Dec 2020,375,162,N/A,cellular,mean,162,49,25395,12290,25.4,12.29
+Tigo,"Meta, Colombia",,Dec 2020,169,62,N/A,cellular,mean,62,39,23846,16529,23.85,16.53
+Tigo,"Narino, Colombia",,Dec 2020,149,43,N/A,cellular,mean,43,65,18629,13851,18.63,13.85
+Tigo,"North Santander, Colombia",,Dec 2020,184,68,N/A,cellular,mean,68,55,19405,9944,19.41,9.94
+Tigo,"Putumayo, Colombia",,Dec 2020,1,1,N/A,cellular,mean,1,52,5134,1680,5.13,1.68
+Tigo,"Quindio, Colombia",,Dec 2020,246,102,N/A,cellular,mean,102,38,23187,13525,23.19,13.53
+Tigo,"Risaralda, Colombia",,Dec 2020,287,131,N/A,cellular,mean,131,33,20239,10078,20.24,10.08
+Tigo,"San Andrés and Providencia, Colombia",,Dec 2020,304,54,N/A,cellular,mean,54,66,19943,11651,19.94,11.65
+Tigo,"Santander Department, Colombia",,Dec 2020,834,278,N/A,cellular,mean,278,44,21086,11997,21.09,12
+Tigo,"Sucre, Colombia",,Dec 2020,280,107,N/A,cellular,mean,107,172,19279,11354,19.28,11.35
+Tigo,"Tolima, Colombia",,Dec 2020,275,115,N/A,cellular,mean,115,37,21164,10984,21.16,10.98
+Tigo,"Valle del Cauca, Colombia",,Dec 2020,884,413,N/A,cellular,mean,413,40,23430,13556,23.43,13.56

@@ -1,0 +1,396 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+All Providers Combined,"Amazonas, Colombia",,Jan 2021,81,34,N/A,cellular,mean,34,228,1669,6125,1.67,6.13
+All Providers Combined,"Antioquia, Colombia",,Jan 2021,14646,5524,N/A,cellular,mean,5524,50,18132,9366,18.13,9.37
+All Providers Combined,"Arauca, Colombia",,Jan 2021,336,102,N/A,cellular,mean,102,66,5967,7067,5.97,7.07
+All Providers Combined,"Atlantico, Colombia",,Jan 2021,6810,2677,N/A,cellular,mean,2677,40,21153,11208,21.15,11.21
+All Providers Combined,"Bogota, Colombia",,Jan 2021,35777,13684,N/A,cellular,mean,13684,38,17625,9984,17.63,9.98
+All Providers Combined,"Bolivar, Colombia",,Jan 2021,2278,928,N/A,cellular,mean,928,45,19568,10140,19.57,10.14
+All Providers Combined,"Boyaca, Colombia",,Jan 2021,3060,934,N/A,cellular,mean,934,64,9654,7254,9.65,7.25
+All Providers Combined,"Caldas, Colombia",,Jan 2021,1439,539,N/A,cellular,mean,539,79,12749,8917,12.75,8.92
+All Providers Combined,"Caquetá, Colombia",,Jan 2021,196,107,N/A,cellular,mean,107,80,11353,6536,11.35,6.54
+All Providers Combined,"Casanare, Colombia",,Jan 2021,814,242,N/A,cellular,mean,242,57,9778,6678,9.78,6.68
+All Providers Combined,"Cauca Department, Colombia",,Jan 2021,991,369,N/A,cellular,mean,369,59,14162,8405,14.16,8.41
+All Providers Combined,"Cesar, Colombia",,Jan 2021,1595,520,N/A,cellular,mean,520,64,14595,8467,14.6,8.47
+All Providers Combined,"Choco, Colombia",,Jan 2021,339,93,N/A,cellular,mean,93,122,6246,6551,6.25,6.55
+All Providers Combined,"Cordoba, Colombia",,Jan 2021,1306,479,N/A,cellular,mean,479,73,14913,9546,14.91,9.55
+All Providers Combined,"Cundinamarca, Colombia",,Jan 2021,8731,3341,N/A,cellular,mean,3341,50,12198,7383,12.2,7.38
+All Providers Combined,"Guainia, Colombia",,Jan 2021,4,3,N/A,cellular,mean,3,79,2925,10576,2.93,10.58
+All Providers Combined,"Huila, Colombia",,Jan 2021,1155,458,N/A,cellular,mean,458,54,12742,7457,12.74,7.46
+All Providers Combined,"La Guajira, Colombia",,Jan 2021,801,275,N/A,cellular,mean,275,45,13428,8846,13.43,8.85
+All Providers Combined,"Magdalena, Colombia",,Jan 2021,1791,636,N/A,cellular,mean,636,60,16440,9764,16.44,9.76
+All Providers Combined,"Meta, Colombia",,Jan 2021,1956,705,N/A,cellular,mean,705,54,13699,9108,13.7,9.11
+All Providers Combined,"Narino, Colombia",,Jan 2021,1057,359,N/A,cellular,mean,359,59,15093,9717,15.09,9.72
+All Providers Combined,"North Santander, Colombia",,Jan 2021,1857,628,N/A,cellular,mean,628,62,11701,8627,11.7,8.63
+All Providers Combined,"Putumayo, Colombia",,Jan 2021,185,79,N/A,cellular,mean,79,134,8176,6809,8.18,6.81
+All Providers Combined,"Quindio, Colombia",,Jan 2021,1080,409,N/A,cellular,mean,409,73,13720,9040,13.72,9.04
+All Providers Combined,"Risaralda, Colombia",,Jan 2021,1330,641,N/A,cellular,mean,641,75,13629,7147,13.63,7.15
+All Providers Combined,"San Andrés and Providencia, Colombia",,Jan 2021,1377,241,N/A,cellular,mean,241,115,6359,6799,6.36,6.8
+All Providers Combined,"Santander Department, Colombia",,Jan 2021,5242,1710,N/A,cellular,mean,1710,51,14175,8445,14.18,8.45
+All Providers Combined,"Sucre, Colombia",,Jan 2021,1042,342,N/A,cellular,mean,342,61,15342,10166,15.34,10.17
+All Providers Combined,"Tolima, Colombia",,Jan 2021,2201,734,N/A,cellular,mean,734,47,13743,6793,13.74,6.79
+All Providers Combined,"Valle del Cauca, Colombia",,Jan 2021,11661,3959,N/A,cellular,mean,3959,46,16538,9873,16.54,9.87
+All Providers Combined,"Vaupes, Colombia",,Jan 2021,34,3,N/A,cellular,mean,3,89,377,7165,0.38,7.17
+All Providers Combined,"Vichada, Colombia",,Jan 2021,21,7,N/A,cellular,mean,7,242,306,1526,0.31,1.53
+All Providers Combined,"Guaviare, Colombia",,Jan 2021,70,39,N/A,cellular,mean,39,51,17851,11590,17.85,11.59
+All Providers Combined,"Amazonas, Colombia",,feb-21,23,9,N/A,cellular,mean,9,149,1168,8442,1.17,8.44
+All Providers Combined,"Antioquia, Colombia",,feb-21,14593,5505,N/A,cellular,mean,5505,51,17790,9747,17.79,9.75
+All Providers Combined,"Arauca, Colombia",,feb-21,268,80,N/A,cellular,mean,80,88,5876,6746,5.88,6.75
+All Providers Combined,"Atlantico, Colombia",,feb-21,8429,2900,N/A,cellular,mean,2900,39,20091,11548,20.09,11.55
+All Providers Combined,"Bogota, Colombia",,feb-21,42201,15039,N/A,cellular,mean,15039,43,17414,10250,17.41,10.25
+All Providers Combined,"Bolivar, Colombia",,feb-21,2294,862,N/A,cellular,mean,862,45,21963,10712,21.96,10.71
+All Providers Combined,"Boyaca, Colombia",,feb-21,2085,860,N/A,cellular,mean,860,64,11409,7582,11.41,7.58
+All Providers Combined,"Caldas, Colombia",,feb-21,1282,546,N/A,cellular,mean,546,59,15632,9246,15.63,9.25
+All Providers Combined,"Caquetá, Colombia",,feb-21,305,120,N/A,cellular,mean,120,80,9886,7581,9.89,7.58
+All Providers Combined,"Casanare, Colombia",,feb-21,916,294,N/A,cellular,mean,294,62,9579,7674,9.58,7.67
+All Providers Combined,"Cauca Department, Colombia",,feb-21,944,359,N/A,cellular,mean,359,58,14520,8696,14.52,8.7
+All Providers Combined,"Cesar, Colombia",,feb-21,1562,492,N/A,cellular,mean,492,57,16686,9098,16.69,9.1
+All Providers Combined,"Choco, Colombia",,feb-21,269,100,N/A,cellular,mean,100,87,6160,5684,6.16,5.68
+All Providers Combined,"Cordoba, Colombia",,feb-21,1288,511,N/A,cellular,mean,511,56,19680,10212,19.68,10.21
+All Providers Combined,"Cundinamarca, Colombia",,feb-21,8596,3144,N/A,cellular,mean,3144,49,12965,8131,12.97,8.13
+All Providers Combined,"Guainia, Colombia",,feb-21,18,8,N/A,cellular,mean,8,202,3016,3069,3.02,3.07
+All Providers Combined,"Huila, Colombia",,feb-21,1070,433,N/A,cellular,mean,433,63,12917,6915,12.92,6.92
+All Providers Combined,"La Guajira, Colombia",,feb-21,1154,310,N/A,cellular,mean,310,49,14131,9987,14.13,9.99
+All Providers Combined,"Magdalena, Colombia",,feb-21,1723,587,N/A,cellular,mean,587,44,17402,9988,17.4,9.99
+All Providers Combined,"Meta, Colombia",,feb-21,1751,675,N/A,cellular,mean,675,60,13837,9302,13.84,9.3
+All Providers Combined,"Narino, Colombia",,feb-21,1110,355,N/A,cellular,mean,355,60,15473,9306,15.47,9.31
+All Providers Combined,"North Santander, Colombia",,feb-21,2270,633,N/A,cellular,mean,633,61,12858,8825,12.86,8.83
+All Providers Combined,"Putumayo, Colombia",,feb-21,150,68,N/A,cellular,mean,68,116,7664,4703,7.66,4.7
+All Providers Combined,"Quindio, Colombia",,feb-21,965,384,N/A,cellular,mean,384,59,17015,10022,17.02,10.02
+All Providers Combined,"Risaralda, Colombia",,feb-21,1601,652,N/A,cellular,mean,652,56,15765,7876,15.77,7.88
+All Providers Combined,"San Andrés and Providencia, Colombia",,feb-21,1291,211,N/A,cellular,mean,211,129,10164,9179,10.16,9.18
+All Providers Combined,"Santander Department, Colombia",,feb-21,5736,1701,N/A,cellular,mean,1701,50,14679,8352,14.68,8.35
+All Providers Combined,"Sucre, Colombia",,feb-21,697,310,N/A,cellular,mean,310,55,18813,10215,18.81,10.22
+All Providers Combined,"Tolima, Colombia",,feb-21,1976,627,N/A,cellular,mean,627,48,17319,8479,17.32,8.48
+All Providers Combined,"Valle del Cauca, Colombia",,feb-21,11635,3863,N/A,cellular,mean,3863,50,16293,10142,16.29,10.14
+All Providers Combined,"Vaupes, Colombia",,feb-21,8,3,N/A,cellular,mean,3,137,1550,3368,1.55,3.37
+All Providers Combined,"Vichada, Colombia",,feb-21,25,8,N/A,cellular,mean,8,95,897,6247,0.9,6.25
+All Providers Combined,"Guaviare, Colombia",,feb-21,92,41,N/A,cellular,mean,41,51,14440,7725,14.44,7.73
+All Providers Combined,"Amazonas, Colombia",,mar-21,31,12,N/A,cellular,mean,12,108,1032,4633,1.03,4.63
+All Providers Combined,"Antioquia, Colombia",,mar-21,15662,6015,N/A,cellular,mean,6015,52,18127,9722,18.13,9.72
+All Providers Combined,"Arauca, Colombia",,mar-21,310,106,N/A,cellular,mean,106,72,6125,7214,6.13,7.21
+All Providers Combined,"Atlantico, Colombia",,mar-21,8754,2901,N/A,cellular,mean,2901,37,20108,11254,20.11,11.25
+All Providers Combined,"Bogota, Colombia",,mar-21,50932,16103,N/A,cellular,mean,16103,38,17328,10108,17.33,10.11
+All Providers Combined,"Bolivar, Colombia",,mar-21,2507,948,N/A,cellular,mean,948,44,18846,10011,18.85,10.01
+All Providers Combined,"Boyaca, Colombia",,mar-21,2482,948,N/A,cellular,mean,948,63,10368,7867,10.37,7.87
+All Providers Combined,"Caldas, Colombia",,mar-21,1645,563,N/A,cellular,mean,563,61,15154,8463,15.15,8.46
+All Providers Combined,"Caquetá, Colombia",,mar-21,705,142,N/A,cellular,mean,142,87,10295,8010,10.3,8.01
+All Providers Combined,"Casanare, Colombia",,mar-21,920,303,N/A,cellular,mean,303,57,11461,8380,11.46,8.38
+All Providers Combined,"Cauca Department, Colombia",,mar-21,1104,417,N/A,cellular,mean,417,56,15626,8928,15.63,8.93
+All Providers Combined,"Cesar, Colombia",,mar-21,1715,628,N/A,cellular,mean,628,50,14819,8218,14.82,8.22
+All Providers Combined,"Choco, Colombia",,mar-21,232,119,N/A,cellular,mean,119,105,6151,4942,6.15,4.94
+All Providers Combined,"Cordoba, Colombia",,mar-21,1327,489,N/A,cellular,mean,489,55,15530,9392,15.53,9.39
+All Providers Combined,"Cundinamarca, Colombia",,mar-21,9996,3474,N/A,cellular,mean,3474,45,12456,7826,12.46,7.83
+All Providers Combined,"Guainia, Colombia",,mar-21,8,4,N/A,cellular,mean,4,186,6574,5170,6.57,5.17
+All Providers Combined,"Huila, Colombia",,mar-21,1275,472,N/A,cellular,mean,472,56,13257,7855,13.26,7.86
+All Providers Combined,"La Guajira, Colombia",,mar-21,1120,283,N/A,cellular,mean,283,47,12994,9138,12.99,9.14
+All Providers Combined,"Magdalena, Colombia",,mar-21,2178,691,N/A,cellular,mean,691,46,17204,10469,17.2,10.47
+All Providers Combined,"Meta, Colombia",,mar-21,1802,744,N/A,cellular,mean,744,53,12266,8845,12.27,8.85
+All Providers Combined,"Narino, Colombia",,mar-21,1139,401,N/A,cellular,mean,401,63,16130,10129,16.13,10.13
+All Providers Combined,"North Santander, Colombia",,mar-21,2850,749,N/A,cellular,mean,749,60,12646,8452,12.65,8.45
+All Providers Combined,"Putumayo, Colombia",,mar-21,537,99,N/A,cellular,mean,99,123,8380,5509,8.38,5.51
+All Providers Combined,"Quindio, Colombia",,mar-21,1059,444,N/A,cellular,mean,444,59,17844,9732,17.84,9.73
+All Providers Combined,"Risaralda, Colombia",,mar-21,1553,705,N/A,cellular,mean,705,62,14708,7176,14.71,7.18
+All Providers Combined,"San Andrés and Providencia, Colombia",,mar-21,982,224,N/A,cellular,mean,224,93,12025,8409,12.03,8.41
+All Providers Combined,"Santander Department, Colombia",,mar-21,7318,1884,N/A,cellular,mean,1884,47,15015,8477,15.02,8.48
+All Providers Combined,"Sucre, Colombia",,mar-21,1485,334,N/A,cellular,mean,334,66,16173,9548,16.17,9.55
+All Providers Combined,"Tolima, Colombia",,mar-21,1868,724,N/A,cellular,mean,724,43,16166,8148,16.17,8.15
+All Providers Combined,"Valle del Cauca, Colombia",,mar-21,12107,3872,N/A,cellular,mean,3872,50,17758,10063,17.76,10.06
+All Providers Combined,"Vaupes, Colombia",,mar-21,73,5,N/A,cellular,mean,5,220,1277,3178,1.28,3.18
+All Providers Combined,"Vichada, Colombia",,mar-21,17,9,N/A,cellular,mean,9,89,602,3737,0.6,3.74
+All Providers Combined,"Guaviare, Colombia",,mar-21,237,55,N/A,cellular,mean,55,59,10477,8017,10.48,8.02
+All Providers Combined,"Amazonas, Colombia",,Apr 2021,39,17,N/A,cellular,mean,17,184,4168,7171,4.17,7.17
+All Providers Combined,"Antioquia, Colombia",,Apr 2021,24560,7226,N/A,cellular,mean,7226,54,19373,9555,19.37,9.56
+All Providers Combined,"Arauca, Colombia",,Apr 2021,585,124,N/A,cellular,mean,124,76,7596,6403,7.6,6.4
+All Providers Combined,"Atlantico, Colombia",,Apr 2021,12769,3674,N/A,cellular,mean,3674,40,20011,11018,20.01,11.02
+All Providers Combined,"Bogota, Colombia",,Apr 2021,62129,19256,N/A,cellular,mean,19256,46,18396,9834,18.4,9.83
+All Providers Combined,"Bolivar, Colombia",,Apr 2021,4233,1017,N/A,cellular,mean,1017,49,20942,9608,20.94,9.61
+All Providers Combined,"Boyaca, Colombia",,Apr 2021,3453,1095,N/A,cellular,mean,1095,60,12927,8058,12.93,8.06
+All Providers Combined,"Caldas, Colombia",,Apr 2021,2056,707,N/A,cellular,mean,707,55,17687,9504,17.69,9.5
+All Providers Combined,"Caquetá, Colombia",,Apr 2021,2402,212,N/A,cellular,mean,212,78,11488,7340,11.49,7.34
+All Providers Combined,"Casanare, Colombia",,Apr 2021,967,322,N/A,cellular,mean,322,60,10549,8324,10.55,8.32
+All Providers Combined,"Cauca Department, Colombia",,Apr 2021,1483,495,N/A,cellular,mean,495,63,14419,8506,14.42,8.51
+All Providers Combined,"Cesar, Colombia",,Apr 2021,2099,679,N/A,cellular,mean,679,59,14934,7821,14.93,7.82
+All Providers Combined,"Choco, Colombia",,Apr 2021,380,117,N/A,cellular,mean,117,85,9059,5873,9.06,5.87
+All Providers Combined,"Cordoba, Colombia",,Apr 2021,6762,661,N/A,cellular,mean,661,82,18190,8446,18.19,8.45
+All Providers Combined,"Cundinamarca, Colombia",,Apr 2021,12846,4129,N/A,cellular,mean,4129,48,14232,7889,14.23,7.89
+All Providers Combined,"Guainia, Colombia",,Apr 2021,58,11,N/A,cellular,mean,11,117,2042,2715,2.04,2.72
+All Providers Combined,"Huila, Colombia",,Apr 2021,1898,530,N/A,cellular,mean,530,59,14598,8168,14.6,8.17
+All Providers Combined,"La Guajira, Colombia",,Apr 2021,1494,298,N/A,cellular,mean,298,68,12209,8996,12.21,9
+All Providers Combined,"Magdalena, Colombia",,Apr 2021,2818,813,N/A,cellular,mean,813,50,18578,9489,18.58,9.49
+All Providers Combined,"Meta, Colombia",,Apr 2021,2403,835,N/A,cellular,mean,835,54,14470,8872,14.47,8.87
+All Providers Combined,"Narino, Colombia",,Apr 2021,1421,446,N/A,cellular,mean,446,62,17252,9798,17.25,9.8
+All Providers Combined,"North Santander, Colombia",,Apr 2021,3184,839,N/A,cellular,mean,839,61,14239,8411,14.24,8.41
+All Providers Combined,"Putumayo, Colombia",,Apr 2021,3194,122,N/A,cellular,mean,122,150,9341,5999,9.34,6
+All Providers Combined,"Quindio, Colombia",,Apr 2021,1420,492,N/A,cellular,mean,492,56,18758,10185,18.76,10.19
+All Providers Combined,"Risaralda, Colombia",,Apr 2021,1879,753,N/A,cellular,mean,753,51,17812,8185,17.81,8.19
+All Providers Combined,"San Andrés and Providencia, Colombia",,Apr 2021,1791,261,N/A,cellular,mean,261,125,12853,8553,12.85,8.55
+All Providers Combined,"Santander Department, Colombia",,Apr 2021,9184,2211,N/A,cellular,mean,2211,51,18009,9036,18.01,9.04
+All Providers Combined,"Sucre, Colombia",,Apr 2021,1383,412,N/A,cellular,mean,412,74,16140,8471,16.14,8.47
+All Providers Combined,"Tolima, Colombia",,Apr 2021,2361,839,N/A,cellular,mean,839,47,16895,8152,16.9,8.15
+All Providers Combined,"Valle del Cauca, Colombia",,Apr 2021,15342,4662,N/A,cellular,mean,4662,52,18635,10231,18.64,10.23
+All Providers Combined,"Vaupes, Colombia",,Apr 2021,8,4,N/A,cellular,mean,4,116,832,3241,0.83,3.24
+All Providers Combined,"Vichada, Colombia",,Apr 2021,86,23,N/A,cellular,mean,23,231,5987,3587,5.99,3.59
+All Providers Combined,"Guaviare, Colombia",,Apr 2021,112,45,N/A,cellular,mean,45,103,9435,8188,9.44,8.19
+All Providers Combined,"Amazonas, Colombia",,may-21,59,11,N/A,cellular,mean,11,142,1481,6688,1.48,6.69
+All Providers Combined,"Antioquia, Colombia",,may-21,25168,7294,N/A,cellular,mean,7294,53,19104,10062,19.1,10.06
+All Providers Combined,"Arauca, Colombia",,may-21,627,100,N/A,cellular,mean,100,80,9897,6069,9.9,6.07
+All Providers Combined,"Atlantico, Colombia",,may-21,11420,3740,N/A,cellular,mean,3740,42,20509,11054,20.51,11.05
+All Providers Combined,"Bogota, Colombia",,may-21,51721,17960,N/A,cellular,mean,17960,49,18021,9914,18.02,9.91
+All Providers Combined,"Bolivar, Colombia",,may-21,4132,985,N/A,cellular,mean,985,49,21683,10141,21.68,10.14
+All Providers Combined,"Boyaca, Colombia",,may-21,2882,914,N/A,cellular,mean,914,56,12997,8665,13,8.67
+All Providers Combined,"Caldas, Colombia",,may-21,2095,706,N/A,cellular,mean,706,58,17481,9702,17.48,9.7
+All Providers Combined,"Caquetá, Colombia",,may-21,530,182,N/A,cellular,mean,182,86,11624,7848,11.62,7.85
+All Providers Combined,"Casanare, Colombia",,may-21,1444,271,N/A,cellular,mean,271,64,9726,6814,9.73,6.81
+All Providers Combined,"Cauca Department, Colombia",,may-21,1148,392,N/A,cellular,mean,392,61,14726,8894,14.73,8.89
+All Providers Combined,"Cesar, Colombia",,may-21,2596,651,N/A,cellular,mean,651,60,15978,8475,15.98,8.48
+All Providers Combined,"Choco, Colombia",,may-21,410,118,N/A,cellular,mean,118,92,8050,5313,8.05,5.31
+All Providers Combined,"Cordoba, Colombia",,may-21,11504,625,N/A,cellular,mean,625,79,15411,8393,15.41,8.39
+All Providers Combined,"Cundinamarca, Colombia",,may-21,11761,3729,N/A,cellular,mean,3729,49,13777,8221,13.78,8.22
+All Providers Combined,"Guainia, Colombia",,may-21,48,11,N/A,cellular,mean,11,200,1211,3366,1.21,3.37
+All Providers Combined,"Huila, Colombia",,may-21,1336,472,N/A,cellular,mean,472,68,14307,8693,14.31,8.69
+All Providers Combined,"La Guajira, Colombia",,may-21,2235,315,N/A,cellular,mean,315,65,14336,9334,14.34,9.33
+All Providers Combined,"Magdalena, Colombia",,may-21,2696,706,N/A,cellular,mean,706,52,19017,10128,19.02,10.13
+All Providers Combined,"Meta, Colombia",,may-21,3199,792,N/A,cellular,mean,792,58,13521,8891,13.52,8.89
+All Providers Combined,"Narino, Colombia",,may-21,1170,374,N/A,cellular,mean,374,61,17220,10267,17.22,10.27
+All Providers Combined,"North Santander, Colombia",,may-21,3155,871,N/A,cellular,mean,871,62,14936,8682,14.94,8.68
+All Providers Combined,"Putumayo, Colombia",,may-21,879,81,N/A,cellular,mean,81,119,7210,5177,7.21,5.18
+All Providers Combined,"Quindio, Colombia",,may-21,1233,418,N/A,cellular,mean,418,60,17639,9808,17.64,9.81
+All Providers Combined,"Risaralda, Colombia",,may-21,2044,755,N/A,cellular,mean,755,52,16285,8525,16.29,8.53
+All Providers Combined,"San Andrés and Providencia, Colombia",,may-21,1493,244,N/A,cellular,mean,244,142,11921,7896,11.92,7.9
+All Providers Combined,"Santander Department, Colombia",,may-21,7052,1923,N/A,cellular,mean,1923,54,18754,9242,18.75,9.24
+All Providers Combined,"Sucre, Colombia",,may-21,1243,391,N/A,cellular,mean,391,73,18354,9365,18.35,9.37
+All Providers Combined,"Tolima, Colombia",,may-21,2448,749,N/A,cellular,mean,749,45,17564,8136,17.56,8.14
+All Providers Combined,"Valle del Cauca, Colombia",,may-21,11560,4042,N/A,cellular,mean,4042,52,18332,10364,18.33,10.36
+All Providers Combined,"Vaupes, Colombia",,may-21,59,12,N/A,cellular,mean,12,375,562,2837,0.56,2.84
+All Providers Combined,"Vichada, Colombia",,may-21,117,18,N/A,cellular,mean,18,87,2052,3743,2.05,3.74
+All Providers Combined,"Guaviare, Colombia",,may-21,674,47,N/A,cellular,mean,47,138,10712,7437,10.71,7.44
+All Providers Combined,"Amazonas, Colombia",,jun-21,65,23,N/A,cellular,mean,23,174,1972,4488,1.97,4.49
+All Providers Combined,"Antioquia, Colombia",,jun-21,21628,7076,N/A,cellular,mean,7076,53,19301,10375,19.3,10.38
+All Providers Combined,"Arauca, Colombia",,jun-21,759,121,N/A,cellular,mean,121,73,7370,5935,7.37,5.94
+All Providers Combined,"Atlantico, Colombia",,jun-21,10834,3715,N/A,cellular,mean,3715,42,21494,11509,21.49,11.51
+All Providers Combined,"Bogota, Colombia",,jun-21,46689,17105,N/A,cellular,mean,17105,50,18894,10260,18.89,10.26
+All Providers Combined,"Bolivar, Colombia",,jun-21,2727,1042,N/A,cellular,mean,1042,47,22576,10803,22.58,10.8
+All Providers Combined,"Boyaca, Colombia",,jun-21,2994,965,N/A,cellular,mean,965,59,12415,8022,12.42,8.02
+All Providers Combined,"Caldas, Colombia",,jun-21,1967,681,N/A,cellular,mean,681,54,16930,9470,16.93,9.47
+All Providers Combined,"Caquetá, Colombia",,jun-21,797,159,N/A,cellular,mean,159,88,9893,6870,9.89,6.87
+All Providers Combined,"Casanare, Colombia",,jun-21,1036,296,N/A,cellular,mean,296,62,12607,8944,12.61,8.94
+All Providers Combined,"Cauca Department, Colombia",,jun-21,1384,421,N/A,cellular,mean,421,60,16542,9769,16.54,9.77
+All Providers Combined,"Cesar, Colombia",,jun-21,2184,589,N/A,cellular,mean,589,60,15972,8766,15.97,8.77
+All Providers Combined,"Choco, Colombia",,jun-21,445,114,N/A,cellular,mean,114,90,13401,7573,13.4,7.57
+All Providers Combined,"Cordoba, Colombia",,jun-21,1872,578,N/A,cellular,mean,578,60,18254,9442,18.25,9.44
+All Providers Combined,"Cundinamarca, Colombia",,jun-21,10198,3690,N/A,cellular,mean,3690,54,13892,8303,13.89,8.3
+All Providers Combined,"Guainia, Colombia",,jun-21,45,15,N/A,cellular,mean,15,114,1865,5271,1.87,5.27
+All Providers Combined,"Huila, Colombia",,jun-21,2733,518,N/A,cellular,mean,518,66,15667,9215,15.67,9.22
+All Providers Combined,"La Guajira, Colombia",,jun-21,1875,338,N/A,cellular,mean,338,66,15742,10911,15.74,10.91
+All Providers Combined,"Magdalena, Colombia",,jun-21,2753,803,N/A,cellular,mean,803,52,18180,9839,18.18,9.84
+All Providers Combined,"Meta, Colombia",,jun-21,1885,748,N/A,cellular,mean,748,56,13709,8856,13.71,8.86
+All Providers Combined,"Narino, Colombia",,jun-21,1343,369,N/A,cellular,mean,369,61,17110,10409,17.11,10.41
+All Providers Combined,"North Santander, Colombia",,jun-21,4211,858,N/A,cellular,mean,858,65,14364,8558,14.36,8.56
+All Providers Combined,"Putumayo, Colombia",,jun-21,669,87,N/A,cellular,mean,87,117,8636,7650,8.64,7.65
+All Providers Combined,"Quindio, Colombia",,jun-21,1422,495,N/A,cellular,mean,495,57,18576,10697,18.58,10.7
+All Providers Combined,"Risaralda, Colombia",,jun-21,2031,678,N/A,cellular,mean,678,51,16914,8262,16.91,8.26
+All Providers Combined,"San Andrés and Providencia, Colombia",,jun-21,1837,284,N/A,cellular,mean,284,129,13526,8239,13.53,8.24
+All Providers Combined,"Santander Department, Colombia",,jun-21,5887,1809,N/A,cellular,mean,1809,53,18758,10065,18.76,10.07
+All Providers Combined,"Sucre, Colombia",,jun-21,1348,429,N/A,cellular,mean,429,61,17260,8805,17.26,8.81
+All Providers Combined,"Tolima, Colombia",,jun-21,3264,896,N/A,cellular,mean,896,46,17822,8255,17.82,8.26
+All Providers Combined,"Valle del Cauca, Colombia",,jun-21,12009,4189,N/A,cellular,mean,4189,49,19431,10651,19.43,10.65
+All Providers Combined,"Vaupes, Colombia",,jun-21,83,14,N/A,cellular,mean,14,334,725,1951,0.73,1.95
+All Providers Combined,"Vichada, Colombia",,jun-21,141,16,N/A,cellular,mean,16,150,2409,4513,2.41,4.51
+All Providers Combined,"Guaviare, Colombia",,jun-21,181,52,N/A,cellular,mean,52,128,9481,7497,9.48,7.5
+All Providers Combined,"Amazonas, Colombia",,jul-21,52,19,N/A,cellular,mean,19,125,1605,5592,1.61,5.59
+All Providers Combined,"Antioquia, Colombia",,jul-21,23387,7592,N/A,cellular,mean,7592,50,19312,10696,19.31,10.7
+All Providers Combined,"Arauca, Colombia",,jul-21,398,112,N/A,cellular,mean,112,83,7967,5420,7.97,5.42
+All Providers Combined,"Atlantico, Colombia",,jul-21,10296,3587,N/A,cellular,mean,3587,41,21310,12197,21.31,12.2
+All Providers Combined,"Bogota, Colombia",,jul-21,50363,18600,N/A,cellular,mean,18600,47,18539,10489,18.54,10.49
+All Providers Combined,"Bolivar, Colombia",,jul-21,3678,1228,N/A,cellular,mean,1228,46,20879,9913,20.88,9.91
+All Providers Combined,"Boyaca, Colombia",,jul-21,2519,1001,N/A,cellular,mean,1001,56,12479,8545,12.48,8.55
+All Providers Combined,"Caldas, Colombia",,jul-21,2199,847,N/A,cellular,mean,847,58,16174,9897,16.17,9.9
+All Providers Combined,"Caquetá, Colombia",,jul-21,722,199,N/A,cellular,mean,199,72,12100,7856,12.1,7.86
+All Providers Combined,"Casanare, Colombia",,jul-21,1469,341,N/A,cellular,mean,341,63,13440,9568,13.44,9.57
+All Providers Combined,"Cauca Department, Colombia",,jul-21,1908,522,N/A,cellular,mean,522,63,15679,9010,15.68,9.01
+All Providers Combined,"Cesar, Colombia",,jul-21,1786,666,N/A,cellular,mean,666,52,16610,9302,16.61,9.3
+All Providers Combined,"Choco, Colombia",,jul-21,351,120,N/A,cellular,mean,120,86,8715,6660,8.72,6.66
+All Providers Combined,"Cordoba, Colombia",,jul-21,1676,608,N/A,cellular,mean,608,58,18467,9029,18.47,9.03
+All Providers Combined,"Cundinamarca, Colombia",,jul-21,10921,3844,N/A,cellular,mean,3844,49,14472,8586,14.47,8.59
+All Providers Combined,"Guainia, Colombia",,jul-21,38,10,N/A,cellular,mean,10,103,2664,9566,2.66,9.57
+All Providers Combined,"Huila, Colombia",,jul-21,1902,626,N/A,cellular,mean,626,61,13153,8746,13.15,8.75
+All Providers Combined,"La Guajira, Colombia",,jul-21,1885,374,N/A,cellular,mean,374,61,13725,9420,13.73,9.42
+All Providers Combined,"Magdalena, Colombia",,jul-21,2768,846,N/A,cellular,mean,846,53,16033,9195,16.03,9.2
+All Providers Combined,"Meta, Colombia",,jul-21,2111,855,N/A,cellular,mean,855,59,14896,8827,14.9,8.83
+All Providers Combined,"Narino, Colombia",,jul-21,1891,439,N/A,cellular,mean,439,67,16850,10153,16.85,10.15
+All Providers Combined,"North Santander, Colombia",,jul-21,3043,895,N/A,cellular,mean,895,64,15867,8954,15.87,8.95
+All Providers Combined,"Putumayo, Colombia",,jul-21,427,117,N/A,cellular,mean,117,99,7267,6527,7.27,6.53
+All Providers Combined,"Quindio, Colombia",,jul-21,1340,546,N/A,cellular,mean,546,58,17807,10210,17.81,10.21
+All Providers Combined,"Risaralda, Colombia",,jul-21,2381,864,N/A,cellular,mean,864,53,17182,8600,17.18,8.6
+All Providers Combined,"San Andrés and Providencia, Colombia",,jul-21,1203,264,N/A,cellular,mean,264,109,13174,8847,13.17,8.85
+All Providers Combined,"Santander Department, Colombia",,jul-21,7721,2042,N/A,cellular,mean,2042,54,18266,9761,18.27,9.76
+All Providers Combined,"Sucre, Colombia",,jul-21,1433,449,N/A,cellular,mean,449,57,17391,9008,17.39,9.01
+All Providers Combined,"Tolima, Colombia",,jul-21,2625,892,N/A,cellular,mean,892,50,16999,8504,17,8.5
+All Providers Combined,"Valle del Cauca, Colombia",,jul-21,12686,4517,N/A,cellular,mean,4517,49,20367,10776,20.37,10.78
+All Providers Combined,"Vaupes, Colombia",,jul-21,123,7,N/A,cellular,mean,7,180,1562,4880,1.56,4.88
+All Providers Combined,"Vichada, Colombia",,jul-21,55,14,N/A,cellular,mean,14,81,4065,11898,4.07,11.9
+All Providers Combined,"Guaviare, Colombia",,jul-21,103,46,N/A,cellular,mean,46,66,9884,6234,9.88,6.23
+All Providers Combined,"Amazonas, Colombia",,Aug 2021,128,29,N/A,cellular,mean,29,155,1999,4871,2,4.87
+All Providers Combined,"Antioquia, Colombia",,Aug 2021,21304,7461,N/A,cellular,mean,7461,49,19943,10586,19.94,10.59
+All Providers Combined,"Arauca, Colombia",,Aug 2021,378,105,N/A,cellular,mean,105,75,6529,6121,6.53,6.12
+All Providers Combined,"Atlantico, Colombia",,Aug 2021,9013,3119,N/A,cellular,mean,3119,39,22070,12228,22.07,12.23
+All Providers Combined,"Bogota, Colombia",,Aug 2021,46596,17550,N/A,cellular,mean,17550,43,18725,10806,18.73,10.81
+All Providers Combined,"Bolivar, Colombia",,Aug 2021,3679,1059,N/A,cellular,mean,1059,48,22702,11855,22.7,11.86
+All Providers Combined,"Boyaca, Colombia",,Aug 2021,3094,972,N/A,cellular,mean,972,52,13236,8893,13.24,8.89
+All Providers Combined,"Caldas, Colombia",,Aug 2021,2083,812,N/A,cellular,mean,812,55,18154,10172,18.15,10.17
+All Providers Combined,"Caquetá, Colombia",,Aug 2021,2118,196,N/A,cellular,mean,196,93,13773,7602,13.77,7.6
+All Providers Combined,"Casanare, Colombia",,Aug 2021,1569,339,N/A,cellular,mean,339,57,13192,9234,13.19,9.23
+All Providers Combined,"Cauca Department, Colombia",,Aug 2021,1449,519,N/A,cellular,mean,519,57,16161,9210,16.16,9.21
+All Providers Combined,"Cesar, Colombia",,Aug 2021,1626,557,N/A,cellular,mean,557,57,16887,9368,16.89,9.37
+All Providers Combined,"Choco, Colombia",,Aug 2021,540,137,N/A,cellular,mean,137,80,10715,7044,10.72,7.04
+All Providers Combined,"Cordoba, Colombia",,Aug 2021,1849,577,N/A,cellular,mean,577,63,18254,10413,18.25,10.41
+All Providers Combined,"Cundinamarca, Colombia",,Aug 2021,9851,3683,N/A,cellular,mean,3683,45,15476,8869,15.48,8.87
+All Providers Combined,"Guainia, Colombia",,Aug 2021,25,6,N/A,cellular,mean,6,212,2213,2493,2.21,2.49
+All Providers Combined,"Huila, Colombia",,Aug 2021,2045,558,N/A,cellular,mean,558,52,16267,9086,16.27,9.09
+All Providers Combined,"La Guajira, Colombia",,Aug 2021,1284,299,N/A,cellular,mean,299,57,13992,9472,13.99,9.47
+All Providers Combined,"Magdalena, Colombia",,Aug 2021,2261,711,N/A,cellular,mean,711,51,18937,9978,18.94,9.98
+All Providers Combined,"Meta, Colombia",,Aug 2021,2331,739,N/A,cellular,mean,739,48,16428,9547,16.43,9.55
+All Providers Combined,"Narino, Colombia",,Aug 2021,1452,480,N/A,cellular,mean,480,60,18136,10075,18.14,10.08
+All Providers Combined,"North Santander, Colombia",,Aug 2021,3740,847,N/A,cellular,mean,847,64,15905,9076,15.91,9.08
+All Providers Combined,"Putumayo, Colombia",,Aug 2021,284,98,N/A,cellular,mean,98,68,9085,7553,9.09,7.55
+All Providers Combined,"Quindio, Colombia",,Aug 2021,1722,535,N/A,cellular,mean,535,57,18465,10371,18.47,10.37
+All Providers Combined,"Risaralda, Colombia",,Aug 2021,2666,802,N/A,cellular,mean,802,52,17412,9258,17.41,9.26
+All Providers Combined,"San Andrés and Providencia, Colombia",,Aug 2021,995,268,N/A,cellular,mean,268,118,14949,9520,14.95,9.52
+All Providers Combined,"Santander Department, Colombia",,Aug 2021,8019,2015,N/A,cellular,mean,2015,54,19633,10457,19.63,10.46
+All Providers Combined,"Sucre, Colombia",,Aug 2021,1105,402,N/A,cellular,mean,402,60,17942,9691,17.94,9.69
+All Providers Combined,"Tolima, Colombia",,Aug 2021,2667,824,N/A,cellular,mean,824,45,17837,8295,17.84,8.3
+All Providers Combined,"Valle del Cauca, Colombia",,Aug 2021,13562,4205,N/A,cellular,mean,4205,50,20332,11152,20.33,11.15
+All Providers Combined,"Vaupes, Colombia",,Aug 2021,10,6,N/A,cellular,mean,6,69,2539,7487,2.54,7.49
+All Providers Combined,"Vichada, Colombia",,Aug 2021,98,14,N/A,cellular,mean,14,296,4089,2617,4.09,2.62
+All Providers Combined,"Guaviare, Colombia",,Aug 2021,99,36,N/A,cellular,mean,36,63,10121,7200,10.12,7.2
+All Providers Combined,"Amazonas, Colombia",,sep-21,132,32,N/A,cellular,mean,32,155,3045,7020,3.05,7.02
+All Providers Combined,"Antioquia, Colombia",,sep-21,22436,6995,N/A,cellular,mean,6995,51,19293,10920,19.29,10.92
+All Providers Combined,"Arauca, Colombia",,sep-21,510,120,N/A,cellular,mean,120,75,6033,6761,6.03,6.76
+All Providers Combined,"Atlantico, Colombia",,sep-21,8775,2902,N/A,cellular,mean,2902,40,22006,12648,22.01,12.65
+All Providers Combined,"Bogota, Colombia",,sep-21,43399,16633,N/A,cellular,mean,16633,43,18030,10791,18.03,10.79
+All Providers Combined,"Bolivar, Colombia",,sep-21,3031,999,N/A,cellular,mean,999,49,21705,11645,21.71,11.65
+All Providers Combined,"Boyaca, Colombia",,sep-21,2752,883,N/A,cellular,mean,883,54,13641,9049,13.64,9.05
+All Providers Combined,"Caldas, Colombia",,sep-21,2082,686,N/A,cellular,mean,686,57,16715,10221,16.72,10.22
+All Providers Combined,"Caquetá, Colombia",,sep-21,2889,179,N/A,cellular,mean,179,90,14447,8908,14.45,8.91
+All Providers Combined,"Casanare, Colombia",,sep-21,1241,296,N/A,cellular,mean,296,54,12772,9015,12.77,9.02
+All Providers Combined,"Cauca Department, Colombia",,sep-21,1457,473,N/A,cellular,mean,473,55,17271,10081,17.27,10.08
+All Providers Combined,"Cesar, Colombia",,sep-21,1591,514,N/A,cellular,mean,514,54,16157,9712,16.16,9.71
+All Providers Combined,"Choco, Colombia",,sep-21,469,123,N/A,cellular,mean,123,87,9311,7023,9.31,7.02
+All Providers Combined,"Cordoba, Colombia",,sep-21,1859,544,N/A,cellular,mean,544,59,18190,10372,18.19,10.37
+All Providers Combined,"Cundinamarca, Colombia",,sep-21,8617,3276,N/A,cellular,mean,3276,43,15203,9436,15.2,9.44
+All Providers Combined,"Guainia, Colombia",,sep-21,27,10,N/A,cellular,mean,10,161,3938,3704,3.94,3.7
+All Providers Combined,"Huila, Colombia",,sep-21,1580,536,N/A,cellular,mean,536,54,17938,9130,17.94,9.13
+All Providers Combined,"La Guajira, Colombia",,sep-21,903,267,N/A,cellular,mean,267,55,14755,10986,14.76,10.99
+All Providers Combined,"Magdalena, Colombia",,sep-21,2011,671,N/A,cellular,mean,671,50,20016,11267,20.02,11.27
+All Providers Combined,"Meta, Colombia",,sep-21,2361,710,N/A,cellular,mean,710,49,15652,9651,15.65,9.65
+All Providers Combined,"Narino, Colombia",,sep-21,1207,428,N/A,cellular,mean,428,59,17225,10002,17.23,10
+All Providers Combined,"North Santander, Colombia",,sep-21,3917,823,N/A,cellular,mean,823,63,17497,9706,17.5,9.71
+All Providers Combined,"Putumayo, Colombia",,sep-21,365,96,N/A,cellular,mean,96,100,11494,6943,11.49,6.94
+All Providers Combined,"Quindio, Colombia",,sep-21,1839,511,N/A,cellular,mean,511,58,20860,10611,20.86,10.61
+All Providers Combined,"Risaralda, Colombia",,sep-21,3064,828,N/A,cellular,mean,828,56,16456,9292,16.46,9.29
+All Providers Combined,"San Andrés and Providencia, Colombia",,sep-21,833,230,N/A,cellular,mean,230,116,14701,8449,14.7,8.45
+All Providers Combined,"Santander Department, Colombia",,sep-21,6840,1876,N/A,cellular,mean,1876,55,19041,10156,19.04,10.16
+All Providers Combined,"Sucre, Colombia",,sep-21,1096,341,N/A,cellular,mean,341,65,17164,9476,17.16,9.48
+All Providers Combined,"Tolima, Colombia",,sep-21,2256,752,N/A,cellular,mean,752,44,18558,8965,18.56,8.97
+All Providers Combined,"Valle del Cauca, Colombia",,sep-21,11218,4011,N/A,cellular,mean,4011,50,20561,11089,20.56,11.09
+All Providers Combined,"Vaupes, Colombia",,sep-21,4,3,N/A,cellular,mean,3,75,1648,7613,1.65,7.61
+All Providers Combined,"Vichada, Colombia",,sep-21,43,12,N/A,cellular,mean,12,224,7249,2003,7.25,2
+All Providers Combined,"Guaviare, Colombia",,sep-21,177,36,N/A,cellular,mean,36,96,9127,9058,9.13,9.06
+All Providers Combined,"Amazonas, Colombia",,oct-21,223,34,N/A,cellular,mean,34,206,3304,5209,3.3,5.21
+All Providers Combined,"Antioquia, Colombia",,oct-21,19907,7002,N/A,cellular,mean,7002,55,19226,11324,19.23,11.32
+All Providers Combined,"Arauca, Colombia",,oct-21,449,118,N/A,cellular,mean,118,70,11103,9610,11.1,9.61
+All Providers Combined,"Atlantico, Colombia",,oct-21,8222,2935,N/A,cellular,mean,2935,44,21784,12462,21.78,12.46
+All Providers Combined,"Bogota, Colombia",,oct-21,45591,15994,N/A,cellular,mean,15994,44,18824,10952,18.82,10.95
+All Providers Combined,"Bolivar, Colombia",,oct-21,2927,1030,N/A,cellular,mean,1030,47,20324,11313,20.32,11.31
+All Providers Combined,"Boyaca, Colombia",,oct-21,3481,1005,N/A,cellular,mean,1005,55,12726,8991,12.73,8.99
+All Providers Combined,"Caldas, Colombia",,oct-21,1983,722,N/A,cellular,mean,722,65,16825,10620,16.83,10.62
+All Providers Combined,"Caquetá, Colombia",,oct-21,796,165,N/A,cellular,mean,165,70,11730,8730,11.73,8.73
+All Providers Combined,"Casanare, Colombia",,oct-21,1560,322,N/A,cellular,mean,322,51,14503,10122,14.5,10.12
+All Providers Combined,"Cauca Department, Colombia",,oct-21,2043,448,N/A,cellular,mean,448,53,16983,10646,16.98,10.65
+All Providers Combined,"Cesar, Colombia",,oct-21,2102,570,N/A,cellular,mean,570,54,16824,9309,16.82,9.31
+All Providers Combined,"Choco, Colombia",,oct-21,282,100,N/A,cellular,mean,100,77,13005,9112,13.01,9.11
+All Providers Combined,"Cordoba, Colombia",,oct-21,2312,607,N/A,cellular,mean,607,56,20124,11469,20.12,11.47
+All Providers Combined,"Cundinamarca, Colombia",,oct-21,8984,3558,N/A,cellular,mean,3558,47,14948,9184,14.95,9.18
+All Providers Combined,"Guainia, Colombia",,oct-21,19,9,N/A,cellular,mean,9,153,2870,7760,2.87,7.76
+All Providers Combined,"Huila, Colombia",,oct-21,1516,515,N/A,cellular,mean,515,57,14480,8184,14.48,8.18
+All Providers Combined,"La Guajira, Colombia",,oct-21,976,310,N/A,cellular,mean,310,60,14408,10625,14.41,10.63
+All Providers Combined,"Magdalena, Colombia",,oct-21,2016,768,N/A,cellular,mean,768,53,19453,10550,19.45,10.55
+All Providers Combined,"Meta, Colombia",,oct-21,2134,781,N/A,cellular,mean,781,60,15093,9330,15.09,9.33
+All Providers Combined,"Narino, Colombia",,oct-21,1900,432,N/A,cellular,mean,432,63,17340,10284,17.34,10.28
+All Providers Combined,"North Santander, Colombia",,oct-21,3235,778,N/A,cellular,mean,778,63,18484,10060,18.48,10.06
+All Providers Combined,"Putumayo, Colombia",,oct-21,298,88,N/A,cellular,mean,88,99,12214,10662,12.21,10.66
+All Providers Combined,"Quindio, Colombia",,oct-21,1695,508,N/A,cellular,mean,508,66,17927,9875,17.93,9.88
+All Providers Combined,"Risaralda, Colombia",,oct-21,2925,778,N/A,cellular,mean,778,58,17155,9994,17.16,9.99
+All Providers Combined,"San Andrés and Providencia, Colombia",,oct-21,821,222,N/A,cellular,mean,222,91,12466,8311,12.47,8.31
+All Providers Combined,"Santander Department, Colombia",,oct-21,5978,1908,N/A,cellular,mean,1908,55,18729,10323,18.73,10.32
+All Providers Combined,"Sucre, Colombia",,oct-21,1095,372,N/A,cellular,mean,372,68,19727,9921,19.73,9.92
+All Providers Combined,"Tolima, Colombia",,oct-21,2932,913,N/A,cellular,mean,913,46,17643,8910,17.64,8.91
+All Providers Combined,"Valle del Cauca, Colombia",,oct-21,13383,4097,N/A,cellular,mean,4097,50,20562,11326,20.56,11.33
+All Providers Combined,"Vichada, Colombia",,oct-21,43,12,N/A,cellular,mean,12,134,3097,7473,3.1,7.47
+All Providers Combined,"Guaviare, Colombia",,oct-21,140,45,N/A,cellular,mean,45,68,12695,7714,12.7,7.71
+All Providers Combined,"Amazonas, Colombia",,nov-21,98,21,N/A,cellular,mean,21,186,2046,6889,2.05,6.89
+All Providers Combined,"Antioquia, Colombia",,nov-21,20626,6552,N/A,cellular,mean,6552,47,19580,11509,19.58,11.51
+All Providers Combined,"Arauca, Colombia",,nov-21,313,106,N/A,cellular,mean,106,68,10475,8315,10.48,8.32
+All Providers Combined,"Atlantico, Colombia",,nov-21,8089,2727,N/A,cellular,mean,2727,43,21793,12544,21.79,12.54
+All Providers Combined,"Bogota, Colombia",,nov-21,47851,14865,N/A,cellular,mean,14865,41,20388,10934,20.39,10.93
+All Providers Combined,"Bolivar, Colombia",,nov-21,2809,1023,N/A,cellular,mean,1023,47,23560,11838,23.56,11.84
+All Providers Combined,"Boyaca, Colombia",,nov-21,2983,875,N/A,cellular,mean,875,51,15527,9792,15.53,9.79
+All Providers Combined,"Caldas, Colombia",,nov-21,1790,589,N/A,cellular,mean,589,53,19384,10998,19.38,11
+All Providers Combined,"Caquetá, Colombia",,nov-21,554,190,N/A,cellular,mean,190,72,13322,9166,13.32,9.17
+All Providers Combined,"Casanare, Colombia",,nov-21,979,289,N/A,cellular,mean,289,47,15319,10072,15.32,10.07
+All Providers Combined,"Cauca Department, Colombia",,nov-21,1927,421,N/A,cellular,mean,421,67,17354,9897,17.35,9.9
+All Providers Combined,"Cesar, Colombia",,nov-21,2275,488,N/A,cellular,mean,488,51,17503,10030,17.5,10.03
+All Providers Combined,"Choco, Colombia",,nov-21,544,104,N/A,cellular,mean,104,99,12566,7727,12.57,7.73
+All Providers Combined,"Cordoba, Colombia",,nov-21,2177,527,N/A,cellular,mean,527,58,20915,11336,20.92,11.34
+All Providers Combined,"Cundinamarca, Colombia",,nov-21,8980,3339,N/A,cellular,mean,3339,44,15679,9320,15.68,9.32
+All Providers Combined,"Guainia, Colombia",,nov-21,4,2,N/A,cellular,mean,2,81,1293,6026,1.29,6.03
+All Providers Combined,"Huila, Colombia",,nov-21,1422,530,N/A,cellular,mean,530,59,17650,8641,17.65,8.64
+All Providers Combined,"La Guajira, Colombia",,nov-21,1261,271,N/A,cellular,mean,271,63,14355,10375,14.36,10.38
+All Providers Combined,"Magdalena, Colombia",,nov-21,2341,616,N/A,cellular,mean,616,48,21068,11059,21.07,11.06
+All Providers Combined,"Meta, Colombia",,nov-21,1562,687,N/A,cellular,mean,687,55,16202,9820,16.2,9.82
+All Providers Combined,"Narino, Colombia",,nov-21,1441,382,N/A,cellular,mean,382,73,18686,10852,18.69,10.85
+All Providers Combined,"North Santander, Colombia",,nov-21,2779,737,N/A,cellular,mean,737,63,18029,10270,18.03,10.27
+All Providers Combined,"Putumayo, Colombia",,nov-21,546,85,N/A,cellular,mean,85,110,11720,9683,11.72,9.68
+All Providers Combined,"Quindio, Colombia",,nov-21,1497,439,N/A,cellular,mean,439,65,19818,10367,19.82,10.37
+All Providers Combined,"Risaralda, Colombia",,nov-21,2619,699,N/A,cellular,mean,699,51,19134,10861,19.13,10.86
+All Providers Combined,"San Andrés and Providencia, Colombia",,nov-21,1670,249,N/A,cellular,mean,249,113,15933,8556,15.93,8.56
+All Providers Combined,"Santander Department, Colombia",,nov-21,6880,1799,N/A,cellular,mean,1799,54,19201,10552,19.2,10.55
+All Providers Combined,"Sucre, Colombia",,nov-21,1337,344,N/A,cellular,mean,344,59,19700,10436,19.7,10.44
+All Providers Combined,"Tolima, Colombia",,nov-21,1770,730,N/A,cellular,mean,730,46,19736,9386,19.74,9.39
+All Providers Combined,"Valle del Cauca, Colombia",,nov-21,14526,3998,N/A,cellular,mean,3998,56,19860,11014,19.86,11.01
+All Providers Combined,"Vaupes, Colombia",,nov-21,23,2,N/A,cellular,mean,2,43,5201,6919,5.2,6.92
+All Providers Combined,"Vichada, Colombia",,nov-21,56,13,N/A,cellular,mean,13,112,9195,9192,9.2,9.19
+All Providers Combined,"Guaviare, Colombia",,nov-21,318,52,N/A,cellular,mean,52,69,9380,8374,9.38,8.37
+All Providers Combined,"Amazonas, Colombia",,Dec 2021,124,31,N/A,cellular,mean,31,177,7171,7102,7.17,7.1
+All Providers Combined,"Antioquia, Colombia",,Dec 2021,18711,6382,N/A,cellular,mean,6382,46,21013,11214,21.01,11.21
+All Providers Combined,"Arauca, Colombia",,Dec 2021,329,105,N/A,cellular,mean,105,73,13164,10665,13.16,10.67
+All Providers Combined,"Atlantico, Colombia",,Dec 2021,6302,2584,N/A,cellular,mean,2584,39,22389,12709,22.39,12.71
+All Providers Combined,"Bogota, Colombia",,Dec 2021,44308,14358,N/A,cellular,mean,14358,39,21120,11687,21.12,11.69
+All Providers Combined,"Bolivar, Colombia",,Dec 2021,2771,987,N/A,cellular,mean,987,46,22107,12163,22.11,12.16
+All Providers Combined,"Boyaca, Colombia",,Dec 2021,2690,983,N/A,cellular,mean,983,51,15542,9423,15.54,9.42
+All Providers Combined,"Caldas, Colombia",,Dec 2021,1675,656,N/A,cellular,mean,656,55,17841,10370,17.84,10.37
+All Providers Combined,"Caquetá, Colombia",,Dec 2021,574,205,N/A,cellular,mean,205,64,13565,10215,13.57,10.22
+All Providers Combined,"Casanare, Colombia",,Dec 2021,978,298,N/A,cellular,mean,298,50,14298,10254,14.3,10.25
+All Providers Combined,"Cauca Department, Colombia",,Dec 2021,1959,467,N/A,cellular,mean,467,67,14422,9418,14.42,9.42
+All Providers Combined,"Cesar, Colombia",,Dec 2021,1271,458,N/A,cellular,mean,458,57,18981,10403,18.98,10.4
+All Providers Combined,"Choco, Colombia",,Dec 2021,631,114,N/A,cellular,mean,114,93,10738,6934,10.74,6.93
+All Providers Combined,"Cordoba, Colombia",,Dec 2021,1310,537,N/A,cellular,mean,537,58,20813,11364,20.81,11.36
+All Providers Combined,"Cundinamarca, Colombia",,Dec 2021,8749,3375,N/A,cellular,mean,3375,41,16000,9489,16,9.49
+All Providers Combined,"Guainia, Colombia",,Dec 2021,13,6,N/A,cellular,mean,6,69,9183,6474,9.18,6.47
+All Providers Combined,"Huila, Colombia",,Dec 2021,1375,522,N/A,cellular,mean,522,61,17533,9540,17.53,9.54
+All Providers Combined,"La Guajira, Colombia",,Dec 2021,1034,299,N/A,cellular,mean,299,65,16026,10189,16.03,10.19
+All Providers Combined,"Magdalena, Colombia",,Dec 2021,1980,668,N/A,cellular,mean,668,49,21955,10998,21.96,11
+All Providers Combined,"Meta, Colombia",,Dec 2021,1813,725,N/A,cellular,mean,725,48,17214,10211,17.21,10.21
+All Providers Combined,"Narino, Colombia",,Dec 2021,1762,446,N/A,cellular,mean,446,61,17208,10279,17.21,10.28
+All Providers Combined,"North Santander, Colombia",,Dec 2021,2321,774,N/A,cellular,mean,774,66,16800,9926,16.8,9.93
+All Providers Combined,"Putumayo, Colombia",,Dec 2021,1105,100,N/A,cellular,mean,100,96,11492,8707,11.49,8.71
+All Providers Combined,"Quindio, Colombia",,Dec 2021,1344,513,N/A,cellular,mean,513,60,19628,10153,19.63,10.15
+All Providers Combined,"Risaralda, Colombia",,Dec 2021,1923,737,N/A,cellular,mean,737,52,17355,9926,17.36,9.93
+All Providers Combined,"San Andrés and Providencia, Colombia",,Dec 2021,1452,323,N/A,cellular,mean,323,96,17487,9266,17.49,9.27
+All Providers Combined,"Santander Department, Colombia",,Dec 2021,5282,1826,N/A,cellular,mean,1826,56,19923,10613,19.92,10.61
+All Providers Combined,"Sucre, Colombia",,Dec 2021,2033,404,N/A,cellular,mean,404,62,18705,9396,18.71,9.4
+All Providers Combined,"Tolima, Colombia",,Dec 2021,2503,942,N/A,cellular,mean,942,49,17376,9119,17.38,9.12
+All Providers Combined,"Valle del Cauca, Colombia",,Dec 2021,13612,3864,N/A,cellular,mean,3864,60,22041,11204,22.04,11.2
+All Providers Combined,"Vaupes, Colombia",,Dec 2021,19,5,N/A,cellular,mean,5,55,9472,6334,9.47,6.33
+All Providers Combined,"Vichada, Colombia",,Dec 2021,43,7,N/A,cellular,mean,7,56,17804,8218,17.8,8.22
+All Providers Combined,"Guaviare, Colombia",,Dec 2021,174,40,N/A,cellular,mean,40,47,12369,9891,12.37,9.89
