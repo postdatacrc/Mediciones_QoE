@@ -1,0 +1,52 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+Tigo,"Bogotá, Bogota, Colombia",,2021,49216,12833,N/A,cellular,mean,12833,37,29638,13708,29.64,13.71
+Tigo,"Cali, Cali, Valle del Cauca, Colombia",,2021,4590,1388,N/A,cellular,mean,1388,38,31018,14675,31.02,14.68
+Tigo,"Manizales, Manizales, Caldas, Colombia",,2021,1307,395,N/A,cellular,mean,395,36,19016,11191,19.02,11.19
+Tigo,"Ibagué, Ibague, Tolima, Colombia",,2021,882,264,N/A,cellular,mean,264,32,27972,12925,27.97,12.93
+Tigo,"Armenia, Armenia, Quindio, Colombia",,2021,718,265,N/A,cellular,mean,265,37,23413,13541,23.41,13.54
+Tigo,"Popayán, Popayán, Cauca, Colombia",,2021,538,182,N/A,cellular,mean,182,38,26882,13107,26.88,13.11
+Tigo,"Cartagena, Cartagena, Bolívar, Colombia",,2021,2435,921,N/A,cellular,mean,921,30,26368,13427,26.37,13.43
+Tigo,"Pasto, Pasto, Narino, Colombia",,2021,457,160,N/A,cellular,mean,160,45,28060,15437,28.06,15.44
+Tigo,"Barranquilla, Barranquilla, Atlantico, Colombia",,2021,15744,5270,N/A,cellular,mean,5270,34,23458,13120,23.46,13.12
+Tigo,"Santa Marta, Santa Marta, Magdalena, Colombia",,2021,1464,355,N/A,cellular,mean,355,35,23964,12928,23.96,12.93
+Tigo,"Villavicencio, Villavicencio, Meta, Colombia",,2021,489,190,N/A,cellular,mean,190,38,29468,14805,29.47,14.81
+Tigo,"Pereira, Pereira, Risaralda, Colombia",,2021,1365,432,N/A,cellular,mean,432,37,19802,10762,19.8,10.76
+Tigo,"Medellín, Medellin, Antioquia, Colombia",,2021,19273,6069,N/A,cellular,mean,6069,33,25104,12756,25.1,12.76
+Tigo,"Montería, Montería, Córdoba, Colombia",,2021,1106,364,N/A,cellular,mean,364,34,31730,15827,31.73,15.83
+Tigo,"Sincelejo, Sincelejo, Sucre, Colombia",,2021,904,273,N/A,cellular,mean,273,32,28523,14915,28.52,14.92
+Tigo,"Bucaramanga, Bucaramanga, Santander Department, Colombia",,2021,2120,548,N/A,cellular,mean,548,41,25851,14413,25.85,14.41
+Tigo,"Tunja, Tunja, Boyacá, Colombia",,2021,299,120,N/A,cellular,mean,120,32,24415,13554,24.42,13.55
+Claro,"Bogotá, Bogota, Colombia",,2021,122805,32057,N/A,cellular,mean,32057,49,15395,9170,15.4,9.17
+Claro,"Cali, Cali, Valle del Cauca, Colombia",,2021,10473,3620,N/A,cellular,mean,3620,56,20144,9747,20.14,9.75
+Claro,"Manizales, Manizales, Caldas, Colombia",,2021,2046,702,N/A,cellular,mean,702,67,19108,10538,19.11,10.54
+Claro,"Ibagué, Ibague, Tolima, Colombia",,2021,3243,654,N/A,cellular,mean,654,45,18202,9250,18.2,9.25
+Claro,"Armenia, Armenia, Quindio, Colombia",,2021,1313,458,N/A,cellular,mean,458,65,18161,10380,18.16,10.38
+Claro,"Popayán, Popayán, Cauca, Colombia",,2021,1445,435,N/A,cellular,mean,435,67,13961,9261,13.96,9.26
+Claro,"Cartagena, Cartagena, Bolívar, Colombia",,2021,3632,999,N/A,cellular,mean,999,53,22549,10809,22.55,10.81
+Claro,"Pasto, Pasto, Narino, Colombia",,2021,845,319,N/A,cellular,mean,319,63,19011,10115,19.01,10.12
+Claro,"Barranquilla, Barranquilla, Atlantico, Colombia",,2021,10788,3386,N/A,cellular,mean,3386,50,19866,9430,19.87,9.43
+Claro,"Santa Marta, Santa Marta, Magdalena, Colombia",,2021,1471,585,N/A,cellular,mean,585,53,16345,9035,16.35,9.04
+Claro,"Villavicencio, Villavicencio, Meta, Colombia",,2021,3914,1168,N/A,cellular,mean,1168,51,15917,10777,15.92,10.78
+Claro,"Pereira, Pereira, Risaralda, Colombia",,2021,2248,932,N/A,cellular,mean,932,69,16318,7032,16.32,7.03
+Claro,"Medellín, Medellin, Antioquia, Colombia",,2021,29658,10107,N/A,cellular,mean,10107,60,16568,8729,16.57,8.73
+Claro,"Montería, Montería, Córdoba, Colombia",,2021,1271,466,N/A,cellular,mean,466,62,16345,8313,16.35,8.31
+Claro,"Sincelejo, Sincelejo, Sucre, Colombia",,2021,956,327,N/A,cellular,mean,327,70,15232,9140,15.23,9.14
+Claro,"Bucaramanga, Bucaramanga, Santander Department, Colombia",,2021,2477,767,N/A,cellular,mean,767,41,21975,10153,21.98,10.15
+Claro,"Tunja, Tunja, Boyacá, Colombia",,2021,2011,582,N/A,cellular,mean,582,55,11594,9316,11.59,9.32
+Movistar,"Bogotá, Bogota, Colombia",,2021,60416,16478,N/A,cellular,mean,16478,38,14596,9368,14.6,9.37
+Movistar,"Cali, Cali, Valle del Cauca, Colombia",,2021,31809,7619,N/A,cellular,mean,7619,46,15725,10655,15.73,10.66
+Movistar,"Manizales, Manizales, Caldas, Colombia",,2021,1468,387,N/A,cellular,mean,387,54,13148,8916,13.15,8.92
+Movistar,"Ibagué, Ibague, Tolima, Colombia",,2021,2164,653,N/A,cellular,mean,653,36,18253,7777,18.25,7.78
+Movistar,"Armenia, Armenia, Quindio, Colombia",,2021,979,297,N/A,cellular,mean,297,57,14338,10082,14.34,10.08
+Movistar,"Popayán, Popayán, Cauca, Colombia",,2021,878,276,N/A,cellular,mean,276,47,16007,11280,16.01,11.28
+Movistar,"Cartagena, Cartagena, Bolívar, Colombia",,2021,2347,832,N/A,cellular,mean,832,35,18498,9374,18.5,9.37
+Movistar,"Pasto, Pasto, Narino, Colombia",,2021,1506,371,N/A,cellular,mean,371,45,16164,12323,16.16,12.32
+Movistar,"Barranquilla, Barranquilla, Atlantico, Colombia",,2021,12034,3145,N/A,cellular,mean,3145,35,18062,10148,18.06,10.15
+Movistar,"Santa Marta, Santa Marta, Magdalena, Colombia",,2021,1243,538,N/A,cellular,mean,538,45,16283,9591,16.28,9.59
+Movistar,"Villavicencio, Villavicencio, Meta, Colombia",,2021,1765,540,N/A,cellular,mean,540,35,14403,7750,14.4,7.75
+Movistar,"Pereira, Pereira, Risaralda, Colombia",,2021,1244,423,N/A,cellular,mean,423,43,13342,8663,13.34,8.66
+Movistar,"Medellín, Medellin, Antioquia, Colombia",,2021,9280,2756,N/A,cellular,mean,2756,54,13434,9085,13.43,9.09
+Movistar,"Montería, Montería, Córdoba, Colombia",,2021,1099,315,N/A,cellular,mean,315,45,16829,11156,16.83,11.16
+Movistar,"Sincelejo, Sincelejo, Sucre, Colombia",,2021,664,167,N/A,cellular,mean,167,34,20895,10974,20.9,10.97
+Movistar,"Bucaramanga, Bucaramanga, Santander Department, Colombia",,2021,10768,2546,N/A,cellular,mean,2546,48,14754,8873,14.75,8.87
+Movistar,"Tunja, Tunja, Boyacá, Colombia",,2021,1035,270,N/A,cellular,mean,270,35,13740,7584,13.74,7.58
