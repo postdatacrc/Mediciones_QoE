@@ -1,0 +1,22 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+Tigo,Colombia,,2018,262237,44802,N/A,cellular,mean,44802,47,17242,9639,17.24,9.64
+Claro,Colombia,,2018,260600,64497,N/A,cellular,mean,64497,66,16173,7685,16.17,7.69
+Avantel,Colombia,,2018,152881,22086,N/A,cellular,mean,22086,40,15668,9847,15.67,9.85
+Movistar,Colombia,,2018,190172,48376,N/A,cellular,mean,48376,55,15056,8559,15.06,8.56
+ETB,Colombia,,2018,30575,8181,N/A,cellular,mean,8181,46,19142,11368,19.14,11.37
+Tigo,Colombia,,2019,244981,49683,N/A,cellular,mean,49683,41,17854,10174,17.85,10.17
+Claro,Colombia,,2019,381734,91297,N/A,cellular,mean,91297,61,18458,10724,18.46,10.72
+Avantel,Colombia,,2019,178496,23428,N/A,cellular,mean,23428,36,15506,9989,15.51,9.99
+Movistar,Colombia,,2019,245450,60762,N/A,cellular,mean,60762,49,15957,9688,15.96,9.69
+ETB,Colombia,,2019,29147,7157,N/A,cellular,mean,7157,44,20868,11784,20.87,11.78
+Tigo,Colombia,,2020,216731,53676,N/A,cellular,mean,53676,39,20358,10908,20.36,10.91
+Claro,Colombia,,2020,538019,127779,N/A,cellular,mean,127779,53,19404,10131,19.4,10.13
+Avantel,Colombia,,2020,126956,20997,N/A,cellular,mean,20997,31,15874,10453,15.87,10.45
+Movistar,Colombia,,2020,419490,85047,N/A,cellular,mean,85047,45,15475,8878,15.48,8.88
+ETB,Colombia,,2020,82710,11020,N/A,cellular,mean,11020,33,16697,9547,16.7,9.55
+Tigo,Colombia,,2021,370384,70441,N/A,cellular,mean,70441,38,24775,13334,24.78,13.33
+Claro,Colombia,,2021,669803,129374,N/A,cellular,mean,129374,55,16131,9175,16.13,9.18
+Avantel,Colombia,,2021,69851,9517,N/A,cellular,mean,9517,35,14634,8603,14.63,8.6
+Movistar,Colombia,,2021,429344,80011,N/A,cellular,mean,80011,42,14330,8827,14.33,8.83
+ETB,Colombia,,2021,19061,4403,N/A,cellular,mean,4403,38,13946,7950,13.95,7.95
+WOM,Colombia,,2021,202863,18459,N/A,cellular,mean,18459,89,16912,7602,16.91,7.6

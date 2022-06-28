@@ -1,0 +1,61 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+Tigo,Colombia,,Jan 2020,16063,6536,N/A,cellular,mean,6536,37,17861,10401,17.86,10.4
+Claro,Colombia,,Jan 2020,29548,14200,N/A,cellular,mean,14200,58,20565,13415,20.57,13.42
+Avantel,Colombia,,Jan 2020,7817,2700,N/A,cellular,mean,2700,28,18035,11559,18.04,11.56
+Movistar,Colombia,,Jan 2020,18090,8318,N/A,cellular,mean,8318,46,15993,9908,15.99,9.91
+ETB,Colombia,,Jan 2020,6331,1738,N/A,cellular,mean,1738,30,21513,12277,21.51,12.28
+Tigo,Colombia,,feb-20,15760,6355,N/A,cellular,mean,6355,38,16992,10284,16.99,10.28
+Claro,Colombia,,feb-20,31074,14330,N/A,cellular,mean,14330,59,19309,13710,19.31,13.71
+Avantel,Colombia,,feb-20,8223,2695,N/A,cellular,mean,2695,28,17040,11096,17.04,11.1
+Movistar,Colombia,,feb-20,16555,7982,N/A,cellular,mean,7982,43,16746,9709,16.75,9.71
+ETB,Colombia,,feb-20,7391,1902,N/A,cellular,mean,1902,33,20810,12495,20.81,12.5
+Tigo,Colombia,,mar-20,19539,7897,N/A,cellular,mean,7897,41,16520,9883,16.52,9.88
+Claro,Colombia,,mar-20,41359,18634,N/A,cellular,mean,18634,59,19313,13072,19.31,13.07
+Avantel,Colombia,,mar-20,10429,3422,N/A,cellular,mean,3422,31,14250,10220,14.25,10.22
+Movistar,Colombia,,mar-20,22059,10698,N/A,cellular,mean,10698,45,15531,8940,15.53,8.94
+ETB,Colombia,,mar-20,8579,2227,N/A,cellular,mean,2227,35,20354,11775,20.35,11.78
+Tigo,Colombia,,Apr 2020,20387,8188,N/A,cellular,mean,8188,37,18111,9973,18.11,9.97
+Claro,Colombia,,Apr 2020,53367,22089,N/A,cellular,mean,22089,58,20323,11197,20.32,11.2
+Avantel,Colombia,,Apr 2020,10392,3587,N/A,cellular,mean,3587,33,13890,10096,13.89,10.1
+Movistar,Colombia,,Apr 2020,25408,11803,N/A,cellular,mean,11803,44,16875,8859,16.88,8.86
+ETB,Colombia,,Apr 2020,8016,2249,N/A,cellular,mean,2249,34,20628,11371,20.63,11.37
+Tigo,Colombia,,may-20,20346,8212,N/A,cellular,mean,8212,39,18735,10110,18.74,10.11
+Claro,Colombia,,may-20,57376,22523,N/A,cellular,mean,22523,57,20442,9390,20.44,9.39
+Avantel,Colombia,,may-20,11123,3499,N/A,cellular,mean,3499,29,14974,10285,14.97,10.29
+Movistar,Colombia,,may-20,26660,12257,N/A,cellular,mean,12257,44,17186,8699,17.19,8.7
+ETB,Colombia,,may-20,15102,2685,N/A,cellular,mean,2685,33,15160,8395,15.16,8.4
+Tigo,Colombia,,jun-20,17330,7132,N/A,cellular,mean,7132,38,20470,10427,20.47,10.43
+Claro,Colombia,,jun-20,45085,18738,N/A,cellular,mean,18738,47,21397,9471,21.4,9.47
+Avantel,Colombia,,jun-20,9589,2910,N/A,cellular,mean,2910,31,15025,10195,15.03,10.2
+Movistar,Colombia,,jun-20,39601,13473,N/A,cellular,mean,13473,46,16967,9119,16.97,9.12
+ETB,Colombia,,jun-20,11708,2248,N/A,cellular,mean,2248,31,10683,6383,10.68,6.38
+Tigo,Colombia,,jul-20,18657,7537,N/A,cellular,mean,7537,39,21264,11076,21.26,11.08
+Claro,Colombia,,jul-20,47049,19639,N/A,cellular,mean,19639,46,20878,9233,20.88,9.23
+Avantel,Colombia,,jul-20,10074,2954,N/A,cellular,mean,2954,31,15761,10493,15.76,10.49
+Movistar,Colombia,,jul-20,66690,16341,N/A,cellular,mean,16341,47,15215,8917,15.22,8.92
+ETB,Colombia,,jul-20,6258,1770,N/A,cellular,mean,1770,32,11554,7239,11.55,7.24
+Tigo,Colombia,,Aug 2020,18106,7329,N/A,cellular,mean,7329,44,22931,11542,22.93,11.54
+Claro,Colombia,,Aug 2020,46938,19585,N/A,cellular,mean,19585,48,21064,9010,21.06,9.01
+Avantel,Colombia,,Aug 2020,11097,2895,N/A,cellular,mean,2895,29,15099,10952,15.1,10.95
+Movistar,Colombia,,Aug 2020,51722,15324,N/A,cellular,mean,15324,49,14926,8916,14.93,8.92
+ETB,Colombia,,Aug 2020,5520,1445,N/A,cellular,mean,1445,35,12933,7714,12.93,7.71
+Tigo,Colombia,,sep-20,16982,7251,N/A,cellular,mean,7251,39,23570,11770,23.57,11.77
+Claro,Colombia,,sep-20,45844,18211,N/A,cellular,mean,18211,48,20894,9266,20.89,9.27
+Avantel,Colombia,,sep-20,9832,2561,N/A,cellular,mean,2561,30,17169,10867,17.17,10.87
+Movistar,Colombia,,sep-20,42230,14188,N/A,cellular,mean,14188,46,15909,9039,15.91,9.04
+ETB,Colombia,,sep-20,4334,1239,N/A,cellular,mean,1239,31,14627,8249,14.63,8.25
+Tigo,Colombia,,oct-20,18541,7455,N/A,cellular,mean,7455,40,23852,12227,23.85,12.23
+Claro,Colombia,,oct-20,46311,17928,N/A,cellular,mean,17928,47,20206,9364,20.21,9.36
+Avantel,Colombia,,oct-20,14512,2836,N/A,cellular,mean,2836,30,18524,11361,18.52,11.36
+Movistar,Colombia,,oct-20,40309,13692,N/A,cellular,mean,13692,43,15422,9004,15.42,9
+ETB,Colombia,,oct-20,3788,1182,N/A,cellular,mean,1182,32,14061,8279,14.06,8.28
+Tigo,Colombia,,nov-20,17271,7165,N/A,cellular,mean,7165,45,23531,13007,23.53,13.01
+Claro,Colombia,,nov-20,47881,16749,N/A,cellular,mean,16749,55,17762,9054,17.76,9.05
+Avantel,Colombia,,nov-20,13519,2804,N/A,cellular,mean,2804,32,19767,11714,19.77,11.71
+Movistar,Colombia,,nov-20,36891,12621,N/A,cellular,mean,12621,45,15175,9014,15.18,9.01
+ETB,Colombia,,nov-20,3080,1060,N/A,cellular,mean,1060,33,14078,8223,14.08,8.22
+Tigo,Colombia,,Dec 2020,17749,7021,N/A,cellular,mean,7021,38,24293,12892,24.29,12.89
+Claro,Colombia,,Dec 2020,46364,15819,N/A,cellular,mean,15819,53,16606,9238,16.61,9.24
+Avantel,Colombia,,Dec 2020,10350,2526,N/A,cellular,mean,2526,31,20150,11848,20.15,11.85
+Movistar,Colombia,,Dec 2020,33258,11418,N/A,cellular,mean,11418,44,14529,8927,14.53,8.93
+ETB,Colombia,,Dec 2020,2604,839,N/A,cellular,mean,839,36,13722,8192,13.72,8.19

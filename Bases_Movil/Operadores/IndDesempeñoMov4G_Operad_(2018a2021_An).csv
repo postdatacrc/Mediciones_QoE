@@ -1,0 +1,22 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Latency,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+Tigo,Colombia,,2018,145278,34922,N/A,lte,mean,34922,35,22629,12970,22.63,12.97
+Claro,Colombia,,2018,165954,49673,N/A,lte,mean,49673,58,21253,10595,21.25,10.6
+Avantel,Colombia,,2018,133798,19808,N/A,lte,mean,19808,32,18049,11419,18.05,11.42
+Movistar,Colombia,,2018,141999,39141,N/A,lte,mean,39141,48,19099,10984,19.1,10.98
+ETB (MVNO),Colombia,,2018,25916,7373,N/A,lte,mean,7373,40,21851,13080,21.85,13.08
+Tigo,Colombia,,2019,180159,42790,N/A,lte,mean,42790,32,21118,12302,21.12,12.3
+Claro,Colombia,,2019,304894,81965,N/A,lte,mean,81965,56,20905,12306,20.91,12.31
+Avantel,Colombia,,2019,163135,21867,N/A,lte,mean,21867,32,17006,10960,17.01,10.96
+Movistar,Colombia,,2019,195606,52392,N/A,lte,mean,52392,44,18686,11608,18.69,11.61
+ETB (MVNO),Colombia,,2019,26302,6711,N/A,lte,mean,6711,41,22670,12925,22.67,12.93
+Tigo,Colombia,,2020,180994,48172,N/A,lte,mean,48172,34,22490,12361,22.49,12.36
+Claro,Colombia,,2020,467020,118746,N/A,lte,mean,118746,51,20916,11014,20.92,11.01
+Avantel,Colombia,,2020,118836,19447,N/A,lte,mean,19447,27,17303,11429,17.3,11.43
+Movistar,Colombia,,2020,349649,74857,N/A,lte,mean,74857,41,17542,10303,17.54,10.3
+ETB (MVNO),Colombia,,2020,78938,10492,N/A,lte,mean,10492,31,17591,10175,17.59,10.18
+Tigo,Colombia,,2021,315261,62189,N/A,lte,mean,62189,36,24545,13861,24.55,13.86
+Claro,Colombia,,2021,563681,114219,N/A,lte,mean,114219,54,16426,9659,16.43,9.66
+Avantel,Colombia,,2021,62781,8453,N/A,lte,mean,8453,31,16311,9733,16.31,9.73
+Movistar,Colombia,,2021,341354,67758,N/A,lte,mean,67758,40,15187,9843,15.19,9.84
+ETB (MVNO),Colombia,,2021,17181,4025,N/A,lte,mean,4025,36,13927,8312,13.93,8.31
+WOM,Colombia,,2021,173818,15828,N/A,lte,mean,15828,80,19371,8798,19.37,8.8
