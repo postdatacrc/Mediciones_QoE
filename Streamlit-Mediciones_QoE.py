@@ -3284,6 +3284,11 @@ Movil__Int=pd.DataFrame.from_dict(movil_Intdict,orient='index').reset_index()
 Movil__Int=Movil__Int.rename(columns={'index':'País',0:'Download',1:'Upload',2:'Latency'})
 Movil_df=gdf_Int.merge(Movil__Int, on='País')
 
+dict_coloresPais={'Suriname':'rgb(51,0,25)','Uruguay':'rgb(255,0,0)','Colombia':'rgb(255,255,0)',
+                 'Venezuela':'rgba(128,255,0,0.3)','Ecuador':'rgb(255,0,255)','Peru':'rgb(0,255,128)',
+                 'Bolivia':'rgb(255,102,102)','Paraguay':'rgb(0,128,255)','Brazil':'rgb(0,51,51)',
+                 'Chile':'rgb(0,0,255)','Argentina':'rgb(127,0,255)','Guyana':'rgb(255,128,0)'}
+
 if select_servicio == 'Comparación internacional':
     select_servicio=st.selectbox('Indicador de desempeño',['Velocidad de descarga','Velocidad de carga','Latencia','Resumen'])
     if select_servicio=='Velocidad de descarga':
@@ -3467,6 +3472,7 @@ if select_servicio == 'Comparación internacional':
 
 
     if select_servicio=='Latencia':
+    
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("## <center>Internet fijo</center>",unsafe_allow_html=True)
@@ -3554,4 +3560,84 @@ if select_servicio == 'Comparación internacional':
             st.markdown("<center><b> Latencia promedio de <br> Internet móvil en Suramerica (Mbps)</b></center>",
             unsafe_allow_html=True)
             folium_static(suramerica_map5_c,width=350,height=550)      
-       
+    
+    if select_servicio=='Resumen':
+        st.markdown("## Resumen Internet fijo", unsafe_allow_html=True)
+        fig1Int=make_subplots(rows=1,cols=1)
+        for pais in Fijo_Int['País'].unique().tolist():
+            fig1Int.add_trace(go.Scatter(
+            x=Fijo_Int[Fijo_Int['País']== pais]['Download'].values, y=Fijo_Int[Fijo_Int['País']== pais]['Upload'].values, name=pais,
+            mode='markers',
+            text=Fijo_Int[Fijo_Int['País']== pais]['Latency'],
+            marker=dict(
+                color=dict_coloresPais[pais],
+                opacity=1,
+                size=Fijo_Int[Fijo_Int['País']== pais]['Latency'])),row=1, col=1)
+        fig1Int.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text='Velocidad de descarga (Mbps)',ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+        zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+        fig1Int.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Velocidad de carga (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+        zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+        fig1Int.update_traces(textfont_size=14)
+        fig1Int.update_layout(height=500,legend_title=None)
+        fig1Int.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+        fig1Int.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16)
+
+        fig1Int.update_layout(height=600,   
+            title="<b>Diagrama de burbujas con la distribución de velocidades y latencia<br>de Suramérica por país para Internet fijo - Diciembre 2021</b>",
+            title_x=0.5,
+            titlefont_size=15,
+            font=dict(
+                family="Arial",
+                color=" black",size=16))
+        fig1Int.update_layout(legend=dict(y=1.02,x=0.01))
+        fig1Int.add_shape(type="line",
+            x0=0, y0=0, x1=250, y1=250,
+            line=dict(
+                color="indianred",
+                width=4,
+                dash="dot",
+            ),row=1,col=1)
+        fig1Int.update_layout(paper_bgcolor='rgba(0,0,0,0)')
+        fig1Int.update_layout(plot_bgcolor='rgba(0,0,0,0)')
+        st.plotly_chart(fig1Int, use_container_width=True)    
+        
+        ##
+        
+        st.markdown("## Resumen Internet móvil", unsafe_allow_html=True)
+        fig2Int=make_subplots(rows=1,cols=1)
+        for pais in Movil__Int['País'].unique().tolist():
+            fig2Int.add_trace(go.Scatter(
+            x=Movil__Int[Movil__Int['País']== pais]['Download'].values, y=Movil__Int[Movil__Int['País']== pais]['Upload'].values, name=pais,
+            mode='markers',
+            text=Movil__Int[Movil__Int['País']== pais]['Latency'],
+            marker=dict(
+                color=dict_coloresPais[pais],
+                opacity=1,
+                size=Movil__Int[Movil__Int['País']== pais]['Latency'])),row=1, col=1)
+        fig2Int.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text='Velocidad de descarga (Mbps)',ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+        zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+        fig2Int.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Velocidad de carga (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+        zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+        fig2Int.update_traces(textfont_size=14)
+        fig2Int.update_layout(height=500,legend_title=None)
+        fig2Int.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+        fig2Int.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16)
+
+        fig2Int.update_layout(height=600,   
+            title="<b>Diagrama de burbujas con la distribución de velocidades y latencia<br>de Suramérica por país para Internet móvil - Diciembre 2021</b>",
+            title_x=0.5,
+            titlefont_size=15,
+            font=dict(
+                family="Arial",
+                color=" black",size=16))
+        fig2Int.update_layout(legend=dict(y=1.02,x=0.01))
+        fig2Int.add_shape(type="line",
+            x0=0, y0=0, x1=60, y1=60,
+            line=dict(
+                color="indianred",
+                width=4,
+                dash="dot",
+            ),row=1,col=1)
+        fig2Int.update_layout(paper_bgcolor='rgba(0,0,0,0)')
+        fig2Int.update_layout(plot_bgcolor='rgba(0,0,0,0)')
+        st.plotly_chart(fig2Int, use_container_width=True)            
