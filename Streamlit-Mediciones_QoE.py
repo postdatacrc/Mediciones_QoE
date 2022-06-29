@@ -1772,6 +1772,7 @@ def ColombiaMovil5():
 ColombiaMovil5=ColombiaMovil5()    
 
 #### Sección 7 Móvil
+@st.cache(allow_output_mutation=True)
 def ColombiaMovil7():
     Colombia7=pd.read_csv(pathMovil+'Cobertura/IndCoberturaMov_Colombia_(2018-2021).csv',delimiter=',')
     Colombia7['4G total'] = Colombia7[['4G (%)', '4G Roaming (%)']].sum(axis=1)
@@ -1780,6 +1781,7 @@ def ColombiaMovil7():
 Colombia7Movil=ColombiaMovil7()
 
 ####  Sección 8 Móvil
+@st.cache(allow_output_mutation=True)
 def DepJoinA8Movil():
     Ciudades8=pd.read_csv(pathMovil+'Cobertura/IndCoberturaMov_Ciud_(2018-2021).csv',delimiter=',')
     Ciudades8['Location']=Ciudades8['Location'].str.split(',',1,expand=True)[0]
@@ -1802,6 +1804,7 @@ def DepJoinA8Movil():
 DepJoinAMovil8=DepJoinA8Movil()
 
 ####  Sección 9 Móvil
+@st.cache(allow_output_mutation=True)
 def OpJoinA9Movil():
     Operadores9=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Cobertura/IndCoberturaMov_Gnral%20(2018-2021).csv',delimiter=',')
     Operadores9['4G total'] = Operadores9[['4G (%)', '4G Roaming (%)']].sum(axis=1)
