@@ -27,6 +27,19 @@ LogoComision2="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-bl
 st.set_page_config(
     page_title="Mediciones QoE", page_icon=LogoComision,layout="wide",initial_sidebar_state="expanded")  
 
+gdf2 = gpd.read_file('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Colombia.geo.json')
+with urllib.request.urlopen('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Colombia.geo.json') as url:
+    Colombian_DPTO2 = json.loads(url.read().decode())
+Servidores=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Fijo/Fij-Servidores_Colombia.csv',encoding='latin-1',delimiter=';')
+Servidores['latitude']=Servidores['latitude'].str.replace(',','.')
+Servidores['longitude']=Servidores['longitude'].str.replace(',','.')
+dict_serv_colores={'Cali':'rgb(255,128,0)', 'Bogotá D.C.':'rgb(255,0,0)', 'Cartagena':'rgb(128,255,0)',
+        'Medellín':'rgb(0,255,0)', 'Barranquilla':'rgb(0,255,128)',
+       'San Andrés':'rgb(255,255,0)', 'San Agustín, Huila':'rgb(0,255,255)', 'Choachí, Cundinamarca':'rgb(128,128,128)',
+       'Pasto':'rgb(0,128,255)', 'Popayán':'rgb(0,0,255)', 'Rosas, Cauca':'rgb(127,0,255)', 'Guamal, Magdalena':'rgb(255,0,255)',
+       'Plato, Magdalena':'rgb(255,0,127)', 'Valledupar':'rgb(153,0,0)', 'Santander de Quilichao, Cauca':'rgb(0,102,102)',
+       'Colón, Nariño':'rgb(153,0,76)'}
+
 st.markdown("# <center>Mediciones de calidad desde<br>la experiencia del usuario</center>",unsafe_allow_html=True)
 
 st.markdown("""<b>1. Seleccione el servicio sobre el cual desea conocer la información de los indicadores de desempeño</b>""", unsafe_allow_html=True)
@@ -35,10 +48,46 @@ select_servicio = st.selectbox('Servicio',
                                     ['Información general','Internet fijo','Internet móvil','Comparación internacional'])
 
 if select_servicio=='Información general':
-    st.markdown('la Comisión de regulación de comunicaciones presenta la aplicación interactiva que contiene información sobre la calidad de los servicios ofrecidos a través de redes móviles y fijas por los diferentes proveedores en el territorio nacional, para el periodo comprendido entre los años 2018 y 2021.')
-    st.markdown('las mediciones de calidad que soportan las gráficas de la aplicación están basadas en la metodología crowdsourcing, utilizando para ellos los datos proporcionados por la aplicación Speedtest®, desarrollada por la empresa Ookla®. A través de esta metodología se recopila información directamente desde los dispositivos que los usuarios utilizan para acceder a los servicios de Internet móvil e Internet fijo, suministrados por los proveedores de redes y servicios de telecomunicaciones')
+    st.markdown('La Comisión de regulación de comunicaciones presenta la aplicación interactiva que contiene información sobre la calidad de los servicios ofrecidos a través de redes móviles y fijas por los diferentes proveedores en el territorio nacional, para el periodo comprendido entre los años 2018 y 2021.')
+    st.markdown('Las mediciones de calidad que soportan las gráficas de la aplicación están basadas en la metodología crowdsourcing, utilizando para ellos los datos proporcionados por la aplicación Speedtest®, desarrollada por la empresa Ookla®. A través de esta metodología se recopila información directamente desde los dispositivos que los usuarios utilizan para acceder a los servicios de Internet móvil e Internet fijo, suministrados por los proveedores de redes y servicios de telecomunicaciones.')
+    st.markdown('Las mediciones de los indicadores de calidad se soportan en el uso de una red que para 2021 incorporaba 38 servidores de prueba dispersos en el territorio nacional')
+    st.markdown("<b><center>Distribución de servidores de pruebas en Colombia</center></b>",unsafe_allow_html=True)
+    Sevidores_map = folium.Map(location=[3, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+    scrollWheelZoom=True,
+    dragging=True)
+    tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+    folium.TileLayer('openstreetmap').add_to(Sevidores_map)
+    choropleth=folium.Choropleth(
+        geo_data=Colombian_DPTO2,
+        key_on='feature.properties.NOMBRE_DPT',
+        fill_color='rgb(0,204,0)', 
+        fill_opacity=0.2, 
+        line_opacity=1,
+        nan_fill_color ="rgba(0,0,0,0)",
+        smooth_factor=0).add_to(Sevidores_map)
 
 
+    # add marker one by one on the map
+    for i in range(0,len(Servidores)):
+        html2=f"""<b>Nombre:</b>\n
+        {Servidores.iloc[i]['server_name']}<br>
+        <b>Cantidad servidores:</b>\n
+        {Servidores.iloc[i]['Cantidad servidores']}
+        """
+        iframe2=folium.IFrame(html=html2, width=110, height=105)
+        popup2=folium.Popup(iframe2)    
+        folium.CircleMarker(
+          location=[Servidores.iloc[i]['latitude'], Servidores.iloc[i]['longitude']],
+          popup=popup2,radius=10,weight=1,
+     color='black',       
+     fill=True,
+     fill_color=dict_serv_colores[Servidores.iloc[i]['server_name']],
+     fill_opacity=0.2
+       ).add_to(Sevidores_map)
+    col1, col2 ,col3= st.columns([2,4,1])
+    
+    with col2:
+        folium_static(Sevidores_map,width=480)  
 
 
 
@@ -89,9 +138,6 @@ OpCiud2Fijo['year']=pd.DatetimeIndex(OpCiud2Fijo['Aggregate Date']).year
 OpCiud2Fijo= OpCiud2Fijo.drop(['Device','Platform','Technology Type','Metric Type'],axis=1)
 OpCiud2Fijo['Location'] = OpCiud2Fijo['Location'].str.upper()
 OpCiud2Fijo['Location'] = OpCiud2Fijo['Location'].replace({'SANTANDER DEPARTMENT':'SANTANDER','CAUCA DEPARTMENT':'CAUCA','SAN ANDRÉS AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA','NORTH SANTANDER':'NORTE DE SANTANDER','CAQUETÁ':'CAQUETA'})
-gdf2 = gpd.read_file('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Colombia.geo.json')
-with urllib.request.urlopen('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Colombia.geo.json') as url:
-    Colombian_DPTO2 = json.loads(url.read().decode())
 geoJSON_states2 = list(gdf2.NOMBRE_DPT.values)
 denominations_json2 = []
 Id_json2 = []
@@ -1287,7 +1333,7 @@ if select_servicio == 'Internet fijo':
 
             col1, col2 ,col3= st.columns([1,4,1])
             with col2:
-                st.markdown("<center><b>Latenicia promedio internet fijo en Colombia por departamento (en Mbps)</b></center>",
+                st.markdown("<center><b>Latencia promedio internet fijo en Colombia por departamento (en Mbps)</b></center>",
                 unsafe_allow_html=True)
                 folium_static(colombia_map3Fijo,width=480)  
 
