@@ -1207,7 +1207,9 @@ if select_servicio == 'Internet fijo':
             with col2:
                 mes_opFijo = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
                 
-            Servidores=pd.read_excel(pathFijo+'Fij-Servidores_Colombia.xlsx')
+            Servidores=pd.read_csv(pathFijo+'Fij-Servidores_Colombia.csv',encoding='latin-1',delimiter=';')
+            Servidores['latitude']=Servidores['latitude'].str.replace(',','.')
+            Servidores['longitude']=Servidores['longitude'].str.replace(',','.')
             ColLat2=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Latency'].mean()
             ColLat2=round(ColLat2,2)
             departamentosLat_df2Fijo=gdf2.merge(ColLat2, on='Location')
@@ -1872,22 +1874,22 @@ if select_servicio == 'Internet móvil':
             
             fig2Movil = go.Figure()
             fig2Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3['ï»¿Provider'],
+                x=DepJoinAMovil3['Provider'],
                 y=DepJoinAMovil3['2018'],
                 name='2018',
                 marker_color='rgb(213,3,85)'))
             fig2Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3['ï»¿Provider'],
+                x=DepJoinAMovil3['Provider'],
                 y=DepJoinAMovil3['2019'],
                 name='2019',
                 marker_color='rgb(255,152,0)'))
             fig2Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3['ï»¿Provider'],
+                x=DepJoinAMovil3['Provider'],
                 y=DepJoinAMovil3['2020'],
                 name='2020',
                 marker_color='rgb(44,198,190)'))
             fig2Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3['ï»¿Provider'],
+                x=DepJoinAMovil3['Provider'],
                 y=DepJoinAMovil3['2021'],
                 name='2021',
                 marker_color='rgb(72,68,242)'))
@@ -2358,22 +2360,22 @@ if select_servicio == 'Internet móvil':
   
             fig6Movil = go.Figure()
             fig6Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3Up['ï»¿Provider'],
+                x=DepJoinAMovil3Up['Provider'],
                 y=DepJoinAMovil3Up['2018'],
                 name='2018',
                 marker_color='rgb(213,3,85)'))
             fig6Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3Up['ï»¿Provider'],
+                x=DepJoinAMovil3Up['Provider'],
                 y=DepJoinAMovil3Up['2019'],
                 name='2019',
                 marker_color='rgb(255,152,0)'))
             fig6Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3Up['ï»¿Provider'],
+                x=DepJoinAMovil3Up['Provider'],
                 y=DepJoinAMovil3Up['2020'],
                 name='2020',
                 marker_color='rgb(44,198,190)'))
             fig6Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3Up['ï»¿Provider'],
+                x=DepJoinAMovil3Up['Provider'],
                 y=DepJoinAMovil3Up['2021'],
                 name='2021',
                 marker_color='rgb(72,68,242)'))
@@ -2845,22 +2847,22 @@ if select_servicio == 'Internet móvil':
   
             fig7Movil = go.Figure()
             fig7Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3Lat['ï»¿Provider'],
+                x=DepJoinAMovil3Lat['Provider'],
                 y=DepJoinAMovil3Lat['2018'],
                 name='2018',
                 marker_color='rgb(213,3,85)'))
             fig7Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3Lat['ï»¿Provider'],
+                x=DepJoinAMovil3Lat['Provider'],
                 y=DepJoinAMovil3Lat['2019'],
                 name='2019',
                 marker_color='rgb(255,152,0)'))
             fig7Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3Lat['ï»¿Provider'],
+                x=DepJoinAMovil3Lat['Provider'],
                 y=DepJoinAMovil3Lat['2020'],
                 name='2020',
                 marker_color='rgb(44,198,190)'))
             fig7Movil.add_trace(go.Bar(
-                x=DepJoinAMovil3Lat['ï»¿Provider'],
+                x=DepJoinAMovil3Lat['Provider'],
                 y=DepJoinAMovil3Lat['2021'],
                 name='2021',
                 marker_color='rgb(72,68,242)'))
