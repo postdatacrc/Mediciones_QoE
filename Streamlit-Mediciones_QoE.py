@@ -14,6 +14,7 @@ import geopandas as gpd
 import folium
 from folium.plugins import FloatImage
 import urllib
+from functools import partial, reduce
 def convert_df(df):
      return df.to_csv(index=False).encode('utf-8')
 
@@ -87,6 +88,7 @@ Opciud2Fijo=OpCiud2Fijo.replace(dict(zip(dataframe_names2, denominations_json2))
 OpCiud2Fijo=OpCiud2Fijo[OpCiud2Fijo['Test Count']>30]
 gdf2=gdf2.rename(columns={"NOMBRE_DPT":'Location'})
 
+
 ####Tercera sección - Fijo
 @st.cache(allow_output_mutation=True)
 def Seccion3Fijo():
@@ -159,9 +161,9 @@ Colombia2Fijo['Location'] = Colombia2Fijo['Location'].replace({'SANTANDER DEPART
 Colombia2Fijo=Colombia2Fijo[Colombia2Fijo['Test Count']>30]
 
 
-st.sidebar.markdown("""<b>Seleccione el servicio</b>""", unsafe_allow_html=True)
+st.markdown("""<b>Seleccione el servicio</b>""", unsafe_allow_html=True)
 
-select_servicio = st.sidebar.selectbox('Servicio',
+select_servicio = st.selectbox('Servicio',
                                     ['Internet fijo','Internet móvil','Comparación internacional'])
 
 if select_servicio == 'Internet fijo':
@@ -213,13 +215,11 @@ if select_servicio == 'Internet fijo':
             Colombia2Fijo['Location'] = Colombia2Fijo['Location'].replace({'SANTANDER DEPARTMENT':'SANTANDER','CAUCA DEPARTMENT':'CAUCA','SAN ANDRÉS AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA','NORTH SANTANDER':'NORTE DE SANTANDER','CAQUETÁ':'CAQUETA'})
             Colombia2Fijo=Colombia2Fijo[Colombia2Fijo['Test Count']>30]
             
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opFijo = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
             with col2:
-                mes_opFijo = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
                 
-            Col2Fijo=Colombia2Fijo[(Colombia2Fijo['year']==año_opFijo)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Download Speed Mbps'].mean()
+            Col2Fijo=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Download Speed Mbps'].mean()
             Col2Fijo=round(Col2Fijo,2)
             departamentos_df2Fijo=gdf2.merge(Col2Fijo, on='Location')
             departamentos_df2Fijo=departamentos_df2Fijo.sort_values(by='Download Speed Mbps')
@@ -796,14 +796,12 @@ if select_servicio == 'Internet fijo':
             st.plotly_chart(fig6Fijo, use_container_width=True)  
             st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
             
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opFijo = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
             with col2:
-                mes_opFijo = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
 
 
-            Col2bFijo=Colombia2Fijo[(Colombia2Fijo['year']==año_opFijo)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Upload Speed Mbps'].mean()
+            Col2bFijo=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Upload Speed Mbps'].mean()
             Col2bFijo=round(Col2bFijo,2)
             departamentos_df2bFijo=gdf2.merge(Col2bFijo, on='Location')
             departamentos_df2bFijo=departamentos_df2bFijo.sort_values(by='Upload Speed Mbps')  
@@ -1205,13 +1203,12 @@ if select_servicio == 'Internet fijo':
             st.plotly_chart(fig9Fijo, use_container_width=True)  
             st.download_button(label="Descargar CSV",data=convert_df(Latency1Fijo),file_name='Historico_latencia_Colombia.csv',mime='text/csv')             
 
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opFijo = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
             with col2:
-                mes_opFijo = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                
             Servidores=pd.read_excel(pathFijo+'Fij-Servidores_Colombia.xlsx')
-            ColLat2=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==12)].groupby(['Location'])['Latency'].mean()
+            ColLat2=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Latency'].mean()
             ColLat2=round(ColLat2,2)
             departamentosLat_df2Fijo=gdf2.merge(ColLat2, on='Location')
             departamentosLat_df2Fijo=departamentosLat_df2Fijo.sort_values(by='Latency')
@@ -1225,7 +1222,7 @@ if select_servicio == 'Internet fijo':
             choropleth=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=departamentosLat_df2Fijo,
-                bins=[10,20,30,50,75],
+                #bins=[10,20,30,50,75],
                 columns=['Location', 'Latency'],
                 key_on='feature.properties.NOMBRE_DPT',
                 fill_color='YlGnBu', 
@@ -1590,3 +1587,1648 @@ if select_servicio == 'Internet fijo':
 
             folium_static(dualmap1_5Fijo,width=800) 
             folium_static(dualmap1_6Fijo,width=800)  
+
+                      #################################Lectura de bases Internet móvil#######################################
+
+pathMovil='https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/'
+#### Sección 1 Móvil
+@st.cache(allow_output_mutation=True)
+def ColombiaMovil1():
+    Colombia1Movil=pd.read_csv(pathMovil+'Colombia/IndDesempe%C3%B1oMov_3G4G_(2018a2021_An).csv',encoding='latin1',error_bad_lines=False)  
+    Colombia1Movil=Colombia1Movil.drop(['Device','Platform','Metric Type'], axis=1) #Eliminar columnas      
+    return Colombia1Movil
+Colombia1Movil=ColombiaMovil1()    
+df3gAMovilDown=pd.DataFrame();df3gAMovilUp=pd.DataFrame();df3gAMovilLat=pd.DataFrame();
+df4gAMovilDown=pd.DataFrame();df4gAMovilUp=pd.DataFrame();df4gAMovilLat=pd.DataFrame();
+dfTotAMovilDown=pd.DataFrame();dfTotAMovilUp=pd.DataFrame();dfTotAMovilLat=pd.DataFrame()     
+p3gAMovil=(Colombia1Movil.loc[(Colombia1Movil['Technology Type']=='3g'),['Aggregate Date','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Aggregate Date']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p4gAMovil=(Colombia1Movil.loc[(Colombia1Movil['Technology Type']=='lte'),['Aggregate Date','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Aggregate Date']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+pTotAMovil=(Colombia1Movil.loc[(Colombia1Movil['Technology Type']=='cellular'),['Aggregate Date','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Aggregate Date']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+df3gAMovilDown['year']=p3gAMovil.index; df3gAMovilDown['3g']=p3gAMovil['Download Speed Mbps'].values;
+df4gAMovilDown['year']=p4gAMovil.index;df4gAMovilDown['4g']=p4gAMovil['Download Speed Mbps'].values;
+dfTotAMovilDown['year']=pTotAMovil.index;dfTotAMovilDown['Total']=pTotAMovil['Download Speed Mbps'].values;
+df3gAMovilUp['year']=p3gAMovil.index; df3gAMovilUp['3g']=p3gAMovil['Upload Speed Mbps'].values;
+df4gAMovilUp['year']=p4gAMovil.index;df4gAMovilUp['4g']=p4gAMovil['Upload Speed Mbps'].values;
+dfTotAMovilUp['year']=pTotAMovil.index;dfTotAMovilUp['Total']=pTotAMovil['Upload Speed Mbps'].values;
+df3gAMovilLat['year']=p3gAMovil.index; df3gAMovilLat['3g']=p3gAMovil['Latency'].values;
+df4gAMovilLat['year']=p4gAMovil.index;df4gAMovilLat['4g']=p4gAMovil['Latency'].values;
+dfTotAMovilLat['year']=pTotAMovil.index;dfTotAMovilLat['Total']=pTotAMovil['Latency'].values;
+DepJoinAMovilDown=reduce(lambda x,y: pd.merge(x,y, on='year', how='outer'), [df3gAMovilDown,df4gAMovilDown,dfTotAMovilDown]).round(2).reset_index()
+DepJoinAMovilUp=reduce(lambda x,y: pd.merge(x,y, on='year', how='outer'), [df3gAMovilUp,df4gAMovilUp,dfTotAMovilUp]).round(2).reset_index()
+DepJoinAMovilLat=reduce(lambda x,y: pd.merge(x,y, on='year', how='outer'), [df3gAMovilLat,df4gAMovilLat,dfTotAMovilLat]).round(2).reset_index()      
+   
+
+#### Sección 2 Móvil
+@st.cache(allow_output_mutation=True)
+def ColombiaMovil2():
+    Colombia2Movil=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_Total(2021Mens).csv',encoding='latin-1') 
+    Colombia2Movil['Location']=Colombia2Movil['Location'].str.split(',',expand=True)[0]#Guardar sólo departamentos
+    FeAntig=Colombia2Movil['Aggregate Date'].unique() #Generar las fechas que tenían los datos
+    FeCorre=pd.date_range('2021-01-01','2021-12-01', 
+                  freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
+    diction=dict(zip(FeAntig, FeCorre))
+    Colombia2Movil['Aggregate Date'].replace(diction, inplace=True) #Reemplazar fechas antiguas por nuevas
+    Colombia2Movil['Aggregate Date'] =pd.to_datetime(Colombia2Movil['Aggregate Date']).dt.floor('d') 
+    Colombia2Movil['month']=pd.DatetimeIndex(Colombia2Movil['Aggregate Date']).month
+    Colombia2Movil['year']=pd.DatetimeIndex(Colombia2Movil['Aggregate Date']).year
+    Colombia2Movil = Colombia2Movil.drop(['Device','Platform','Technology Type','Metric Type'],axis=1)
+    Colombia2Movil['Location'] = Colombia2Movil['Location'].str.upper()
+    Colombia2Movil['Location'] = Colombia2Movil['Location'].replace({'SANTANDER DEPARTMENT':'SANTANDER','CAUCA DEPARTMENT':'CAUCA', 'SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA','NORTH SANTANDER':'NORTE DE SANTANDER','CAQUETÃ¡':'CAQUETA'})
+    Colombia2Movil=Colombia2Movil[Colombia2Movil['Test Count']>30]
+    return Colombia2Movil
+Colombia2Movil=ColombiaMovil2()
+
+#### Sección 3 Móvil
+@st.cache(allow_output_mutation=True)
+def ColombiaMovil3():
+    Colombia3Movil=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Operadores/IndDesempe%C3%B1oMov_Operad_(2018a2021_An).csv')
+    Colombia3Movil=Colombia3Movil.drop(['Device','Platform','Metric Type','Location'],axis=1)
+    Colombia3Movil=Colombia3Movil.rename(columns={'ï»¿Provider':'Provider'})
+    return Colombia3Movil
+Colombia3Movil = ColombiaMovil3()
+df18AMovil3=pd.DataFrame();df18AMovil3Up=pd.DataFrame();df18AMovil3Lat=pd.DataFrame();
+df19AMovil3=pd.DataFrame();df19AMovil3Up=pd.DataFrame();df19AMovil3Lat=pd.DataFrame();
+df20AMovil3=pd.DataFrame();df20AMovil3Up=pd.DataFrame();df20AMovil3Lat=pd.DataFrame();
+df21AMovil3=pd.DataFrame();df21AMovil3Up=pd.DataFrame();df21AMovil3Lat=pd.DataFrame();
+p18AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2018),['ï»¿Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['ï»¿Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p19AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2019),['ï»¿Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['ï»¿Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p20AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2020),['ï»¿Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['ï»¿Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p21AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2021),['ï»¿Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['ï»¿Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+df18AMovil3['ï»¿Provider']=p18AMovil3.index; df18AMovil3['2018']=p18AMovil3['Download Speed Mbps'].values;
+df19AMovil3['ï»¿Provider']=p19AMovil3.index; df19AMovil3['2019']=p19AMovil3['Download Speed Mbps'].values;
+df20AMovil3['ï»¿Provider']=p20AMovil3.index; df20AMovil3['2020']=p20AMovil3['Download Speed Mbps'].values;
+df21AMovil3['ï»¿Provider']=p21AMovil3.index; df21AMovil3['2021']=p21AMovil3['Download Speed Mbps'].values;
+df18AMovil3Up['ï»¿Provider']=p18AMovil3.index; df18AMovil3Up['2018']=p18AMovil3['Upload Speed Mbps'].values;
+df19AMovil3Up['ï»¿Provider']=p19AMovil3.index; df19AMovil3Up['2019']=p19AMovil3['Upload Speed Mbps'].values;
+df20AMovil3Up['ï»¿Provider']=p20AMovil3.index; df20AMovil3Up['2020']=p20AMovil3['Upload Speed Mbps'].values;
+df21AMovil3Up['ï»¿Provider']=p21AMovil3.index; df21AMovil3Up['2021']=p21AMovil3['Upload Speed Mbps'].values;
+df18AMovil3Lat['ï»¿Provider']=p18AMovil3.index; df18AMovil3Lat['2018']=p18AMovil3['Latency'].values;
+df19AMovil3Lat['ï»¿Provider']=p19AMovil3.index; df19AMovil3Lat['2019']=p19AMovil3['Latency'].values;
+df20AMovil3Lat['ï»¿Provider']=p20AMovil3.index; df20AMovil3Lat['2020']=p20AMovil3['Latency'].values;
+df21AMovil3Lat['ï»¿Provider']=p21AMovil3.index; df21AMovil3Lat['2021']=p21AMovil3['Latency'].values;
+DepJoinAMovil3=pd.concat([df18AMovil3,df19AMovil3,df20AMovil3,df21AMovil3]).round(2).reset_index()
+DepJoinAMovil3Up=pd.concat([df18AMovil3Up,df19AMovil3Up,df20AMovil3Up,df21AMovil3Up]).round(2).reset_index()
+DepJoinAMovil3Lat=pd.concat([df18AMovil3Lat,df19AMovil3Lat,df20AMovil3Lat,df21AMovil3Lat]).round(2).reset_index()
+#### Sección 4 Móvil
+@st.cache(allow_output_mutation=True)
+def OpDepartMovil1():
+    df1=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_MovAvanETB(2018).csv')
+    df2=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_MovAvanETB(2019).csv')
+    df3=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_MovAvanETB(2020).csv')
+    df4=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_MovAvanETB(2021).csv')
+    df5=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_TigWomCla(2018).csv')
+    df6=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_TigWomCla(2019).csv')
+    df7=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_TigWomCla(2020).csv')
+    df8=pd.read_csv(pathMovil+'Departamentos/IndDesempe%C3%B1oMov_Dep_TigWomCla(2021).csv')
+    OpCiudMovil1=pd.concat([df1,df2,df3,df4,df5,df6,df7,df8])
+    return OpCiudMovil1
+OpCiudMovil1=OpDepartMovil1()
+OpCiudMovil1['Location']=OpCiudMovil1['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
+FeAntigMovil1=OpCiudMovil1['Aggregate Date'].unique() #Generar las fechas que tenían los datos
+FeCorreMovil1=pd.date_range('2018-01-01','2021-12-01', 
+              freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
+dictionMovil1=dict(zip(FeAntigMovil1, FeCorreMovil1))
+OpCiudMovil1['Aggregate Date'].replace(dictionMovil1, inplace=True) #Reemplazar fechas antiguas por nuevas
+OpCiudMovil1['Aggregate Date'] =pd.to_datetime(OpCiudMovil1['Aggregate Date']).dt.floor('d') 
+OpCiudMovil1['month']=pd.DatetimeIndex(OpCiudMovil1['Aggregate Date']).month
+OpCiudMovil1['year']=pd.DatetimeIndex(OpCiudMovil1['Aggregate Date']).year
+OpCiudMovil1 = OpCiudMovil1.drop(['Device','Platform','Technology Type','Metric Type'],axis=1)
+OpCiudMovil1['Location'] = OpCiudMovil1['Location'].str.upper()
+OpCiudMovil1['Location'] = OpCiudMovil1['Location'].replace({'SANTANDER DEPARTMENT':'SANTANDER','CAUCA DEPARTMENT':'CAUCA','SAN ANDRÉS AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA','NORTH SANTANDER':'NORTE DE SANTANDER','CAQUETÁ':'CAQUETA'})
+dataframe_namesMovil1=sorted(OpCiudMovil1.Location.unique().tolist())
+OpCiudMovil1=OpCiudMovil1.replace(dict(zip(dataframe_namesMovil1, denominations_json2)))
+OpCiudMovil1=OpCiudMovil1[OpCiudMovil1['Test Count']>30]
+#### Sección 5 Móvil
+#@st.cache(allow_output_mutation=True)
+def CiudadMovil1():
+    Ciudades=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Ciudades/IndDesempe%C3%B1oMov_Ciud_(2018a2021_An).csv')
+    Ciudades['Location']=Ciudades['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
+    Ciudades=Ciudades.drop(['Device','Platform','Metric Type','Provider'], axis=1) #Eliminar columnas
+    return Ciudades
+CiudadMovil1=CiudadMovil1()
+df18A=pd.DataFrame();df18AUp=pd.DataFrame();df18ALat=pd.DataFrame();
+df19A=pd.DataFrame();df19AUp=pd.DataFrame();df19ALat=pd.DataFrame();
+df20A=pd.DataFrame();df20AUp=pd.DataFrame();df20ALat=pd.DataFrame();
+df21A=pd.DataFrame();df21AUp=pd.DataFrame();df21ALat=pd.DataFrame();
+p18A=(CiudadMovil1.loc[(CiudadMovil1['Aggregate Date']==2018),['Location','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Location']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p19A=(CiudadMovil1.loc[(CiudadMovil1['Aggregate Date']==2019),['Location','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Location']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p20A=(CiudadMovil1.loc[(CiudadMovil1['Aggregate Date']==2020),['Location','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Location']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p21A=(CiudadMovil1.loc[(CiudadMovil1['Aggregate Date']==2021),['Location','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Location']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+df18A['Location']=p18A.index; df18A['2018']=p18A['Download Speed Mbps'].values;
+df19A['Location']=p19A.index; df19A['2019']=p19A['Download Speed Mbps'].values;
+df20A['Location']=p20A.index; df20A['2020']=p20A['Download Speed Mbps'].values;
+df21A['Location']=p21A.index; df21A['2021']=p21A['Download Speed Mbps'].values;
+df18AUp['Location']=p18A.index; df18AUp['2018']=p18A['Upload Speed Mbps'].values;
+df19AUp['Location']=p19A.index; df19AUp['2019']=p19A['Upload Speed Mbps'].values;
+df20AUp['Location']=p20A.index; df20AUp['2020']=p20A['Upload Speed Mbps'].values;
+df21AUp['Location']=p21A.index; df21AUp['2021']=p21A['Upload Speed Mbps'].values;
+df18ALat['Location']=p18A.index; df18ALat['2018']=p18A['Latency'].values;
+df19ALat['Location']=p19A.index; df19ALat['2019']=p19A['Latency'].values;
+df20ALat['Location']=p20A.index; df20ALat['2020']=p20A['Latency'].values;
+df21ALat['Location']=p21A.index; df21ALat['2021']=p21A['Latency'].values;
+DepJoinAMovil4=reduce(lambda x,y: pd.merge(x,y, on='Location', how='outer'), [df18A,df19A,df20A,df21A]).round(2).reset_index()
+DepJoinAMovil4 = DepJoinAMovil4[DepJoinAMovil4.Location != 'Colombia']
+DepJoinAMovil4 = DepJoinAMovil4.sort_values(by=['2021'],ascending=True)
+DepJoinAMovil4Up=reduce(lambda x,y: pd.merge(x,y, on='Location', how='outer'), [df18AUp,df19AUp,df20AUp,df21AUp]).round(2).reset_index()
+DepJoinAMovil4Up = DepJoinAMovil4Up[DepJoinAMovil4Up.Location != 'Colombia']
+DepJoinAMovil4Up = DepJoinAMovil4Up.sort_values(by=['2021'],ascending=True)
+DepJoinAMovil4Lat=reduce(lambda x,y: pd.merge(x,y, on='Location', how='outer'), [df18ALat,df19ALat,df20ALat,df21ALat]).round(2).reset_index()
+DepJoinAMovil4Lat = DepJoinAMovil4Lat[DepJoinAMovil4Lat.Location != 'Colombia']
+DepJoinAMovil4Lat = DepJoinAMovil4Lat.sort_values(by=['2021'],ascending=True)    
+
+#### Sección 5 Móvil
+def ColombiaMovil5():
+    df1=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Colombia/IndDesempe%C3%B1oMov_3G4G_(2018mens).csv')
+    df2=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Colombia/IndDesempe%C3%B1oMov_3G4G_(2019mens).csv')
+    df3=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Colombia/IndDesempe%C3%B1oMov_3G4G_(2020mens).csv')
+    df4=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Colombia/IndDesempe%C3%B1oMov_3G4G_(2021mens).csv')
+    Operadores=pd.concat([df1,df2,df3,df4])
+    FeAntig=Operadores['Aggregate Date'].unique() #Generar las fechas que tenían los datos
+    FeCorre=pd.date_range('2018-01-01','2021-12-01', 
+                  freq='MS').strftime("%d-%b-%y").tolist() #lista de fechas en el periodo seleccionado
+    diction=dict(zip(FeAntig, FeCorre))
+    Operadores['Aggregate Date'].replace(diction, inplace=True) #Reemplazar fechas antiguas por nuevas
+    Operadores['Aggregate Date'] =pd.to_datetime(Operadores['Aggregate Date']).dt.floor('d') 
+    Operadores['month']=pd.DatetimeIndex(Operadores['Aggregate Date']).month
+    Operadores['year']=pd.DatetimeIndex(Operadores['Aggregate Date']).year
+    Operadores = Operadores.drop(['Location','Device','Platform','Metric Type'],axis=1)
+    df3gA=pd.DataFrame();df4gA=pd.DataFrame();dfTotA=pd.DataFrame()
+    #Clasificar información por tecnología, y extraer información de interés
+    p3gA=(Operadores.loc[(Operadores['Technology Type']=='3g'),['Aggregate Date','Latency']]).groupby(['Aggregate Date'])['Latency'].mean()
+    p4gA=(Operadores.loc[(Operadores['Technology Type']=='lte'),['Aggregate Date','Latency']]).groupby(['Aggregate Date'])['Latency'].mean()
+    pTotA=(Operadores.loc[(Operadores['Technology Type']=='cellular'),['Aggregate Date','Latency']]).groupby(['Aggregate Date'])['Latency'].mean()
+    #Agregar información a los dataframe, con el adecuado formato
+    df3gA['Date']=p3gA.index; df3gA['3g']=p3gA.values;
+    df4gA['Date']=p4gA.index;df4gA['4g']=p4gA.values;
+    dfTotA['Date']=pTotA.index;dfTotA['Total']=pTotA.values;
+    #Unir y organizar los dataframe creados
+    from functools import reduce
+    DepJoinA=reduce(lambda x,y: pd.merge(x,y, on='Date', how='outer'), [df3gA,df4gA,dfTotA]).set_index('Date')
+    DepJoinA=DepJoinA.round(2).reset_index()
+    return DepJoinA
+ColombiaMovil5=ColombiaMovil5()    
+    
+
+if select_servicio == 'Internet móvil':
+    select_indicador=st.selectbox('Indicador de desempeño y cobertura',['Velocidad de descarga','Velocidad de carga','Latencia','Registro en red','Registro en red 4G'])    
+    if select_indicador== 'Velocidad de descarga':
+        dimension_Vel_descarga_Movil = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)
+        if dimension_Vel_descarga_Movil == 'Histórico Colombia':    
+            fig1Movil = go.Figure()
+            fig1Movil.add_trace(go.Bar(
+                x=DepJoinAMovilDown['year'], 
+                y=DepJoinAMovilDown['3g'],
+                name='3G',
+                marker_color='rgb(143,170,220)',width=[0.25,0.25,0.25,0.25]))
+            fig1Movil.add_trace(go.Bar(
+                x=DepJoinAMovilDown['year'],
+                y=DepJoinAMovilDown['4g'],
+                name='4G',
+                marker_color='rgb(244,177,131)',width=[0.25,0.25,0.25,0.25]))
+            fig1Movil.add_trace(go.Bar(
+                x=DepJoinAMovilDown['year'],
+                y=DepJoinAMovilDown['Total'],
+                name='Total',
+                marker_color='rgb(255,217,102)',width=[0.25,0.25,0.25,0.25]))
+            fig1Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig1Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=18),titlefont_size=18, title_text='Velocidad descarga promedio (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig1Movil.update_traces(textfont_size=18)
+            fig1Movil.update_layout(height=500,legend_title=None)
+            fig1Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.3))
+            fig1Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig1Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Velocidad promedio anual de descarga de internet móvil en <br>Colombia (2018-2021) (en Mbps) </b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})  
+                
+            st.plotly_chart(fig1Movil, use_container_width=True)    
+
+            col1, col2,col3= st.columns(3)
+            with col2:
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes_opMovil)].groupby(['Location'])['Download Speed Mbps'].mean().reset_index()
+            ColMovil1=round(ColMovil1,2)
+            ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
+            departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')                
+            
+            colombia_map1Movil = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=True,
+               dragging=True)            
+            tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+            for tile in tiles:
+                folium.TileLayer(tile).add_to(colombia_map1Movil)
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=departamentos_dfMovil1,
+                columns=['Location', 'Download Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de descarga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(colombia_map1Movil)
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+            folium.LayerControl().add_to(colombia_map1Movil)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = departamentos_dfMovil1,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Download Speed Mbps'],
+                    aliases=['Departamento','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            colombia_map1Movil.add_child(NIL)
+            colombia_map1Movil.keep_in_front(NIL)
+            col1, col2 ,col3= st.columns([1,4,1])
+            with col2:
+                st.markdown("<center><b> Velocidad promedio de descarga de internet móvil en Colombia por departamento (en Mbps)</b></center>",
+                unsafe_allow_html=True)
+                folium_static(colombia_map1Movil,width=480) 
+
+        if dimension_Vel_descarga_Movil == 'Operadores':
+            
+            fig2Movil = go.Figure()
+            fig2Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3['ï»¿Provider'],
+                y=DepJoinAMovil3['2018'],
+                name='2018',
+                marker_color='rgb(213,3,85)'))
+            fig2Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3['ï»¿Provider'],
+                y=DepJoinAMovil3['2019'],
+                name='2019',
+                marker_color='rgb(255,152,0)'))
+            fig2Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3['ï»¿Provider'],
+                y=DepJoinAMovil3['2020'],
+                name='2020',
+                marker_color='rgb(44,198,190)'))
+            fig2Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3['ï»¿Provider'],
+                y=DepJoinAMovil3['2021'],
+                name='2021',
+                marker_color='rgb(72,68,242)'))
+            fig2Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig2Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=18),titlefont_size=18, title_text='Velocidad descarga promedio (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig2Movil.update_traces(textfont_size=18)
+            fig2Movil.update_layout(height=500,legend_title=None)
+            fig2Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig2Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig2Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Velocidad promedio anual de descarga de internet móvil <br>Por operador (2018-2021) (en Mbps) </b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})          
+
+            st.plotly_chart(fig2Movil, use_container_width=True)                   
+
+            col1, col2 = st.columns(2)
+            with col1:
+                año_opMovil = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            with col2:
+                mes_opMovil = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)                  
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+                pass
+            else:    
+                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor1Movil['Download Speed Mbps'] =round(Proveedor1Movil['Download Speed Mbps'], 2)
+                final_df1Movil=gdf2.merge(Proveedor1Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+                pass
+            else:                
+                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor2Movil['Download Speed Mbps'] =round(Proveedor2Movil['Download Speed Mbps'], 2)
+                final_df2Movil=gdf2.merge(Proveedor2Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+                pass
+            else:                
+                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor3Movil['Download Speed Mbps'] =round(Proveedor3Movil['Download Speed Mbps'], 2)
+                final_df3Movil=gdf2.merge(Proveedor3Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+                pass
+            else:                
+                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor4Movil['Download Speed Mbps'] =round(Proveedor4Movil['Download Speed Mbps'], 2)
+                final_df4Movil=gdf2.merge(Proveedor4Movil, on='Location')   
+            ##       
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+                pass
+            else:                
+                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor5Movil['Download Speed Mbps'] =round(Proveedor5Movil['Download Speed Mbps'], 2)
+                final_df5Movil=gdf2.merge(Proveedor5Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+                final_df6Movil=gdf2
+                final_df6Movil['Download Speed Mbps']=np.nan
+            else:                
+                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor6Movil['Download Speed Mbps'] =round(Proveedor6Movil['Download Speed Mbps'], 2)
+                final_df6Movil=gdf2.merge(Proveedor6Movil, on='Location')              
+
+            dualmap1_1Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df1Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Download Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de descarga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_1Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df2Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Download Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de descarga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_1Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_1Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_1Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df1Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Download Speed Mbps'],
+                    aliases=['Departamento','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df2Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Download Speed Mbps'],
+                    aliases=['Departamento','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_1Movil.m1.add_child(NIL1)
+            dualmap1_1Movil.m1.keep_in_front(NIL1)
+            dualmap1_1Movil.m2.add_child(NIL2)
+            dualmap1_1Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/avantel.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/claro.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_1Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_1Movil.m2)
+
+            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df3Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Download Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de descarga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_2Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df4Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Download Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de descarga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_2Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_2Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_2Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df3Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Download Speed Mbps'],
+                    aliases=['Departamento','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df4Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Download Speed Mbps'],
+                    aliases=['Departamento','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_2Movil.m1.add_child(NIL1)
+            dualmap1_2Movil.m1.keep_in_front(NIL1)
+            dualmap1_2Movil.m2.add_child(NIL2)
+            dualmap1_2Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/etb.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/movistar.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_2Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_2Movil.m2)
+            
+            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df5Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Download Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de descarga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_3Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df6Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Download Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de descarga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_3Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_3Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_3Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df5Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Download Speed Mbps'],
+                    aliases=['Departamento','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df6Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Download Speed Mbps'],
+                    aliases=['Departamento','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_3Movil.m1.add_child(NIL1)
+            dualmap1_3Movil.m1.keep_in_front(NIL1)
+            dualmap1_3Movil.m2.add_child(NIL2)
+            dualmap1_3Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/tigo.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/wom.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_3Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_3Movil.m2)
+            
+            folium_static(dualmap1_1Movil,width=800) 
+            folium_static(dualmap1_2Movil,width=800)
+            folium_static(dualmap1_3Movil,width=800)   
+
+        if dimension_Vel_descarga_Movil == 'Ciudades':
+            fig3Movil=go.Figure()
+            fig3Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4['Location'],
+                y=DepJoinAMovil4['2018'],
+                name='2018',
+                marker_color='rgb(213,3,85)'))
+            fig3Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4['Location'],
+                y=DepJoinAMovil4['2019'],
+                name='2019',
+                marker_color='rgb(255,152,0)'))
+            fig3Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4['Location'],
+                y=DepJoinAMovil4['2020'],
+                name='2020',
+                marker_color='rgb(44,198,190)'))
+            fig3Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4['Location'],
+                y=DepJoinAMovil4['2021'],
+                name='2021',
+                marker_color='rgb(72,68,242)'))
+
+            fig3Movil.update_xaxes(tickangle=-90, tickfont=dict(family='Arial', color='black', size=14),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig3Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=14),titlefont_size=14, title_text='Velocidad descarga promedio (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig3Movil.update_traces(textfont_size=18)
+            fig3Movil.update_layout(height=500,legend_title=None)
+            fig3Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig3Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig3Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Velocidad promedio anual de descarga de internet móvil <br>por ciudad (2018-2021) (en Mbps) </b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})  
+            
+            st.plotly_chart(fig3Movil, use_container_width=True) 
+            
+    if select_indicador== 'Velocidad de carga':
+        dimension_Vel_carga_Movil = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)            
+        if dimension_Vel_carga_Movil == 'Histórico Colombia':    
+            fig4Movil = go.Figure()
+            fig4Movil.add_trace(go.Bar(
+                x=DepJoinAMovilUp['year'], 
+                y=DepJoinAMovilUp['3g'],
+                name='3G',
+                marker_color='rgb(143,170,220)',width=[0.25,0.25,0.25,0.25]))
+            fig4Movil.add_trace(go.Bar(
+                x=DepJoinAMovilUp['year'],
+                y=DepJoinAMovilUp['4g'],
+                name='4G',
+                marker_color='rgb(244,177,131)',width=[0.25,0.25,0.25,0.25]))
+            fig4Movil.add_trace(go.Bar(
+                x=DepJoinAMovilUp['year'],
+                y=DepJoinAMovilUp['Total'],
+                name='Total',
+                marker_color='rgb(255,217,102)',width=[0.25,0.25,0.25,0.25]))
+            fig4Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig4Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=18),titlefont_size=18, title_text='Velocidad de carga promedio (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig4Movil.update_traces(textfont_size=18)
+            fig4Movil.update_layout(height=500,legend_title=None)
+            fig4Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.3))
+            fig4Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig4Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Velocidad promedio anual de carga de internet móvil en <br>Colombia (2018-2021) (en Mbps) </b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})  
+                
+            st.plotly_chart(fig4Movil, use_container_width=True)    
+
+            col1, col2,col3= st.columns(3)
+            with col2:
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)  
+
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes_opMovil)].groupby(['Location'])['Upload Speed Mbps'].mean().reset_index()
+            ColMovil1=round(ColMovil1,2)
+            ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
+            departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')    
+            
+            colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=True,
+               dragging=True)            
+            tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+            for tile in tiles:
+                folium.TileLayer(tile).add_to(colombia_map1Movi2)
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=departamentos_dfMovil1,
+                columns=['Location', 'Upload Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de carga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(colombia_map1Movi2)
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+            folium.LayerControl().add_to(colombia_map1Movi2)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = departamentos_dfMovil1,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Upload Speed Mbps'],
+                    aliases=['Departamento','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            colombia_map1Movi2.add_child(NIL)
+            colombia_map1Movi2.keep_in_front(NIL)
+            col1, col2 ,col3= st.columns([1,4,1])
+            with col2:
+                st.markdown("<center><b> Velocidad promedio de carga de internet móvil en Colombia por departamento (en Mbps)</b></center>",
+                unsafe_allow_html=True)
+                folium_static(colombia_map1Movi2,width=480) 
+                
+        if dimension_Vel_carga_Movil == 'Operadores':  
+  
+            fig6Movil = go.Figure()
+            fig6Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3Up['ï»¿Provider'],
+                y=DepJoinAMovil3Up['2018'],
+                name='2018',
+                marker_color='rgb(213,3,85)'))
+            fig6Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3Up['ï»¿Provider'],
+                y=DepJoinAMovil3Up['2019'],
+                name='2019',
+                marker_color='rgb(255,152,0)'))
+            fig6Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3Up['ï»¿Provider'],
+                y=DepJoinAMovil3Up['2020'],
+                name='2020',
+                marker_color='rgb(44,198,190)'))
+            fig6Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3Up['ï»¿Provider'],
+                y=DepJoinAMovil3Up['2021'],
+                name='2021',
+                marker_color='rgb(72,68,242)'))
+            fig6Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig6Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=18),titlefont_size=18, title_text='Velocidad de carga promedio (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig6Movil.update_traces(textfont_size=18)
+            fig6Movil.update_layout(height=500,legend_title=None)
+            fig6Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig6Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig6Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Velocidad promedio anual de carga de Internet móvil <br>Por operador (2018-2021) (en Mbps) </b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})          
+
+            st.plotly_chart(fig6Movil, use_container_width=True)                   
+
+            col1, col2 = st.columns(2)
+            with col1:
+                año_opMovil = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            with col2:
+                mes_opMovil = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)                  
+
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+                pass
+            else:    
+                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor1Movil['Upload Speed Mbps'] =round(Proveedor1Movil['Upload Speed Mbps'], 2)
+                final_df1Movil=gdf2.merge(Proveedor1Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+                pass
+            else:                
+                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor2Movil['Upload Speed Mbps'] =round(Proveedor2Movil['Upload Speed Mbps'], 2)
+                final_df2Movil=gdf2.merge(Proveedor2Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+                pass
+            else:                
+                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor3Movil['Upload Speed Mbps'] =round(Proveedor3Movil['Upload Speed Mbps'], 2)
+                final_df3Movil=gdf2.merge(Proveedor3Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+                pass
+            else:                
+                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor4Movil['Upload Speed Mbps'] =round(Proveedor4Movil['Upload Speed Mbps'], 2)
+                final_df4Movil=gdf2.merge(Proveedor4Movil, on='Location')   
+            ##       
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+                pass
+            else:                
+                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor5Movil['Upload Speed Mbps'] =round(Proveedor5Movil['Upload Speed Mbps'], 2)
+                final_df5Movil=gdf2.merge(Proveedor5Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+                final_df6Movil=gdf2
+                final_df6Movil['Upload Speed Mbps']=np.nan
+            else:                
+                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor6Movil['Upload Speed Mbps'] =round(Proveedor6Movil['Upload Speed Mbps'], 2)
+                final_df6Movil=gdf2.merge(Proveedor6Movil, on='Location')              
+
+            dualmap1_1Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df1Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Upload Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de carga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_1Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df2Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Upload Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de carga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_1Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_1Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_1Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df1Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Upload Speed Mbps'],
+                    aliases=['Departamento','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df2Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Upload Speed Mbps'],
+                    aliases=['Departamento','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_1Movil.m1.add_child(NIL1)
+            dualmap1_1Movil.m1.keep_in_front(NIL1)
+            dualmap1_1Movil.m2.add_child(NIL2)
+            dualmap1_1Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/avantel.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/claro.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_1Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_1Movil.m2)
+
+            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df3Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Upload Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de de carga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_2Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df4Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Upload Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de de carga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_2Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_2Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_2Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df3Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Upload Speed Mbps'],
+                    aliases=['Departamento','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df4Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Upload Speed Mbps'],
+                    aliases=['Departamento','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_2Movil.m1.add_child(NIL1)
+            dualmap1_2Movil.m1.keep_in_front(NIL1)
+            dualmap1_2Movil.m2.add_child(NIL2)
+            dualmap1_2Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/etb.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/movistar.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_2Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_2Movil.m2)
+            
+            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df5Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Upload Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de de carga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_3Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df6Movil,
+                bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Upload Speed Mbps'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Velocidad de de carga (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_3Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_3Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_3Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df5Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Upload Speed Mbps'],
+                    aliases=['Departamento','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df6Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Upload Speed Mbps'],
+                    aliases=['Departamento','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_3Movil.m1.add_child(NIL1)
+            dualmap1_3Movil.m1.keep_in_front(NIL1)
+            dualmap1_3Movil.m2.add_child(NIL2)
+            dualmap1_3Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/tigo.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/wom.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_3Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_3Movil.m2)
+            
+            folium_static(dualmap1_1Movil,width=800) 
+            folium_static(dualmap1_2Movil,width=800)
+            folium_static(dualmap1_3Movil,width=800)   
+
+        if dimension_Vel_carga_Movil == 'Ciudades':
+            
+            fig8Movil=go.Figure()
+            fig8Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4Up['Location'],
+                y=DepJoinAMovil4Up['2018'],
+                name='2018',
+                marker_color='rgb(213,3,85)'))
+            fig8Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4Up['Location'],
+                y=DepJoinAMovil4Up['2019'],
+                name='2019',
+                marker_color='rgb(255,152,0)'))
+            fig8Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4Up['Location'],
+                y=DepJoinAMovil4Up['2020'],
+                name='2020',
+                marker_color='rgb(44,198,190)'))
+            fig8Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4Up['Location'],
+                y=DepJoinAMovil4Up['2021'],
+                name='2021',
+                marker_color='rgb(72,68,242)'))
+
+            fig8Movil.update_xaxes(tickangle=-90, tickfont=dict(family='Arial', color='black', size=14),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig8Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=14),titlefont_size=14, title_text='Velocidad de carga promedio (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig8Movil.update_traces(textfont_size=18)
+            fig8Movil.update_layout(height=500,legend_title=None)
+            fig8Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig8Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig8Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Velocidad promedio anual de carga de internet móvil <br>por ciudad (2018-2021) (en Mbps) </b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})  
+            
+            st.plotly_chart(fig8Movil, use_container_width=True) 
+
+
+    if select_indicador== 'Latencia':
+        dimension_Vel_carga_Movil = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)            
+        if dimension_Vel_carga_Movil == 'Histórico Colombia':    
+            fig5Movil = make_subplots(rows=1,cols=1)
+            fig5Movil.add_trace(go.Scatter(x=ColombiaMovil5['Date'], y=ColombiaMovil5['Total'],line=dict(color='rgb(255,192,0)', width=1.5),marker=dict(
+                        color='white',line=dict(color='rgb(255,192,0)',width=1),size=5),mode='lines+markers',name='Total'),row=1, col=1)
+            fig5Movil.add_trace(go.Scatter(x=ColombiaMovil5['Date'], y=ColombiaMovil5['3g'],
+                                     line=dict(color='rgb(68,114,196)', width=1.5),marker=dict(
+                        color='white',line=dict(color='rgb(68,114,196)',width=1),size=5),mode='lines+markers',name='3G'),row=1, col=1)
+            fig5Movil.add_trace(go.Scatter(x=ColombiaMovil5['Date'], y=ColombiaMovil5['4g'],
+                         line=dict(color='rgb(237,125,49)', width=1.5),marker=dict(
+                         color='white',line=dict(color='rgb(237,125,49)',width=1),size=5),mode='lines+markers',name='4G'),row=1, col=1)
+                         
+            fig5Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=12),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig5Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=14),titlefont_size=14, title_text='Latencia promedio<br>(ms)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig5Movil.update_traces(textfont_size=14)
+            fig5Movil.update_layout(height=500,legend_title=None,font=dict(size=14))
+            fig5Movil.update_layout(legend=dict(orientation="h",y=1.02,x=0.33),showlegend=True)
+            fig5Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+            fig5Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=14,
+            title={
+            'text': "<b>Latencia promedio mensual de Internet móvil en<br> Colomia (2018-2021) (en ms)</b>",
+            'y':0.85,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})  
+            fig5Movil.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01'])
+
+                
+            st.plotly_chart(fig5Movil, use_container_width=True)    
+
+            col1, col2,col3= st.columns(3)
+            with col2:
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)                    
+            
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes_opMovil)].groupby(['Location'])['Latency'].mean().reset_index()
+            ColMovil1=round(ColMovil1,2)
+            ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
+            departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')    
+            
+            colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=True,
+               dragging=True)            
+            tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+            for tile in tiles:
+                folium.TileLayer(tile).add_to(colombia_map1Movi2)
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=departamentos_dfMovil1,
+                columns=['Location', 'Latency'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(colombia_map1Movi2)
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+            folium.LayerControl().add_to(colombia_map1Movi2)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = departamentos_dfMovil1,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Latency'],
+                    aliases=['Departamento','Latencia'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            colombia_map1Movi2.add_child(NIL)
+            colombia_map1Movi2.keep_in_front(NIL)
+            
+            col1, col2 ,col3= st.columns([1,4,1])
+        
+            with col2:
+                st.markdown("<center><b> Latencia promedio de internet móvil en Colombia por departamento (en Mbps)</b></center>",
+                unsafe_allow_html=True)
+                folium_static(colombia_map1Movi2,width=480) 
+
+        if dimension_Vel_carga_Movil == 'Operadores':  
+  
+            fig7Movil = go.Figure()
+            fig7Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3Lat['ï»¿Provider'],
+                y=DepJoinAMovil3Lat['2018'],
+                name='2018',
+                marker_color='rgb(213,3,85)'))
+            fig7Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3Lat['ï»¿Provider'],
+                y=DepJoinAMovil3Lat['2019'],
+                name='2019',
+                marker_color='rgb(255,152,0)'))
+            fig7Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3Lat['ï»¿Provider'],
+                y=DepJoinAMovil3Lat['2020'],
+                name='2020',
+                marker_color='rgb(44,198,190)'))
+            fig7Movil.add_trace(go.Bar(
+                x=DepJoinAMovil3Lat['ï»¿Provider'],
+                y=DepJoinAMovil3Lat['2021'],
+                name='2021',
+                marker_color='rgb(72,68,242)'))
+            fig7Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig7Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=18),titlefont_size=18, title_text='Latencia promedio (ms)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig7Movil.update_traces(textfont_size=18)
+            fig7Movil.update_layout(height=500,legend_title=None)
+            fig7Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig7Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig7Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Latencia promedio de Internet móvil <br>Por operador (2018-2021) (en ms) </b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})          
+
+            st.plotly_chart(fig7Movil, use_container_width=True)                   
+
+            col1, col2 = st.columns(2)
+            with col1:
+                año_opMovil = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            with col2:
+                mes_opMovil = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)                  
+
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+                pass
+            else:    
+                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor1Movil['Latency'] =round(Proveedor1Movil['Latency'], 2)
+                final_df1Movil=gdf2.merge(Proveedor1Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+                pass
+            else:                
+                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor2Movil['Latency'] =round(Proveedor2Movil['Latency'], 2)
+                final_df2Movil=gdf2.merge(Proveedor2Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+                pass
+            else:                
+                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor3Movil['Latency'] =round(Proveedor3Movil['Latency'], 2)
+                final_df3Movil=gdf2.merge(Proveedor3Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+                pass
+            else:                
+                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor4Movil['Latency'] =round(Proveedor4Movil['Latency'], 2)
+                final_df4Movil=gdf2.merge(Proveedor4Movil, on='Location')   
+            ##       
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+                pass
+            else:                
+                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor5Movil['Latency'] =round(Proveedor5Movil['Latency'], 2)
+                final_df5Movil=gdf2.merge(Proveedor5Movil, on='Location')  
+            ##
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+                final_df6Movil=gdf2
+                final_df6Movil['Latency']=np.nan
+            else:                
+                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor6Movil['Latency'] =round(Proveedor6Movil['Latency'], 2)
+                final_df6Movil=gdf2.merge(Proveedor6Movil, on='Location')              
+
+            dualmap1_1Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df1Movil,
+                #bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Latency'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_1Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df2Movil,
+                #bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Latency'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_1Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_1Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_1Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df1Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Latency'],
+                    aliases=['Departamento','Latencia (ms)'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df2Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Latency'],
+                    aliases=['Departamento','Latencia (ms)'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_1Movil.m1.add_child(NIL1)
+            dualmap1_1Movil.m1.keep_in_front(NIL1)
+            dualmap1_1Movil.m2.add_child(NIL2)
+            dualmap1_1Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/avantel.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/claro.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_1Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_1Movil.m2)
+
+            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df3Movil,
+                #bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Latency'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_2Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df4Movil,
+                #bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Latency'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_2Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_2Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_2Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df3Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Latency'],
+                    aliases=['Departamento','Latencia (ms)'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df4Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Latency'],
+                    aliases=['Departamento','Latencia (ms)'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_2Movil.m1.add_child(NIL1)
+            dualmap1_2Movil.m1.keep_in_front(NIL1)
+            dualmap1_2Movil.m2.add_child(NIL2)
+            dualmap1_2Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/etb.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/movistar.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_2Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_2Movil.m2)
+            
+            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+               scrollWheelZoom=False,
+               dragging=False)
+            ########
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df5Movil,
+                #bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Latency'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_3Movil.m1)
+            #######
+            choropleth=folium.Choropleth(
+                geo_data=Colombian_DPTO2,
+                data=final_df6Movil,
+                #bins=[0,5,10,15,20,40,60],
+                columns=['Location', 'Latency'],
+                key_on='feature.properties.NOMBRE_DPT',
+                fill_color='YlGnBu', 
+                fill_opacity=0.9, 
+                line_opacity=0.9,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(dualmap1_3Movil.m2)
+            #######
+            # Adicionar nombres del departamento
+            style_function = "font-size: 15px; font-weight: bold"
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_3Movil.m1)
+            choropleth.geojson.add_child(
+                folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
+            folium.LayerControl().add_to(dualmap1_3Movil.m2)
+            ##
+            #Adicionar valores porcentaje
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL1 = folium.features.GeoJson(
+                data = final_df5Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Latency'],
+                    aliases=['Departamento','Latencia (ms)'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            NIL2 = folium.features.GeoJson(
+                data = final_df6Movil,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['Location','Latency'],
+                    aliases=['Departamento','Latencia (ms)'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
+
+            dualmap1_3Movil.m1.add_child(NIL1)
+            dualmap1_3Movil.m1.keep_in_front(NIL1)
+            dualmap1_3Movil.m2.add_child(NIL2)
+            dualmap1_3Movil.m2.keep_in_front(NIL2)
+
+            url1 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/tigo.png")
+            url2 = ("https://www.postdata.gov.co/sites/default/files/dataflash/2021-027/wom.png")
+
+            FloatImage(url1, bottom=5, left=1).add_to(dualmap1_3Movil.m1)
+            FloatImage(url2, bottom=5, left=53).add_to(dualmap1_3Movil.m2)
+            
+            folium_static(dualmap1_1Movil,width=800) 
+            folium_static(dualmap1_2Movil,width=800)
+            folium_static(dualmap1_3Movil,width=800)   
+
+        if dimension_Vel_carga_Movil == 'Ciudades':         
+
+            fig9Movil=go.Figure()
+            fig9Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4Lat['Location'],
+                y=DepJoinAMovil4Lat['2018'],
+                name='2018',
+                marker_color='rgb(213,3,85)'))
+            fig9Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4Lat['Location'],
+                y=DepJoinAMovil4Lat['2019'],
+                name='2019',
+                marker_color='rgb(255,152,0)'))
+            fig9Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4Lat['Location'],
+                y=DepJoinAMovil4Lat['2020'],
+                name='2020',
+                marker_color='rgb(44,198,190)'))
+            fig9Movil.add_trace(go.Bar(
+                x=DepJoinAMovil4Lat['Location'],
+                y=DepJoinAMovil4Lat['2021'],
+                name='2021',
+                marker_color='rgb(72,68,242)'))
+
+            fig9Movil.update_xaxes(tickangle=-90, tickfont=dict(family='Arial', color='black', size=14),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig9Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=14),titlefont_size=14, title_text='Latencia promedio (ms)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig9Movil.update_traces(textfont_size=18)
+            fig9Movil.update_layout(height=500,legend_title=None)
+            fig9Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig9Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig9Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Latencia promedio de Internet móvil <br>por ciudad (2018-2021) (en ms) </b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})  
+            
+            st.plotly_chart(fig9Movil, use_container_width=True) 
+        
