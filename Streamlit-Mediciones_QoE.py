@@ -26,7 +26,7 @@ LogoComision2="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-bl
 
    
 
-st.title("Mediciones de calidad desde la experiencia del usuario")
+st.markdown("# <center>Mediciones de calidad desde la experiencia del usuario</center>",unsafe_allow_html=True)
 
 #################################Lectura de bases Internet fijo#######################################33
 pathFijo='https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Fijo/'
@@ -1590,7 +1590,7 @@ if select_servicio == 'Internet fijo':
             folium_static(dualmap1_5Fijo,width=800) 
             folium_static(dualmap1_6Fijo,width=800)  
 
-                      #################################Lectura de bases Internet móvil#######################################
+#########################################################Lectura de bases Internet móvil#######################################
 
 pathMovil='https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/'
 #### Sección 1 Móvil
@@ -1645,7 +1645,7 @@ Colombia2Movil=ColombiaMovil2()
 def ColombiaMovil3():
     Colombia3Movil=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Operadores/IndDesempe%C3%B1oMov_Operad_(2018a2021_An).csv')
     Colombia3Movil=Colombia3Movil.drop(['Device','Platform','Metric Type','Location'],axis=1)
-    Colombia3Movil=Colombia3Movil.rename(columns={'ï»¿Provider':'Provider'})
+    #Colombia3Movil=Colombia3Movil.rename(columns={'ï»¿Provider':'Provider'})
     return Colombia3Movil
 Colombia3Movil = ColombiaMovil3()
 df18AMovil3=pd.DataFrame();df18AMovil3Up=pd.DataFrame();df18AMovil3Lat=pd.DataFrame();
@@ -1701,7 +1701,7 @@ dataframe_namesMovil1=sorted(OpCiudMovil1.Location.unique().tolist())
 OpCiudMovil1=OpCiudMovil1.replace(dict(zip(dataframe_namesMovil1, denominations_json2)))
 OpCiudMovil1=OpCiudMovil1[OpCiudMovil1['Test Count']>30]
 #### Sección 5 Móvil
-#@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def CiudadMovil1():
     Ciudades=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Ciudades/IndDesempe%C3%B1oMov_Ciud_(2018a2021_An).csv')
     Ciudades['Location']=Ciudades['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
@@ -1739,6 +1739,7 @@ DepJoinAMovil4Lat = DepJoinAMovil4Lat[DepJoinAMovil4Lat.Location != 'Colombia']
 DepJoinAMovil4Lat = DepJoinAMovil4Lat.sort_values(by=['2021'],ascending=True)    
 
 #### Sección 5 Móvil
+@st.cache(allow_output_mutation=True)
 def ColombiaMovil5():
     df1=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Colombia/IndDesempe%C3%B1oMov_3G4G_(2018mens).csv')
     df2=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Colombia/IndDesempe%C3%B1oMov_3G4G_(2019mens).csv')
@@ -1772,7 +1773,7 @@ ColombiaMovil5=ColombiaMovil5()
     
 
 if select_servicio == 'Internet móvil':
-    select_indicador=st.selectbox('Indicador de desempeño y cobertura',['Velocidad de descarga','Velocidad de carga','Latencia','Registro en red','Registro en red 4G'])    
+    select_indicador=st.selectbox('Indicador de desempeño y cobertura',['Velocidad de descarga','Velocidad de carga','Latencia','Registro en red'])    
     if select_indicador== 'Velocidad de descarga':
         dimension_Vel_descarga_Movil = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)
         if dimension_Vel_descarga_Movil == 'Histórico Colombia':    
@@ -2747,7 +2748,6 @@ if select_servicio == 'Internet móvil':
             
             st.plotly_chart(fig8Movil, use_container_width=True) 
 
-
     if select_indicador== 'Latencia':
         dimension_Vel_carga_Movil = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)            
         if dimension_Vel_carga_Movil == 'Histórico Colombia':    
@@ -3234,3 +3234,324 @@ if select_servicio == 'Internet móvil':
             
             st.plotly_chart(fig9Movil, use_container_width=True) 
         
+    
+    if select_indicador== 'Registro en red':
+        blaa=2
+        
+        
+
+######################################################### Comparación Internacional #######################################        
+fijo_Intdict = {'Suriname': [16.48, 8.8, 26],
+        'Uruguay': [176.74, 35.42, 13],
+        'Brazil': [128.31, 73.26, 12],
+        'Argentina': [62.58, 25.75, 25],
+        'Ecuador': [41.2, 35.81, 14],
+        'Peru': [63.75, 36.47, 20],
+        'Bolivia': [30.54, 14.06, 19],
+        'Chile': [253.61, 192.85, 13],
+        'Paraguay': [75.09,23.78, 15],
+        'Colombia': [84.82, 46.58, 22],
+        'Venezuela': [28.21, 22.75, 51],
+        'Guyana':[68.25,28.44,19]}
+Fijo_Int=pd.DataFrame.from_dict(fijo_Intdict,orient='index').reset_index()
+Fijo_Int=Fijo_Int.rename(columns={'index':'País',0:'Download',1:'Upload',2:'Latency'})
+@st.cache()
+def gdf_Suramerica(allow_output_mutation=True):
+    gdf_Int = gpd.read_file("https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Suramerica.geo.json")
+    gdf_Int=gdf_Int.rename(columns=({'admin':'País'}))
+    return gdf_Int
+gdf_Int=gdf_Suramerica()
+@st.cache(allow_output_mutation=True)
+def data_Suramerica():    
+    with urllib.request.urlopen("https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Suramerica.geo.json") as url:
+        SURAMERICA = json.loads(url.read().decode())
+    return SURAMERICA
+SURAMERICA=data_Suramerica()    
+Fijo_df=gdf_Int.merge(Fijo_Int, on='País')
+
+movil_Intdict = {'Suriname': [42.66, 18.38, 25],
+        'Uruguay': [51.33, 15.05, 32],
+        'Brazil': [36.56, 11.24, 38],
+        'Argentina': [30.73, 9.71, 38],
+        'Ecuador': [24.76, 10.93, 35],
+        'Peru': [27.52, 13.46, 36],
+        'Bolivia': [22.65, 12.54, 31],
+        'Chile': [31.32, 13.06, 33],
+        'Paraguay': [21.46,10.34, 41],
+        'Colombia': [20.01, 11.03, 47],
+        'Venezuela': [9.18, 5.33, 48]}
+Movil__Int=pd.DataFrame.from_dict(movil_Intdict,orient='index').reset_index()
+Movil__Int=Movil__Int.rename(columns={'index':'País',0:'Download',1:'Upload',2:'Latency'})
+Movil_df=gdf_Int.merge(Movil__Int, on='País')
+
+if select_servicio == 'Comparación internacional':
+    select_servicio=st.selectbox('Indicador de desempeño',['Velocidad de descarga','Velocidad de carga','Latencia','Resumen'])
+    if select_servicio=='Velocidad de descarga':
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("## <center>Internet fijo</center>",unsafe_allow_html=True)
+            
+            suramerica_map4 = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
+            choropleth=folium.Choropleth(
+                geo_data=SURAMERICA,
+                data=Fijo_df,
+                columns=['País', 'Download'],
+                key_on='feature.properties.name',
+                fill_color='Greens', 
+                fill_opacity=1, 
+                line_opacity=0.9,
+                reversescale=True,
+                legend_name='Velocidad de descarga fijo (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(suramerica_map4)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = Fijo_df,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['País','Download'],
+                    aliases=['País','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            suramerica_map4.add_child(NIL)
+            suramerica_map4.keep_in_front(NIL)
+            st.markdown("<center><b> Velocidad promedio de descarga de <br> Internet fijo en Suramerica (Mbps)</b></center>",
+            unsafe_allow_html=True)
+            folium_static(suramerica_map4,width=350,height=550)      
+
+            
+        with col2:
+            st.markdown("## <center>Internet móvil</center>",unsafe_allow_html=True)        
+            
+            suramerica_map5 = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
+            choropleth=folium.Choropleth(
+                geo_data=SURAMERICA,
+                data=Movil_df,
+                columns=['País', 'Download'],
+                key_on='feature.properties.name',
+                fill_color='Greens', 
+                fill_opacity=1, 
+                line_opacity=0.9,
+                reversescale=True,
+                legend_name='Velocidad de descarga fijo (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(suramerica_map5)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = Movil_df,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['País','Download'],
+                    aliases=['País','Velocidad descarga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            suramerica_map5.add_child(NIL)
+            suramerica_map5.keep_in_front(NIL)
+            st.markdown("<center><b> Velocidad promedio de descarga de <br> Internet móvil en Suramerica (Mbps)</b></center>",
+            unsafe_allow_html=True)
+            folium_static(suramerica_map5,width=350,height=550)      
+
+
+    if select_servicio=='Velocidad de carga':
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("## <center>Internet fijo</center>",unsafe_allow_html=True)
+            
+            suramerica_map4_b = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
+            choropleth=folium.Choropleth(
+                geo_data=SURAMERICA,
+                data=Fijo_df,
+                columns=['País', 'Upload'],
+                key_on='feature.properties.name',
+                fill_color='Greens', 
+                fill_opacity=1, 
+                line_opacity=0.9,
+                reversescale=True,
+                legend_name='Velocidad de carga fijo (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(suramerica_map4_b)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = Fijo_df,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['País','Upload'],
+                    aliases=['País','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            suramerica_map4_b.add_child(NIL)
+            suramerica_map4_b.keep_in_front(NIL)
+            st.markdown("<center><b> Velocidad promedio de carga de <br> Internet fijo en Suramerica (Mbps)</b></center>",
+            unsafe_allow_html=True)
+            folium_static(suramerica_map4_b,width=350,height=550)      
+
+            
+        with col2:
+            st.markdown("## <center>Internet móvil</center>",unsafe_allow_html=True)        
+            
+            suramerica_map5_b = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
+            choropleth=folium.Choropleth(
+                geo_data=SURAMERICA,
+                data=Movil_df,
+                columns=['País', 'Upload'],
+                key_on='feature.properties.name',
+                fill_color='Greens', 
+                fill_opacity=1, 
+                line_opacity=0.9,
+                reversescale=True,
+                legend_name='Velocidad de carga fijo (Mbps)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(suramerica_map5_b)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = Movil_df,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['País','Upload'],
+                    aliases=['País','Velocidad de carga'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            suramerica_map5_b.add_child(NIL)
+            suramerica_map5_b.keep_in_front(NIL)
+            st.markdown("<center><b> Velocidad promedio de carga de <br> Internet móvil en Suramerica (Mbps)</b></center>",
+            unsafe_allow_html=True)
+            folium_static(suramerica_map5_b,width=350,height=550)    
+
+
+    if select_servicio=='Latencia':
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("## <center>Internet fijo</center>",unsafe_allow_html=True)
+            
+            suramerica_map4_c = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
+            choropleth=folium.Choropleth(
+                geo_data=SURAMERICA,
+                data=Fijo_df,
+                columns=['País', 'Latency'],
+                key_on='feature.properties.name',
+                fill_color='Reds', 
+                fill_opacity=1, 
+                line_opacity=0.9,
+                reversescale=True,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(suramerica_map4_c)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = Fijo_df,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['País','Latency'],
+                    aliases=['País','Latencia'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            suramerica_map4_c.add_child(NIL)
+            suramerica_map4_c.keep_in_front(NIL)
+            st.markdown("<center><b> Latencia promedio de <br> Internet fijo en Suramerica (Mbps)</b></center>",
+            unsafe_allow_html=True)
+            folium_static(suramerica_map4_c,width=350,height=550)      
+
+            
+        with col2:
+            st.markdown("## <center>Internet móvil</center>",unsafe_allow_html=True)        
+            
+            suramerica_map5_c = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
+            choropleth=folium.Choropleth(
+                geo_data=SURAMERICA,
+                data=Movil_df,
+                columns=['País', 'Latency'],
+                key_on='feature.properties.name',
+                fill_color='Reds', 
+                fill_opacity=1, 
+                line_opacity=0.9,
+                reversescale=True,
+                legend_name='Latencia (ms)',
+                nan_fill_color = "black",
+                smooth_factor=0).add_to(suramerica_map5_c)
+
+            #Adicionar valores velocidad
+            style_function = lambda x: {'fillColor': '#ffffff', 
+                                        'color':'#000000', 
+                                        'fillOpacity': 0.1, 
+                                        'weight': 0.1}
+            highlight_function = lambda x: {'fillColor': '#000000', 
+                                            'color':'#000000', 
+                                            'fillOpacity': 0.50, 
+                                            'weight': 0.1}
+            NIL = folium.features.GeoJson(
+                data = Movil_df,
+                style_function=style_function, 
+                control=False,
+                highlight_function=highlight_function, 
+                tooltip=folium.features.GeoJsonTooltip(
+                    fields=['País','Latency'],
+                    aliases=['País','Latencia'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                )
+            )
+            suramerica_map5_c.add_child(NIL)
+            suramerica_map5_c.keep_in_front(NIL)
+            st.markdown("<center><b> Latencia promedio de <br> Internet móvil en Suramerica (Mbps)</b></center>",
+            unsafe_allow_html=True)
+            folium_static(suramerica_map5_c,width=350,height=550)      
+       
