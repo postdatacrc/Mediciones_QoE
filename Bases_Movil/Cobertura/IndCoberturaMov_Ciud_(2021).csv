@@ -1,0 +1,18 @@
+﻿Aggregate Date,Provider,Location,5G (%),5G Roaming (%),4G (%),4G Roaming (%),3G (%),3G Roaming (%),2G (%),2G Roaming (%),No Coverage (%),5G Sample Count,5G Roaming Sample Count,4G Sample Count,4G Roaming Sample Count,3G Sample Count,3G Roaming Sample Count,2G Sample Count,2G Roaming Sample Count,No Coverage Sample Count,Total Sample Count,Total Device Count,Total Scan Count
+2021,All Providers Combined,"Medellín, Medellin, Antioquia, Colombia",0,0,72.47,2.91,13.3,1.95,0.75,0.11,8.51,0,0,20092115,403198,2997542,510449,144145,8209,848433,25004091,38390,65103328
+2021,All Providers Combined,"Bogotá, Bogota, Colombia",0,0,76.39,5.1,9.33,2.43,0.65,0.12,5.97,4,0,110608618,6414936,9843070,2384044,395863,76100,3296331,133018966,117089,281656762
+2021,All Providers Combined,"Cali, Cali, Valle del Cauca, Colombia",0,0,54.49,22.42,13.8,1.59,1.02,0.13,6.56,0,0,13933415,6420735,3664196,335189,244196,14507,602412,25214650,28336,55676167
+2021,All Providers Combined,"Ibagué, Ibague, Tolima, Colombia",0,0,73.57,2.47,14.8,2.41,1.01,0.11,5.63,0,0,4399861,73584,652610,61435,68837,3502,159186,5419015,7518,10265190
+2021,All Providers Combined,"Cartagena, Cartagena, Bolívar, Colombia",0,0,81.65,2.91,11.28,1.61,0.57,0.12,1.87,0,0,5873204,97635,803473,67719,15903,14517,58954,6931405,10073,9604085
+2021,All Providers Combined,"Villavicencio, Villavicencio, Meta, Colombia",0,0,75.94,2.7,11.55,3.03,0.75,0.13,5.91,0,0,2761944,50953,433818,59006,29306,2339,81890,3419256,6971,7599679
+2021,All Providers Combined,"Tunja, Tunja, Boyacá, Colombia",0,0,76.8,1.58,13.59,2.76,0.99,0.09,4.19,0,0,1890825,7306,264787,25625,11209,15,67569,2267336,4245,4867546
+2021,All Providers Combined,"Barranquilla, Barranquilla, Atlantico, Colombia",0,0,77.2,3.82,10.49,1.67,0.6,0.15,6.06,0,0,10190477,242875,1128264,210559,55741,28040,252370,12108326,18880,30119098
+2021,All Providers Combined,"Bucaramanga, Bucaramanga, Santander Department, Colombia",0,0,58.19,17.88,13.49,1.62,0.78,0.08,7.96,0,0,3592215,1514625,931497,137493,35558,1373,214812,6427573,11634,17148154
+2021,All Providers Combined,"Manizales, Manizales, Caldas, Colombia",0,0,67.98,7.88,16.29,2.12,0.9,0.05,4.79,0,0,2860894,268709,610837,54910,26658,880,71804,3894692,5471,7979909
+2021,All Providers Combined,"Popayán, Popayán, Cauca, Colombia",0,0,60.28,9.16,15.82,2.39,1.78,0.27,10.3,0,0,1569823,194013,483390,35840,59603,3454,87924,2434047,4096,5711009
+2021,All Providers Combined,"Pasto, Pasto, Narino, Colombia",0,0,48.09,21.81,16.13,1.83,2.26,0.16,9.71,0,0,1561899,927146,455410,42867,52602,2524,107425,3149873,4419,7465571
+2021,All Providers Combined,"Armenia, Armenia, Quindio, Colombia",0,0,66.42,12.4,14.01,2.21,0.55,0.11,4.3,0,0,1685535,256559,291471,17217,6465,1076,77714,2336037,4532,4689839
+2021,All Providers Combined,"Pereira, Pereira, Risaralda, Colombia",0,0,64.12,10.21,16.35,1.8,0.8,0.09,6.63,0,0,3098789,392553,629151,52121,46811,1741,125593,4346759,9350,11780105
+2021,All Providers Combined,"Santa Marta, Santa Marta, Magdalena, Colombia",0,0,77.49,2.84,11.53,2.08,0.59,0.14,5.34,0,0,2317415,58587,298581,38769,13956,350,59077,2786735,5108,5916356
+2021,All Providers Combined,"Montería, Montería, Córdoba, Colombia",0,0,75.99,2.51,13.66,2.17,0.39,0.05,5.23,0,0,1851214,50818,354515,81738,3081,676,43890,2385932,4056,5228423
+2021,All Providers Combined,"Sincelejo, Sincelejo, Sucre, Colombia",0,0,76.51,2.71,13.39,1.53,0.67,0.03,5.16,0,0,1573695,14528,220841,17927,11977,302,21184,1860454,3137,3396301
