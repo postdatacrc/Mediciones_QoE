@@ -1650,22 +1650,22 @@ df18AMovil3=pd.DataFrame();df18AMovil3Up=pd.DataFrame();df18AMovil3Lat=pd.DataFr
 df19AMovil3=pd.DataFrame();df19AMovil3Up=pd.DataFrame();df19AMovil3Lat=pd.DataFrame();
 df20AMovil3=pd.DataFrame();df20AMovil3Up=pd.DataFrame();df20AMovil3Lat=pd.DataFrame();
 df21AMovil3=pd.DataFrame();df21AMovil3Up=pd.DataFrame();df21AMovil3Lat=pd.DataFrame();
-p18AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2018),['ï»¿Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['ï»¿Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
-p19AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2019),['ï»¿Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['ï»¿Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
-p20AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2020),['ï»¿Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['ï»¿Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
-p21AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2021),['ï»¿Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['ï»¿Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
-df18AMovil3['ï»¿Provider']=p18AMovil3.index; df18AMovil3['2018']=p18AMovil3['Download Speed Mbps'].values;
-df19AMovil3['ï»¿Provider']=p19AMovil3.index; df19AMovil3['2019']=p19AMovil3['Download Speed Mbps'].values;
-df20AMovil3['ï»¿Provider']=p20AMovil3.index; df20AMovil3['2020']=p20AMovil3['Download Speed Mbps'].values;
-df21AMovil3['ï»¿Provider']=p21AMovil3.index; df21AMovil3['2021']=p21AMovil3['Download Speed Mbps'].values;
-df18AMovil3Up['ï»¿Provider']=p18AMovil3.index; df18AMovil3Up['2018']=p18AMovil3['Upload Speed Mbps'].values;
-df19AMovil3Up['ï»¿Provider']=p19AMovil3.index; df19AMovil3Up['2019']=p19AMovil3['Upload Speed Mbps'].values;
-df20AMovil3Up['ï»¿Provider']=p20AMovil3.index; df20AMovil3Up['2020']=p20AMovil3['Upload Speed Mbps'].values;
-df21AMovil3Up['ï»¿Provider']=p21AMovil3.index; df21AMovil3Up['2021']=p21AMovil3['Upload Speed Mbps'].values;
-df18AMovil3Lat['ï»¿Provider']=p18AMovil3.index; df18AMovil3Lat['2018']=p18AMovil3['Latency'].values;
-df19AMovil3Lat['ï»¿Provider']=p19AMovil3.index; df19AMovil3Lat['2019']=p19AMovil3['Latency'].values;
-df20AMovil3Lat['ï»¿Provider']=p20AMovil3.index; df20AMovil3Lat['2020']=p20AMovil3['Latency'].values;
-df21AMovil3Lat['ï»¿Provider']=p21AMovil3.index; df21AMovil3Lat['2021']=p21AMovil3['Latency'].values;
+p18AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2018),['Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p19AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2019),['Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p20AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2020),['Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+p21AMovil3=(Colombia3Movil.loc[(Colombia3Movil['Aggregate Date']==2021),['Provider','Download Speed Mbps','Upload Speed Mbps','Latency']]).groupby(['Provider']).agg({'Download Speed Mbps':'mean','Upload Speed Mbps':'mean','Latency':'mean'})
+df18AMovil3['Provider']=p18AMovil3.index; df18AMovil3['2018']=p18AMovil3['Download Speed Mbps'].values;
+df19AMovil3['Provider']=p19AMovil3.index; df19AMovil3['2019']=p19AMovil3['Download Speed Mbps'].values;
+df20AMovil3['Provider']=p20AMovil3.index; df20AMovil3['2020']=p20AMovil3['Download Speed Mbps'].values;
+df21AMovil3['Provider']=p21AMovil3.index; df21AMovil3['2021']=p21AMovil3['Download Speed Mbps'].values;
+df18AMovil3Up['Provider']=p18AMovil3.index; df18AMovil3Up['2018']=p18AMovil3['Upload Speed Mbps'].values;
+df19AMovil3Up['Provider']=p19AMovil3.index; df19AMovil3Up['2019']=p19AMovil3['Upload Speed Mbps'].values;
+df20AMovil3Up['Provider']=p20AMovil3.index; df20AMovil3Up['2020']=p20AMovil3['Upload Speed Mbps'].values;
+df21AMovil3Up['Provider']=p21AMovil3.index; df21AMovil3Up['2021']=p21AMovil3['Upload Speed Mbps'].values;
+df18AMovil3Lat['Provider']=p18AMovil3.index; df18AMovil3Lat['2018']=p18AMovil3['Latency'].values;
+df19AMovil3Lat['Provider']=p19AMovil3.index; df19AMovil3Lat['2019']=p19AMovil3['Latency'].values;
+df20AMovil3Lat['Provider']=p20AMovil3.index; df20AMovil3Lat['2020']=p20AMovil3['Latency'].values;
+df21AMovil3Lat['Provider']=p21AMovil3.index; df21AMovil3Lat['2021']=p21AMovil3['Latency'].values;
 DepJoinAMovil3=pd.concat([df18AMovil3,df19AMovil3,df20AMovil3,df21AMovil3]).round(2).reset_index()
 DepJoinAMovil3Up=pd.concat([df18AMovil3Up,df19AMovil3Up,df20AMovil3Up,df21AMovil3Up]).round(2).reset_index()
 DepJoinAMovil3Lat=pd.concat([df18AMovil3Lat,df19AMovil3Lat,df20AMovil3Lat,df21AMovil3Lat]).round(2).reset_index()
