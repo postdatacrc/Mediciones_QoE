@@ -1770,7 +1770,57 @@ def ColombiaMovil5():
     DepJoinA=DepJoinA.round(2).reset_index()
     return DepJoinA
 ColombiaMovil5=ColombiaMovil5()    
-    
+
+#### Sección 7 Móvil
+def ColombiaMovil7():
+    Colombia7=pd.read_csv(pathMovil+'Cobertura/IndCoberturaMov_Colombia_(2018-2021).csv',delimiter=',')
+    Colombia7['4G total'] = Colombia7[['4G (%)', '4G Roaming (%)']].sum(axis=1)
+    Colombia7['Roaming total'] = Colombia7[['4G Roaming (%)', '3G Roaming (%)', '2G Roaming (%)']].sum(axis=1)   
+    return Colombia7
+Colombia7Movil=ColombiaMovil7()
+
+####  Sección 8 Móvil
+def DepJoinA8Movil():
+    Ciudades8=pd.read_csv(pathMovil+'Cobertura/IndCoberturaMov_Ciud_(2018-2021).csv',delimiter=',')
+    Ciudades8['Location']=Ciudades8['Location'].str.split(',',1,expand=True)[0]
+    Ciudades8['4G total'] = Ciudades8[['4G (%)', '4G Roaming (%)']].sum(axis=1)
+    Ciudades8['Roaming total'] = Ciudades8[['4G Roaming (%)', '3G Roaming (%)', '2G Roaming (%)']].sum(axis=1)
+    p18A_8=(Ciudades8.loc[(Ciudades8['Aggregate Date']==2018),['Location','4G total']]).groupby(['Location'])['4G total'].mean()
+    p19A_8=(Ciudades8.loc[(Ciudades8['Aggregate Date']==2019),['Location','4G total']]).groupby(['Location'])['4G total'].mean()
+    p20A_8=(Ciudades8.loc[(Ciudades8['Aggregate Date']==2020),['Location','4G total']]).groupby(['Location'])['4G total'].mean()
+    p21A_8=(Ciudades8.loc[(Ciudades8['Aggregate Date']==2021),['Location','4G total']]).groupby(['Location'])['4G total'].mean()
+    df18A_8=pd.DataFrame();df19A_8=pd.DataFrame();df20A_8=pd.DataFrame();df21A_8=pd.DataFrame()
+    df18A_8['Location']=p18A_8.index;df18A_8['2018']=p18A_8.values;
+    df19A_8['Location']=p19A_8.index;df19A_8['2019']=p19A_8.values;
+    df20A_8['Location']=p20A_8.index;df20A_8['2020']=p20A_8.values;
+    df21A_8['Location']=p21A_8.index;df21A_8['2021']=p21A_8.values;
+    DepJoinA_8=reduce(lambda x,y: pd.merge(x,y, on='Location', how='outer'), [df18A_8,df19A_8,df20A_8,df21A_8]).set_index('Location')
+    DepJoinA_8=DepJoinA_8.round(2).reset_index()
+    DepJoinA_8 = DepJoinA_8[DepJoinA_8.Location != 'Colombia']
+    DepJoinA_8 = DepJoinA_8.sort_values(by=['2021'],ascending=False)    
+    return DepJoinA_8
+DepJoinAMovil8=DepJoinA8Movil()
+
+####  Sección 9 Móvil
+def OpJoinA9Movil():
+    Operadores9=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Movil/Cobertura/IndCoberturaMov_Gnral%20(2018-2021).csv',delimiter=',')
+    Operadores9['4G total'] = Operadores9[['4G (%)', '4G Roaming (%)']].sum(axis=1)
+    Operadores9['Roaming total'] = Operadores9[['4G Roaming (%)', '3G Roaming (%)', '2G Roaming (%)']].sum(axis=1)
+    df18A_9=pd.DataFrame();df19A_9=pd.DataFrame();df20A_9=pd.DataFrame();df21A_9=pd.DataFrame()
+    p18A_9=(Operadores9.loc[(Operadores9['Aggregate Date']==2018),['Provider','4G total']]).groupby(['Provider'])['4G total'].mean()
+    p19A_9=(Operadores9.loc[(Operadores9['Aggregate Date']==2019),['Provider','4G total']]).groupby(['Provider'])['4G total'].mean()
+    p20A_9=(Operadores9.loc[(Operadores9['Aggregate Date']==2020),['Provider','4G total']]).groupby(['Provider'])['4G total'].mean()
+    p21A_9=(Operadores9.loc[(Operadores9['Aggregate Date']==2021),['Provider','4G total']]).groupby(['Provider'])['4G total'].mean()
+    df18A_9['Provider']=p18A_9.index;df18A_9['2018']=p18A_9.values;
+    df19A_9['Provider']=p19A_9.index;df19A_9['2019']=p19A_9.values;
+    df20A_9['Provider']=p20A_9.index;df20A_9['2020']=p20A_9.values;
+    df21A_9['Provider']=p21A_9.index;df21A_9['2021']=p21A_9.values;
+    from functools import reduce
+    OpJoinA_9=reduce(lambda x,y: pd.merge(x,y, on='Provider', how='outer'), [df18A_9,df19A_9,df20A_9,df21A_9]).set_index('Provider')
+    OpJoinA_9=OpJoinA_9.round(2).reset_index()
+    OpJoinA_9 = OpJoinA_9.sort_values(by=['2021'],ascending=False)
+    return OpJoinA_9
+OpJoinAMovil9=OpJoinA9Movil()
 
 if select_servicio == 'Internet móvil':
     select_indicador=st.selectbox('Indicador de desempeño y cobertura',['Velocidad de descarga','Velocidad de carga','Latencia','Registro en red'])    
@@ -3236,9 +3286,169 @@ if select_servicio == 'Internet móvil':
         
     
     if select_indicador== 'Registro en red':
-        blaa=2
+        st.markdown("## Registro en Red", unsafe_allow_html=True)
         
+        fig10Movil = go.Figure()
+        fig10Movil.add_trace(go.Bar(
+            x=['2018','2019','2020','2021'],
+            y=Colombia7Movil['2G (%)'],
+            name='2G (%)',
+            marker_color='rgb(17,200,164)',
+            width=0.7))
+        fig10Movil.add_trace(go.Bar(
+            x=['2018','2019','2020','2021'],
+            y=Colombia7Movil['3G (%)'],
+            name='3G (%)',
+            marker_color='rgb(55,70,73)',
+            width=0.7))
+        fig10Movil.add_trace(go.Bar(
+            x=['2018','2019','2020','2021'],
+            y=Colombia7Movil['4G (%)'],
+            name='4G (%)',
+            marker_color='rgb(72,68,242)',
+            width=0.7))
+        fig10Movil.add_trace(go.Bar(
+            x=['2018','2019','2020','2021'],
+            y=Colombia7Movil['Roaming total'],
+            name='Roaming total (%)',
+            marker_color='rgb(253,98,94)',
+            width=0.7))
+        fig10Movil.add_trace(go.Bar(
+            x=['2018','2019','2020','2021'],
+            y=Colombia7Movil['No Coverage (%)'],
+            name='No Cobertura (%)',
+            marker_color='rgb(254,184,52)',
+            width=0.7))
+        fig10Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+        zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+        fig10Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Registro en red (%)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+        zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+        fig10Movil.update_layout(height=500,legend_title=None)
+        fig10Movil.update_layout(font_color="Black",title_font_family="Arial",title_font_color="Black",titlefont_size=16)
+        fig10Movil.update_layout(height=600,   
+            title="<b>Promedio anual del porcentaje de registro en red en Colombia<br>(2018-2021)</b>",
+            title_x=0.5)
+        fig10Movil.update_layout(uniformtext_minsize=12, barmode='stack', showlegend=True,paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)',
+        legend=dict(
+           orientation="v",
+            y=1.05,
+            x=1,
+            font_size=12))
+        st.plotly_chart(fig10Movil, use_container_width=True) 
         
+        st.markdown("## Registro en Red 4G", unsafe_allow_html=True)
+        dimension_Cober4G_Movil = st.radio("Seleccione la dimensión del análisis",('Colombia','Ciudades','Operadores'),horizontal=True)
+        if dimension_Cober4G_Movil=='Colombia':
+            fig11Movil = go.Figure()
+            fig11Movil.add_trace(go.Bar(
+                x=['2018','2019','2020','2021'],
+                y=Colombia7Movil['4G total'].round(1),
+                name='4G (%)',
+                marker_color='rgb(72,68,242)', 
+                width=0.7))
+
+            fig11Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig11Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Registro en red (%)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig11Movil.update_traces(textfont_size=14)
+            fig11Movil.update_layout(height=500,legend_title=None)
+            fig11Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig11Movil.update_layout(font_color="Black",title_font_family="Arial",title_font_color="Black",titlefont_size=16)
+            fig11Movil.update_layout(height=600,   
+                title="<b>Promedio anual del porcentaje de registro en red 4G en Colombia<br>(2018-2021)</b>",
+                title_x=0.5)
+            fig11Movil.update_traces()
+            fig11Movil.update_layout(uniformtext_minsize=12, barmode='stack', uniformtext_mode='hide')
+            fig11Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)')
+            fig11Movil.update_layout(plot_bgcolor='rgba(0,0,0,0)')
+            fig11Movil.update_layout(legend=dict(
+               orientation="h",
+                y=1.05,
+                x=0.42,
+                font_size=12))
+            st.plotly_chart(fig11Movil,use_container_width=True)   
+        if dimension_Cober4G_Movil=='Ciudades':
+            fig12Movil = go.Figure()
+            fig12Movil.add_trace(go.Bar(
+                x=DepJoinAMovil8['Location'],
+                y=DepJoinAMovil8['2018'],
+                name='2018',
+                marker_color='rgb(213,3,85)'))
+            fig12Movil.add_trace(go.Bar(
+                x=DepJoinAMovil8['Location'],
+                y=DepJoinAMovil8['2019'],
+                name='2019',
+                marker_color='rgb(255,152,0)'))
+            fig12Movil.add_trace(go.Bar(
+                x=DepJoinAMovil8['Location'],
+                y=DepJoinAMovil8['2020'],
+                name='2020',
+                marker_color='rgb(44,198,190)'))
+            fig12Movil.add_trace(go.Bar(
+                x=DepJoinAMovil8['Location'],
+                y=DepJoinAMovil8['2021'],
+                name='2021',
+                marker_color='rgb(72,68,242)'))
+
+            fig12Movil.update_xaxes(tickangle=-90, tickfont=dict(family='Arial', color='black', size=14),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig12Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=14),titlefont_size=14, title_text='Registro en red 4G (%)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig12Movil.update_traces(textfont_size=18)
+            fig12Movil.update_layout(height=500,legend_title=None)
+            fig12Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.25))
+            fig12Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig12Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
+            title={
+            'text': "<b>Promedio anual registro en red móvil por ciudad <br>(2018-2021)</b>",
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'}) 
+            st.plotly_chart(fig12Movil,use_container_width=True)
+
+        if dimension_Cober4G_Movil=='Operadores':
+            fig13Movil = go.Figure()
+            fig13Movil.add_trace(go.Bar(
+                x=OpJoinAMovil9['Provider'],
+                y=OpJoinAMovil9['2018'],
+                name='2018',
+                marker_color='rgb(213,3,85)'))
+            fig13Movil.add_trace(go.Bar(
+                x=OpJoinAMovil9['Provider'],
+                y=OpJoinAMovil9['2019'],
+                name='2019',
+                marker_color='rgb(255,152,0)'))
+            fig13Movil.add_trace(go.Bar(
+                x=OpJoinAMovil9['Provider'],
+                y=OpJoinAMovil9['2020'],
+                name='2020',
+                marker_color='rgb(44,198,190)'))
+            fig13Movil.add_trace(go.Bar(
+                x=OpJoinAMovil9['Provider'],
+                y=OpJoinAMovil9['2021'],
+                name='2021',
+                marker_color='rgb(72,68,242)'))
+
+            fig13Movil.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+            fig13Movil.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Registro en red (%)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+            fig13Movil.update_traces(textfont_size=14)
+            fig13Movil.update_layout(height=500,legend_title=None)
+            fig13Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
+            fig13Movil.update_layout(font_color="Black",title_font_family="Arial",title_font_color="Black",titlefont_size=16)
+            fig13Movil.update_layout(height=600,   
+                title="<b>Promedio anual del porcentaje de registro en red 4G por operador<br>(2018-2021)</b>",
+                title_x=0.5)
+            fig13Movil.update_layout(barmode='group', uniformtext_mode='hide',paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)',
+            legend=dict(
+               orientation="h",
+                y=1.05,
+                x=0.25,
+                font_size=15))
+            st.plotly_chart(fig13Movil,use_container_width=True)    
 
 ######################################################### Comparación Internacional #######################################        
 fijo_Intdict = {'Suriname': [16.48, 8.8, 26],
