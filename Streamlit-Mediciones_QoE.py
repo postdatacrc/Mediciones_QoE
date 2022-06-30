@@ -55,7 +55,6 @@ st.markdown("""<style type="text/css">
     z-index:9999;
     top:81px;
     left:0;}
-    .css-16jv0e6 {display:none}
     .css-m70y {display:none}
     .barra-superior{top: 0;
     position: fixed;
@@ -82,10 +81,11 @@ st.markdown("""<style type="text/css">
     text-decoration: underline;
     text-decoration-style: double;
     color: #27348b;}
-    h3{ border-bottom: 2px solid #27348b;
+    h3{
     border-left: 10px solid #27348b;
     background: #fffdf7;
-    padding: 10px;
+    font-size:10px,
+    padding: 0px;
     color: black;}
     .imagen-flotar{float:left;}
     @media (max-width:1230px){
@@ -119,8 +119,6 @@ select_servicio = st.selectbox('Servicio',
 if select_servicio=='Información general':
     st.markdown('La Comisión de regulación de comunicaciones presenta la aplicación interactiva que contiene información sobre la calidad de los servicios ofrecidos a través de redes móviles y fijas por los diferentes proveedores en el territorio nacional, para el periodo comprendido entre los años 2018 y 2021.')
     st.markdown('Las mediciones de calidad que soportan las gráficas de la aplicación están basadas en la metodología crowdsourcing, utilizando para ellos los datos proporcionados por la aplicación Speedtest®, desarrollada por la empresa Ookla®. A través de esta metodología se recopila información directamente desde los dispositivos que los usuarios utilizan para acceder a los servicios de Internet móvil e Internet fijo, suministrados por los proveedores de redes y servicios de telecomunicaciones.')
-    st.markdown('Las mediciones de los indicadores de calidad se soportan en el uso de una red que para 2021 incorporaba 38 servidores de prueba dispersos en el territorio nacional')
-    st.markdown("<b><center>Distribución de servidores de pruebas en Colombia</center></b>",unsafe_allow_html=True)
     Sevidores_map = folium.Map(location=[3, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
     scrollWheelZoom=True,
     dragging=True)
@@ -152,16 +150,43 @@ if select_servicio=='Información general':
      fill=True,
      fill_color=dict_serv_colores[Servidores.iloc[i]['server_name']],
      fill_opacity=0.2
-       ).add_to(Sevidores_map)
-    col1, col2 ,col3= st.columns([2,4,1])
-    
+       ).add_to(Sevidores_map) 
+       
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("### <b>Distribución de servidores de pruebas en Colombia</b>",unsafe_allow_html=True)
+        st.markdown('Las mediciones de los indicadores de calidad se soportan en el uso de una red que para 2021 incorporaba 38 servidores de prueba dispersos en el territorio nacional. Estas se muestran en el mapa a continuación.')    
+        st.markdown("")
+        folium_static(Sevidores_map,width=350)  
+        st.markdown(r"""<p style=font-size:10px>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021. 
+        Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.</p>""",unsafe_allow_html=True)
     with col2:
-        folium_static(Sevidores_map,width=480)  
+        st.markdown("### Definición indicadores de calidad",unsafe_allow_html=True)
+        st.markdown("Los indicadores de calidad pueden ser divididos en 2 categorías: Indicadores de desempeño, e Indicadores de cobertura. A continuación se da paso a las definiciones de cada uno, y su relación con el servicio que experimenta el usuario.")
+        select_indicadorDef=st.selectbox('Escoja la categoría',['Indicadores de desempeño','Indicadores de cobertura'])
+        if select_indicadorDef=='Indicadores de desempeño': 
+            st.markdown("#### Indicadores de desempeño")
+            st.markdown("el rendimiento o desempeño del servicio de internet se refiere a los resultados de los indicadores de calidad del servicio de telecomunicaciones desde el punto de vista del usuario. Los más relevantes están relacionados con las velocidades y los tiempos de retardo de las conexiones.")
+            with st.expander("Velocidad de descarga"):
+                st.markdown("La velocidad de descarga Se entiende como la rapidez con la se pueden descargar contenidos, normalmente desde una página Web. A mayor velocidad obtenida en la medición, mayor rapidez en la descarga, por lo tanto, mejor experiencia del usuario. Es usual medirla en  Megabit por segundo (Mbps)")
+            with st.expander("Velocidad de carga"):
+                st.markdown("La velocidad de carga se entiende como la medida de qué tan rápido se envían los datos en dirección desde un dispositivo hacia Internet. Es decir, es la rapidez con la que se pueden subir contenidos a Internet. A mayor velocidad obtenida en la medición, mayor rapidez en la carga, por lo tanto, mejor es la experiencia del usuario. Se mide en Mebagit por segundo (Mbps)")
+            with st.expander("Latencia"):
+                st.markdown("El parámetro de latencia sirve para medir qué tan rápido viajan los datos desde un punto de origen al destino. La experiencia al intentar acceder a audio, video y videojuegos es mejor con latencias más bajas, por lo cual, si el tiempo obtenido en la medición es pequeño, la experiencia del usuario es mejor. La latencia se mide en milisegundos (ms).")
+        if select_indicadorDef=='Indicadores de cobertura':
+            st.markdown("#### Indicadores de cobertura")
+            st.markdown("se refiere a indicadores relacionados con la distribución geográfica de los servicios de un operador móvil")
+            with st.expander("Registro en red"):
+                st.markdown("Es una métrica que indica la proporción del registro de los dispositivos de los usuarios en la red móvil de acuerdo con la tecnología de esta (para este documento incluye 2G, 3G, 4G y Roaming Automático Nacional - RAN).")
+            with st.expander("Registro en red 4G"):
+                st.markdown("Este indicador se refiere al porcentaje de usuarios que se registraron en las redes que suministran servicios móviles solamente en la tecnología 4G (incluido el Roaming Automático Nacional - RAN).")
 
 
 
 
 
+
+        
 #################################Lectura de bases Internet fijo#######################################33
 pathFijo='https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Fijo/'
 
@@ -324,7 +349,7 @@ if select_servicio == 'Internet fijo':
             'xanchor': 'center',
             'yanchor': 'top'})  
             st.plotly_chart(fig1Fijo, use_container_width=True)  
-            st.download_button(label="Descargar CSV",data=convert_df(Downspeed1Fijo),file_name='Historico_descarga_Colombia.csv',mime='text/csv')
+            #st.download_button(label="Descargar CSV",data=convert_df(Downspeed1Fijo),file_name='Historico_descarga_Colombia.csv',mime='text/csv')
 
 
             ##
@@ -591,7 +616,7 @@ if select_servicio == 'Internet fijo':
             'yanchor': 'top'})  
             fig3Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01'])
             st.plotly_chart(fig3Fijo, use_container_width=True)  
-            st.download_button(label="Descargar CSV",data=convert_df(JuntosDescarga4Fijo),file_name='Historico_descarga_Operadores.csv',mime='text/csv')            
+            #st.download_button(label="Descargar CSV",data=convert_df(JuntosDescarga4Fijo),file_name='Historico_descarga_Operadores.csv',mime='text/csv')            
             
             col1, col2 = st.columns(2)
             with col1:
@@ -922,7 +947,7 @@ if select_servicio == 'Internet fijo':
             'xanchor': 'center',
             'yanchor': 'top'})  
             st.plotly_chart(fig6Fijo, use_container_width=True)  
-            st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
+            #st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
             
             col1, col2,col3= st.columns(3)
             with col2:
@@ -1107,7 +1132,7 @@ if select_servicio == 'Internet fijo':
             'yanchor': 'top'})  
             fig8Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01'])
             st.plotly_chart(fig8Fijo, use_container_width=True)  
-            st.download_button(label="Descargar CSV",data=convert_df(JuntosCarga4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')            
+            #st.download_button(label="Descargar CSV",data=convert_df(JuntosCarga4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')            
 
             col1, col2 = st.columns(2)
             with col1:
@@ -1329,7 +1354,7 @@ if select_servicio == 'Internet fijo':
             'yanchor': 'top'})  
             fig9Fijo.update_xaxes(tickvals=['2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01'])
             st.plotly_chart(fig9Fijo, use_container_width=True)  
-            st.download_button(label="Descargar CSV",data=convert_df(Latency1Fijo),file_name='Historico_latencia_Colombia.csv',mime='text/csv')             
+            #st.download_button(label="Descargar CSV",data=convert_df(Latency1Fijo),file_name='Historico_latencia_Colombia.csv',mime='text/csv')             
 
             col1, col2,col3= st.columns(3)
             with col2:
@@ -1524,7 +1549,7 @@ if select_servicio == 'Internet fijo':
 
             fig11Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01'])
             st.plotly_chart(fig11Fijo, use_container_width=True)  
-            st.download_button(label="Descargar CSV",data=convert_df(JuntosLatencia4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')   
+            #st.download_button(label="Descargar CSV",data=convert_df(JuntosLatencia4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')   
             
             col1, col2 = st.columns(2)
             with col1:
