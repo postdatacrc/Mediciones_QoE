@@ -55,6 +55,7 @@ st.markdown("""<style type="text/css">
     z-index:9999;
     top:81px;
     left:0;}
+    .css-s15fmf {height:0rem}
     .css-m70y {display:none}
     .barra-superior{top: 0;
     position: fixed;
