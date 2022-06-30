@@ -27,6 +27,74 @@ LogoComision2="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-bl
 st.set_page_config(
     page_title="Mediciones QoE", page_icon=LogoComision,layout="wide",initial_sidebar_state="expanded")  
 
+st.markdown("""
+<div class="barra-superior">
+    <div class="imagen-flotar" style="height: 80px; left: 10px; padding:15px">
+        <a class="imagen-flotar" style="float:left;" href="https://www.crcom.gov.co" title="CRC">
+            <img src="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-blanco.png" alt="CRC" style="height:40px">
+        </a>
+        <a class="imagen-flotar" style="padding-left:10px;" href="https://postdata.gov.co" title="Postdata">
+            <img src="https://postdata.gov.co/sites/default/files/postdata-logo.png" alt="Inicio" style="height:40px">
+        </a>
+    </div>
+    <div class="imagen-flotar" style="height: 90px; left: 10px; padding:5px">
+        <a class="imagen-flotar" href="https://www.crcom.gov.co" title="CRC">
+            <img src="https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Banner_StreamLit.png" alt="CRC" style="">
+        </a>
+    </div>
+</div>""",unsafe_allow_html=True)
+st.markdown("""<style type="text/css">
+    h1{ background: #ffde00;
+    text-align: center;
+    padding: 15px;
+    font-family: sans-serif;
+    font-size:1.60rem;
+    color: black;
+    position:fixed;
+    width:100%;
+    z-index:9999;
+    top:81px;
+    left:0;}
+    .css-m70y {display:none}
+    .barra-superior{top: 0;
+    position: fixed;
+    background-color: #27348b;
+    width: 100%;
+    color:white;
+    z-index: 999;
+    height: 80px;
+    left: 0px;
+    text-align: center;
+    padding: 0px;
+    font-size: 36px;
+    font-weight: 700;
+    }
+    .main, .css-1lcbmhc > div{margin-top:135px;}
+    .css-y3whyl, .css-xqnn38 {background-color:#ccc}
+    .css-1uvyptr:hover,.css-1uvyptr {background: #ccc}
+    .block-container {padding-top:0;}
+    .css-k0sv6k {height:0rem}
+    h2{
+    background: #fffdf7;
+    text-align: center;
+    padding: 10px;
+    text-decoration: underline;
+    text-decoration-style: double;
+    color: #27348b;}
+    h3{ border-bottom: 2px solid #27348b;
+    border-left: 10px solid #27348b;
+    background: #fffdf7;
+    padding: 10px;
+    color: black;}
+    .imagen-flotar{float:left;}
+    @media (max-width:1230px){
+        .barra-superior{height:160px;} 
+        .main, .css-1lcbmhc > div{margin-top:215px;}
+        .imagen-flotar{float:none}
+        h1{top:160px;}
+    }    
+    </style>""", unsafe_allow_html=True)  
+
 gdf2 = gpd.read_file('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Colombia.geo.json')
 with urllib.request.urlopen('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Colombia.geo.json') as url:
     Colombian_DPTO2 = json.loads(url.read().decode())
@@ -40,7 +108,7 @@ dict_serv_colores={'Cali':'rgb(255,128,0)', 'Bogotá D.C.':'rgb(255,0,0)', 'Cart
        'Plato, Magdalena':'rgb(255,0,127)', 'Valledupar':'rgb(153,0,0)', 'Santander de Quilichao, Cauca':'rgb(0,102,102)',
        'Colón, Nariño':'rgb(153,0,76)'}
 
-st.markdown("# <center>Mediciones de calidad desde<br>la experiencia del usuario</center>",unsafe_allow_html=True)
+st.markdown("# <center>Mediciones de calidad desde la experiencia del usuario</center>",unsafe_allow_html=True)
 
 st.markdown("""<b>1. Seleccione el servicio sobre el cual desea conocer la información de los indicadores de desempeño</b>""", unsafe_allow_html=True)
 
