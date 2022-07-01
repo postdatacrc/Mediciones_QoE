@@ -44,30 +44,32 @@ st.markdown("""
     </div>
 </div>""",unsafe_allow_html=True)
 st.markdown("""<style type="text/css">
-    h1{ background: #ffde00;
-    text-align: center;
-    padding: 15px;
-    font-family: sans-serif;
-    font-size:1.60rem;
-    color: black;
-    position:fixed;
-    width:100%;
-    z-index:9999;
-    top:81px;
-    left:0;}
-    .css-m70y {display:none}
+    h1{ 
+        background: #ffde00;
+        text-align: center;
+        padding: 15px;
+        font-family: sans-serif;
+        font-size:1.60rem;
+        color: black;
+        position:fixed;
+        width:100%;
+        z-index:9999;
+        top:81px;
+        left:0;
+    }
+    .e8zbici0 {display:none}
     .barra-superior{top: 0;
-    position: fixed;
-    background-color: #27348b;
-    width: 100%;
-    color:white;
-    z-index: 999;
-    height: 80px;
-    left: 0px;
-    text-align: center;
-    padding: 0px;
-    font-size: 36px;
-    font-weight: 700;
+        position: fixed;
+        background-color: #27348b;
+        width: 100%;
+        color:white;
+        z-index: 999;
+        height: 80px;
+        left: 0px;
+        text-align: center;
+        padding: 0px;
+        font-size: 36px;
+        font-weight: 700;
     }
     .main, .css-1lcbmhc > div{margin-top:135px;}
     .css-y3whyl, .css-xqnn38 {background-color:#ccc}
@@ -399,7 +401,7 @@ if select_servicio == 'Internet fijo':
                 fill_color='YlGnBu', 
                 fill_opacity=0.9, 
                 line_opacity=0.9,
-                legend_name='Velocidad de descarga (Mbps)',
+                #legend_name='Velocidad de descarga (Mbps)',
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(colombia_map1Fijo)
             # Adicionar nombres del departamento
@@ -428,6 +430,9 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
             colombia_map1Fijo.add_child(NIL)
             colombia_map1Fijo.keep_in_front(NIL)
             
