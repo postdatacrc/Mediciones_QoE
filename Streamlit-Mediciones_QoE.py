@@ -537,14 +537,14 @@ if select_servicio == 'Internet fijo':
 
             for location in Dic20List:
                 fig4Fijo.add_trace(go.Scatter(
-                    x=Dic20[Dic20['Location']==location]['Download Speed Mbps'].values, y=Dic20[Dic20['Location']==location]['Upload Speed Mbps'].values, name=location,
+                    x=Dic20[Dic20['Location']==location]['Download Speed Mbps'].values, y=Dic20[Dic20['Location']==location]['Upload Speed Mbps'].values, 
                     mode='markers',
                     marker=dict(
                         color=dict_coloresFijo[location],
                         opacity=0.7,
                         size=Dic20[Dic20['Location']==location]['Latency'].values,
                     ),
-                text=Dic20[Dic20['Location']==location]['Latency'].values,showlegend=False),row=1, col=1)
+                text=Dic20[Dic20['Location']==location]['Latency'].values,showlegend=False,hovertemplate='<b>Ciudad:</b>'+location+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
                 
             for location in Dic21List:
                 fig4Fijo.add_trace(go.Scatter(
@@ -555,7 +555,7 @@ if select_servicio == 'Internet fijo':
                         opacity=0.7,
                         size=Dic21[Dic21['Location']==location]['Latency'].values,
                     ),
-                text=Dic21[Dic21['Location']==location]['Latency'].values),row=1, col=2)
+                text=Dic21[Dic21['Location']==location]['Latency'].values,hovertemplate='<b>Ciudad:</b>'+location+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=2)
 
 
             fig4Fijo.update_xaxes(tickangle=0,range=[0,max(Dic21['Download Speed Mbps'].values.tolist())+10],tickfont=dict(family='Arial', color='black', size=16),ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
@@ -868,7 +868,7 @@ if select_servicio == 'Internet fijo':
                     opacity=0.7,
                     size=0.5*etb[etb['year']==año]['Latency'].values,
                 ),legendgroup = '1',
-                text=0.5*etb[etb['year']==año]['Latency'].values),row=1, col=1)
+                text=0.5*etb[etb['year']==año]['Latency'].values,hovertemplate='<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
 
                 fig5Fijo.add_trace(go.Scatter(
                 x=claro[claro['year']==año]['Download Speed Mbps'].values, y=claro[claro['year']==año]['Upload Speed Mbps'].values,showlegend=False, name=año,
@@ -878,7 +878,7 @@ if select_servicio == 'Internet fijo':
                     opacity=0.7,
                     size=0.5*claro[claro['year']==año]['Latency'].values,
                 ),legendgroup = '1',
-                text=0.5*claro[claro['year']==año]['Latency'].values),row=1, col=2)
+                text=0.5*claro[claro['year']==año]['Latency'].values,hovertemplate='<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=2)
 
                 fig5Fijo.add_trace(go.Scatter(
                 x=movistar[movistar['year']==año]['Download Speed Mbps'].values, y=movistar[movistar['year']==año]['Upload Speed Mbps'].values,showlegend=False, name=año,
@@ -888,7 +888,7 @@ if select_servicio == 'Internet fijo':
                     opacity=0.7,
                     size=0.5*movistar[movistar['year']==año]['Latency'].values,
                 ),legendgroup = '1',
-                text=0.5*movistar[movistar['year']==año]['Latency'].values),row=2, col=1)
+                text=0.5*movistar[movistar['year']==año]['Latency'].values,hovertemplate='<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=2, col=1)
                 
                 fig5Fijo.add_trace(go.Scatter(
                 x=tigo[tigo['year']==año]['Download Speed Mbps'].values, y=tigo[tigo['year']==año]['Upload Speed Mbps'].values,showlegend=False, name=año,
@@ -898,7 +898,7 @@ if select_servicio == 'Internet fijo':
                     opacity=0.7,
                     size=0.5*tigo[tigo['year']==año]['Latency'].values,
                 ),legendgroup = '1',
-                text=0.5*tigo[tigo['year']==año]['Latency'].values),row=2, col=2)    
+                text=0.5*tigo[tigo['year']==año]['Latency'].values,hovertemplate='<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=2, col=2)    
                 
             fig5Fijo.add_shape(type="line",
                 x0=0, y0=0, x1=135, y1=135,
@@ -4119,7 +4119,7 @@ if select_servicio == 'Comparación internacional':
             marker=dict(
                 color=dict_coloresPais[pais],
                 opacity=1,
-                size=Fijo_Int[Fijo_Int['País']== pais]['Latency'])),row=1, col=1)
+                size=Fijo_Int[Fijo_Int['País']== pais]['Latency']),hovertemplate='<b>País:</b>'+pais+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
         fig1Int.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text='Velocidad de descarga (Mbps)',ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
         zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
         fig1Int.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Velocidad de carga (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
@@ -4164,7 +4164,7 @@ if select_servicio == 'Comparación internacional':
             marker=dict(
                 color=dict_coloresPais[pais],
                 opacity=1,
-                size=Movil__Int[Movil__Int['País']== pais]['Latency'])),row=1, col=1)
+                size=Movil__Int[Movil__Int['País']== pais]['Latency']),hovertemplate='<b>País:</b>'+pais+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
         fig2Int.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text='Velocidad de descarga (Mbps)',ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
         zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
         fig2Int.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Velocidad de carga (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
