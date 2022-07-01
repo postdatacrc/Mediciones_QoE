@@ -77,7 +77,7 @@ st.markdown("""<style type="text/css">
     h2{
     background: #fffdf7;
     text-align: center;
-    padding: 10px;
+    padding: 50px;
     text-decoration: underline;
     text-decoration-style: double;
     color: #27348b;}
@@ -325,6 +325,7 @@ if select_servicio == 'Internet fijo':
     if select_indicador== 'Velocidad de descarga':
         dimension_Vel_descarga_Fijo = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)
         if dimension_Vel_descarga_Fijo == 'Histórico Colombia':
+
             Downspeed1Fijo=Colombia1Fijo.groupby(['Aggregate Date'])['Download Speed Mbps'].mean().round(2).reset_index()
             Downspeed1Fijo=Downspeed1Fijo[Downspeed1Fijo['Aggregate Date']<'2022-01-01']
             Downspeed1Fijo['Aggregate Date']=Downspeed1Fijo['Aggregate Date'].astype('str')
@@ -343,12 +344,16 @@ if select_servicio == 'Internet fijo':
             fig1Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
             fig1Fijo.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
-            'text': "<b>Gráfico 1. Velocidad promedio mensual de descarga de internet fijo en <br>Colombia (2018-2021) (en Mbps) </b>",
+            'text': "<b>Velocidad promedio mensual de descarga de internet fijo en <br>Colombia (2018-2021) (en Mbps) </b>",
             'y':0.9,
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
-            st.plotly_chart(fig1Fijo, use_container_width=True)  
+            fig1Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.25)
+            st.plotly_chart(fig1Fijo, use_container_width=True)
             #st.download_button(label="Descargar CSV",data=convert_df(Downspeed1Fijo),file_name='Historico_descarga_Colombia.csv',mime='text/csv')
 
 
@@ -369,10 +374,11 @@ if select_servicio == 'Internet fijo':
             Colombia2Fijo=Colombia2Fijo[Colombia2Fijo['Test Count']>30]
             
             col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
-                
-            Col2Fijo=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Download Speed Mbps'].mean()
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo]    
+            Col2Fijo=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes)].groupby(['Location'])['Download Speed Mbps'].mean()
             Col2Fijo=round(Col2Fijo,2)
             departamentos_df2Fijo=gdf2.merge(Col2Fijo, on='Location')
             departamentos_df2Fijo=departamentos_df2Fijo.sort_values(by='Download Speed Mbps')
@@ -424,19 +430,28 @@ if select_servicio == 'Internet fijo':
             )
             colombia_map1Fijo.add_child(NIL)
             colombia_map1Fijo.keep_in_front(NIL)
-            col1, col2 ,col3= st.columns([1,4,1])
+            
+            col1, col2 ,col3= st.columns(3)
             with col2:
-                st.markdown("<center><b> Velocidad promedio de descarga de internet fijo en Colombia por departamento (en Mbps)</b></center>",
-                unsafe_allow_html=True)
+                st.markdown("<center><b> Velocidad promedio de descarga de internet fijo en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([2,4,1])
+            with col2b:
                 folium_static(colombia_map1Fijo,width=480) 
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
                 
         if dimension_Vel_descarga_Fijo == 'Ciudades':    
-            mes_opFijo = st.slider('Seleccione mes',1,12,12) 
+
+            col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
+            with col2:
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo]     
+            
             df18A3Fijo=pd.DataFrame();df19A3Fijo=pd.DataFrame();df20A3Fijo=pd.DataFrame();df21A3Fijo=pd.DataFrame()
-            p18A3Fijo=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2018)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Download Speed Mbps']]).groupby(['Location'])['Download Speed Mbps'].mean()
-            p19A3Fijo=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Download Speed Mbps']]).groupby(['Location'])['Download Speed Mbps'].mean()
-            p20A3Fijo=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Download Speed Mbps']]).groupby(['Location'])['Download Speed Mbps'].mean()
-            p21A3Fijo=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Download Speed Mbps']]).groupby(['Location'])['Download Speed Mbps'].mean()
+            p18A3Fijo=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2018)&(Ciudades3Fijo['month']==mes),['Location','Download Speed Mbps']]).groupby(['Location'])['Download Speed Mbps'].mean()
+            p19A3Fijo=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes),['Location','Download Speed Mbps']]).groupby(['Location'])['Download Speed Mbps'].mean()
+            p20A3Fijo=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes),['Location','Download Speed Mbps']]).groupby(['Location'])['Download Speed Mbps'].mean()
+            p21A3Fijo=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes),['Location','Download Speed Mbps']]).groupby(['Location'])['Download Speed Mbps'].mean()
             df18A3Fijo['Location']=p18A3Fijo.index;df18A3Fijo['2018']=p18A3Fijo.values;
             df19A3Fijo['Location']=p19A3Fijo.index;df19A3Fijo['2019']=p19A3Fijo.values;
             df20A3Fijo['Location']=p20A3Fijo.index;df20A3Fijo['2020']=p20A3Fijo.values;
@@ -458,22 +473,22 @@ if select_servicio == 'Internet fijo':
             fig2Fijo.add_trace(go.Bar(
             x=DepJoinA3Fijo['Location'],
             y=DepJoinA3Fijo['2018'],
-            name=name_mes[mes_opFijo]+' 2018',
+            name=mes_opFijo+' 2018',
             marker_color='rgb(213,3,85)',textposition = "inside"))
             fig2Fijo.add_trace(go.Bar(
             x=DepJoinA3Fijo['Location'],
             y=DepJoinA3Fijo['2019'],
-            name=name_mes[mes_opFijo]+' 2019',
+            name=mes_opFijo+' 2019',
             marker_color='rgb(255,152,0)',textposition = "inside"))
             fig2Fijo.add_trace(go.Bar(
             x=DepJoinA3Fijo['Location'],
             y=DepJoinA3Fijo['2020'],
-            name=name_mes[mes_opFijo]+' 2020',
+            name=mes_opFijo+' 2020',
             marker_color='rgb(44,198,190)',textposition = "inside"))
             fig2Fijo.add_trace(go.Bar(
             x=DepJoinA3Fijo['Location'],
             y=DepJoinA3Fijo['2021'],
-            name=name_mes[mes_opFijo]+' 2021',
+            name=mes_opFijo+' 2021',
             marker_color='rgb(72,68,242)',textposition = "outside"))
             fig2Fijo.update_xaxes(tickangle=-90, tickfont=dict(family='Arial', color='black', size=14),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
@@ -481,7 +496,7 @@ if select_servicio == 'Internet fijo':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig2Fijo.update_traces(textfont_size=14)
             fig2Fijo.update_layout(height=500,width=1200,legend_title=None)
-            fig2Fijo.update_layout(legend=dict(orientation="h",y=1,x=0.13))
+            fig2Fijo.update_layout(legend=dict(orientation="h",yanchor='top',xanchor='center',x=0.5,y=1))
             fig2Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
             fig2Fijo.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=14,font=dict(size=14),
             title={
@@ -491,15 +506,19 @@ if select_servicio == 'Internet fijo':
             'xanchor': 'center',
             'yanchor': 'top'})  
             fig2Fijo.update_layout(barmode='group')
+            fig2Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.4)
             st.plotly_chart(fig2Fijo, use_container_width=True)  
             
             col1, col2 = st.columns(2)
             with col1:
-                mes_opFijo20 = st.selectbox('Escoja mes del 2020',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)
+                Año_opFijo20 = st.selectbox('Escoja el año',[2018,2019,2020],index=2)
             with col2:
-                mes_opFijo21 = st.selectbox('Escoja mes del 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)             
+                mes_opFijo21 = st.slider('Escoja mes del 2021',1,12,12)             
             name_mes2={1:'Enero',2:'Febrero',3:'Marzo',4:'Abril',5:'Mayo',6:'Junio',7:'Julio',8:'Agosto',9:'Septiembre',10:'Octubre',11:'Noviembre',12:'Diciembre'}
-            Dic20=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes_opFijo20)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
+            Dic20=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==Año_opFijo20)&(Ciudades3Fijo['month']==12)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
             Dic21=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes_opFijo21)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
             Dic20List=Dic20['Location'].unique().tolist()
             Dic21List=Dic21['Location'].unique().tolist()
@@ -513,7 +532,7 @@ if select_servicio == 'Internet fijo':
                  'Tunja':'rgb(127,0,255)','Pasto':'rgb(255,0,255)','Santa Marta':'rgb(255,0,127)',
                  'Sincelejo':'rgb(128,128,128)','Armenia':'rgb(102,0,0)','Montería':'rgb(0,255,255)',
                  'Pereira':'rgb(0,51,51)','Popayán':'rgb(51,0,25)'}
-            fig4Fijo = make_subplots(rows=1, cols=2,subplot_titles=(name_mes2[mes_opFijo20]+" 2020",
+            fig4Fijo = make_subplots(rows=1, cols=2,subplot_titles=('Diciembre '+str(Año_opFijo20),
             name_mes2[mes_opFijo21]+" 2021"))
 
             for location in Dic20List:
@@ -558,6 +577,10 @@ if select_servicio == 'Internet fijo':
             fig4Fijo.update_yaxes(showspikes=True,range=[0,max(Dic21['Upload Speed Mbps'].values.tolist())+10],title_text="Velocidad de carga (Mbps)", row=1, col=1)
             fig4Fijo.update_yaxes(showspikes=True,range=[0,max(Dic21['Upload Speed Mbps'].values.tolist())+10],title_text=None, row=1, col=2)
             fig4Fijo.update_layout(legend=dict(y=0.95,x=1,orientation='v'))
+            fig4Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.15)            
             st.plotly_chart(fig4Fijo, use_container_width=True)
             
         if dimension_Vel_descarga_Fijo == 'Operadores': 
@@ -615,30 +638,34 @@ if select_servicio == 'Internet fijo':
             'xanchor': 'center',
             'yanchor': 'top'})  
             fig3Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01'])
+            fig3Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.2) 
             st.plotly_chart(fig3Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(JuntosDescarga4Fijo),file_name='Historico_descarga_Operadores.csv',mime='text/csv')            
             
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opFijo = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo] 
             
-            Proveedor1Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+            Proveedor1Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
             Proveedor1Fijo['Download Speed Mbps'] =round(Proveedor1Fijo['Download Speed Mbps'], 2)
             final_df1Fijo=gdf2.merge(Proveedor1Fijo, on='Location')
             final_df1Fijo=final_df1Fijo[final_df1Fijo['Location'].isin(['GUAVIARE','SAN ANDRES Y PROVIDENCIA'])==False]
 
             ##
-            Proveedor2Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+            Proveedor2Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
             Proveedor2Fijo['Download Speed Mbps'] =round(Proveedor2Fijo['Download Speed Mbps'], 2)
             final_df2Fijo=gdf2.merge(Proveedor2Fijo, on='Location')
             ##
-            Proveedor3Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+            Proveedor3Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
             Proveedor3Fijo['Download Speed Mbps'] =round(Proveedor3Fijo['Download Speed Mbps'], 2)
             final_df3Fijo=gdf2.merge(Proveedor3Fijo, on='Location')
             ##
-            Proveedor4Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+            Proveedor4Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
             Proveedor4Fijo['Download Speed Mbps'] =round(Proveedor4Fijo['Download Speed Mbps'], 2)
             final_df4Fijo=gdf2.merge(Proveedor4Fijo, on='Location')
             
@@ -813,8 +840,16 @@ if select_servicio == 'Internet fijo':
             FloatImage(url3, bottom=5, left=1).add_to(dualmap1_2Fijo.m1)
             FloatImage(url4, bottom=5, left=53).add_to(dualmap1_2Fijo.m2)
             
-            folium_static(dualmap1_1Fijo,width=800) 
-            folium_static(dualmap1_2Fijo,width=800) 
+            
+            col1, col2 ,col3= st.columns(3)
+            with col2:
+                st.markdown("<center><b> Velocidad promedio de descarga de internet fijo en Colombia por operador y departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([1,4,1])
+            with col2b:
+                folium_static(dualmap1_1Fijo,width=800) 
+                folium_static(dualmap1_2Fijo,width=800)  
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+
            
             etb=Operadores4Fijo[Operadores4Fijo['Provider']=='ETB'][['Latency','Download Speed Mbps','Upload Speed Mbps','year']]
             claro=Operadores4Fijo[Operadores4Fijo['Provider']=='Claro'][['Latency','Download Speed Mbps','Upload Speed Mbps','year']]
@@ -919,6 +954,10 @@ if select_servicio == 'Internet fijo':
             fig5Fijo.update_yaxes(title_text="Velocidad de carga (Mbps)", row=1, col=1)
             fig5Fijo.update_yaxes(title_text="Velocidad de carga (Mbps)", row=2, col=1)
             fig5Fijo.update_layout(legend=dict(yanchor="top",y=1,xanchor="left",x=0.01))
+            fig5Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-1.55)             
             st.plotly_chart(fig5Fijo, use_container_width=True)  
 
     if select_indicador== 'Velocidad de carga':
@@ -941,20 +980,25 @@ if select_servicio == 'Internet fijo':
             fig6Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
             fig6Fijo.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
-            'text': "<b>Gráfico 6. Velocidad promedio mensual de carga de Internet fijo<br>en Colombia (2018-2021) (en Mbps)</b>",
+            'text': "<b>Velocidad promedio mensual de carga de Internet fijo<br>en Colombia (2018-2021) (en Mbps)</b>",
             'y':0.9,
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
+            fig6Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.25)
             st.plotly_chart(fig6Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
             
             col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo]    
 
-
-            Col2bFijo=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Upload Speed Mbps'].mean()
+            Col2bFijo=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes)].groupby(['Location'])['Upload Speed Mbps'].mean()
             Col2bFijo=round(Col2bFijo,2)
             departamentos_df2bFijo=gdf2.merge(Col2bFijo, on='Location')
             departamentos_df2bFijo=departamentos_df2bFijo.sort_values(by='Upload Speed Mbps')  
@@ -1005,19 +1049,26 @@ if select_servicio == 'Internet fijo':
             )
             colombia_map2Fijo.add_child(NIL)
             colombia_map2Fijo.keep_in_front(NIL)
-            col1, col2 ,col3= st.columns([1,4,1])
+
             with col2:
-                st.markdown("<center><b>Velocidad promedio de carga de internet fijo en Colombia por departamento (en Mbps)</b></center>",
-                unsafe_allow_html=True)
-                folium_static(colombia_map2Fijo,width=480)            
+                st.markdown("<center><b> Velocidad promedio de carga de internet fijo en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([2,4,1])
+            with col2b:
+                folium_static(colombia_map2Fijo,width=480) 
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Fijo == 'Ciudades':    
-            mes_opFijo = st.slider('Seleccione mes',1,12,12) 
+            col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
+            with col2:
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo]  
+            
             df18B3=pd.DataFrame();df19B3=pd.DataFrame();df20B3=pd.DataFrame();df21B3=pd.DataFrame()
-            p18B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2018)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
-            p19B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
-            p20B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
-            p21B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+            p18B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2018)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+            p19B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+            p20B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+            p21B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
             df18B3['Location']=p18B3.index;df18B3['2018']=p18B3.values;
             df19B3['Location']=p19B3.index;df19B3['2019']=p19B3.values;
             df20B3['Location']=p20B3.index;df20B3['2020']=p20B3.values;
@@ -1039,22 +1090,22 @@ if select_servicio == 'Internet fijo':
             fig7Fijo.add_trace(go.Bar(
                 x=DepJoinB3['Location'],
                 y=DepJoinB3['2018'],
-                name=name_mes[mes_opFijo]+' 2018',
+                name=mes_opFijo+' 2018',
                 marker_color='rgb(213,3,85)'))
             fig7Fijo.add_trace(go.Bar(
                 x=DepJoinB3['Location'],
                 y=DepJoinB3['2019'],
-                name=name_mes[mes_opFijo]+' 2019',
+                name=mes_opFijo+' 2019',
                 marker_color='rgb(255,152,0)'))
             fig7Fijo.add_trace(go.Bar(
                 x=DepJoinB3['Location'],
                 y=DepJoinB3['2020'],
-                name=name_mes[mes_opFijo]+' 2020',
+                name=mes_opFijo+' 2020',
                 marker_color='rgb(44,198,190)'))
             fig7Fijo.add_trace(go.Bar(
                 x=DepJoinB3['Location'],
                 y=DepJoinB3['2021'],
-                name=name_mes[mes_opFijo]+' 2021',
+                name=mes_opFijo+' 2021',
                 marker_color='rgb(72,68,242)'))
 
             fig7Fijo.update_xaxes(tickangle=-90, tickfont=dict(family='Arial', color='black', size=14),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
@@ -1063,7 +1114,7 @@ if select_servicio == 'Internet fijo':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig7Fijo.update_traces(textfont_size=22)
             fig7Fijo.update_layout(height=500,width=1200,legend_title=None)
-            fig7Fijo.update_layout(legend=dict(orientation="h",y=1,x=0.13))
+            fig7Fijo.update_layout(legend=dict(orientation="h",y=1,xanchor='center',x=0.5))
             fig7Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
             fig7Fijo.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=14,font=dict(size=14),
             title={
@@ -1074,6 +1125,10 @@ if select_servicio == 'Internet fijo':
             'yanchor': 'top'})  
             fig7Fijo.update_layout(barmode='group')
             fig7Fijo.update_layout(uniformtext_minsize=22, uniformtext_mode='show')
+            fig7Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.4)             
             st.plotly_chart(fig7Fijo, use_container_width=True)  
             
         if dimension_Vel_carga_Fijo == 'Operadores':   
@@ -1131,29 +1186,33 @@ if select_servicio == 'Internet fijo':
             'xanchor': 'center',
             'yanchor': 'top'})  
             fig8Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01'])
+            fig8Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.2) 
             st.plotly_chart(fig8Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(JuntosCarga4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')            
 
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opFijo = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo] 
 
-            Proveedor1bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+            Proveedor1bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
             Proveedor1bFijo['Upload Speed Mbps'] =round(Proveedor1bFijo['Upload Speed Mbps'], 2)
             final_df1bFijo=gdf2.merge(Proveedor1bFijo, on='Location')
             final_df1bFijo=final_df1bFijo[final_df1bFijo['Location'].isin(['GUAVIARE','SAN ANDRES Y PROVIDENCIA'])==False]
             ##
-            Proveedor2bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+            Proveedor2bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
             Proveedor2bFijo['Upload Speed Mbps'] =round(Proveedor2bFijo['Upload Speed Mbps'], 2)
             final_df2bFijo=gdf2.merge(Proveedor2bFijo, on='Location')
             ##
-            Proveedor3bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+            Proveedor3bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
             Proveedor3bFijo['Upload Speed Mbps'] =round(Proveedor3bFijo['Upload Speed Mbps'], 2)
             final_df3bFijo=gdf2.merge(Proveedor3bFijo, on='Location')
             ##
-            Proveedor4bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+            Proveedor4bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
             Proveedor4bFijo['Upload Speed Mbps'] =round(Proveedor4bFijo['Upload Speed Mbps'], 2)
             final_df4bFijo=gdf2.merge(Proveedor4bFijo, on='Location') 
 
@@ -1325,8 +1384,15 @@ if select_servicio == 'Internet fijo':
             FloatImage(url4, bottom=5, left=53).add_to(dualmap1_4Fijo.m2)
 
 
-            folium_static(dualmap1_3Fijo,width=800) 
-            folium_static(dualmap1_4Fijo,width=800)           
+            col1, col2 ,col3= st.columns(3)
+            with col2:
+                st.markdown("<center><b> Velocidad promedio de carga de internet fijo en Colombia por operador y departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([1,4,1])
+            with col2b:
+                folium_static(dualmap1_3Fijo,width=800) 
+                folium_static(dualmap1_4Fijo,width=800)  
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+         
             
     if select_indicador== 'Latencia':            
         dimension_Latencia_Fijo = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)
@@ -1353,17 +1419,23 @@ if select_servicio == 'Internet fijo':
             'xanchor': 'center',
             'yanchor': 'top'})  
             fig9Fijo.update_xaxes(tickvals=['2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01'])
+            fig9Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.25)
             st.plotly_chart(fig9Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(Latency1Fijo),file_name='Historico_latencia_Colombia.csv',mime='text/csv')             
 
             col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo]    
                 
             Servidores=pd.read_csv(pathFijo+'Fij-Servidores_Colombia.csv',encoding='latin-1',delimiter=';')
             Servidores['latitude']=Servidores['latitude'].str.replace(',','.')
             Servidores['longitude']=Servidores['longitude'].str.replace(',','.')
-            ColLat2=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes_opFijo)].groupby(['Location'])['Latency'].mean()
+            ColLat2=Colombia2Fijo[(Colombia2Fijo['year']==2021)&(Colombia2Fijo['month']==mes)].groupby(['Location'])['Latency'].mean()
             ColLat2=round(ColLat2,2)
             departamentosLat_df2Fijo=gdf2.merge(ColLat2, on='Location')
             departamentosLat_df2Fijo=departamentosLat_df2Fijo.sort_values(by='Latency')
@@ -1425,19 +1497,26 @@ if select_servicio == 'Internet fijo':
              fill_opacity=1
                ).add_to(colombia_map3Fijo)
 
-            col1, col2 ,col3= st.columns([1,4,1])
+            col1, col2 ,col3= st.columns(3)
             with col2:
-                st.markdown("<center><b>Latencia promedio internet fijo en Colombia por departamento (en Mbps)</b></center>",
-                unsafe_allow_html=True)
-                folium_static(colombia_map3Fijo,width=480)  
+                st.markdown("<center><b>Latencia promedio internet fijo en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([2,4,1])
+            with col2b:
+                folium_static(colombia_map3Fijo,width=480) 
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Latencia_Fijo == 'Ciudades':    
-            mes_opFijo = st.slider('Seleccione mes',1,12,12) 
+            col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
+            with col2:
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo]  
+            
             df18C3=pd.DataFrame();df19C3=pd.DataFrame();df20C3=pd.DataFrame();df21C3=pd.DataFrame()
-            p18C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2018)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
-            p19C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
-            p20C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
-            p21C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes_opFijo),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+            p18C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2018)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+            p19C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+            p20C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+            p21C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
             df18C3['Location']=p18C3.index;df18C3['2018']=p18C3.values;
             df19C3['Location']=p19C3.index;df19C3['2019']=p19C3.values;
             df20C3['Location']=p20C3.index;df20C3['2020']=p20C3.values;
@@ -1454,22 +1533,22 @@ if select_servicio == 'Internet fijo':
             fig10Fijo.add_trace(go.Bar(
                 x=DepJoinC3['Location'],
                 y=DepJoinC3['2018'],
-                name=name_mes[mes_opFijo]+' 2018',
+                name=mes_opFijo+' 2018',
                 marker_color='rgb(213,3,85)'))
             fig10Fijo.add_trace(go.Bar(
                 x=DepJoinC3['Location'],
                 y=DepJoinC3['2019'],
-                name=name_mes[mes_opFijo]+' 2019',
+                name=mes_opFijo+' 2019',
                 marker_color='rgb(255,152,0)'))
             fig10Fijo.add_trace(go.Bar(
                 x=DepJoinC3['Location'],
                 y=DepJoinC3['2020'],
-                name=name_mes[mes_opFijo]+' 2020',
+                name=mes_opFijo+' 2020',
                 marker_color='rgb(44,198,190)'))
             fig10Fijo.add_trace(go.Bar(
                 x=DepJoinC3['Location'],
                 y=DepJoinC3['2021'],
-                name=name_mes[mes_opFijo]+' 2021',
+                name=mes_opFijo+' 2021',
                 marker_color='rgb(72,68,242)'))
 
 
@@ -1479,7 +1558,7 @@ if select_servicio == 'Internet fijo':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig10Fijo.update_traces(textfont_size=22)
             fig10Fijo.update_layout(height=500,width=1200,legend_title=None)
-            fig10Fijo.update_layout(legend=dict(orientation="h",y=1.1,x=0.15))
+            fig10Fijo.update_layout(legend=dict(orientation="h",y=1.1,xanchor='center',x=0.5))
             fig10Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
             fig10Fijo.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=14,font=dict(size=14),
             title={
@@ -1490,6 +1569,10 @@ if select_servicio == 'Internet fijo':
             'yanchor': 'top'})  
             fig10Fijo.update_layout(barmode='group')
             fig10Fijo.update_layout(uniformtext_minsize=14, uniformtext_mode='show')
+            fig10Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.4)                 
             st.plotly_chart(fig10Fijo, use_container_width=True)  
 
         if dimension_Latencia_Fijo == 'Operadores':  
@@ -1546,31 +1629,34 @@ if select_servicio == 'Internet fijo':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
-
             fig11Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01'])
+            fig11Fijo.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.2) 
             st.plotly_chart(fig11Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(JuntosLatencia4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')   
             
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opFijo = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
+            mes_opFijoNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
+                mes_opFijo = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opFijoNombre[mes_opFijo]  
 
-            ProveedorLat1Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+            ProveedorLat1Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
             ProveedorLat1Fijo['Latency'] =round(ProveedorLat1Fijo['Latency'], 2)
             final_dfLat1Fijo=gdf2.merge(ProveedorLat1Fijo, on='Location')
             final_dfLat1Fijo=final_dfLat1Fijo[final_dfLat1Fijo['Location'].isin(['GUAVIARE','SAN ANDRES Y PROVIDENCIA'])==False]
             ##
-            ProveedorLat2Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+            ProveedorLat2Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
             ProveedorLat2Fijo['Latency'] =round(ProveedorLat2Fijo['Latency'], 2)
             final_dfLat2Fijo=gdf2.merge(ProveedorLat2Fijo, on='Location')
             ##
-            ProveedorLat3Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+            ProveedorLat3Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
             ProveedorLat3Fijo['Latency'] =round(ProveedorLat3Fijo['Latency'], 2)
             final_dfLat3Fijo=gdf2.merge(ProveedorLat3Fijo, on='Location')
             ##
-            ProveedorLat4Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes_opFijo),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+            ProveedorLat4Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==2021)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
             ProveedorLat4Fijo['Latency'] =round(ProveedorLat4Fijo['Latency'], 2)
             final_dfLat4Fijo=gdf2.merge(ProveedorLat4Fijo, on='Location')
             
@@ -1740,8 +1826,15 @@ if select_servicio == 'Internet fijo':
             FloatImage(url3, bottom=5, left=1).add_to(dualmap1_6Fijo.m1)
             FloatImage(url4, bottom=5, left=53).add_to(dualmap1_6Fijo.m2)
 
-            folium_static(dualmap1_5Fijo,width=800) 
-            folium_static(dualmap1_6Fijo,width=800)  
+            col1, col2 ,col3= st.columns(3)
+            with col2:
+                st.markdown("<center><b> Latencia promedio de internet fijo en Colombia por operador y departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([1,4,1])
+            with col2b:
+                folium_static(dualmap1_5Fijo,width=800) 
+                folium_static(dualmap1_6Fijo,width=800)  
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+ 
 
 #########################################################Lectura de bases Internet móvil#######################################
 
@@ -2005,7 +2098,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig1Movil.update_traces(textfont_size=18)
             fig1Movil.update_layout(height=500,legend_title=None)
-            fig1Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.3))
+            fig1Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.4))
             fig1Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig1Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -2014,14 +2107,19 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
-                
+            fig1Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.15)    
             st.plotly_chart(fig1Movil, use_container_width=True)    
 
             col1, col2,col3= st.columns(3)
+            mes_opMovilNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opMovil = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11) 
-                
-            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes_opMovil)].groupby(['Location'])['Download Speed Mbps'].mean().reset_index()
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opMovilNombre[mes_opMovil] 
+            
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Download Speed Mbps'].mean().reset_index()
             ColMovil1=round(ColMovil1,2)
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')                
@@ -2071,11 +2169,14 @@ if select_servicio == 'Internet móvil':
             )
             colombia_map1Movil.add_child(NIL)
             colombia_map1Movil.keep_in_front(NIL)
-            col1, col2 ,col3= st.columns([1,4,1])
+            
+            col1, col2 ,col3= st.columns(3)
             with col2:
-                st.markdown("<center><b> Velocidad promedio de descarga de internet móvil en Colombia por departamento (en Mbps)</b></center>",
-                unsafe_allow_html=True)
+                st.markdown("<center><b> Velocidad promedio de descarga de Internet móvil en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([2,4,1])
+            with col2b:
                 folium_static(colombia_map1Movil,width=480) 
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_descarga_Movil == 'Operadores':
             
@@ -2106,7 +2207,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig2Movil.update_traces(textfont_size=18)
             fig2Movil.update_layout(height=500,legend_title=None)
-            fig2Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig2Movil.update_layout(legend=dict(orientation="h",y=1.05,xanchor='center',x=0.5))
             fig2Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig2Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -2115,54 +2216,58 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})          
-
+            fig2Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.2) 
             st.plotly_chart(fig2Movil, use_container_width=True)                   
 
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opMovil = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
+            mes_opMovilNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opMovil = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)                  
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opMovilNombre[mes_opMovil]  
+                
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].empty==True:
                 pass
             else:    
-                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
                 Proveedor1Movil['Download Speed Mbps'] =round(Proveedor1Movil['Download Speed Mbps'], 2)
                 final_df1Movil=gdf2.merge(Proveedor1Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].empty==True:
                 pass
             else:                
-                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
                 Proveedor2Movil['Download Speed Mbps'] =round(Proveedor2Movil['Download Speed Mbps'], 2)
                 final_df2Movil=gdf2.merge(Proveedor2Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].empty==True:
                 pass
             else:                
-                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
                 Proveedor3Movil['Download Speed Mbps'] =round(Proveedor3Movil['Download Speed Mbps'], 2)
                 final_df3Movil=gdf2.merge(Proveedor3Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].empty==True:
                 pass
             else:                
-                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
                 Proveedor4Movil['Download Speed Mbps'] =round(Proveedor4Movil['Download Speed Mbps'], 2)
                 final_df4Movil=gdf2.merge(Proveedor4Movil, on='Location')   
             ##       
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].empty==True:
                 pass
             else:                
-                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
                 Proveedor5Movil['Download Speed Mbps'] =round(Proveedor5Movil['Download Speed Mbps'], 2)
                 final_df5Movil=gdf2.merge(Proveedor5Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].empty==True:
                 final_df6Movil=gdf2
                 final_df6Movil['Download Speed Mbps']=np.nan
             else:                
-                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
                 Proveedor6Movil['Download Speed Mbps'] =round(Proveedor6Movil['Download Speed Mbps'], 2)
                 final_df6Movil=gdf2.merge(Proveedor6Movil, on='Location')              
 
@@ -2420,10 +2525,16 @@ if select_servicio == 'Internet móvil':
 
             FloatImage(url1, bottom=5, left=1).add_to(dualmap1_3Movil.m1)
             FloatImage(url2, bottom=5, left=53).add_to(dualmap1_3Movil.m2)
-            
-            folium_static(dualmap1_1Movil,width=800) 
-            folium_static(dualmap1_2Movil,width=800)
-            folium_static(dualmap1_3Movil,width=800)   
+
+            col1, col2 ,col3= st.columns(3)
+            with col2:
+                st.markdown("<center><b> Velocidad de descarga promedio de internet móvil en Colombia por operador y departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([1,4,1])
+            with col2b:
+                folium_static(dualmap1_1Movil,width=800) 
+                folium_static(dualmap1_2Movil,width=800)
+                folium_static(dualmap1_3Movil,width=800)    
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_descarga_Movil == 'Ciudades':
             fig3Movil=go.Figure()
@@ -2454,7 +2565,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig3Movil.update_traces(textfont_size=18)
             fig3Movil.update_layout(height=500,legend_title=None)
-            fig3Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig3Movil.update_layout(legend=dict(orientation="h",y=1.05,xanchor='center',x=0.5))
             fig3Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig3Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -2463,7 +2574,10 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
-            
+            fig3Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.4)               
             st.plotly_chart(fig3Movil, use_container_width=True) 
             
     if select_indicador== 'Velocidad de carga':
@@ -2491,7 +2605,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig4Movil.update_traces(textfont_size=18)
             fig4Movil.update_layout(height=500,legend_title=None)
-            fig4Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.3))
+            fig4Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.4))
             fig4Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig4Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -2500,14 +2614,20 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
+            fig4Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.15)  
                 
             st.plotly_chart(fig4Movil, use_container_width=True)    
 
             col1, col2,col3= st.columns(3)
+            mes_opMovilNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opMovil = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)  
-
-            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes_opMovil)].groupby(['Location'])['Upload Speed Mbps'].mean().reset_index()
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opMovilNombre[mes_opMovil] 
+            
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Upload Speed Mbps'].mean().reset_index()
             ColMovil1=round(ColMovil1,2)
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')    
@@ -2557,11 +2677,14 @@ if select_servicio == 'Internet móvil':
             )
             colombia_map1Movi2.add_child(NIL)
             colombia_map1Movi2.keep_in_front(NIL)
-            col1, col2 ,col3= st.columns([1,4,1])
+
+            col1, col2 ,col3= st.columns(3)
             with col2:
-                st.markdown("<center><b> Velocidad promedio de carga de internet móvil en Colombia por departamento (en Mbps)</b></center>",
-                unsafe_allow_html=True)
+                st.markdown("<center><b> Velocidad promedio de carga de internet móvil en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([2,4,1])
+            with col2b:
                 folium_static(colombia_map1Movi2,width=480) 
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
                 
         if dimension_Vel_carga_Movil == 'Operadores':  
   
@@ -2592,7 +2715,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig6Movil.update_traces(textfont_size=18)
             fig6Movil.update_layout(height=500,legend_title=None)
-            fig6Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig6Movil.update_layout(legend=dict(orientation="h",y=1.05,xanchor='center',x=0.5))
             fig6Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig6Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -2601,55 +2724,58 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})          
-
+            fig6Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.2) 
             st.plotly_chart(fig6Movil, use_container_width=True)                   
 
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opMovil = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
+            mes_opMovilNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opMovil = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)                  
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opMovilNombre[mes_opMovil]                   
 
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].empty==True:
                 pass
             else:    
-                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
                 Proveedor1Movil['Upload Speed Mbps'] =round(Proveedor1Movil['Upload Speed Mbps'], 2)
                 final_df1Movil=gdf2.merge(Proveedor1Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].empty==True:
                 pass
             else:                
-                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
                 Proveedor2Movil['Upload Speed Mbps'] =round(Proveedor2Movil['Upload Speed Mbps'], 2)
                 final_df2Movil=gdf2.merge(Proveedor2Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].empty==True:
                 pass
             else:                
-                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
                 Proveedor3Movil['Upload Speed Mbps'] =round(Proveedor3Movil['Upload Speed Mbps'], 2)
                 final_df3Movil=gdf2.merge(Proveedor3Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].empty==True:
                 pass
             else:                
-                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
                 Proveedor4Movil['Upload Speed Mbps'] =round(Proveedor4Movil['Upload Speed Mbps'], 2)
                 final_df4Movil=gdf2.merge(Proveedor4Movil, on='Location')   
             ##       
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].empty==True:
                 pass
             else:                
-                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
                 Proveedor5Movil['Upload Speed Mbps'] =round(Proveedor5Movil['Upload Speed Mbps'], 2)
                 final_df5Movil=gdf2.merge(Proveedor5Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].empty==True:
                 final_df6Movil=gdf2
                 final_df6Movil['Upload Speed Mbps']=np.nan
             else:                
-                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
                 Proveedor6Movil['Upload Speed Mbps'] =round(Proveedor6Movil['Upload Speed Mbps'], 2)
                 final_df6Movil=gdf2.merge(Proveedor6Movil, on='Location')              
 
@@ -2908,9 +3034,15 @@ if select_servicio == 'Internet móvil':
             FloatImage(url1, bottom=5, left=1).add_to(dualmap1_3Movil.m1)
             FloatImage(url2, bottom=5, left=53).add_to(dualmap1_3Movil.m2)
             
-            folium_static(dualmap1_1Movil,width=800) 
-            folium_static(dualmap1_2Movil,width=800)
-            folium_static(dualmap1_3Movil,width=800)   
+            col1, col2 ,col3= st.columns(3)
+            with col2:
+                st.markdown("<center><b> Velocidad de carga promedio de internet móvil en Colombia por operador y departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([1,4,1])
+            with col2b:
+                folium_static(dualmap1_1Movil,width=800) 
+                folium_static(dualmap1_2Movil,width=800)
+                folium_static(dualmap1_3Movil,width=800)    
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Movil == 'Ciudades':
             
@@ -2942,7 +3074,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig8Movil.update_traces(textfont_size=18)
             fig8Movil.update_layout(height=500,legend_title=None)
-            fig8Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig8Movil.update_layout(legend=dict(orientation="h",y=1.05,xanchor='center',x=0.5))
             fig8Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig8Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -2951,7 +3083,10 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
-            
+            fig8Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.4)             
             st.plotly_chart(fig8Movil, use_container_width=True) 
 
     if select_indicador== 'Latencia':
@@ -2973,7 +3108,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig5Movil.update_traces(textfont_size=14)
             fig5Movil.update_layout(height=500,legend_title=None,font=dict(size=14))
-            fig5Movil.update_layout(legend=dict(orientation="h",y=1.02,x=0.33),showlegend=True)
+            fig5Movil.update_layout(legend=dict(orientation="h",yanchor='top',xanchor='center',x=0.5,y=1.02),showlegend=True)
             fig5Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
             fig5Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=14,
             title={
@@ -2983,15 +3118,20 @@ if select_servicio == 'Internet móvil':
             'xanchor': 'center',
             'yanchor': 'top'})  
             fig5Movil.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01'])
-
+            fig5Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.2) 
                 
             st.plotly_chart(fig5Movil, use_container_width=True)    
 
             col1, col2,col3= st.columns(3)
+            mes_opMovilNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opMovil = st.selectbox('Escoja el mes de 2021',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)                    
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opMovilNombre[mes_opMovil]                     
             
-            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes_opMovil)].groupby(['Location'])['Latency'].mean().reset_index()
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2021)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Latency'].mean().reset_index()
             ColMovil1=round(ColMovil1,2)
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')    
@@ -3044,10 +3184,13 @@ if select_servicio == 'Internet móvil':
             
             col1, col2 ,col3= st.columns([1,4,1])
         
+            col1, col2 ,col3= st.columns(3)
             with col2:
-                st.markdown("<center><b> Latencia promedio de internet móvil en Colombia por departamento (en Mbps)</b></center>",
-                unsafe_allow_html=True)
+                st.markdown("<center><b> Latencia promedio de internet móvil en Colombia por departamento (en ms)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([2,4,1])
+            with col2b:
                 folium_static(colombia_map1Movi2,width=480) 
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Movil == 'Operadores':  
   
@@ -3078,7 +3221,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig7Movil.update_traces(textfont_size=18)
             fig7Movil.update_layout(height=500,legend_title=None)
-            fig7Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig7Movil.update_layout(legend=dict(orientation="h",y=1.05,xanchor='center',x=0.5))
             fig7Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig7Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -3087,55 +3230,58 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})          
-
+            fig7Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.2) 
             st.plotly_chart(fig7Movil, use_container_width=True)                   
 
-            col1, col2 = st.columns(2)
-            with col1:
-                año_opMovil = st.selectbox('Año',[2018,2019,2020,2021],index=3)
+            col1, col2,col3= st.columns(3)
+            mes_opMovilNombre={'Junio':6,'Diciembre':12}
             with col2:
-                mes_opMovil = st.selectbox('Mes',[1,2,3,4,5,6,7,8,9,10,11,12],index=11)                  
+                mes_opMovil = st.selectbox('Escoja el mes de 2021',['Junio','Diciembre']) 
+            mes=mes_opMovilNombre[mes_opMovil]                      
 
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].empty==True:
                 pass
             else:    
-                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor1Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Avantel')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
                 Proveedor1Movil['Latency'] =round(Proveedor1Movil['Latency'], 2)
                 final_df1Movil=gdf2.merge(Proveedor1Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].empty==True:
                 pass
             else:                
-                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor2Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Claro')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
                 Proveedor2Movil['Latency'] =round(Proveedor2Movil['Latency'], 2)
                 final_df2Movil=gdf2.merge(Proveedor2Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].empty==True:
                 pass
             else:                
-                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor3Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='ETB')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
                 Proveedor3Movil['Latency'] =round(Proveedor3Movil['Latency'], 2)
                 final_df3Movil=gdf2.merge(Proveedor3Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].empty==True:
                 pass
             else:                
-                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor4Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Movistar')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
                 Proveedor4Movil['Latency'] =round(Proveedor4Movil['Latency'], 2)
                 final_df4Movil=gdf2.merge(Proveedor4Movil, on='Location')   
             ##       
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].empty==True:
                 pass
             else:                
-                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor5Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='Tigo')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
                 Proveedor5Movil['Latency'] =round(Proveedor5Movil['Latency'], 2)
                 final_df5Movil=gdf2.merge(Proveedor5Movil, on='Location')  
             ##
-            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].empty==True:
+            if OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].empty==True:
                 final_df6Movil=gdf2
                 final_df6Movil['Latency']=np.nan
             else:                
-                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==año_opMovil)&(OpCiudMovil1['month']==mes_opMovil),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+                Proveedor6Movil=OpCiudMovil1.loc[(OpCiudMovil1['Provider']=='WOM')&(OpCiudMovil1['year']==2021)&(OpCiudMovil1['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
                 Proveedor6Movil['Latency'] =round(Proveedor6Movil['Latency'], 2)
                 final_df6Movil=gdf2.merge(Proveedor6Movil, on='Location')              
 
@@ -3394,9 +3540,16 @@ if select_servicio == 'Internet móvil':
             FloatImage(url1, bottom=5, left=1).add_to(dualmap1_3Movil.m1)
             FloatImage(url2, bottom=5, left=53).add_to(dualmap1_3Movil.m2)
             
-            folium_static(dualmap1_1Movil,width=800) 
-            folium_static(dualmap1_2Movil,width=800)
-            folium_static(dualmap1_3Movil,width=800)   
+            col1, col2 ,col3= st.columns(3)
+            with col2:
+                st.markdown("<center><b> Latencia promedio de internet móvil en Colombia por operador y departamento (en ms)</b></center>",unsafe_allow_html=True)                        
+            col1b, col2b ,col3b= st.columns([1,4,1])
+            with col2b:
+                folium_static(dualmap1_1Movil,width=800) 
+                folium_static(dualmap1_2Movil,width=800)
+                folium_static(dualmap1_3Movil,width=800)    
+                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+  
 
         if dimension_Vel_carga_Movil == 'Ciudades':         
 
@@ -3428,7 +3581,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig9Movil.update_traces(textfont_size=18)
             fig9Movil.update_layout(height=500,legend_title=None)
-            fig9Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.23))
+            fig9Movil.update_layout(legend=dict(orientation="h",y=1.05,xanchor='center',x=0.5))
             fig9Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig9Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -3437,12 +3590,15 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'})  
-            
+            fig9Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2021. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+            font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.4)             
             st.plotly_chart(fig9Movil, use_container_width=True) 
         
     
     if select_indicador== 'Registro en red':
-        st.markdown("## Registro en Red", unsafe_allow_html=True)
+        st.markdown("### Registro en Red", unsafe_allow_html=True)
         
         fig10Movil = go.Figure()
         fig10Movil.add_trace(go.Bar(
@@ -3490,9 +3646,13 @@ if select_servicio == 'Internet móvil':
             y=1.05,
             x=1,
             font_size=12))
+        fig10Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.15)     
         st.plotly_chart(fig10Movil, use_container_width=True) 
         
-        st.markdown("## Registro en Red 4G", unsafe_allow_html=True)
+        st.markdown("### Registro en Red 4G", unsafe_allow_html=True)
         dimension_Cober4G_Movil = st.radio("Seleccione la dimensión del análisis",('Colombia','Ciudades','Operadores'),horizontal=True)
         if dimension_Cober4G_Movil=='Colombia':
             fig11Movil = go.Figure()
@@ -3521,9 +3681,15 @@ if select_servicio == 'Internet móvil':
             fig11Movil.update_layout(legend=dict(
                orientation="h",
                 y=1.05,
-                x=0.42,
+                xanchor='center',
+                x=0.5,
                 font_size=12))
+            fig11Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.15)     
             st.plotly_chart(fig11Movil,use_container_width=True)   
+            
         if dimension_Cober4G_Movil=='Ciudades':
             fig12Movil = go.Figure()
             fig12Movil.add_trace(go.Bar(
@@ -3553,7 +3719,7 @@ if select_servicio == 'Internet móvil':
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig12Movil.update_traces(textfont_size=18)
             fig12Movil.update_layout(height=500,legend_title=None)
-            fig12Movil.update_layout(legend=dict(orientation="h",y=1.05,x=0.25))
+            fig12Movil.update_layout(legend=dict(orientation="h",y=1.05,xanchor='center',x=0.5))
             fig12Movil.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
             fig12Movil.update_layout(font_color="Black",title_font_family="NexaBlack",title_font_color="Black",titlefont_size=16,
             title={
@@ -3562,6 +3728,10 @@ if select_servicio == 'Internet móvil':
             'x':0.5,
             'xanchor': 'center',
             'yanchor': 'top'}) 
+            fig12Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.4)             
             st.plotly_chart(fig12Movil,use_container_width=True)
 
         if dimension_Cober4G_Movil=='Operadores':
@@ -3602,8 +3772,13 @@ if select_servicio == 'Internet móvil':
             legend=dict(
                orientation="h",
                 y=1.05,
-                x=0.25,
+                xanchor='center',
+                x=0.5,
                 font_size=15))
+            fig13Movil.add_annotation(
+            showarrow=False,
+            text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+            font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.15)                 
             st.plotly_chart(fig13Movil,use_container_width=True)    
 
 ######################################################### Comparación Internacional #######################################        
@@ -3660,8 +3835,8 @@ if select_servicio == 'Comparación internacional':
     if select_servicio=='Velocidad de descarga':
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown("## <center>Internet fijo</center>",unsafe_allow_html=True)
-            
+            st.markdown("### Internet fijo",unsafe_allow_html=True)
+            st.markdown("")
             suramerica_map4 = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
             choropleth=folium.Choropleth(
                 geo_data=SURAMERICA,
@@ -3698,14 +3873,15 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map4.add_child(NIL)
             suramerica_map4.keep_in_front(NIL)
-            st.markdown("<center><b> Velocidad promedio de descarga de <br> Internet fijo en Suramerica (Mbps)</b></center>",
+            st.markdown("<b> Velocidad promedio de descarga de <br> Internet fijo en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
-            folium_static(suramerica_map4,width=350,height=550)      
-
+            folium_static(suramerica_map4,width=400,height=550)      
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+    
             
         with col2:
-            st.markdown("## <center>Internet móvil</center>",unsafe_allow_html=True)        
-            
+            st.markdown("### Internet móvil",unsafe_allow_html=True)        
+            st.markdown("")
             suramerica_map5 = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
             choropleth=folium.Choropleth(
                 geo_data=SURAMERICA,
@@ -3742,16 +3918,17 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map5.add_child(NIL)
             suramerica_map5.keep_in_front(NIL)
-            st.markdown("<center><b> Velocidad promedio de descarga de <br> Internet móvil en Suramerica (Mbps)</b></center>",
+            st.markdown("<b> Velocidad promedio de descarga de <br> Internet móvil en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
-            folium_static(suramerica_map5,width=350,height=550)      
+            folium_static(suramerica_map5,width=400,height=550)      
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
 
     if select_servicio=='Velocidad de carga':
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown("## <center>Internet fijo</center>",unsafe_allow_html=True)
-            
+            st.markdown("### Internet fijo",unsafe_allow_html=True)
+            st.markdown("")
             suramerica_map4_b = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
             choropleth=folium.Choropleth(
                 geo_data=SURAMERICA,
@@ -3788,14 +3965,15 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map4_b.add_child(NIL)
             suramerica_map4_b.keep_in_front(NIL)
-            st.markdown("<center><b> Velocidad promedio de carga de <br> Internet fijo en Suramerica (Mbps)</b></center>",
+            st.markdown("<b> Velocidad promedio de carga de <br> Internet fijo en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
-            folium_static(suramerica_map4_b,width=350,height=550)      
+            folium_static(suramerica_map4_b,width=400,height=550)      
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
             
         with col2:
-            st.markdown("## <center>Internet móvil</center>",unsafe_allow_html=True)        
-            
+            st.markdown("### Internet móvil",unsafe_allow_html=True)        
+            st.markdown("")
             suramerica_map5_b = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
             choropleth=folium.Choropleth(
                 geo_data=SURAMERICA,
@@ -3832,17 +4010,18 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map5_b.add_child(NIL)
             suramerica_map5_b.keep_in_front(NIL)
-            st.markdown("<center><b> Velocidad promedio de carga de <br> Internet móvil en Suramerica (Mbps)</b></center>",
+            st.markdown("<b> Velocidad promedio de carga de <br> Internet móvil en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
-            folium_static(suramerica_map5_b,width=350,height=550)    
+            folium_static(suramerica_map5_b,width=400,height=550)    
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
 
     if select_servicio=='Latencia':
     
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown("## <center>Internet fijo</center>",unsafe_allow_html=True)
-            
+            st.markdown("### Internet fijo",unsafe_allow_html=True)
+            st.markdown("")
             suramerica_map4_c = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
             choropleth=folium.Choropleth(
                 geo_data=SURAMERICA,
@@ -3879,14 +4058,15 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map4_c.add_child(NIL)
             suramerica_map4_c.keep_in_front(NIL)
-            st.markdown("<center><b> Latencia promedio de <br> Internet fijo en Suramerica (Mbps)</b></center>",
+            st.markdown("<b> Latencia promedio de <br> Internet fijo en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
-            folium_static(suramerica_map4_c,width=350,height=550)      
+            folium_static(suramerica_map4_c,width=400,height=550)      
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
             
         with col2:
-            st.markdown("## <center>Internet móvil</center>",unsafe_allow_html=True)        
-            
+            st.markdown("### Internet móvil",unsafe_allow_html=True)        
+            st.markdown("")
             suramerica_map5_c = folium.Map(location=[-24, -60], zoom_start=3,tiles='cartodbpositron')
             choropleth=folium.Choropleth(
                 geo_data=SURAMERICA,
@@ -3923,12 +4103,13 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map5_c.add_child(NIL)
             suramerica_map5_c.keep_in_front(NIL)
-            st.markdown("<center><b> Latencia promedio de <br> Internet móvil en Suramerica (Mbps)</b></center>",
+            st.markdown("<b> Latencia promedio de <br> Internet móvil en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
-            folium_static(suramerica_map5_c,width=350,height=550)      
-    
+            folium_static(suramerica_map5_c,width=400,height=550)      
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+
     if select_servicio=='Resumen':
-        st.markdown("## Resumen Internet fijo", unsafe_allow_html=True)
+        st.markdown("### Resumen Internet fijo", unsafe_allow_html=True)
         fig1Int=make_subplots(rows=1,cols=1)
         for pais in Fijo_Int['País'].unique().tolist():
             fig1Int.add_trace(go.Scatter(
@@ -3965,11 +4146,15 @@ if select_servicio == 'Comparación internacional':
             ),row=1,col=1)
         fig1Int.update_layout(paper_bgcolor='rgba(0,0,0,0)')
         fig1Int.update_layout(plot_bgcolor='rgba(0,0,0,0)')
+        fig1Int.add_annotation(
+        showarrow=False,
+        text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+        font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.2)             
         st.plotly_chart(fig1Int, use_container_width=True)    
         
         ##
         
-        st.markdown("## Resumen Internet móvil", unsafe_allow_html=True)
+        st.markdown("### Resumen Internet móvil", unsafe_allow_html=True)
         fig2Int=make_subplots(rows=1,cols=1)
         for pais in Movil__Int['País'].unique().tolist():
             fig2Int.add_trace(go.Scatter(
@@ -4006,4 +4191,8 @@ if select_servicio == 'Comparación internacional':
             ),row=1,col=1)
         fig2Int.update_layout(paper_bgcolor='rgba(0,0,0,0)')
         fig2Int.update_layout(plot_bgcolor='rgba(0,0,0,0)')
+        fig2Int.add_annotation(
+        showarrow=False,
+        text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2021.',
+        font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.2) 
         st.plotly_chart(fig2Int, use_container_width=True)            
