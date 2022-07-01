@@ -27,22 +27,22 @@ LogoComision2="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-bl
 st.set_page_config(
     page_title="Mediciones QoE", page_icon=LogoComision,layout="wide",initial_sidebar_state="expanded")  
 
-st.markdown("""
-<div class="barra-superior">
-    <div class="imagen-flotar" style="height: 80px; left: 10px; padding:15px">
-        <a class="imagen-flotar" style="float:left;" href="https://www.crcom.gov.co" title="CRC">
-            <img src="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-blanco.png" alt="CRC" style="height:40px">
-        </a>
-        <a class="imagen-flotar" style="padding-left:10px;" href="https://postdata.gov.co" title="Postdata">
-            <img src="https://postdata.gov.co/sites/default/files/postdata-logo.png" alt="Inicio" style="height:40px">
-        </a>
-    </div>
-    <div class="imagen-flotar" style="height: 90px; left: 10px; padding:5px">
-        <a class="imagen-flotar" href="https://www.crcom.gov.co" title="CRC">
-            <img src="https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Banner_StreamLit.png" alt="CRC" style="">
-        </a>
-    </div>
-</div>""",unsafe_allow_html=True)
+# st.markdown("""
+# <div class="barra-superior">
+    # <div class="imagen-flotar" style="height: 80px; left: 10px; padding:15px">
+        # <a class="imagen-flotar" style="float:left;" href="https://www.crcom.gov.co" title="CRC">
+            # <img src="https://postdata.gov.co/sites/all/themes/nuboot_radix/logo-crc-blanco.png" alt="CRC" style="height:40px">
+        # </a>
+        # <a class="imagen-flotar" style="padding-left:10px;" href="https://postdata.gov.co" title="Postdata">
+            # <img src="https://postdata.gov.co/sites/default/files/postdata-logo.png" alt="Inicio" style="height:40px">
+        # </a>
+    # </div>
+    # <div class="imagen-flotar" style="height: 90px; left: 10px; padding:5px">
+        # <a class="imagen-flotar" href="https://www.crcom.gov.co" title="CRC">
+            # <img src="https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Banner_StreamLit.png" alt="CRC" style="">
+        # </a>
+    # </div>
+# </div>""",unsafe_allow_html=True)
 st.markdown("""<style type="text/css">
     h1{ 
         background: #ffde00;
@@ -51,10 +51,9 @@ st.markdown("""<style type="text/css">
         font-family: sans-serif;
         font-size:1.60rem;
         color: black;
-        position:fixed;
         width:100%;
         z-index:9999;
-        top:81px;
+        top:0px;
         left:0;
     }
     .e8zbici0 {display:none}
@@ -72,28 +71,27 @@ st.markdown("""<style type="text/css">
         font-size: 36px;
         font-weight: 700;
     }
-    .main, .css-1lcbmhc > div{margin-top:135px;}
     .css-y3whyl, .css-xqnn38 {background-color:#ccc}
     .css-1uvyptr:hover,.css-1uvyptr {background: #ccc}
     .block-container {padding-top:0;}
     .css-k0sv6k {height:0rem}
+    .e1tzin5v3 {text-align: center}
     h2{
-    background: #fffdf7;
-    text-align: center;
-    padding: 50px;
-    text-decoration: underline;
-    text-decoration-style: double;
-    color: #27348b;}
+        background: #fffdf7;
+        text-align: center;
+        padding: 50px;
+        text-decoration: underline;
+        text-decoration-style: double;
+        color: #27348b;}
     h3{
-    border-left: 10px solid #27348b;
-    background: #fffdf7;
-    font-size:10px,
-    padding: 0px;
-    color: black;}
+        border-left: 10px solid #27348b;
+        background: #fffdf7;
+        font-size:10px,
+        padding: 0px;
+        color: black;}
     .imagen-flotar{float:left;}
     @media (max-width:1230px){
         .barra-superior{height:160px;} 
-        .main, .css-1lcbmhc > div{margin-top:215px;}
         .imagen-flotar{float:none}
         h1{top:160px;}
     }    
@@ -431,6 +429,7 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
+            #Quitar barra de colores
             for key in choropleth._children:
                 if key.startswith('color_map'):
                     del(choropleth._children[key])
@@ -440,10 +439,10 @@ if select_servicio == 'Internet fijo':
             col1, col2 ,col3= st.columns(3)
             with col2:
                 st.markdown("<center><b> Velocidad promedio de descarga de internet fijo en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
-            col1b, col2b ,col3b= st.columns([2,4,1])
-            with col2b:
-                folium_static(colombia_map1Fijo,width=480) 
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+            col1b, col2b ,col3b= st.columns([1,4,1])
+#            with col2b:
+            folium_static(colombia_map1Fijo,width=480) 
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
                 
         if dimension_Vel_descarga_Fijo == 'Ciudades':    
 
@@ -705,6 +704,7 @@ if select_servicio == 'Internet fijo':
                 legend_name='Velocidad de descarga (Mbps)',
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_1Fijo.m2)
+
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
@@ -851,10 +851,10 @@ if select_servicio == 'Internet fijo':
             with col2:
                 st.markdown("<center><b> Velocidad promedio de descarga de internet fijo en Colombia por operador y departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
             col1b, col2b ,col3b= st.columns([1,4,1])
-            with col2b:
-                folium_static(dualmap1_1Fijo,width=800) 
-                folium_static(dualmap1_2Fijo,width=800)  
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+#            with col2b:
+            folium_static(dualmap1_1Fijo,width=800) 
+            folium_static(dualmap1_2Fijo,width=800)  
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
            
             etb=Operadores4Fijo[Operadores4Fijo['Provider']=='ETB'][['Latency','Download Speed Mbps','Upload Speed Mbps','year']]
@@ -1059,9 +1059,9 @@ if select_servicio == 'Internet fijo':
             with col2:
                 st.markdown("<center><b> Velocidad promedio de carga de internet fijo en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
             col1b, col2b ,col3b= st.columns([2,4,1])
-            with col2b:
-                folium_static(colombia_map2Fijo,width=480) 
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+#            with col2b:
+            folium_static(colombia_map2Fijo,width=480) 
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Fijo == 'Ciudades':    
             col1, col2,col3= st.columns(3)
