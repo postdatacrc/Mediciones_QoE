@@ -769,7 +769,7 @@ if select_servicio == 'Internet fijo':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df3Fijo,
                 #bins=[0,15,50,75,100,125,150,175,190],
@@ -782,7 +782,7 @@ if select_servicio == 'Internet fijo':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_2Fijo.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth4=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df4Fijo,
                 #bins=[0,15,50,75,100,125,150,175,190],
@@ -797,10 +797,10 @@ if select_servicio == 'Internet fijo':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth3.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_2Fijo.m1)
-            choropleth.geojson.add_child(
+            choropleth4.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_2Fijo.m2)
             ##
@@ -835,9 +835,12 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth3._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth3._children[key])
+            for key in choropleth4._children:
+                if key.startswith('color_map'):
+                    del(choropleth4._children[key])
 
             dualmap1_2Fijo.m1.add_child(NIL1)
             dualmap1_2Fijo.m1.keep_in_front(NIL1)
@@ -1232,7 +1235,7 @@ if select_servicio == 'Internet fijo':
 
             dualmap1_3Fijo=folium.plugins.DualMap(heigth=500,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
             ########
-            choropleth=folium.Choropleth(
+            choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df1bFijo,
                 #bins=[0,5,15,25,50,75,100,125,150,200],
@@ -1245,7 +1248,7 @@ if select_servicio == 'Internet fijo':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_3Fijo.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth2=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df2bFijo,
                 #bins=[0,5,15,25,50,75,100,125,150,200],
@@ -1260,10 +1263,10 @@ if select_servicio == 'Internet fijo':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth1.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_3Fijo.m1)
-            choropleth.geojson.add_child(
+            choropleth2.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_3Fijo.m2)
             ##
@@ -1298,9 +1301,12 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth1._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth1._children[key])
+            for key in choropleth2._children:
+                if key.startswith('color_map'):
+                    del(choropleth2._children[key])
 
             dualmap1_3Fijo.m1.add_child(NIL1)
             dualmap1_3Fijo.m1.keep_in_front(NIL1)
@@ -1315,7 +1321,7 @@ if select_servicio == 'Internet fijo':
 
             dualmap1_4Fijo=folium.plugins.DualMap(heigth=500,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
             ########
-            choropleth=folium.Choropleth(
+            choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df3bFijo,
                 #bins=[0,5,15,25,50,75,100,125,150,190],
@@ -1328,7 +1334,7 @@ if select_servicio == 'Internet fijo':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_4Fijo.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth4=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df4bFijo,
                 #bins=[0,5,15,25,50,75,100,125,150,190],
@@ -1343,10 +1349,10 @@ if select_servicio == 'Internet fijo':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth3.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_4Fijo.m1)
-            choropleth.geojson.add_child(
+            choropleth4.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_4Fijo.m2)
             ##
@@ -1381,9 +1387,12 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth3._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth3._children[key])
+            for key in choropleth4._children:
+                if key.startswith('color_map'):
+                    del(choropleth4._children[key])
 
             dualmap1_4Fijo.m1.add_child(NIL1)
             dualmap1_4Fijo.m1.keep_in_front(NIL1)
@@ -1508,14 +1517,17 @@ if select_servicio == 'Internet fijo':
              fill_color='red',
              fill_opacity=1
                ).add_to(colombia_map3Fijo)
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])
 
             col1, col2 ,col3= st.columns(3)
             with col2:
                 st.markdown("<center><b>Latencia promedio internet fijo en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
             col1b, col2b ,col3b= st.columns([2,4,1])
-            with col2b:
-                folium_static(colombia_map3Fijo,width=480) 
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+#            with col2b:
+            folium_static(colombia_map3Fijo,width=480) 
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Latencia_Fijo == 'Ciudades':    
             col1, col2,col3= st.columns(3)
@@ -1674,7 +1686,7 @@ if select_servicio == 'Internet fijo':
             
             dualmap1_5Fijo=folium.plugins.DualMap(heigth=500,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
             ########
-            choropleth=folium.Choropleth(
+            choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_dfLat1Fijo,
                 #bins=[5,10,20,30,50,70,90],
@@ -1687,7 +1699,7 @@ if select_servicio == 'Internet fijo':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_5Fijo.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth2=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_dfLat2Fijo,
                 #bins=[5,10,20,30,50,70,90],
@@ -1702,10 +1714,10 @@ if select_servicio == 'Internet fijo':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth1.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_5Fijo.m1)
-            choropleth.geojson.add_child(
+            choropleth2.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_5Fijo.m2)
             ##
@@ -1740,9 +1752,12 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth1._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth1._children[key])
+            for key in choropleth2._children:
+                if key.startswith('color_map'):
+                    del(choropleth2._children[key])
 
             dualmap1_5Fijo.m1.add_child(NIL1)
             dualmap1_5Fijo.m1.keep_in_front(NIL1)
@@ -1757,7 +1772,7 @@ if select_servicio == 'Internet fijo':
 
             dualmap1_6Fijo=folium.plugins.DualMap(heigth=500,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
             ########
-            choropleth=folium.Choropleth(
+            choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_dfLat3Fijo,
                 #bins=[5,10,20,30,50,70,90],
@@ -1770,7 +1785,7 @@ if select_servicio == 'Internet fijo':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_6Fijo.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth4=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_dfLat4Fijo,
                 #bins=[5,10,20,30,50,70,90],
@@ -1785,10 +1800,10 @@ if select_servicio == 'Internet fijo':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth3.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_6Fijo.m1)
-            choropleth.geojson.add_child(
+            choropleth4.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_6Fijo.m2)
             ##
@@ -1823,9 +1838,12 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth3._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth3._children[key])
+            for key in choropleth4._children:
+                if key.startswith('color_map'):
+                    del(choropleth4._children[key])
 
             dualmap1_6Fijo.m1.add_child(NIL1)
             dualmap1_6Fijo.m1.keep_in_front(NIL1)
@@ -2291,7 +2309,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df1Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2304,7 +2322,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_1Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth2=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df2Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2319,10 +2337,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth1.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_1Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth2.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_1Movil.m2)
             ##
@@ -2357,9 +2375,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth1._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth1._children[key])
+            for key in choropleth2._children:
+                if key.startswith('color_map'):
+                    del(choropleth2._children[key])
 
             dualmap1_1Movil.m1.add_child(NIL1)
             dualmap1_1Movil.m1.keep_in_front(NIL1)
@@ -2376,7 +2397,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df3Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2389,7 +2410,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_2Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth4=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df4Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2404,10 +2425,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth3.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_2Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth4.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_2Movil.m2)
             ##
@@ -2442,9 +2463,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth3._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth3._children[key])
+            for key in choropleth4._children:
+                if key.startswith('color_map'):
+                    del(choropleth4._children[key])
 
             dualmap1_2Movil.m1.add_child(NIL1)
             dualmap1_2Movil.m1.keep_in_front(NIL1)
@@ -2461,7 +2485,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth5=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df5Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2474,7 +2498,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_3Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth6=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df6Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2489,10 +2513,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth5.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_3Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth6.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_3Movil.m2)
             ##
@@ -2527,9 +2551,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth5._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth5._children[key])
+            for key in choropleth6._children:
+                if key.startswith('color_map'):
+                    del(choropleth6._children[key])
 
             dualmap1_3Movil.m1.add_child(NIL1)
             dualmap1_3Movil.m1.keep_in_front(NIL1)
@@ -2802,7 +2829,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df1Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2815,7 +2842,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_1Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth2=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df2Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2830,10 +2857,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth1.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_1Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth2.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_1Movil.m2)
             ##
@@ -2868,9 +2895,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth1._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth1._children[key])
+            for key in choropleth2._children:
+                if key.startswith('color_map'):
+                    del(choropleth2._children[key])
 
             dualmap1_1Movil.m1.add_child(NIL1)
             dualmap1_1Movil.m1.keep_in_front(NIL1)
@@ -2887,7 +2917,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df3Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2900,7 +2930,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_2Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth4=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df4Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2915,10 +2945,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth3.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_2Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth4.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_2Movil.m2)
             ##
@@ -2953,9 +2983,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth3._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth3._children[key])
+            for key in choropleth4._children:
+                if key.startswith('color_map'):
+                    del(choropleth4._children[key])
 
             dualmap1_2Movil.m1.add_child(NIL1)
             dualmap1_2Movil.m1.keep_in_front(NIL1)
@@ -2972,7 +3005,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth5=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df5Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -2985,7 +3018,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_3Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth6=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df6Movil,
                 bins=[0,5,10,15,20,40,60],
@@ -3000,10 +3033,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth5.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_3Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth6.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_3Movil.m2)
             ##
@@ -3038,9 +3071,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth5._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth5._children[key])
+            for key in choropleth6._children:
+                if key.startswith('color_map'):
+                    del(choropleth6._children[key])
 
             dualmap1_3Movil.m1.add_child(NIL1)
             dualmap1_3Movil.m1.keep_in_front(NIL1)
@@ -3057,11 +3093,11 @@ if select_servicio == 'Internet móvil':
             with col2:
                 st.markdown("<center><b> Velocidad de carga promedio de internet móvil en Colombia por operador y departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
             col1b, col2b ,col3b= st.columns([1,4,1])
-            with col2b:
-                folium_static(dualmap1_1Movil,width=800) 
-                folium_static(dualmap1_2Movil,width=800)
-                folium_static(dualmap1_3Movil,width=800)    
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+#            with col2b:
+            folium_static(dualmap1_1Movil,width=800) 
+            folium_static(dualmap1_2Movil,width=800)
+            folium_static(dualmap1_3Movil,width=800)    
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Movil == 'Ciudades':
             
@@ -3207,9 +3243,9 @@ if select_servicio == 'Internet móvil':
             with col2:
                 st.markdown("<center><b> Latencia promedio de internet móvil en Colombia por departamento (en ms)</b></center>",unsafe_allow_html=True)                        
             col1b, col2b ,col3b= st.columns([2,4,1])
-            with col2b:
-                folium_static(colombia_map1Movi2,width=480) 
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+#            with col2b:
+            folium_static(colombia_map1Movi2,width=480) 
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Movil == 'Operadores':  
   
@@ -3308,7 +3344,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df1Movil,
                 #bins=[0,5,10,15,20,40,60],
@@ -3321,7 +3357,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_1Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth2=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df2Movil,
                 #bins=[0,5,10,15,20,40,60],
@@ -3336,10 +3372,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth1.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_1Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth2.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_1Movil.m2)
             ##
@@ -3374,9 +3410,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth1._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth1._children[key])
+            for key in choropleth2._children:
+                if key.startswith('color_map'):
+                    del(choropleth2._children[key])
 
             dualmap1_1Movil.m1.add_child(NIL1)
             dualmap1_1Movil.m1.keep_in_front(NIL1)
@@ -3393,7 +3432,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df3Movil,
                 #bins=[0,5,10,15,20,40,60],
@@ -3406,7 +3445,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_2Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth4=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df4Movil,
                 #bins=[0,5,10,15,20,40,60],
@@ -3421,10 +3460,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth3.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_2Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth4.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_2Movil.m2)
             ##
@@ -3459,9 +3498,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth3._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth3._children[key])
+            for key in choropleth4._children:
+                if key.startswith('color_map'):
+                    del(choropleth4._children[key])
 
             dualmap1_2Movil.m1.add_child(NIL1)
             dualmap1_2Movil.m1.keep_in_front(NIL1)
@@ -3478,7 +3520,7 @@ if select_servicio == 'Internet móvil':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth5=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df5Movil,
                 #bins=[0,5,10,15,20,40,60],
@@ -3491,7 +3533,7 @@ if select_servicio == 'Internet móvil':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_3Movil.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth6=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df6Movil,
                 #bins=[0,5,10,15,20,40,60],
@@ -3506,10 +3548,10 @@ if select_servicio == 'Internet móvil':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth5.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_3Movil.m1)
-            choropleth.geojson.add_child(
+            choropleth6.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_3Movil.m2)
             ##
@@ -3544,9 +3586,12 @@ if select_servicio == 'Internet móvil':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth5._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth5._children[key])
+            for key in choropleth6._children:
+                if key.startswith('color_map'):
+                    del(choropleth6._children[key])
 
             dualmap1_3Movil.m1.add_child(NIL1)
             dualmap1_3Movil.m1.keep_in_front(NIL1)
@@ -3563,13 +3608,12 @@ if select_servicio == 'Internet móvil':
             with col2:
                 st.markdown("<center><b> Latencia promedio de internet móvil en Colombia por operador y departamento (en ms)</b></center>",unsafe_allow_html=True)                        
             col1b, col2b ,col3b= st.columns([1,4,1])
-            with col2b:
-                folium_static(dualmap1_1Movil,width=800) 
-                folium_static(dualmap1_2Movil,width=800)
-                folium_static(dualmap1_3Movil,width=800)    
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+#            with col2b:
+            folium_static(dualmap1_1Movil,width=800) 
+            folium_static(dualmap1_2Movil,width=800)
+            folium_static(dualmap1_3Movil,width=800)    
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
   
-
         if dimension_Vel_carga_Movil == 'Ciudades':         
 
             fig9Movil=go.Figure()
