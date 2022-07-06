@@ -86,6 +86,7 @@ st.markdown("""<style type="text/css">
     h3{
         border-left: 10px solid #27348b;
         background: #fffdf7;
+        text-align:center;
         font-size:10px,
         padding: 0px;
         color: black;}
@@ -111,15 +112,15 @@ dict_serv_colores={'Cali':'rgb(255,128,0)', 'Bogotá D.C.':'rgb(255,0,0)', 'Cart
        'Colón, Nariño':'rgb(153,0,76)'}
 
 st.markdown("# <center>Mediciones de calidad desde la experiencia del usuario</center>",unsafe_allow_html=True)
-
-st.markdown("""<b>1. Seleccione el servicio sobre el cual desea conocer la información de los indicadores de desempeño</b>""", unsafe_allow_html=True)
+st.markdown("")
+st.markdown("""<p style="text-align:justify;"><b>Para hacer uso del tablero interactivo, por favor seleccione el servicio sobre el cual desea conocer la información de los indicadores de calidad</b></p>""", unsafe_allow_html=True)
 
 select_servicio = st.selectbox('Servicio',
                                     ['Información general','Internet fijo','Internet móvil','Comparación internacional'])
 
 if select_servicio=='Información general':
-    st.markdown('La Comisión de regulación de comunicaciones presenta la aplicación interactiva que contiene información sobre la calidad de los servicios ofrecidos a través de redes móviles y fijas por los diferentes proveedores en el territorio nacional, para el periodo comprendido entre los años 2018 y 2021.')
-    st.markdown('Las mediciones de calidad que soportan las gráficas de la aplicación están basadas en la metodología crowdsourcing, utilizando para ellos los datos proporcionados por la aplicación Speedtest®, desarrollada por la empresa Ookla®. A través de esta metodología se recopila información directamente desde los dispositivos que los usuarios utilizan para acceder a los servicios de Internet móvil e Internet fijo, suministrados por los proveedores de redes y servicios de telecomunicaciones.')
+    st.markdown('<p style="text-align:justify;">La Comisión de regulación de comunicaciones presenta la aplicación interactiva que contiene información sobre la calidad de los servicios ofrecidos a través de redes móviles y fijas por los diferentes proveedores en el territorio nacional, para el periodo comprendido entre los años 2018 y 2021.</p>',unsafe_allow_html=True)
+    st.markdown('<p style="text-align:justify;">Las mediciones de calidad que soportan las gráficas de la aplicación están basadas en la metodología crowdsourcing, utilizando para ellos los datos proporcionados por la aplicación Speedtest®, desarrollada por la empresa Ookla®. A través de esta metodología se recopila información directamente desde los dispositivos que los usuarios utilizan para acceder a los servicios de Internet móvil e Internet fijo, suministrados por los proveedores de redes y servicios de telecomunicaciones.</p>',unsafe_allow_html=True)
     Sevidores_map = folium.Map(location=[3, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
     scrollWheelZoom=True,
     dragging=True)
@@ -156,31 +157,31 @@ if select_servicio=='Información general':
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("### <b>Distribución de servidores de pruebas en Colombia</b>",unsafe_allow_html=True)
-        st.markdown('Las mediciones de los indicadores de calidad se soportan en el uso de una red que para 2021 incorporaba 38 servidores de prueba dispersos en el territorio nacional. Estas se muestran en el mapa a continuación.')    
+        st.markdown('<p style="text-align:justify;">Las mediciones de los indicadores de calidad se soportan en el uso de una red que para 2021 incorporaba 38 servidores de prueba dispersos en el territorio nacional. Estas se muestran en el mapa a continuación.</p>',unsafe_allow_html=True)    
         st.markdown("")
         folium_static(Sevidores_map,width=350)  
         st.markdown(r"""<p style=font-size:10px>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021. 
         Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.</p>""",unsafe_allow_html=True)
     with col2:
         st.markdown("### Definición indicadores de calidad",unsafe_allow_html=True)
-        st.markdown("Los indicadores de calidad pueden ser divididos en 2 categorías: Indicadores de desempeño, e Indicadores de cobertura. A continuación se da paso a las definiciones de cada uno, y su relación con el servicio que experimenta el usuario.")
+        st.markdown('<p style="text-align:justify;">Los indicadores de calidad pueden ser divididos en 2 categorías: Indicadores de desempeño, e Indicadores de cobertura. A continuación se da paso a las definiciones de cada uno, y su relación con el servicio que experimenta el usuario.</p>',unsafe_allow_html=True)
         select_indicadorDef=st.selectbox('Escoja la categoría',['Indicadores de desempeño','Indicadores de cobertura'])
         if select_indicadorDef=='Indicadores de desempeño': 
             st.markdown("#### Indicadores de desempeño")
-            st.markdown("el rendimiento o desempeño del servicio de internet se refiere a los resultados de los indicadores de calidad del servicio de telecomunicaciones desde el punto de vista del usuario. Los más relevantes están relacionados con las velocidades y los tiempos de retardo de las conexiones.")
+            st.markdown('<p style="text-align:justify;">el rendimiento o desempeño del servicio de internet se refiere a los resultados de los indicadores de calidad del servicio de telecomunicaciones desde el punto de vista del usuario. Los más relevantes están relacionados con las velocidades y los tiempos de retardo de las conexiones.</p>',unsafe_allow_html=True)
             with st.expander("Velocidad de descarga"):
-                st.markdown("La velocidad de descarga Se entiende como la rapidez con la se pueden descargar contenidos, normalmente desde una página Web. A mayor velocidad obtenida en la medición, mayor rapidez en la descarga, por lo tanto, mejor experiencia del usuario. Es usual medirla en  Megabit por segundo (Mbps)")
+                st.markdown('<p style="text-align:justify;">La velocidad de descarga Se entiende como la rapidez con la se pueden descargar contenidos, normalmente desde una página Web. A mayor velocidad obtenida en la medición, mayor rapidez en la descarga, por lo tanto, mejor experiencia del usuario. Es usual medirla en  Megabit por segundo (Mbps)</p>',unsafe_allow_html=True)
             with st.expander("Velocidad de carga"):
-                st.markdown("La velocidad de carga se entiende como la medida de qué tan rápido se envían los datos en dirección desde un dispositivo hacia Internet. Es decir, es la rapidez con la que se pueden subir contenidos a Internet. A mayor velocidad obtenida en la medición, mayor rapidez en la carga, por lo tanto, mejor es la experiencia del usuario. Se mide en Mebagit por segundo (Mbps)")
+                st.markdown('<p style="text-align:justify;">La velocidad de carga se entiende como la medida de qué tan rápido se envían los datos en dirección desde un dispositivo hacia Internet. Es decir, es la rapidez con la que se pueden subir contenidos a Internet. A mayor velocidad obtenida en la medición, mayor rapidez en la carga, por lo tanto, mejor es la experiencia del usuario. Se mide en Mebagit por segundo (Mbps)</p>',unsafe_allow_html=True)
             with st.expander("Latencia"):
-                st.markdown("El parámetro de latencia sirve para medir qué tan rápido viajan los datos desde un punto de origen al destino. La experiencia al intentar acceder a audio, video y videojuegos es mejor con latencias más bajas, por lo cual, si el tiempo obtenido en la medición es pequeño, la experiencia del usuario es mejor. La latencia se mide en milisegundos (ms).")
+                st.markdown('<p style="text-align:justify;">El parámetro de latencia sirve para medir qué tan rápido viajan los datos desde un punto de origen al destino. La experiencia al intentar acceder a audio, video y videojuegos es mejor con latencias más bajas, por lo cual, si el tiempo obtenido en la medición es pequeño, la experiencia del usuario es mejor. La latencia se mide en milisegundos (ms).</p>',unsafe_allow_html=True)
         if select_indicadorDef=='Indicadores de cobertura':
             st.markdown("#### Indicadores de cobertura")
-            st.markdown("se refiere a indicadores relacionados con la distribución geográfica de los servicios de un operador móvil")
+            st.markdown('<p style="text-align:justify;">se refiere a indicadores relacionados con la distribución geográfica de los servicios de un operador móvil</p>',unsafe_allow_html=True)
             with st.expander("Registro en red"):
-                st.markdown("Es una métrica que indica la proporción del registro de los dispositivos de los usuarios en la red móvil de acuerdo con la tecnología de esta (para este documento incluye 2G, 3G, 4G y Roaming Automático Nacional - RAN).")
+                st.markdown('<p style="text-align:justify;">Es una métrica que indica la proporción del registro de los dispositivos de los usuarios en la red móvil de acuerdo con la tecnología de esta (para este documento incluye 2G, 3G, 4G y Roaming Automático Nacional - RAN).</p>',unsafe_allow_html=True)
             with st.expander("Registro en red 4G"):
-                st.markdown("Este indicador se refiere al porcentaje de usuarios que se registraron en las redes que suministran servicios móviles solamente en la tecnología 4G (incluido el Roaming Automático Nacional - RAN).")
+                st.markdown('<p style="text-align:justify;">Este indicador se refiere al porcentaje de usuarios que se registraron en las redes que suministran servicios móviles solamente en la tecnología 4G (incluido el Roaming Automático Nacional - RAN).</p>',unsafe_allow_html=True)
 
 
 
@@ -519,9 +520,9 @@ if select_servicio == 'Internet fijo':
             
             col1, col2 = st.columns(2)
             with col1:
-                Año_opFijo20 = st.selectbox('Escoja el año',[2018,2019,2020],index=2)
+                Año_opFijo20 = st.selectbox('Escoja el año para el panel de la izquierda',[2018,2019,2020],index=2)
             with col2:
-                mes_opFijo21 = st.slider('Escoja mes del 2021',1,12,12)             
+                mes_opFijo21 = st.slider('Escoja mes del 2021 para el panel de la derecha',1,12,12)             
             name_mes2={1:'Enero',2:'Febrero',3:'Marzo',4:'Abril',5:'Mayo',6:'Junio',7:'Julio',8:'Agosto',9:'Septiembre',10:'Octubre',11:'Noviembre',12:'Diciembre'}
             Dic20=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==Año_opFijo20)&(Ciudades3Fijo['month']==12)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
             Dic21=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes_opFijo21)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
@@ -679,7 +680,7 @@ if select_servicio == 'Internet fijo':
                scrollWheelZoom=False,
                dragging=False)
             ########
-            choropleth=folium.Choropleth(
+            choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df1Fijo,
                 #bins=[0,15,50,75,100,125,150,175,190],
@@ -692,7 +693,7 @@ if select_servicio == 'Internet fijo':
                 nan_fill_color = "black",
                 smooth_factor=0).add_to(dualmap1_1Fijo.m1)
             #######
-            choropleth=folium.Choropleth(
+            choropleth2=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
                 data=final_df2Fijo,
                 #bins=[0,15,50,75,100,125,150,175,190],
@@ -708,10 +709,10 @@ if select_servicio == 'Internet fijo':
             #######
             # Adicionar nombres del departamento
             style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
+            choropleth1.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_1Fijo.m1)
-            choropleth.geojson.add_child(
+            choropleth2.geojson.add_child(
                 folium.features.GeoJsonTooltip(['DPTO'], style=style_function, labels=False))
             folium.LayerControl().add_to(dualmap1_1Fijo.m2)
             ##
@@ -746,9 +747,12 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
-            for key in choropleth._children:
+            for key in choropleth1._children:
                 if key.startswith('color_map'):
-                    del(choropleth._children[key])
+                    del(choropleth1._children[key])
+            for key in choropleth2._children:
+                if key.startswith('color_map'):
+                    del(choropleth2._children[key])
 
             dualmap1_1Fijo.m1.add_child(NIL1)
             dualmap1_1Fijo.m1.keep_in_front(NIL1)
@@ -1053,6 +1057,9 @@ if select_servicio == 'Internet fijo':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])            
             colombia_map2Fijo.add_child(NIL)
             colombia_map2Fijo.keep_in_front(NIL)
 
@@ -1398,8 +1405,7 @@ if select_servicio == 'Internet fijo':
                 folium_static(dualmap1_3Fijo,width=800) 
                 folium_static(dualmap1_4Fijo,width=800)  
                 st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
-         
-            
+                     
     if select_indicador== 'Latencia':            
         dimension_Latencia_Fijo = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)
         if dimension_Latencia_Fijo == 'Histórico Colombia':    
@@ -1868,9 +1874,11 @@ df3gAMovilLat['year']=p3gAMovil.index; df3gAMovilLat['3g']=p3gAMovil['Latency'].
 df4gAMovilLat['year']=p4gAMovil.index;df4gAMovilLat['4g']=p4gAMovil['Latency'].values;
 dfTotAMovilLat['year']=pTotAMovil.index;dfTotAMovilLat['Total']=pTotAMovil['Latency'].values;
 DepJoinAMovilDown=reduce(lambda x,y: pd.merge(x,y, on='year', how='outer'), [df3gAMovilDown,df4gAMovilDown,dfTotAMovilDown]).round(2).reset_index()
+DepJoinAMovilDown['year']=DepJoinAMovilDown['year'].astype('str')
 DepJoinAMovilUp=reduce(lambda x,y: pd.merge(x,y, on='year', how='outer'), [df3gAMovilUp,df4gAMovilUp,dfTotAMovilUp]).round(2).reset_index()
+DepJoinAMovilUp['year']=DepJoinAMovilUp['year'].astype('str')
 DepJoinAMovilLat=reduce(lambda x,y: pd.merge(x,y, on='year', how='outer'), [df3gAMovilLat,df4gAMovilLat,dfTotAMovilLat]).round(2).reset_index()      
-   
+DepJoinAMovilLat['year']=DepJoinAMovilLat['year'].astype('str')   
 
 #### Sección 2 Móvil
 @st.cache(allow_output_mutation=True)
@@ -2175,14 +2183,16 @@ if select_servicio == 'Internet móvil':
             )
             colombia_map1Movil.add_child(NIL)
             colombia_map1Movil.keep_in_front(NIL)
-            
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])            
             col1, col2 ,col3= st.columns(3)
             with col2:
                 st.markdown("<center><b> Velocidad promedio de descarga de Internet móvil en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
             col1b, col2b ,col3b= st.columns([2,4,1])
-            with col2b:
-                folium_static(colombia_map1Movil,width=480) 
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+#            with col2b:
+            folium_static(colombia_map1Movil,width=480) 
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_descarga_Movil == 'Operadores':
             
@@ -2683,14 +2693,17 @@ if select_servicio == 'Internet móvil':
             )
             colombia_map1Movi2.add_child(NIL)
             colombia_map1Movi2.keep_in_front(NIL)
-
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])   
+                    
             col1, col2 ,col3= st.columns(3)
             with col2:
                 st.markdown("<center><b> Velocidad promedio de carga de internet móvil en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
             col1b, col2b ,col3b= st.columns([2,4,1])
-            with col2b:
-                folium_static(colombia_map1Movi2,width=480) 
-                st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
+#            with col2b:
+            folium_static(colombia_map1Movi2,width=480) 
+            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2021</i></p> """,unsafe_allow_html=True)
                 
         if dimension_Vel_carga_Movil == 'Operadores':  
   
