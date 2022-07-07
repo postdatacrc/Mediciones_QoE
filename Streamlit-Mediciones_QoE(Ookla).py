@@ -3872,12 +3872,8 @@ def gdf_Suramerica():
     gdf_Int=gdf_Int.rename(columns=({'admin':'País'}))
     return gdf_Int
 gdf_Int=gdf_Suramerica()
-@st.cache()
-def data_Suramerica():    
-    with urllib.request.urlopen("https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Suramerica.geo.json") as url:
-        SURAMERICA = json.loads(url.read().decode())
-    return SURAMERICA
-SURAMERICA=data_Suramerica()    
+with urllib.request.urlopen("https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Suramerica.geo.json") as url:
+    SURAMERICA = json.loads(url.read().decode()) 
 Fijo_df=gdf_Int.merge(Fijo_Int, on='País')
 
 movil_Intdict = {'Suriname': [42.66, 18.38, 25],
@@ -3943,6 +3939,9 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map4.add_child(NIL)
             suramerica_map4.keep_in_front(NIL)
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])  
             st.markdown("<b> Velocidad promedio de descarga de <br> Internet fijo en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
             folium_static(suramerica_map4,width=400,height=550)      
@@ -3988,6 +3987,9 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map5.add_child(NIL)
             suramerica_map5.keep_in_front(NIL)
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])  
             st.markdown("<b> Velocidad promedio de descarga de <br> Internet móvil en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
             folium_static(suramerica_map5,width=400,height=550)      
@@ -4035,6 +4037,9 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map4_b.add_child(NIL)
             suramerica_map4_b.keep_in_front(NIL)
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])  
             st.markdown("<b> Velocidad promedio de carga de <br> Internet fijo en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
             folium_static(suramerica_map4_b,width=400,height=550)      
@@ -4078,6 +4083,9 @@ if select_servicio == 'Comparación internacional':
                     style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
                 )
             )
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])  
             suramerica_map5_b.add_child(NIL)
             suramerica_map5_b.keep_in_front(NIL)
             st.markdown("<b> Velocidad promedio de carga de <br> Internet móvil en Suramerica (Mbps)</b>",
@@ -4128,6 +4136,9 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map4_c.add_child(NIL)
             suramerica_map4_c.keep_in_front(NIL)
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])  
             st.markdown("<b> Latencia promedio de <br> Internet fijo en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
             folium_static(suramerica_map4_c,width=400,height=550)      
@@ -4173,6 +4184,9 @@ if select_servicio == 'Comparación internacional':
             )
             suramerica_map5_c.add_child(NIL)
             suramerica_map5_c.keep_in_front(NIL)
+            for key in choropleth._children:
+                if key.startswith('color_map'):
+                    del(choropleth._children[key])  
             st.markdown("<b> Latencia promedio de <br> Internet móvil en Suramerica (Mbps)</b>",
             unsafe_allow_html=True)
             folium_static(suramerica_map5_c,width=400,height=550)      
@@ -4189,7 +4203,7 @@ if select_servicio == 'Comparación internacional':
             marker=dict(
                 color=dict_coloresPais[pais],
                 opacity=1,
-                size=Fijo_Int[Fijo_Int['País']== pais]['Latency']),hovertemplate='<b>País:</b>'+pais+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
+                size=Fijo_Int[Fijo_Int['País']== pais]['Latency']),hovertemplate='<b>País:</b>'+pais+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad carga:</b>%{y:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
         fig1Int.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text='Velocidad de descarga (Mbps)',ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
         zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
         fig1Int.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Velocidad de carga (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
@@ -4234,7 +4248,7 @@ if select_servicio == 'Comparación internacional':
             marker=dict(
                 color=dict_coloresPais[pais],
                 opacity=1,
-                size=Movil__Int[Movil__Int['País']== pais]['Latency']),hovertemplate='<b>País:</b>'+pais+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
+                size=Movil__Int[Movil__Int['País']== pais]['Latency']),hovertemplate='<b>País:</b>'+pais+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad carga:</b>%{y:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
         fig2Int.update_xaxes(tickangle=0, tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18,title_text='Velocidad de descarga (Mbps)',ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
         zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
         fig2Int.update_yaxes(tickfont=dict(family='Arial', color='black', size=16),titlefont_size=18, title_text='Velocidad de carga (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
