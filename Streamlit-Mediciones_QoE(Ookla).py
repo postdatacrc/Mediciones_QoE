@@ -3872,7 +3872,7 @@ def gdf_Suramerica():
     gdf_Int=gdf_Int.rename(columns=({'admin':'País'}))
     return gdf_Int
 gdf_Int=gdf_Suramerica()
-@st.cache(hash_funcs={_json.Scanner: my_hash_func})
+@st.cache()
 def data_Suramerica():    
     with urllib.request.urlopen("https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Suramerica.geo.json") as url:
         SURAMERICA = json.loads(url.read().decode())
