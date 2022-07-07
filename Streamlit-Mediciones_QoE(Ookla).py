@@ -3866,8 +3866,8 @@ fijo_Intdict = {'Suriname': [16.48, 8.8, 26],
         'Guyana':[68.25,28.44,19]}
 Fijo_Int=pd.DataFrame.from_dict(fijo_Intdict,orient='index').reset_index()
 Fijo_Int=Fijo_Int.rename(columns={'index':'País',0:'Download',1:'Upload',2:'Latency'})
-@st.cache()
-def gdf_Suramerica(allow_output_mutation=True):
+@st.cache(allow_output_mutation=True)
+def gdf_Suramerica():
     gdf_Int = gpd.read_file("https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Suramerica.geo.json")
     gdf_Int=gdf_Int.rename(columns=({'admin':'País'}))
     return gdf_Int
