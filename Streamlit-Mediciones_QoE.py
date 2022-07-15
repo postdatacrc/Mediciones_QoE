@@ -104,12 +104,12 @@ with urllib.request.urlopen('https://raw.githubusercontent.com/postdatacrc/Medic
 Servidores=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Fijo/Fij-Servidores_Colombia.csv',encoding='latin-1',delimiter=';')
 Servidores['latitude']=Servidores['latitude'].str.replace(',','.')
 Servidores['longitude']=Servidores['longitude'].str.replace(',','.')
-dict_serv_colores={'Cali':'rgb(255,128,0)', 'Bogotá D.C.':'rgb(255,0,0)', 'Cartagena':'rgb(128,255,0)',
-        'Medellín':'rgb(0,255,0)', 'Barranquilla':'rgb(0,255,128)',
-       'San Andrés':'rgb(255,255,0)', 'San Agustín, Huila':'rgb(0,255,255)', 'Choachí, Cundinamarca':'rgb(128,128,128)',
-       'Pasto':'rgb(0,128,255)', 'Popayán':'rgb(0,0,255)', 'Rosas, Cauca':'rgb(127,0,255)', 'Guamal, Magdalena':'rgb(255,0,255)',
+dict_serv_colores={'Cali':'rgb(255,128,0)', 'Bogota D.C.':'rgb(255,0,0)', 'Cartagena':'rgb(128,255,0)',
+        'Medellin':'rgb(0,255,0)', 'Barranquilla':'rgb(0,255,128)',
+       'San Andres':'rgb(255,255,0)', 'San Agustín, Huila':'rgb(0,255,255)', 'Choachi, Cundinamarca':'rgb(128,128,128)',
+       'Pasto':'rgb(0,128,255)', 'Popayan':'rgb(0,0,255)', 'Rosas, Cauca':'rgb(127,0,255)', 'Guamal, Magdalena':'rgb(255,0,255)',
        'Plato, Magdalena':'rgb(255,0,127)', 'Valledupar':'rgb(153,0,0)', 'Santander de Quilichao, Cauca':'rgb(0,102,102)',
-       'Colón, Nariño':'rgb(153,0,76)'}
+       'Colon, Nariño':'rgb(153,0,76)'}
 
 st.markdown("# <center>Mediciones de calidad desde la experiencia del usuario</center>",unsafe_allow_html=True)
 st.markdown("")
@@ -150,7 +150,7 @@ if select_servicio=='Información general':
           popup=popup2,radius=10,weight=1,
      color='black',       
      fill=True,
-     fill_color=dict_serv_colores[Servidores.iloc[i]['server_name']],
+     #fill_color=dict_serv_colores[Servidores.iloc[i]['server_name']],
      fill_opacity=0.2
        ).add_to(Sevidores_map) 
        
