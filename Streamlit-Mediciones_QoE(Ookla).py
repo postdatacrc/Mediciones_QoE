@@ -150,7 +150,7 @@ if select_servicio=='Información general':
           popup=popup2,radius=10,weight=1,
      color='black',       
      fill=True,
-     fill_color=dict_serv_colores[Servidores.iloc[i]['server_name']],
+     #fill_color=dict_serv_colores[Servidores.iloc[i]['server_name']],
      fill_opacity=0.2
        ).add_to(Sevidores_map) 
        
