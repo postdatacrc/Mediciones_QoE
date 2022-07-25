@@ -58,6 +58,7 @@ st.markdown("""<style type="text/css">
     }
     .e8zbici0 {display:none}
     .e8zbici2 {display:none}
+    .e16nr0p31 {display:none}
     .barra-superior{top: 0;
         position: fixed;
         background-color: #27348b;
