@@ -1,0 +1,181 @@
+Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;Device Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Colombia;;Jan 2018;24019;8322;N/A;3g;mean;8322;83;3482;1066;3.48;1.07
+All Providers Combined;Colombia;;Jan 2018;41182;17004;N/A;lte;mean;17004;46;21514;10777;21.51;10.78
+All Providers Combined;Colombia;;Jan 2018;65425;23027;N/A;cellular;mean;23027;58;16041;7837;16.04;7.84
+All Providers Combined;Colombia;;feb-18;21389;7479;N/A;3g;mean;7479;80;3537;1099;3.54;1.1
+All Providers Combined;Colombia;;feb-18;41462;16820;N/A;lte;mean;16820;47;19889;11639;19.89;11.64
+All Providers Combined;Colombia;;feb-18;63031;22270;N/A;cellular;mean;22270;58;15231;8650;15.23;8.65
+All Providers Combined;Colombia;;mar-18;24800;8765;N/A;3g;mean;8765;79;3507;1088;3.51;1.09
+All Providers Combined;Colombia;;mar-18;44952;18269;N/A;lte;mean;18269;43;21527;11800;21.53;11.8
+All Providers Combined;Colombia;;mar-18;70001;24587;N/A;cellular;mean;24587;55;16140;8604;16.14;8.6
+All Providers Combined;Colombia;;Apr 2018;23458;8177;N/A;3g;mean;8177;75;3596;1069;3.6;1.07
+All Providers Combined;Colombia;;Apr 2018;44134;18159;N/A;lte;mean;18159;43;21185;11635;21.19;11.64
+All Providers Combined;Colombia;;Apr 2018;67851;23904;N/A;cellular;mean;23904;53;16189;8650;16.19;8.65
+All Providers Combined;Colombia;;may-18;22748;7783;N/A;3g;mean;7783;76;3648;1073;3.65;1.07
+All Providers Combined;Colombia;;may-18;45143;18291;N/A;lte;mean;18291;43;20713;11698;20.71;11.7
+All Providers Combined;Colombia;;may-18;68261;23763;N/A;cellular;mean;23763;53;16055;8818;16.06;8.82
+All Providers Combined;Colombia;;jun-18;20769;7196;N/A;3g;mean;7196;73;3636;1049;3.64;1.05
+All Providers Combined;Colombia;;jun-18;42220;16903;N/A;lte;mean;16903;43;20193;11606;20.19;11.61
+All Providers Combined;Colombia;;jun-18;63482;22026;N/A;cellular;mean;22026;53;15631;8715;15.63;8.72
+All Providers Combined;Colombia;;jul-18;22079;7618;N/A;3g;mean;7618;74;3555;1021;3.56;1.02
+All Providers Combined;Colombia;;jul-18;44421;18379;N/A;lte;mean;18379;43;20115;11929;20.12;11.93
+All Providers Combined;Colombia;;jul-18;66810;23682;N/A;cellular;mean;23682;52;15705;9029;15.71;9.03
+All Providers Combined;Colombia;;Aug 2018;22339;7747;N/A;3g;mean;7747;74;3691;1049;3.69;1.05
+All Providers Combined;Colombia;;Aug 2018;49398;19673;N/A;lte;mean;19673;44;20800;11855;20.8;11.86
+All Providers Combined;Colombia;;Aug 2018;72051;24988;N/A;cellular;mean;24988;53;16439;9111;16.44;9.11
+All Providers Combined;Colombia;;sep-18;24957;8528;N/A;3g;mean;8528;74;3838;1077;3.84;1.08
+All Providers Combined;Colombia;;sep-18;57998;22665;N/A;lte;mean;22665;44;21206;11819;21.21;11.82
+All Providers Combined;Colombia;;sep-18;83395;28241;N/A;cellular;mean;28241;53;17005;9239;17.01;9.24
+All Providers Combined;Colombia;;oct-18;28245;9317;N/A;3g;mean;9317;79;3867;1105;3.87;1.11
+All Providers Combined;Colombia;;oct-18;73113;25784;N/A;lte;mean;25784;49;20920;11719;20.92;11.72
+All Providers Combined;Colombia;;oct-18;102020;31468;N/A;cellular;mean;31468;57;17078;9323;17.08;9.32
+All Providers Combined;Colombia;;nov-18;25527;8548;N/A;3g;mean;8548;83;3859;1118;3.86;1.12
+All Providers Combined;Colombia;;nov-18;69427;24154;N/A;lte;mean;24154;51;20936;11756;20.94;11.76
+All Providers Combined;Colombia;;nov-18;95412;29627;N/A;cellular;mean;29627;59;17073;9357;17.07;9.36
+All Providers Combined;Colombia;;Dec 2018;20912;7913;N/A;3g;mean;7913;88;3668;1076;3.67;1.08
+All Providers Combined;Colombia;;Dec 2018;59610;22499;N/A;lte;mean;22499;47;21600;11878;21.6;11.88
+All Providers Combined;Colombia;;Dec 2018;80844;27617;N/A;cellular;mean;27617;57;17542;9456;17.54;9.46
+All Providers Combined;Colombia;;Jan 2019;20058;7219;N/A;3g;mean;7219;78;3438;984;3.44;0.98
+All Providers Combined;Colombia;;Jan 2019;66242;25570;N/A;lte;mean;25570;44;21873;11895;21.87;11.9
+All Providers Combined;Colombia;;Jan 2019;86526;30287;N/A;cellular;mean;30287;51;18392;9838;18.39;9.84
+All Providers Combined;Colombia;;feb-19;17013;6454;N/A;3g;mean;6454;76;3495;973;3.5;0.97
+All Providers Combined;Colombia;;feb-19;63346;24303;N/A;lte;mean;24303;43;20056;11320;20.06;11.32
+All Providers Combined;Colombia;;feb-19;80565;28546;N/A;cellular;mean;28546;50;17081;9462;17.08;9.46
+All Providers Combined;Colombia;;mar-19;18610;6890;N/A;3g;mean;6890;80;3819;983;3.82;0.98
+All Providers Combined;Colombia;;mar-19;70493;26351;N/A;lte;mean;26351;43;19759;10891;19.76;10.89
+All Providers Combined;Colombia;;mar-19;89331;30724;N/A;cellular;mean;30724;50;16950;9160;16.95;9.16
+All Providers Combined;Colombia;;Apr 2019;18889;6845;N/A;3g;mean;6845;79;3839;1028;3.84;1.03
+All Providers Combined;Colombia;;Apr 2019;67850;25665;N/A;lte;mean;25665;45;20208;10915;20.21;10.92
+All Providers Combined;Colombia;;Apr 2019;86988;29845;N/A;cellular;mean;29845;51;17315;9167;17.32;9.17
+All Providers Combined;Colombia;;may-19;18939;6914;N/A;3g;mean;6914;75;3932;1113;3.93;1.11
+All Providers Combined;Colombia;;may-19;76693;27734;N/A;lte;mean;27734;43;19920;11329;19.92;11.33
+All Providers Combined;Colombia;;may-19;95949;31868;N/A;cellular;mean;31868;49;17292;9653;17.29;9.65
+All Providers Combined;Colombia;;jun-19;18365;6753;N/A;3g;mean;6753;79;3885;1130;3.89;1.13
+All Providers Combined;Colombia;;jun-19;71304;27090;N/A;lte;mean;27090;47;19873;11516;19.87;11.52
+All Providers Combined;Colombia;;jun-19;89867;31221;N/A;cellular;mean;31221;53;17188;9794;17.19;9.79
+All Providers Combined;Colombia;;jul-19;17811;7010;N/A;3g;mean;7010;81;3933;1149;3.93;1.15
+All Providers Combined;Colombia;;jul-19;75530;30174;N/A;lte;mean;30174;49;19613;11648;19.61;11.65
+All Providers Combined;Colombia;;jul-19;93552;34525;N/A;cellular;mean;34525;55;17150;10016;17.15;10.02
+All Providers Combined;Colombia;;Aug 2019;17314;6670;N/A;3g;mean;6670;75;3928;1157;3.93;1.16
+All Providers Combined;Colombia;;Aug 2019;83973;31808;N/A;lte;mean;31808;50;20331;12703;20.33;12.7
+All Providers Combined;Colombia;;Aug 2019;101461;35797;N/A;cellular;mean;35797;54;18051;11089;18.05;11.09
+All Providers Combined;Colombia;;sep-19;17285;6277;N/A;3g;mean;6277;73;3888;1182;3.89;1.18
+All Providers Combined;Colombia;;sep-19;78554;29692;N/A;lte;mean;29692;45;20477;12960;20.48;12.96
+All Providers Combined;Colombia;;sep-19;95989;33473;N/A;cellular;mean;33473;49;18119;11297;18.12;11.3
+All Providers Combined;Colombia;;oct-19;16841;6385;N/A;3g;mean;6385;74;3776;1143;3.78;1.14
+All Providers Combined;Colombia;;oct-19;78474;30358;N/A;lte;mean;30358;44;20267;12782;20.27;12.78
+All Providers Combined;Colombia;;oct-19;95512;34009;N/A;cellular;mean;34009;49;17992;11206;17.99;11.21
+All Providers Combined;Colombia;;nov-19;13806;5692;N/A;3g;mean;5692;76;3825;1141;3.83;1.14
+All Providers Combined;Colombia;;nov-19;70310;28524;N/A;lte;mean;28524;47;20642;13223;20.64;13.22
+All Providers Combined;Colombia;;nov-19;84222;31938;N/A;cellular;mean;31938;52;18410;11639;18.41;11.64
+All Providers Combined;Colombia;;Dec 2019;13163;5496;N/A;3g;mean;5496;74;3902;1160;3.9;1.16
+All Providers Combined;Colombia;;Dec 2019;68256;28729;N/A;lte;mean;28729;44;20895;14142;20.9;14.14
+All Providers Combined;Colombia;;Dec 2019;81588;32024;N/A;cellular;mean;32024;48;18711;12482;18.71;12.48
+All Providers Combined;Colombia;;Jan 2020;11464;5195;N/A;3g;mean;5195;76;3833;865;3.83;0.87
+All Providers Combined;Colombia;;Jan 2020;66247;29501;N/A;lte;mean;29501;43;20777;13218;20.78;13.22
+All Providers Combined;Colombia;;Jan 2020;77865;32667;N/A;cellular;mean;32667;47;18753;11754;18.75;11.75
+All Providers Combined;Colombia;;feb-20;10595;4764;N/A;3g;mean;4764;73;3898;863;3.9;0.86
+All Providers Combined;Colombia;;feb-20;68350;29677;N/A;lte;mean;29677;44;19873;13153;19.87;13.15
+All Providers Combined;Colombia;;feb-20;79044;32502;N/A;cellular;mean;32502;47;18154;11830;18.15;11.83
+All Providers Combined;Colombia;;mar-20;14148;6115;N/A;3g;mean;6115;74;3612;830;3.61;0.83
+All Providers Combined;Colombia;;mar-20;87667;38229;N/A;lte;mean;38229;46;19231;12449;19.23;12.45
+All Providers Combined;Colombia;;mar-20;101971;42089;N/A;cellular;mean;42089;49;17512;11175;17.51;11.18
+All Providers Combined;Colombia;;Apr 2020;16080;6690;N/A;3g;mean;6690;70;3540;799;3.54;0.8
+All Providers Combined;Colombia;;Apr 2020;101230;42651;N/A;lte;mean;42651;45;20505;11509;20.51;11.51
+All Providers Combined;Colombia;;Apr 2020;117578;47042;N/A;cellular;mean;47042;48;18666;10354;18.67;10.35
+All Providers Combined;Colombia;;may-20;16763;7106;N/A;3g;mean;7106;70;3715;819;3.72;0.82
+All Providers Combined;Colombia;;may-20;113522;43490;N/A;lte;mean;43490;45;20546;10402;20.55;10.4
+All Providers Combined;Colombia;;may-20;130609;47911;N/A;cellular;mean;47911;48;18718;9355;18.72;9.36
+All Providers Combined;Colombia;;jun-20;14233;6401;N/A;3g;mean;6401;69;3634;787;3.63;0.79
+All Providers Combined;Colombia;;jun-20;108798;39132;N/A;lte;mean;39132;40;20864;10468;20.86;10.47
+All Providers Combined;Colombia;;jun-20;123319;42965;N/A;cellular;mean;42965;43;19036;9440;19.04;9.44
+All Providers Combined;Colombia;;jul-20;18095;7315;N/A;3g;mean;7315;69;3594;786;3.59;0.79
+All Providers Combined;Colombia;;jul-20;129998;42434;N/A;lte;mean;42434;41;20208;10487;20.21;10.49
+All Providers Combined;Colombia;;jul-20;148744;46612;N/A;cellular;mean;46612;44;18428;9443;18.43;9.44
+All Providers Combined;Colombia;;Aug 2020;15519;6884;N/A;3g;mean;6884;73;3746;801;3.75;0.8
+All Providers Combined;Colombia;;Aug 2020;116820;41249;N/A;lte;mean;41249;43;20483;10482;20.48;10.48
+All Providers Combined;Colombia;;Aug 2020;133391;45293;N/A;cellular;mean;45293;46;18762;9469;18.76;9.47
+All Providers Combined;Colombia;;sep-20;14870;6447;N/A;3g;mean;6447;71;3841;822;3.84;0.82
+All Providers Combined;Colombia;;sep-20;103211;38373;N/A;lte;mean;38373;41;21161;10728;21.16;10.73
+All Providers Combined;Colombia;;sep-20;119236;42263;N/A;cellular;mean;42263;44;19359;9689;19.36;9.69
+All Providers Combined;Colombia;;oct-20;16300;6352;N/A;3g;mean;6352;65;3728;820;3.73;0.82
+All Providers Combined;Colombia;;oct-20;105583;38023;N/A;lte;mean;38023;40;20809;10926;20.81;10.93
+All Providers Combined;Colombia;;oct-20;123466;41896;N/A;cellular;mean;41896;43;19090;9862;19.09;9.86
+All Providers Combined;Colombia;;nov-20;15355;5822;N/A;3g;mean;5822;67;3596;811;3.6;0.81
+All Providers Combined;Colombia;;nov-20;101324;35447;N/A;lte;mean;35447;46;19411;10888;19.41;10.89
+All Providers Combined;Colombia;;nov-20;118776;39223;N/A;cellular;mean;39223;48;18025;9911;18.03;9.91
+All Providers Combined;Colombia;;Dec 2020;14046;5486;N/A;3g;mean;5486;66;3377;821;3.38;0.82
+All Providers Combined;Colombia;;Dec 2020;93112;32561;N/A;lte;mean;32561;44;18787;10944;18.79;10.94
+All Providers Combined;Colombia;;Dec 2020;110578;36501;N/A;cellular;mean;36501;46;17608;9985;17.61;9.99
+All Providers Combined;Colombia;;Jan 2021;12978;5376;N/A;3g;mean;5376;71;3193;797;3.19;0.8
+All Providers Combined;Colombia;;Jan 2021;95329;33488;N/A;lte;mean;33488;46;17305;10153;17.31;10.15
+All Providers Combined;Colombia;;Jan 2021;112216;37703;N/A;cellular;mean;37703;48;16297;9328;16.3;9.33
+All Providers Combined;Colombia;;feb-21;12937;5393;N/A;3g;mean;5393;67;3409;834;3.41;0.83
+All Providers Combined;Colombia;;feb-21;102414;34322;N/A;lte;mean;34322;46;17497;10556;17.5;10.56
+All Providers Combined;Colombia;;feb-21;119772;38759;N/A;cellular;mean;38759;49;16669;9740;16.67;9.74
+All Providers Combined;Colombia;;mar-21;16073;5941;N/A;3g;mean;5941;65;3312;868;3.31;0.87
+All Providers Combined;Colombia;;mar-21;116160;36649;N/A;lte;mean;36649;44;17262;10340;17.26;10.34
+All Providers Combined;Colombia;;mar-21;137978;41417;N/A;cellular;mean;41417;46;16490;9564;16.49;9.56
+All Providers Combined;Colombia;;Apr 2021;18101;7209;N/A;3g;mean;7209;68;3948;969;3.95;0.97
+All Providers Combined;Colombia;;Apr 2021;165864;43900;N/A;lte;mean;43900;49;18408;10152;18.41;10.15
+All Providers Combined;Colombia;;Apr 2021;191474;49416;N/A;cellular;mean;49416;51;17763;9454;17.76;9.45
+All Providers Combined;Colombia;;may-21;19639;6931;N/A;3g;mean;6931;73;3941;982;3.94;0.98
+All Providers Combined;Colombia;;may-21;148013;41087;N/A;lte;mean;41087;50;18468;10439;18.47;10.44
+All Providers Combined;Colombia;;may-21;174506;46492;N/A;cellular;mean;46492;52;17639;9679;17.64;9.68
+All Providers Combined;Colombia;;jun-21;18052;6509;N/A;3g;mean;6509;77;4049;1030;4.05;1.03
+All Providers Combined;Colombia;;jun-21;126825;39418;N/A;lte;mean;39418;49;18999;10815;19;10.82
+All Providers Combined;Colombia;;jun-21;151919;44950;N/A;cellular;mean;44950;52;18270;10013;18.27;10.01
+All Providers Combined;Colombia;;jul-21;15953;6586;N/A;3g;mean;6586;77;4196;1052;4.2;1.05
+All Providers Combined;Colombia;;jul-21;131147;41754;N/A;lte;mean;41754;47;18652;10931;18.65;10.93
+All Providers Combined;Colombia;;jul-21;157914;48385;N/A;cellular;mean;48385;50;18179;10203;18.18;10.2
+All Providers Combined;Colombia;;Aug 2021;15644;6011;N/A;3g;mean;6011;77;4050;1039;4.05;1.04
+All Providers Combined;Colombia;;Aug 2021;124172;39287;N/A;lte;mean;39287;45;19128;11180;19.13;11.18
+All Providers Combined;Colombia;;Aug 2021;151007;45788;N/A;cellular;mean;45788;48;18666;10461;18.67;10.46
+All Providers Combined;Colombia;;sep-21;14063;5032;N/A;3g;mean;5032;77;3510;871;3.51;0.87
+All Providers Combined;Colombia;;sep-21;117161;36980;N/A;lte;mean;36980;46;18702;11247;18.7;11.25
+All Providers Combined;Colombia;;sep-21;142271;42950;N/A;cellular;mean;42950;48;18327;10601;18.33;10.6
+All Providers Combined;Colombia;;oct-21;12284;4655;N/A;3g;mean;4655;76;3513;850;3.51;0.85
+All Providers Combined;Colombia;;oct-21;117870;36523;N/A;lte;mean;36523;48;18647;11319;18.65;11.32
+All Providers Combined;Colombia;;oct-21;142797;42761;N/A;cellular;mean;42761;50;18474;10735;18.47;10.74
+All Providers Combined;Colombia;;nov-21;11966;4183;N/A;3g;mean;4183;77;3448;831;3.45;0.83
+All Providers Combined;Colombia;;nov-21;119885;33534;N/A;lte;mean;33534;46;19279;11340;19.28;11.34
+All Providers Combined;Colombia;;nov-21;145098;39912;N/A;cellular;mean;39912;48;19428;10845;19.43;10.85
+All Providers Combined;Colombia;;Dec 2021;9368;3814;N/A;3g;mean;3814;69;3397;840;3.4;0.84
+All Providers Combined;Colombia;;Dec 2021;108199;32388;N/A;lte;mean;32388;46;19784;11519;19.78;11.52
+All Providers Combined;Colombia;;Dec 2021;133197;39492;N/A;cellular;mean;39492;47;20014;11026;20.01;11.03
+All Providers Combined;Colombia;;Jan 2022;125894;40030;N/A;cellular;mean;40030;50;19627;11090;19.63;11.09
+All Providers Combined;Colombia;;Jan 2022;8592;3618;N/A;3g;mean;3618;77;3482;855;3.48;0.86
+All Providers Combined;Colombia;;Jan 2022;101758;32554;N/A;lte;mean;32554;49;19133;11593;19.13;11.59
+All Providers Combined;Colombia;;feb-22;127721;39966;N/A;cellular;mean;39966;49;19570;11208;19.57;11.21
+All Providers Combined;Colombia;;feb-22;9328;3443;N/A;3g;mean;3443;74;3435;875;3.44;0.88
+All Providers Combined;Colombia;;feb-22;99718;32360;N/A;lte;mean;32360;48;19060;11687;19.06;11.69
+All Providers Combined;Colombia;;mar-22;140797;42780;N/A;cellular;mean;42780;54;18734;11043;18.73;11.04
+All Providers Combined;Colombia;;mar-22;10486;3834;N/A;3g;mean;3834;77;3304;848;3.30;0.85
+All Providers Combined;Colombia;;mar-22;107592;34051;N/A;lte;mean;34051;52;18028;11487;18.03;11.49
+All Providers Combined;Colombia;;Apr 2022;138846;42703;N/A;cellular;mean;42703;49;18025;10924;18.03;10.92
+All Providers Combined;Colombia;;Apr 2022;9617;3787;N/A;3g;mean;3787;72;2945;812;2.95;0.81
+All Providers Combined;Colombia;;Apr 2022;103319;33304;N/A;lte;mean;33304;48;17196;11289;17.20;11.29
+All Providers Combined;Colombia;;may-22;134900;41308;N/A;cellular;mean;41308;47;18326;11074;18.33;11.07
+All Providers Combined;Colombia;;may-22;8757;3421;N/A;3g;mean;3421;69;3092;817;3.09;0.82
+All Providers Combined;Colombia;;may-22;100412;31884;N/A;lte;mean;31884;46;17026;11315;17.03;11.32
+All Providers Combined;Colombia;;jun-22;118208;36991;N/A;cellular;mean;36991;47;18120;11329;18.12;11.33
+All Providers Combined;Colombia;;jun-22;8406;3105;N/A;3g;mean;3105;68;3064;812;3.06;0.81
+All Providers Combined;Colombia;;jun-22;85566;28019;N/A;lte;mean;28019;46;16975;11665;16.98;11.67
+All Providers Combined;Colombia;;jul-22;118121;37687;N/A;cellular;mean;37687;45;18060;11483;18.06;11.48
+All Providers Combined;Colombia;;jul-22;7459;2887;N/A;3g;mean;2887;65;2999;819;3.00;0.82
+All Providers Combined;Colombia;;jul-22;84783;28037;N/A;lte;mean;28037;44;16558;11717;16.56;11.72
+All Providers Combined;Colombia;;Aug 2022;123827;37727;N/A;cellular;mean;37727;46;17437;11294;17.44;11.29
+All Providers Combined;Colombia;;Aug 2022;6681;2654;N/A;3g;mean;2654;64;3116;823;3.12;0.82
+All Providers Combined;Colombia;;Aug 2022;88634;27871;N/A;lte;mean;27871;46;15984;11457;15.98;11.46
+All Providers Combined;Colombia;;sep-22;126221;37114;N/A;cellular;mean;37114;44;17994;11363;17.99;11.36
+All Providers Combined;Colombia;;sep-22;6367;2489;N/A;3g;mean;2489;64;3113;809;3.11;0.81
+All Providers Combined;Colombia;;sep-22;88066;26991;N/A;lte;mean;26991;43;16315;11445;16.32;11.45
+All Providers Combined;Colombia;;oct-22;123913;37443;N/A;cellular;mean;37443;46;17420;11185;17.42;11.19
+All Providers Combined;Colombia;;oct-22;5203;2379;N/A;3g;mean;2379;65;2972;781;2.97;0.78
+All Providers Combined;Colombia;;oct-22;85974;26896;N/A;lte;mean;26896;45;15818;11276;15.82;11.28
+All Providers Combined;Colombia;;nov-22;118262;35375;N/A;cellular;mean;35375;45;17429;11223;17.43;11.22
+All Providers Combined;Colombia;;nov-22;5226;2107;N/A;3g;mean;2107;63;3096;794;3.10;0.79
+All Providers Combined;Colombia;;nov-22;79751;25090;N/A;lte;mean;25090;44;15544;11229;15.54;11.23
+All Providers Combined;Colombia;;Dec 2022;106579;33905;N/A;cellular;mean;33905;44;18844;11629;18.84;11.63
+All Providers Combined;Colombia;;Dec 2022;4449;1959;N/A;3g;mean;1959;65;3199;793;3.20;0.79
+All Providers Combined;Colombia;;Dec 2022;70534;23376;N/A;lte;mean;23376;43;17024;11699;17.02;11.70
