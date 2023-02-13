@@ -1,0 +1,109 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;Device Count;Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Colombia;;2018;898303;174543;N/A;cellular;mean;174543;55;16207;8788;16.21;8.79
+All Providers Combined;Bogotá, Bogota, Colombia;;2018;343710;74571;N/A;cellular;mean;74571;45;16212;9350;16.21;9.35
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;2018;46887;12610;N/A;cellular;mean;12610;57;22099;12055;22.10;12.06
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;2018;4867;1591;N/A;cellular;mean;1591;56;21243;11112;21.24;11.11
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;2018;5381;1794;N/A;cellular;mean;1794;48;19663;9773;19.66;9.77
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;2018;3741;1127;N/A;cellular;mean;1127;67;20528;11046;20.53;11.05
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;2018;2866;899;N/A;cellular;mean;899;61;19581;10419;19.58;10.42
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;2018;9897;3243;N/A;cellular;mean;3243;60;17376;9640;17.38;9.64
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;2018;2207;777;N/A;cellular;mean;777;70;19019;11544;19.02;11.54
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;2018;23808;6442;N/A;cellular;mean;6442;51;19615;10468;19.62;10.47
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;2018;3792;1283;N/A;cellular;mean;1283;117;13956;9237;13.96;9.24
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;2018;7532;2301;N/A;cellular;mean;2301;57;20032;9303;20.03;9.30
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;2018;6777;1973;N/A;cellular;mean;1973;62;18834;10674;18.83;10.67
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;2018;76264;21540;N/A;cellular;mean;21540;52;17438;8875;17.44;8.88
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;2018;3804;1053;N/A;cellular;mean;1053;61;14871;10635;14.87;10.64
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;2018;1725;588;N/A;cellular;mean;588;59;13514;8774;13.51;8.77
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;2018;13900;3700;N/A;cellular;mean;3700;66;17833;10048;17.83;10.05
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;2018;3129;1114;N/A;cellular;mean;1114;52;17707;9782;17.71;9.78
+All Providers Combined;Colombia;;2019;1080603;216614;N/A;cellular;mean;216614;50;17449;10292;17.45;10.29
+All Providers Combined;Bogotá, Bogota, Colombia;;2019;460971;100892;N/A;cellular;mean;100892;44;16353;10581;16.35;10.58
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;2019;65324;17917;N/A;cellular;mean;17917;53;22674;12625;22.67;12.63
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;2019;5741;1911;N/A;cellular;mean;1911;59;22318;12467;22.32;12.47
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;2019;7258;2319;N/A;cellular;mean;2319;44;21238;10669;21.24;10.67
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;2019;4735;1435;N/A;cellular;mean;1435;61;22456;12601;22.46;12.60
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;2019;3478;1271;N/A;cellular;mean;1271;57;22301;12189;22.30;12.19
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;2019;15573;5197;N/A;cellular;mean;5197;54;19073;10844;19.07;10.84
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;2019;3975;1374;N/A;cellular;mean;1374;56;20692;13000;20.69;13.00
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;2019;48750;12962;N/A;cellular;mean;12962;48;19775;10880;19.78;10.88
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;2019;5127;1630;N/A;cellular;mean;1630;56;16543;9942;16.54;9.94
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;2019;8596;2778;N/A;cellular;mean;2778;44;20529;11355;20.53;11.36
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;2019;8253;2557;N/A;cellular;mean;2557;61;20312;11878;20.31;11.88
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;2019;102633;29621;N/A;cellular;mean;29621;55;18099;9960;18.10;9.96
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;2019;3651;1193;N/A;cellular;mean;1193;60;15560;11590;15.56;11.59
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;2019;2464;729;N/A;cellular;mean;729;56;16004;10611;16.00;10.61
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;2019;17382;5157;N/A;cellular;mean;5157;58;19387;10497;19.39;10.50
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;2019;4350;1494;N/A;cellular;mean;1494;45;17998;11198;18.00;11.20
+All Providers Combined;Colombia;;2020;1384415;276537;N/A;cellular;mean;276537;46;18161;9937;18.16;9.94
+All Providers Combined;Bogotá, Bogota, Colombia;;2020;534433;126029;N/A;cellular;mean;126029;40;17666;10336;17.67;10.34
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;2020;96590;23303;N/A;cellular;mean;23303;46;21520;11654;21.52;11.65
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;2020;8421;2536;N/A;cellular;mean;2536;52;22339;11973;22.34;11.97
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;2020;9780;2785;N/A;cellular;mean;2785;39;22160;9890;22.16;9.89
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;2020;5512;1675;N/A;cellular;mean;1675;53;22012;11954;22.01;11.95
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;2020;5015;1487;N/A;cellular;mean;1487;52;21733;11698;21.73;11.70
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;2020;17599;5210;N/A;cellular;mean;5210;52;21258;10996;21.26;11.00
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;2020;6417;1546;N/A;cellular;mean;1546;53;21065;12978;21.07;12.98
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;2020;71705;17500;N/A;cellular;mean;17500;48;20651;10868;20.65;10.87
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;2020;6031;1753;N/A;cellular;mean;1753;54;20486;10643;20.49;10.64
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;2020;12937;3400;N/A;cellular;mean;3400;42;20455;11349;20.46;11.35
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;2020;8066;2811;N/A;cellular;mean;2811;54;20330;10203;20.33;10.20
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;2020;100362;30956;N/A;cellular;mean;30956;50;20201;10222;20.20;10.22
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;2020;7054;1588;N/A;cellular;mean;1588;59;20000;11300;20.00;11.30
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;2020;3725;933;N/A;cellular;mean;933;87;19470;10945;19.47;10.95
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;2020;26767;6621;N/A;cellular;mean;6621;52;18124;9186;18.12;9.19
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;2020;5703;1695;N/A;cellular;mean;1695;44;17772;11058;17.77;11.06
+All Providers Combined;Colombia;;2021;1761338;277283;N/A;cellular;mean;277283;49;17608;9926;17.61;9.93
+All Providers Combined;Bogotá, Bogota, Colombia;;2021;567779;116557;N/A;cellular;mean;116557;44;18084;10224;18.08;10.22
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;2021;104521;22264;N/A;cellular;mean;22264;50;19920;11045;19.92;11.05
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;2021;10812;2768;N/A;cellular;mean;2768;55;18288;10539;18.29;10.54
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;2021;13252;2982;N/A;cellular;mean;2982;40;19920;9555;19.92;9.56
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;2021;7453;1950;N/A;cellular;mean;1950;56;18607;11009;18.61;11.01
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;2021;7877;1682;N/A;cellular;mean;1682;53;17993;10765;17.99;10.77
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;2021;20077;5248;N/A;cellular;mean;5248;42;22169;11580;22.17;11.58
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;2021;7699;1566;N/A;cellular;mean;1566;54;19835;12013;19.84;12.01
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;2021;82331;20113;N/A;cellular;mean;20113;42;21186;11654;21.19;11.65
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;2021;9432;2571;N/A;cellular;mean;2571;47;18490;10240;18.49;10.24
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;2021;13374;3550;N/A;cellular;mean;3550;46;17467;10355;17.47;10.36
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;2021;12564;3239;N/A;cellular;mean;3239;54;16920;8985;16.92;8.99
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;2021;141620;35096;N/A;cellular;mean;35096;50;19243;10482;19.24;10.48
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;2021;7198;1940;N/A;cellular;mean;1940;49;22574;11906;22.57;11.91
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;2021;5630;1334;N/A;cellular;mean;1334;51;19618;11351;19.62;11.35
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;2021;34231;7110;N/A;cellular;mean;7110;49;19024;10528;19.02;10.53
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;2021;7149;1745;N/A;cellular;mean;1745;45;14951;9699;14.95;9.70
+All Providers Combined;Colombia;;2022;1503289;241338;N/A;cellular;mean;241338;46;18111;11058;18.11;11.06
+All Providers Combined;Bogotá, Bogota, Colombia;;2022;496784;99817;N/A;cellular;mean;99817;40;19308;11744;19.31;11.74
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;2022;78892;19269;N/A;cellular;mean;19269;50;21171;11688;21.17;11.69
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;2022;10376;2577;N/A;cellular;mean;2577;53;18451;11255;18.45;11.26
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;2022;10432;2853;N/A;cellular;mean;2853;44;18672;10582;18.67;10.58
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;2022;6327;1715;N/A;cellular;mean;1715;51;17591;11274;17.59;11.27
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;2022;7275;1620;N/A;cellular;mean;1620;50;16683;11014;16.68;11.01
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;2022;19384;4970;N/A;cellular;mean;4970;44;19315;11887;19.32;11.89
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;2022;7290;1614;N/A;cellular;mean;1614;57;17853;12364;17.85;12.36
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;2022;73057;19096;N/A;cellular;mean;19096;43;19381;11953;19.38;11.95
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;2022;7452;2137;N/A;cellular;mean;2137;50;19318;11271;19.32;11.27
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;2022;11695;3092;N/A;cellular;mean;3092;42;19730;11855;19.73;11.86
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;2022;11441;2861;N/A;cellular;mean;2861;49;17646;11191;17.65;11.19
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;2022;119737;30696;N/A;cellular;mean;30696;44;19271;11398;19.27;11.40
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;2022;5470;1652;N/A;cellular;mean;1652;48;22271;12977;22.27;12.98
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;2022;5589;1125;N/A;cellular;mean;1125;53;17837;11960;17.84;11.96
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;2022;29482;6185;N/A;cellular;mean;6185;53;18646;11490;18.65;11.49
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;2022;6910;1569;N/A;cellular;mean;1569;43;15216;10530;15.22;10.53
+All Providers Combined;Colombia;;2023 (to date);118268;35908;N/A;cellular;mean;35908;46;18653;11597;18.65;11.60
+All Providers Combined;Bogotá, Bogota, Colombia;;2023 (to date);36807;12835;N/A;cellular;mean;12835;40;20338;12693;20.34;12.69
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;2023 (to date);6093;2354;N/A;cellular;mean;2354;50;22143;12183;22.14;12.18
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;2023 (to date);787;357;N/A;cellular;mean;357;48;19998;11944;20.00;11.94
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;2023 (to date);678;312;N/A;cellular;mean;312;37;18716;11068;18.72;11.07
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;2023 (to date);596;225;N/A;cellular;mean;225;53;17871;12456;17.87;12.46
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;2023 (to date);427;188;N/A;cellular;mean;188;50;17563;11667;17.56;11.67
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;2023 (to date);1673;589;N/A;cellular;mean;589;39;19682;11514;19.68;11.51
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;2023 (to date);488;197;N/A;cellular;mean;197;52;19221;13994;19.22;13.99
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;2023 (to date);5984;2268;N/A;cellular;mean;2268;43;21033;12275;21.03;12.28
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;2023 (to date);555;261;N/A;cellular;mean;261;60;18474;12086;18.47;12.09
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;2023 (to date);936;392;N/A;cellular;mean;392;43;20433;12762;20.43;12.76
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;2023 (to date);766;346;N/A;cellular;mean;346;49;15474;11325;15.47;11.33
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;2023 (to date);8700;3418;N/A;cellular;mean;3418;41;20878;12313;20.88;12.31
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;2023 (to date);420;194;N/A;cellular;mean;194;47;23489;13547;23.49;13.55
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;2023 (to date);374;134;N/A;cellular;mean;134;41;21630;15016;21.63;15.02
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;2023 (to date);1800;705;N/A;cellular;mean;705;53;18350;11624;18.35;11.62
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;2023 (to date);452;176;N/A;cellular;mean;176;33;17759;11141;17.76;11.14
