@@ -69,16 +69,16 @@ st.markdown("""<style type="text/css">
         text-decoration-style: double;
         color: #27348b;}
     h3{ 
-            background: linear-gradient(to right, #27348b, #0c2340);
-            text-align: center;
-            padding: 15px;
-            font-family: sans-serif;
-            font-size:1.30rem;
-            color: white;
-            width:100%;
-            z-index:9999;
-            top:0px;
-            left:0;
+        background: linear-gradient(to right, #27348b, #0c2340);
+        text-align: center;
+        padding: 15px;
+        font-family: sans-serif;
+        font-size:1.30rem;
+        color: white;
+        width:100%;
+        z-index:9999;
+        top:0px;
+        left:0;
         }
 
     .imagen-flotar{float:left;}
@@ -160,11 +160,12 @@ if select_servicio=='Información general':
         if select_indicadorDef=='Indicadores de desempeño': 
             st.markdown("#### Indicadores de desempeño")
             st.markdown('<p style="text-align:justify;">el rendimiento o desempeño del servicio de internet se refiere a los resultados de los indicadores de calidad del servicio de telecomunicaciones desde el punto de vista del usuario. Los más relevantes están relacionados con las velocidades y los tiempos de retardo de las conexiones.</p>',unsafe_allow_html=True)
-            with st.expander("Velocidad de descarga"):
+            tab1, tab2, tab3 = st.tabs(["Velocidad de descarga", "Velocidad de carga", "Latencia"])
+            with tab1:
                 st.markdown('<p style="text-align:justify;">La velocidad de descarga Se entiende como la rapidez con la se pueden descargar contenidos, normalmente desde una página Web. A mayor velocidad obtenida en la medición, mayor rapidez en la descarga, por lo tanto, mejor experiencia del usuario. Es usual medirla en  Megabit por segundo (Mbps)</p>',unsafe_allow_html=True)
-            with st.expander("Velocidad de carga"):
+            with tab2:
                 st.markdown('<p style="text-align:justify;">La velocidad de carga se entiende como la medida de qué tan rápido se envían los datos en dirección desde un dispositivo hacia Internet. Es decir, es la rapidez con la que se pueden subir contenidos a Internet. A mayor velocidad obtenida en la medición, mayor rapidez en la carga, por lo tanto, mejor es la experiencia del usuario. Se mide en Mebagit por segundo (Mbps)</p>',unsafe_allow_html=True)
-            with st.expander("Latencia"):
+            with tab3:
                 st.markdown('<p style="text-align:justify;">El parámetro de latencia sirve para medir qué tan rápido viajan los datos desde un punto de origen al destino. La experiencia al intentar acceder a audio, video y videojuegos es mejor con latencias más bajas, por lo cual, si el tiempo obtenido en la medición es pequeño, la experiencia del usuario es mejor. La latencia se mide en milisegundos (ms).</p>',unsafe_allow_html=True)
         if select_indicadorDef=='Indicadores de cobertura':
             st.markdown("#### Indicadores de cobertura")
