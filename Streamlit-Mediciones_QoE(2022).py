@@ -332,7 +332,7 @@ if select_servicio == 'Internet fijo':
 
 
             ##
-            Colombia2Fijo=pd.read_csv(pathFijo+'Allproviders-histcomp_month_2020-2022.csv',delimiter=';')
+            Colombia2Fijo=pd.read_csv(pathFijo2+'Allproviders-histcomp_month_2020-2022.csv',delimiter=';')
             Colombia2Fijo['Location']=Colombia2Fijo['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
             FeAntigFijo=Colombia2Fijo['Aggregate Date'].unique() #Generar las fechas que tenían los datos
             FeCorreFijo=pd.date_range('2020-06-01',periodo_tope, 
