@@ -1,0 +1,16 @@
+﻿Provider,Location,Device,Aggregate Date,Test Count,Sample Count,Platform,Technology Type,Metric Type,Device Count,Minimum Latency,Multi-Server Latency,Multi-Server Jitter,Download Speed,Upload Speed,Download Speed Mbps,Upload Speed Mbps
+All Providers Combined,Colombia,,2018,281098,64901,N/A,3g,median,64901,61,,,2901,823,2.90,0.82
+All Providers Combined,Colombia,,2018,612945,140775,N/A,lte,median,140775,36,,,17218,10290,17.22,10.29
+All Providers Combined,Colombia,,2018,898303,174543,N/A,cellular,median,174543,43,,,12089,6816,12.09,6.82
+All Providers Combined,Colombia,,2019,208076,54825,N/A,3g,median,54825,58,,,3275,992,3.28,0.99
+All Providers Combined,Colombia,,2019,870096,192242,N/A,lte,median,192242,36,,,16475,10521,16.48,10.52
+All Providers Combined,Colombia,,2019,1080603,216614,N/A,cellular,median,216614,39,,,13445,8377,13.45,8.38
+All Providers Combined,Colombia,,2020,177390,53804,N/A,3g,median,53804,57,,,3219,713,3.22,0.71
+All Providers Combined,Colombia,,2020,1195774,252431,N/A,lte,median,252431,36,,,16243,8843,16.24,8.84
+All Providers Combined,Colombia,,2020,1384415,276537,N/A,cellular,median,276537,38,,,14075,7480,14.08,7.48
+All Providers Combined,Colombia,,2021,177135,47488,N/A,3g,median,47488,58,,,2896,731,2.90,0.73
+All Providers Combined,Colombia,,2021,1474076,242852,N/A,lte,median,242852,36,,,13710,8732,13.71,8.73
+All Providers Combined,Colombia,,2021,1761338,277283,N/A,cellular,median,277283,38,,,12623,7910,12.62,7.91
+All Providers Combined,Colombia,,2022,90571,25470,N/A,3g,median,25470,57,87.2207,28.1181,2491,674,2.49,0.67
+All Providers Combined,Colombia,,2022,1096107,185996,N/A,lte,median,185996,34,62.0199,15.886,12357,9625,12.36,9.63
+All Providers Combined,Colombia,,2022,1503289,241338,N/A,cellular,median,241338,36,63.5227,16.5275,12460,9267,12.46,9.27

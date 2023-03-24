@@ -1,0 +1,181 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;Device Count;Minimum Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Colombia;;Jan 2018;24019;8322;N/A;3g;median;8322;61;2829;786;2.83;0.79
+All Providers Combined;Colombia;;Jan 2018;41182;17004;N/A;lte;median;17004;35;17632;9131;17.63;9.13
+All Providers Combined;Colombia;;Jan 2018;65425;23027;N/A;cellular;median;23027;44;10807;4743;10.81;4.74
+All Providers Combined;Colombia;;feb-18;21389;7479;N/A;3g;median;7479;60;2869;814;2.87;0.81
+All Providers Combined;Colombia;;feb-18;41462;16820;N/A;lte;median;16820;34;16017;10556;16.02;10.56
+All Providers Combined;Colombia;;feb-18;63031;22270;N/A;cellular;median;22270;42;10149;6267;10.15;6.27
+All Providers Combined;Colombia;;mar-18;24800;8765;N/A;3g;median;8765;59;2839;810;2.84;0.81
+All Providers Combined;Colombia;;mar-18;44952;18269;N/A;lte;median;18269;33;17366;10595;17.37;10.60
+All Providers Combined;Colombia;;mar-18;70001;24587;N/A;cellular;median;24587;41;10943;6005;10.94;6.01
+All Providers Combined;Colombia;;Apr 2018;23458;8177;N/A;3g;median;8177;59;2894;806;2.89;0.81
+All Providers Combined;Colombia;;Apr 2018;44134;18159;N/A;lte;median;18159;34;17408;10373;17.41;10.37
+All Providers Combined;Colombia;;Apr 2018;67851;23904;N/A;cellular;median;23904;40;11276;6132;11.28;6.13
+All Providers Combined;Colombia;;may-18;22748;7783;N/A;3g;median;7783;59;2892;802;2.89;0.80
+All Providers Combined;Colombia;;may-18;45143;18291;N/A;lte;median;18291;35;16910;10438;16.91;10.44
+All Providers Combined;Colombia;;may-18;68261;23763;N/A;cellular;median;23763;41;11147;6446;11.15;6.45
+All Providers Combined;Colombia;;jun-18;20769;7196;N/A;3g;median;7196;59;2892;796;2.89;0.80
+All Providers Combined;Colombia;;jun-18;42220;16903;N/A;lte;median;16903;35;16260;10115;16.26;10.12
+All Providers Combined;Colombia;;jun-18;63482;22026;N/A;cellular;median;22026;41;10504;6115;10.50;6.12
+All Providers Combined;Colombia;;jul-18;22079;7618;N/A;3g;median;7618;59;2880;782;2.88;0.78
+All Providers Combined;Colombia;;jul-18;44421;18379;N/A;lte;median;18379;35;15876;10557;15.88;10.56
+All Providers Combined;Colombia;;jul-18;66810;23682;N/A;cellular;median;23682;40;10226;6452;10.23;6.45
+All Providers Combined;Colombia;;Aug 2018;22339;7747;N/A;3g;median;7747;59;2899;822;2.90;0.82
+All Providers Combined;Colombia;;Aug 2018;49398;19673;N/A;lte;median;19673;36;16791;10535;16.79;10.54
+All Providers Combined;Colombia;;Aug 2018;72051;24988;N/A;cellular;median;24988;42;11356;6689;11.36;6.69
+All Providers Combined;Colombia;;sep-18;24957;8528;N/A;3g;median;8528;58;3052;840;3.05;0.84
+All Providers Combined;Colombia;;sep-18;57998;22665;N/A;lte;median;22665;35;17338;10467;17.34;10.47
+All Providers Combined;Colombia;;sep-18;83395;28241;N/A;cellular;median;28241;40;12314;6964;12.31;6.96
+All Providers Combined;Colombia;;oct-18;28245;9317;N/A;3g;median;9317;60;2996;857;3.00;0.86
+All Providers Combined;Colombia;;oct-18;73113;25784;N/A;lte;median;25784;36;17174;10259;17.17;10.26
+All Providers Combined;Colombia;;oct-18;102020;31468;N/A;cellular;median;31468;42;12540;7079;12.54;7.08
+All Providers Combined;Colombia;;nov-18;25527;8548;N/A;3g;median;8548;63;2966;852;2.97;0.85
+All Providers Combined;Colombia;;nov-18;69427;24154;N/A;lte;median;24154;36;17181;10155;17.18;10.16
+All Providers Combined;Colombia;;nov-18;95412;29627;N/A;cellular;median;29627;44;12491;6985;12.49;6.99
+All Providers Combined;Colombia;;Dec 2018;20912;7913;N/A;3g;median;7913;63;2875;841;2.88;0.84
+All Providers Combined;Colombia;;Dec 2018;59610;22499;N/A;lte;median;22499;34;17880;10421;17.88;10.42
+All Providers Combined;Colombia;;Dec 2018;80844;27617;N/A;cellular;median;27617;40;13000;7030;13.00;7.03
+All Providers Combined;Colombia;;Jan 2019;20058;7219;N/A;3g;median;7219;62;2812;869;2.81;0.87
+All Providers Combined;Colombia;;Jan 2019;66242;25570;N/A;lte;median;25570;35;18107;10383;18.11;10.38
+All Providers Combined;Colombia;;Jan 2019;86526;30287;N/A;cellular;median;30287;40;14035;7621;14.04;7.62
+All Providers Combined;Colombia;;feb-19;17013;6454;N/A;3g;median;6454;59;2832;880;2.83;0.88
+All Providers Combined;Colombia;;feb-19;63346;24303;N/A;lte;median;24303;35;16130;9579;16.13;9.58
+All Providers Combined;Colombia;;feb-19;80565;28546;N/A;cellular;median;28546;39;12513;7211;12.51;7.21
+All Providers Combined;Colombia;;mar-19;18610;6890;N/A;3g;median;6890;59;3275;882;3.28;0.88
+All Providers Combined;Colombia;;mar-19;70493;26351;N/A;lte;median;26351;36;15846;9037;15.85;9.04
+All Providers Combined;Colombia;;mar-19;89331;30724;N/A;cellular;median;30724;39;12275;6779;12.28;6.78
+All Providers Combined;Colombia;;Apr 2019;18889;6845;N/A;3g;median;6845;60;3326;918;3.33;0.92
+All Providers Combined;Colombia;;Apr 2019;67850;25665;N/A;lte;median;25665;36;15946;8924;15.95;8.92
+All Providers Combined;Colombia;;Apr 2019;86988;29845;N/A;cellular;median;29845;40;12464;6656;12.46;6.66
+All Providers Combined;Colombia;;may-19;18939;6914;N/A;3g;median;6914;58;3510;1030;3.51;1.03
+All Providers Combined;Colombia;;may-19;76693;27734;N/A;lte;median;27734;35;15967;9721;15.97;9.72
+All Providers Combined;Colombia;;may-19;95949;31868;N/A;cellular;median;31868;39;12663;7475;12.66;7.48
+All Providers Combined;Colombia;;jun-19;18365;6753;N/A;3g;median;6753;59;3448;1055;3.45;1.06
+All Providers Combined;Colombia;;jun-19;71304;27090;N/A;lte;median;27090;35;15872;10030;15.87;10.03
+All Providers Combined;Colombia;;jun-19;89867;31221;N/A;cellular;median;31221;39;12579;7683;12.58;7.68
+All Providers Combined;Colombia;;jul-19;17811;7010;N/A;3g;median;7010;58;3535;1069;3.54;1.07
+All Providers Combined;Colombia;;jul-19;75530;30174;N/A;lte;median;30174;35;15529;10245;15.53;10.25
+All Providers Combined;Colombia;;jul-19;93552;34525;N/A;cellular;median;34525;39;12397;8052;12.40;8.05
+All Providers Combined;Colombia;;Aug 2019;17314;6670;N/A;3g;median;6670;57;3453;1077;3.45;1.08
+All Providers Combined;Colombia;;Aug 2019;83973;31808;N/A;lte;median;31808;35;16090;11100;16.09;11.10
+All Providers Combined;Colombia;;Aug 2019;101461;35797;N/A;cellular;median;35797;38;13230;8909;13.23;8.91
+All Providers Combined;Colombia;;sep-19;17285;6277;N/A;3g;median;6277;57;3467;1100;3.47;1.10
+All Providers Combined;Colombia;;sep-19;78554;29692;N/A;lte;median;29692;34;16058;11131;16.06;11.13
+All Providers Combined;Colombia;;sep-19;95989;33473;N/A;cellular;median;33473;38;13126;8854;13.13;8.85
+All Providers Combined;Colombia;;oct-19;16841;6385;N/A;3g;median;6385;56;3308;1077;3.31;1.08
+All Providers Combined;Colombia;;oct-19;78474;30358;N/A;lte;median;30358;35;15862;10956;15.86;10.96
+All Providers Combined;Colombia;;oct-19;95512;34009;N/A;cellular;median;34009;38;13022;8821;13.02;8.82
+All Providers Combined;Colombia;;nov-19;13806;5692;N/A;3g;median;5692;57;3375;1051;3.38;1.05
+All Providers Combined;Colombia;;nov-19;70310;28524;N/A;lte;median;28524;36;16446;11183;16.45;11.18
+All Providers Combined;Colombia;;nov-19;84222;31938;N/A;cellular;median;31938;39;13705;9095;13.71;9.10
+All Providers Combined;Colombia;;Dec 2019;13163;5496;N/A;3g;median;5496;57;3485;1078;3.49;1.08
+All Providers Combined;Colombia;;Dec 2019;68256;28729;N/A;lte;median;28729;36;16734;11753;16.73;11.75
+All Providers Combined;Colombia;;Dec 2019;81588;32024;N/A;cellular;median;32024;39;14018;9704;14.02;9.70
+All Providers Combined;Colombia;;Jan 2020;11464;5195;N/A;3g;median;5195;57;3297;741;3.30;0.74
+All Providers Combined;Colombia;;Jan 2020;66247;29501;N/A;lte;median;29501;36;16547;10453;16.55;10.45
+All Providers Combined;Colombia;;Jan 2020;77865;32667;N/A;cellular;median;32667;38;14028;8539;14.03;8.54
+All Providers Combined;Colombia;;feb-20;10595;4764;N/A;3g;median;4764;56;3486;762;3.49;0.76
+All Providers Combined;Colombia;;feb-20;68350;29677;N/A;lte;median;29677;36;15733;10399;15.73;10.40
+All Providers Combined;Colombia;;feb-20;79044;32502;N/A;cellular;median;32502;38;13600;8613;13.60;8.61
+All Providers Combined;Colombia;;mar-20;14148;6115;N/A;3g;median;6115;57;3121;718;3.12;0.72
+All Providers Combined;Colombia;;mar-20;87667;38229;N/A;lte;median;38229;38;14850;9301;14.85;9.30
+All Providers Combined;Colombia;;mar-20;101971;42089;N/A;cellular;median;42089;39;12611;7700;12.61;7.70
+All Providers Combined;Colombia;;Apr 2020;16080;6690;N/A;3g;median;6690;57;3001;701;3.00;0.70
+All Providers Combined;Colombia;;Apr 2020;101230;42651;N/A;lte;median;42651;38;15943;8333;15.94;8.33
+All Providers Combined;Colombia;;Apr 2020;117578;47042;N/A;cellular;median;47042;39;13603;6883;13.60;6.88
+All Providers Combined;Colombia;;may-20;16763;7106;N/A;3g;median;7106;57;3259;724;3.26;0.72
+All Providers Combined;Colombia;;may-20;113522;43490;N/A;lte;median;43490;37;16173;7736;16.17;7.74
+All Providers Combined;Colombia;;may-20;130609;47911;N/A;cellular;median;47911;39;13915;6394;13.92;6.39
+All Providers Combined;Colombia;;jun-20;14233;6401;N/A;3g;median;6401;56;3111;695;3.11;0.70
+All Providers Combined;Colombia;;jun-20;108798;39132;N/A;lte;median;39132;34;16597;7865;16.60;7.87
+All Providers Combined;Colombia;;jun-20;123319;42965;N/A;cellular;median;42965;36;14291;6607;14.29;6.61
+All Providers Combined;Colombia;;jul-20;18095;7315;N/A;3g;median;7315;56;3156;698;3.16;0.70
+All Providers Combined;Colombia;;jul-20;129998;42434;N/A;lte;median;42434;34;16119;8026;16.12;8.03
+All Providers Combined;Colombia;;jul-20;148744;46612;N/A;cellular;median;46612;36;13826;6713;13.83;6.71
+All Providers Combined;Colombia;;Aug 2020;15519;6884;N/A;3g;median;6884;56;3298;701;3.30;0.70
+All Providers Combined;Colombia;;Aug 2020;116820;41249;N/A;lte;median;41249;34;16196;7922;16.20;7.92
+All Providers Combined;Colombia;;Aug 2020;133391;45293;N/A;cellular;median;45293;36;13899;6653;13.90;6.65
+All Providers Combined;Colombia;;sep-20;14870;6447;N/A;3g;median;6447;56;3386;717;3.39;0.72
+All Providers Combined;Colombia;;sep-20;103211;38373;N/A;lte;median;38373;34;17116;8271;17.12;8.27
+All Providers Combined;Colombia;;sep-20;119236;42263;N/A;cellular;median;42263;36;14799;7013;14.80;7.01
+All Providers Combined;Colombia;;oct-20;16300;6352;N/A;3g;median;6352;55;3250;717;3.25;0.72
+All Providers Combined;Colombia;;oct-20;105583;38023;N/A;lte;median;38023;33;16521;8452;16.52;8.45
+All Providers Combined;Colombia;;oct-20;123466;41896;N/A;cellular;median;41896;35;14291;7220;14.29;7.22
+All Providers Combined;Colombia;;nov-20;15355;5822;N/A;3g;median;5822;57;3121;714;3.12;0.71
+All Providers Combined;Colombia;;nov-20;101324;35447;N/A;lte;median;35447;35;14701;8397;14.70;8.40
+All Providers Combined;Colombia;;nov-20;118776;39223;N/A;cellular;median;39223;37;12742;7173;12.74;7.17
+All Providers Combined;Colombia;;Dec 2020;14046;5486;N/A;3g;median;5486;56;2743;704;2.74;0.70
+All Providers Combined;Colombia;;Dec 2020;93112;32561;N/A;lte;median;32561;34;14005;8527;14.01;8.53
+All Providers Combined;Colombia;;Dec 2020;110578;36501;N/A;cellular;median;36501;36;12101;7355;12.10;7.36
+All Providers Combined;Colombia;;Jan 2021;12978;5376;N/A;3g;median;5376;55;2539;679;2.54;0.68
+All Providers Combined;Colombia;;Jan 2021;95329;33488;N/A;lte;median;33488;33;12173;7584;12.17;7.58
+All Providers Combined;Colombia;;Jan 2021;112216;37703;N/A;cellular;median;37703;36;10499;6512;10.50;6.51
+All Providers Combined;Colombia;;feb-21;12937;5393;N/A;3g;median;5393;55;2776;707;2.78;0.71
+All Providers Combined;Colombia;;feb-21;102414;34322;N/A;lte;median;34322;35;12573;8132;12.57;8.13
+All Providers Combined;Colombia;;feb-21;119772;38759;N/A;cellular;median;38759;37;11030;7030;11.03;7.03
+All Providers Combined;Colombia;;mar-21;16073;5941;N/A;3g;median;5941;56;2557;708;2.56;0.71
+All Providers Combined;Colombia;;mar-21;116160;36649;N/A;lte;median;36649;35;12344;8039;12.34;8.04
+All Providers Combined;Colombia;;mar-21;137978;41417;N/A;cellular;median;41417;37;10835;7019;10.84;7.02
+All Providers Combined;Colombia;;Apr 2021;18101;7209;N/A;3g;median;7209;57;3113;753;3.11;0.75
+All Providers Combined;Colombia;;Apr 2021;165864;43900;N/A;lte;median;43900;36;13265;7868;13.27;7.87
+All Providers Combined;Colombia;;Apr 2021;191474;49416;N/A;cellular;median;49416;38;11903;6978;11.90;6.98
+All Providers Combined;Colombia;;may-21;19639;6931;N/A;3g;median;6931;59;3050;752;3.05;0.75
+All Providers Combined;Colombia;;may-21;148013;41087;N/A;lte;median;41087;37;13099;8161;13.10;8.16
+All Providers Combined;Colombia;;may-21;174506;46492;N/A;cellular;median;46492;38;11587;7206;11.59;7.21
+All Providers Combined;Colombia;;jun-21;18052;6509;N/A;3g;median;6509;57;2895;751;2.90;0.75
+All Providers Combined;Colombia;;jun-21;126825;39418;N/A;lte;median;39418;37;13670;8492;13.67;8.49
+All Providers Combined;Colombia;;jun-21;151919;44950;N/A;cellular;median;44950;38;12224;7506;12.22;7.51
+All Providers Combined;Colombia;;jul-21;15953;6586;N/A;3g;median;6586;57;3002;765;3.00;0.77
+All Providers Combined;Colombia;;jul-21;131147;41754;N/A;lte;median;41754;36;13475;8781;13.48;8.78
+All Providers Combined;Colombia;;jul-21;157914;48385;N/A;cellular;median;48385;38;12301;7827;12.30;7.83
+All Providers Combined;Colombia;;Aug 2021;15644;6011;N/A;3g;median;6011;58;2978;763;2.98;0.76
+All Providers Combined;Colombia;;Aug 2021;124172;39287;N/A;lte;median;39287;36;14055;8970;14.06;8.97
+All Providers Combined;Colombia;;Aug 2021;151007;45788;N/A;cellular;median;45788;37;12819;8092;12.82;8.09
+All Providers Combined;Colombia;;sep-21;14063;5032;N/A;3g;median;5032;59;2804;708;2.80;0.71
+All Providers Combined;Colombia;;sep-21;117161;36980;N/A;lte;median;36980;36;13389;9099;13.39;9.10
+All Providers Combined;Colombia;;sep-21;142271;42950;N/A;cellular;median;42950;37;12351;8363;12.35;8.36
+All Providers Combined;Colombia;;oct-21;12284;4655;N/A;3g;median;4655;59;2733;701;2.73;0.70
+All Providers Combined;Colombia;;oct-21;117870;36523;N/A;lte;median;36523;37;13306;9130;13.31;9.13
+All Providers Combined;Colombia;;oct-21;142797;42761;N/A;cellular;median;42761;38;12449;8411;12.45;8.41
+All Providers Combined;Colombia;;nov-21;11966;4183;N/A;3g;median;4183;58;2763;680;2.76;0.68
+All Providers Combined;Colombia;;nov-21;119885;33534;N/A;lte;median;33534;35;13993;9077;13.99;9.08
+All Providers Combined;Colombia;;nov-21;145098;39912;N/A;cellular;median;39912;36;13342;8470;13.34;8.47
+All Providers Combined;Colombia;;Dec 2021;9368;3814;N/A;3g;median;3814;57;2659;682;2.66;0.68
+All Providers Combined;Colombia;;Dec 2021;108199;32388;N/A;lte;median;32388;34;14313;9422;14.31;9.42
+All Providers Combined;Colombia;;Dec 2021;133197;39492;N/A;cellular;median;39492;35;13738;8800;13.74;8.80
+All Providers Combined;Colombia;;Jan 2022;8592;3618;N/A;3g;median;3618;58;2779;686;2.78;0.69
+All Providers Combined;Colombia;;Jan 2022;101758;32554;N/A;lte;median;32554;34;13448;9351;13.45;9.35
+All Providers Combined;Colombia;;Jan 2022;125894;40030;N/A;cellular;median;40030;36;12977;8718;12.98;8.72
+All Providers Combined;Colombia;;feb-22;9328;3443;N/A;3g;median;3443;57;2724;723;2.72;0.72
+All Providers Combined;Colombia;;feb-22;99718;32360;N/A;lte;median;32360;33;13701;9563;13.70;9.56
+All Providers Combined;Colombia;;feb-22;127721;39966;N/A;cellular;median;39966;35;13341;8945;13.34;8.95
+All Providers Combined;Colombia;;mar-22;10486;3834;N/A;3g;median;3834;58;2602;701;2.60;0.70
+All Providers Combined;Colombia;;mar-22;107592;34051;N/A;lte;median;34051;34;12577;9439;12.58;9.44
+All Providers Combined;Colombia;;mar-22;140797;42780;N/A;cellular;median;42780;36;12348;8833;12.35;8.83
+All Providers Combined;Colombia;;Apr 2022;9617;3787;N/A;3g;median;3787;58;2125;665;2.13;0.67
+All Providers Combined;Colombia;;Apr 2022;103319;33304;N/A;lte;median;33304;35;11710;9188;11.71;9.19
+All Providers Combined;Colombia;;Apr 2022;138846;42703;N/A;cellular;median;42703;36;11553;8689;11.55;8.69
+All Providers Combined;Colombia;;may-22;8757;3421;N/A;3g;median;3421;57;2282;668;2.28;0.67
+All Providers Combined;Colombia;;may-22;100412;31884;N/A;lte;median;31884;33;11616;9280;11.62;9.28
+All Providers Combined;Colombia;;may-22;134900;41308;N/A;cellular;median;41308;35;11660;8938;11.66;8.94
+All Providers Combined;Colombia;;jun-22;8406;3105;N/A;3g;median;3105;57;2288;665;2.29;0.67
+All Providers Combined;Colombia;;jun-22;85566;28019;N/A;lte;median;28019;34;11487;9533;11.49;9.53
+All Providers Combined;Colombia;;jun-22;118208;36991;N/A;cellular;median;36991;35;11489;9082;11.49;9.08
+All Providers Combined;Colombia;;jul-22;7459;2887;N/A;3g;median;2887;56;2249;667;2.25;0.67
+All Providers Combined;Colombia;;jul-22;84783;28037;N/A;lte;median;28037;34;11204;9633;11.20;9.63
+All Providers Combined;Colombia;;jul-22;118121;37687;N/A;cellular;median;37687;35;11291;9250;11.29;9.25
+All Providers Combined;Colombia;;Aug 2022;6681;2654;N/A;3g;median;2654;55;2465;668;2.47;0.67
+All Providers Combined;Colombia;;Aug 2022;88634;27871;N/A;lte;median;27871;34;10780;9331;10.78;9.33
+All Providers Combined;Colombia;;Aug 2022;123827;37727;N/A;cellular;median;37727;35;10943;9096;10.94;9.10
+All Providers Combined;Colombia;;sep-22;6367;2489;N/A;3g;median;2489;54;2374;676;2.37;0.68
+All Providers Combined;Colombia;;sep-22;88066;26991;N/A;lte;median;26991;33;11085;9469;11.09;9.47
+All Providers Combined;Colombia;;sep-22;126221;37114;N/A;cellular;median;37114;34;11478;9195;11.48;9.20
+All Providers Combined;Colombia;;oct-22;5203;2379;N/A;3g;median;2379;54;2125;643;2.13;0.64
+All Providers Combined;Colombia;;oct-22;85974;26896;N/A;lte;median;26896;34;10575;9126;10.58;9.13
+All Providers Combined;Colombia;;oct-22;123913;37443;N/A;cellular;median;37443;35;10988;8950;10.99;8.95
+All Providers Combined;Colombia;;nov-22;5226;2107;N/A;3g;median;2107;53;2434;624;2.43;0.62
+All Providers Combined;Colombia;;nov-22;79751;25090;N/A;lte;median;25090;34;10389;9052;10.39;9.05
+All Providers Combined;Colombia;;nov-22;118262;35375;N/A;cellular;median;35375;35;10824;8966;10.82;8.97
+All Providers Combined;Colombia;;Dec 2022;4449;1959;N/A;3g;median;1959;54;2489;638;2.49;0.64
+All Providers Combined;Colombia;;Dec 2022;70534;23376;N/A;lte;median;23376;34;11641;9655;11.64;9.66
+All Providers Combined;Colombia;;Dec 2022;106579;33905;N/A;cellular;median;33905;35;12148;9489;12.15;9.49
