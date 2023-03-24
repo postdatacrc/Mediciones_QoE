@@ -352,9 +352,9 @@ if select_servicio == 'Internet fijo':
             departamentos_df2Fijo=departamentos_df2Fijo.sort_values(by='Download Speed Mbps')
 
             # create a plain world map
-            colombia_map1Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            colombia_map1Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
             for tile in tiles:
                 folium.TileLayer(tile).add_to(colombia_map1Fijo)
@@ -646,9 +646,9 @@ if select_servicio == 'Internet fijo':
             final_df4Fijo=gdf2.merge(Proveedor4Fijo, on='Location')
             
 
-            dualmap1_1Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            dualmap1_1Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -735,9 +735,9 @@ if select_servicio == 'Internet fijo':
             FloatImage(url1, bottom=5, left=1).add_to(dualmap1_1Fijo.m1)
             FloatImage(url2, bottom=5, left=53).add_to(dualmap1_1Fijo.m2)
 
-            dualmap1_2Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            dualmap1_2Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -974,7 +974,7 @@ if select_servicio == 'Internet fijo':
             text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2022.',
             font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.25)
             st.plotly_chart(fig6Fijo, use_container_width=True)  
-            st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
+            #st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
             
             col1, col2,col3= st.columns(3)
             mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
@@ -987,9 +987,9 @@ if select_servicio == 'Internet fijo':
             departamentos_df2bFijo=gdf2.merge(Col2bFijo, on='Location')
             departamentos_df2bFijo=departamentos_df2bFijo.sort_values(by='Upload Speed Mbps')  
 
-            colombia_map2Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            colombia_map2Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
             for tile in tiles:
                 folium.TileLayer(tile).add_to(colombia_map2Fijo)
@@ -1431,9 +1431,9 @@ if select_servicio == 'Internet fijo':
             departamentosLat_df2Fijo=gdf2.merge(ColLat2, on='Location')
             departamentosLat_df2Fijo=departamentosLat_df2Fijo.sort_values(by='Latency')
             
-            colombia_map3Fijo = folium.Map(height=600,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            colombia_map3Fijo = folium.Map(height=600,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
             for tile in tiles:
                 folium.TileLayer(tile).add_to(colombia_map3Fijo)
@@ -2007,9 +2007,11 @@ def OpJoinA9Movil():
 OpJoinAMovil9=OpJoinA9Movil()
 
 if select_servicio == 'Internet móvil':
-    select_indicador=st.selectbox('Indicador de desempeño y cobertura',['Velocidad de descarga','Velocidad de carga','Latencia','Registro en red'])    
+    select_indicador=st.selectbox('Indicador de desempeño y cobertura',['Velocidad de descarga','Velocidad de carga','Latencia','Registro en red'])  
+    
     if select_indicador== 'Velocidad de descarga':
         dimension_Vel_descarga_Movil = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)
+        
         if dimension_Vel_descarga_Movil == 'Histórico Colombia':    
             
             fig1Movil = go.Figure()
@@ -2062,7 +2064,7 @@ if select_servicio == 'Internet móvil':
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')                
             
-            colombia_map1Movil = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+            colombia_map1Movil = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
                scrollWheelZoom=True,
                dragging=True)            
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
@@ -2179,9 +2181,9 @@ if select_servicio == 'Internet móvil':
                     ProveedorMovil['Download Speed Mbps'] = round(ProveedorMovil['Download Speed Mbps'], 2)
                     final_dfMovil_dict[provider] = gdf2.merge(ProveedorMovil, on='Location')
             
-            map1_1Movil=folium.Map(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            map1_1Movil=folium.Map(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -2234,9 +2236,9 @@ if select_servicio == 'Internet móvil':
 
             FloatImage(url1, bottom=5, left=1).add_to(map1_1Movil)
 
-            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -2322,9 +2324,9 @@ if select_servicio == 'Internet móvil':
             FloatImage(url1, bottom=5, left=1).add_to(dualmap1_2Movil.m1)
             FloatImage(url2, bottom=5, left=53).add_to(dualmap1_2Movil.m2)
             
-            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth5=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -2466,7 +2468,8 @@ if select_servicio == 'Internet móvil':
             st.plotly_chart(fig3Movil, use_container_width=True) 
             
     if select_indicador== 'Velocidad de carga':
-        dimension_Vel_carga_Movil = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)            
+        dimension_Vel_carga_Movil = st.radio("Seleccione la dimensión del análisis",('Histórico Colombia','Ciudades','Operadores'),horizontal=True)
+        
         if dimension_Vel_carga_Movil == 'Histórico Colombia':    
             fig4Movil = go.Figure()
             fig4Movil.add_trace(go.Bar(
@@ -2518,7 +2521,7 @@ if select_servicio == 'Internet móvil':
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')    
             
-            colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+            colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
                scrollWheelZoom=True,
                dragging=True)            
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
@@ -2635,9 +2638,9 @@ if select_servicio == 'Internet móvil':
                     ProveedorMovil['Upload Speed Mbps'] = round(ProveedorMovil['Upload Speed Mbps'], 2)
                     final_dfMovil_dict[provider] = gdf2.merge(ProveedorMovil, on='Location')
             
-            map1_1Movil=folium.Map(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            map1_1Movil=folium.Map(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -2690,9 +2693,9 @@ if select_servicio == 'Internet móvil':
 
             FloatImage(url1, bottom=5, left=1).add_to(map1_1Movil)
 
-            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -2778,9 +2781,9 @@ if select_servicio == 'Internet móvil':
             FloatImage(url1, bottom=5, left=1).add_to(dualmap1_2Movil.m1)
             FloatImage(url2, bottom=5, left=53).add_to(dualmap1_2Movil.m2)
             
-            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth5=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -2971,7 +2974,7 @@ if select_servicio == 'Internet móvil':
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')    
             
-            colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
+            colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
                scrollWheelZoom=True,
                dragging=True)            
             tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
@@ -3089,9 +3092,9 @@ if select_servicio == 'Internet móvil':
                     ProveedorMovil['Latency'] = round(ProveedorMovil['Latency'], 2)
                     final_dfMovil_dict[provider] = gdf2.merge(ProveedorMovil, on='Location')
             
-            map1_1Movil=folium.Map(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            map1_1Movil=folium.Map(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth1=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -3144,9 +3147,9 @@ if select_servicio == 'Internet móvil':
 
             FloatImage(url1, bottom=5, left=1).add_to(map1_1Movil)
 
-            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            dualmap1_2Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth3=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -3232,9 +3235,9 @@ if select_servicio == 'Internet móvil':
             FloatImage(url1, bottom=5, left=1).add_to(dualmap1_2Movil.m1)
             FloatImage(url2, bottom=5, left=53).add_to(dualmap1_2Movil.m2)
             
-            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
+            dualmap1_3Movil=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+               scrollWheelZoom=True,
+               dragging=True)
             ########
             choropleth5=folium.Choropleth(
                 geo_data=Colombian_DPTO2,
@@ -3597,17 +3600,17 @@ if select_servicio == 'Comparación internacional':
     zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
     fig1Int.update_yaxes(tickfont=dict(family='Tahoma', color='black', size=18),titlefont_family='tahoma',titlefont_size=18, title_text='Velocidad de carga (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
     zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
-    fig1Int.update_traces(textfont_size=18)
+    fig1Int.update_traces(textfont_size=16)
     fig1Int.update_layout(height=500,legend_title=None)
     fig1Int.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
     fig1Int.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18)
 
     fig1Int.update_layout(height=600,   
-        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet fijo por País<br>(Diciembre 2022)',
+        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet fijo por país<br>(Diciembre 2022)',
         title_x=0.5,
         font=dict(
             family="Tahoma",
-            color=" black",size=16))
+            color=" black",size=18))
     fig1Int.update_layout(legend=dict(y=1,x=1,font_size=17))
     fig1Int.update_layout(paper_bgcolor='rgba(0,0,0,0)')
     fig1Int.update_layout(plot_bgcolor='rgba(0,0,0,0)')
@@ -3635,7 +3638,7 @@ if select_servicio == 'Comparación internacional':
     fig2Int.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18)
 
     fig2Int.update_layout(height=600,   
-        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet móvil por País<br>(Diciembre 2022)',
+        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet móvil por país<br>(Diciembre 2022)',
         title_x=0.5,
         font=dict(
             family="Tahoma",
