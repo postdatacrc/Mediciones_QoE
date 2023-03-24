@@ -3603,11 +3603,11 @@ if select_servicio == 'Comparación internacional':
     fig1Int.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18)
 
     fig1Int.update_layout(height=600,   
-        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet fijo por País (Diciembre 2022)',
+        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet fijo por País<br>(Diciembre 2022)',
         title_x=0.5,
         font=dict(
             family="Tahoma",
-            color=" black",size=18))
+            color=" black",size=16))
     fig1Int.update_layout(legend=dict(y=1,x=1,font_size=17))
     fig1Int.update_layout(paper_bgcolor='rgba(0,0,0,0)')
     fig1Int.update_layout(plot_bgcolor='rgba(0,0,0,0)')
@@ -3635,7 +3635,7 @@ if select_servicio == 'Comparación internacional':
     fig2Int.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18)
 
     fig2Int.update_layout(height=600,   
-        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet móvil por País (Diciembre 2022)',
+        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet móvil por País<br>(Diciembre 2022)',
         title_x=0.5,
         font=dict(
             family="Tahoma",
