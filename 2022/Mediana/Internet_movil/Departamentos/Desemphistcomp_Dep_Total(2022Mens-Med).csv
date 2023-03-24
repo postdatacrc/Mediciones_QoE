@@ -1,0 +1,397 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;Device Count;Minimum Latency;Multi-Server Latency;Multi-Server Jitter;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Amazonas, Colombia;;Jan 2022;173;33;N/A;cellular;median;33;96;3.144.152;2.616.832;1228;4727;1.23;4.73
+All Providers Combined;Antioquia, Colombia;;Jan 2022;17894;6417;N/A;cellular;median;6417;36;66.915;201.401;12217;8292;12.22;8.29
+All Providers Combined;Arauca, Colombia;;Jan 2022;393;106;N/A;cellular;median;106;54;893.097;211.071;7264;6345;7.26;6.35
+All Providers Combined;Atlantico, Colombia;;Jan 2022;6773;2798;N/A;cellular;median;2798;30;806.303;150.163;14440;10835;14.44;10.84
+All Providers Combined;Bogota, Colombia;;Jan 2022;44888;14499;N/A;cellular;median;14499;28;435.013;121.505;14416;9279;14.42;9.28
+All Providers Combined;Bolivar, Colombia;;Jan 2022;2545;998;N/A;cellular;median;998;37;882.048;178.508;13596;9015;13.60;9.02
+All Providers Combined;Boyaca, Colombia;;Jan 2022;2675;983;N/A;cellular;median;983;39;631.637;215.071;9554;6959;9.55;6.96
+All Providers Combined;Caldas, Colombia;;Jan 2022;1660;676;N/A;cellular;median;676;46;717.362;169.579;11012;7929;11.01;7.93
+All Providers Combined;Caquetá, Colombia;;Jan 2022;668;175;N/A;cellular;median;175;55;788.673;267.223;6503;7899;6.50;7.90
+All Providers Combined;Casanare, Colombia;;Jan 2022;1140;300;N/A;cellular;median;300;36;626.073;306.006;11068;9242;11.07;9.24
+All Providers Combined;Cauca Department, Colombia;;Jan 2022;1301;472;N/A;cellular;median;472;44;643.315;184.012;11608;7566;11.61;7.57
+All Providers Combined;Cesar, Colombia;;Jan 2022;1079;486;N/A;cellular;median;486;46;976.657;18.874;12771;8357;12.77;8.36
+All Providers Combined;Choco, Colombia;;Jan 2022;450;119;N/A;cellular;median;119;69;908.883;314.439;5163;3757;5.16;3.76
+All Providers Combined;Cordoba, Colombia;;Jan 2022;1432;499;N/A;cellular;median;499;45;854.646;144.313;13742;9063;13.74;9.06
+All Providers Combined;Cundinamarca, Colombia;;Jan 2022;8973;3413;N/A;cellular;median;3413;31;485.278;160.415;9248;6697;9.25;6.70
+All Providers Combined;Guainia, Colombia;;Jan 2022;30;5;N/A;cellular;median;5;75;1.614.043;1.089.668;5675;3104;5.68;3.10
+All Providers Combined;Huila, Colombia;;Jan 2022;1668;525;N/A;cellular;median;525;43;730.488;281.894;10533;6483;10.53;6.48
+All Providers Combined;La Guajira, Colombia;;Jan 2022;811;298;N/A;cellular;median;298;43;115.839;21.368;8969;8610;8.97;8.61
+All Providers Combined;Magdalena, Colombia;;Jan 2022;2173;743;N/A;cellular;median;743;41;895.939;178.386;11208;8839;11.21;8.84
+All Providers Combined;Meta, Colombia;;Jan 2022;2207;717;N/A;cellular;median;717;37;571.752;154.277;10974;7568;10.97;7.57
+All Providers Combined;Narino, Colombia;;Jan 2022;1337;491;N/A;cellular;median;491;51;82.954;271.996;11078;8963;11.08;8.96
+All Providers Combined;North Santander, Colombia;;Jan 2022;2051;760;N/A;cellular;median;760;52;859.866;217.874;12217;9212;12.22;9.21
+All Providers Combined;Putumayo, Colombia;;Jan 2022;616;125;N/A;cellular;median;125;68;1.014.641;353.048;4879;6287;4.88;6.29
+All Providers Combined;Quindio, Colombia;;Jan 2022;1156;469;N/A;cellular;median;469;45;658.002;177.467;12867;7703;12.87;7.70
+All Providers Combined;Risaralda, Colombia;;Jan 2022;1922;682;N/A;cellular;median;682;42;658.742;163.972;12331;8209;12.33;8.21
+All Providers Combined;San Andrés and Providencia, Colombia;;Jan 2022;1067;288;N/A;cellular;median;288;71;1.546.839;168.014;8789;5866;8.79;5.87
+All Providers Combined;Santander Department, Colombia;;Jan 2022;4874;1821;N/A;cellular;median;1821;46;819.352;202.326;13846;8654;13.85;8.65
+All Providers Combined;Sucre, Colombia;;Jan 2022;1204;409;N/A;cellular;median;409;46;982.757;160.405;8803;6762;8.80;6.76
+All Providers Combined;Tolima, Colombia;;Jan 2022;2593;991;N/A;cellular;median;991;37;615.791;235.681;8878;6114;8.88;6.11
+All Providers Combined;Valle del Cauca, Colombia;;Jan 2022;8692;3606;N/A;cellular;median;3606;39;588.028;151.226;14914;9598;14.91;9.60
+All Providers Combined;Vaupes, Colombia;;Jan 2022;16;2;N/A;cellular;median;2;77;;;503;1032;0.50;1.03
+All Providers Combined;Vichada, Colombia;;Jan 2022;67;12;N/A;cellular;median;12;57;1.727.658;823.284;7175;6397;7.18;6.40
+All Providers Combined;Guaviare, Colombia;;Jan 2022;215;46;N/A;cellular;median;46;44;782.561;235.264;12885;9738;12.89;9.74
+All Providers Combined;Amazonas, Colombia;;feb-22;92;27;N/A;cellular;median;27;73;2.429.524;3.078.793;4613;3076;4.61;3.08
+All Providers Combined;Antioquia, Colombia;;feb-22;18042;6279;N/A;cellular;median;6279;36;67.394;186.848;12348;8653;12.35;8.65
+All Providers Combined;Arauca, Colombia;;feb-22;267;95;N/A;cellular;median;95;59;962.511;20.099;9674;6856;9.67;6.86
+All Providers Combined;Atlantico, Colombia;;feb-22;7271;2901;N/A;cellular;median;2901;31;81.352;154.872;13877;10877;13.88;10.88
+All Providers Combined;Bogota, Colombia;;feb-22;45743;15282;N/A;cellular;median;15282;28;446.273;123.291;13777;9126;13.78;9.13
+All Providers Combined;Bolivar, Colombia;;feb-22;3310;921;N/A;cellular;median;921;36;820.636;155.655;14581;8834;14.58;8.83
+All Providers Combined;Boyaca, Colombia;;feb-22;2068;819;N/A;cellular;median;819;37;572.856;154.294;11336;7361;11.34;7.36
+All Providers Combined;Caldas, Colombia;;feb-22;1571;566;N/A;cellular;median;566;43;684.719;146.205;12766;8650;12.77;8.65
+All Providers Combined;Caquetá, Colombia;;feb-22;571;160;N/A;cellular;median;160;53;790.186;162.201;8136;7247;8.14;7.25
+All Providers Combined;Casanare, Colombia;;feb-22;968;274;N/A;cellular;median;274;36;562.922;174.116;12250;9357;12.25;9.36
+All Providers Combined;Cauca Department, Colombia;;feb-22;1366;448;N/A;cellular;median;448;44;619.685;14.827;11135;7494;11.14;7.49
+All Providers Combined;Cesar, Colombia;;feb-22;1269;432;N/A;cellular;median;432;41;918.957;151.979;12674;8971;12.67;8.97
+All Providers Combined;Choco, Colombia;;feb-22;333;111;N/A;cellular;median;111;60;1.297.183;421.251;7242;4527;7.24;4.53
+All Providers Combined;Cordoba, Colombia;;feb-22;1165;457;N/A;cellular;median;457;46;84.254;109.674;14796;9733;14.80;9.73
+All Providers Combined;Cundinamarca, Colombia;;feb-22;7536;2987;N/A;cellular;median;2987;29;456.308;137.253;10467;7711;10.47;7.71
+All Providers Combined;Guainia, Colombia;;feb-22;20;5;N/A;cellular;median;5;102;1.668.028;231.596;905;7911;0.91;7.91
+All Providers Combined;Huila, Colombia;;feb-22;1426;509;N/A;cellular;median;509;42;697.818;215.338;11870;7466;11.87;7.47
+All Providers Combined;La Guajira, Colombia;;feb-22;975;270;N/A;cellular;median;270;48;1.183.792;205.281;9979;8264;9.98;8.26
+All Providers Combined;Magdalena, Colombia;;feb-22;1654;643;N/A;cellular;median;643;37;860.017;168.098;14110;9573;14.11;9.57
+All Providers Combined;Meta, Colombia;;feb-22;1917;732;N/A;cellular;median;732;35;557.616;162.489;11321;7679;11.32;7.68
+All Providers Combined;Narino, Colombia;;feb-22;2104;456;N/A;cellular;median;456;48;794.917;168.468;14022;8927;14.02;8.93
+All Providers Combined;North Santander, Colombia;;feb-22;2585;715;N/A;cellular;median;715;47;803.741;162.766;12932;9239;12.93;9.24
+All Providers Combined;Putumayo, Colombia;;feb-22;1273;114;N/A;cellular;median;114;58;72.812;158.319;6122;6214;6.12;6.21
+All Providers Combined;Quindio, Colombia;;feb-22;1342;429;N/A;cellular;median;429;44;612.196;122.549;14664;8090;14.66;8.09
+All Providers Combined;Risaralda, Colombia;;feb-22;1843;675;N/A;cellular;median;675;42;642.374;15.448;12731;8383;12.73;8.38
+All Providers Combined;San Andrés and Providencia, Colombia;;feb-22;849;236;N/A;cellular;median;236;66;1.551.013;190.764;9883;6659;9.88;6.66
+All Providers Combined;Santander Department, Colombia;;feb-22;5150;1626;N/A;cellular;median;1626;47;825.139;161.583;14710;8758;14.71;8.76
+All Providers Combined;Sucre, Colombia;;feb-22;975;309;N/A;cellular;median;309;38;905.302;147.748;12982;9163;12.98;9.16
+All Providers Combined;Tolima, Colombia;;feb-22;2067;690;N/A;cellular;median;690;34;540.912;177.148;12454;7546;12.45;7.55
+All Providers Combined;Valle del Cauca, Colombia;;feb-22;10449;4034;N/A;cellular;median;4034;39;580.928;12.031;14766;9232;14.77;9.23
+All Providers Combined;Vaupes, Colombia;;feb-22;1;1;N/A;cellular;median;1;71;;;314;227;0.31;0.23
+All Providers Combined;Vichada, Colombia;;feb-22;62;17;N/A;cellular;median;17;99;2.405.185;94.732;3350;1638;3.35;1.64
+All Providers Combined;Guaviare, Colombia;;feb-22;181;40;N/A;cellular;median;40;33;475.912;8.847;13174;9786;13.17;9.79
+All Providers Combined;Amazonas, Colombia;;mar-22;134;33;N/A;cellular;median;33;72;2.687.989;193.194;2608;5828;2.61;5.83
+All Providers Combined;Antioquia, Colombia;;mar-22;17303;6461;N/A;cellular;median;6461;36;659.612;158.411;12107;8541;12.11;8.54
+All Providers Combined;Arauca, Colombia;;mar-22;347;121;N/A;cellular;median;121;58;992.102;30.939;9644;7496;9.64;7.50
+All Providers Combined;Atlantico, Colombia;;mar-22;7748;3041;N/A;cellular;median;3041;31;81.675;160.686;12375;10340;12.38;10.34
+All Providers Combined;Bogota, Colombia;;mar-22;47148;16956;N/A;cellular;median;16956;29;462.475;131.702;12735;9199;12.74;9.20
+All Providers Combined;Bolivar, Colombia;;mar-22;3158;1041;N/A;cellular;median;1041;36;835.976;141.011;14116;9320;14.12;9.32
+All Providers Combined;Boyaca, Colombia;;mar-22;2804;902;N/A;cellular;median;902;38;609.423;163.131;10144;6846;10.14;6.85
+All Providers Combined;Caldas, Colombia;;mar-22;2072;642;N/A;cellular;median;642;47;69.35;125.834;11057;8154;11.06;8.15
+All Providers Combined;Caquetá, Colombia;;mar-22;630;163;N/A;cellular;median;163;57;91.32;217.967;7887;8182;7.89;8.18
+All Providers Combined;Casanare, Colombia;;mar-22;1160;318;N/A;cellular;median;318;36;553.047;140.929;12138;9902;12.14;9.90
+All Providers Combined;Cauca Department, Colombia;;mar-22;1624;490;N/A;cellular;median;490;46;680.796;164.846;9244;7525;9.24;7.53
+All Providers Combined;Cesar, Colombia;;mar-22;1613;476;N/A;cellular;median;476;43;991.111;166.563;12310;7667;12.31;7.67
+All Providers Combined;Choco, Colombia;;mar-22;439;114;N/A;cellular;median;114;59;875.846;235.117;6630;5907;6.63;5.91
+All Providers Combined;Cordoba, Colombia;;mar-22;1554;517;N/A;cellular;median;517;44;87.17;160.322;15040;10179;15.04;10.18
+All Providers Combined;Cundinamarca, Colombia;;mar-22;10148;3339;N/A;cellular;median;3339;30;488.353;153.808;9498;6983;9.50;6.98
+All Providers Combined;Guainia, Colombia;;mar-22;22;8;N/A;cellular;median;8;59;731.952;137.736;5715;7691;5.72;7.69
+All Providers Combined;Huila, Colombia;;mar-22;2414;567;N/A;cellular;median;567;42;742.485;22.143;11343;7303;11.34;7.30
+All Providers Combined;La Guajira, Colombia;;mar-22;1703;331;N/A;cellular;median;331;45;115.303;263.837;10168;7222;10.17;7.22
+All Providers Combined;Magdalena, Colombia;;mar-22;1883;639;N/A;cellular;median;639;38;913.119;163.758;13650;9381;13.65;9.38
+All Providers Combined;Meta, Colombia;;mar-22;2397;767;N/A;cellular;median;767;36;556.305;165.058;10713;7780;10.71;7.78
+All Providers Combined;Narino, Colombia;;mar-22;1756;507;N/A;cellular;median;507;51;869.338;197.898;12552;8797;12.55;8.80
+All Providers Combined;North Santander, Colombia;;mar-22;2435;798;N/A;cellular;median;798;49;81.819;203.263;9498;7983;9.50;7.98
+All Providers Combined;Putumayo, Colombia;;mar-22;511;133;N/A;cellular;median;133;66;128.115;605.593;5086;7106;5.09;7.11
+All Providers Combined;Quindio, Colombia;;mar-22;1282;430;N/A;cellular;median;430;43;652.062;117.929;13888;8637;13.89;8.64
+All Providers Combined;Risaralda, Colombia;;mar-22;2237;707;N/A;cellular;median;707;43;655.378;140.367;11157;8202;11.16;8.20
+All Providers Combined;San Andrés and Providencia, Colombia;;mar-22;988;255;N/A;cellular;median;255;68;1.498.142;177.094;9653;6563;9.65;6.56
+All Providers Combined;Santander Department, Colombia;;mar-22;6396;1754;N/A;cellular;median;1754;46;865.294;181.896;13179;8326;13.18;8.33
+All Providers Combined;Sucre, Colombia;;mar-22;2096;354;N/A;cellular;median;354;48;909.625;170.572;12623;8015;12.62;8.02
+All Providers Combined;Tolima, Colombia;;mar-22;2714;851;N/A;cellular;median;851;37;590.498;232.428;12267;7012;12.27;7.01
+All Providers Combined;Valle del Cauca, Colombia;;mar-22;12165;4001;N/A;cellular;median;4001;39;578.818;118.599;13574;9420;13.57;9.42
+All Providers Combined;Vaupes, Colombia;;mar-22;11;4;N/A;cellular;median;4;63;671.033;153.445;6462;5024;6.46;5.02
+All Providers Combined;Vichada, Colombia;;mar-22;73;19;N/A;cellular;median;19;83;1.284.103;268.871;3819;1642;3.82;1.64
+All Providers Combined;Guaviare, Colombia;;mar-22;140;42;N/A;cellular;median;42;49;600.655;226.412;13586;12844;13.59;12.84
+All Providers Combined;Amazonas, Colombia;;Apr 2022;222;40;N/A;cellular;median;40;291;3.784.405;1.422.271;1997;3940;2.00;3.94
+All Providers Combined;Antioquia, Colombia;;Apr 2022;18508;6784;N/A;cellular;median;6784;36;653.094;143.654;11069;8162;11.07;8.16
+All Providers Combined;Arauca, Colombia;;Apr 2022;351;114;N/A;cellular;median;114;56;829.097;114.452;11655;8061;11.66;8.06
+All Providers Combined;Atlantico, Colombia;;Apr 2022;8922;3230;N/A;cellular;median;3230;32;843.111;157.957;11504;9560;11.50;9.56
+All Providers Combined;Bogota, Colombia;;Apr 2022;43420;15920;N/A;cellular;median;15920;29;456.104;125.938;12444;9306;12.44;9.31
+All Providers Combined;Bolivar, Colombia;;Apr 2022;3314;1049;N/A;cellular;median;1049;38;88.08;152.163;12619;9213;12.62;9.21
+All Providers Combined;Boyaca, Colombia;;Apr 2022;3055;977;N/A;cellular;median;977;38;646.183;151.351;8710;6900;8.71;6.90
+All Providers Combined;Caldas, Colombia;;Apr 2022;1974;696;N/A;cellular;median;696;48;743.341;144.953;10883;8053;10.88;8.05
+All Providers Combined;Caquetá, Colombia;;Apr 2022;795;181;N/A;cellular;median;181;53;756.871;203.586;6747;6171;6.75;6.17
+All Providers Combined;Casanare, Colombia;;Apr 2022;1273;319;N/A;cellular;median;319;35;567.937;142.086;10264;9204;10.26;9.20
+All Providers Combined;Cauca Department, Colombia;;Apr 2022;1687;502;N/A;cellular;median;502;46;70.15;145.566;9798;7463;9.80;7.46
+All Providers Combined;Cesar, Colombia;;Apr 2022;1622;523;N/A;cellular;median;523;42;906.698;152.596;11197;8567;11.20;8.57
+All Providers Combined;Choco, Colombia;;Apr 2022;938;140;N/A;cellular;median;140;62;953.595;298.576;4601;4500;4.60;4.50
+All Providers Combined;Cordoba, Colombia;;Apr 2022;1704;527;N/A;cellular;median;527;50;888.665;136.365;13073;8713;13.07;8.71
+All Providers Combined;Cundinamarca, Colombia;;Apr 2022;9302;3582;N/A;cellular;median;3582;31;505.851;160.893;8068;6424;8.07;6.42
+All Providers Combined;Guainia, Colombia;;Apr 2022;29;11;N/A;cellular;median;11;200;5.694.705;2.006.741;435;2615;0.44;2.62
+All Providers Combined;Huila, Colombia;;Apr 2022;1769;554;N/A;cellular;median;554;42;696.505;217.385;10671;6872;10.67;6.87
+All Providers Combined;La Guajira, Colombia;;Apr 2022;893;287;N/A;cellular;median;287;46;1.149.276;208.784;8654;8027;8.65;8.03
+All Providers Combined;Magdalena, Colombia;;Apr 2022;2282;722;N/A;cellular;median;722;39;882.878;153.541;11875;9921;11.88;9.92
+All Providers Combined;Meta, Colombia;;Apr 2022;2557;833;N/A;cellular;median;833;38;612.345;168.856;9802;7870;9.80;7.87
+All Providers Combined;Narino, Colombia;;Apr 2022;1790;468;N/A;cellular;median;468;51;793.646;188.188;9896;9416;9.90;9.42
+All Providers Combined;North Santander, Colombia;;Apr 2022;2638;859;N/A;cellular;median;859;48;810.922;160.077;10116;7959;10.12;7.96
+All Providers Combined;Putumayo, Colombia;;Apr 2022;546;124;N/A;cellular;median;124;50;905.321;295.719;6663;6658;6.66;6.66
+All Providers Combined;Quindio, Colombia;;Apr 2022;1577;508;N/A;cellular;median;508;47;689.753;112.937;12010;8827;12.01;8.83
+All Providers Combined;Risaralda, Colombia;;Apr 2022;2229;723;N/A;cellular;median;723;47;698.703;134.531;12033;8278;12.03;8.28
+All Providers Combined;San Andrés and Providencia, Colombia;;Apr 2022;1065;254;N/A;cellular;median;254;70;1.556.592;169.742;10829;7423;10.83;7.42
+All Providers Combined;Santander Department, Colombia;;Apr 2022;6931;1960;N/A;cellular;median;1960;49;954.927;206.645;11198;8234;11.20;8.23
+All Providers Combined;Sucre, Colombia;;Apr 2022;1265;397;N/A;cellular;median;397;52;1.013.871;158.041;10467;8636;10.47;8.64
+All Providers Combined;Tolima, Colombia;;Apr 2022;2902;980;N/A;cellular;median;980;36;59.656;161.646;10050;6554;10.05;6.55
+All Providers Combined;Valle del Cauca, Colombia;;Apr 2022;11609;3950;N/A;cellular;median;3950;40;590.197;127.661;12908;9381;12.91;9.38
+All Providers Combined;Vaupes, Colombia;;Apr 2022;18;8;N/A;cellular;median;8;107;6.403.542;2.363.024;2371;1798;2.37;1.80
+All Providers Combined;Vichada, Colombia;;Apr 2022;34;11;N/A;cellular;median;11;74;1.594.343;407.535;2567;4016;2.57;4.02
+All Providers Combined;Guaviare, Colombia;;Apr 2022;184;49;N/A;cellular;median;49;42;58.47;156.418;11598;9072;11.60;9.07
+All Providers Combined;Amazonas, Colombia;;may-22;173;49;N/A;cellular;median;49;187;3.336.993;984.005;1592;2763;1.59;2.76
+All Providers Combined;Antioquia, Colombia;;may-22;19989;6752;N/A;cellular;median;6752;36;652.406;154.619;11011;8639;11.01;8.64
+All Providers Combined;Arauca, Colombia;;may-22;309;115;N/A;cellular;median;115;51;901.052;200.536;8078;7292;8.08;7.29
+All Providers Combined;Atlantico, Colombia;;may-22;8860;3110;N/A;cellular;median;3110;31;834.206;165.637;11421;9922;11.42;9.92
+All Providers Combined;Bogota, Colombia;;may-22;44889;15726;N/A;cellular;median;15726;28;440.168;128.495;12542;9722;12.54;9.72
+All Providers Combined;Bolivar, Colombia;;may-22;2684;944;N/A;cellular;median;944;35;854.151;157.771;12676;9523;12.68;9.52
+All Providers Combined;Boyaca, Colombia;;may-22;2394;826;N/A;cellular;median;826;36;574.741;154.004;10765;7917;10.77;7.92
+All Providers Combined;Caldas, Colombia;;may-22;1955;660;N/A;cellular;median;660;47;690.892;12.93;11287;8308;11.29;8.31
+All Providers Combined;Caquetá, Colombia;;may-22;814;233;N/A;cellular;median;233;48;723.198;270.129;6357;5907;6.36;5.91
+All Providers Combined;Casanare, Colombia;;may-22;1088;317;N/A;cellular;median;317;35;545.699;180.122;9797;8060;9.80;8.06
+All Providers Combined;Cauca Department, Colombia;;may-22;1435;505;N/A;cellular;median;505;45;706.204;159.724;8899;7166;8.90;7.17
+All Providers Combined;Cesar, Colombia;;may-22;1677;477;N/A;cellular;median;477;39;905.638;182.844;11389;8492;11.39;8.49
+All Providers Combined;Choco, Colombia;;may-22;586;138;N/A;cellular;median;138;57;946.008;204.871;4785;4955;4.79;4.96
+All Providers Combined;Cordoba, Colombia;;may-22;2064;528;N/A;cellular;median;528;47;910.412;192.472;11456;8949;11.46;8.95
+All Providers Combined;Cundinamarca, Colombia;;may-22;8170;3157;N/A;cellular;median;3157;30;467.582;149.669;8697;7080;8.70;7.08
+All Providers Combined;Guainia, Colombia;;may-22;44;11;N/A;cellular;median;11;148;3.350.464;1.834.456;942;2267;0.94;2.27
+All Providers Combined;Huila, Colombia;;may-22;1535;539;N/A;cellular;median;539;40;66.284;213.584;11177;6754;11.18;6.75
+All Providers Combined;La Guajira, Colombia;;may-22;1325;310;N/A;cellular;median;310;40;1.126.327;190.573;8699;8183;8.70;8.18
+All Providers Combined;Magdalena, Colombia;;may-22;1620;598;N/A;cellular;median;598;37;889.575;167.902;13800;9681;13.80;9.68
+All Providers Combined;Meta, Colombia;;may-22;1939;727;N/A;cellular;median;727;35;545.446;175.022;9816;8126;9.82;8.13
+All Providers Combined;Narino, Colombia;;may-22;1669;477;N/A;cellular;median;477;53;811.283;171.935;11226;8546;11.23;8.55
+All Providers Combined;North Santander, Colombia;;may-22;2606;799;N/A;cellular;median;799;48;823.713;189.131;9803;8670;9.80;8.67
+All Providers Combined;Putumayo, Colombia;;may-22;608;125;N/A;cellular;median;125;61;898.582;35.2;6715;5690;6.72;5.69
+All Providers Combined;Quindio, Colombia;;may-22;1122;406;N/A;cellular;median;406;48;698.808;11.872;14043;8043;14.04;8.04
+All Providers Combined;Risaralda, Colombia;;may-22;2112;728;N/A;cellular;median;728;42;663.392;117.853;11591;8491;11.59;8.49
+All Providers Combined;San Andrés and Providencia, Colombia;;may-22;947;228;N/A;cellular;median;228;64;1.540.314;158.224;11730;7262;11.73;7.26
+All Providers Combined;Santander Department, Colombia;;may-22;6499;1741;N/A;cellular;median;1741;48;90.728;202.141;10430;8357;10.43;8.36
+All Providers Combined;Sucre, Colombia;;may-22;1243;355;N/A;cellular;median;355;49;932.474;162.178;11708;7806;11.71;7.81
+All Providers Combined;Tolima, Colombia;;may-22;2239;729;N/A;cellular;median;729;35;55.4;197.449;11422;7274;11.42;7.27
+All Providers Combined;Valle del Cauca, Colombia;;may-22;10733;3959;N/A;cellular;median;3959;41;595.628;122.012;13058;9018;13.06;9.02
+All Providers Combined;Vaupes, Colombia;;may-22;16;9;N/A;cellular;median;9;112;1.332.617;321.265;2537;2451;2.54;2.45
+All Providers Combined;Vichada, Colombia;;may-22;54;18;N/A;cellular;median;18;81;1.676.779;688.513;5637;3492;5.64;3.49
+All Providers Combined;Guaviare, Colombia;;may-22;164;56;N/A;cellular;median;56;39;609.643;268.806;8826;9920;8.83;9.92
+All Providers Combined;Amazonas, Colombia;;jun-22;74;28;N/A;cellular;median;28;222;4.394.937;1.205.071;794;1916;0.79;1.92
+All Providers Combined;Antioquia, Colombia;;jun-22;16358;6002;N/A;cellular;median;6002;35;64.776;154.218;10648;8598;10.65;8.60
+All Providers Combined;Arauca, Colombia;;jun-22;402;117;N/A;cellular;median;117;58;871.083;159.972;9541;7275;9.54;7.28
+All Providers Combined;Atlantico, Colombia;;jun-22;8050;2878;N/A;cellular;median;2878;32;825.274;167.935;11373;9547;11.37;9.55
+All Providers Combined;Bogota, Colombia;;jun-22;37019;13460;N/A;cellular;median;13460;28;441.224;123.029;12647;9973;12.65;9.97
+All Providers Combined;Bolivar, Colombia;;jun-22;2580;975;N/A;cellular;median;975;37;868.153;168.451;12679;9270;12.68;9.27
+All Providers Combined;Boyaca, Colombia;;jun-22;2702;829;N/A;cellular;median;829;38;605.166;168.799;9122;6823;9.12;6.82
+All Providers Combined;Caldas, Colombia;;jun-22;1571;615;N/A;cellular;median;615;47;706.827;137.694;10701;9200;10.70;9.20
+All Providers Combined;Caquetá, Colombia;;jun-22;726;177;N/A;cellular;median;177;46;76.459;218.925;6224;6184;6.22;6.18
+All Providers Combined;Casanare, Colombia;;jun-22;1070;285;N/A;cellular;median;285;35;582.084;15.414;9559;8648;9.56;8.65
+All Providers Combined;Cauca Department, Colombia;;jun-22;1567;421;N/A;cellular;median;421;49;723.579;152.257;7415;7811;7.42;7.81
+All Providers Combined;Cesar, Colombia;;jun-22;1448;430;N/A;cellular;median;430;38;905.745;184.555;10715;8432;10.72;8.43
+All Providers Combined;Choco, Colombia;;jun-22;409;108;N/A;cellular;median;108;53;86.435;189.057;6086;7187;6.09;7.19
+All Providers Combined;Cordoba, Colombia;;jun-22;1840;550;N/A;cellular;median;550;48;916.384;166.437;12605;8414;12.61;8.41
+All Providers Combined;Cundinamarca, Colombia;;jun-22;7908;2861;N/A;cellular;median;2861;30;475.998;147.105;8734;7334;8.73;7.33
+All Providers Combined;Guainia, Colombia;;jun-22;49;18;N/A;cellular;median;18;107;1.839.235;159.417;2118;2014;2.12;2.01
+All Providers Combined;Huila, Colombia;;jun-22;1351;497;N/A;cellular;median;497;40;670.316;18.285;10933;7517;10.93;7.52
+All Providers Combined;La Guajira, Colombia;;jun-22;1548;282;N/A;cellular;median;282;40;1.121.815;235.352;8783;7279;8.78;7.28
+All Providers Combined;Magdalena, Colombia;;jun-22;1520;555;N/A;cellular;median;555;36;85.883;15.073;13039;10002;13.04;10.00
+All Providers Combined;Meta, Colombia;;jun-22;1773;689;N/A;cellular;median;689;36;549.424;172.251;10150;7322;10.15;7.32
+All Providers Combined;Narino, Colombia;;jun-22;1340;418;N/A;cellular;median;418;54;784.379;132.701;11018;9487;11.02;9.49
+All Providers Combined;North Santander, Colombia;;jun-22;2577;732;N/A;cellular;median;732;49;811.296;18.307;8349;8562;8.35;8.56
+All Providers Combined;Putumayo, Colombia;;jun-22;408;126;N/A;cellular;median;126;58;994.237;269.731;6523;6266;6.52;6.27
+All Providers Combined;Quindio, Colombia;;jun-22;1109;400;N/A;cellular;median;400;48;693.274;124.904;12909;8200;12.91;8.20
+All Providers Combined;Risaralda, Colombia;;jun-22;1922;627;N/A;cellular;median;627;44;682.381;12.724;11248;8439;11.25;8.44
+All Providers Combined;San Andrés and Providencia, Colombia;;jun-22;788;190;N/A;cellular;median;190;60;1.543.956;182.566;8267;6986;8.27;6.99
+All Providers Combined;Santander Department, Colombia;;jun-22;6114;1677;N/A;cellular;median;1677;50;903.395;197.969;9769;8780;9.77;8.78
+All Providers Combined;Sucre, Colombia;;jun-22;1145;321;N/A;cellular;median;321;50;939.296;144.627;8669;8578;8.67;8.58
+All Providers Combined;Tolima, Colombia;;jun-22;2229;799;N/A;cellular;median;799;35;570.091;177.604;11029;7045;11.03;7.05
+All Providers Combined;Valle del Cauca, Colombia;;jun-22;9395;3477;N/A;cellular;median;3477;41;602.912;114.393;13106;9851;13.11;9.85
+All Providers Combined;Vaupes, Colombia;;jun-22;27;11;N/A;cellular;median;11;74;105.247;555.845;1390;4282;1.39;4.28
+All Providers Combined;Vichada, Colombia;;jun-22;38;11;N/A;cellular;median;11;106;2.383.467;961.341;2582;2500;2.58;2.50
+All Providers Combined;Guaviare, Colombia;;jun-22;149;46;N/A;cellular;median;46;33;521.812;186.037;10894;9259;10.89;9.26
+All Providers Combined;Amazonas, Colombia;;jul-22;91;28;N/A;cellular;median;28;139;3.077.592;1.335.541;628;5987;0.63;5.99
+All Providers Combined;Antioquia, Colombia;;jul-22;16747;5942;N/A;cellular;median;5942;37;664.085;161.578;10653;8574;10.65;8.57
+All Providers Combined;Arauca, Colombia;;jul-22;577;145;N/A;cellular;median;145;57;88.499;166.305;7747;6301;7.75;6.30
+All Providers Combined;Atlantico, Colombia;;jul-22;8356;3017;N/A;cellular;median;3017;31;826.422;176.324;10922;10701;10.92;10.70
+All Providers Combined;Bogota, Colombia;;jul-22;36817;13801;N/A;cellular;median;13801;27;432.115;12.34;12524;10078;12.52;10.08
+All Providers Combined;Bolivar, Colombia;;jul-22;3387;976;N/A;cellular;median;976;37;879.356;164.989;11314;9365;11.31;9.37
+All Providers Combined;Boyaca, Colombia;;jul-22;2553;893;N/A;cellular;median;893;37;593.078;160.193;9181;7893;9.18;7.89
+All Providers Combined;Caldas, Colombia;;jul-22;1620;597;N/A;cellular;median;597;45;691.141;129.766;11974;8838;11.97;8.84
+All Providers Combined;Caquetá, Colombia;;jul-22;569;171;N/A;cellular;median;171;56;785.276;235.091;3861;7086;3.86;7.09
+All Providers Combined;Casanare, Colombia;;jul-22;965;289;N/A;cellular;median;289;37;590.401;183.377;9367;8741;9.37;8.74
+All Providers Combined;Cauca Department, Colombia;;jul-22;1081;437;N/A;cellular;median;437;49;672.707;132.784;8349;7700;8.35;7.70
+All Providers Combined;Cesar, Colombia;;jul-22;1390;461;N/A;cellular;median;461;42;96.315;193.761;9424;8046;9.42;8.05
+All Providers Combined;Choco, Colombia;;jul-22;599;112;N/A;cellular;median;112;57;857.084;237.518;6098;7434;6.10;7.43
+All Providers Combined;Cordoba, Colombia;;jul-22;2181;524;N/A;cellular;median;524;49;934.618;158.773;12206;8720;12.21;8.72
+All Providers Combined;Cundinamarca, Colombia;;jul-22;7316;3013;N/A;cellular;median;3013;29;464.552;142.999;8913;7477;8.91;7.48
+All Providers Combined;Guainia, Colombia;;jul-22;38;8;N/A;cellular;median;8;90;1.166.983;2.730.526;1475;1849;1.48;1.85
+All Providers Combined;Huila, Colombia;;jul-22;1500;542;N/A;cellular;median;542;42;688.886;215.722;7408;5994;7.41;5.99
+All Providers Combined;La Guajira, Colombia;;jul-22;687;268;N/A;cellular;median;268;39;1.111.163;197.779;8143;7392;8.14;7.39
+All Providers Combined;Magdalena, Colombia;;jul-22;1491;613;N/A;cellular;median;613;37;900.468;15.422;11123;9077;11.12;9.08
+All Providers Combined;Meta, Colombia;;jul-22;2363;781;N/A;cellular;median;781;36;55.931;179.044;10396;9536;10.40;9.54
+All Providers Combined;Narino, Colombia;;jul-22;1130;442;N/A;cellular;median;442;56;790.729;126.372;9926;8685;9.93;8.69
+All Providers Combined;North Santander, Colombia;;jul-22;2364;694;N/A;cellular;median;694;46;799.073;190.845;9322;10150;9.32;10.15
+All Providers Combined;Putumayo, Colombia;;jul-22;357;121;N/A;cellular;median;121;58;872.987;264.681;4859;6810;4.86;6.81
+All Providers Combined;Quindio, Colombia;;jul-22;1176;457;N/A;cellular;median;457;50;703.039;12.411;9478;7310;9.48;7.31
+All Providers Combined;Risaralda, Colombia;;jul-22;2032;660;N/A;cellular;median;660;44;697.684;118.603;11010;8771;11.01;8.77
+All Providers Combined;San Andrés and Providencia, Colombia;;jul-22;591;177;N/A;cellular;median;177;58;1.545.354;185.625;7846;7684;7.85;7.68
+All Providers Combined;Santander Department, Colombia;;jul-22;5797;1665;N/A;cellular;median;1665;50;897.797;199.496;9463;8770;9.46;8.77
+All Providers Combined;Sucre, Colombia;;jul-22;1848;396;N/A;cellular;median;396;51;983.168;161.311;10446;9061;10.45;9.06
+All Providers Combined;Tolima, Colombia;;jul-22;2430;844;N/A;cellular;median;844;35;57.254;176.923;9469;7171;9.47;7.17
+All Providers Combined;Valle del Cauca, Colombia;;jul-22;8963;3445;N/A;cellular;median;3445;41;59.767;11.567;13143;9926;13.14;9.93
+All Providers Combined;Vaupes, Colombia;;jul-22;14;4;N/A;cellular;median;4;910;9.651.211;654.808;676;673;0.68;0.67
+All Providers Combined;Vichada, Colombia;;jul-22;64;15;N/A;cellular;median;15;63;1.408.437;671.033;2823;3005;2.82;3.01
+All Providers Combined;Guaviare, Colombia;;jul-22;136;53;N/A;cellular;median;53;42;626.542;199.667;5363;6988;5.36;6.99
+All Providers Combined;Amazonas, Colombia;;Aug 2022;219;23;N/A;cellular;median;23;114;3.213.961;1.825.208;662;6150;0.66;6.15
+All Providers Combined;Antioquia, Colombia;;Aug 2022;16411;5733;N/A;cellular;median;5733;35;683.805;160.668;10305;8518;10.31;8.52
+All Providers Combined;Arauca, Colombia;;Aug 2022;414;111;N/A;cellular;median;111;55;923.464;189.932;6006;6587;6.01;6.59
+All Providers Combined;Atlantico, Colombia;;Aug 2022;8347;3075;N/A;cellular;median;3075;32;838.389;16.68;10185;9881;10.19;9.88
+All Providers Combined;Bogota, Colombia;;Aug 2022;40959;14080;N/A;cellular;median;14080;27;437.314;128.833;11527;9759;11.53;9.76
+All Providers Combined;Bolivar, Colombia;;Aug 2022;2807;974;N/A;cellular;median;974;36;869.228;163.308;11358;9446;11.36;9.45
+All Providers Combined;Boyaca, Colombia;;Aug 2022;2542;856;N/A;cellular;median;856;36;575.505;150.455;9591;7784;9.59;7.78
+All Providers Combined;Caldas, Colombia;;Aug 2022;1899;620;N/A;cellular;median;620;46;708.537;12.482;11450;8990;11.45;8.99
+All Providers Combined;Caquetá, Colombia;;Aug 2022;824;191;N/A;cellular;median;191;53;79.94;200.118;6082;7417;6.08;7.42
+All Providers Combined;Casanare, Colombia;;Aug 2022;996;279;N/A;cellular;median;279;35;557.647;163.611;10094;7700;10.09;7.70
+All Providers Combined;Cauca Department, Colombia;;Aug 2022;1234;426;N/A;cellular;median;426;47;695.079;149.534;9663;8350;9.66;8.35
+All Providers Combined;Cesar, Colombia;;Aug 2022;1467;461;N/A;cellular;median;461;39;943.398;215.587;10694;8004;10.69;8.00
+All Providers Combined;Choco, Colombia;;Aug 2022;625;132;N/A;cellular;median;132;55;856.798;321.143;3527;5815;3.53;5.82
+All Providers Combined;Cordoba, Colombia;;Aug 2022;1729;507;N/A;cellular;median;507;47;900.694;171.175;10781;8220;10.78;8.22
+All Providers Combined;Cundinamarca, Colombia;;Aug 2022;7195;2932;N/A;cellular;median;2932;29;466.184;15.021;8879;7409;8.88;7.41
+All Providers Combined;Guainia, Colombia;;Aug 2022;37;10;N/A;cellular;median;10;82;1.501.136;1.227.392;508;3770;0.51;3.77
+All Providers Combined;Huila, Colombia;;Aug 2022;1461;521;N/A;cellular;median;521;43;681.284;226.004;9390;6907;9.39;6.91
+All Providers Combined;La Guajira, Colombia;;Aug 2022;1011;253;N/A;cellular;median;253;56;1.250.917;23.5;8537;7728;8.54;7.73
+All Providers Combined;Magdalena, Colombia;;Aug 2022;1403;560;N/A;cellular;median;560;38;908.207;16.987;10521;8876;10.52;8.88
+All Providers Combined;Meta, Colombia;;Aug 2022;2245;728;N/A;cellular;median;728;34;546.693;184.611;10925;8577;10.93;8.58
+All Providers Combined;Narino, Colombia;;Aug 2022;1538;455;N/A;cellular;median;455;54;766.578;150.395;9796;10010;9.80;10.01
+All Providers Combined;North Santander, Colombia;;Aug 2022;3065;718;N/A;cellular;median;718;48;800.977;184.646;8784;8804;8.78;8.80
+All Providers Combined;Putumayo, Colombia;;Aug 2022;558;109;N/A;cellular;median;109;58;819.618;331.619;5914;7445;5.91;7.45
+All Providers Combined;Quindio, Colombia;;Aug 2022;1279;422;N/A;cellular;median;422;49;675.559;119.697;11907;9477;11.91;9.48
+All Providers Combined;Risaralda, Colombia;;Aug 2022;2219;638;N/A;cellular;median;638;43;689.721;128.949;10986;9486;10.99;9.49
+All Providers Combined;San Andrés and Providencia, Colombia;;Aug 2022;602;163;N/A;cellular;median;163;57;1.505.997;162.076;11514;7942;11.51;7.94
+All Providers Combined;Santander Department, Colombia;;Aug 2022;5649;1703;N/A;cellular;median;1703;51;91.815;215.484;8457;8464;8.46;8.46
+All Providers Combined;Sucre, Colombia;;Aug 2022;1500;339;N/A;cellular;median;339;49;957.895;152.514;12684;9647;12.68;9.65
+All Providers Combined;Tolima, Colombia;;Aug 2022;1982;764;N/A;cellular;median;764;35;586.335;209.438;9785;7473;9.79;7.47
+All Providers Combined;Valle del Cauca, Colombia;;Aug 2022;10010;3523;N/A;cellular;median;3523;41;608.601;11.929;13051;9498;13.05;9.50
+All Providers Combined;Vaupes, Colombia;;Aug 2022;147;18;N/A;cellular;median;18;79;1.384.667;803.012;2156;4660;2.16;4.66
+All Providers Combined;Vichada, Colombia;;Aug 2022;251;23;N/A;cellular;median;23;74;1.427.618;1.006.535;2513;4058;2.51;4.06
+All Providers Combined;Guaviare, Colombia;;Aug 2022;144;43;N/A;cellular;median;43;34;535.882;196.679;9371;10776;9.37;10.78
+All Providers Combined;Amazonas, Colombia;;sep-22;175;31;N/A;cellular;median;31;118;3.582.795;1.356.015;444;8691;0.44;8.69
+All Providers Combined;Antioquia, Colombia;;sep-22;16039;5558;N/A;cellular;median;5558;35;67.724;158.997;10189;8610;10.19;8.61
+All Providers Combined;Arauca, Colombia;;sep-22;324;97;N/A;cellular;median;97;47;87.284;157.527;6667;6374;6.67;6.37
+All Providers Combined;Atlantico, Colombia;;sep-22;8852;2854;N/A;cellular;median;2854;32;837.631;166.746;11316;9837;11.32;9.84
+All Providers Combined;Bogota, Colombia;;sep-22;42918;14178;N/A;cellular;median;14178;27;437.394;130.613;11990;9885;11.99;9.89
+All Providers Combined;Bolivar, Colombia;;sep-22;3450;962;N/A;cellular;median;962;36;88.957;189.852;12451;9264;12.45;9.26
+All Providers Combined;Boyaca, Colombia;;sep-22;2482;783;N/A;cellular;median;783;35;569.946;155.936;9205;7688;9.21;7.69
+All Providers Combined;Caldas, Colombia;;sep-22;2035;649;N/A;cellular;median;649;47;714.584;126.965;10940;8760;10.94;8.76
+All Providers Combined;Caquetá, Colombia;;sep-22;811;193;N/A;cellular;median;193;48;69.549;180.182;7128;9398;7.13;9.40
+All Providers Combined;Casanare, Colombia;;sep-22;1096;282;N/A;cellular;median;282;35;582.175;185.763;10151;8897;10.15;8.90
+All Providers Combined;Cauca Department, Colombia;;sep-22;1082;426;N/A;cellular;median;426;47;707.872;138.628;9064;8016;9.06;8.02
+All Providers Combined;Cesar, Colombia;;sep-22;1252;426;N/A;cellular;median;426;43;936.692;220.467;10546;7946;10.55;7.95
+All Providers Combined;Choco, Colombia;;sep-22;471;120;N/A;cellular;median;120;55;823.546;170.974;5234;5747;5.23;5.75
+All Providers Combined;Cordoba, Colombia;;sep-22;1473;491;N/A;cellular;median;491;46;886.636;166.535;10596;9205;10.60;9.21
+All Providers Combined;Cundinamarca, Colombia;;sep-22;7774;2825;N/A;cellular;median;2825;28;463.147;149.543;10019;7766;10.02;7.77
+All Providers Combined;Guainia, Colombia;;sep-22;172;13;N/A;cellular;median;13;114;1.495.892;1.358.051;349;3533;0.35;3.53
+All Providers Combined;Huila, Colombia;;sep-22;1629;529;N/A;cellular;median;529;39;674.357;221.068;10717;7709;10.72;7.71
+All Providers Combined;La Guajira, Colombia;;sep-22;904;256;N/A;cellular;median;256;50;1.110.357;18.409;8333;7621;8.33;7.62
+All Providers Combined;Magdalena, Colombia;;sep-22;1704;561;N/A;cellular;median;561;37;893.287;167.102;12507;8703;12.51;8.70
+All Providers Combined;Meta, Colombia;;sep-22;2139;722;N/A;cellular;median;722;33;526.637;163.577;11212;8630;11.21;8.63
+All Providers Combined;Narino, Colombia;;sep-22;1285;372;N/A;cellular;median;372;50;753.846;120.895;11077;9499;11.08;9.50
+All Providers Combined;North Santander, Colombia;;sep-22;2933;746;N/A;cellular;median;746;46;798.797;166.785;9830;8795;9.83;8.80
+All Providers Combined;Putumayo, Colombia;;sep-22;361;119;N/A;cellular;median;119;43;723.996;214.333;8099;9080;8.10;9.08
+All Providers Combined;Quindio, Colombia;;sep-22;1281;435;N/A;cellular;median;435;46;662.896;116.774;12314;7962;12.31;7.96
+All Providers Combined;Risaralda, Colombia;;sep-22;2479;676;N/A;cellular;median;676;44;68.419;131.924;12709;9440;12.71;9.44
+All Providers Combined;San Andrés and Providencia, Colombia;;sep-22;509;185;N/A;cellular;median;185;58;1.463.457;153.221;7562;8005;7.56;8.01
+All Providers Combined;Santander Department, Colombia;;sep-22;6824;1684;N/A;cellular;median;1684;45;870.227;194.947;11897;9013;11.90;9.01
+All Providers Combined;Sucre, Colombia;;sep-22;1205;330;N/A;cellular;median;330;46;912.454;160.252;11176;9123;11.18;9.12
+All Providers Combined;Tolima, Colombia;;sep-22;1758;676;N/A;cellular;median;676;34;535.768;192.454;10766;6599;10.77;6.60
+All Providers Combined;Valle del Cauca, Colombia;;sep-22;9558;3390;N/A;cellular;median;3390;39;587.653;119.638;12728;9609;12.73;9.61
+All Providers Combined;Vaupes, Colombia;;sep-22;46;11;N/A;cellular;median;11;566;6.660.412;547.521;1668;1846;1.67;1.85
+All Providers Combined;Vichada, Colombia;;sep-22;109;22;N/A;cellular;median;22;74;1.671.573;1.203.067;3631;7709;3.63;7.71
+All Providers Combined;Guaviare, Colombia;;sep-22;224;46;N/A;cellular;median;46;34;605.051;265.131;9952;11318;9.95;11.32
+All Providers Combined;Amazonas, Colombia;;oct-22;109;32;N/A;cellular;median;32;139;3.307.998;1.825.304;498;2653;0.50;2.65
+All Providers Combined;Antioquia, Colombia;;oct-22;16470;5664;N/A;cellular;median;5664;34;654.091;15.415;10580;9046;10.58;9.05
+All Providers Combined;Arauca, Colombia;;oct-22;290;97;N/A;cellular;median;97;51;913.584;185.797;6688;8022;6.69;8.02
+All Providers Combined;Atlantico, Colombia;;oct-22;7929;2927;N/A;cellular;median;2927;33;844.142;175.717;10834;8997;10.83;9.00
+All Providers Combined;Bogota, Colombia;;oct-22;40568;13879;N/A;cellular;median;13879;27;443.618;134.542;11316;9473;11.32;9.47
+All Providers Combined;Bolivar, Colombia;;oct-22;3111;975;N/A;cellular;median;975;37;865.786;194.106;10941;8410;10.94;8.41
+All Providers Combined;Boyaca, Colombia;;oct-22;2462;890;N/A;cellular;median;890;36;589.892;168.874;10157;7743;10.16;7.74
+All Providers Combined;Caldas, Colombia;;oct-22;2182;635;N/A;cellular;median;635;46;711.873;129.898;11255;8376;11.26;8.38
+All Providers Combined;Caquetá, Colombia;;oct-22;760;178;N/A;cellular;median;178;47;799.698;227.457;5838;7888;5.84;7.89
+All Providers Combined;Casanare, Colombia;;oct-22;1070;285;N/A;cellular;median;285;35;564.295;188.072;8307;7916;8.31;7.92
+All Providers Combined;Cauca Department, Colombia;;oct-22;1555;469;N/A;cellular;median;469;45;69.512;138.043;9857;8351;9.86;8.35
+All Providers Combined;Cesar, Colombia;;oct-22;1296;457;N/A;cellular;median;457;43;912.678;232.633;10093;7975;10.09;7.98
+All Providers Combined;Choco, Colombia;;oct-22;436;121;N/A;cellular;median;121;61;916.058;262.648;5014;6194;5.01;6.19
+All Providers Combined;Cordoba, Colombia;;oct-22;2407;478;N/A;cellular;median;478;43;876.177;198.582;10499;8884;10.50;8.88
+All Providers Combined;Cundinamarca, Colombia;;oct-22;9069;3252;N/A;cellular;median;3252;29;484.603;160.878;8341;6786;8.34;6.79
+All Providers Combined;Guainia, Colombia;;oct-22;186;13;N/A;cellular;median;13;191;2.676.691;1.665.523;1755;3522;1.76;3.52
+All Providers Combined;Huila, Colombia;;oct-22;1540;537;N/A;cellular;median;537;39;665.255;219.753;8716;7000;8.72;7.00
+All Providers Combined;La Guajira, Colombia;;oct-22;837;244;N/A;cellular;median;244;49;1.104.411;19.707;9832;8376;9.83;8.38
+All Providers Combined;Magdalena, Colombia;;oct-22;1813;642;N/A;cellular;median;642;41;904.662;182.805;10745;7387;10.75;7.39
+All Providers Combined;Meta, Colombia;;oct-22;1975;721;N/A;cellular;median;721;34;548.634;171.932;11968;9319;11.97;9.32
+All Providers Combined;Narino, Colombia;;oct-22;1488;406;N/A;cellular;median;406;50;746.832;126.661;12830;10202;12.83;10.20
+All Providers Combined;North Santander, Colombia;;oct-22;2226;726;N/A;cellular;median;726;50;852.633;182.085;12317;9295;12.32;9.30
+All Providers Combined;Putumayo, Colombia;;oct-22;321;105;N/A;cellular;median;105;48;78.999;227.869;7784;8115;7.78;8.12
+All Providers Combined;Quindio, Colombia;;oct-22;1110;413;N/A;cellular;median;413;47;683.302;124.788;11825;8087;11.83;8.09
+All Providers Combined;Risaralda, Colombia;;oct-22;1982;662;N/A;cellular;median;662;45;695.111;133.374;10641;9426;10.64;9.43
+All Providers Combined;San Andrés and Providencia, Colombia;;oct-22;473;176;N/A;cellular;median;176;55;1.495.076;174.979;7890;7627;7.89;7.63
+All Providers Combined;Santander Department, Colombia;;oct-22;5225;1680;N/A;cellular;median;1680;50;905.322;194.404;11589;8751;11.59;8.75
+All Providers Combined;Sucre, Colombia;;oct-22;1962;386;N/A;cellular;median;386;43;902.691;15.524;10586;7717;10.59;7.72
+All Providers Combined;Tolima, Colombia;;oct-22;1863;746;N/A;cellular;median;746;33;57.205;18.03;11566;7133;11.57;7.13
+All Providers Combined;Valle del Cauca, Colombia;;oct-22;9985;3458;N/A;cellular;median;3458;41;606.231;123.882;12305;9526;12.31;9.53
+All Providers Combined;Vaupes, Colombia;;oct-22;26;11;N/A;cellular;median;11;190;1.038.979;453.972;1182;653;1.18;0.65
+All Providers Combined;Vichada, Colombia;;oct-22;76;16;N/A;cellular;median;16;65;1.247.751;76.796;2561;9026;2.56;9.03
+All Providers Combined;Guaviare, Colombia;;oct-22;226;57;N/A;cellular;median;57;37;618.163;288.642;12234;10205;12.23;10.21
+All Providers Combined;Amazonas, Colombia;;nov-22;114;36;N/A;cellular;median;36;114;3.431.129;2.859.383;348;3719;0.35;3.72
+All Providers Combined;Antioquia, Colombia;;nov-22;14752;5304;N/A;cellular;median;5304;33;64.494;153.587;10214;8607;10.21;8.61
+All Providers Combined;Arauca, Colombia;;nov-22;425;112;N/A;cellular;median;112;43;815.211;165.899;5112;5287;5.11;5.29
+All Providers Combined;Atlantico, Colombia;;nov-22;7765;2765;N/A;cellular;median;2765;33;823.709;155.946;11196;8778;11.20;8.78
+All Providers Combined;Bogota, Colombia;;nov-22;40244;13343;N/A;cellular;median;13343;28;457.232;13.602;11136;9817;11.14;9.82
+All Providers Combined;Bolivar, Colombia;;nov-22;2524;867;N/A;cellular;median;867;37;856.794;177.929;10941;8564;10.94;8.56
+All Providers Combined;Boyaca, Colombia;;nov-22;2644;808;N/A;cellular;median;808;37;605.218;17.175;8912;8056;8.91;8.06
+All Providers Combined;Caldas, Colombia;;nov-22;1592;608;N/A;cellular;median;608;43;711.695;133.086;11245;8802;11.25;8.80
+All Providers Combined;Caquetá, Colombia;;nov-22;852;172;N/A;cellular;median;172;42;664.435;191.123;8041;10199;8.04;10.20
+All Providers Combined;Casanare, Colombia;;nov-22;990;270;N/A;cellular;median;270;37;590.243;195.664;8064;7947;8.06;7.95
+All Providers Combined;Cauca Department, Colombia;;nov-22;1264;446;N/A;cellular;median;446;46;69.667;174.743;8345;7852;8.35;7.85
+All Providers Combined;Cesar, Colombia;;nov-22;1211;456;N/A;cellular;median;456;47;910.596;183.583;12438;8606;12.44;8.61
+All Providers Combined;Choco, Colombia;;nov-22;634;118;N/A;cellular;median;118;56;918.439;230.152;4953;6747;4.95;6.75
+All Providers Combined;Cordoba, Colombia;;nov-22;1422;458;N/A;cellular;median;458;44;846.542;167.964;13042;9519;13.04;9.52
+All Providers Combined;Cundinamarca, Colombia;;nov-22;8122;2921;N/A;cellular;median;2921;29;486.246;168.929;8891;7130;8.89;7.13
+All Providers Combined;Guainia, Colombia;;nov-22;17;8;N/A;cellular;median;8;318;5.575.328;1.443.793;197;2492;0.20;2.49
+All Providers Combined;Huila, Colombia;;nov-22;2088;540;N/A;cellular;median;540;40;657.243;20.695;10485;6795;10.49;6.80
+All Providers Combined;La Guajira, Colombia;;nov-22;735;205;N/A;cellular;median;205;48;1.092.743;18.713;9366;8013;9.37;8.01
+All Providers Combined;Magdalena, Colombia;;nov-22;1660;570;N/A;cellular;median;570;44;912.837;17.064;10270;8646;10.27;8.65
+All Providers Combined;Meta, Colombia;;nov-22;1935;679;N/A;cellular;median;679;34;536.545;18.647;10536;8758;10.54;8.76
+All Providers Combined;Narino, Colombia;;nov-22;1389;415;N/A;cellular;median;415;49;736.696;147.487;10080;9372;10.08;9.37
+All Providers Combined;North Santander, Colombia;;nov-22;1990;651;N/A;cellular;median;651;57;893.905;161.932;11914;9135;11.91;9.14
+All Providers Combined;Putumayo, Colombia;;nov-22;521;110;N/A;cellular;median;110;43;700.646;214.089;7351;8334;7.35;8.33
+All Providers Combined;Quindio, Colombia;;nov-22;1057;380;N/A;cellular;median;380;45;66.824;118.881;12568;8072;12.57;8.07
+All Providers Combined;Risaralda, Colombia;;nov-22;2111;652;N/A;cellular;median;652;42;696.571;134.383;11895;7728;11.90;7.73
+All Providers Combined;San Andrés and Providencia, Colombia;;nov-22;529;179;N/A;cellular;median;179;59;150.298;166.397;10021;7999;10.02;8.00
+All Providers Combined;Santander Department, Colombia;;nov-22;5357;1568;N/A;cellular;median;1568;55;916.928;198.655;11642;8739;11.64;8.74
+All Providers Combined;Sucre, Colombia;;nov-22;1023;299;N/A;cellular;median;299;43;85.789;143.123;11039;8409;11.04;8.41
+All Providers Combined;Tolima, Colombia;;nov-22;1799;678;N/A;cellular;median;678;33;524.249;179.353;10781;7809;10.78;7.81
+All Providers Combined;Valle del Cauca, Colombia;;nov-22;10011;3266;N/A;cellular;median;3266;40;592.568;124.778;11352;9621;11.35;9.62
+All Providers Combined;Vaupes, Colombia;;nov-22;21;7;N/A;cellular;median;7;97;1.570.973;718.784;1271;3419;1.27;3.42
+All Providers Combined;Vichada, Colombia;;nov-22;133;10;N/A;cellular;median;10;80;1.562.389;1.392.529;1132;3910;1.13;3.91
+All Providers Combined;Guaviare, Colombia;;nov-22;276;56;N/A;cellular;median;56;36;624.757;226.695;11606;8399;11.61;8.40
+All Providers Combined;Amazonas, Colombia;;Dec 2022;147;37;N/A;cellular;median;37;92;324.232;144.012;3098;5066;3.10;5.07
+All Providers Combined;Antioquia, Colombia;;Dec 2022;14244;5035;N/A;cellular;median;5035;33;63.968;144.126;10988;8694;10.99;8.69
+All Providers Combined;Arauca, Colombia;;Dec 2022;316;104;N/A;cellular;median;104;47;764.717;150.972;7602;7278;7.60;7.28
+All Providers Combined;Atlantico, Colombia;;Dec 2022;6849;2621;N/A;cellular;median;2621;33;800.149;144.548;12170;9216;12.17;9.22
+All Providers Combined;Bogota, Colombia;;Dec 2022;32344;11997;N/A;cellular;median;11997;27;43.63;122.039;13081;10637;13.08;10.64
+All Providers Combined;Bolivar, Colombia;;Dec 2022;2315;865;N/A;cellular;median;865;37;827.213;156.408;12239;8171;12.24;8.17
+All Providers Combined;Boyaca, Colombia;;Dec 2022;2720;945;N/A;cellular;median;945;37;585.742;160.085;10783;7606;10.78;7.61
+All Providers Combined;Caldas, Colombia;;Dec 2022;2073;618;N/A;cellular;median;618;44;703.205;12.186;13116;10122;13.12;10.12
+All Providers Combined;Caquetá, Colombia;;Dec 2022;642;172;N/A;cellular;median;172;45;697.649;180.047;7433;7170;7.43;7.17
+All Providers Combined;Casanare, Colombia;;Dec 2022;936;272;N/A;cellular;median;272;33;538.074;144.022;8815;9972;8.82;9.97
+All Providers Combined;Cauca Department, Colombia;;Dec 2022;997;381;N/A;cellular;median;381;45;66.81;126.543;8774;8022;8.77;8.02
+All Providers Combined;Cesar, Colombia;;Dec 2022;937;403;N/A;cellular;median;403;43;82.833;140.726;14023;9615;14.02;9.62
+All Providers Combined;Choco, Colombia;;Dec 2022;430;106;N/A;cellular;median;106;51;786.685;183.449;5714;7624;5.71;7.62
+All Providers Combined;Cordoba, Colombia;;Dec 2022;1745;506;N/A;cellular;median;506;45;799.328;134.112;13049;11465;13.05;11.47
+All Providers Combined;Cundinamarca, Colombia;;Dec 2022;7936;3071;N/A;cellular;median;3071;29;475.052;144.024;9606;7559;9.61;7.56
+All Providers Combined;Guainia, Colombia;;Dec 2022;32;12;N/A;cellular;median;12;90;1.780.285;1.001.384;947;6063;0.95;6.06
+All Providers Combined;Huila, Colombia;;Dec 2022;1530;536;N/A;cellular;median;536;39;620.895;19.332;12841;7789;12.84;7.79
+All Providers Combined;La Guajira, Colombia;;Dec 2022;643;250;N/A;cellular;median;250;50;99.745;154.496;10906;9703;10.91;9.70
+All Providers Combined;Magdalena, Colombia;;Dec 2022;1615;605;N/A;cellular;median;605;48;870.293;149.569;11790;9514;11.79;9.51
+All Providers Combined;Meta, Colombia;;Dec 2022;1761;710;N/A;cellular;median;710;34;545.006;174.846;11507;8240;11.51;8.24
+All Providers Combined;Narino, Colombia;;Dec 2022;954;378;N/A;cellular;median;378;49;719.303;108.733;9727;8766;9.73;8.77
+All Providers Combined;North Santander, Colombia;;Dec 2022;2128;700;N/A;cellular;median;700;57;850.021;13.173;11770;9677;11.77;9.68
+All Providers Combined;Putumayo, Colombia;;Dec 2022;472;110;N/A;cellular;median;110;43;673.259;188.846;6193;6281;6.19;6.28
+All Providers Combined;Quindio, Colombia;;Dec 2022;1110;479;N/A;cellular;median;479;45;678.148;115.293;10569;8002;10.57;8.00
+All Providers Combined;Risaralda, Colombia;;Dec 2022;1674;601;N/A;cellular;median;601;42;674.381;130.765;11568;9100;11.57;9.10
+All Providers Combined;San Andrés and Providencia, Colombia;;Dec 2022;482;172;N/A;cellular;median;172;57;145.449;148.995;10764;9738;10.76;9.74
+All Providers Combined;Santander Department, Colombia;;Dec 2022;5936;1575;N/A;cellular;median;1575;56;821.043;15.677;11933;8894;11.93;8.89
+All Providers Combined;Sucre, Colombia;;Dec 2022;1528;348;N/A;cellular;median;348;46;825.453;148.642;12837;9160;12.84;9.16
+All Providers Combined;Tolima, Colombia;;Dec 2022;1969;869;N/A;cellular;median;869;32;531.962;169.215;10990;7672;10.99;7.67
+All Providers Combined;Valle del Cauca, Colombia;;Dec 2022;8746;3223;N/A;cellular;median;3223;40;59.239;113.033;12659;9640;12.66;9.64
+All Providers Combined;Vaupes, Colombia;;Dec 2022;30;7;N/A;cellular;median;7;580;6.524.078;1.489.196;410;2054;0.41;2.05
+All Providers Combined;Vichada, Colombia;;Dec 2022;51;15;N/A;cellular;median;15;64;1.384.487;1.302.321;990;3072;0.99;3.07
+All Providers Combined;Guaviare, Colombia;;Dec 2022;220;59;N/A;cellular;median;59;30;517.993;205.577;11053;10834;11.05;10.83
