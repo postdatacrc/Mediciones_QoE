@@ -187,7 +187,7 @@ pathFijo2='https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/202
 periodo_tope='2022-12-01'
 
 ####Primera sección - Fijo
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def Seccion1Fijo():
     Colombia1Fijo=pd.read_csv(pathFijo2+"Colombia-histcomp_month_2018-2022(Med).csv", delimiter=';')
     FeAntig1Fijo = Colombia1Fijo['Aggregate Date'].unique()
@@ -202,7 +202,7 @@ Colombia1Fijo=Seccion1Fijo()
 Colombia1Fijo=Colombia1Fijo.rename(columns={'Minimum Latency':'Latency'})
 
 ####Segunda sección - Fijo
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def Seccion2Fijo():
     df2_1Fijo=pd.read_csv(pathFijo2+'ETBMOVCLA-histcomp_month_2018-2022(Med).csv',delimiter=';',encoding='utf-8-sig').dropna(how='all') 
     df2_2Fijo=pd.read_csv(pathFijo2+'TIGOEMCALI-histcomp_month_2018-2022(Med).csv',delimiter=';',encoding='utf-8-sig').dropna(how='all') 
@@ -236,7 +236,7 @@ gdf2=gdf2.rename(columns={"NOMBRE_DPT":'Location'})
 
 
 ####Tercera sección - Fijo
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def Seccion3Fijo():
     df3_1Fijo=pd.read_csv(pathFijo2+'Ciud(1-10)histcomp_month_2018-2022(Med).csv',delimiter=';',encoding='utf-8-sig')
     df3_2Fijo=pd.read_csv(pathFijo2+'Ciud(11-17)histcomp_month_2018-2022(Med).csv',delimiter=';',encoding='utf-8-sig')
@@ -260,7 +260,7 @@ Ciudades3Fijo=Ciudades3Fijo.rename(columns={'Minimum Latency':'Latency'})
 
 
 ####Cuarta sección - Fijo
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def Seccion4Fijo():
     Operadores4Fijo=pd.read_csv(pathFijo2+'Op-histcomp_month_2018-2022(Med).csv',delimiter=';')
     cols_to_changeFijo=['Download Speed Mbps']
@@ -1837,7 +1837,7 @@ if select_servicio == 'Internet fijo':
 pathMovil='https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/2022/Mediana/Internet_movil/'
 #pathMovil2=r'C:\Users\santiago.bermudez\COMISION DE REGULACIÓN DE COMUNICACIONES\Mediciones Calidad QoE - Documents\Datos\Internet móvil\Mediana'
 #### Sección 1 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def ColombiaMovil1():
     Colombia1Movil=pd.read_csv(pathMovil+'/Colombia/Colombiahist_comp(2018a2022_Anual-Med).csv',delimiter=',',encoding='utf-8-sig')  
     Colombia1Movil=Colombia1Movil.drop(['Device','Platform','Metric Type'], axis=1) #Eliminar columnas      
@@ -1860,7 +1860,7 @@ DepJoinAMovilUp = upload_speed_dfs[0].merge(upload_speed_dfs[1], on='Aggregate D
 DepJoinAMovilLat = latency_dfs[0].merge(latency_dfs[1], on='Aggregate Date', how='outer').merge(latency_dfs[2], on='Aggregate Date', how='outer').reset_index().round(2).rename(columns={'Aggregate Date':'year'})
 
 #### Sección 2 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def ColombiaMovil2():
     Colombia2Movil=pd.read_csv(pathMovil+'/Departamentos/Desemphistcomp_Dep_Total(2022Mens-Med).csv',delimiter=';',encoding='latin-1') 
     Colombia2Movil['Location']=Colombia2Movil['Location'].str.split(',',expand=True)[0]#Guardar sólo departamentos
@@ -1881,7 +1881,7 @@ Colombia2Movil=ColombiaMovil2()
 Colombia2Movil=Colombia2Movil.rename(columns={'Minimum Latency':'Latency'})
 
 #### Sección 3 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def ColombiaMovil3():
     Colombia3Movil=pd.read_csv(pathMovil+'/Operadores/Desemphistcomp_Operad_(2018a2022_An-Med).csv',delimiter=';',encoding='utf-8-sig')
     Colombia3Movil=Colombia3Movil.drop(['Device','Platform','Metric Type','Location'],axis=1)
@@ -1897,7 +1897,7 @@ DepJoinAMovil3Up=pd.pivot(Colombia3Movil[['Provider','Aggregate Date','Upload Sp
 DepJoinAMovil3Lat=pd.pivot(Colombia3Movil[['Provider','Aggregate Date','Latency']], index=['Provider'],
         columns='Aggregate Date', values='Latency').fillna(0).reset_index().rename_axis(None, axis=1)  
 #### Sección 4 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def OpDepartMovil1():
     df1=pd.read_csv(pathMovil+'/Departamentos/MovETB-hist_comp(2018-2022-Med).csv',delimiter=';',encoding='utf-8-sig')
     df2=pd.read_csv(pathMovil+'/Departamentos/TigoClaroWom-hist_comp(2018-2022-Med).csv',delimiter=';',encoding='utf-8-sig')
@@ -1923,7 +1923,7 @@ OpCiudMovil1['Provider']=OpCiudMovil1['Provider'].replace({'ETB (MVNO)':'ETB'})
 OpCiudMovil1=OpCiudMovil1.rename(columns={'Minimum Latency':'Latency'})
 
 #### Sección 5 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def CiudadMovil1():
     Ciudades=pd.read_csv(pathMovil+'/Ciudades/Desemphistcomp_Ciud_(2018a2022_An-Med).csv',delimiter=';',encoding='utf-8-sig')
     Ciudades['Location']=Ciudades['Location'].str.split(',',expand=True)[0]#Guardar sólo las ciudades
@@ -1940,7 +1940,7 @@ DepJoinAMovil4Up=pd.pivot(CiudadMovil1, index=['Location'],
 DepJoinAMovil4Lat=pd.pivot(CiudadMovil1, index=['Location'],
         columns='Aggregate Date', values='Latency').fillna(0).reset_index().rename_axis(None, axis=1).sort_values(by=['2022'],ascending=True)          
 #### Sección 6 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def ColombiaMovil5():
     Operadores=pd.read_csv(pathMovil+'/Colombia/Colombiahist_comp(2018a2022_Mensual-Med).csv',delimiter=';',encoding='latin-1')
     Operadores=Operadores.rename(columns={'Minimum Latency':'Latency'})
@@ -1971,7 +1971,7 @@ ColombiaMovil5=ColombiaMovil5()
 
 
 #### Sección 7 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def ColombiaMovil7():
     Colombia7=pd.read_csv(pathMovil+'/Cobertura/Coberturahistcomp_Colombia_(2018-2022)-Med.csv',delimiter=';',encoding='latin-1')
     Colombia7['4G total'] = Colombia7[['4G (%)', '4G Roaming (%)']].sum(axis=1)
@@ -1980,7 +1980,7 @@ def ColombiaMovil7():
 Colombia7Movil=ColombiaMovil7()
 
 ####  Sección 8 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def DepJoinA8Movil():
     Ciudades8=pd.read_csv(pathMovil+'/Cobertura/Coberturahistcomp_Ciud_(2018-2022)-Med.csv',delimiter=';',encoding='utf-8-sig')
     Ciudades8['Location']=Ciudades8['Location'].str.split(',',1,expand=True)[0]
@@ -1994,7 +1994,7 @@ def DepJoinA8Movil():
 DepJoinAMovil8=DepJoinA8Movil()
 
 ####  Sección 9 Móvil
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def OpJoinA9Movil():
     Operadores9=pd.read_csv(pathMovil+'/Cobertura/Coberturahistcomp_Gnral_(2018-2022)-Med.csv',delimiter=';',encoding='utf-8-sig')
     Operadores9['4G total'] = Operadores9[['4G (%)', '4G Roaming (%)']].sum(axis=1)
@@ -3555,7 +3555,7 @@ fijo_Intdict = {'Estados Unidos':[192.73,22.57,14],'Uruguay':[94.69,31.9,6],'Col
 
 Fijo_Int=pd.DataFrame.from_dict(fijo_Intdict,orient='index').reset_index()
 Fijo_Int=Fijo_Int.rename(columns={'index':'País',0:'Download',1:'Upload',2:'Latency'})
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def gdf_Suramerica():
     gdf_Int = gpd.read_file("https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Suramerica.geo.json")
     gdf_Int=gdf_Int.rename(columns=({'admin':'País'}))
@@ -3603,7 +3603,7 @@ if select_servicio == 'Comparación internacional':
     fig1Int.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18)
 
     fig1Int.update_layout(height=600,   
-        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet fijo por País',
+        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet fijo por País (Diciembre 2022)',
         title_x=0.5,
         font=dict(
             family="Tahoma",
@@ -3635,7 +3635,7 @@ if select_servicio == 'Comparación internacional':
     fig2Int.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18)
 
     fig2Int.update_layout(height=600,   
-        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet móvil por País',
+        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet móvil por País (Diciembre 2022)',
         title_x=0.5,
         font=dict(
             family="Tahoma",
