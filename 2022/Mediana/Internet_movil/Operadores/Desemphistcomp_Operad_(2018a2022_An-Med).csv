@@ -1,0 +1,23 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;Device Count;Minimum Latency;Multi-Server Latency;Multi-Server Jitter;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+Tigo;Colombia;;2018;262237;44802;N/A;cellular;median;44802;32;;;12622;7216;12.62;7.22
+Claro;Colombia;;2018;260600;64497;N/A;cellular;median;64497;59;;;12206;5375;12.21;5.38
+Movistar;Colombia;;2018;190172;48376;N/A;cellular;median;48376;40;;;10916;6676;10.92;6.68
+ETB;Colombia;;2018;30575;8181;N/A;cellular;median;8181;30;;;15681;9677;15.68;9.68
+Tigo;Colombia;;2019;244981;49683;N/A;cellular;median;49683;30;;;14167;8289;14.17;8.29
+Claro;Colombia;;2019;381734;91297;N/A;cellular;median;91297;54;;;14570;8536;14.57;8.54
+Movistar;Colombia;;2019;245450;60762;N/A;cellular;median;60762;39;;;11762;7746;11.76;7.75
+ETB;Colombia;;2019;29147;7157;N/A;cellular;median;7157;30;;;17945;10521;17.95;10.52
+Tigo;Colombia;;2020;216731;53676;N/A;cellular;median;53676;31;;;16147;8778;16.15;8.78
+Claro;Colombia;;2020;538019;127779;N/A;cellular;median;127779;47;;;15774;7101;15.77;7.10
+Movistar;Colombia;;2020;419490;85047;N/A;cellular;median;85047;37;;;11338;6562;11.34;6.56
+ETB;Colombia;;2020;82710;11020;N/A;cellular;median;11020;28;;;11581;7625;11.58;7.63
+WOM;Colombia;;2021;202863;18459;N/A;cellular;median;18459;72;;;14369;6438;14.37;6.44
+Tigo;Colombia;;2021;370384;70441;N/A;cellular;median;70441;29;;;19133;11652;19.13;11.65
+Claro;Colombia;;2021;669803;129374;N/A;cellular;median;129374;45;;;11070;6919;11.07;6.92
+Movistar;Colombia;;2021;429344;80011;N/A;cellular;median;80011;35;;;10074;6917;10.07;6.92
+ETB;Colombia;;2021;19061;4403;N/A;cellular;median;4403;28;;;8489;5936;8.49;5.94
+WOM;Colombia;;2022;232302;26072;N/A;cellular;median;26072;31;47.736;9.074;15551;10548;15.55;10.55
+Tigo;Colombia;;2022;347333;66408;N/A;cellular;median;66408;31;626.758;170.578;14537;11868;14.54;11.87
+Claro;Colombia;;2022;558043;107227;N/A;cellular;median;107227;38;649.719;153.251;12513;8573;12.51;8.57
+Movistar;Colombia;;2022;331025;67562;N/A;cellular;median;67562;36;669.353;215.262;8882;7307;8.88;7.31
+ETB;Colombia;;2022;26435;4516;N/A;cellular;median;4516;27;854.878;176.134;13773;10891;13.77;10.89
