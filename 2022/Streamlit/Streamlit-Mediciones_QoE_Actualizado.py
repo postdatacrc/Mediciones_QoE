@@ -341,13 +341,14 @@ if select_servicio == 'Internet fijo':
 
             ##
             
-            col1,col2,col3,col4= st.columns([3,1,1,3])
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
                 mes_opFijo = st.selectbox('Escoja el mes',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
             with col3:    
                 año_opFijo = st.selectbox('Escoja el año',[2020,2021,2022],2) 
-            mes=mes_opFijoNombre[mes_opFijo]    
+            mes=mes_opFijoNombre[mes_opFijo] 
+            
             Col2Fijo=Colombia2Fijo[(Colombia2Fijo['year']==año_opFijo)&(Colombia2Fijo['month']==mes)].groupby(['Location'])['Download Speed Mbps'].mean()
             Col2Fijo=round(Col2Fijo,2)
             departamentos_df2Fijo=gdf2.merge(Col2Fijo, on='Location')
@@ -978,73 +979,77 @@ if select_servicio == 'Internet fijo':
             st.plotly_chart(fig6Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
             
-            col1, col2,col3= st.columns(3)
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Escoja el mes de 2022',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                mes_opFijo = st.selectbox('Escoja el mes',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
+            with col3:    
+                año_opFijo = st.selectbox('Escoja el año',[2020,2021,2022],2) 
             mes=mes_opFijoNombre[mes_opFijo]    
 
-            Col2bFijo=Colombia2Fijo[(Colombia2Fijo['year']==2022)&(Colombia2Fijo['month']==mes)].groupby(['Location'])['Upload Speed Mbps'].mean()
+            Col2bFijo=Colombia2Fijo[(Colombia2Fijo['year']==año_opFijo)&(Colombia2Fijo['month']==mes)].groupby(['Location'])['Upload Speed Mbps'].mean()
             Col2bFijo=round(Col2bFijo,2)
             departamentos_df2bFijo=gdf2.merge(Col2bFijo, on='Location')
             departamentos_df2bFijo=departamentos_df2bFijo.sort_values(by='Upload Speed Mbps')  
+            
+            if departamentos_df2bFijo.empty==True:
+                st.markdown('No se presentan datos para el mes seleccionado.')
+            else:
+                colombia_map2Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+                   scrollWheelZoom=True,
+                   dragging=True)
+                tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                for tile in tiles:
+                    folium.TileLayer(tile).add_to(colombia_map2Fijo)
+                choropleth=folium.Choropleth(
+                    geo_data=Colombian_DPTO2,
+                    data=departamentos_df2bFijo,
+                    #bins=[0,5,15,25,35,45,55,70],
+                    columns=['Location', 'Upload Speed Mbps'],
+                    key_on='feature.properties.NOMBRE_DPT',
+                    fill_color='YlGnBu', 
+                    fill_opacity=0.9, 
+                    line_opacity=0.9,
+                    legend_name='Velocidad de carga (Mbps)',
+                    nan_fill_color = "black",
+                    smooth_factor=0).add_to(colombia_map2Fijo)
+                # Adicionar nombres del departamento
+                style_function = "font-size: 15px; font-weight: bold"
+                choropleth.geojson.add_child(
+                    folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                folium.LayerControl().add_to(colombia_map2Fijo)
 
-            colombia_map2Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
-               scrollWheelZoom=True,
-               dragging=True)
-            tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
-            for tile in tiles:
-                folium.TileLayer(tile).add_to(colombia_map2Fijo)
-            choropleth=folium.Choropleth(
-                geo_data=Colombian_DPTO2,
-                data=departamentos_df2bFijo,
-                #bins=[0,5,15,25,35,45,55,70],
-                columns=['Location', 'Upload Speed Mbps'],
-                key_on='feature.properties.NOMBRE_DPT',
-                fill_color='YlGnBu', 
-                fill_opacity=0.9, 
-                line_opacity=0.9,
-                legend_name='Velocidad de carga (Mbps)',
-                nan_fill_color = "black",
-                smooth_factor=0).add_to(colombia_map2Fijo)
-            # Adicionar nombres del departamento
-            style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
-                folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
-            folium.LayerControl().add_to(colombia_map2Fijo)
-
-            #Adicionar valores velocidad
-            style_function = lambda x: {'fillColor': '#ffffff', 
-                                        'color':'#000000', 
-                                        'fillOpacity': 0.1, 
-                                        'weight': 0.1}
-            highlight_function = lambda x: {'fillColor': '#000000', 
+                #Adicionar valores velocidad
+                style_function = lambda x: {'fillColor': '#ffffff', 
                                             'color':'#000000', 
-                                            'fillOpacity': 0.50, 
+                                            'fillOpacity': 0.1, 
                                             'weight': 0.1}
-            NIL = folium.features.GeoJson(
-                data = departamentos_df2bFijo,
-                style_function=style_function, 
-                control=False,
-                highlight_function=highlight_function, 
-                tooltip=folium.features.GeoJsonTooltip(
-                    fields=['Location','Upload Speed Mbps'],
-                    aliases=['Departamento','Velocidad de carga'],
-                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                highlight_function = lambda x: {'fillColor': '#000000', 
+                                                'color':'#000000', 
+                                                'fillOpacity': 0.50, 
+                                                'weight': 0.1}
+                NIL = folium.features.GeoJson(
+                    data = departamentos_df2bFijo,
+                    style_function=style_function, 
+                    control=False,
+                    highlight_function=highlight_function, 
+                    tooltip=folium.features.GeoJsonTooltip(
+                        fields=['Location','Upload Speed Mbps'],
+                        aliases=['Departamento','Velocidad de carga'],
+                        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                    )
                 )
-            )
-            for key in choropleth._children:
-                if key.startswith('color_map'):
-                    del(choropleth._children[key])            
-            colombia_map2Fijo.add_child(NIL)
-            colombia_map2Fijo.keep_in_front(NIL)
-
-            with col2:
-                st.markdown("<center><b> Velocidad de carga de Internet fijo en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
-            col1b, col2b ,col3b= st.columns([2,4,1])
-#            with col2b:
-            folium_static(colombia_map2Fijo,width=480) 
-            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
+                for key in choropleth._children:
+                    if key.startswith('color_map'):
+                        del(choropleth._children[key])            
+                colombia_map2Fijo.add_child(NIL)
+                colombia_map2Fijo.keep_in_front(NIL)
+                
+                col1b, col2b ,col3b= st.columns([1,4,1])
+                with col2b:
+                    st.markdown("<b><center>Velocidad de carga de Internet fijo en Colombia<br>por departamento (en Mbps)</center></b>",unsafe_allow_html=True)                        
+                    folium_static(colombia_map2Fijo,width=480) 
+                    st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Fijo == 'Ciudades':    
             col1, col2,col3= st.columns(3)
@@ -1419,11 +1424,13 @@ if select_servicio == 'Internet fijo':
             st.plotly_chart(fig9Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(Latency1Fijo),file_name='Historico_latencia_Colombia.csv',mime='text/csv')             
 
-            col1, col2,col3= st.columns(3)
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Escoja el mes de 2022',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
-            mes=mes_opFijoNombre[mes_opFijo]       
+                mes_opFijo = st.selectbox('Escoja el mes',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
+            with col3:    
+                año_opFijo = st.selectbox('Escoja el año',[2020,2021,2022],2) 
+            mes=mes_opFijoNombre[mes_opFijo]    
                 
             Servidores=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Fijo/Fij-Servidores_Colombia.csv',encoding='latin-1',delimiter=';')
             Servidores['latitude']=Servidores['latitude'].str.replace(',','.')
@@ -1433,73 +1440,75 @@ if select_servicio == 'Internet fijo':
             departamentosLat_df2Fijo=gdf2.merge(ColLat2, on='Location')
             departamentosLat_df2Fijo=departamentosLat_df2Fijo.sort_values(by='Latency')
             
-            colombia_map3Fijo = folium.Map(height=600,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
-               scrollWheelZoom=True,
-               dragging=True)
-            tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
-            for tile in tiles:
-                folium.TileLayer(tile).add_to(colombia_map3Fijo)
-            choropleth=folium.Choropleth(
-                geo_data=Colombian_DPTO2,
-                data=departamentosLat_df2Fijo,
-                #bins=[10,20,30,50,75],
-                columns=['Location', 'Latency'],
-                key_on='feature.properties.NOMBRE_DPT',
-                fill_color='YlGnBu', 
-                fill_opacity=0.9, 
-                line_opacity=0.9,
-                legend_name='Latencia (ms)',
-                nan_fill_color = "black",
-                smooth_factor=0).add_to(colombia_map3Fijo)
-            # Adicionar nombres del departamento
-            style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
-                folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
-            folium.LayerControl().add_to(colombia_map3Fijo)
+            if departamentosLat_df2Fijo.empty==True:
+                st.markdown('No se presentan datos para el mes seleccionado.')
+            else:
+            
+                colombia_map3Fijo = folium.Map(height=600,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+                   scrollWheelZoom=True,
+                   dragging=True)
+                tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                for tile in tiles:
+                    folium.TileLayer(tile).add_to(colombia_map3Fijo)
+                choropleth=folium.Choropleth(
+                    geo_data=Colombian_DPTO2,
+                    data=departamentosLat_df2Fijo,
+                    #bins=[10,20,30,50,75],
+                    columns=['Location', 'Latency'],
+                    key_on='feature.properties.NOMBRE_DPT',
+                    fill_color='YlGnBu', 
+                    fill_opacity=0.9, 
+                    line_opacity=0.9,
+                    legend_name='Latencia (ms)',
+                    nan_fill_color = "black",
+                    smooth_factor=0).add_to(colombia_map3Fijo)
+                # Adicionar nombres del departamento
+                style_function = "font-size: 15px; font-weight: bold"
+                choropleth.geojson.add_child(
+                    folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                folium.LayerControl().add_to(colombia_map3Fijo)
 
-            #Adicionar valores velocidad
-            style_function = lambda x: {'fillColor': '#ffffff', 
-                                        'color':'#000000', 
-                                        'fillOpacity': 0.1, 
-                                        'weight': 0.1}
-            highlight_function = lambda x: {'fillColor': '#000000', 
+                #Adicionar valores velocidad
+                style_function = lambda x: {'fillColor': '#ffffff', 
                                             'color':'#000000', 
-                                            'fillOpacity': 0.50, 
+                                            'fillOpacity': 0.1, 
                                             'weight': 0.1}
-            NIL = folium.features.GeoJson(
-                data = departamentosLat_df2Fijo,
-                style_function=style_function, 
-                control=False,
-                highlight_function=highlight_function, 
-                tooltip=folium.features.GeoJsonTooltip(
-                    fields=['Location','Latency'],
-                    aliases=['Departamento','Latencia'],
-                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                highlight_function = lambda x: {'fillColor': '#000000', 
+                                                'color':'#000000', 
+                                                'fillOpacity': 0.50, 
+                                                'weight': 0.1}
+                NIL = folium.features.GeoJson(
+                    data = departamentosLat_df2Fijo,
+                    style_function=style_function, 
+                    control=False,
+                    highlight_function=highlight_function, 
+                    tooltip=folium.features.GeoJsonTooltip(
+                        fields=['Location','Latency'],
+                        aliases=['Departamento','Latencia'],
+                        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                    )
                 )
-            )
-            colombia_map3Fijo.add_child(NIL)
-            colombia_map3Fijo.keep_in_front(NIL)
-            # add marker one by one on the map
-            for i in range(0,len(Servidores)):
-               folium.Marker(
-                  location=[Servidores.iloc[i]['latitude'], Servidores.iloc[i]['longitude']],
-                  popup=Servidores.iloc[i]['server_name'],icon=folium.Icon(color='red', icon='wifi', prefix='fa'),radius=3,
-             color='red',
-             fill=True,
-             fill_color='red',
-             fill_opacity=1
-               ).add_to(colombia_map3Fijo)
-            for key in choropleth._children:
-                if key.startswith('color_map'):
-                    del(choropleth._children[key])
-
-            col1, col2 ,col3= st.columns(3)
-            with col2:
-                st.markdown("<center><b>Latencia de Internet fijo en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
-            col1b, col2b ,col3b= st.columns([2,4,1])
-#            with col2b:
-            folium_static(colombia_map3Fijo,width=480) 
-            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022.<br> Los puntos rojos indican la posición de los servidores de prueba en 2021.</i></p> """,unsafe_allow_html=True)
+                colombia_map3Fijo.add_child(NIL)
+                colombia_map3Fijo.keep_in_front(NIL)
+                # add marker one by one on the map
+                for i in range(0,len(Servidores)):
+                   folium.Marker(
+                      location=[Servidores.iloc[i]['latitude'], Servidores.iloc[i]['longitude']],
+                      popup=Servidores.iloc[i]['server_name'],icon=folium.Icon(color='red', icon='wifi', prefix='fa'),radius=3,
+                 color='red',
+                 fill=True,
+                 fill_color='red',
+                 fill_opacity=1
+                   ).add_to(colombia_map3Fijo)
+                for key in choropleth._children:
+                    if key.startswith('color_map'):
+                        del(choropleth._children[key])
+                       
+                col1b, col2b ,col3b= st.columns([1,4,1])
+                with col2b:
+                    st.markdown("<center><b>Latencia de Internet fijo en Colombia<br>por departamento (en Mbps)</b></center>",unsafe_allow_html=True) 
+                    folium_static(colombia_map3Fijo,width=480) 
+                    st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022.<br> Los puntos rojos indican la posición de los servidores de prueba en 2021.</i></p> """,unsafe_allow_html=True)
 
         if dimension_Latencia_Fijo == 'Ciudades':    
             col1, col2,col3= st.columns(3)
@@ -2053,74 +2062,77 @@ if select_servicio == 'Internet móvil':
             font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.15)    
             st.plotly_chart(fig1Movil, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(DepJoinAMovilDown),file_name='MovilAnno_descarga_Colombia.csv',mime='text/csv')
-
-            col1, col2,col3= st.columns(3)
+            
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opMovilNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
                 mes_opMovil = st.selectbox('Escoja el mes de 2022',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+            with col3:    
+                año_opMovil = st.selectbox('Escoja el año',[2020,2021,2022],2) 
             mes=mes_opMovilNombre[mes_opMovil]  
             
-            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2022)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Download Speed Mbps'].mean().reset_index()
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==año_opMovil)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Download Speed Mbps'].mean().reset_index()
             ColMovil1=round(ColMovil1,2)
 
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')                
-            
-            colombia_map1Movil = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
-               scrollWheelZoom=True,
-               dragging=True)            
-            tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
-            for tile in tiles:
-                folium.TileLayer(tile).add_to(colombia_map1Movil)
-            choropleth=folium.Choropleth(
-                geo_data=Colombian_DPTO2,
-                data=departamentos_dfMovil1,
-                columns=['Location', 'Download Speed Mbps'],
-                key_on='feature.properties.NOMBRE_DPT',
-                fill_color='YlGnBu', 
-                fill_opacity=0.9, 
-                line_opacity=0.9,
-                legend_name='Velocidad de descarga (Mbps)',
-                nan_fill_color = "black",
-                smooth_factor=0).add_to(colombia_map1Movil)
-            # Adicionar nombres del departamento
-            style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
-                folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
-            folium.LayerControl().add_to(colombia_map1Movil)
+            if departamentos_dfMovil1.empty==True:
+                st.markdown('No se presentan datos para el mes seleccionado.')                
+            else:
+                colombia_map1Movil = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+                   scrollWheelZoom=True,
+                   dragging=True)            
+                tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                for tile in tiles:
+                    folium.TileLayer(tile).add_to(colombia_map1Movil)
+                choropleth=folium.Choropleth(
+                    geo_data=Colombian_DPTO2,
+                    data=departamentos_dfMovil1,
+                    columns=['Location', 'Download Speed Mbps'],
+                    key_on='feature.properties.NOMBRE_DPT',
+                    fill_color='YlGnBu', 
+                    fill_opacity=0.9, 
+                    line_opacity=0.9,
+                    legend_name='Velocidad de descarga (Mbps)',
+                    nan_fill_color = "black",
+                    smooth_factor=0).add_to(colombia_map1Movil)
+                # Adicionar nombres del departamento
+                style_function = "font-size: 15px; font-weight: bold"
+                choropleth.geojson.add_child(
+                    folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                folium.LayerControl().add_to(colombia_map1Movil)
 
-            #Adicionar valores velocidad
-            style_function = lambda x: {'fillColor': '#ffffff', 
-                                        'color':'#000000', 
-                                        'fillOpacity': 0.1, 
-                                        'weight': 0.1}
-            highlight_function = lambda x: {'fillColor': '#000000', 
+                #Adicionar valores velocidad
+                style_function = lambda x: {'fillColor': '#ffffff', 
                                             'color':'#000000', 
-                                            'fillOpacity': 0.50, 
+                                            'fillOpacity': 0.1, 
                                             'weight': 0.1}
-            NIL = folium.features.GeoJson(
-                data = departamentos_dfMovil1,
-                style_function=style_function, 
-                control=False,
-                highlight_function=highlight_function, 
-                tooltip=folium.features.GeoJsonTooltip(
-                    fields=['Location','Download Speed Mbps'],
-                    aliases=['Departamento','Velocidad descarga'],
-                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                highlight_function = lambda x: {'fillColor': '#000000', 
+                                                'color':'#000000', 
+                                                'fillOpacity': 0.50, 
+                                                'weight': 0.1}
+                NIL = folium.features.GeoJson(
+                    data = departamentos_dfMovil1,
+                    style_function=style_function, 
+                    control=False,
+                    highlight_function=highlight_function, 
+                    tooltip=folium.features.GeoJsonTooltip(
+                        fields=['Location','Download Speed Mbps'],
+                        aliases=['Departamento','Velocidad descarga'],
+                        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                    )
                 )
-            )
-            colombia_map1Movil.add_child(NIL)
-            colombia_map1Movil.keep_in_front(NIL)
-            for key in choropleth._children:
-                if key.startswith('color_map'):
-                    del(choropleth._children[key])            
-            col1, col2 ,col3= st.columns(3)
-            with col2:
-                st.markdown("<center><b> Velocidad de descarga de Internet móvil en Colombia por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
-            col1b, col2b ,col3b= st.columns([2,4,1])
-#            with col2b:
-            folium_static(colombia_map1Movil,width=480) 
-            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
+                colombia_map1Movil.add_child(NIL)
+                colombia_map1Movil.keep_in_front(NIL)
+                for key in choropleth._children:
+                    if key.startswith('color_map'):
+                        del(choropleth._children[key])            
+                        
+                col1b, col2b ,col3b= st.columns([1,4,1])
+                with col2b:
+                    st.markdown("<center><b> Velocidad de descarga de Internet móvil en Colombia<br>por departamento (en Mbps)</b></center>",unsafe_allow_html=True)
+                    folium_static(colombia_map1Movil,width=480) 
+                    st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_descarga_Movil == 'Operadores':
             
@@ -2512,73 +2524,76 @@ if select_servicio == 'Internet móvil':
             st.plotly_chart(fig4Movil, use_container_width=True)
             #st.download_button(label="Descargar CSV",data=convert_df(DepJoinAMovilUp),file_name='MovilAnno_descarga_Colombia.csv',mime='text/csv')            
 
-            col1, col2,col3= st.columns(3)
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opMovilNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
-                mes_opMovil = st.selectbox('Escoja el mes de 2022',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
-            mes=mes_opMovilNombre[mes_opMovil]  
+                mes_opMovil = st.selectbox('Escoja el mes',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+            with col3:    
+                año_opMovil = st.selectbox('Escoja el año',[2020,2021,2022],2) 
+            mes=mes_opMovilNombre[mes_opMovil]   
             
-            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2022)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Upload Speed Mbps'].mean().reset_index()
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==año_opMovil)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Upload Speed Mbps'].mean().reset_index()
             ColMovil1=round(ColMovil1,2)
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')    
             
-            colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
-               scrollWheelZoom=True,
-               dragging=True)            
-            tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
-            for tile in tiles:
-                folium.TileLayer(tile).add_to(colombia_map1Movi2)
-            choropleth=folium.Choropleth(
-                geo_data=Colombian_DPTO2,
-                data=departamentos_dfMovil1,
-                columns=['Location', 'Upload Speed Mbps'],
-                key_on='feature.properties.NOMBRE_DPT',
-                fill_color='YlGnBu', 
-                fill_opacity=0.9, 
-                line_opacity=0.9,
-                legend_name='Velocidad de carga (Mbps)',
-                nan_fill_color = "black",
-                smooth_factor=0).add_to(colombia_map1Movi2)
-            # Adicionar nombres del departamento
-            style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
-                folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
-            folium.LayerControl().add_to(colombia_map1Movi2)
+            if departamentos_dfMovil1.empty==True:
+                st.markdown('No se presentan datos para el mes seleccionado.')
+            else:        
+                colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+                   scrollWheelZoom=True,
+                   dragging=True)            
+                tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                for tile in tiles:
+                    folium.TileLayer(tile).add_to(colombia_map1Movi2)
+                choropleth=folium.Choropleth(
+                    geo_data=Colombian_DPTO2,
+                    data=departamentos_dfMovil1,
+                    columns=['Location', 'Upload Speed Mbps'],
+                    key_on='feature.properties.NOMBRE_DPT',
+                    fill_color='YlGnBu', 
+                    fill_opacity=0.9, 
+                    line_opacity=0.9,
+                    legend_name='Velocidad de carga (Mbps)',
+                    nan_fill_color = "black",
+                    smooth_factor=0).add_to(colombia_map1Movi2)
+                # Adicionar nombres del departamento
+                style_function = "font-size: 15px; font-weight: bold"
+                choropleth.geojson.add_child(
+                    folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                folium.LayerControl().add_to(colombia_map1Movi2)
 
-            #Adicionar valores velocidad
-            style_function = lambda x: {'fillColor': '#ffffff', 
-                                        'color':'#000000', 
-                                        'fillOpacity': 0.1, 
-                                        'weight': 0.1}
-            highlight_function = lambda x: {'fillColor': '#000000', 
+                #Adicionar valores velocidad
+                style_function = lambda x: {'fillColor': '#ffffff', 
                                             'color':'#000000', 
-                                            'fillOpacity': 0.50, 
+                                            'fillOpacity': 0.1, 
                                             'weight': 0.1}
-            NIL = folium.features.GeoJson(
-                data = departamentos_dfMovil1,
-                style_function=style_function, 
-                control=False,
-                highlight_function=highlight_function, 
-                tooltip=folium.features.GeoJsonTooltip(
-                    fields=['Location','Upload Speed Mbps'],
-                    aliases=['Departamento','Velocidad de carga'],
-                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                highlight_function = lambda x: {'fillColor': '#000000', 
+                                                'color':'#000000', 
+                                                'fillOpacity': 0.50, 
+                                                'weight': 0.1}
+                NIL = folium.features.GeoJson(
+                    data = departamentos_dfMovil1,
+                    style_function=style_function, 
+                    control=False,
+                    highlight_function=highlight_function, 
+                    tooltip=folium.features.GeoJsonTooltip(
+                        fields=['Location','Upload Speed Mbps'],
+                        aliases=['Departamento','Velocidad de carga'],
+                        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                    )
                 )
-            )
-            colombia_map1Movi2.add_child(NIL)
-            colombia_map1Movi2.keep_in_front(NIL)
-            for key in choropleth._children:
-                if key.startswith('color_map'):
-                    del(choropleth._children[key])   
-                    
-            col1, col2 ,col3= st.columns(3)
-            with col2:
-                st.markdown("<center><b> Velocidad de carga de Internet móvil por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
-            col1b, col2b ,col3b= st.columns([2,4,1])
-#            with col2b:
-            folium_static(colombia_map1Movi2,width=480) 
-            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
+                colombia_map1Movi2.add_child(NIL)
+                colombia_map1Movi2.keep_in_front(NIL)
+                for key in choropleth._children:
+                    if key.startswith('color_map'):
+                        del(choropleth._children[key])   
+                        
+                col1b, col2b ,col3b= st.columns([1,4,1])
+                with col2b:
+                    st.markdown("<center><b> Velocidad de carga de Internet móvil<br>por departamento (en Mbps)</b></center>",unsafe_allow_html=True)                        
+                    folium_static(colombia_map1Movi2,width=480) 
+                    st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
                 
         if dimension_Vel_carga_Movil == 'Operadores':  
   
@@ -2964,75 +2979,78 @@ if select_servicio == 'Internet móvil':
                 
             st.plotly_chart(fig5Movil, use_container_width=True)    
 
-            col1, col2,col3= st.columns(3)
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opMovilNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
-                mes_opMovil = st.selectbox('Escoja el mes de 2022',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                mes_opMovil = st.selectbox('Escoja el mes',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+            with col3:    
+                año_opMovil = st.selectbox('Escoja el año',[2020,2021,2022],2) 
             mes=mes_opMovilNombre[mes_opMovil]                      
             
-            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==2022)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Latency'].mean().reset_index()
+            ColMovil1=Colombia2Movil[(Colombia2Movil['year']==año_opMovil)&(Colombia2Movil['month']==mes)].groupby(['Location'])['Latency'].mean().reset_index()
             ColMovil1=round(ColMovil1,2)
 
             ColMovil1['Location']=ColMovil1['Location'].replace({'CAQUETÃ¡':'CAQUETA','SAN ANDRÃ©S AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA'})
             departamentos_dfMovil1=gdf2.merge(ColMovil1, on='Location')    
             
-            colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
-               scrollWheelZoom=True,
-               dragging=True)            
-            tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
-            for tile in tiles:
-                folium.TileLayer(tile).add_to(colombia_map1Movi2)
-            choropleth=folium.Choropleth(
-                geo_data=Colombian_DPTO2,
-                data=departamentos_dfMovil1,
-                columns=['Location', 'Latency'],
-                key_on='feature.properties.NOMBRE_DPT',
-                fill_color='YlGnBu', 
-                fill_opacity=0.9, 
-                line_opacity=0.9,
-                legend_name='Latencia (ms)',
-                nan_fill_color = "black",
-                smooth_factor=0).add_to(colombia_map1Movi2)
-            # Adicionar nombres del departamento
-            style_function = "font-size: 15px; font-weight: bold"
-            choropleth.geojson.add_child(
-                folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
-            folium.LayerControl().add_to(colombia_map1Movi2)
+            if departamentos_dfMovil1.empty==True:
+                st.markdown('No se presentan datos para el mes seleccionado.')
+            else:                
+                colombia_map1Movi2 = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
+                   scrollWheelZoom=True,
+                   dragging=True)            
+                tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
+                for tile in tiles:
+                    folium.TileLayer(tile).add_to(colombia_map1Movi2)
+                choropleth=folium.Choropleth(
+                    geo_data=Colombian_DPTO2,
+                    data=departamentos_dfMovil1,
+                    columns=['Location', 'Latency'],
+                    key_on='feature.properties.NOMBRE_DPT',
+                    fill_color='YlGnBu', 
+                    fill_opacity=0.9, 
+                    line_opacity=0.9,
+                    legend_name='Latencia (ms)',
+                    nan_fill_color = "black",
+                    smooth_factor=0).add_to(colombia_map1Movi2)
+                # Adicionar nombres del departamento
+                style_function = "font-size: 15px; font-weight: bold"
+                choropleth.geojson.add_child(
+                    folium.features.GeoJsonTooltip(['NOMBRE_DPT'], style=style_function, labels=False))
+                folium.LayerControl().add_to(colombia_map1Movi2)
 
-            #Adicionar valores velocidad
-            style_function = lambda x: {'fillColor': '#ffffff', 
-                                        'color':'#000000', 
-                                        'fillOpacity': 0.1, 
-                                        'weight': 0.1}
-            highlight_function = lambda x: {'fillColor': '#000000', 
+                #Adicionar valores velocidad
+                style_function = lambda x: {'fillColor': '#ffffff', 
                                             'color':'#000000', 
-                                            'fillOpacity': 0.50, 
+                                            'fillOpacity': 0.1, 
                                             'weight': 0.1}
-            NIL = folium.features.GeoJson(
-                data = departamentos_dfMovil1,
-                style_function=style_function, 
-                control=False,
-                highlight_function=highlight_function, 
-                tooltip=folium.features.GeoJsonTooltip(
-                    fields=['Location','Latency'],
-                    aliases=['Departamento','Latencia'],
-                    style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                highlight_function = lambda x: {'fillColor': '#000000', 
+                                                'color':'#000000', 
+                                                'fillOpacity': 0.50, 
+                                                'weight': 0.1}
+                NIL = folium.features.GeoJson(
+                    data = departamentos_dfMovil1,
+                    style_function=style_function, 
+                    control=False,
+                    highlight_function=highlight_function, 
+                    tooltip=folium.features.GeoJsonTooltip(
+                        fields=['Location','Latency'],
+                        aliases=['Departamento','Latencia'],
+                        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+                    )
                 )
-            )
-            colombia_map1Movi2.add_child(NIL)
-            colombia_map1Movi2.keep_in_front(NIL)
-            
-            for key in choropleth._children:
-                if key.startswith('color_map'):
-                    del(choropleth._children[key])            
-        
-            col1, col2 ,col3= st.columns(3)
-            with col2:
-                st.markdown("<center><b> Latencia de Internet móvil por departamento (en ms)</b></center>",unsafe_allow_html=True)                        
-            col1b, col2b ,col3b= st.columns([2,4,1])
-#            with col2b:
-            folium_static(colombia_map1Movi2,width=480) 
-            st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
+                colombia_map1Movi2.add_child(NIL)
+                colombia_map1Movi2.keep_in_front(NIL)
+                
+                for key in choropleth._children:
+                    if key.startswith('color_map'):
+                        del(choropleth._children[key])            
+                                  
+                col1b, col2b ,col3b= st.columns([1,4,1])
+                with col2b:
+                    st.markdown("<center><b> Latencia de Internet móvil por departamento (en ms)</b></center>",unsafe_allow_html=True) 
+                    folium_static(colombia_map1Movi2,width=480) 
+                    st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Movil == 'Operadores':  
   
