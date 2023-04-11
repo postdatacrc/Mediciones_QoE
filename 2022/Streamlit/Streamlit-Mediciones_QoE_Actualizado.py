@@ -624,29 +624,44 @@ if select_servicio == 'Internet fijo':
             st.plotly_chart(fig3Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(JuntosDescarga4Fijo),file_name='Historico_descarga_Operadores.csv',mime='text/csv')            
             
-            col1, col2,col3= st.columns(3)
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Escoja el mes de 2022',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                mes_opFijo = st.selectbox('Escoja el mes',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
+            with col3:    
+                año_opFijo = st.selectbox('Escoja el año',[2020,2021,2022],2) 
             mes=mes_opFijoNombre[mes_opFijo] 
             
-            Proveedor1Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+            final_dfAncFijo=gdf2.merge(OpCiud2Fijo.groupby(['Location'])['Download Speed Mbps'].median().reset_index(), on='Location')
+            final_dfAncFijo['Download Speed Mbps']=np.nan
+            
+            Proveedor1Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
             Proveedor1Fijo['Download Speed Mbps'] =round(Proveedor1Fijo['Download Speed Mbps'], 2)
-            final_df1Fijo=gdf2.merge(Proveedor1Fijo, on='Location')
-            final_df1Fijo=final_df1Fijo[final_df1Fijo['Location'].isin(['GUAVIARE','SAN ANDRES Y PROVIDENCIA'])==False]
-
+            if Proveedor1Fijo.empty==True:
+                final_df1Fijo=final_dfAncFijo
+            else:    
+                final_df1Fijo=gdf2.merge(Proveedor1Fijo, on='Location')
             ##
-            Proveedor2Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+            Proveedor2Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
             Proveedor2Fijo['Download Speed Mbps'] =round(Proveedor2Fijo['Download Speed Mbps'], 2)
-            final_df2Fijo=gdf2.merge(Proveedor2Fijo, on='Location')
+            if Proveedor2Fijo.empty==True:
+                final_df2Fijo=final_dfAncFijo
+            else:    
+                final_df2Fijo=gdf2.merge(Proveedor2Fijo, on='Location')
             ##
-            Proveedor3Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+            Proveedor3Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
             Proveedor3Fijo['Download Speed Mbps'] =round(Proveedor3Fijo['Download Speed Mbps'], 2)
-            final_df3Fijo=gdf2.merge(Proveedor3Fijo, on='Location')
+            if Proveedor3Fijo.empty==True:
+                final_df3Fijo=final_dfAncFijo
+            else:    
+                final_df3Fijo=gdf2.merge(Proveedor3Fijo, on='Location')
             ##
-            Proveedor4Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
+            Proveedor4Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Download Speed Mbps']].groupby(['Location'])[['Download Speed Mbps']].mean().reset_index()
             Proveedor4Fijo['Download Speed Mbps'] =round(Proveedor4Fijo['Download Speed Mbps'], 2)
-            final_df4Fijo=gdf2.merge(Proveedor4Fijo, on='Location')
+            if Proveedor4Fijo.empty==True:
+                final_df4Fijo=final_dfAncFijo
+            else:    
+                final_df4Fijo=gdf2.merge(Proveedor4Fijo, on='Location')
             
 
             dualmap1_1Fijo=folium.plugins.DualMap(heigth=1000,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
@@ -967,7 +982,7 @@ if select_servicio == 'Internet fijo':
             fig6Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
             fig6Fijo.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=16,
             title={
-            'text': "<b>Velocidad mensual de carga de Internet fijo<br>en Colombia (2018-2022) (en Mbps)</b>",
+            'text': "<b>Velocidad mensual de carga de Internet fijo en Colombia (2018-2022) (en Mbps)</b>",
             'y':0.9,
             'x':0.5,
             'xanchor': 'center',
@@ -1185,28 +1200,44 @@ if select_servicio == 'Internet fijo':
             st.plotly_chart(fig8Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(JuntosCarga4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')            
 
-            col1, col2,col3= st.columns(3)
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Escoja el mes de 2022',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                mes_opFijo = st.selectbox('Escoja el mes',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
+            with col3:    
+                año_opFijo = st.selectbox('Escoja el año',[2020,2021,2022],2) 
             mes=mes_opFijoNombre[mes_opFijo] 
+            
+            final_dfAncFijo=gdf2.merge(OpCiud2Fijo.groupby(['Location'])['Download Speed Mbps'].median().reset_index(), on='Location')
+            final_dfAncFijo['Download Speed Mbps']=np.nan
 
-            Proveedor1bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+            Proveedor1bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
             Proveedor1bFijo['Upload Speed Mbps'] =round(Proveedor1bFijo['Upload Speed Mbps'], 2)
-            final_df1bFijo=gdf2.merge(Proveedor1bFijo, on='Location')
-            final_df1bFijo=final_df1bFijo[final_df1bFijo['Location'].isin(['GUAVIARE','SAN ANDRES Y PROVIDENCIA'])==False]
+            if Proveedor1bFijo.empty==True:
+                final_df1bFijo=final_dfAncFijo
+            else: 
+                final_df1bFijo=gdf2.merge(Proveedor1bFijo, on='Location')
             ##
-            Proveedor2bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+            Proveedor2bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
             Proveedor2bFijo['Upload Speed Mbps'] =round(Proveedor2bFijo['Upload Speed Mbps'], 2)
-            final_df2bFijo=gdf2.merge(Proveedor2bFijo, on='Location')
+            if Proveedor2bFijo.empty==True:
+                final_df2bFijo=final_dfAncFijo
+            else: 
+                final_df2bFijo=gdf2.merge(Proveedor2bFijo, on='Location')
             ##
-            Proveedor3bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+            Proveedor3bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
             Proveedor3bFijo['Upload Speed Mbps'] =round(Proveedor3bFijo['Upload Speed Mbps'], 2)
-            final_df3bFijo=gdf2.merge(Proveedor3bFijo, on='Location')
+            if Proveedor3bFijo.empty==True:
+                final_df3bFijo=final_dfAncFijo
+            else: 
+                final_df3bFijo=gdf2.merge(Proveedor3bFijo, on='Location')
             ##
-            Proveedor4bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
+            Proveedor4bFijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Upload Speed Mbps']].groupby(['Location'])[['Upload Speed Mbps']].mean().reset_index()
             Proveedor4bFijo['Upload Speed Mbps'] =round(Proveedor4bFijo['Upload Speed Mbps'], 2)
-            final_df4bFijo=gdf2.merge(Proveedor4bFijo, on='Location') 
+            if Proveedor4bFijo.empty==True:
+                final_df4bFijo=final_dfAncFijo
+            else: 
+                final_df4bFijo=gdf2.merge(Proveedor4bFijo, on='Location') 
 
 
             dualmap1_3Fijo=folium.plugins.DualMap(heigth=500,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
@@ -1638,28 +1669,44 @@ if select_servicio == 'Internet fijo':
             st.plotly_chart(fig11Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(JuntosLatencia4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')   
             
-            col1, col2,col3= st.columns(3)
+            col1,col2,col3,col4= st.columns([2,1,1,2])
             mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
             with col2:
-                mes_opFijo = st.selectbox('Escoja el mes de 2022',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                mes_opFijo = st.selectbox('Escoja el mes',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
+            with col3:    
+                año_opFijo = st.selectbox('Escoja el año',[2020,2021,2022],2) 
             mes=mes_opFijoNombre[mes_opFijo] 
+            
+            final_dfAncFijo=gdf2.merge(OpCiud2Fijo.groupby(['Location'])['Download Speed Mbps'].median().reset_index(), on='Location')
+            final_dfAncFijo['Download Speed Mbps']=np.nan
 
-            ProveedorLat1Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+            ProveedorLat1Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Claro')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
             ProveedorLat1Fijo['Latency'] =round(ProveedorLat1Fijo['Latency'], 2)
-            final_dfLat1Fijo=gdf2.merge(ProveedorLat1Fijo, on='Location')
-            final_dfLat1Fijo=final_dfLat1Fijo[final_dfLat1Fijo['Location'].isin(['GUAVIARE','SAN ANDRES Y PROVIDENCIA'])==False]
+            if ProveedorLat1Fijo.empty==True:
+                final_dfLat1Fijo=final_dfAncFijo
+            else: 
+                final_dfLat1Fijo=gdf2.merge(ProveedorLat1Fijo, on='Location')
             ##
-            ProveedorLat2Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+            ProveedorLat2Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Movistar')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
             ProveedorLat2Fijo['Latency'] =round(ProveedorLat2Fijo['Latency'], 2)
-            final_dfLat2Fijo=gdf2.merge(ProveedorLat2Fijo, on='Location')
+            if ProveedorLat2Fijo.empty==True:
+                final_dfLat2Fijo=final_dfAncFijo
+            else: 
+                final_dfLat2Fijo=gdf2.merge(ProveedorLat2Fijo, on='Location')
             ##
-            ProveedorLat3Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+            ProveedorLat3Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='Tigo')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
             ProveedorLat3Fijo['Latency'] =round(ProveedorLat3Fijo['Latency'], 2)
-            final_dfLat3Fijo=gdf2.merge(ProveedorLat3Fijo, on='Location')
+            if ProveedorLat3Fijo.empty==True:
+                final_dfLat3Fijo=final_dfAncFijo
+            else: 
+                final_dfLat3Fijo=gdf2.merge(ProveedorLat3Fijo, on='Location')
             ##
-            ProveedorLat4Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==2022)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
+            ProveedorLat4Fijo=OpCiud2Fijo.loc[(OpCiud2Fijo['Provider']=='ETB')&(OpCiud2Fijo['year']==año_opFijo)&(OpCiud2Fijo['month']==mes),['Location','Latency']].groupby(['Location'])[['Latency']].mean().reset_index()
             ProveedorLat4Fijo['Latency'] =round(ProveedorLat4Fijo['Latency'], 2)
-            final_dfLat4Fijo=gdf2.merge(ProveedorLat4Fijo, on='Location')
+            if ProveedorLat4Fijo.empty==True:
+                final_dfLat4Fijo=final_dfAncFijo
+            else: 
+                final_dfLat4Fijo=gdf2.merge(ProveedorLat4Fijo, on='Location')
             
             dualmap1_5Fijo=folium.plugins.DualMap(heigth=500,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron')
             ########
