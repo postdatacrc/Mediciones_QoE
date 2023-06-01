@@ -2041,7 +2041,7 @@ Colombia7Movil=ColombiaMovil7()
 #@st.cache(allow_output_mutation=True)
 def DepJoinA8Movil():
     Ciudades8=pd.read_csv(pathMovil+'/Cobertura/Coberturahistcomp_Ciud_(2018-2022)-Med.csv',delimiter=';',encoding='utf-8-sig')
-    Ciudades8['Location']=Ciudades8['Location'].str.split(',',1,expand=True)[0]
+    Ciudades8['Location']=Ciudades8['Location'].str.split(',',expand=True)[0]
     Ciudades8['4G total'] = Ciudades8[['4G (%)', '4G Roaming (%)']].sum(axis=1)
     Ciudades8['Aggregate Date']=Ciudades8['Aggregate Date'].astype('str')
     Ciudades8['Roaming total'] = Ciudades8[['4G Roaming (%)', '3G Roaming (%)', '2G Roaming (%)']].sum(axis=1)   
