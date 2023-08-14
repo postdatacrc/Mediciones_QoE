@@ -1,0 +1,441 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Minimum Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Jan 2018;5053;2622;all;N/A;median;1306;46;5440;1166;5.44;1.17
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Jan 2018;6932;3714;all;N/A;median;1893;32;5214;1084;5.21;1.08
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Jan 2018;703;370;all;N/A;median;179;72;3486;788;3.49;0.79
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Jan 2018;3043;1676;all;N/A;median;931;21;5247;1202;5.25;1.20
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Jan 2018;1532;788;all;N/A;median;346;46;4990;942;4.99;0.94
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;feb-18;4522;2594;all;N/A;median;1268;41;7156;1300;7.16;1.30
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;feb-18;8164;4173;all;N/A;median;2036;31;5293;1121;5.29;1.12
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;feb-18;689;362;all;N/A;median;168;73;3976;871;3.98;0.87
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;feb-18;3196;1744;all;N/A;median;920;21;5233;1315;5.23;1.32
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;feb-18;1723;859;all;N/A;median;297;45;4999;999;5.00;1.00
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;mar-18;5926;3086;all;N/A;median;1494;38;7329;1491;7.33;1.49
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;mar-18;9081;4646;all;N/A;median;2410;28;5333;1211;5.33;1.21
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;mar-18;593;378;all;N/A;median;194;69;4084;899;4.08;0.90
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;mar-18;3810;2041;all;N/A;median;1013;21;5226;1274;5.23;1.27
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;mar-18;1492;812;all;N/A;median;254;50;4776;914;4.78;0.91
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Apr 2018;4896;2868;all;N/A;median;1368;36;8795;1715;8.80;1.72
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Apr 2018;9647;4724;all;N/A;median;2320;29;5370;1322;5.37;1.32
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Apr 2018;723;410;all;N/A;median;216;65;3889;993;3.89;0.99
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Apr 2018;4238;2103;all;N/A;median;1083;21;5305;1671;5.31;1.67
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Apr 2018;1478;838;all;N/A;median;254;47;4795;942;4.80;0.94
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;may-18;5481;2964;all;N/A;median;1408;32;9732;2038;9.73;2.04
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;may-18;7847;4342;all;N/A;median;2133;28;5947;1245;5.95;1.25
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;may-18;383;228;all;N/A;median;155;66;3823;1050;3.82;1.05
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;may-18;4102;2115;all;N/A;median;1064;21;5292;1559;5.29;1.56
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;may-18;1191;670;all;N/A;median;210;42;4768;984;4.77;0.98
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jun-18;6071;3279;all;N/A;median;1656;32;10036;2103;10.04;2.10
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jun-18;6351;3674;all;N/A;median;1816;27;6600;1314;6.60;1.31
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jun-18;471;211;all;N/A;median;129;56;4003;941;4.00;0.94
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jun-18;3609;1948;all;N/A;median;1012;21;5411;1629;5.41;1.63
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jun-18;816;486;all;N/A;median;190;44;4508;990;4.51;0.99
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jul-18;7023;3593;all;N/A;median;1624;32;9676;2082;9.68;2.08
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jul-18;7336;4333;all;N/A;median;2217;28;7147;1584;7.15;1.58
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jul-18;484;249;all;N/A;median;163;45;4092;1086;4.09;1.09
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jul-18;4550;2442;all;N/A;median;1225;20;6489;1933;6.49;1.93
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jul-18;1494;758;all;N/A;median;258;42;4849;987;4.85;0.99
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Aug 2018;7951;3920;all;N/A;median;1727;32;9936;2103;9.94;2.10
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Aug 2018;9980;5454;all;N/A;median;2697;28;8568;1937;8.57;1.94
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Aug 2018;1596;502;all;N/A;median;257;61;3033;1494;3.03;1.49
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Aug 2018;4624;2548;all;N/A;median;1274;20;8417;2056;8.42;2.06
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Aug 2018;1335;792;all;N/A;median;282;42;5005;1019;5.01;1.02
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;sep-18;4;1;all;N/A;median;1;187;2723;4422;2.72;4.42
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;sep-18;6763;3725;all;N/A;median;1754;32;10290;2102;10.29;2.10
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;sep-18;9601;5588;all;N/A;median;2724;28;9264;2074;9.26;2.07
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;sep-18;829;374;all;N/A;median;167;57;3838;994;3.84;0.99
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;sep-18;4710;2533;all;N/A;median;1330;20;9810;2131;9.81;2.13
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;sep-18;1342;755;all;N/A;median;260;40;4587;1068;4.59;1.07
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;oct-18;6928;3905;all;N/A;median;1824;31;10184;2128;10.18;2.13
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;oct-18;11679;6674;all;N/A;median;3297;30;7648;1524;7.65;1.52
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;oct-18;624;331;all;N/A;median;180;74;3560;938;3.56;0.94
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;oct-18;4624;2502;all;N/A;median;1161;21;8067;2078;8.07;2.08
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;oct-18;1219;693;all;N/A;median;268;41;4921;1055;4.92;1.06
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;nov-18;6992;3718;all;N/A;median;1710;32;10246;2129;10.25;2.13
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;nov-18;11545;6667;all;N/A;median;3448;31;7362;1257;7.36;1.26
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;nov-18;1853;1011;all;N/A;median;444;29;9217;2179;9.22;2.18
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;nov-18;4238;2298;all;N/A;median;1070;21;8779;2130;8.78;2.13
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;nov-18;1122;727;all;N/A;median;273;41;5199;1039;5.20;1.04
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Dec 2018;2539;1573;all;N/A;median;1047;36;8527;2027;8.53;2.03
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Dec 2018;6499;3420;all;N/A;median;1609;34;10151;2126;10.15;2.13
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Dec 2018;8923;5568;all;N/A;median;2944;31;7061;1234;7.06;1.23
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Dec 2018;2218;1221;all;N/A;median;562;44;8682;2136;8.68;2.14
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Dec 2018;3206;1931;all;N/A;median;890;21;9291;2130;9.29;2.13
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Dec 2018;1782;1076;all;N/A;median;511;35;5519;1109;5.52;1.11
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Jan 2019;22201;13314;all;N/A;median;6079;41;7805;1543;7.81;1.54
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Jan 2019;8876;4987;all;N/A;median;2484;36;10036;2119;10.04;2.12
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Jan 2019;12184;7493;all;N/A;median;3867;32;6598;1161;6.60;1.16
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Jan 2019;3194;1809;all;N/A;median;784;46;8689;2144;8.69;2.14
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Jan 2019;4294;2376;all;N/A;median;1165;21;9750;2133;9.75;2.13
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Jan 2019;2853;1661;all;N/A;median;821;39;5223;1107;5.22;1.11
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Jan 2019;498;338;all;N/A;median;160;52;4010;821;4.01;0.82
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;feb-19;24954;13747;all;N/A;median;6561;40;8393;1900;8.39;1.90
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;feb-19;8383;4692;all;N/A;median;2362;37;10218;2176;10.22;2.18
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;feb-19;13311;7768;all;N/A;median;4063;32;6916;1213;6.92;1.21
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;feb-19;3158;1660;all;N/A;median;687;43;8715;2080;8.72;2.08
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;feb-19;4071;2270;all;N/A;median;1037;20;9705;2132;9.71;2.13
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;feb-19;2603;1587;all;N/A;median;810;34;5541;1159;5.54;1.16
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;feb-19;466;324;all;N/A;median;136;49;4121;878;4.12;0.88
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;mar-19;23494;13900;all;N/A;median;6638;39;9249;2016;9.25;2.02
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;mar-19;9007;4799;all;N/A;median;2219;38;10303;2233;10.30;2.23
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;mar-19;14862;8454;all;N/A;median;4101;33;6677;1203;6.68;1.20
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;mar-19;3336;1850;all;N/A;median;818;46;9264;2114;9.26;2.11
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;mar-19;4384;2363;all;N/A;median;1103;20;9480;2186;9.48;2.19
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;mar-19;2806;1767;all;N/A;median;885;34;5318;1181;5.32;1.18
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;mar-19;573;357;all;N/A;median;185;49;4006;910;4.01;0.91
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Apr 2019;21191;12943;all;N/A;median;6119;41;9998;2136;10.00;2.14
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Apr 2019;8503;4377;all;N/A;median;2067;36;10304;2261;10.30;2.26
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Apr 2019;17417;9249;all;N/A;median;4477;32;7164;1429;7.16;1.43
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Apr 2019;2795;1538;all;N/A;median;712;45;9672;2141;9.67;2.14
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Apr 2019;4146;2450;all;N/A;median;1213;21;9307;2160;9.31;2.16
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Apr 2019;2902;1800;all;N/A;median;889;35;5656;1225;5.66;1.23
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Apr 2019;591;388;all;N/A;median;171;50;4280;909;4.28;0.91
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;may-19;24704;14690;all;N/A;median;6796;41;10087;2248;10.09;2.25
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;may-19;8618;4751;all;N/A;median;2199;33;10554;2528;10.55;2.53
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;may-19;18012;9962;all;N/A;median;4435;31;7983;1801;7.98;1.80
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;may-19;3951;2245;all;N/A;median;1083;45;6832;2102;6.83;2.10
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;may-19;4749;2675;all;N/A;median;1345;20;10187;2415;10.19;2.42
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;may-19;4562;2349;all;N/A;median;1075;33;6177;2162;6.18;2.16
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;may-19;568;365;all;N/A;median;190;47;5067;1023;5.07;1.02
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jun-19;27491;15785;all;N/A;median;7376;42;9660;2084;9.66;2.08
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jun-19;8520;4617;all;N/A;median;2282;33;10404;2337;10.40;2.34
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jun-19;16151;9250;all;N/A;median;4568;32;8357;1568;8.36;1.57
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jun-19;3315;1787;all;N/A;median;830;43;9829;2241;9.83;2.24
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jun-19;3559;2083;all;N/A;median;1070;21;10398;2311;10.40;2.31
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jun-19;3792;2108;all;N/A;median;860;36;6076;1287;6.08;1.29
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jun-19;715;450;all;N/A;median;215;53;3922;809;3.92;0.81
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jul-19;27536;7303;all;N/A;median;7303;42;10109;2115;10.11;2.12
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jul-19;8181;2160;all;N/A;median;2160;36;10529;2745;10.53;2.75
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jul-19;16382;4274;all;N/A;median;4274;31;9553;2039;9.55;2.04
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jul-19;4404;851;all;N/A;median;851;46;9836;2236;9.84;2.24
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jul-19;4465;1307;all;N/A;median;1307;21;10548;2570;10.55;2.57
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jul-19;3817;914;all;N/A;median;914;34;8027;2060;8.03;2.06
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jul-19;695;229;all;N/A;median;229;62;3572;883;3.57;0.88
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Aug 2019;30281;7899;all;N/A;median;7899;42;10276;2335;10.28;2.34
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Aug 2019;11521;2811;all;N/A;median;2811;38;10486;2799;10.49;2.80
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Aug 2019;17946;4698;all;N/A;median;4698;45;9240;1942;9.24;1.94
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Aug 2019;3337;793;all;N/A;median;793;45;10287;2515;10.29;2.52
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Aug 2019;5080;1452;all;N/A;median;1452;41;10654;2674;10.65;2.67
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Aug 2019;3101;765;all;N/A;median;765;44;8351;2333;8.35;2.33
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Aug 2019;611;136;all;N/A;median;136;51;4304;925;4.30;0.93
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;sep-19;30323;8030;all;N/A;median;8030;43;10227;2478;10.23;2.48
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;sep-19;10151;2822;all;N/A;median;2822;33;11392;3036;11.39;3.04
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;sep-19;16770;4490;all;N/A;median;4490;47;9101;1961;9.10;1.96
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;sep-19;3001;731;all;N/A;median;731;40;10326;2657;10.33;2.66
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;sep-19;4332;1243;all;N/A;median;1243;45;10544;2703;10.54;2.70
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;sep-19;2020;465;all;N/A;median;465;52;9605;2012;9.61;2.01
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;sep-19;296;112;all;N/A;median;112;47;4840;852;4.84;0.85
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;oct-19;29972;8655;all;N/A;median;8655;40;10610;3041;10.61;3.04
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;oct-19;13275;3378;all;N/A;median;3378;34;11558;3932;11.56;3.93
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;oct-19;17632;4574;all;N/A;median;4574;47;10493;2692;10.49;2.69
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;oct-19;4322;891;all;N/A;median;891;39;13421;3964;13.42;3.96
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;oct-19;4987;1340;all;N/A;median;1340;44;12562;3288;12.56;3.29
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;oct-19;2805;595;all;N/A;median;595;58;10520;3059;10.52;3.06
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;oct-19;391;141;all;N/A;median;141;47;4746;969;4.75;0.97
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;nov-19;31931;8911;all;N/A;median;8911;40;11255;3625;11.26;3.63
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;nov-19;15021;3387;all;N/A;median;3387;33;14524;4941;14.52;4.94
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;nov-19;17702;4648;all;N/A;median;4648;48;10812;3314;10.81;3.31
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;nov-19;3725;948;all;N/A;median;948;40;15489;5007;15.49;5.01
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;nov-19;4739;1312;all;N/A;median;1312;45;14929;4641;14.93;4.64
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;nov-19;3139;669;all;N/A;median;669;53;11517;5152;11.52;5.15
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;nov-19;438;144;all;N/A;median;144;45;5001;886;5.00;0.89
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Dec 2019;31067;8851;all;N/A;median;8851;40;12463;4197;12.46;4.20
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Dec 2019;13849;3453;all;N/A;median;3453;32;17133;5191;17.13;5.19
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Dec 2019;19419;4859;all;N/A;median;4859;46;11036;3783;11.04;3.78
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Dec 2019;3400;899;all;N/A;median;899;39;16936;5358;16.94;5.36
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Dec 2019;4407;1267;all;N/A;median;1267;43;14700;4441;14.70;4.44
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Dec 2019;2567;552;all;N/A;median;552;52;14130;5511;14.13;5.51
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Dec 2019;312;103;all;N/A;median;103;46;4392;861;4.39;0.86
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Jan 2020;34386;9391;all;N/A;median;9391;40;11898;4341;11.90;4.34
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Jan 2020;15201;3379;all;N/A;median;3379;39;14496;5119;14.50;5.12
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Jan 2020;16626;4875;all;N/A;median;4875;44;11587;3589;11.59;3.59
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Jan 2020;4135;1020;all;N/A;median;1020;38;15753;5784;15.75;5.78
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Jan 2020;5540;1521;all;N/A;median;1521;44;16995;5046;17.00;5.05
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Jan 2020;2979;645;all;N/A;median;645;51;13858;5102;13.86;5.10
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Jan 2020;284;95;all;N/A;median;95;51;5032;788;5.03;0.79
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;feb-20;33731;9448;all;N/A;median;9448;38;14875;4997;14.88;5.00
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;feb-20;11564;2965;all;N/A;median;2965;34;19417;5230;19.42;5.23
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;feb-20;18039;5112;all;N/A;median;5112;44;14027;4675;14.03;4.68
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;feb-20;3704;1006;all;N/A;median;1006;38;23242;5933;23.24;5.93
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;feb-20;5105;1408;all;N/A;median;1408;41;19824;5644;19.82;5.64
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;feb-20;5007;864;all;N/A;median;864;51;14137;5939;14.14;5.94
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;feb-20;407;129;all;N/A;median;129;42;5117;1004;5.12;1.00
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;mar-20;47232;12735;all;N/A;median;12735;39;14349;4977;14.35;4.98
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;mar-20;22373;4946;all;N/A;median;4946;45;16426;4990;16.43;4.99
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;mar-20;31060;7366;all;N/A;median;7366;49;10764;4569;10.76;4.57
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;mar-20;7506;1444;all;N/A;median;1444;47;13959;5767;13.96;5.77
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;mar-20;8807;2189;all;N/A;median;2189;52;15653;4954;15.65;4.95
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;mar-20;4629;889;all;N/A;median;889;48;14795;5662;14.80;5.66
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;mar-20;568;145;all;N/A;median;145;52;3886;793;3.89;0.79
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Apr 2020;50195;12497;all;N/A;median;12497;40;13695;4673;13.70;4.67
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Apr 2020;24377;5609;all;N/A;median;5609;40;15721;4628;15.72;4.63
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Apr 2020;31356;7828;all;N/A;median;7828;49;10893;3407;10.89;3.41
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Apr 2020;5795;1326;all;N/A;median;1326;42;15224;5584;15.22;5.58
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Apr 2020;9287;2254;all;N/A;median;2254;48;16293;4940;16.29;4.94
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Apr 2020;5254;1016;all;N/A;median;1016;48;9729;4758;9.73;4.76
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Apr 2020;595;122;all;N/A;median;122;54;3896;793;3.90;0.79
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;may-20;45090;11625;all;N/A;median;11625;39;16355;4894;16.36;4.89
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;may-20;29190;6157;all;N/A;median;6157;45;15359;5210;15.36;5.21
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;may-20;38173;9220;all;N/A;median;9220;49;11056;3995;11.06;4.00
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;may-20;7118;1995;all;N/A;median;1995;47;7434;2112;7.43;2.11
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;may-20;14221;2861;all;N/A;median;2861;51;14790;5173;14.79;5.17
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;may-20;7201;1323;all;N/A;median;1323;46;11311;4888;11.31;4.89
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;may-20;686;180;all;N/A;median;180;52;3783;807;3.78;0.81
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jun-20;41298;11280;all;N/A;median;11280;32;20187;5544;20.19;5.54
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jun-20;23066;4651;all;N/A;median;4651;34;20158;5230;20.16;5.23
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jun-20;31734;8668;all;N/A;median;8668;29;12105;4535;12.11;4.54
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jun-20;6378;1436;all;N/A;median;1436;42;19701;5753;19.70;5.75
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jun-20;8809;2302;all;N/A;median;2302;20;21389;5545;21.39;5.55
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jun-20;6343;1390;all;N/A;median;1390;27;16142;5912;16.14;5.91
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jun-20;448;110;all;N/A;median;110;54;4066;760;4.07;0.76
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jul-20;41266;11509;all;N/A;median;11509;33;20174;5453;20.17;5.45
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jul-20;21265;5232;all;N/A;median;5232;32;23121;5666;23.12;5.67
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jul-20;31721;9244;all;N/A;median;9244;29;13993;4770;13.99;4.77
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jul-20;7430;1587;all;N/A;median;1587;44;19238;5755;19.24;5.76
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jul-20;9749;2474;all;N/A;median;2474;19;24695;5741;24.70;5.74
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jul-20;9026;1578;all;N/A;median;1578;31;11736;5897;11.74;5.90
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jul-20;511;113;all;N/A;median;113;56;3838;770;3.84;0.77
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Aug 2020;44935;12058;all;N/A;median;12058;36;20133;5492;20.13;5.49
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Aug 2020;22071;5408;all;N/A;median;5408;34;22841;5420;22.84;5.42
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Aug 2020;35909;10286;all;N/A;median;10286;28;16400;5256;16.40;5.26
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Aug 2020;6075;1503;all;N/A;median;1503;39;23180;5935;23.18;5.94
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Aug 2020;9739;2425;all;N/A;median;2425;20;26210;5694;26.21;5.69
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Aug 2020;10391;1771;all;N/A;median;1771;32;14700;6095;14.70;6.10
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Aug 2020;219;74;all;N/A;median;74;60;3695;772;3.70;0.77
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;sep-20;41035;11571;all;N/A;median;11571;35;22054;5837;22.05;5.84
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;sep-20;26322;5865;all;N/A;median;5865;31;23433;5361;23.43;5.36
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;sep-20;30403;9415;all;N/A;median;9415;28;15791;5479;15.79;5.48
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;sep-20;5481;1537;all;N/A;median;1537;38;24643;5946;24.64;5.95
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;sep-20;9383;2256;all;N/A;median;2256;19;27920;5829;27.92;5.83
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;sep-20;5413;1383;all;N/A;median;1383;33;18413;6003;18.41;6.00
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;sep-20;484;130;all;N/A;median;130;74;3817;793;3.82;0.79
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;oct-20;38974;11135;all;N/A;median;11135;33;23191;5991;23.19;5.99
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;oct-20;22000;5157;all;N/A;median;5157;30;23908;5409;23.91;5.41
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;oct-20;27747;8559;all;N/A;median;8559;26;15890;5479;15.89;5.48
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;oct-20;5210;1517;all;N/A;median;1517;41;24174;6060;24.17;6.06
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;oct-20;8394;2207;all;N/A;median;2207;19;29347;5990;29.35;5.99
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;oct-20;4406;1175;all;N/A;median;1175;33;16485;6069;16.49;6.07
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;oct-20;534;130;all;N/A;median;130;121;3452;790;3.45;0.79
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;nov-20;36861;10383;all;N/A;median;10383;38;23434;6253;23.43;6.25
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;nov-20;16983;4869;all;N/A;median;4869;32;26185;5878;26.19;5.88
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;nov-20;27958;8005;all;N/A;median;8005;27;16454;5862;16.45;5.86
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;nov-20;5525;1450;all;N/A;median;1450;43;24527;6507;24.53;6.51
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;nov-20;7163;2143;all;N/A;median;2143;19;30037;6278;30.04;6.28
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;nov-20;4011;1178;all;N/A;median;1178;33;20753;6654;20.75;6.65
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;nov-20;361;112;all;N/A;median;112;104;4626;880;4.63;0.88
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Dec 2020;30184;8614;all;N/A;median;8614;39;24483;6441;24.48;6.44
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Dec 2020;13632;3932;all;N/A;median;3932;29;26478;5795;26.48;5.80
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Dec 2020;25048;7221;all;N/A;median;7221;26;16955;6256;16.96;6.26
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Dec 2020;3122;1059;all;N/A;median;1059;37;29102;6553;29.10;6.55
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Dec 2020;5899;1777;all;N/A;median;1777;18;29482;6479;29.48;6.48
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Dec 2020;3610;1042;all;N/A;median;1042;34;19918;6589;19.92;6.59
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Dec 2020;272;96;all;N/A;median;96;65;4662;830;4.66;0.83
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Jan 2021;35474;9565;all;N/A;median;9565;38;25902;6527;25.90;6.53
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Jan 2021;12296;3572;all;N/A;median;3572;28;26150;6132;26.15;6.13
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Jan 2021;26040;7455;all;N/A;median;7455;25;15526;5492;15.53;5.49
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Jan 2021;4520;1233;all;N/A;median;1233;38;27179;6567;27.18;6.57
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Jan 2021;7788;2172;all;N/A;median;2172;19;31040;6310;31.04;6.31
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Jan 2021;4237;1198;all;N/A;median;1198;33;19137;6779;19.14;6.78
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Jan 2021;301;103;all;N/A;median;103;56;4881;876;4.88;0.88
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;feb-21;38043;10446;all;N/A;median;10446;39;24999;6456;25.00;6.46
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;feb-21;15577;4173;all;N/A;median;4173;29;27279;6298;27.28;6.30
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;feb-21;29749;8476;all;N/A;median;8476;30;18367;6255;18.37;6.26
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;feb-21;6505;1683;all;N/A;median;1683;38;29580;6709;29.58;6.71
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;feb-21;8529;2188;all;N/A;median;2188;19;31214;6501;31.21;6.50
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;feb-21;4634;1285;all;N/A;median;1285;35;23392;7759;23.39;7.76
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;feb-21;502;136;all;N/A;median;136;63;4434;833;4.43;0.83
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;mar-21;37408;10614;all;N/A;median;10614;33;29333;6619;29.33;6.62
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;mar-21;19589;5459;all;N/A;median;5459;32;29056;6383;29.06;6.38
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;mar-21;26108;7860;all;N/A;median;7860;31;17784;6380;17.78;6.38
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;mar-21;5653;1544;all;N/A;median;1544;36;29740;6658;29.74;6.66
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;mar-21;8619;2290;all;N/A;median;2290;19;32417;6658;32.42;6.66
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;mar-21;4878;1323;all;N/A;median;1323;34;21311;6955;21.31;6.96
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;mar-21;377;129;all;N/A;median;129;56;4738;798;4.74;0.80
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Apr 2021;33493;10028;all;N/A;median;10028;34;30508;6610;30.51;6.61
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Apr 2021;20498;5765;all;N/A;median;5765;33;30597;6511;30.60;6.51
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Apr 2021;22027;6925;all;N/A;median;6925;29;18484;6529;18.48;6.53
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Apr 2021;5325;1480;all;N/A;median;1480;37;31391;6638;31.39;6.64
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Apr 2021;7482;2210;all;N/A;median;2210;19;32170;6622;32.17;6.62
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Apr 2021;5339;1233;all;N/A;median;1233;33;18589;6801;18.59;6.80
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Apr 2021;385;127;all;N/A;median;127;56;5241;804;5.24;0.80
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;may-21;34167;9939;all;N/A;median;9939;32;32981;7763;32.98;7.76
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;may-21;20158;5670;all;N/A;median;5670;32;31601;6523;31.60;6.52
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;may-21;26076;7382;all;N/A;median;7382;26;19620;6608;19.62;6.61
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;may-21;5724;1624;all;N/A;median;1624;38;35157;8047;35.16;8.05
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;may-21;7253;2144;all;N/A;median;2144;19;33835;7474;33.84;7.47
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;may-21;6867;1453;all;N/A;median;1453;32;14361;9081;14.36;9.08
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;may-21;351;138;all;N/A;median;138;57;4433;787;4.43;0.79
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jun-21;38346;10770;all;N/A;median;10770;30;37610;8410;37.61;8.41
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jun-21;19486;5212;all;N/A;median;5212;32;34264;7004;34.26;7.00
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jun-21;29200;8593;all;N/A;median;8593;22;29915;8519;29.92;8.52
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jun-21;5369;1493;all;N/A;median;1493;42;34666;8668;34.67;8.67
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jun-21;7633;2118;all;N/A;median;2118;19;35709;7679;35.71;7.68
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jun-21;5326;1391;all;N/A;median;1391;24;17364;9468;17.36;9.47
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jun-21;658;205;all;N/A;median;205;54;5342;863;5.34;0.86
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jul-21;36211;10418;all;N/A;median;10418;30;41525;9604;41.53;9.60
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jul-21;19994;5553;all;N/A;median;5553;32;42197;9155;42.20;9.16
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jul-21;30026;8719;all;N/A;median;8719;22;24622;8695;24.62;8.70
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jul-21;5105;1526;all;N/A;median;1526;42;39188;9423;39.19;9.42
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jul-21;8025;2316;all;N/A;median;2316;18;35682;8355;35.68;8.36
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jul-21;8445;1759;all;N/A;median;1759;25;26646;10905;26.65;10.91
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jul-21;575;217;all;N/A;median;217;59;4931;815;4.93;0.82
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Aug 2021;39272;11155;all;N/A;median;11155;28;39709;10276;39.71;10.28
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Aug 2021;17833;5263;all;N/A;median;5263;30;43448;9926;43.45;9.93
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Aug 2021;25828;7800;all;N/A;median;7800;22;29037;9183;29.04;9.18
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Aug 2021;4611;1455;all;N/A;median;1455;37;36457;9035;36.46;9.04
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Aug 2021;7894;2345;all;N/A;median;2345;18;38295;8877;38.30;8.88
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Aug 2021;9276;2068;all;N/A;median;2068;26;26381;11056;26.38;11.06
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Aug 2021;603;225;all;N/A;median;225;55;5390;786;5.39;0.79
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;sep-21;35096;10188;all;N/A;median;10188;26;44586;10490;44.59;10.49
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;sep-21;15576;4748;all;N/A;median;4748;30;44658;10093;44.66;10.09
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;sep-21;19617;6033;all;N/A;median;6033;22;33030;9938;33.03;9.94
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;sep-21;4140;1322;all;N/A;median;1322;35;37372;9760;37.37;9.76
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;sep-21;7570;2078;all;N/A;median;2078;17;42753;9748;42.75;9.75
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;sep-21;6028;1466;all;N/A;median;1466;23;26434;11007;26.43;11.01
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;sep-21;608;222;all;N/A;median;222;57;4899;788;4.90;0.79
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;oct-21;33003;9759;all;N/A;median;9759;25;46505;10538;46.51;10.54
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;oct-21;14970;4720;all;N/A;median;4720;29;49231;10388;49.23;10.39
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;oct-21;16031;5354;all;N/A;median;5354;21;37832;10460;37.83;10.46
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;oct-21;3794;1260;all;N/A;median;1260;35;43756;10419;43.76;10.42
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;oct-21;6746;2053;all;N/A;median;2053;18;44774;9878;44.77;9.88
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;oct-21;6770;1624;all;N/A;median;1624;23;30290;11070;30.29;11.07
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;oct-21;578;194;all;N/A;median;194;56;5219;803;5.22;0.80
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;nov-21;31422;9453;all;N/A;median;9453;26;45548;11010;45.55;11.01
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;nov-21;14444;4588;all;N/A;median;4588;29;51701;10902;51.70;10.90
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;nov-21;17261;5297;all;N/A;median;5297;21;36495;10908;36.50;10.91
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;nov-21;3629;1245;all;N/A;median;1245;35;41160;11011;41.16;11.01
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;nov-21;6274;1789;all;N/A;median;1789;17;45160;10761;45.16;10.76
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;nov-21;6501;1647;all;N/A;median;1647;23;38019;13942;38.02;13.94
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;nov-21;1054;353;all;N/A;median;353;32;8626;4498;8.63;4.50
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Dec 2021;26336;8356;all;N/A;median;8356;21;52038;12243;52.04;12.24
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Dec 2021;13916;4658;all;N/A;median;4658;29;55363;11102;55.36;11.10
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Dec 2021;25659;6183;all;N/A;median;6183;21;37610;11181;37.61;11.18
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Dec 2021;3602;1277;all;N/A;median;1277;34;50859;13496;50.86;13.50
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Dec 2021;5921;1868;all;N/A;median;1868;17;49487;11036;49.49;11.04
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Dec 2021;3856;1038;all;N/A;median;1038;23;30222;16653;30.22;16.65
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Dec 2021;1167;382;all;N/A;median;382;28;9327;4540;9.33;4.54
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Jan 2022;27857;8522;all;N/A;median;8522;25;49381;13740;49.38;13.74
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Jan 2022;14868;4381;all;N/A;median;4381;31;61005;14261;61.01;14.26
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Jan 2022;16803;5253;all;N/A;median;5253;21;42175;12494;42.18;12.49
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Jan 2022;3745;1182;all;N/A;median;1182;38;49544;15219;49.54;15.22
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Jan 2022;6032;1784;all;N/A;median;1784;18;49597;11089;49.60;11.09
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Jan 2022;5603;1445;all;N/A;median;1445;22;32664;19805;32.66;19.81
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Jan 2022;1078;371;all;N/A;median;371;22;9059;4645;9.06;4.65
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;feb-22;26347;8180;all;N/A;median;8180;23;52810;17305;52.81;17.31
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;feb-22;13553;3910;all;N/A;median;3910;29;64246;18384;64.25;18.38
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;feb-22;15976;4948;all;N/A;median;4948;21;43941;17097;43.94;17.10
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;feb-22;3220;1058;all;N/A;median;1058;35;50782;17351;50.78;17.35
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;feb-22;5398;1564;all;N/A;median;1564;18;47250;15942;47.25;15.94
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;feb-22;3401;994;all;N/A;median;994;22;36498;22093;36.50;22.09
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;feb-22;917;344;all;N/A;median;344;24;9187;4754;9.19;4.75
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;mar-22;26910;8040;all;N/A;median;8040;23;54199;19767;54.20;19.77
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;mar-22;14643;4156;all;N/A;median;4156;27;65643;19423;65.64;19.42
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;mar-22;17857;5178;all;N/A;median;5178;21;47485;19591;47.49;19.59
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;mar-22;3533;1169;all;N/A;median;1169;34;53495;20078;53.50;20.08
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;mar-22;6005;1882;all;N/A;median;1882;17;50063;18721;50.06;18.72
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;mar-22;4774;1235;all;N/A;median;1235;22;40681;22292;40.68;22.29
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;mar-22;1096;384;all;N/A;median;384;21;10874;4998;10.87;5.00
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Apr 2022;27326;7870;all;N/A;median;7870;22;57039;21220;57.04;21.22
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Apr 2022;15214;4162;all;N/A;median;4162;30;65673;21207;65.67;21.21
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Apr 2022;19960;5290;all;N/A;median;5290;23;45581;18937;45.58;18.94
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Apr 2022;3587;1127;all;N/A;median;1127;34;52510;21397;52.51;21.40
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Apr 2022;6582;1875;all;N/A;median;1875;18;53618;21496;53.62;21.50
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Apr 2022;5222;1193;all;N/A;median;1193;22;21220;18182;21.22;18.18
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Apr 2022;834;337;all;N/A;median;337;17;10116;4840;10.12;4.84
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;may-22;25610;7169;all;N/A;median;7169;25;53853;21850;53.85;21.85
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;may-22;13949;3853;all;N/A;median;3853;29;66092;21904;66.09;21.90
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;may-22;27495;5987;all;N/A;median;5987;26;37782;17130;37.78;17.13
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;may-22;2896;1030;all;N/A;median;1030;32;54398;23265;54.40;23.27
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;may-22;5883;1732;all;N/A;median;1732;18;55264;22046;55.26;22.05
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;may-22;3219;949;all;N/A;median;949;23;18210;15965;18.21;15.97
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;may-22;702;284;all;N/A;median;284;21;9145;4677;9.15;4.68
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jun-22;22383;6769;all;N/A;median;6769;23;59672;25026;59.67;25.03
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jun-22;13399;3851;all;N/A;median;3851;29;71097;24225;71.10;24.23
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jun-22;16270;4691;all;N/A;median;4691;23;54781;26595;54.78;26.60
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jun-22;2624;935;all;N/A;median;935;33;58246;25178;58.25;25.18
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jun-22;4656;1230;all;N/A;median;1230;17;50009;24402;50.01;24.40
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jun-22;4288;1076;all;N/A;median;1076;20;20963;20868;20.96;20.87
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jun-22;906;328;all;N/A;median;328;13;10982;4825;10.98;4.83
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jul-22;24368;7511;all;N/A;median;7511;22;64984;26882;64.98;26.88
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jul-22;13086;4057;all;N/A;median;4057;30;68602;24786;68.60;24.79
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jul-22;17007;4921;all;N/A;median;4921;27;58633;26783;58.63;26.78
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jul-22;2699;934;all;N/A;median;934;33;56085;26871;56.09;26.87
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jul-22;3218;825;all;N/A;median;825;15;51769;25507;51.77;25.51
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jul-22;4021;1038;all;N/A;median;1038;21;20156;20816;20.16;20.82
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jul-22;843;320;all;N/A;median;320;21;9739;4626;9.74;4.63
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Aug 2022;25417;7553;all;N/A;median;7553;21;71463;28783;71.46;28.78
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Aug 2022;13345;4039;all;N/A;median;4039;27;72279;25964;72.28;25.96
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Aug 2022;21501;5048;all;N/A;median;5048;26;50054;28224;50.05;28.22
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Aug 2022;2686;972;all;N/A;median;972;34;52232;28101;52.23;28.10
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Aug 2022;9123;3355;all;N/A;median;3355;10;94466;32506;94.47;32.51
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Aug 2022;3259;852;all;N/A;median;852;19;22386;23228;22.39;23.23
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Aug 2022;1070;336;all;N/A;median;336;15;9934;4749;9.93;4.75
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;sep-22;23212;6784;all;N/A;median;6784;21;66347;28953;66.35;28.95
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;sep-22;11923;3488;all;N/A;median;3488;24;75623;27824;75.62;27.82
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;sep-22;17469;4334;all;N/A;median;4334;20;66263;30264;66.26;30.26
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;sep-22;3121;825;all;N/A;median;825;32;55863;29656;55.86;29.66
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;sep-22;3641;868;all;N/A;median;868;14;46794;27332;46.79;27.33
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;sep-22;3445;876;all;N/A;median;876;20;26913;25760;26.91;25.76
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;sep-22;842;319;all;N/A;median;319;20;11030;4821;11.03;4.82
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;oct-22;22809;6848;all;N/A;median;6848;20;70196;29686;70.20;29.69
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;oct-22;12107;3592;all;N/A;median;3592;24;75343;28305;75.34;28.31
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;oct-22;16929;4431;all;N/A;median;4431;20;51639;29038;51.64;29.04
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;oct-22;2723;906;all;N/A;median;906;33;60616;29753;60.62;29.75
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;oct-22;3052;795;all;N/A;median;795;14;49775;26804;49.78;26.80
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;oct-22;3571;961;all;N/A;median;961;22;35751;29411;35.75;29.41
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;oct-22;873;298;all;N/A;median;298;18;11214;4905;11.21;4.91
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;nov-22;21459;6539;all;N/A;median;6539;22;66271;29171;66.27;29.17
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;nov-22;10765;3438;all;N/A;median;3438;23;81918;28387;81.92;28.39
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;nov-22;15331;4337;all;N/A;median;4337;20;62030;30586;62.03;30.59
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;nov-22;2383;835;all;N/A;median;835;32;65066;29228;65.07;29.23
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;nov-22;2810;684;all;N/A;median;684;14;59625;28832;59.63;28.83
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;nov-22;3104;778;all;N/A;median;778;21;42876;32741;42.88;32.74
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;nov-22;586;234;all;N/A;median;234;15;11884;4892;11.88;4.89
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Dec 2022;21389;6303;all;N/A;median;6303;23;65109;29306;65.11;29.31
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Dec 2022;10385;3319;all;N/A;median;3319;22;79188;27625;79.19;27.63
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Dec 2022;12736;3723;all;N/A;median;3723;18;64168;31313;64.17;31.31
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Dec 2022;2127;795;all;N/A;median;795;33;64696;28633;64.70;28.63
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Dec 2022;2567;627;all;N/A;median;627;15;48506;27487;48.51;27.49
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Dec 2022;2731;781;all;N/A;median;781;20;37570;32637;37.57;32.64
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Dec 2022;858;319;all;N/A;median;319;12;12798;4820;12.80;4.82
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Jan 2023;22339;6872;all;N/A;median;6872;25;71633;28525;71.63;28.53
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Jan 2023;11790;3602;all;N/A;median;3602;22;83933;28086;83.93;28.09
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Jan 2023;13720;3801;all;N/A;median;3801;19;62853;30641;62.85;30.64
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Jan 2023;2506;849;all;N/A;median;849;33;73308;28416;73.31;28.42
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Jan 2023;3065;723;all;N/A;median;723;14;42160;25231;42.16;25.23
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Jan 2023;4227;906;all;N/A;median;906;22;29429;33083;29.43;33.08
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Jan 2023;889;310;all;N/A;median;310;8;12565;4874;12.57;4.87
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;feb-23;22136;6887;all;N/A;median;6887;24;76477;29573;76.48;29.57
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;feb-23;10490;3474;all;N/A;median;3474;22;84276;28446;84.28;28.45
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;feb-23;13484;3939;all;N/A;median;3939;18;69687;31549;69.69;31.55
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;feb-23;2614;904;all;N/A;median;904;33;66166;28411;66.17;28.41
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;feb-23;3053;836;all;N/A;median;836;14;47243;26588;47.24;26.59
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;feb-23;2145;589;all;N/A;median;589;24;43130;31571;43.13;31.57
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;feb-23;915;341;all;N/A;median;341;6;14595;5040;14.60;5.04
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;mar-23;25923;7837;all;N/A;median;7837;23;78051;29864;78.05;29.86
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;mar-23;12286;3880;all;N/A;median;3880;22;82725;28683;82.73;28.68
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;mar-23;16327;4615;all;N/A;median;4615;19;82351;31496;82.35;31.50
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;mar-23;3017;985;all;N/A;median;985;32;61122;28692;61.12;28.69
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;mar-23;2957;798;all;N/A;median;798;14;49230;26389;49.23;26.39
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;mar-23;2794;648;all;N/A;median;648;23;64403;32387;64.40;32.39
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;mar-23;1014;373;all;N/A;median;373;7;17452;5188;17.45;5.19
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Apr 2023;21663;6900;all;N/A;median;6900;23;80890;31591;80.89;31.59
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Apr 2023;10791;3556;all;N/A;median;3556;19;90667;30630;90.67;30.63
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Apr 2023;15270;4423;all;N/A;median;4423;18;81124;32643;81.12;32.64
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Apr 2023;2189;788;all;N/A;median;788;33;58626;29462;58.63;29.46
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Apr 2023;2493;786;all;N/A;median;786;14;42563;27806;42.56;27.81
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Apr 2023;1945;500;all;N/A;median;500;24;61338;32560;61.34;32.56
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Apr 2023;911;372;all;N/A;median;372;6;18964;5119;18.96;5.12
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;may-23;23260;7041;all;N/A;median;7041;23;81661;32063;81.66;32.06
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;may-23;10226;3344;all;N/A;median;3344;21;94624;30988;94.62;30.99
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;may-23;16490;4665;all;N/A;median;4665;20;76629;33033;76.63;33.03
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;may-23;2084;774;all;N/A;median;774;34;66052;28179;66.05;28.18
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;may-23;2808;752;all;N/A;median;752;14;34951;25123;34.95;25.12
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;may-23;2117;501;all;N/A;median;501;24;53431;32800;53.43;32.80
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;may-23;966;382;all;N/A;median;382;4;17922;5188;17.92;5.19
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jun-23;24046;6672;all;N/A;median;6672;24;86616;32290;86.62;32.29
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jun-23;10662;3376;all;N/A;median;3376;22;93948;31510;93.95;31.51
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jun-23;14158;3903;all;N/A;median;3903;19;85349;32645;85.35;32.65
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jun-23;2094;769;all;N/A;median;769;33;71515;30015;71.52;30.02
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jun-23;2879;813;all;N/A;median;813;15;47568;26287;47.57;26.29
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jun-23;1470;406;all;N/A;median;406;23;59645;32741;59.65;32.74
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jun-23;1291;467;all;N/A;median;467;4;20297;5275;20.30;5.28
