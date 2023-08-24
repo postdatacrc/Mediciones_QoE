@@ -240,6 +240,7 @@ Ciudades3Fijo['year']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).year
 Ciudades3Fijo['month']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).month
 Ciudades3Fijo=Ciudades3Fijo.drop(['Device','Platform','Technology Type','Metric Type','Provider'], axis=1)
 Ciudades3Fijo=Ciudades3Fijo.rename(columns={'Minimum Latency':'Latency'})
+Ciudades3Fijo['Location']=Ciudades3Fijo['Location'].replace({'San José Del Guaviare':'San José<br>Del Guaviare'},regex=True)
 
 
 ####Cuarta sección - Fijo
@@ -486,24 +487,49 @@ if select_servicio == 'Internet fijo':
                     Mes_opFijoDer = st.selectbox('Escoja el mes de 2023 para el panel de la derecha',['Enero','Febrero','Marzo','Abril','Mayo','Junio'],index=5)           
                     mesDer=mes_opFijoNombre[Mes_opFijoDer]
                 name_mes2={1:'Enero',2:'Febrero',3:'Marzo',4:'Abril',5:'Mayo',6:'Junio',7:'Julio',8:'Agosto',9:'Septiembre',10:'Octubre',11:'Noviembre',12:'Diciembre'}
-                DicIz=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==Año_opFijoIz)&(Ciudades3Fijo['month']==mesIz)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
-                DicDer=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2023)&(Ciudades3Fijo['month']==mesDer)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
+                DicIz=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==Año_opFijoIz)&(Ciudades3Fijo['month']==mesIz)&(Ciudades3Fijo['Latency']<100)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
+                DicDer=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2023)&(Ciudades3Fijo['month']==mesDer)&(Ciudades3Fijo['Latency']<100)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
                 DicIzList=DicIz['Location'].unique().tolist()
                 DicDerList=DicDer['Location'].unique().tolist()
                 if 'Colombia' in DicIzList:
                     DicIzList.remove('Colombia')
                 if 'Colombia' in DicDerList:
                     DicDerList.remove('Colombia')            
-                dict_coloresFijo={'Bucaramanga':'rgb(255,128,0)','Bogotá':'rgb(255,0,0)','Cali':'rgb(255,255,0)',
-                     'Medellín':'rgb(128,255,0)','Barranquilla':'rgb(0,255,0)','Cartagena':'rgb(0,255,128)',
-                     'Villavicencio':'rgb(255,102,102)','Ibagué':'rgb(0,128,255)','Manizales':'rgb(0,0,255)',
-                     'Tunja':'rgb(127,0,255)','Pasto':'rgb(255,0,255)','Santa Marta':'rgb(255,0,127)',
-                     'Sincelejo':'rgb(128,128,128)','Armenia':'rgb(102,0,0)','Montería':'rgb(0,255,255)',
-                     'Pereira':'rgb(0,51,51)','Popayán':'rgb(51,0,25)','Cúcuta': 'rgb(0, 204, 102)','Neiva': 'rgb(255, 102, 0)',
-                     'Valledupar': 'rgb(102, 102, 255)','Riohacha': 'rgb(255, 153, 204)','Arauca': 'rgb(0, 153, 153)',
-                     'Yopal': 'rgb(255, 204, 0)','Florencia': 'rgb(153, 51, 255)'}
+                dict_coloresFijo = {
+                    'Bucaramanga': 'rgb(255,128,0)',
+                    'Bogotá': 'rgb(255,0,0)',
+                    'Cali': 'rgb(255,255,0)',
+                    'Medellín': 'rgb(128,255,0)',
+                    'Barranquilla': 'rgb(0,255,0)',
+                    'Cartagena': 'rgb(0,255,128)',
+                    'Villavicencio': 'rgb(255,102,102)',
+                    'Ibagué': 'rgb(0,128,255)',
+                    'Manizales': 'rgb(0,0,255)',
+                    'Tunja': 'rgb(127,0,255)',
+                    'Pasto': 'rgb(255,0,255)',
+                    'Santa Marta': 'rgb(255,0,127)',
+                    'Sincelejo': 'rgb(128,128,128)',
+                    'Armenia': 'rgb(102,0,0)',
+                    'Montería': 'rgb(0,255,255)',
+                    'Pereira': 'rgb(0,51,51)',
+                    'Popayán': 'rgb(51,0,25)',
+                    'Cúcuta': 'rgb(0, 204, 102)',
+                    'Neiva': 'rgb(255, 102, 0)',
+                    'Valledupar': 'rgb(102, 102, 255)',
+                    'Riohacha': 'rgb(255, 153, 204)',
+                    'Arauca': 'rgb(0, 153, 153)',
+                    'Yopal': 'rgb(255, 204, 0)',
+                    'Florencia': 'rgb(153, 51, 255)',
+                    'San José<br>Del Guaviare': 'rgb(204, 204, 204)',
+                    'San Andrés': 'rgb(204, 0, 204)',
+                    'Quibdo': 'rgb(255, 204, 153)',
+                    'Puerto Carreño':'rgb(192,192,192)',
+                    'Leticia':'rgb(0,0,0)',
+                     'Mitú':'rgb(0,100,0)',
+                    'Inírida':'rgb(132,142,124)'
+                    }
                 fig4Fijo = make_subplots(rows=1, cols=2,subplot_titles=(Mes_opFijoIz+' '+str(Año_opFijoIz),
-                Mes_opFijoDer+" 2022"))
+                Mes_opFijoDer+" 2023"))
 
                 for location in DicIzList:
                     fig4Fijo.add_trace(go.Scatter(
@@ -512,7 +538,7 @@ if select_servicio == 'Internet fijo':
                         marker=dict(
                             color=dict_coloresFijo[location],
                             opacity=0.7,
-                            size=DicIz[DicIz['Location']==location]['Latency'].values,
+                            size=2*DicIz[DicIz['Location']==location]['Latency'].values,
                         ),
                     text=DicIz[DicIz['Location']==location]['Latency'].values,showlegend=False,hovertemplate='<b>Ciudad:</b>'+location+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad carga:</b>%{y:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=1)
                     
@@ -523,7 +549,7 @@ if select_servicio == 'Internet fijo':
                         marker=dict(
                             color=dict_coloresFijo[location],
                             opacity=0.7,
-                            size=DicDer[DicDer['Location']==location]['Latency'].values,
+                            size=2*DicDer[DicDer['Location']==location]['Latency'].values,
                         ),
                     text=DicDer[DicDer['Location']==location]['Latency'].values,hovertemplate='<b>Ciudad:</b>'+location+'<br>'+'<b>Velocidad descarga:</b>%{x:.2f} Mbps<extra></extra>'+'<br>'+'<b>Velocidad carga:</b>%{y:.2f} Mbps'+'<br>'+'<b>Latencia:</b>%{text} ms'),row=1, col=2)
 
@@ -550,8 +576,17 @@ if select_servicio == 'Internet fijo':
                 fig4Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2023/1S. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                font=dict(size=10), xref='x domain',x=0.2,yref='y domain',y=-0.16)            
+                font=dict(size=10), xref='x domain',x=0.33,yref='y domain',y=-0.16)            
                 st.plotly_chart(fig4Fijo, use_container_width=True)
+
+                DicIz_maxLat=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==Año_opFijoIz)&(Ciudades3Fijo['month']==mesIz)&(Ciudades3Fijo['Latency']>=100)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
+                DicDer_maxLat=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2023)&(Ciudades3Fijo['month']==mesDer)&(Ciudades3Fijo['Latency']>=100)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
+                listDicIz_maxLat=DicIz_maxLat[['Location','Latency']].values.tolist()
+                resultDicIz_maxLat = [f'{item[0]} ({item[1]} ms)' for item in listDicIz_maxLat]
+                listDicDer_maxLat=DicDer_maxLat[['Location','Latency']].values.tolist()
+                resultDicDer_maxLat = [f'{item[0]} ({item[1]} ms)' for item in listDicDer_maxLat]
+                st.markdown(f"""<b>Nota</b>: Las ciudades exlcuidas de la gráfica para el periodo {Año_opFijoIz}-{mesIz} son: {resultDicIz_maxLat}.<br>
+                            Para el periodo 2023-{mesDer} estas son: {resultDicDer_maxLat}""",unsafe_allow_html=True)
             
         if dimension_Vel_descarga_Fijo == 'Operadores': 
             TodosDescarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Download Speed Mbps'].mean().reset_index()
@@ -1116,7 +1151,7 @@ if select_servicio == 'Internet fijo':
 
             fig7Fijo.update_xaxes(tickangle=-90, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
-            fig7Fijo.update_yaxes(range=[0,max(DepJoinB3['2022'].values.tolist())+5],tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text="Velocidad carga promedio (Mbps)",ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            fig7Fijo.update_yaxes(range=[0,max(DepJoinB3['2023'].values.tolist())+5],tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text="Velocidad carga promedio (Mbps)",ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig7Fijo.update_traces(textfont_size=22)
             fig7Fijo.update_layout(height=600,width=1200,legend_title=None)
@@ -1592,7 +1627,7 @@ if select_servicio == 'Internet fijo':
 
             fig10Fijo.update_xaxes(tickangle=-90, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
-            fig10Fijo.update_yaxes(range=[0,85],tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text="Latencia (ms)",ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+            fig10Fijo.update_yaxes(range=[0,100],tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text="Latencia (ms)",ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
             zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
             fig10Fijo.update_traces(textfont_size=22)
             fig10Fijo.update_layout(height=600,width=1200,legend_title=None)
