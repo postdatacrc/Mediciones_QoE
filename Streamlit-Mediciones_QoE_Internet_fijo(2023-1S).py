@@ -280,6 +280,20 @@ Colombia2Fijo['Location'] = Colombia2Fijo['Location'].str.upper()
 Colombia2Fijo['Location'] = Colombia2Fijo['Location'].replace({'SANTANDER DEPARTMENT':'SANTANDER','CAUCA DEPARTMENT':'CAUCA','SAN ANDRÉS AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA','NORTH SANTANDER':'NORTE DE SANTANDER','CAQUETÁ':'CAQUETA'})
 Colombia2Fijo=Colombia2Fijo[Colombia2Fijo['Test Count']>30]
 Colombia2Fijo=Colombia2Fijo.rename(columns={'Minimum Latency':'Latency'})
+##
+def DataMuni2023():
+    datamuni2023=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/2023/Fijo/CRC_Fixed_Aggs_Monthly_2023.csv',delimiter=',')
+    datamuni2023=datamuni2023.rename(columns={'name':'DESC_MUNICIPIO'})
+    datamuni2023['DESC_MUNICIPIO']=datamuni2023['DESC_MUNICIPIO'].str.upper()
+    return datamuni2023
+datamuni2023=DataMuni2023()
+CapDep=['LETICIA','MEDELLIN','ARAUCA','BARRANQUILLA','BOGOTA','CARTAGENA','TUNJA','MANIZALES','FLORENCIA','YOPAL','POPAYÁN',
+            'VALLEDUPAR','QUIBDÓ','MONTERÍA','INÍRIDA','SAN JOSÉ DEL GUAVIARE','NEIVA','RIOHACHA','SANTA MARTA','VILLAVICENCIO',
+            'PASTO','CUCUTA','MOCOA','ARMENIA','PEREIRA','SAN ANDRÉS','BUCARAMANGA','SINCELEJO','IBAGUE','CALI','MITÚ',
+            'PUERTO CARREÑO']
+datamuni2023=datamuni2023[datamuni2023['DESC_MUNICIPIO'].isin(CapDep)]
+datamuni2023=datamuni2023[(datamuni2023['connection_type']=='All Fixed')&(datamuni2023['aggregate_date']<'2023-07-01')].groupby(['aggregate_date','DESC_MUNICIPIO','provider']).agg({'median_download_mbps':'mean','median_upload_mbps':'mean','median_latency_ms':'mean'}).reset_index()
+dict_colores_op={'Claro':'red','Tigo':'rgb(153,51,255)','ETB':'rgb(0,153,153)','Movistar':'rgb(51,255,51)','All combined':'black'}
 
 
 if select_servicio == 'Internet fijo':
@@ -397,7 +411,7 @@ if select_servicio == 'Internet fijo':
                         st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2023</i></p> """,unsafe_allow_html=True)
                 
         if dimension_Vel_descarga_Fijo == 'Ciudades':  
-            tab1,tab2=st.tabs(["Comparación anual","Diagrama de dispersión"])
+            tab1,tab2,tab3=st.tabs(["Comparación anual","Diagrama de dispersión","Información por operadores"])
             with tab1:
                 col1, col2,col3= st.columns(3)
                 mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
@@ -587,7 +601,43 @@ if select_servicio == 'Internet fijo':
                 resultDicDer_maxLat = [f'{item[0]} ({item[1]} ms)' for item in listDicDer_maxLat]
                 st.markdown(f"""<b>Nota</b>: Las ciudades exlcuidas de la gráfica para el periodo {Año_opFijoIz}-{mesIz} son: {resultDicIz_maxLat}.<br>
                             Para el periodo 2023-{mesDer} estas son: {resultDicDer_maxLat}""",unsafe_allow_html=True)
-            
+
+            with tab3:
+                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',CapDep,4)
+                datamuni2023_cap=datamuni2023[(datamuni2023['DESC_MUNICIPIO']==select_capdep)].sort_values(by='aggregate_date')
+
+                fig_muniOp=go.Figure()
+                for op in datamuni2023_cap['provider'].unique():
+                    if op not in dict_colores_op.keys():
+                        color_op='rgb(192,192,192)'
+                    else:
+                        color_op=dict_colores_op[op]
+                    df_muniOp=datamuni2023_cap[datamuni2023_cap['provider']==op]
+                    fig_muniOp.add_trace(go.Scatter(x=df_muniOp['aggregate_date'],y=df_muniOp['median_download_mbps'],mode='lines+markers',name=op,marker_color=color_op
+                    ))
+                    
+                    fig_muniOp.update_xaxes(tickangle=0, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
+                    zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+                    fig_muniOp.update_yaxes(tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text='Velocidad (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+                    zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+                    fig_muniOp.update_traces(textfont_size=18)
+                    fig_muniOp.update_layout(height=500,legend_title=None,font=dict(size=18))
+                    fig_muniOp.update_layout(legend=dict(orientation="h",y=1.1,x=0.35),showlegend=True)
+                    fig_muniOp.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+                    fig_muniOp.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=14,
+                    title={
+                    'text': f"<b>Velocidad mensual de descarga de Internet fijo por proveedor ({select_capdep}) </b>",
+                    'y':0.95,
+                    'x':0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top'})  
+                    fig_muniOp.update_xaxes(tickvals=['2023-01-01','2023-02-01','2023-03-01','2023-04-01','2023-05-01','2023-06-01'])
+                    fig_muniOp.add_annotation(
+                    showarrow=False,
+                    text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2023/1S. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+                    font=dict(size=10), xref='paper',yref='y domain',y=-0.25)                     
+                st.plotly_chart(fig_muniOp, use_container_width=True)     
+                
         if dimension_Vel_descarga_Fijo == 'Operadores': 
             TodosDescarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Download Speed Mbps'].mean().reset_index()
             TodosDescarga4Fijo['Aggregate Date']=TodosDescarga4Fijo['Aggregate Date'].astype('str')
@@ -1095,82 +1145,120 @@ if select_servicio == 'Internet fijo':
                         st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022</i></p> """,unsafe_allow_html=True)
 
         if dimension_Vel_carga_Fijo == 'Ciudades':    
-            col1, col2,col3= st.columns(3)
-            mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
-            with col2:
-                mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
-            mes=mes_opFijoNombre[mes_opFijo] 
-            
-            df19B3=pd.DataFrame();df20B3=pd.DataFrame();df21B3=pd.DataFrame();df22B3=pd.DataFrame();df23B3=pd.DataFrame()
-            p19B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
-            p20B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
-            p21B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
-            p22B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2022)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
-            p23B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2023)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
-            df19B3['Location']=p19B3.index;df19B3['2019']=p19B3.values;
-            df20B3['Location']=p20B3.index;df20B3['2020']=p20B3.values;
-            df21B3['Location']=p21B3.index;df21B3['2021']=p21B3.values;
-            df22B3['Location']=p22B3.index;df22B3['2022']=p22B3.values;
-            df23B3['Location']=p23B3.index;df23B3['2023']=p23B3.values;
-            from functools import reduce
-            DepJoinB3=reduce(lambda x,y: pd.merge(x,y, on='Location', how='outer'), [df19B3,df20B3,df21B3,df22B3,df23B3]).set_index('Location')
-            DepJoinB3=DepJoinB3.round(2).reset_index()
-            DepJoinB3 = DepJoinB3[DepJoinB3.Location != 'Colombia']
-            DepJoinB3 = DepJoinB3.sort_values(by=['2023'],ascending=False)
-            DepJoinB3['relatGrow']=100*(DepJoinB3['2023']-DepJoinB3['2022'])/DepJoinB3['2022']
-            DepJoinB3['absGrow']=DepJoinB3['2023']-DepJoinB3['2022']
-            DepJoinBcopy3=DepJoinB3.copy()
-            DepJoinBcopy3['2019']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2019'],1).astype(str)]
-            DepJoinBcopy3['2020']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2020'],1).astype(str)]
-            DepJoinBcopy3['2021']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2021'],1).astype(str)]
-            DepJoinBcopy3['2022']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2022'],1).astype(str)]
-            DepJoinBcopy3['2023']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2023'],1).astype(str)]
-            name_mes={1:'Ene',2:'Feb',3:'Mar',4:'Abr',5:'May',6:'Jun',7:'Jul',8:'Ago',9:'Sep',10:'Oct',11:'Nov',12:'Dic'}
-            
-            fig7Fijo = go.Figure()
-            fig7Fijo.add_trace(go.Bar(
-                x=DepJoinB3['Location'],
-                y=DepJoinB3['2020'],
-                name=mes_opFijo+' 2020',
-                marker_color='rgb(213,3,85)'))
-            fig7Fijo.add_trace(go.Bar(
-                x=DepJoinB3['Location'],
-                y=DepJoinB3['2021'],
-                name=mes_opFijo+' 2021',
-                marker_color='rgb(255,152,0)'))
-            fig7Fijo.add_trace(go.Bar(
-                x=DepJoinB3['Location'],
-                y=DepJoinB3['2022'],
-                name=mes_opFijo+' 2022',
-                marker_color='rgb(44,198,190)'))
-            fig7Fijo.add_trace(go.Bar(
-                x=DepJoinB3['Location'],
-                y=DepJoinB3['2023'],
-                name=mes_opFijo+' 2023',
-                marker_color='rgb(72,68,242)'))
+            tab1,tab2=st.tabs(["Comparación anual","Información por operadores"])
+            with tab1:
+                col1, col2,col3= st.columns(3)
+                mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
+                with col2:
+                    mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                mes=mes_opFijoNombre[mes_opFijo] 
+                
+                df19B3=pd.DataFrame();df20B3=pd.DataFrame();df21B3=pd.DataFrame();df22B3=pd.DataFrame();df23B3=pd.DataFrame()
+                p19B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+                p20B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+                p21B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+                p22B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2022)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+                p23B3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2023)&(Ciudades3Fijo['month']==mes),['Location','Upload Speed Mbps']]).groupby(['Location'])['Upload Speed Mbps'].mean()
+                df19B3['Location']=p19B3.index;df19B3['2019']=p19B3.values;
+                df20B3['Location']=p20B3.index;df20B3['2020']=p20B3.values;
+                df21B3['Location']=p21B3.index;df21B3['2021']=p21B3.values;
+                df22B3['Location']=p22B3.index;df22B3['2022']=p22B3.values;
+                df23B3['Location']=p23B3.index;df23B3['2023']=p23B3.values;
+                from functools import reduce
+                DepJoinB3=reduce(lambda x,y: pd.merge(x,y, on='Location', how='outer'), [df19B3,df20B3,df21B3,df22B3,df23B3]).set_index('Location')
+                DepJoinB3=DepJoinB3.round(2).reset_index()
+                DepJoinB3 = DepJoinB3[DepJoinB3.Location != 'Colombia']
+                DepJoinB3 = DepJoinB3.sort_values(by=['2023'],ascending=False)
+                DepJoinB3['relatGrow']=100*(DepJoinB3['2023']-DepJoinB3['2022'])/DepJoinB3['2022']
+                DepJoinB3['absGrow']=DepJoinB3['2023']-DepJoinB3['2022']
+                DepJoinBcopy3=DepJoinB3.copy()
+                DepJoinBcopy3['2019']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2019'],1).astype(str)]
+                DepJoinBcopy3['2020']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2020'],1).astype(str)]
+                DepJoinBcopy3['2021']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2021'],1).astype(str)]
+                DepJoinBcopy3['2022']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2022'],1).astype(str)]
+                DepJoinBcopy3['2023']=[x.replace('.', ',') for x in round(DepJoinBcopy3['2023'],1).astype(str)]
+                name_mes={1:'Ene',2:'Feb',3:'Mar',4:'Abr',5:'May',6:'Jun',7:'Jul',8:'Ago',9:'Sep',10:'Oct',11:'Nov',12:'Dic'}
+                
+                fig7Fijo = go.Figure()
+                fig7Fijo.add_trace(go.Bar(
+                    x=DepJoinB3['Location'],
+                    y=DepJoinB3['2020'],
+                    name=mes_opFijo+' 2020',
+                    marker_color='rgb(213,3,85)'))
+                fig7Fijo.add_trace(go.Bar(
+                    x=DepJoinB3['Location'],
+                    y=DepJoinB3['2021'],
+                    name=mes_opFijo+' 2021',
+                    marker_color='rgb(255,152,0)'))
+                fig7Fijo.add_trace(go.Bar(
+                    x=DepJoinB3['Location'],
+                    y=DepJoinB3['2022'],
+                    name=mes_opFijo+' 2022',
+                    marker_color='rgb(44,198,190)'))
+                fig7Fijo.add_trace(go.Bar(
+                    x=DepJoinB3['Location'],
+                    y=DepJoinB3['2023'],
+                    name=mes_opFijo+' 2023',
+                    marker_color='rgb(72,68,242)'))
 
-            fig7Fijo.update_xaxes(tickangle=-90, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
-            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
-            fig7Fijo.update_yaxes(range=[0,max(DepJoinB3['2023'].values.tolist())+5],tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text="Velocidad carga promedio (Mbps)",ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
-            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
-            fig7Fijo.update_traces(textfont_size=22)
-            fig7Fijo.update_layout(height=600,width=1200,legend_title=None)
-            fig7Fijo.update_layout(legend=dict(orientation="h",y=1.1,xanchor='center',x=0.5))
-            fig7Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-            fig7Fijo.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18,font=dict(size=18),
-            title={
-            'text': "<b>Velocidad anual de carga de Internet fijo por ciudad<br> (2020-2023/1S)</b>",
-            'y':0.95,
-            'x':0.5,
-            'xanchor': 'center',
-            'yanchor': 'top'})  
-            fig7Fijo.update_layout(barmode='group')
-            fig7Fijo.update_layout(uniformtext_minsize=22, uniformtext_mode='show')
-            fig7Fijo.add_annotation(
-            showarrow=False,
-            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2020 - 2023/1S. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-            font=dict(size=10), xref='x domain',x=0.1,yref='y domain',y=-0.5)             
-            st.plotly_chart(fig7Fijo, use_container_width=True)  
+                fig7Fijo.update_xaxes(tickangle=-90, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+                zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+                fig7Fijo.update_yaxes(range=[0,max(DepJoinB3['2023'].values.tolist())+5],tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text="Velocidad carga promedio (Mbps)",ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+                zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+                fig7Fijo.update_traces(textfont_size=22)
+                fig7Fijo.update_layout(height=600,width=1200,legend_title=None)
+                fig7Fijo.update_layout(legend=dict(orientation="h",y=1.1,xanchor='center',x=0.5))
+                fig7Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+                fig7Fijo.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18,font=dict(size=18),
+                title={
+                'text': "<b>Velocidad anual de carga de Internet fijo por ciudad<br> (2020-2023/1S)</b>",
+                'y':0.95,
+                'x':0.5,
+                'xanchor': 'center',
+                'yanchor': 'top'})  
+                fig7Fijo.update_layout(barmode='group')
+                fig7Fijo.update_layout(uniformtext_minsize=22, uniformtext_mode='show')
+                fig7Fijo.add_annotation(
+                showarrow=False,
+                text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2020 - 2023/1S. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+                font=dict(size=10), xref='x domain',x=0.1,yref='y domain',y=-0.5)             
+                st.plotly_chart(fig7Fijo, use_container_width=True)  
+            
+            with tab2:    
+                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',CapDep,4)
+                datamuni2023_cap=datamuni2023[(datamuni2023['DESC_MUNICIPIO']==select_capdep)].sort_values(by='aggregate_date')
+
+                fig_muniOp=go.Figure()
+                for op in datamuni2023_cap['provider'].unique():
+                    if op not in dict_colores_op.keys():
+                        color_op='rgb(192,192,192)'
+                    else:
+                        color_op=dict_colores_op[op]
+                    df_muniOp=datamuni2023_cap[datamuni2023_cap['provider']==op]
+                    fig_muniOp.add_trace(go.Scatter(x=df_muniOp['aggregate_date'],y=df_muniOp['median_upload_mbps'],mode='lines+markers',name=op,marker_color=color_op
+                    ))
+                    
+                    fig_muniOp.update_xaxes(tickangle=0, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
+                    zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+                    fig_muniOp.update_yaxes(tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text='Velocidad (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+                    zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+                    fig_muniOp.update_traces(textfont_size=18)
+                    fig_muniOp.update_layout(height=500,legend_title=None,font=dict(size=18))
+                    fig_muniOp.update_layout(legend=dict(orientation="h",y=1.1,x=0.35),showlegend=True)
+                    fig_muniOp.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+                    fig_muniOp.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=14,
+                    title={
+                    'text': f"<b>Velocidad mensual de carga de Internet fijo por proveedor ({select_capdep}) </b>",
+                    'y':0.95,
+                    'x':0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top'})  
+                    fig_muniOp.update_xaxes(tickvals=['2023-01-01','2023-02-01','2023-03-01','2023-04-01','2023-05-01','2023-06-01'])
+                    fig_muniOp.add_annotation(
+                    showarrow=False,
+                    text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2023/1S. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+                    font=dict(size=10), xref='paper',yref='y domain',y=-0.25)                     
+                st.plotly_chart(fig_muniOp, use_container_width=True)     
             
         if dimension_Vel_carga_Fijo == 'Operadores':   
             TodosCarga4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Upload Speed Mbps'].mean().reset_index()
@@ -1577,75 +1665,113 @@ if select_servicio == 'Internet fijo':
                         st.markdown(r"""<p style=font-size:10px><i>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022.<br> Los puntos rojos indican la posición de los servidores de prueba en 2021.</i></p> """,unsafe_allow_html=True)
 
         if dimension_Latencia_Fijo == 'Ciudades':    
-            col1, col2,col3= st.columns(3)
-            mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
-            with col2:
-                mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
-            mes=mes_opFijoNombre[mes_opFijo] 
-            
-            df19C3=pd.DataFrame();df20C3=pd.DataFrame();df21C3=pd.DataFrame();df22C3=pd.DataFrame();df23C3=pd.DataFrame()
-            p19C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
-            p20C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
-            p21C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
-            p22C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2022)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
-            p23C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2023)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
-            df19C3['Location']=p19C3.index;df19C3['2019']=p19C3.values;
-            df20C3['Location']=p20C3.index;df20C3['2020']=p20C3.values;
-            df21C3['Location']=p21C3.index;df21C3['2021']=p21C3.values;
-            df22C3['Location']=p22C3.index;df22C3['2022']=p22C3.values;
-            df23C3['Location']=p23C3.index;df23C3['2023']=p23C3.values;
-            from functools import reduce
-            DepJoinC3=reduce(lambda x,y: pd.merge(x,y, on='Location', how='outer'), [df19C3,df20C3,df21C3,df22C3,df23C3]).set_index('Location')
-            DepJoinC3=DepJoinC3.round(2).reset_index()
-            DepJoinC3 = DepJoinC3[DepJoinC3.Location != 'Colombia']
-            DepJoinC3 = DepJoinC3.sort_values(by=['2023'],ascending=True)
-            DepJoinC3['relatGrow']=100*(DepJoinC3['2023']-DepJoinC3['2022'])/DepJoinC3['2022']
-            DepJoinC3['absGrow']=DepJoinC3['2023']-DepJoinC3['2022']
-            name_mes={1:'Ene',2:'Feb',3:'Mar',4:'Abr',5:'May',6:'Jun',7:'Jul',8:'Ago',9:'Sep',10:'Oct',11:'Nov',12:'Dic'}            
-            fig10Fijo = go.Figure()
-            fig10Fijo.add_trace(go.Bar(
-                x=DepJoinC3['Location'],
-                y=DepJoinC3['2020'],
-                name=mes_opFijo+' 2020',
-                marker_color='rgb(213,3,85)'))
-            fig10Fijo.add_trace(go.Bar(
-                x=DepJoinC3['Location'],
-                y=DepJoinC3['2021'],
-                name=mes_opFijo+' 2021',
-                marker_color='rgb(255,152,0)'))
-            fig10Fijo.add_trace(go.Bar(
-                x=DepJoinC3['Location'],
-                y=DepJoinC3['2022'],
-                name=mes_opFijo+' 2022',
-                marker_color='rgb(44,198,190)'))
-            fig10Fijo.add_trace(go.Bar(
-                x=DepJoinC3['Location'],
-                y=DepJoinC3['2023'],
-                name=mes_opFijo+' 2023',
-                marker_color='rgb(72,68,242)'))
+            tab1,tab2=st.tabs(["Comparación anual","Información por operadores"])
+            with tab1:   
+                col1, col2,col3= st.columns(3)
+                mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
+                with col2:
+                    mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                mes=mes_opFijoNombre[mes_opFijo] 
+                
+                df19C3=pd.DataFrame();df20C3=pd.DataFrame();df21C3=pd.DataFrame();df22C3=pd.DataFrame();df23C3=pd.DataFrame()
+                p19C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2019)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+                p20C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2020)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+                p21C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2021)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+                p22C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2022)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+                p23C3=(Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2023)&(Ciudades3Fijo['month']==mes),['Location','Latency']]).groupby(['Location'])['Latency'].mean()
+                df19C3['Location']=p19C3.index;df19C3['2019']=p19C3.values;
+                df20C3['Location']=p20C3.index;df20C3['2020']=p20C3.values;
+                df21C3['Location']=p21C3.index;df21C3['2021']=p21C3.values;
+                df22C3['Location']=p22C3.index;df22C3['2022']=p22C3.values;
+                df23C3['Location']=p23C3.index;df23C3['2023']=p23C3.values;
+                from functools import reduce
+                DepJoinC3=reduce(lambda x,y: pd.merge(x,y, on='Location', how='outer'), [df19C3,df20C3,df21C3,df22C3,df23C3]).set_index('Location')
+                DepJoinC3=DepJoinC3.round(2).reset_index()
+                DepJoinC3 = DepJoinC3[DepJoinC3.Location != 'Colombia']
+                DepJoinC3 = DepJoinC3.sort_values(by=['2023'],ascending=True)
+                DepJoinC3['relatGrow']=100*(DepJoinC3['2023']-DepJoinC3['2022'])/DepJoinC3['2022']
+                DepJoinC3['absGrow']=DepJoinC3['2023']-DepJoinC3['2022']
+                name_mes={1:'Ene',2:'Feb',3:'Mar',4:'Abr',5:'May',6:'Jun',7:'Jul',8:'Ago',9:'Sep',10:'Oct',11:'Nov',12:'Dic'}            
+                fig10Fijo = go.Figure()
+                fig10Fijo.add_trace(go.Bar(
+                    x=DepJoinC3['Location'],
+                    y=DepJoinC3['2020'],
+                    name=mes_opFijo+' 2020',
+                    marker_color='rgb(213,3,85)'))
+                fig10Fijo.add_trace(go.Bar(
+                    x=DepJoinC3['Location'],
+                    y=DepJoinC3['2021'],
+                    name=mes_opFijo+' 2021',
+                    marker_color='rgb(255,152,0)'))
+                fig10Fijo.add_trace(go.Bar(
+                    x=DepJoinC3['Location'],
+                    y=DepJoinC3['2022'],
+                    name=mes_opFijo+' 2022',
+                    marker_color='rgb(44,198,190)'))
+                fig10Fijo.add_trace(go.Bar(
+                    x=DepJoinC3['Location'],
+                    y=DepJoinC3['2023'],
+                    name=mes_opFijo+' 2023',
+                    marker_color='rgb(72,68,242)'))
 
 
-            fig10Fijo.update_xaxes(tickangle=-90, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
-            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
-            fig10Fijo.update_yaxes(range=[0,100],tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text="Latencia (ms)",ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
-            zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
-            fig10Fijo.update_traces(textfont_size=22)
-            fig10Fijo.update_layout(height=600,width=1200,legend_title=None)
-            fig10Fijo.update_layout(legend=dict(orientation="h",y=1,xanchor='center',x=0.5))
-            fig10Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
-            fig10Fijo.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18,font=dict(size=18),
-            title={
-            'text': "<b>Latencia anual de Internet fijo por ciudad en ms<br> (2019-2023/1S) </b>",
-            'y':0.9,
-            'x':0.5,
-            'xanchor': 'center',
-            'yanchor': 'top'})  
-            fig10Fijo.update_layout(barmode='group')
-            fig10Fijo.add_annotation(
-            showarrow=False,
-            text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2019 - 2023/1S. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-            font=dict(size=10), xref='x domain',x=0.1,yref='y domain',y=-0.5)                 
-            st.plotly_chart(fig10Fijo, use_container_width=True)  
+                fig10Fijo.update_xaxes(tickangle=-90, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside",tickwidth=1, tickcolor='black', ticklen=5,
+                zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+                fig10Fijo.update_yaxes(range=[0,100],tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text="Latencia (ms)",ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+                zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+                fig10Fijo.update_traces(textfont_size=22)
+                fig10Fijo.update_layout(height=600,width=1200,legend_title=None)
+                fig10Fijo.update_layout(legend=dict(orientation="h",y=1,xanchor='center',x=0.5))
+                fig10Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+                fig10Fijo.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=18,font=dict(size=18),
+                title={
+                'text': "<b>Latencia anual de Internet fijo por ciudad en ms<br> (2019-2023/1S) </b>",
+                'y':0.9,
+                'x':0.5,
+                'xanchor': 'center',
+                'yanchor': 'top'})  
+                fig10Fijo.update_layout(barmode='group')
+                fig10Fijo.add_annotation(
+                showarrow=False,
+                text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2019 - 2023/1S. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+                font=dict(size=10), xref='x domain',x=0.1,yref='y domain',y=-0.5)                 
+                st.plotly_chart(fig10Fijo, use_container_width=True)  
+
+            with tab2:    
+                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',CapDep,4)
+                datamuni2023_cap=datamuni2023[(datamuni2023['DESC_MUNICIPIO']==select_capdep)].sort_values(by='aggregate_date')
+
+                fig_muniOp=go.Figure()
+                for op in datamuni2023_cap['provider'].unique():
+                    if op not in dict_colores_op.keys():
+                        color_op='rgb(192,192,192)'
+                    else:
+                        color_op=dict_colores_op[op]
+                    df_muniOp=datamuni2023_cap[datamuni2023_cap['provider']==op]
+                    fig_muniOp.add_trace(go.Scatter(x=df_muniOp['aggregate_date'],y=df_muniOp['median_latency_ms'],mode='lines+markers',name=op,marker_color=color_op
+                    ))
+                    
+                    fig_muniOp.update_xaxes(tickangle=0, tickfont=dict(family='Tahoma', color='black', size=18),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
+                    zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
+                    fig_muniOp.update_yaxes(tickfont=dict(family='Tahoma', color='black', size=18),title_font=dict(family="Tahoma"),titlefont_size=18, title_text='Latencia (ms)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
+                    zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
+                    fig_muniOp.update_traces(textfont_size=18)
+                    fig_muniOp.update_layout(height=500,legend_title=None,font=dict(size=18))
+                    fig_muniOp.update_layout(legend=dict(orientation="h",y=1.1,x=0.35),showlegend=True)
+                    fig_muniOp.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
+                    fig_muniOp.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=14,
+                    title={
+                    'text': f"<b>Latencia mensual de Internet fijo por proveedor ({select_capdep}) </b>",
+                    'y':0.95,
+                    'x':0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top'})  
+                    fig_muniOp.update_xaxes(tickvals=['2023-01-01','2023-02-01','2023-03-01','2023-04-01','2023-05-01','2023-06-01'])
+                    fig_muniOp.add_annotation(
+                    showarrow=False,
+                    text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2023/1S. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
+                    font=dict(size=10), xref='paper',yref='y domain',y=-0.25)                     
+                st.plotly_chart(fig_muniOp, use_container_width=True)
 
         if dimension_Latencia_Fijo == 'Operadores':  
             TodosLatencia4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Latency'].mean().reset_index()
