@@ -292,7 +292,7 @@ CapDep=['LETICIA','MEDELLIN','ARAUCA','BARRANQUILLA','BOGOTA','CARTAGENA','TUNJA
             'PASTO','CUCUTA','MOCOA','ARMENIA','PEREIRA','SAN ANDRÉS','BUCARAMANGA','SINCELEJO','IBAGUE','CALI','MITÚ',
             'PUERTO CARREÑO']
 datamuni2023=datamuni2023[datamuni2023['DESC_MUNICIPIO'].isin(CapDep)]
-datamuni2023=datamuni2023[(datamuni2023['connection_type']=='All Fixed')&(datamuni2023['aggregate_date']<'2023-07-01')].groupby(['aggregate_date','DESC_MUNICIPIO','provider']).agg({'median_download_mbps':'mean','median_upload_mbps':'mean','median_latency_ms':'mean'}).reset_index()
+datamuni2023=datamuni2023[(datamuni2023['connection_type']=='All Fixed')&(datamuni2023['aggregate_date']<'2023-07-01')&(datamuni2023['test_count']>=30)]
 dict_colores_op={'Claro':'red','Tigo':'rgb(153,51,255)','ETB':'rgb(0,153,153)','Movistar':'rgb(51,255,51)','All combined':'black'}
 
 
