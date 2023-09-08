@@ -649,8 +649,8 @@ if select_servicio == 'Internet fijo':
                 resultDicIz_maxLat = [f'{item[0]} ({item[1]} ms)' for item in listDicIz_maxLat]
                 listDicDer_maxLat=DicDer_maxLat[['Location','Latency']].values.tolist()
                 resultDicDer_maxLat = [f'{item[0]} ({item[1]} ms)' for item in listDicDer_maxLat]
-                st.markdown(f"""<b>Nota</b>: Las ciudades exlcuidas de la gráfica para el periodo {Año_opFijoIz}-{mesIz} son: {resultDicIz_maxLat}.<br>
-                            Para el periodo 2023-{mesDer} estas son: {resultDicDer_maxLat}""",unsafe_allow_html=True)
+                #st.markdown(f"""<b>Nota</b>: Las ciudades exlcuidas de la gráfica para el periodo {Año_opFijoIz}-{mesIz} son: {resultDicIz_maxLat}.<br>
+                #            Para el periodo 2023-{mesDer} estas son: {resultDicDer_maxLat}""",unsafe_allow_html=True)
 
             with tab3:
                 select_capdep=st.selectbox('Escoja la ciudad capital de departamento',CapDep,4)
