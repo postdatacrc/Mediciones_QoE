@@ -15,8 +15,11 @@ import folium
 from folium.plugins import FloatImage
 import urllib
 from functools import partial, reduce
+
 def convert_df(df):
      return df.to_csv(index=False).encode('utf-8')
+def Excluir_ciudades(anno,annos_excluir,municipio,municipios_excluir):
+    return (anno.isin(annos_excluir)) & (municipio.isin(municipios_excluir))
 
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -215,6 +218,21 @@ denominations_json2=sorted(denominations_json2)
 dataframe_names2=sorted(OpCiud2Fijo.Location.unique().tolist())
 OpCiud2Fijo=OpCiud2Fijo[OpCiud2Fijo['Test Count']>30]
 gdf2=gdf2.rename(columns={"NOMBRE_DPT":'Location'})
+# Filtro calidad Ookla
+OpCiud2Fijocond = OpCiud2Fijo.groupby(['year', 'Location'])['User Count'].agg(['count', lambda x: (x > 200).sum()])
+OpCiud2Fijocond.rename(columns={'count':'meses_obs','<lambda_0>':'Cumple'},inplace=True)
+OpCiud2Fijocond['Porc_cumplimiento'] = (OpCiud2Fijocond['Cumple'] / OpCiud2Fijocond['meses_obs']) 
+filtroOpCiud2Fijocond = OpCiud2Fijocond[OpCiud2Fijocond['Porc_cumplimiento'] < 0.75]
+annos_excluirOpCiud2Fijocond = filtroOpCiud2Fijocond.index.get_level_values('year').tolist()
+muni_excluirOpCiud2Fijocond = filtroOpCiud2Fijocond.index.get_level_values('Location').tolist()
+filtro_completoOpCiud2Fijo = None
+for year, location in zip(annos_excluirOpCiud2Fijocond, muni_excluirOpCiud2Fijocond):
+    condition_OpCiud2Fijo = (OpCiud2Fijo['year'] == year) & (OpCiud2Fijo['Location'] == location)
+    if filtro_completoOpCiud2Fijo is None:
+        filtro_completoOpCiud2Fijo = condition_OpCiud2Fijo
+    else:
+        filtro_completoOpCiud2Fijo = filtro_completoOpCiud2Fijo | condition_OpCiud2Fijo
+OpCiud2Fijo = OpCiud2Fijo[~filtro_completoOpCiud2Fijo]
 
 
 ####Tercera sección - Fijo
@@ -241,6 +259,21 @@ Ciudades3Fijo['month']=pd.DatetimeIndex(Ciudades3Fijo['Aggregate Date']).month
 Ciudades3Fijo=Ciudades3Fijo.drop(['Device','Platform','Technology Type','Metric Type','Provider'], axis=1)
 Ciudades3Fijo=Ciudades3Fijo.rename(columns={'Minimum Latency':'Latency'})
 Ciudades3Fijo['Location']=Ciudades3Fijo['Location'].replace({'San José Del Guaviare':'San José<br>Del Guaviare'},regex=True)
+# Filtro calidad Ookla
+Ciudades3Fijocond = Ciudades3Fijo.groupby(['year', 'Location'])['User Count'].agg(['count', lambda x: (x > 200).sum()])
+Ciudades3Fijocond.rename(columns={'count':'meses_obs','<lambda_0>':'Cumple'},inplace=True)
+Ciudades3Fijocond['Porc_cumplimiento'] = (Ciudades3Fijocond['Cumple'] / Ciudades3Fijocond['meses_obs']) 
+filtroCiudades3Fijocond = Ciudades3Fijocond[Ciudades3Fijocond['Porc_cumplimiento'] < 0.75]
+annos_excluirCiudades3Fijocond = filtroCiudades3Fijocond.index.get_level_values('year').tolist()
+muni_excluirCiudades3Fijocond = filtroCiudades3Fijocond.index.get_level_values('Location').tolist()
+filtro_completoCiudades3Fijo = None
+for year, location in zip(annos_excluirCiudades3Fijocond, muni_excluirCiudades3Fijocond):
+    condition_Ciudades3Fijo = (Ciudades3Fijo['year'] == year) & (Ciudades3Fijo['Location'] == location)
+    if filtro_completoCiudades3Fijo is None:
+        filtro_completoCiudades3Fijo = condition_Ciudades3Fijo
+    else:
+        filtro_completoCiudades3Fijo = filtro_completoCiudades3Fijo | condition_Ciudades3Fijo
+Ciudades3Fijo = Ciudades3Fijo[~filtro_completoCiudades3Fijo]
 
 
 ####Cuarta sección - Fijo
@@ -280,7 +313,24 @@ Colombia2Fijo['Location'] = Colombia2Fijo['Location'].str.upper()
 Colombia2Fijo['Location'] = Colombia2Fijo['Location'].replace({'SANTANDER DEPARTMENT':'SANTANDER','CAUCA DEPARTMENT':'CAUCA','SAN ANDRÉS AND PROVIDENCIA':'SAN ANDRES Y PROVIDENCIA','NORTH SANTANDER':'NORTE DE SANTANDER','CAQUETÁ':'CAQUETA'})
 Colombia2Fijo=Colombia2Fijo[Colombia2Fijo['Test Count']>30]
 Colombia2Fijo=Colombia2Fijo.rename(columns={'Minimum Latency':'Latency'})
-##
+# Filtro calidad Ookla
+Colombia2Fijocond = Colombia2Fijo.groupby(['year', 'Location'])['User Count'].agg(['count', lambda x: (x > 200).sum()])
+Colombia2Fijocond.rename(columns={'count':'meses_obs','<lambda_0>':'Cumple'},inplace=True)
+Colombia2Fijocond['Porc_cumplimiento'] = (Colombia2Fijocond['Cumple'] / Colombia2Fijocond['meses_obs']) 
+filtroColombia2Fijocond = Colombia2Fijocond[Colombia2Fijocond['Porc_cumplimiento'] < 0.75]
+annos_excluirColombia2Fijocond = filtroColombia2Fijocond.index.get_level_values('year').tolist()
+muni_excluirColombia2Fijocond = filtroColombia2Fijocond.index.get_level_values('Location').tolist()
+filtro_completoColombia2Fijo = None
+for year, location in zip(annos_excluirColombia2Fijocond, muni_excluirColombia2Fijocond):
+    condition_Colombia2Fijo = (Colombia2Fijo['year'] == year) & (Colombia2Fijo['Location'] == location)
+    if filtro_completoColombia2Fijo is None:
+        filtro_completoColombia2Fijo = condition_Colombia2Fijo
+    else:
+        filtro_completoColombia2Fijo = filtro_completoColombia2Fijo | condition_Colombia2Fijo
+Colombia2Fijo = Colombia2Fijo[~filtro_completoColombia2Fijo]
+
+
+
 def DataMuni2023():
     datamuni2023=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/2023/Fijo/CRC_Fixed_Aggs_Monthly_2023.csv',delimiter=',')
     datamuni2023=datamuni2023.rename(columns={'name':'DESC_MUNICIPIO'})
