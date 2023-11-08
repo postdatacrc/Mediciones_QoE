@@ -406,9 +406,6 @@ if select_servicio == 'Internet fijo':
                     colombia_map1Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
                        scrollWheelZoom=True,
                        dragging=True)
-                    tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
-                    for tile in tiles:
-                        folium.TileLayer(tile).add_to(colombia_map1Fijo)
                     choropleth=folium.Choropleth(
                         geo_data=Colombian_DPTO2,
                         data=departamentos_df2Fijo,
@@ -1141,9 +1138,6 @@ if select_servicio == 'Internet fijo':
                     colombia_map2Fijo = folium.Map(location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
                        scrollWheelZoom=True,
                        dragging=True)
-                    tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
-                    for tile in tiles:
-                        folium.TileLayer(tile).add_to(colombia_map2Fijo)
                     choropleth=folium.Choropleth(
                         geo_data=Colombian_DPTO2,
                         data=departamentos_df2bFijo,
@@ -1651,9 +1645,6 @@ if select_servicio == 'Internet fijo':
                     colombia_map3Fijo = folium.Map(height=600,location=[4.570868, -74.297333], zoom_start=5,tiles='cartodbpositron',zoom_control=True,
                        scrollWheelZoom=True,
                        dragging=True)
-                    tiles = ['stamenwatercolor', 'cartodbpositron', 'openstreetmap', 'stamenterrain']
-                    for tile in tiles:
-                        folium.TileLayer(tile).add_to(colombia_map3Fijo)
                     choropleth=folium.Choropleth(
                         geo_data=Colombian_DPTO2,
                         data=departamentosLat_df2Fijo,
