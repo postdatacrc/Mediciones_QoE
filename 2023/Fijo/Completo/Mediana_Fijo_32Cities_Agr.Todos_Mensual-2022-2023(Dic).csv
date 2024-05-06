@@ -1,0 +1,416 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Minimum Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Dec 2022;8769;2552;all;N/A;median;2552;23;131711;32577;131.71;32.58
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;Dec 2022;1052;92;all;N/A;median;92;190;23957;3989;23.96;3.99
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Dec 2022;144813;46949;all;N/A;median;46949;10;95152;28331;95.15;28.33
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Dec 2022;858;319;all;N/A;median;319;12;12798;4820;12.80;4.82
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2022;55277;17236;all;N/A;median;17236;9;92253;32676;92.25;32.68
+All Providers Combined;Bogotá, Bogota, Colombia;;Dec 2022;620130;194153;all;N/A;median;194153;7;98960;41799;98.96;41.80
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Dec 2022;21440;6221;all;N/A;median;6221;8;101470;38942;101.47;38.94
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Dec 2022;8634;2975;all;N/A;median;2975;14;57952;25009;57.95;25.01
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Dec 2022;16649;5400;all;N/A;median;5400;27;90740;19509;90.74;19.51
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Dec 2022;2731;781;all;N/A;median;781;20;37570;32637;37.57;32.64
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Dec 2022;2567;627;all;N/A;median;627;15;48506;27487;48.51;27.49
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Dec 2022;11605;3700;all;N/A;median;3700;19;62404;28579;62.40;28.58
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Dec 2022;10385;3319;all;N/A;median;3319;22;79188;27625;79.19;27.63
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;Dec 2022;405;88;all;N/A;median;88;41;6007;1425;6.01;1.43
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Dec 2022;8167;2577;all;N/A;median;2577;15;67155;25249;67.16;25.25
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;Dec 2022;230;10;all;N/A;median;10;75;5922;2446;5.92;2.45
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;Dec 2022;440;151;all;N/A;median;151;15;12695;10700;12.70;10.70
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Dec 2022;12736;3723;all;N/A;median;3723;18;64168;31313;64.17;31.31
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Dec 2022;2127;795;all;N/A;median;795;33;64696;28633;64.70;28.63
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Dec 2022;12660;3791;all;N/A;median;3791;14;85919;29279;85.92;29.28
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Dec 2022;23140;6700;all;N/A;median;6700;11;94291;33688;94.29;33.69
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Dec 2022;11244;3613;all;N/A;median;3613;22;61558;28995;61.56;29.00
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Dec 2022;21389;6303;all;N/A;median;6303;23;65109;29306;65.11;29.31
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;Dec 2022;287;59;all;N/A;median;59;21;31801;33291;31.80;33.29
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Dec 2022;17878;5354;all;N/A;median;5354;21;82705;29084;82.71;29.08
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;Dec 2022;1533;315;all;N/A;median;315;20;69751;47564;69.75;47.56
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Dec 2022;42864;14277;all;N/A;median;14277;16;94748;36894;94.75;36.89
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Dec 2022;3250;1019;all;N/A;median;1019;14;82614;22519;82.61;22.52
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Dec 2022;20103;6213;all;N/A;median;6213;12;88599;38800;88.60;38.80
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Dec 2022;102950;32093;all;N/A;median;32093;19;86394;32430;86.39;32.43
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;Dec 2022;37;2;all;N/A;median;2;128;58123;10705;58.12;10.71
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Jan 2023;9622;2783;all;N/A;median;2783;22;124503;32178;124.50;32.18
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;Jan 2023;815;106;all;N/A;median;106;200;33710;5995;33.71;6.00
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Jan 2023;168102;54258;all;N/A;median;54258;10;94767;28099;94.77;28.10
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Jan 2023;889;310;all;N/A;median;310;8;12565;4874;12.57;4.87
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2023;66725;20096;all;N/A;median;20096;10;88427;32986;88.43;32.99
+All Providers Combined;Bogotá, Bogota, Colombia;;Jan 2023;716949;220446;all;N/A;median;220446;7;99149;41812;99.15;41.81
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Jan 2023;21544;6251;all;N/A;median;6251;8;110005;39275;110.01;39.28
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Jan 2023;10369;3326;all;N/A;median;3326;14;55750;23759;55.75;23.76
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Jan 2023;19448;5876;all;N/A;median;5876;27;91883;19202;91.88;19.20
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Jan 2023;4227;906;all;N/A;median;906;22;29429;33083;29.43;33.08
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Jan 2023;3065;723;all;N/A;median;723;14;42160;25231;42.16;25.23
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Jan 2023;13046;4092;all;N/A;median;4092;19;62501;28640;62.50;28.64
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Jan 2023;11790;3602;all;N/A;median;3602;22;83933;28086;83.93;28.09
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;Jan 2023;669;108;all;N/A;median;108;38;8195;2269;8.20;2.27
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Jan 2023;8558;2745;all;N/A;median;2745;15;64642;25231;64.64;25.23
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;Jan 2023;218;18;all;N/A;median;18;44;83320;22146;83.32;22.15
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;Jan 2023;644;150;all;N/A;median;150;12;16938;16007;16.94;16.01
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Jan 2023;13720;3801;all;N/A;median;3801;19;62853;30641;62.85;30.64
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Jan 2023;2506;849;all;N/A;median;849;33;73308;28416;73.31;28.42
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Jan 2023;13484;4110;all;N/A;median;4110;14;77479;28435;77.48;28.44
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Jan 2023;24515;7103;all;N/A;median;7103;10;98643;35721;98.64;35.72
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Jan 2023;12991;4059;all;N/A;median;4059;22;58219;28915;58.22;28.92
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Jan 2023;22339;6872;all;N/A;median;6872;25;71633;28525;71.63;28.53
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;Jan 2023;236;63;all;N/A;median;63;25;28815;34540;28.82;34.54
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Jan 2023;21685;6329;all;N/A;median;6329;21;81682;27862;81.68;27.86
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;Jan 2023;2057;355;all;N/A;median;355;24;39832;33456;39.83;33.46
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Jan 2023;46788;14810;all;N/A;median;14810;17;94648;34752;94.65;34.75
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Jan 2023;3666;1165;all;N/A;median;1165;15;73225;22812;73.23;22.81
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Jan 2023;21839;6227;all;N/A;median;6227;11;90873;38775;90.87;38.78
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Jan 2023;114988;35082;all;N/A;median;35082;18;87734;32558;87.73;32.56
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;Jan 2023;1;1;all;N/A;median;1;147;258552;24052;258.55;24.05
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;Jan 2023;7;3;all;N/A;median;3;102;2312;2292;2.31;2.29
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;feb-23;9781;2807;all;N/A;median;2807;20;123348;30950;123.35;30.95
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;feb-23;894;110;all;N/A;median;110;210;12956;4613;12.96;4.61
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;feb-23;186545;60273;all;N/A;median;60273;10;97617;28630;97.62;28.63
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;feb-23;915;341;all;N/A;median;341;6;14595;5040;14.60;5.04
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-23;62618;19313;all;N/A;median;19313;9;93776;36255;93.78;36.26
+All Providers Combined;Bogotá, Bogota, Colombia;;feb-23;789359;240190;all;N/A;median;240190;7;103242;43753;103.24;43.75
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;feb-23;21483;6191;all;N/A;median;6191;8;99761;39928;99.76;39.93
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;feb-23;11697;3650;all;N/A;median;3650;15;66255;27449;66.26;27.45
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;feb-23;21248;6446;all;N/A;median;6446;28;91825;19133;91.83;19.13
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;feb-23;2145;589;all;N/A;median;589;24;43130;31571;43.13;31.57
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;feb-23;3053;836;all;N/A;median;836;14;47243;26588;47.24;26.59
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;feb-23;13662;4226;all;N/A;median;4226;19;66001;28587;66.00;28.59
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;feb-23;10490;3474;all;N/A;median;3474;22;84276;28446;84.28;28.45
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;feb-23;679;109;all;N/A;median;109;36;7194;3060;7.19;3.06
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;feb-23;9578;2977;all;N/A;median;2977;15;66637;26548;66.64;26.55
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;feb-23;220;17;all;N/A;median;17;74;47591;13024;47.59;13.02
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;feb-23;528;142;all;N/A;median;142;15;10116;13731;10.12;13.73
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;feb-23;13484;3939;all;N/A;median;3939;18;69687;31549;69.69;31.55
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;feb-23;2614;904;all;N/A;median;904;33;66166;28411;66.17;28.41
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;feb-23;13292;4193;all;N/A;median;4193;15;73360;28958;73.36;28.96
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;feb-23;26654;7394;all;N/A;median;7394;10;103306;37409;103.31;37.41
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;feb-23;13568;4302;all;N/A;median;4302;21;64179;29765;64.18;29.77
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;feb-23;22136;6887;all;N/A;median;6887;24;76477;29573;76.48;29.57
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;feb-23;245;63;all;N/A;median;63;22;30525;24675;30.53;24.68
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;feb-23;22598;6783;all;N/A;median;6783;19;82857;28669;82.86;28.67
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;feb-23;1081;292;all;N/A;median;292;22;39365;34544;39.37;34.54
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;feb-23;44646;14303;all;N/A;median;14303;17;91393;32845;91.39;32.85
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;feb-23;3311;1076;all;N/A;median;1076;15;75431;23472;75.43;23.47
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;feb-23;21368;6370;all;N/A;median;6370;11;93212;42081;93.21;42.08
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;feb-23;119777;36264;all;N/A;median;36264;18;90348;33148;90.35;33.15
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;feb-23;41;4;all;N/A;median;4;38;69251;23978;69.25;23.98
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;feb-23;69;13;all;N/A;median;13;84;17914;11750;17.91;11.75
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;mar-23;10166;3097;all;N/A;median;3097;18;126490;33826;126.49;33.83
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;mar-23;662;116;all;N/A;median;116;192;6789;3965;6.79;3.97
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;mar-23;196559;62868;all;N/A;median;62868;10;100156;31075;100.16;31.08
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;mar-23;1014;373;all;N/A;median;373;7;17452;5188;17.45;5.19
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-23;71359;21931;all;N/A;median;21931;9;92038;33209;92.04;33.21
+All Providers Combined;Bogotá, Bogota, Colombia;;mar-23;790230;241647;all;N/A;median;241647;7;103398;43922;103.40;43.92
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;mar-23;25424;7166;all;N/A;median;7166;8;107025;37413;107.03;37.41
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;mar-23;12329;3688;all;N/A;median;3688;14;79094;29460;79.09;29.46
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;mar-23;22155;6553;all;N/A;median;6553;28;93036;20057;93.04;20.06
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;mar-23;2794;648;all;N/A;median;648;23;64403;32387;64.40;32.39
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;mar-23;2957;798;all;N/A;median;798;14;49230;26389;49.23;26.39
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;mar-23;18584;5349;all;N/A;median;5349;19;67360;29325;67.36;29.33
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;mar-23;12286;3880;all;N/A;median;3880;22;82725;28683;82.73;28.68
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;mar-23;794;110;all;N/A;median;110;33;10218;7882;10.22;7.88
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;mar-23;10956;3412;all;N/A;median;3412;15;72954;26567;72.95;26.57
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;mar-23;264;24;all;N/A;median;24;77;52328;14884;52.33;14.88
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;mar-23;409;117;all;N/A;median;117;15;8542;9576;8.54;9.58
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;mar-23;16327;4615;all;N/A;median;4615;19;82351;31496;82.35;31.50
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;mar-23;3017;985;all;N/A;median;985;32;61122;28692;61.12;28.69
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;mar-23;14061;4355;all;N/A;median;4355;16;79378;31195;79.38;31.20
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;mar-23;27683;7495;all;N/A;median;7495;9;103949;35426;103.95;35.43
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;mar-23;12945;4290;all;N/A;median;4290;22;69978;29463;69.98;29.46
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;mar-23;25923;7837;all;N/A;median;7837;23;78051;29864;78.05;29.86
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;mar-23;318;66;all;N/A;median;66;22;34384;25414;34.38;25.41
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;mar-23;22584;6614;all;N/A;median;6614;20;84904;29147;84.90;29.15
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;mar-23;1411;299;all;N/A;median;299;50;36854;28675;36.85;28.68
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;mar-23;43041;13640;all;N/A;median;13640;18;91894;33003;91.89;33.00
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;mar-23;4077;1248;all;N/A;median;1248;15;68346;23692;68.35;23.69
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;mar-23;23311;6689;all;N/A;median;6689;10;94287;44097;94.29;44.10
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;mar-23;123915;37771;all;N/A;median;37771;18;89160;32965;89.16;32.97
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;mar-23;77;18;all;N/A;median;18;31;79454;21987;79.45;21.99
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;mar-23;97;16;all;N/A;median;16;96;19510;6718;19.51;6.72
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Apr 2023;9286;3026;all;N/A;median;3026;20;123413;32840;123.41;32.84
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;Apr 2023;507;92;all;N/A;median;92;207;8049;3994;8.05;3.99
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Apr 2023;194759;61653;all;N/A;median;61653;10;100529;31418;100.53;31.42
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Apr 2023;911;372;all;N/A;median;372;6;18964;5119;18.96;5.12
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2023;62960;19889;all;N/A;median;19889;10;92363;33008;92.36;33.01
+All Providers Combined;Bogotá, Bogota, Colombia;;Apr 2023;720388;223376;all;N/A;median;223376;7;107944;44883;107.94;44.88
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Apr 2023;22729;6604;all;N/A;median;6604;8;112467;47535;112.47;47.54
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Apr 2023;10986;3273;all;N/A;median;3273;15;81407;30324;81.41;30.32
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Apr 2023;19203;5786;all;N/A;median;5786;28;93635;20676;93.64;20.68
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Apr 2023;1945;500;all;N/A;median;500;24;61338;32560;61.34;32.56
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Apr 2023;2493;786;all;N/A;median;786;14;42563;27806;42.56;27.81
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Apr 2023;13881;4206;all;N/A;median;4206;19;66284;30130;66.28;30.13
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Apr 2023;10791;3556;all;N/A;median;3556;19;90667;30630;90.67;30.63
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;Apr 2023;505;97;all;N/A;median;97;32;9825;5726;9.83;5.73
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Apr 2023;9358;3048;all;N/A;median;3048;14;65362;28632;65.36;28.63
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;Apr 2023;287;41;all;N/A;median;41;76;33675;15781;33.68;15.78
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;Apr 2023;428;105;all;N/A;median;105;14;9977;10016;9.98;10.02
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Apr 2023;15270;4423;all;N/A;median;4423;18;81124;32643;81.12;32.64
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Apr 2023;2189;788;all;N/A;median;788;33;58626;29462;58.63;29.46
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Apr 2023;11734;3642;all;N/A;median;3642;16;81261;31491;81.26;31.49
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Apr 2023;23945;7277;all;N/A;median;7277;10;110536;39813;110.54;39.81
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Apr 2023;11249;3748;all;N/A;median;3748;21;74205;28827;74.21;28.83
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Apr 2023;21663;6900;all;N/A;median;6900;23;80890;31591;80.89;31.59
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;Apr 2023;224;62;all;N/A;median;62;21;34346;25591;34.35;25.59
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Apr 2023;20179;6241;all;N/A;median;6241;19;86104;29852;86.10;29.85
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;Apr 2023;1148;276;all;N/A;median;276;23;49637;36231;49.64;36.23
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Apr 2023;38904;12435;all;N/A;median;12435;17;94368;33126;94.37;33.13
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Apr 2023;4708;1255;all;N/A;median;1255;14;54674;22400;54.67;22.40
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Apr 2023;22454;6528;all;N/A;median;6528;10;94748;48225;94.75;48.23
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Apr 2023;111103;34379;all;N/A;median;34379;18;90113;33161;90.11;33.16
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;Apr 2023;99;16;all;N/A;median;16;34;52807;17862;52.81;17.86
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;Apr 2023;109;14;all;N/A;median;14;99;10007;11308;10.01;11.31
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;may-23;8664;2794;all;N/A;median;2794;19;135335;33916;135.34;33.92
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;may-23;388;85;all;N/A;median;85;255;7405;2672;7.41;2.67
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;may-23;185194;59261;all;N/A;median;59261;10;106143;32016;106.14;32.02
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;may-23;966;382;all;N/A;median;382;4;17922;5188;17.92;5.19
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;may-23;63049;20228;all;N/A;median;20228;9;93933;33253;93.93;33.25
+All Providers Combined;Bogotá, Bogota, Colombia;;may-23;759364;235626;all;N/A;median;235626;7;110997;48124;111.00;48.12
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;may-23;22357;6026;all;N/A;median;6026;8;110011;44361;110.01;44.36
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;may-23;10218;2985;all;N/A;median;2985;14;87058;30606;87.06;30.61
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;may-23;19428;6012;all;N/A;median;6012;24;94297;21605;94.30;21.61
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;may-23;2117;501;all;N/A;median;501;24;53431;32800;53.43;32.80
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;may-23;2808;752;all;N/A;median;752;14;34951;25123;34.95;25.12
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;may-23;14519;4323;all;N/A;median;4323;19;70115;30830;70.12;30.83
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;may-23;10226;3344;all;N/A;median;3344;21;94624;30988;94.62;30.99
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;may-23;513;97;all;N/A;median;97;39;8626;2826;8.63;2.83
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;may-23;8798;2907;all;N/A;median;2907;14;69552;28412;69.55;28.41
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;may-23;487;25;all;N/A;median;25;82;26528;11429;26.53;11.43
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;may-23;521;167;all;N/A;median;167;14;14177;16074;14.18;16.07
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;may-23;16490;4665;all;N/A;median;4665;20;76629;33033;76.63;33.03
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;may-23;2084;774;all;N/A;median;774;34;66052;28179;66.05;28.18
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;may-23;12155;3667;all;N/A;median;3667;13;91602;32433;91.60;32.43
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;may-23;21753;6750;all;N/A;median;6750;9;111725;41882;111.73;41.88
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;may-23;12132;4015;all;N/A;median;4015;21;73545;31058;73.55;31.06
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;may-23;23260;7041;all;N/A;median;7041;23;81661;32063;81.66;32.06
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;may-23;235;56;all;N/A;median;56;22;29588;23630;29.59;23.63
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;may-23;19833;6236;all;N/A;median;6236;18;84865;31221;84.87;31.22
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;may-23;1186;253;all;N/A;median;253;17;54619;37049;54.62;37.05
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;may-23;42262;12767;all;N/A;median;12767;18;91492;32992;91.49;32.99
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;may-23;4820;1259;all;N/A;median;1259;14;51817;23289;51.82;23.29
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;may-23;21735;6237;all;N/A;median;6237;9;99652;56045;99.65;56.05
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;may-23;118595;36266;all;N/A;median;36266;18;90768;33214;90.77;33.21
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;may-23;62;20;all;N/A;median;20;35;56077;17633;56.08;17.63
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;may-23;189;23;all;N/A;median;23;82;7559;7923;7.56;7.92
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;jun-23;7902;2707;all;N/A;median;2707;20;136694;33981;136.69;33.98
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;jun-23;364;87;all;N/A;median;87;283;8681;3249;8.68;3.25
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;jun-23;175360;55685;all;N/A;median;55685;10;111933;32415;111.93;32.42
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jun-23;1291;467;all;N/A;median;467;4;20297;5275;20.30;5.28
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-23;58599;19031;all;N/A;median;19031;9;93538;33260;93.54;33.26
+All Providers Combined;Bogotá, Bogota, Colombia;;jun-23;723584;226905;all;N/A;median;226905;7;115963;48744;115.96;48.74
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;jun-23;21979;6210;all;N/A;median;6210;7;115031;49410;115.03;49.41
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;jun-23;9360;2766;all;N/A;median;2766;14;89402;31002;89.40;31.00
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;jun-23;17945;5847;all;N/A;median;5847;29;96645;19720;96.65;19.72
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jun-23;1470;406;all;N/A;median;406;23;59645;32741;59.65;32.74
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jun-23;2879;813;all;N/A;median;813;15;47568;26287;47.57;26.29
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;jun-23;14522;4200;all;N/A;median;4200;19;79665;30198;79.67;30.20
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jun-23;10662;3376;all;N/A;median;3376;22;93948;31510;93.95;31.51
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;jun-23;517;112;all;N/A;median;112;31;12495;9758;12.50;9.76
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;jun-23;8303;2744;all;N/A;median;2744;14;65106;28158;65.11;28.16
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;jun-23;237;35;all;N/A;median;35;98;18231;7207;18.23;7.21
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;jun-23;444;164;all;N/A;median;164;15;13998;19332;14.00;19.33
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jun-23;14158;3903;all;N/A;median;3903;19;85349;32645;85.35;32.65
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jun-23;2094;769;all;N/A;median;769;33;71515;30015;71.52;30.02
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;jun-23;11664;3639;all;N/A;median;3639;12;92541;32558;92.54;32.56
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;jun-23;21638;6647;all;N/A;median;6647;9;113000;38863;113.00;38.86
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;jun-23;11243;3562;all;N/A;median;3562;21;68405;29769;68.41;29.77
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jun-23;24046;6672;all;N/A;median;6672;24;86616;32290;86.62;32.29
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;jun-23;283;74;all;N/A;median;74;21;35047;26263;35.05;26.26
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;jun-23;18480;5738;all;N/A;median;5738;19;74401;30133;74.40;30.13
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;jun-23;938;244;all;N/A;median;244;15;54404;47717;54.40;47.72
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;jun-23;35668;10950;all;N/A;median;10950;20;94504;32988;94.50;32.99
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;jun-23;3625;1127;all;N/A;median;1127;15;81260;24503;81.26;24.50
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;jun-23;19966;5808;all;N/A;median;5808;9;102957;61291;102.96;61.29
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;jun-23;115360;34113;all;N/A;median;34113;18;93843;33279;93.84;33.28
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;jun-23;52;18;all;N/A;median;18;36;28483;15200;28.48;15.20
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;jun-23;143;24;all;N/A;median;24;104;16410;8037;16.41;8.04
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;jul-23;7580;2680;all;N/A;median;2680;19;146539;37362;146.54;37.36
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;jul-23;395;92;all;N/A;median;92;249;7486;4098;7.49;4.10
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;jul-23;178629;57059;all;N/A;median;57059;10;114917;32368;114.92;32.37
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;jul-23;1746;518;all;N/A;median;518;4;21973;5355;21.97;5.36
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-23;61025;19624;all;N/A;median;19624;10;93263;33756;93.26;33.76
+All Providers Combined;Bogotá, Bogota, Colombia;;jul-23;722141;221860;all;N/A;median;221860;7;117793;54071;117.79;54.07
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;jul-23;20831;5946;all;N/A;median;5946;7;126608;51135;126.61;51.14
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;jul-23;10044;2941;all;N/A;median;2941;14;83578;31660;83.58;31.66
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;jul-23;17806;5562;all;N/A;median;5562;27;100358;21830;100.36;21.83
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;jul-23;1261;354;all;N/A;median;354;23;78844;32984;78.84;32.98
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;jul-23;3047;848;all;N/A;median;848;15;45049;26634;45.05;26.63
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;jul-23;13411;3896;all;N/A;median;3896;20;81454;31186;81.45;31.19
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;jul-23;11793;3565;all;N/A;median;3565;22;94704;31403;94.70;31.40
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;jul-23;630;116;all;N/A;median;116;33;8680;7570;8.68;7.57
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;jul-23;8641;2788;all;N/A;median;2788;14;69086;28682;69.09;28.68
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;jul-23;241;37;all;N/A;median;37;98;16301;9129;16.30;9.13
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;jul-23;521;119;all;N/A;median;119;17;13517;17356;13.52;17.36
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;jul-23;14212;3991;all;N/A;median;3991;18;87395;32799;87.40;32.80
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;jul-23;2188;803;all;N/A;median;803;32;76543;30866;76.54;30.87
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;jul-23;12949;3900;all;N/A;median;3900;14;93602;32807;93.60;32.81
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;jul-23;21325;6566;all;N/A;median;6566;13;126565;42848;126.57;42.85
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;jul-23;10395;3311;all;N/A;median;3311;22;73722;29935;73.72;29.94
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;jul-23;23787;7050;all;N/A;median;7050;25;87122;32066;87.12;32.07
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;jul-23;407;147;all;N/A;median;147;23;42337;35330;42.34;35.33
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;jul-23;17604;5524;all;N/A;median;5524;19;88812;30992;88.81;30.99
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;jul-23;1127;247;all;N/A;median;247;18;55018;45781;55.02;45.78
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;jul-23;37281;11429;all;N/A;median;11429;19;100329;33262;100.33;33.26
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;jul-23;3707;1156;all;N/A;median;1156;15;73684;24497;73.68;24.50
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;jul-23;20329;5948;all;N/A;median;5948;9;100629;61228;100.63;61.23
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;jul-23;120543;35082;all;N/A;median;35082;17;94271;38353;94.27;38.35
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;jul-23;96;20;all;N/A;median;20;35;37888;16225;37.89;16.23
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;jul-23;340;36;all;N/A;median;36;93;9283;6097;9.28;6.10
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Aug 2023;7568;2729;all;N/A;median;2729;20;167541;50770;167.54;50.77
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;Aug 2023;302;86;all;N/A;median;86;210;13985;4671;13.99;4.67
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Aug 2023;180683;58272;all;N/A;median;58272;10;114825;32204;114.83;32.20
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Aug 2023;2160;600;all;N/A;median;600;4;28339;12496;28.34;12.50
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2023;61619;19138;all;N/A;median;19138;10;94312;37799;94.31;37.80
+All Providers Combined;Bogotá, Bogota, Colombia;;Aug 2023;740059;231224;all;N/A;median;231224;6;125262;58548;125.26;58.55
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Aug 2023;21418;6228;all;N/A;median;6228;7;124436;59681;124.44;59.68
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Aug 2023;10907;3288;all;N/A;median;3288;14;83507;31258;83.51;31.26
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Aug 2023;19544;5680;all;N/A;median;5680;28;107354;22344;107.35;22.34
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Aug 2023;1494;398;all;N/A;median;398;23;66563;32956;66.56;32.96
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Aug 2023;2815;785;all;N/A;median;785;15;69443;29347;69.44;29.35
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Aug 2023;13640;4135;all;N/A;median;4135;19;76195;31234;76.20;31.23
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Aug 2023;11213;3468;all;N/A;median;3468;23;102764;32493;102.76;32.49
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;Aug 2023;531;112;all;N/A;median;112;35;8065;2973;8.07;2.97
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Aug 2023;8917;2770;all;N/A;median;2770;14;74695;27919;74.70;27.92
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;Aug 2023;272;36;all;N/A;median;36;95;17791;10047;17.79;10.05
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;Aug 2023;973;169;all;N/A;median;169;18;9781;19985;9.78;19.99
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Aug 2023;16478;4190;all;N/A;median;4190;19;85822;32749;85.82;32.75
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Aug 2023;2137;775;all;N/A;median;775;32;81780;30510;81.78;30.51
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Aug 2023;11734;3514;all;N/A;median;3514;14;92338;32593;92.34;32.59
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Aug 2023;23885;7167;all;N/A;median;7167;14;139119;43929;139.12;43.93
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Aug 2023;11384;3583;all;N/A;median;3583;21;71861;31210;71.86;31.21
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Aug 2023;23731;7075;all;N/A;median;7075;23;91328;32317;91.33;32.32
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;Aug 2023;581;216;all;N/A;median;216;24;63315;55881;63.32;55.88
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Aug 2023;17415;5455;all;N/A;median;5455;19;90596;31078;90.60;31.08
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;Aug 2023;738;218;all;N/A;median;218;18;52492;33458;52.49;33.46
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Aug 2023;36653;11426;all;N/A;median;11426;17;108907;38234;108.91;38.23
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Aug 2023;3450;1038;all;N/A;median;1038;15;83225;25199;83.23;25.20
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Aug 2023;20509;5903;all;N/A;median;5903;9;102795;74600;102.80;74.60
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Aug 2023;121932;35742;all;N/A;median;35742;17;94047;39783;94.05;39.78
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;Aug 2023;253;33;all;N/A;median;33;44;17694;12277;17.69;12.28
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;Aug 2023;401;41;all;N/A;median;41;97;25955;10925;25.96;10.93
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;sep-23;8923;2853;all;N/A;median;2853;20;170537;71297;170.54;71.30
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;sep-23;372;73;all;N/A;median;73;229;8223;4024;8.22;4.02
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;sep-23;179247;57691;all;N/A;median;57691;11;123734;32879;123.73;32.88
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;sep-23;1640;521;all;N/A;median;521;4;25647;10761;25.65;10.76
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-23;62340;18599;all;N/A;median;18599;9;100570;44554;100.57;44.55
+All Providers Combined;Bogotá, Bogota, Colombia;;sep-23;750071;227259;all;N/A;median;227259;6;131724;61782;131.72;61.78
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;sep-23;22098;6348;all;N/A;median;6348;7;137402;82083;137.40;82.08
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;sep-23;10070;2946;all;N/A;median;2946;14;88379;31511;88.38;31.51
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;sep-23;18111;5338;all;N/A;median;5338;24;108587;23973;108.59;23.97
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;sep-23;1893;480;all;N/A;median;480;24;64899;32899;64.90;32.90
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;sep-23;3244;827;all;N/A;median;827;15;75329;29332;75.33;29.33
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;sep-23;16557;4577;all;N/A;median;4577;19;74229;31526;74.23;31.53
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;sep-23;12034;3566;all;N/A;median;3566;21;104515;32738;104.52;32.74
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;sep-23;600;106;all;N/A;median;106;32;12642;11927;12.64;11.93
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;sep-23;9672;2893;all;N/A;median;2893;14;80094;30053;80.09;30.05
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;sep-23;272;37;all;N/A;median;37;113;20000;10214;20.00;10.21
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;sep-23;406;142;all;N/A;median;142;13;19657;23458;19.66;23.46
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;sep-23;16676;4118;all;N/A;median;4118;18;91784;32964;91.78;32.96
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;sep-23;1881;718;all;N/A;median;718;32;86223;31077;86.22;31.08
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;sep-23;11648;3269;all;N/A;median;3269;13;100306;33004;100.31;33.00
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;sep-23;24613;7094;all;N/A;median;7094;14;143676;51038;143.68;51.04
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;sep-23;13228;3870;all;N/A;median;3870;22;75419;31841;75.42;31.84
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;sep-23;21710;7031;all;N/A;median;7031;22;90150;32582;90.15;32.58
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;sep-23;519;206;all;N/A;median;206;25;61858;68838;61.86;68.84
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;sep-23;18308;5755;all;N/A;median;5755;19;93957;31839;93.96;31.84
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;sep-23;667;181;all;N/A;median;181;17;71264;41438;71.26;41.44
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;sep-23;40442;12344;all;N/A;median;12344;17;115975;49029;115.98;49.03
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;sep-23;3374;984;all;N/A;median;984;14;93286;26608;93.29;26.61
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;sep-23;21410;5878;all;N/A;median;5878;8;124530;90525;124.53;90.53
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;sep-23;130635;37697;all;N/A;median;37697;18;93898;39072;93.90;39.07
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;sep-23;105;25;all;N/A;median;25;47;14438;15819;14.44;15.82
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;sep-23;461;44;all;N/A;median;44;107;28130;8471;28.13;8.47
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;oct-23;9739;3231;all;N/A;median;3231;20;182259;69332;182.26;69.33
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;oct-23;630;103;all;N/A;median;103;249;6613;4435;6.61;4.44
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;oct-23;183353;59566;all;N/A;median;59566;11;132268;33036;132.27;33.04
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;oct-23;1339;513;all;N/A;median;513;4;25120;15355;25.12;15.36
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-23;67022;19716;all;N/A;median;19716;8;116024;68488;116.02;68.49
+All Providers Combined;Bogotá, Bogota, Colombia;;oct-23;782941;237363;all;N/A;median;237363;6;137948;72024;137.95;72.02
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;oct-23;24821;6831;all;N/A;median;6831;6;155340;94689;155.34;94.69
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;oct-23;10773;3254;all;N/A;median;3254;14;93646;32295;93.65;32.30
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;oct-23;17637;5544;all;N/A;median;5544;21;103995;24584;104.00;24.58
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;oct-23;1654;416;all;N/A;median;416;23;71082;32984;71.08;32.98
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;oct-23;3192;806;all;N/A;median;806;15;70607;28495;70.61;28.50
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;oct-23;16195;4752;all;N/A;median;4752;19;89605;30986;89.61;30.99
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;oct-23;12050;3617;all;N/A;median;3617;20;123534;33187;123.53;33.19
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;oct-23;425;84;all;N/A;median;84;36;7642;3287;7.64;3.29
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;oct-23;9884;2893;all;N/A;median;2893;14;84742;32013;84.74;32.01
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;oct-23;253;34;all;N/A;median;34;88;25498;9790;25.50;9.79
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;oct-23;848;228;all;N/A;median;228;18;8798;20390;8.80;20.39
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;oct-23;17414;4251;all;N/A;median;4251;18;93007;33030;93.01;33.03
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;oct-23;1994;721;all;N/A;median;721;32;75482;29989;75.48;29.99
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;oct-23;12556;3401;all;N/A;median;3401;14;100718;33017;100.72;33.02
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;oct-23;25558;7696;all;N/A;median;7696;11;147946;49263;147.95;49.26
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;oct-23;11602;3581;all;N/A;median;3581;21;82160;31771;82.16;31.77
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;oct-23;23231;7127;all;N/A;median;7127;21;93893;32965;93.89;32.97
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;oct-23;527;142;all;N/A;median;142;24;47244;44162;47.24;44.16
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;oct-23;19231;5969;all;N/A;median;5969;18;94530;32015;94.53;32.02
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;oct-23;794;218;all;N/A;median;218;17;69646;45592;69.65;45.59
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;oct-23;43861;13607;all;N/A;median;13607;15;125731;59114;125.73;59.11
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;oct-23;4098;1258;all;N/A;median;1258;14;77545;25339;77.55;25.34
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;oct-23;22171;6129;all;N/A;median;6129;8;142689;94446;142.69;94.45
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;oct-23;141888;41420;all;N/A;median;41420;18;103630;44112;103.63;44.11
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;oct-23;234;17;all;N/A;median;17;34;22962;12645;22.96;12.65
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;oct-23;347;40;all;N/A;median;40;112;18276;8518;18.28;8.52
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;nov-23;12046;3802;all;N/A;median;3802;22;170703;43857;170.70;43.86
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;nov-23;558;107;all;N/A;median;107;157;7951;4922;7.95;4.92
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;nov-23;174566;56247;all;N/A;median;56247;10;134017;33008;134.02;33.01
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;nov-23;1294;442;all;N/A;median;442;4;31499;18894;31.50;18.89
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-23;62711;18412;all;N/A;median;18412;9;118624;62040;118.62;62.04
+All Providers Combined;Bogotá, Bogota, Colombia;;nov-23;782876;232545;all;N/A;median;232545;6;136522;67216;136.52;67.22
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;nov-23;21866;6438;all;N/A;median;6438;7;148172;94182;148.17;94.18
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;nov-23;10424;3150;all;N/A;median;3150;14;91855;32397;91.86;32.40
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;nov-23;16834;5126;all;N/A;median;5126;22;118145;25652;118.15;25.65
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;nov-23;1561;379;all;N/A;median;379;23;87077;32846;87.08;32.85
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;nov-23;2949;756;all;N/A;median;756;16;75825;28484;75.83;28.48
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;nov-23;14701;4333;all;N/A;median;4333;19;93854;30553;93.85;30.55
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;nov-23;12328;3605;all;N/A;median;3605;18;124637;34188;124.64;34.19
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;nov-23;528;98;all;N/A;median;98;40;7136;2077;7.14;2.08
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;nov-23;9619;2921;all;N/A;median;2921;14;91822;32431;91.82;32.43
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;nov-23;277;40;all;N/A;median;40;89;25938;13876;25.94;13.88
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;nov-23;491;148;all;N/A;median;148;13;15684;19343;15.68;19.34
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;nov-23;17770;4225;all;N/A;median;4225;18;93549;32755;93.55;32.76
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;nov-23;2298;739;all;N/A;median;739;34;77423;29980;77.42;29.98
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;nov-23;10029;2936;all;N/A;median;2936;20;94891;32825;94.89;32.83
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;nov-23;24367;7302;all;N/A;median;7302;10;147957;48180;147.96;48.18
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;nov-23;10402;3283;all;N/A;median;3283;21;87868;31813;87.87;31.81
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;nov-23;22054;6982;all;N/A;median;6982;23;94410;32814;94.41;32.81
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;nov-23;243;76;all;N/A;median;76;21;44859;39900;44.86;39.90
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;nov-23;19682;6026;all;N/A;median;6026;18;99233;31942;99.23;31.94
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;nov-23;695;191;all;N/A;median;191;17;74844;63128;74.84;63.13
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;nov-23;41430;12649;all;N/A;median;12649;16;127589;58917;127.59;58.92
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;nov-23;4691;1316;all;N/A;median;1316;14;81397;27404;81.40;27.40
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;nov-23;19639;5662;all;N/A;median;5662;9;131464;73375;131.46;73.38
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;nov-23;131462;38290;all;N/A;median;38290;18;100031;44217;100.03;44.22
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;nov-23;227;16;all;N/A;median;16;37;15236;13182;15.24;13.18
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;nov-23;227;32;all;N/A;median;32;99;31116;10644;31.12;10.64
+All Providers Combined;Armenia, Armenia, Quindio, Colombia;;Dec 2023;10798;3566;all;N/A;median;3566;21;181922;44370;181.92;44.37
+All Providers Combined;Leticia, Leticia, Amazonas, Colombia;;Dec 2023;613;96;all;N/A;median;96;106;11435;5271;11.44;5.27
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Dec 2023;145006;47406;all;N/A;median;47406;11;146971;33156;146.97;33.16
+All Providers Combined;Arauca, Arauca, Arauca, Colombia;;Dec 2023;1039;393;all;N/A;median;393;4;31270;19209;31.27;19.21
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2023;60079;17472;all;N/A;median;17472;9;131158;62841;131.16;62.84
+All Providers Combined;Bogotá, Bogota, Colombia;;Dec 2023;671685;202852;all;N/A;median;202852;6;146729;74972;146.73;74.97
+All Providers Combined;Cartagena, Cartagena, Bolívar, Colombia;;Dec 2023;21172;6520;all;N/A;median;6520;7;158088;92675;158.09;92.68
+All Providers Combined;Tunja, Tunja, Boyacá, Colombia;;Dec 2023;7928;2654;all;N/A;median;2654;14;94194;32537;94.19;32.54
+All Providers Combined;Manizales, Manizales, Caldas, Colombia;;Dec 2023;15671;4763;all;N/A;median;4763;22;121497;24800;121.50;24.80
+All Providers Combined;Florencia, Florencia, Caquetá, Colombia;;Dec 2023;1547;380;all;N/A;median;380;25;91222;32761;91.22;32.76
+All Providers Combined;Yopal, Yopal, Casanare, Colombia;;Dec 2023;2406;678;all;N/A;median;678;15;90721;29611;90.72;29.61
+All Providers Combined;Popayán, Popayán, Cauca, Colombia;;Dec 2023;12648;3885;all;N/A;median;3885;19;93551;29136;93.55;29.14
+All Providers Combined;Valledupar, Valledupar, Cesar, Colombia;;Dec 2023;12763;3691;all;N/A;median;3691;16;138808;36043;138.81;36.04
+All Providers Combined;Quibdo, Quibdó, Chocó, Colombia;;Dec 2023;553;104;all;N/A;median;104;39;7782;2027;7.78;2.03
+All Providers Combined;Montería, Montería, Córdoba, Colombia;;Dec 2023;9917;2668;all;N/A;median;2668;13;94146;32561;94.15;32.56
+All Providers Combined;Inírida, Inírida, Guainía, Colombia;;Dec 2023;223;43;all;N/A;median;43;68;31901;12520;31.90;12.52
+All Providers Combined;San José Del Guaviare, San José Del Guaviare, Guaviare, Colombia;;Dec 2023;376;131;all;N/A;median;131;13;18299;19368;18.30;19.37
+All Providers Combined;Neiva, Neiva, Huila, Colombia;;Dec 2023;15707;3852;all;N/A;median;3852;18;97888;32886;97.89;32.89
+All Providers Combined;Riohacha, Riohacha, La Guajira, Colombia;;Dec 2023;2051;760;all;N/A;median;760;33;96970;30789;96.97;30.79
+All Providers Combined;Santa Marta, Santa Marta, Magdalena, Colombia;;Dec 2023;9034;2854;all;N/A;median;2854;25;108033;32823;108.03;32.82
+All Providers Combined;Villavicencio, Villavicencio, Meta, Colombia;;Dec 2023;17954;5086;all;N/A;median;5086;10;162004;83533;162.00;83.53
+All Providers Combined;Pasto, Pasto, Narino, Colombia;;Dec 2023;9568;3100;all;N/A;median;3100;22;90066;31606;90.07;31.61
+All Providers Combined;Cúcuta, Cucuta, North Santander, Colombia;;Dec 2023;20036;6655;all;N/A;median;6655;19;95734;32834;95.73;32.83
+All Providers Combined;Mocoa, Mocoa, Putumayo, Colombia;;Dec 2023;178;66;all;N/A;median;66;21;62473;55161;62.47;55.16
+All Providers Combined;Pereira, Pereira, Risaralda, Colombia;;Dec 2023;16758;5319;all;N/A;median;5319;18;113616;32499;113.62;32.50
+All Providers Combined;San Andrés, San Andrés, San Andrés y Providencia, Colombia;;Dec 2023;1004;270;all;N/A;median;270;26;50541;40793;50.54;40.79
+All Providers Combined;Bucaramanga, Bucaramanga, Santander Department, Colombia;;Dec 2023;39140;11529;all;N/A;median;11529;16;141652;69409;141.65;69.41
+All Providers Combined;Sincelejo, Sincelejo, Sucre, Colombia;;Dec 2023;3925;1091;all;N/A;median;1091;14;114154;31501;114.15;31.50
+All Providers Combined;Ibagué, Ibague, Tolima, Colombia;;Dec 2023;16388;4719;all;N/A;median;4719;10;129211;78676;129.21;78.68
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Dec 2023;105819;32114;all;N/A;median;32114;18;111992;45911;111.99;45.91
+All Providers Combined;Mitú, Mitú, Vaupes, Colombia;;Dec 2023;123;16;all;N/A;median;16;50;19533;14623;19.53;14.62
+All Providers Combined;Puerto Carreño, Puerto Carreño, Vichada, Colombia;;Dec 2023;247;45;all;N/A;median;45;87;34105;12438;34.11;12.44

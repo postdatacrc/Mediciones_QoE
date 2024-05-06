@@ -1,0 +1,222 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Metric Type;User Count;Minimum Latency;Multi-Server Latency;Multi-Server Jitter;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Sumapaz;;Dec 2022;31;2;median;2;12;1.556.125;5.970.425;6002;5406;6.00;5.41
+All Providers Combined;Ciudad Bolívar;;Dec 2022;16612;5332;median;5332;10;183.667;71.375;86875;30824;86.88;30.82
+All Providers Combined;Rafael Uribe Uribe;;Dec 2022;19397;7352;median;7352;14;18.375;4.9;41118;15325;41.12;15.33
+All Providers Combined;Puente Aranda;;Dec 2022;15535;5970;median;5970;6;109.325;37.516;114002;69805;114.00;69.81
+All Providers Combined;Teusaquillo;;Dec 2022;26012;10325;median;10325;4;7.7;304.875;107499;93102;107.50;93.10
+All Providers Combined;Barrios Unidos;;Dec 2022;14223;5570;median;5570;6;110.494;38.625;114502;54867;114.50;54.87
+All Providers Combined;Suba;;Dec 2022;89056;30410;median;30410;7;130.167;4.6;136080;43518;136.08;43.52
+All Providers Combined;Engativá;;Dec 2022;45796;16535;median;16535;6;107.163.375;37.732;134611;86072;134.61;86.07
+All Providers Combined;Fontibón;;Dec 2022;26914;9952;median;9952;6;116.125;39.125;117719;49881;117.72;49.88
+All Providers Combined;Kennedy;;Dec 2022;65872;22831;median;22831;7;1.244.723.333;4.5;110285;54969;110.29;54.97
+All Providers Combined;Bosa;;Dec 2022;15084;4799;median;4799;10;168.333;5.925;101872;27013;101.87;27.01
+All Providers Combined;Tunjuelito;;Dec 2022;16336;6381;median;6381;14;189.222;6.175;44123;19777;44.12;19.78
+All Providers Combined;Usme;;Dec 2022;2783;927;median;927;12;192.166;7.317;40977;24750;40.98;24.75
+All Providers Combined;San Cristóbal;;Dec 2022;14032;5078;median;5078;9;16.05;55.271;93671;32615;93.67;32.62
+All Providers Combined;Santa Fe;;Dec 2022;9993;3752;median;3752;9;146.519;4.05;90439;33011;90.44;33.01
+All Providers Combined;Usaquen;;Dec 2022;58288;21476;median;21476;6;10.7;40.125;115066;87281;115.07;87.28
+All Providers Combined;Chapinero;;Dec 2022;41887;15729;median;15729;6;106.667;36.836;95099;57502;95.10;57.50
+All Providers Combined;Sumapaz;;Jan 2023;114;26;median;26;10;1.412.325;345.355;38461;38823;38.46;38.82
+All Providers Combined;Ciudad Bolívar;;Jan 2023;13639;4188;median;4188;13;184.466;647.325;37368;17833;37.37;17.83
+All Providers Combined;Rafael Uribe Uribe;;Jan 2023;20125;7451;median;7451;12;17.6;4.975;46771;20600;46.77;20.60
+All Providers Combined;Puente Aranda;;Jan 2023;19316;7225;median;7225;6;105.079;36.451;115797;71154;115.80;71.15
+All Providers Combined;Teusaquillo;;Jan 2023;40165;14816;median;14816;5;87.167;32.625;97813;86052;97.81;86.05
+All Providers Combined;Barrios Unidos;;Jan 2023;16079;6229;median;6229;6;11;3.875;121812;53003;121.81;53.00
+All Providers Combined;Suba;;Jan 2023;95814;31673;median;31673;7;12.389.225;44.661.375;138407;51130;138.41;51.13
+All Providers Combined;Engativá;;Jan 2023;55857;19460;median;19460;6;10.646.425;3.669.375;123718;73106;123.72;73.11
+All Providers Combined;Fontibón;;Jan 2023;32569;11876;median;11876;6;12.4;421.515;119599;43444;119.60;43.44
+All Providers Combined;Kennedy;;Jan 2023;82452;28550;median;28550;7;130.667;46.802;108995;43824;109.00;43.82
+All Providers Combined;Bosa;;Jan 2023;14979;4032;median;4032;10;162.544;6.29;106272;24630;106.27;24.63
+All Providers Combined;Tunjuelito;;Jan 2023;18275;7201;median;7201;14;197.354;69.875;48191;19753;48.19;19.75
+All Providers Combined;Usme;;Jan 2023;3814;1286;median;1286;15;2.030.735;8.45;28637;10615;28.64;10.62
+All Providers Combined;San Cristóbal;;Jan 2023;14739;5408;median;5408;9;163.167;5.575;90920;32127;90.92;32.13
+All Providers Combined;Santa Fe;;Jan 2023;10936;4366;median;4366;9;143.892;4.125;105750;34081;105.75;34.08
+All Providers Combined;Usaquen;;Jan 2023;72859;25946;median;25946;6;10.5;3.9;114782;86584;114.78;86.58
+All Providers Combined;Chapinero;;Jan 2023;38830;13896;median;13896;5;98.583;34.714;105349;62458;105.35;62.46
+All Providers Combined;Sumapaz;;feb-23;80;26;median;26;11;2.463.055;974.165;12769;11768;12.77;11.77
+All Providers Combined;Ciudad Bolívar;;feb-23;16072;5630;median;5630;11;180.042;6.3;59662;27755;59.66;27.76
+All Providers Combined;Rafael Uribe Uribe;;feb-23;19717;7224;median;7224;13;176.167;49.831;53735;22752;53.74;22.75
+All Providers Combined;Puente Aranda;;feb-23;23232;8708;median;8708;7;120.603;4.075;109096;51473;109.10;51.47
+All Providers Combined;Teusaquillo;;feb-23;41675;15438;median;15438;4;80.667;294.655;100678;92968;100.68;92.97
+All Providers Combined;Barrios Unidos;;feb-23;16487;6210;median;6210;7;120.833;41.875;120506;42367;120.51;42.37
+All Providers Combined;Suba;;feb-23;99769;32448;median;32448;7;1.153.314.375;433.245.625;147069;76466;147.07;76.47
+All Providers Combined;Engativá;;feb-23;64970;22287;median;22287;6;1.118.305.556;38.875;132717;60576;132.72;60.58
+All Providers Combined;Fontibón;;feb-23;39665;13992;median;13992;7;13.7;4.425;114858;39464;114.86;39.46
+All Providers Combined;Kennedy;;feb-23;80112;27044;median;27044;6;1.102.836.667;4;115022;82785;115.02;82.79
+All Providers Combined;Bosa;;feb-23;16241;4346;median;4346;10;1.595.465;587.805;94756;25330;94.76;25.33
+All Providers Combined;Tunjuelito;;feb-23;27462;10807;median;10807;12;191.167;68.875;71932;28348;71.93;28.35
+All Providers Combined;Usme;;feb-23;3643;1328;median;1328;15;198.167;72.299;27399;6270;27.40;6.27
+All Providers Combined;San Cristóbal;;feb-23;15860;5714;median;5714;8;152.767;53.625;100692;33089;100.69;33.09
+All Providers Combined;Santa Fe;;feb-23;12373;4615;median;4615;9;148.333;4.25;92619;33199;92.62;33.20
+All Providers Combined;Usaquen;;feb-23;83582;28986;median;28986;6;1.023.116.111;3.9;115654;92343;115.65;92.34
+All Providers Combined;Chapinero;;feb-23;42287;15421;median;15421;6;10.100.575;366.045;109892;65113;109.89;65.11
+All Providers Combined;Sumapaz;;mar-23;199;55;median;55;11;205.376;79.381;22055;13611;22.06;13.61
+All Providers Combined;Ciudad Bolívar;;mar-23;21408;7440;median;7440;11;18;65.875;67480;28656;67.48;28.66
+All Providers Combined;Rafael Uribe Uribe;;mar-23;16794;6493;median;6493;11;174.542;48.255;57202;23701;57.20;23.70
+All Providers Combined;Puente Aranda;;mar-23;20746;7346;median;7346;6;109.502;394.775;112773;66988;112.77;66.99
+All Providers Combined;Teusaquillo;;mar-23;37373;14005;median;14005;4;75.769;28.257;109316;93937;109.32;93.94
+All Providers Combined;Barrios Unidos;;mar-23;18013;6863;median;6863;7;1.253.945;431.575;114819;45303;114.82;45.30
+All Providers Combined;Suba;;mar-23;96143;31456;median;31456;6;111.896.875;4.275.275;149657;88802;149.66;88.80
+All Providers Combined;Engativá;;mar-23;68511;23171;median;23171;6;1.132.628.889;4.05;132651;61849;132.65;61.85
+All Providers Combined;Fontibón;;mar-23;37656;13367;median;13367;7;129.167;42.893;122672;40479;122.67;40.48
+All Providers Combined;Kennedy;;mar-23;84425;28901;median;28901;6;1.148.446.667;42.625;112098;78554;112.10;78.55
+All Providers Combined;Bosa;;mar-23;18870;5762;median;5762;10;159.107;594.245;102478;27592;102.48;27.59
+All Providers Combined;Tunjuelito;;mar-23;24009;9465;median;9465;13;19.1;6.6;59849;26071;59.85;26.07
+All Providers Combined;Usme;;mar-23;3440;1164;median;1164;15;1.928.615;76.348;30413;12471;30.41;12.47
+All Providers Combined;San Cristóbal;;mar-23;17886;6249;median;6249;7;147.667;51.875;102638;33214;102.64;33.21
+All Providers Combined;Santa Fe;;mar-23;10813;4130;median;4130;8;131.294;3.75;94150;33555;94.15;33.56
+All Providers Combined;Usaquen;;mar-23;76395;26930;median;26930;6;105.965;40.625;114872;90818;114.87;90.82
+All Providers Combined;Chapinero;;mar-23;42890;16051;median;16051;6;101.877.125;3.672.925;112928;68888;112.93;68.89
+All Providers Combined;Sumapaz;;Apr 2023;234;64;median;64;11;21.8;11.575;25325;9632;25.33;9.63
+All Providers Combined;Ciudad Bolívar;;Apr 2023;19232;5881;median;5881;10;174.833;63.575;76593;30725;76.59;30.73
+All Providers Combined;Rafael Uribe Uribe;;Apr 2023;18478;6669;median;6669;11;16.899;475.625;57811;27956;57.81;27.96
+All Providers Combined;Puente Aranda;;Apr 2023;19847;7343;median;7343;7;111.667;36.811;120788;69211;120.79;69.21
+All Providers Combined;Teusaquillo;;Apr 2023;33509;13087;median;13087;5;768.715;295.735;100793;93226;100.79;93.23
+All Providers Combined;Barrios Unidos;;Apr 2023;13271;5523;median;5523;6;113.247;3.85;128004;57645;128.00;57.65
+All Providers Combined;Suba;;Apr 2023;82452;27453;median;27453;6;113.167;427.566.667;149457;85488;149.46;85.49
+All Providers Combined;Engativá;;Apr 2023;68755;23993;median;23993;6;1.096.417.222;3.8;133997;53788;134.00;53.79
+All Providers Combined;Fontibón;;Apr 2023;32336;11376;median;11376;6;111.667;36.375;132103;50444;132.10;50.44
+All Providers Combined;Kennedy;;Apr 2023;78904;27379;median;27379;6;1.087.957.778;4.025;115017;87887;115.02;87.89
+All Providers Combined;Bosa;;Apr 2023;24829;8467;median;8467;9;16.3;612.255;107647;31203;107.65;31.20
+All Providers Combined;Tunjuelito;;Apr 2023;21977;8452;median;8452;12;1.908.055;6.625;60872;27969;60.87;27.97
+All Providers Combined;Usme;;Apr 2023;3253;1221;median;1221;15;198.462;84.321;29151;10504;29.15;10.50
+All Providers Combined;San Cristóbal;;Apr 2023;16593;6008;median;6008;7;144.833;50.486;108562;37958;108.56;37.96
+All Providers Combined;Santa Fe;;Apr 2023;9194;3463;median;3463;8;127.945;38.227;94075;36667;94.08;36.67
+All Providers Combined;Usaquen;;Apr 2023;69703;25048;median;25048;6;10;384.943.333;127770;94391;127.77;94.39
+All Providers Combined;Chapinero;;Apr 2023;36453;14532;median;14532;6;100.667;36.625;113174;74415;113.17;74.42
+All Providers Combined;Sumapaz;;may-23;73;11;median;11;11;170.378;74.078;9353;10767;9.35;10.77
+All Providers Combined;Ciudad Bolívar;;may-23;14425;4241;median;4241;9;160.833;5.336;71527;32513;71.53;32.51
+All Providers Combined;Rafael Uribe Uribe;;may-23;14308;5240;median;5240;9;152.833;47.764;92670;32849;92.67;32.85
+All Providers Combined;Puente Aranda;;may-23;17762;6834;median;6834;6;102.413;359.585;120191;77019;120.19;77.02
+All Providers Combined;Teusaquillo;;may-23;32322;12726;median;12726;4;77.927;29.923;108582;93827;108.58;93.83
+All Providers Combined;Barrios Unidos;;may-23;16690;6420;median;6420;6;11.1;392.085;132521;62959;132.52;62.96
+All Providers Combined;Suba;;may-23;109222;35802;median;35802;7;123.333;4.45;149955;51156;149.96;51.16
+All Providers Combined;Engativá;;may-23;63703;21370;median;21370;6;10.75;3.75;146039;79214;146.04;79.21
+All Providers Combined;Fontibón;;may-23;34950;12259;median;12259;6;12.4;41.125;135279;43621;135.28;43.62
+All Providers Combined;Kennedy;;may-23;79668;28069;median;28069;6;1.055.530.556;3.875;115273;89699;115.27;89.70
+All Providers Combined;Bosa;;may-23;23652;8238;median;8238;9;161.063;5.925;110232;32031;110.23;32.03
+All Providers Combined;Tunjuelito;;may-23;30548;11394;median;11394;12;187.667;6.45;69053;29712;69.05;29.71
+All Providers Combined;Usme;;may-23;2841;943;median;943;12;187.793;80.473;41073;24785;41.07;24.79
+All Providers Combined;San Cristóbal;;may-23;17989;6360;median;6360;6;13.8;50.375;108221;41123;108.22;41.12
+All Providers Combined;Santa Fe;;may-23;8865;3557;median;3557;7;1.210.385;33.911;101931;42389;101.93;42.39
+All Providers Combined;Usaquen;;may-23;79923;28218;median;28218;5;963.682.222;3.7;139998;94718;140.00;94.72
+All Providers Combined;Chapinero;;may-23;37705;14611;median;14611;5;98.633;35.833;114942;75121;114.94;75.12
+All Providers Combined;Sumapaz;;jun-23;164;26;median;26;6;17.975;841.875;18322;10056;18.32;10.06
+All Providers Combined;Ciudad Bolívar;;jun-23;18424;5903;median;5903;11;1.762.295;619.585;56332;28220;56.33;28.22
+All Providers Combined;Rafael Uribe Uribe;;jun-23;14284;4629;median;4629;7;14.187;49.667;116981;38569;116.98;38.57
+All Providers Combined;Puente Aranda;;jun-23;18057;7021;median;7021;6;99.306;35.076;137187;93289;137.19;93.29
+All Providers Combined;Teusaquillo;;jun-23;29445;11848;median;11848;4;77.889;3.05;118500;94626;118.50;94.63
+All Providers Combined;Barrios Unidos;;jun-23;19333;7990;median;7990;5;10.05;3.575;145385;93120;145.39;93.12
+All Providers Combined;Suba;;jun-23;108475;37283;median;37283;7;11.9;4.339.884;153542;65325;153.54;65.33
+All Providers Combined;Engativá;;jun-23;62353;21661;median;21661;6;98.558.625;362.555;161411;94060;161.41;94.06
+All Providers Combined;Fontibón;;jun-23;27840;9971;median;9971;6;1.180.835;39.545;139066;44228;139.07;44.23
+All Providers Combined;Kennedy;;jun-23;72266;25563;median;25563;6;1.060.801.667;3.95;133806;92382;133.81;92.38
+All Providers Combined;Bosa;;jun-23;22941;8101;median;8101;9;15.85;6.05;125126;31893;125.13;31.89
+All Providers Combined;Tunjuelito;;jun-23;29060;11209;median;11209;10;18.05;6.475;84079;31798;84.08;31.80
+All Providers Combined;Usme;;jun-23;3094;939;median;939;12;186.505;77.039;51115;25386;51.12;25.39
+All Providers Combined;San Cristóbal;;jun-23;17675;6173;median;6173;6;132.333;5;113795;42161;113.80;42.16
+All Providers Combined;Santa Fe;;jun-23;7764;2835;median;2835;7;115.532;34.527;109577;42417;109.58;42.42
+All Providers Combined;Usaquen;;jun-23;70407;25117;median;25117;6;1.053.234.444;4.05;145892;93779;145.89;93.78
+All Providers Combined;Chapinero;;jun-23;33040;13238;median;13238;6;107.167;3.9;117986;67153;117.99;67.15
+All Providers Combined;Sumapaz;;jul-23;143;24;median;24;9;122.556;56.596;15471;12983;15.47;12.98
+All Providers Combined;Ciudad Bolívar;;jul-23;17609;5316;median;5316;14;18.325;6.273;30962;13119;30.96;13.12
+All Providers Combined;Rafael Uribe Uribe;;jul-23;13658;4746;median;4746;9;162.167;535.475;103214;40513;103.21;40.51
+All Providers Combined;Puente Aranda;;jul-23;16245;6067;median;6067;6;10;33.571;136078;78103;136.08;78.10
+All Providers Combined;Teusaquillo;;jul-23;29164;11167;median;11167;5;82.722;327.785;112782;93679;112.78;93.68
+All Providers Combined;Barrios Unidos;;jul-23;17899;7345;median;7345;5;97.667;3.725;149799;93578;149.80;93.58
+All Providers Combined;Suba;;jul-23;118707;39934;median;39934;6;109.333;4.05;161913;93684;161.91;93.68
+All Providers Combined;Engativá;;jul-23;59191;20318;median;20318;6;100.333;37.875;159275;93389;159.28;93.39
+All Providers Combined;Fontibón;;jul-23;27315;10059;median;10059;6;111.667;38.125;146875;50285;146.88;50.29
+All Providers Combined;Kennedy;;jul-23;68435;24158;median;24158;6;1.022.223.333;3.875;137117;93798;137.12;93.80
+All Providers Combined;Bosa;;jul-23;23304;8042;median;8042;9;160.167;59.625;139388;32562;139.39;32.56
+All Providers Combined;Tunjuelito;;jul-23;27347;10919;median;10919;9;173.142;59.875;95894;32883;95.89;32.88
+All Providers Combined;Usme;;jul-23;2720;974;median;974;11;1.844.295;81.515;57873;27643;57.87;27.64
+All Providers Combined;San Cristóbal;;jul-23;24716;7081;median;7081;9;1.548.955;64.875;92498;49012;92.50;49.01
+All Providers Combined;Santa Fe;;jul-23;7141;2680;median;2680;7;112.064;34.412;97787;43576;97.79;43.58
+All Providers Combined;Usaquen;;jul-23;64915;22595;median;22595;6;1.120.539.444;4.075;143795;84852;143.80;84.85
+All Providers Combined;Chapinero;;jul-23;34245;13102;median;13102;6;105.278;3.875;118333;69605;118.33;69.61
+All Providers Combined;Sumapaz;;Aug 2023;321;80;median;80;4;79.333;3.5;74699;46869;74.70;46.87
+All Providers Combined;Ciudad Bolívar;;Aug 2023;18401;6000;median;6000;11;1.740.165;5.475;49078;27282;49.08;27.28
+All Providers Combined;Rafael Uribe Uribe;;Aug 2023;13149;4640;median;4640;8;163.863;53.375;139649;41851;139.65;41.85
+All Providers Combined;Puente Aranda;;Aug 2023;17211;6429;median;6429;6;104.925;34.375;132684;93352;132.68;93.35
+All Providers Combined;Teusaquillo;;Aug 2023;31696;12608;median;12608;4;91.833;3.125;127302;94459;127.30;94.46
+All Providers Combined;Barrios Unidos;;Aug 2023;18484;7003;median;7003;6;117.167;39.625;153787;84708;153.79;84.71
+All Providers Combined;Suba;;Aug 2023;121778;41649;median;41649;6;1.150.584;4.157.472;168164;94340;168.16;94.34
+All Providers Combined;Engativá;;Aug 2023;62031;21033;median;21033;6;10.814.075;3.851.375;164692;93977;164.69;93.98
+All Providers Combined;Fontibón;;Aug 2023;31576;11191;median;11191;7;1.438.315;440.505;140971;42727;140.97;42.73
+All Providers Combined;Kennedy;;Aug 2023;71047;25125;median;25125;5;11.6;4;151290;94601;151.29;94.60
+All Providers Combined;Bosa;;Aug 2023;19614;6671;median;6671;9;154.212;54.019;147043;32354;147.04;32.35
+All Providers Combined;Tunjuelito;;Aug 2023;27595;11429;median;11429;9;17.195;61.375;94698;32954;94.70;32.95
+All Providers Combined;Usme;;Aug 2023;4358;1310;median;1310;12;196.333;79.159;44920;25819;44.92;25.82
+All Providers Combined;San Cristóbal;;Aug 2023;17889;6345;median;6345;6;132.167;4.914;122601;44197;122.60;44.20
+All Providers Combined;Santa Fe;;Aug 2023;8379;3115;median;3115;7;12.599;34.877;104035;43436;104.04;43.44
+All Providers Combined;Usaquen;;Aug 2023;73474;25832;median;25832;7;1.352.128.889;4.55;148138;77645;148.14;77.65
+All Providers Combined;Chapinero;;Aug 2023;34082;13550;median;13550;5;130.333;41.063;120884;73212;120.88;73.21
+All Providers Combined;Sumapaz;;sep-23;517;107;median;107;6;108.646;420.625;25752;26550;25.75;26.55
+All Providers Combined;Ciudad Bolívar;;sep-23;22245;6366;median;6366;9;159.167;5.368;48209;31351;48.21;31.35
+All Providers Combined;Rafael Uribe Uribe;;sep-23;12121;3799;median;3799;8;163.173;5.4;156627;51646;156.63;51.65
+All Providers Combined;Puente Aranda;;sep-23;16521;6136;median;6136;6;10.5;38.333;146634;84608;146.63;84.61
+All Providers Combined;Teusaquillo;;sep-23;29554;11371;median;11371;4;740.445;311.485;120826;94569;120.83;94.57
+All Providers Combined;Barrios Unidos;;sep-23;19135;6805;median;6805;6;104.167;39.853;163359;91147;163.36;91.15
+All Providers Combined;Suba;;sep-23;122525;41108;median;41108;6;10.452.332;4.029.208;174897;94581;174.90;94.58
+All Providers Combined;Engativá;;sep-23;64969;21675;median;21675;6;105.977.125;4.15;171528;93833;171.53;93.83
+All Providers Combined;Fontibón;;sep-23;29999;10588;median;10588;7;12.7;43.788;141940;40873;141.94;40.87
+All Providers Combined;Kennedy;;sep-23;71271;23872;median;23872;6;100.111;39.625;165453;99846;165.45;99.85
+All Providers Combined;Bosa;;sep-23;17445;5873;median;5873;9;1.493.105;54.954;146088;32768;146.09;32.77
+All Providers Combined;Tunjuelito;;sep-23;28998;11254;median;11254;9;166.667;59.375;98924;32993;98.92;32.99
+All Providers Combined;Usme;;sep-23;5047;1362;median;1362;11;174.472;64.751;69540;30110;69.54;30.11
+All Providers Combined;San Cristóbal;;sep-23;18474;6347;median;6347;6;128.237;4.875;115223;43503;115.22;43.50
+All Providers Combined;Santa Fe;;sep-23;7575;3008;median;3008;6;106.253;356.115;116676;49560;116.68;49.56
+All Providers Combined;Usaquen;;sep-23;72070;24415;median;24415;6;11.447.075;42.337.625;161661;86586;161.66;86.59
+All Providers Combined;Chapinero;;sep-23;36527;13996;median;13996;6;107.833;3.9;125286;66968;125.29;66.97
+All Providers Combined;Sumapaz;;oct-23;439;102;median;102;5;11.3;30.417;27152;21667;27.15;21.67
+All Providers Combined;Ciudad Bolívar;;oct-23;19623;6131;median;6131;7;128.793;48.172;69274;41083;69.27;41.08
+All Providers Combined;Rafael Uribe Uribe;;oct-23;13972;4537;median;4537;6;14.433;46.667;156275;93894;156.28;93.89
+All Providers Combined;Puente Aranda;;oct-23;20132;7667;median;7667;6;941.485;358.875;149181;94444;149.18;94.44
+All Providers Combined;Teusaquillo;;oct-23;32386;12919;median;12919;4;77.108;30.833;124166;94513;124.17;94.51
+All Providers Combined;Barrios Unidos;;oct-23;20165;7901;median;7901;5;89.167;3.425;171242;94418;171.24;94.42
+All Providers Combined;Suba;;oct-23;122631;41546;median;41546;6;1.016.097;402.671;178740;97682;178.74;97.68
+All Providers Combined;Engativá;;oct-23;66886;22043;median;22043;6;98.167;3.75;182342;100073;182.34;100.07
+All Providers Combined;Fontibón;;oct-23;36186;11942;median;11942;6;121.269;43.375;135152;43896;135.15;43.90
+All Providers Combined;Kennedy;;oct-23;77611;25046;median;25046;5;957.756.667;376.101.111;172174;117166;172.17;117.17
+All Providers Combined;Bosa;;oct-23;28366;10080;median;10080;9;15.1;58.625;140229;32813;140.23;32.81
+All Providers Combined;Tunjuelito;;oct-23;28927;10878;median;10878;9;168.667;6.125;102917;32807;102.92;32.81
+All Providers Combined;Usme;;oct-23;4350;1330;median;1330;10;178.333;78.203;92306;32323;92.31;32.32
+All Providers Combined;San Cristóbal;;oct-23;16295;5680;median;5680;6;127.463;49.198;133010;43254;133.01;43.25
+All Providers Combined;Santa Fe;;oct-23;8175;3311;median;3311;6;104.092;33.375;113150;48827;113.15;48.83
+All Providers Combined;Usaquen;;oct-23;72344;24663;median;24663;6;1.081.448.889;416.247.222;169025;93525;169.03;93.53
+All Providers Combined;Chapinero;;oct-23;33655;13279;median;13279;6;107.333;3.95;126409;64503;126.41;64.50
+All Providers Combined;Sumapaz;;nov-23;378;111;median;111;8;13.45;5.225;27614;18403;27.61;18.40
+All Providers Combined;Ciudad Bolívar;;nov-23;20134;6097;median;6097;6;13.05;50.654;70457;44259;70.46;44.26
+All Providers Combined;Rafael Uribe Uribe;;nov-23;13342;4350;median;4350;8;1.639.665;55.292;144422;86924;144.42;86.92
+All Providers Combined;Puente Aranda;;nov-23;17339;6232;median;6232;6;94.243;3.55;162653;94013;162.65;94.01
+All Providers Combined;Teusaquillo;;nov-23;29944;12136;median;12136;4;8.4;33.833;119665;93880;119.67;93.88
+All Providers Combined;Barrios Unidos;;nov-23;23568;9596;median;9596;5;90.667;3.725;160115;94630;160.12;94.63
+All Providers Combined;Suba;;nov-23;116445;39817;median;39817;6;101.111;4.125;176737;94722;176.74;94.72
+All Providers Combined;Engativá;;nov-23;65559;22234;median;22234;5;94.833;3.8;183698;101639;183.70;101.64
+All Providers Combined;Fontibón;;nov-23;33913;10656;median;10656;7;127.845;46.875;141301;40939;141.30;40.94
+All Providers Combined;Kennedy;;nov-23;98296;28891;median;28891;5;10.2;409.622.222;167390;100857;167.39;100.86
+All Providers Combined;Bosa;;nov-23;31696;10987;median;10987;9;150.065;5.75;148948;32870;148.95;32.87
+All Providers Combined;Tunjuelito;;nov-23;27035;10206;median;10206;10;17.25;64.125;105459;32414;105.46;32.41
+All Providers Combined;Usme;;nov-23;3949;1074;median;1074;10;180.888;844.615;107498;32766;107.50;32.77
+All Providers Combined;San Cristóbal;;nov-23;20307;5815;median;5815;8;13.9;5.425;111414;43772;111.41;43.77
+All Providers Combined;Santa Fe;;nov-23;8095;3022;median;3022;7;115.833;36.442;109284;42830;109.28;42.83
+All Providers Combined;Usaquen;;nov-23;68129;22920;median;22920;6;1.084.965;425.103.333;166323;89611;166.32;89.61
+All Providers Combined;Chapinero;;nov-23;32305;12848;median;12848;6;115.333;4.25;124512;58091;124.51;58.09
+All Providers Combined;Sumapaz;;Dec 2023;414;92;median;92;7;1.163.335;42.875;34128;23233;34.13;23.23
+All Providers Combined;Ciudad Bolívar;;Dec 2023;18194;5514;median;5514;6;132.458;49.207;67035;45351;67.04;45.35
+All Providers Combined;Rafael Uribe Uribe;;Dec 2023;13869;4444;median;4444;8;155.355;4.525;121319;87932;121.32;87.93
+All Providers Combined;Puente Aranda;;Dec 2023;16335;5992;median;5992;5;879.275;3.3;178626;94642;178.63;94.64
+All Providers Combined;Teusaquillo;;Dec 2023;23382;9307;median;9307;4;73.167;3;133561;94722;133.56;94.72
+All Providers Combined;Barrios Unidos;;Dec 2023;14973;6285;median;6285;5;94.111;4;173028;94321;173.03;94.32
+All Providers Combined;Suba;;Dec 2023;103344;35560;median;35560;5;936.985.625;38.748.875;191673;105641;191.67;105.64
+All Providers Combined;Engativá;;Dec 2023;51081;18140;median;18140;5;87.206.625;358.745;194827;115787;194.83;115.79
+All Providers Combined;Fontibón;;Dec 2023;24479;8155;median;8155;7;1.255.345;42.601;164928;41410;164.93;41.41
+All Providers Combined;Kennedy;;Dec 2023;84447;24995;median;24995;5;91.333;37.625;178556;109793;178.56;109.79
+All Providers Combined;Bosa;;Dec 2023;21639;7532;median;7532;8;13.85;50.854;165844;32952;165.84;32.95
+All Providers Combined;Tunjuelito;;Dec 2023;24123;9415;median;9415;9;16.25;59.125;133752;32965;133.75;32.97
+All Providers Combined;Usme;;Dec 2023;3355;941;median;941;9;174.032;625.935;122784;32753;122.78;32.75
+All Providers Combined;San Cristóbal;;Dec 2023;19361;5334;median;5334;8;133.226;4.975;131089;58000;131.09;58.00
+All Providers Combined;Santa Fe;;Dec 2023;7555;2669;median;2669;7;117.667;35.055;131133;43716;131.13;43.72
+All Providers Combined;Usaquen;;Dec 2023;59943;20798;median;20798;6;9.763.925;393.005;178514;93681;178.51;93.68
+All Providers Combined;Chapinero;;Dec 2023;27904;11182;median;11182;6;109.583;39.875;122927;64791;122.93;64.79

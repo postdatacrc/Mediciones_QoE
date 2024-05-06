@@ -1,0 +1,636 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Minimum Latency;Multi-Server Latency;Multi-Server Jitter;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Bogotá, Bogota, Colombia;;Dec 2021;832064;260524;all;N/A;median;260524;9;;;73812;21002;73.81;21.00
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Dec 2021;144254;44832;all;N/A;median;44832;18;;;61842;17688;61.84;17.69
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2021;64640;20365;all;N/A;median;20365;16;;;51858;12195;51.86;12.20
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Dec 2021;196341;65309;all;N/A;median;65309;10;;;62830;13109;62.83;13.11
+Movistar;Bogotá, Bogota, Colombia;;Dec 2021;85133;27116;all;N/A;median;27116;6;;;131954;118493;131.95;118.49
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Dec 2021;38051;12264;all;N/A;median;12264;18;;;126966;93881;126.97;93.88
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2021;20708;7072;all;N/A;median;7072;36;;;94988;92766;94.99;92.77
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Dec 2021;17191;5380;all;N/A;median;5380;13;;;177015;173274;177.02;173.27
+Claro;Bogotá, Bogota, Colombia;;Dec 2021;403031;129680;all;N/A;median;129680;11;;;67669;14901;67.67;14.90
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Dec 2021;62472;20181;all;N/A;median;20181;19;;;63529;14874;63.53;14.87
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2021;19017;5892;all;N/A;median;5892;13;;;66151;17899;66.15;17.90
+Claro;Medellín, Medellin, Antioquia, Colombia;;Dec 2021;51854;17949;all;N/A;median;17949;10;;;66330;18787;66.33;18.79
+Tigo;Bogotá, Bogota, Colombia;;Dec 2021;53038;18130;all;N/A;median;18130;10;;;57151;10525;57.15;10.53
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Dec 2021;21324;6505;all;N/A;median;6505;17;;;46524;10386;46.52;10.39
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2021;14870;5174;all;N/A;median;5174;11;;;47647;10192;47.65;10.19
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Dec 2021;116347;40066;all;N/A;median;40066;9;;;61190;11429;61.19;11.43
+DIRECTV;Bogotá, Bogota, Colombia;;Dec 2021;9909;3327;all;N/A;median;3327;30;;;10992;3515;10.99;3.52
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Dec 2021;2857;1101;all;N/A;median;1101;33;;;11549;3611;11.55;3.61
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2021;7844;2161;all;N/A;median;2161;56;;;6691;2620;6.69;2.62
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Dec 2021;4559;1763;all;N/A;median;1763;32;;;10996;3464;11.00;3.46
+ETB;Bogotá, Bogota, Colombia;;Dec 2021;256905;83658;all;N/A;median;83658;5;;;86369;87130;86.37;87.13
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Dec 2021;32;18;all;N/A;median;18;13;;;19335;32269;19.34;32.27
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2021;83;38;all;N/A;median;38;19;;;7628;2602;7.63;2.60
+ETB;Medellín, Medellin, Antioquia, Colombia;;Dec 2021;406;166;all;N/A;median;166;10;;;21338;21177;21.34;21.18
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Dec 2021;16479;5478;all;N/A;median;5478;18;;;14249;10276;14.25;10.28
+All Providers Combined;Bogotá, Bogota, Colombia;;Jan 2022;905088;272768;all;N/A;median;272768;9;17.7;75.875;76637;21927;76.64;21.93
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Jan 2022;144880;42620;all;N/A;median;42620;19;35.186;135.704;59122;19901;59.12;19.90
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2022;74945;21709;all;N/A;median;21709;18;564.459;146.347;56347;16625;56.35;16.63
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Jan 2022;216811;68557;all;N/A;median;68557;11;359.301;12.05;60758;13356;60.76;13.36
+Movistar;Bogotá, Bogota, Colombia;;Jan 2022;94800;28990;all;N/A;median;28990;6;106.141;6.05;147840;127317;147.84;127.32
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Jan 2022;39298;12674;all;N/A;median;12674;18;248.263;124.167;122752;101240;122.75;101.24
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2022;23613;7856;all;N/A;median;7856;36;501.622;128.833;95544;94114;95.54;94.11
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Jan 2022;21285;6494;all;N/A;median;6494;13;391.041;90.875;179954;173675;179.95;173.68
+Claro;Bogotá, Bogota, Colombia;;Jan 2022;412299;128777;all;N/A;median;128777;11;200.856;88.298;68482;18168;68.48;18.17
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Jan 2022;61844;18159;all;N/A;median;18159;19;35.75;112.375;62795;18225;62.80;18.23
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2022;24482;6695;all;N/A;median;6695;14;55.007;108.833;66798;20608;66.80;20.61
+Claro;Medellín, Medellin, Antioquia, Colombia;;Jan 2022;57024;18367;all;N/A;median;18367;11;338.333;9.975;64745;20897;64.75;20.90
+Tigo;Bogotá, Bogota, Colombia;;Jan 2022;59102;19549;all;N/A;median;19549;10;187.703;80.645;58802;10576;58.80;10.58
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Jan 2022;23724;6798;all;N/A;median;6798;17;339.707;15.85;42879;10446;42.88;10.45
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2022;16124;4885;all;N/A;median;4885;11;537.638;121.875;56676;10476;56.68;10.48
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Jan 2022;121326;40364;all;N/A;median;40364;10;341.667;119.851;59634;11441;59.63;11.44
+DIRECTV;Bogotá, Bogota, Colombia;;Jan 2022;7733;2576;all;N/A;median;2576;28;578.667;30.25;9679;3466;9.68;3.47
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Jan 2022;5252;1746;all;N/A;median;1746;30;784.002;45.45;9433;3493;9.43;3.49
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2022;8077;2253;all;N/A;median;2253;46;1.130.416;546.007;6521;2753;6.52;2.75
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Jan 2022;9430;2884;all;N/A;median;2884;30;78.725;45;9873;3416;9.87;3.42
+ETB;Bogotá, Bogota, Colombia;;Jan 2022;302271;94062;all;N/A;median;94062;5;10.4;4.925;87942;88355;87.94;88.36
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Jan 2022;84;23;all;N/A;median;23;13;330.824;12.65;40231;37240;40.23;37.24
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2022;130;70;all;N/A;median;70;20;378.556;75.833;19486;9795;19.49;9.80
+ETB;Medellín, Medellin, Antioquia, Colombia;;Jan 2022;684;247;all;N/A;median;247;8;190.833;14.1;27517;34793;27.52;34.79
+EMCALI;Bogotá, Bogota, Colombia;;Jan 2022;2;1;all;N/A;median;1;11;;;11843;8031;11.84;8.03
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Jan 2022;11779;4010;all;N/A;median;4010;18;618.067;217.562;13524;9565;13.52;9.57
+All Providers Combined;Bogotá, Bogota, Colombia;;feb-22;874308;264078;all;N/A;median;264078;9;171.667;72.375;81467;25663;81.47;25.66
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;feb-22;140271;41837;all;N/A;median;41837;18;33.45;107.036;64304;21793;64.30;21.79
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-22;71574;21276;all;N/A;median;21276;16;527.464;11.925;60878;20769;60.88;20.77
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;feb-22;239242;75560;all;N/A;median;75560;11;346.715;9.737;64017;17416;64.02;17.42
+Movistar;Bogotá, Bogota, Colombia;;feb-22;102833;30303;all;N/A;median;30303;6;108.833;57.947;143512;128884;143.51;128.88
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;feb-22;38359;12138;all;N/A;median;12138;19;24.515;88.291;126234;112146;126.23;112.15
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-22;21620;7308;all;N/A;median;7308;36;478.889;113.289;103118;93274;103.12;93.27
+Movistar;Medellín, Medellin, Antioquia, Colombia;;feb-22;25636;7438;all;N/A;median;7438;13;393.375;7.775;177006;172570;177.01;172.57
+Claro;Bogotá, Bogota, Colombia;;feb-22;374859;118168;all;N/A;median;118168;11;19.9;8.525;73425;21072;73.43;21.07
+Claro;Cali, Cali, Valle del Cauca, Colombia;;feb-22;57845;17681;all;N/A;median;17681;18;344.439;102.083;66342;21333;66.34;21.33
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-22;24454;6806;all;N/A;median;6806;13;52.15;90.125;69367;21844;69.37;21.84
+Claro;Medellín, Medellin, Antioquia, Colombia;;feb-22;63313;20758;all;N/A;median;20758;11;33.25;88.225;67259;21916;67.26;21.92
+Tigo;Bogotá, Bogota, Colombia;;feb-22;58632;19687;all;N/A;median;19687;10;178.167;71.625;63048;11364;63.05;11.36
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;feb-22;26306;7848;all;N/A;median;7848;16;326.667;102.062;43109;10439;43.11;10.44
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-22;15593;4814;all;N/A;median;4814;10;516.037;103.125;62086;11028;62.09;11.03
+Tigo;Medellín, Medellin, Antioquia, Colombia;;feb-22;132805;43767;all;N/A;median;43767;9;320.208;9.35;63013;12614;63.01;12.61
+DIRECTV;Bogotá, Bogota, Colombia;;feb-22;6748;2315;all;N/A;median;2315;27;550.944;275.208;10233;3849;10.23;3.85
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;feb-22;1962;708;all;N/A;median;708;28;704.083;35.875;11999;3848;12.00;3.85
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-22;6424;1888;all;N/A;median;1888;53;101.505;485.229;7634;3099;7.63;3.10
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;feb-22;9276;2991;all;N/A;median;2991;30;70.875;36.395;10875;3461;10.88;3.46
+ETB;Bogotá, Bogota, Colombia;;feb-22;304210;94923;all;N/A;median;94923;4;100.333;49.687;90447;89937;90.45;89.94
+ETB;Cali, Cali, Valle del Cauca, Colombia;;feb-22;637;53;all;N/A;median;53;27;505.166;451.229;20848;29371;20.85;29.37
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-22;418;228;all;N/A;median;228;21;396.807;115.125;24622;31739;24.62;31.74
+ETB;Medellín, Medellin, Antioquia, Colombia;;feb-22;996;493;all;N/A;median;493;5;17.7;69.437;47476;50135;47.48;50.14
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;feb-22;11042;3843;all;N/A;median;3843;18;590.416;19.825;14461;11223;14.46;11.22
+EMCALI;Medellín, Medellin, Antioquia, Colombia;;feb-22;1;1;all;N/A;median;1;3;170.667;1.025;86378;95611;86.38;95.61
+All Providers Combined;Bogotá, Bogota, Colombia;;mar-22;953680;282485;all;N/A;median;282485;8;163.333;68.846;87395;30238;87.40;30.24
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;mar-22;150653;43035;all;N/A;median;43035;18;33.2;10.4;66282;22046;66.28;22.05
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-22;66771;21059;all;N/A;median;21059;15;525.167;114.208;62341;21621;62.34;21.62
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;mar-22;259312;79206;all;N/A;median;79206;11;341.167;100.583;66154;19246;66.15;19.25
+Movistar;Bogotá, Bogota, Colombia;;mar-22;103855;31461;all;N/A;median;31461;6;10.4;5.25;154528;139324;154.53;139.32
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;mar-22;37501;11876;all;N/A;median;11876;18;244.725;78.083;139041;124336;139.04;124.34
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-22;21949;7499;all;N/A;median;7499;36;48.452;117.583;94781;91188;94.78;91.19
+Movistar;Medellín, Medellin, Antioquia, Colombia;;mar-22;25665;7753;all;N/A;median;7753;13;39.3;81.375;177291;169558;177.29;169.56
+Claro;Bogotá, Bogota, Colombia;;mar-22;399293;122645;all;N/A;median;122645;11;194.333;82.437;78896;21810;78.90;21.81
+Claro;Cali, Cali, Valle del Cauca, Colombia;;mar-22;62919;17852;all;N/A;median;17852;18;342.805;102.229;67919;21758;67.92;21.76
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-22;21527;6545;all;N/A;median;6545;13;518.792;85.375;75733;22690;75.73;22.69
+Claro;Medellín, Medellin, Antioquia, Colombia;;mar-22;69711;21697;all;N/A;median;21697;11;33.35;91.959;67201;22229;67.20;22.23
+Tigo;Bogotá, Bogota, Colombia;;mar-22;70193;21839;all;N/A;median;21839;10;183.333;7.377;64118;11482;64.12;11.48
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;mar-22;29550;8540;all;N/A;median;8540;16;32.05;10.75;48818;10499;48.82;10.50
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-22;14408;4988;all;N/A;median;4988;10;515.666;9.45;61992;11259;61.99;11.26
+Tigo;Medellín, Medellin, Antioquia, Colombia;;mar-22;142349;45608;all;N/A;median;45608;9;310.333;96.583;65516;13528;65.52;13.53
+DIRECTV;Bogotá, Bogota, Colombia;;mar-22;6321;2196;all;N/A;median;2196;26;506.697;21.925;11388;3963;11.39;3.96
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;mar-22;2301;828;all;N/A;median;828;29;69.75;310.375;11052;3398;11.05;3.40
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-22;5515;1691;all;N/A;median;1691;39;910.667;395.383;8048;3088;8.05;3.09
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;mar-22;9504;3019;all;N/A;median;3019;30;751.416;364.395;11362;3269;11.36;3.27
+ETB;Bogotá, Bogota, Colombia;;mar-22;349006;106377;all;N/A;median;106377;4;92.667;46.537;93261;94102;93.26;94.10
+ETB;Cali, Cali, Valle del Cauca, Colombia;;mar-22;516;48;all;N/A;median;48;14;276.817;165.375;18664;23096;18.66;23.10
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-22;347;180;all;N/A;median;180;19;409.583;131.312;16224;8711;16.22;8.71
+ETB;Medellín, Medellin, Antioquia, Colombia;;mar-22;2080;856;all;N/A;median;856;4;148.791;64.843;78661;70583;78.66;70.58
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;mar-22;13075;4169;all;N/A;median;4169;16;524.666;171.654;21479;16878;21.48;16.88
+All Providers Combined;Bogotá, Bogota, Colombia;;Apr 2022;942982;283307;all;N/A;median;283307;8;162.916;7.05;89360;31077;89.36;31.08
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Apr 2022;148169;41789;all;N/A;median;41789;19;331.729;101.125;70590;21749;70.59;21.75
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2022;71466;21660;all;N/A;median;21660;18;563.333;13.6;61743;21902;61.74;21.90
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Apr 2022;256977;80028;all;N/A;median;80028;11;35.5;10.6;70015;20421;70.02;20.42
+Movistar;Bogotá, Bogota, Colombia;;Apr 2022;102007;30331;all;N/A;median;30331;6;109.333;5.75;155901;136097;155.90;136.10
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Apr 2022;34135;11121;all;N/A;median;11121;19;244.489;78.167;140661;119069;140.66;119.07
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2022;22429;7492;all;N/A;median;7492;36;505.028;124.541;102316;94341;102.32;94.34
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Apr 2022;35259;9493;all;N/A;median;9493;15;402.333;103.937;209217;201375;209.22;201.38
+Claro;Bogotá, Bogota, Colombia;;Apr 2022;398499;126457;all;N/A;median;126457;10;18.825;79.083;84222;23974;84.22;23.97
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Apr 2022;64686;17754;all;N/A;median;17754;21;339.962;98.625;72495;21280;72.50;21.28
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2022;22522;6401;all;N/A;median;6401;14;54.625;9.775;71509;26672;71.51;26.67
+Claro;Medellín, Medellin, Antioquia, Colombia;;Apr 2022;65241;21101;all;N/A;median;21101;11;345.506;9.15;70848;25766;70.85;25.77
+Tigo;Bogotá, Bogota, Colombia;;Apr 2022;84460;25551;all;N/A;median;25551;10;187.333;76.171;62841;11141;62.84;11.14
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Apr 2022;30627;8504;all;N/A;median;8504;16;304.167;97.192;55593;10979;55.59;10.98
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2022;17993;5901;all;N/A;median;5901;11;582.167;137.958;59908;10606;59.91;10.61
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Apr 2022;139145;45958;all;N/A;median;45958;10;326.549;101.417;64769;13218;64.77;13.22
+DIRECTV;Bogotá, Bogota, Colombia;;Apr 2022;5755;1994;all;N/A;median;1994;26;530.869;275.375;9999;4073;10.00;4.07
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Apr 2022;2097;832;all;N/A;median;832;29;78.15;35.95;9660;3494;9.66;3.49
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2022;5103;1589;all;N/A;median;1589;47;104.6;437.472;7366;2854;7.37;2.85
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Apr 2022;7619;2810;all;N/A;median;2810;30;780.833;391.104;10196;3206;10.20;3.21
+ETB;Bogotá, Bogota, Colombia;;Apr 2022;327028;100604;all;N/A;median;100604;4;93.167;5.075;94242;94390;94.24;94.39
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Apr 2022;179;31;all;N/A;median;31;11;23.5;8.5;41502;41865;41.50;41.87
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2022;642;240;all;N/A;median;240;21;484.333;271.958;6666;5237;6.67;5.24
+ETB;Medellín, Medellin, Antioquia, Colombia;;Apr 2022;1507;672;all;N/A;median;672;4;144.833;66.641;91143;89929;91.14;89.93
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Apr 2022;11942;3910;all;N/A;median;3910;16;546.063;185.574;20660;16140;20.66;16.14
+EMCALI;Medellín, Medellin, Antioquia, Colombia;;Apr 2022;3;2;all;N/A;median;2;18;464.622;94.783;196319;193552;196.32;193.55
+All Providers Combined;Bogotá, Bogota, Colombia;;may-22;851729;257615;all;N/A;median;257615;8;161.833;6.95;90930;32008;90.93;32.01
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;may-22;154680;41511;all;N/A;median;41511;20;346.961;115.917;67456;20731;67.46;20.73
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;may-22;66709;19873;all;N/A;median;19873;15;53.571;111.625;68585;25876;68.59;25.88
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;may-22;256030;77432;all;N/A;median;77432;11;336.828;10.2;74112;21840;74.11;21.84
+Movistar;Bogotá, Bogota, Colombia;;may-22;109936;32156;all;N/A;median;32156;6;111.385;6.225;155075;133211;155.08;133.21
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;may-22;36499;11164;all;N/A;median;11164;18;247.778;86.611;140702;94574;140.70;94.57
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;may-22;22966;7303;all;N/A;median;7303;36;490.069;102.889;112450;94747;112.45;94.75
+Movistar;Medellín, Medellin, Antioquia, Colombia;;may-22;36741;9611;all;N/A;median;9611;16;378.641;83.458;201202;198265;201.20;198.27
+Claro;Bogotá, Bogota, Colombia;;may-22;364632;114201;all;N/A;median;114201;11;188.089;80.541;84886;28238;84.89;28.24
+Claro;Cali, Cali, Valle del Cauca, Colombia;;may-22;57223;16083;all;N/A;median;16083;23;344.838;103.875;73252;20565;73.25;20.57
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;may-22;20682;6050;all;N/A;median;6050;13;538.194;87.375;80486;29203;80.49;29.20
+Claro;Medellín, Medellin, Antioquia, Colombia;;may-22;62396;20492;all;N/A;median;20492;10;329.444;94.333;71260;28285;71.26;28.29
+Tigo;Bogotá, Bogota, Colombia;;may-22;61728;19527;all;N/A;median;19527;10;181.167;7.9;63157;11572;63.16;11.57
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;may-22;41063;9535;all;N/A;median;9535;18;380.333;15.031;47759;12381;47.76;12.38
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;may-22;15349;5064;all;N/A;median;5064;10;540.144;10.625;61118;11362;61.12;11.36
+Tigo;Medellín, Medellin, Antioquia, Colombia;;may-22;141199;44883;all;N/A;median;44883;9;318.222;100.875;69092;14916;69.09;14.92
+DIRECTV;Bogotá, Bogota, Colombia;;may-22;7842;2501;all;N/A;median;2501;27;519.333;25.175;10949;3928;10.95;3.93
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;may-22;2954;1083;all;N/A;median;1083;29;797.778;330.472;10656;3616;10.66;3.62
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;may-22;4336;1230;all;N/A;median;1230;52;975.003;383.594;6689;2843;6.69;2.84
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;may-22;4705;1773;all;N/A;median;1773;29;67.05;316.125;11638;3420;11.64;3.42
+ETB;Bogotá, Bogota, Colombia;;may-22;283744;90730;all;N/A;median;90730;4;89.583;44.125;94485;94601;94.49;94.60
+ETB;Cali, Cali, Valle del Cauca, Colombia;;may-22;18;12;all;N/A;median;12;12;258.642;30.155;35510;63452;35.51;63.45
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;may-22;497;193;all;N/A;median;193;20;47.175;229.588;11030;9267;11.03;9.27
+ETB;Medellín, Medellin, Antioquia, Colombia;;may-22;1744;715;all;N/A;median;715;10;219.937;91.375;31621;26698;31.62;26.70
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;may-22;12363;4203;all;N/A;median;4203;14;538.833;150.462;26252;20595;26.25;20.60
+All Providers Combined;Bogotá, Bogota, Colombia;;jun-22;772934;236580;all;N/A;median;236580;8;158.642;66.312;91887;32524;91.89;32.52
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;jun-22;117744;35223;all;N/A;median;35223;18;32.218;9.675;75070;28867;75.07;28.87
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-22;61536;18770;all;N/A;median;18770;15;512.889;100.435;80523;29097;80.52;29.10
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;jun-22;220385;69545;all;N/A;median;69545;11;279.667;83.833;76748;22365;76.75;22.37
+Movistar;Bogotá, Bogota, Colombia;;jun-22;95686;30768;all;N/A;median;30768;6;11.15;57.791;149809;133825;149.81;133.83
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;jun-22;29579;10057;all;N/A;median;10057;19;232.556;73.019;141274;128123;141.27;128.12
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-22;23849;7745;all;N/A;median;7745;35;470.045;8.925;122506;101245;122.51;101.25
+Movistar;Medellín, Medellin, Antioquia, Colombia;;jun-22;29187;8729;all;N/A;median;8729;16;350.667;62.656;204175;198249;204.18;198.25
+Claro;Bogotá, Bogota, Colombia;;jun-22;314822;98575;all;N/A;median;98575;11;186.255;8.05;88008;29975;88.01;29.98
+Claro;Cali, Cali, Valle del Cauca, Colombia;;jun-22;48228;14836;all;N/A;median;14836;19;333.569;9.375;78483;28766;78.48;28.77
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-22;20214;5805;all;N/A;median;5805;13;53.552;90.814;72615;29710;72.62;29.71
+Claro;Medellín, Medellin, Antioquia, Colombia;;jun-22;53344;18133;all;N/A;median;18133;10;302.667;88.604;73332;29746;73.33;29.75
+Tigo;Bogotá, Bogota, Colombia;;jun-22;66115;20238;all;N/A;median;20238;10;171.167;7.8;62370;12409;62.37;12.41
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;jun-22;23894;6422;all;N/A;median;6422;15;30.2;99.625;52877;11154;52.88;11.15
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-22;13551;4662;all;N/A;median;4662;10;524.708;105.625;66594;11871;66.59;11.87
+Tigo;Medellín, Medellin, Antioquia, Colombia;;jun-22;123077;40301;all;N/A;median;40301;9;24.4;77.895;74549;15254;74.55;15.25
+DIRECTV;Bogotá, Bogota, Colombia;;jun-22;6782;2461;all;N/A;median;2461;28;504.827;252.412;9912;3681;9.91;3.68
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;jun-22;2395;958;all;N/A;median;958;33;69.35;324.718;9099;3387;9.10;3.39
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-22;1694;441;all;N/A;median;441;37;840.732;272.812;7304;2815;7.30;2.82
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;jun-22;4433;1595;all;N/A;median;1595;29;58.55;269.843;10176;3342;10.18;3.34
+ETB;Bogotá, Bogota, Colombia;;jun-22;266249;85367;all;N/A;median;85367;4;8.6;3.95;94594;94646;94.59;94.65
+ETB;Cali, Cali, Valle del Cauca, Colombia;;jun-22;36;21;all;N/A;median;21;12;388.699;85.291;67478;30487;67.48;30.49
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-22;176;76;all;N/A;median;76;20;432.655;140.401;11948;9408;11.95;9.41
+ETB;Medellín, Medellin, Antioquia, Colombia;;jun-22;1801;630;all;N/A;median;630;7;177.667;8.125;32901;28692;32.90;28.69
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;jun-22;9411;3316;all;N/A;median;3316;15;49.25;159.625;25695;20164;25.70;20.16
+All Providers Combined;Bogotá, Bogota, Colombia;;jul-22;804514;242910;all;N/A;median;242910;8;155.708;63.625;93863;32776;93.86;32.78
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;jul-22;121377;36476;all;N/A;median;36476;18;32.2;96.113;77511;28336;77.51;28.34
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-22;58566;17449;all;N/A;median;17449;14;513.559;93.603;86985;29617;86.99;29.62
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;jul-22;209024;63345;all;N/A;median;63345;10;324.655;8.925;91314;24325;91.31;24.33
+Movistar;Bogotá, Bogota, Colombia;;jul-22;100224;30851;all;N/A;median;30851;6;103.247;51.527;164130;137227;164.13;137.23
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;jul-22;32433;10800;all;N/A;median;10800;19;240.625;71.855;142353;128377;142.35;128.38
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-22;21704;6996;all;N/A;median;6996;35;474.152;89.822;121643;100291;121.64;100.29
+Movistar;Medellín, Medellin, Antioquia, Colombia;;jul-22;29929;8217;all;N/A;median;8217;18;395.314;6.8;219168;200370;219.17;200.37
+Claro;Bogotá, Bogota, Colombia;;jul-22;333278;104276;all;N/A;median;104276;10;18.55;79.125;90023;30156;90.02;30.16
+Claro;Cali, Cali, Valle del Cauca, Colombia;;jul-22;51302;15349;all;N/A;median;15349;19;333.719;97.377;79319;27423;79.32;27.42
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-22;18543;5543;all;N/A;median;5543;13;53.123;8.2;84635;30313;84.64;30.31
+Claro;Medellín, Medellin, Antioquia, Colombia;;jul-22;50717;16656;all;N/A;median;16656;10;357.458;103.164;91424;30429;91.42;30.43
+Tigo;Bogotá, Bogota, Colombia;;jul-22;52164;17037;all;N/A;median;17037;10;164.337;65.812;76791;13618;76.79;13.62
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;jul-22;21014;6372;all;N/A;median;6372;14;287.732;93.583;56742;12293;56.74;12.29
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-22;14630;4492;all;N/A;median;4492;10;521.074;9.5;73614;13106;73.61;13.11
+Tigo;Medellín, Medellin, Antioquia, Colombia;;jul-22;119493;38296;all;N/A;median;38296;9;286.833;82.954;81166;17280;81.17;17.28
+DIRECTV;Bogotá, Bogota, Colombia;;jul-22;10730;3278;all;N/A;median;3278;30;514.547;24.6;10098;3724;10.10;3.72
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;jul-22;2600;939;all;N/A;median;939;38;629.722;250.833;10677;3594;10.68;3.59
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-22;1937;432;all;N/A;median;432;63;841.367;267.472;7439;2964;7.44;2.96
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;jul-22;747;329;all;N/A;median;329;32;520.184;156.641;10518;4548;10.52;4.55
+ETB;Bogotá, Bogota, Colombia;;jul-22;284492;88761;all;N/A;median;88761;4;8.45;37.333;95818;94667;95.82;94.67
+ETB;Cali, Cali, Valle del Cauca, Colombia;;jul-22;9;7;all;N/A;median;7;11;216.711;15.505;4663;4588;4.66;4.59
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-22;52;44;all;N/A;median;44;19;308.326;68.289;38157;47058;38.16;47.06
+ETB;Medellín, Medellin, Antioquia, Colombia;;jul-22;235;109;all;N/A;median;109;9;174.444;54.125;29150;25512;29.15;25.51
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;jul-22;9723;3446;all;N/A;median;3446;14;49.65;140.787;25646;21185;25.65;21.19
+All Providers Combined;Bogotá, Bogota, Colombia;;Aug 2022;847070;246780;all;N/A;median;246780;8;155.677;6.4;93957;33187;93.96;33.19
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Aug 2022;129231;38655;all;N/A;median;38655;18;321.748;9.4;77477;29369;77.48;29.37
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2022;60797;18091;all;N/A;median;18091;12;51.82;96.413;86963;31523;86.96;31.52
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Aug 2022;211139;64171;all;N/A;median;64171;10;339.155;89.125;93676;26904;93.68;26.90
+Movistar;Bogotá, Bogota, Colombia;;Aug 2022;111020;33172;all;N/A;median;33172;6;103.583;54.951;162121;135492;162.12;135.49
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Aug 2022;35231;11212;all;N/A;median;11212;20;244.855;76.687;139998;113618;140.00;113.62
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2022;23448;7258;all;N/A;median;7258;8;47.9;89.709;130032;120807;130.03;120.81
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Aug 2022;34262;8923;all;N/A;median;8923;18;399.167;71.583;228431;214318;228.43;214.32
+Claro;Bogotá, Bogota, Colombia;;Aug 2022;357236;107249;all;N/A;median;107249;10;183.958;77.145;91125;31222;91.13;31.22
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Aug 2022;51592;15798;all;N/A;median;15798;18;331.813;91.933;81709;28928;81.71;28.93
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2022;19402;5801;all;N/A;median;5801;14;536.036;8.65;81041;31092;81.04;31.09
+Claro;Medellín, Medellin, Antioquia, Colombia;;Aug 2022;52247;16311;all;N/A;median;16311;10;358.472;9.75;93804;31248;93.80;31.25
+Tigo;Bogotá, Bogota, Colombia;;Aug 2022;56829;18813;all;N/A;median;18813;10;162.667;62.205;82800;14211;82.80;14.21
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Aug 2022;22262;6739;all;N/A;median;6739;14;295.105;84.375;61187;12688;61.19;12.69
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2022;13436;4282;all;N/A;median;4282;10;527.625;98.429;72945;13381;72.95;13.38
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Aug 2022;115485;38730;all;N/A;median;38730;9;310.333;85.511;84988;18881;84.99;18.88
+DIRECTV;Bogotá, Bogota, Colombia;;Aug 2022;9485;2881;all;N/A;median;2881;28;501.388;225.781;11905;3807;11.91;3.81
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Aug 2022;3479;1210;all;N/A;median;1210;37;606.333;26.525;12713;3689;12.71;3.69
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2022;2116;546;all;N/A;median;546;63;844.111;263.994;8435;3148;8.44;3.15
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Aug 2022;392;94;all;N/A;median;94;26;499.032;185.506;18542;9063;18.54;9.06
+ETB;Bogotá, Bogota, Colombia;;Aug 2022;287154;86092;all;N/A;median;86092;4;86.167;39.037;94665;94281;94.67;94.28
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Aug 2022;16;13;all;N/A;median;13;10;183.611;4.7;62400;35626;62.40;35.63
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2022;159;96;all;N/A;median;96;20;328.882;113.812;40556;42990;40.56;42.99
+ETB;Medellín, Medellin, Antioquia, Colombia;;Aug 2022;57;32;all;N/A;median;32;11;209.188;67.827;17430;25734;17.43;25.73
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Aug 2022;10621;3780;all;N/A;median;3780;13;561.889;145.125;27761;23191;27.76;23.19
+All Providers Combined;Bogotá, Bogota, Colombia;;sep-22;801746;232956;all;N/A;median;232956;8;153.667;6.275;94382;38066;94.38;38.07
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;sep-22;124315;36932;all;N/A;median;36932;19;314.167;89.842;79809;31291;79.81;31.29
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-22;58107;17648;all;N/A;median;17648;9;51.5;9.3;86801;32492;86.80;32.49
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;sep-22;192571;59141;all;N/A;median;59141;10;336.333;83.125;94480;28363;94.48;28.36
+Movistar;Bogotá, Bogota, Colombia;;sep-22;124971;33949;all;N/A;median;33949;6;107.166;55.416;163574;141922;163.57;141.92
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;sep-22;35615;10608;all;N/A;median;10608;20;237.007;6.95;148312;94829;148.31;94.83
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-22;25378;7528;all;N/A;median;7528;5;472.833;88.131;130486;132896;130.49;132.90
+Movistar;Medellín, Medellin, Antioquia, Colombia;;sep-22;33626;9030;all;N/A;median;9030;17;411.333;72.577;223088;225813;223.09;225.81
+Claro;Bogotá, Bogota, Colombia;;sep-22;310096;94844;all;N/A;median;94844;11;185.833;77.625;90132;31405;90.13;31.41
+Claro;Cali, Cali, Valle del Cauca, Colombia;;sep-22;46192;14387;all;N/A;median;14387;18;327.486;91.944;83094;31418;83.09;31.42
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-22;15548;5025;all;N/A;median;5025;13;528.787;78.669;84886;31869;84.89;31.87
+Claro;Medellín, Medellin, Antioquia, Colombia;;sep-22;45995;14909;all;N/A;median;14909;10;361.521;91.627;94691;31702;94.69;31.70
+Tigo;Bogotá, Bogota, Colombia;;sep-22;47592;16169;all;N/A;median;16169;10;16.659;6.166;85520;16052;85.52;16.05
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;sep-22;22288;6779;all;N/A;median;6779;15;290.789;7.475;61575;12893;61.58;12.89
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-22;13479;4631;all;N/A;median;4631;11;543.643;10.678;63119;12800;63.12;12.80
+Tigo;Medellín, Medellin, Antioquia, Colombia;;sep-22;104550;34956;all;N/A;median;34956;9;297.916;7.8;89678;20290;89.68;20.29
+DIRECTV;Bogotá, Bogota, Colombia;;sep-22;6919;2204;all;N/A;median;2204;28;489.556;211.917;12361;3853;12.36;3.85
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;sep-22;2991;1276;all;N/A;median;1276;36;586.777;25.752;12176;3541;12.18;3.54
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-22;1610;447;all;N/A;median;447;60;814.584;189.533;8527;3062;8.53;3.06
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;sep-22;334;99;all;N/A;median;99;25;40.338;127.808;18029;9477;18.03;9.48
+ETB;Bogotá, Bogota, Colombia;;sep-22;289978;87179;all;N/A;median;87179;4;85.333;38.799;96771;94568;96.77;94.57
+ETB;Cali, Cali, Valle del Cauca, Colombia;;sep-22;15;7;all;N/A;median;7;17;316.708;41.875;62813;47579;62.81;47.58
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-22;210;78;all;N/A;median;78;21;35.25;220.499;31617;36552;31.62;36.55
+ETB;Medellín, Medellin, Antioquia, Colombia;;sep-22;162;67;all;N/A;median;67;10;217.685;65.799;34542;38153;34.54;38.15
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;sep-22;11452;4052;all;N/A;median;4052;12;473.167;11.357;32069;25089;32.07;25.09
+All Providers Combined;Bogotá, Bogota, Colombia;;oct-22;741965;224563;all;N/A;median;224563;8;151.167;60.625;94514;38819;94.51;38.82
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;oct-22;128426;39079;all;N/A;median;39079;18;313.333;93.209;79678;31527;79.68;31.53
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-22;60246;18183;all;N/A;median;18183;9;509.618;9.325;92351;33228;92.35;33.23
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;oct-22;205328;63783;all;N/A;median;63783;10;330.167;8.375;94582;28479;94.58;28.48
+Movistar;Bogotá, Bogota, Colombia;;oct-22;119274;34306;all;N/A;median;34306;6;100.625;50.966;173361;149352;173.36;149.35
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;oct-22;35468;11328;all;N/A;median;11328;20;242.243;68.129;156693;109209;156.69;109.21
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-22;26424;8039;all;N/A;median;8039;5;468.167;9.1;140495;141577;140.50;141.58
+Movistar;Medellín, Medellin, Antioquia, Colombia;;oct-22;32416;9062;all;N/A;median;9062;17;389.521;64.937;219843;224178;219.84;224.18
+Claro;Bogotá, Bogota, Colombia;;oct-22;283658;90176;all;N/A;median;90176;10;184.167;74.946;91235;31732;91.24;31.73
+Claro;Cali, Cali, Valle del Cauca, Colombia;;oct-22;47004;14936;all;N/A;median;14936;18;336.419;97.875;78693;30918;78.69;30.92
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-22;16953;5335;all;N/A;median;5335;13;527.846;8.35;86298;31985;86.30;31.99
+Claro;Medellín, Medellin, Antioquia, Colombia;;oct-22;52834;17202;all;N/A;median;17202;10;353.222;90.333;95113;31630;95.11;31.63
+Tigo;Bogotá, Bogota, Colombia;;oct-22;51240;17203;all;N/A;median;17203;10;165.667;61.125;82222;16975;82.22;16.98
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;oct-22;22985;6986;all;N/A;median;6986;15;297.556;83.574;58964;13399;58.96;13.40
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-22;13139;4462;all;N/A;median;4462;10;53.2;93.032;72671;12926;72.67;12.93
+Tigo;Medellín, Medellin, Antioquia, Colombia;;oct-22;112145;37327;all;N/A;median;37327;9;29.026;8.175;91434;20432;91.43;20.43
+DIRECTV;Bogotá, Bogota, Colombia;;oct-22;6705;2357;all;N/A;median;2357;29;498.999;22.412;10998;3799;11.00;3.80
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;oct-22;3051;1290;all;N/A;median;1290;38;631.808;272.312;11323;3404;11.32;3.40
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-22;1588;435;all;N/A;median;435;60;835.867;215.812;8050;3172;8.05;3.17
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;oct-22;348;89;all;N/A;median;89;23;46.779;137.836;18392;7748;18.39;7.75
+ETB;Bogotá, Bogota, Colombia;;oct-22;256887;81298;all;N/A;median;81298;4;85.143;37.041;96133;94759;96.13;94.76
+ETB;Cali, Cali, Valle del Cauca, Colombia;;oct-22;25;10;all;N/A;median;10;9;246.666;93.583;42565;44299;42.57;44.30
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-22;214;55;all;N/A;median;55;20;45.5;165.166;32141;47994;32.14;47.99
+ETB;Medellín, Medellin, Antioquia, Colombia;;oct-22;118;52;all;N/A;median;52;12;255.014;65.521;15473;12426;15.47;12.43
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;oct-22;14267;4822;all;N/A;median;4822;7;355.885;116.687;40686;30972;40.69;30.97
+EMCALI;Bogotá, Bogota, Colombia;;nov-22;;;all;N/A;median;;;;;;;;
+EMCALI;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-22;;;all;N/A;median;;;;;;;;
+EMCALI;Medellín, Medellin, Antioquia, Colombia;;nov-22;;;all;N/A;median;;;;;;;;
+All Providers Combined;Bogotá, Bogota, Colombia;;nov-22;728715;226872;all;N/A;median;226872;8;152.254;59.264;95088;39374;95.09;39.37
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;nov-22;117731;35819;all;N/A;median;35819;19;312.635;89.732;84262;32262;84.26;32.26
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-22;57791;17955;all;N/A;median;17955;9;512.333;93.625;88867;32702;88.87;32.70
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;nov-22;181498;57259;all;N/A;median;57259;10;30.976;7.1;94725;28460;94.73;28.46
+Movistar;Bogotá, Bogota, Colombia;;nov-22;108057;32852;all;N/A;median;32852;6;94.167;42.325;177920;155976;177.92;155.98
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;nov-22;33933;10644;all;N/A;median;10644;20;242.837;6.475;162287;123585;162.29;123.59
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-22;26813;7940;all;N/A;median;7940;5;455.987;84.097;138490;143213;138.49;143.21
+Movistar;Medellín, Medellin, Antioquia, Colombia;;nov-22;30860;8511;all;N/A;median;8511;16;392.502;5.85;223780;230341;223.78;230.34
+Claro;Bogotá, Bogota, Colombia;;nov-22;293405;94925;all;N/A;median;94925;11;187.618;74.875;93100;31779;93.10;31.78
+Claro;Cali, Cali, Valle del Cauca, Colombia;;nov-22;43540;14098;all;N/A;median;14098;19;339.333;95.987;85617;31270;85.62;31.27
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-22;15549;5121;all;N/A;median;5121;13;528.583;85.332;85054;31690;85.05;31.69
+Claro;Medellín, Medellin, Antioquia, Colombia;;nov-22;39645;13914;all;N/A;median;13914;10;348.542;83.125;95862;31798;95.86;31.80
+Tigo;Bogotá, Bogota, Colombia;;nov-22;44597;15435;all;N/A;median;15435;10;164.419;57.875;85210;17113;85.21;17.11
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;nov-22;19096;5934;all;N/A;median;5934;15;300.238;8.525;55997;13028;56.00;13.03
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-22;11266;4203;all;N/A;median;4203;11;543.322;91.577;65575;12871;65.58;12.87
+Tigo;Medellín, Medellin, Antioquia, Colombia;;nov-22;103517;34432;all;N/A;median;34432;9;26.4;65.156;92377;20737;92.38;20.74
+DIRECTV;Bogotá, Bogota, Colombia;;nov-22;6148;2096;all;N/A;median;2096;27;471.444;195.006;11744;3893;11.74;3.89
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;nov-22;3399;1304;all;N/A;median;1304;35;601.667;242.923;11317;3459;11.32;3.46
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-22;2499;830;all;N/A;median;830;49;858.873;300.726;7597;2699;7.60;2.70
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;nov-22;261;91;all;N/A;median;91;25;438.381;196.027;17165;8068;17.17;8.07
+ETB;Bogotá, Bogota, Colombia;;nov-22;249403;81953;all;N/A;median;81953;4;8.45;3.625;101445;100645;101.45;100.65
+ETB;Cali, Cali, Valle del Cauca, Colombia;;nov-22;4;3;all;N/A;median;3;2;139.333;32.575;4741;3827;4.74;3.83
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-22;32;25;all;N/A;median;25;19;501.667;4.19;21378;30026;21.38;30.03
+ETB;Medellín, Medellin, Antioquia, Colombia;;nov-22;112;49;all;N/A;median;49;13;301.375;116.333;32329;38180;32.33;38.18
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;nov-22;12570;3930;all;N/A;median;3930;8;310.542;102.659;40911;33806;40.91;33.81
+All Providers Combined;Bogotá, Bogota, Colombia;;Dec 2022;620130;194153;all;N/A;median;194153;7;142.167;54.625;98960;41799;98.96;41.80
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Dec 2022;102950;32093;all;N/A;median;32093;19;307.269;8.7;86394;32430;86.39;32.43
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2022;55277;17236;all;N/A;median;17236;9;507.143;91.677;92253;32676;92.25;32.68
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Dec 2022;144813;46949;all;N/A;median;46949;10;304.382;65.249;95152;28331;95.15;28.33
+Movistar;Bogotá, Bogota, Colombia;;Dec 2022;98273;29996;all;N/A;median;29996;6;92.222;41.083;182428;158261;182.43;158.26
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Dec 2022;29668;10008;all;N/A;median;10008;20;239.496;63.331;162318;124946;162.32;124.95
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2022;24939;7263;all;N/A;median;7263;5;43.9;7.325;153947;157008;153.95;157.01
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Dec 2022;28477;8124;all;N/A;median;8124;16;397.831;5.9;224364;233106;224.36;233.11
+Claro;Bogotá, Bogota, Colombia;;Dec 2022;231799;74662;all;N/A;median;74662;10;181.556;71.625;92690;31787;92.69;31.79
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Dec 2022;37702;12060;all;N/A;median;12060;18;337.216;90.625;87719;31326;87.72;31.33
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2022;13989;4981;all;N/A;median;4981;13;532.473;80.875;91341;32050;91.34;32.05
+Claro;Medellín, Medellin, Antioquia, Colombia;;Dec 2022;25180;8985;all;N/A;median;8985;10;340.486;71.667;94362;31825;94.36;31.83
+Tigo;Bogotá, Bogota, Colombia;;Dec 2022;37688;13527;all;N/A;median;13527;10;165.017;54.888;85797;17235;85.80;17.24
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Dec 2022;16812;5476;all;N/A;median;5476;15;298.611;78.104;57621;12847;57.62;12.85
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2022;11110;3849;all;N/A;median;3849;10;518.787;90.062;70857;13101;70.86;13.10
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Dec 2022;83643;29368;all;N/A;median;29368;9;264.325;6.25;92513;20577;92.51;20.58
+DIRECTV;Bogotá, Bogota, Colombia;;Dec 2022;4805;1783;all;N/A;median;1783;26;461.222;190.822;12046;3990;12.05;3.99
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Dec 2022;2972;1249;all;N/A;median;1249;34;616.801;282.002;11757;3290;11.76;3.29
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2022;3670;1238;all;N/A;median;1238;32;93.3;370.812;7505;2660;7.51;2.66
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Dec 2022;120;58;all;N/A;median;58;23;367.833;188.142;18347;11580;18.35;11.58
+ETB;Bogotá, Bogota, Colombia;;Dec 2022;226051;74765;all;N/A;median;74765;4;79.444;33.374;109975;104958;109.98;104.96
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Dec 2022;8;6;all;N/A;median;6;3;113.809;26.021;19372;26881;19.37;26.88
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2022;61;19;all;N/A;median;19;3;359.694;44.625;32819;28482;32.82;28.48
+ETB;Medellín, Medellin, Antioquia, Colombia;;Dec 2022;110;51;all;N/A;median;51;22;32.36;9.875;26202;27769;26.20;27.77
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Dec 2022;11294;3390;all;N/A;median;3390;7;293.333;110.548;40948;35835;40.95;35.84
+All Providers Combined;Bogotá, Bogota, Colombia;;Jan 2023;716949;220446;all;N/A;median;220446;7;139.833;5.4;99149;41812;99.15;41.81
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Jan 2023;114988;35082;all;N/A;median;35082;18;301.111;81.345;87734;32558;87.73;32.56
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2023;66725;20096;all;N/A;median;20096;10;504.861;94.676;88427;32986;88.43;32.99
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Jan 2023;168102;54258;all;N/A;median;54258;10;304.667;6.5;94767;28099;94.77;28.10
+Movistar;Bogotá, Bogota, Colombia;;Jan 2023;113288;34145;all;N/A;median;34145;6;88.333;3.775;185028;156227;185.03;156.23
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Jan 2023;34206;11070;all;N/A;median;11070;20;235.293;57.583;165749;126419;165.75;126.42
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2023;29842;8240;all;N/A;median;8240;5;439.266;7.95;139204;163513;139.20;163.51
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Jan 2023;31390;8972;all;N/A;median;8972;16;384.243;5.45;220853;230835;220.85;230.84
+Claro;Bogotá, Bogota, Colombia;;Jan 2023;254986;82639;all;N/A;median;82639;10;182.083;72.875;93497;31667;93.50;31.67
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Jan 2023;40979;13098;all;N/A;median;13098;18;330.129;86.417;88302;31307;88.30;31.31
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2023;19463;6561;all;N/A;median;6561;13;534.023;88.083;89844;32165;89.84;32.17
+Claro;Medellín, Medellin, Antioquia, Colombia;;Jan 2023;31584;10844;all;N/A;median;10844;10;35.125;75.375;97266;31658;97.27;31.66
+Tigo;Bogotá, Bogota, Colombia;;Jan 2023;43427;15485;all;N/A;median;15485;10;163.295;56.875;83213;16478;83.21;16.48
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Jan 2023;18744;6005;all;N/A;median;6005;15;292.667;78.288;57419;14027;57.42;14.03
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2023;11718;4160;all;N/A;median;4160;11;520.132;9.2;66853;12447;66.85;12.45
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Jan 2023;95469;33685;all;N/A;median;33685;9;26.85;6.025;92089;20631;92.09;20.63
+DIRECTV;Bogotá, Bogota, Colombia;;Jan 2023;8023;2636;all;N/A;median;2636;26;468.889;204.167;10889;4356;10.89;4.36
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Jan 2023;3289;1172;all;N/A;median;1172;34;615.697;246.785;11418;3519;11.42;3.52
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2023;3692;1177;all;N/A;median;1177;30;903.057;341.604;7727;2975;7.73;2.98
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Jan 2023;235;65;all;N/A;median;65;24;420.407;142.544;17087;10971;17.09;10.97
+ETB;Bogotá, Bogota, Colombia;;Jan 2023;270692;84897;all;N/A;median;84897;4;77.361;32.125;109349;106780;109.35;106.78
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Jan 2023;11;9;all;N/A;median;9;5;163.187;1.705;38591;44119;38.59;44.12
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Jan 2023;41;23;all;N/A;median;23;3;213.537;1.775;90319;71935;90.32;71.94
+ETB;Medellín, Medellin, Antioquia, Colombia;;Jan 2023;109;52;all;N/A;median;52;17;343.875;156.786;13875;15812;13.88;15.81
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Jan 2023;12317;3633;all;N/A;median;3633;7;279.188;92.375;43723;37657;43.72;37.66
+All Providers Combined;Bogotá, Bogota, Colombia;;feb-23;789359;240190;all;N/A;median;240190;7;13.754;53.504;103242;43753;103.24;43.75
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;feb-23;119777;36264;all;N/A;median;36264;18;298.926;8.125;90348;33148;90.35;33.15
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-23;62618;19313;all;N/A;median;19313;9;497.827;9.075;93776;36255;93.78;36.26
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;feb-23;186545;60273;all;N/A;median;60273;10;296.911;64.875;97617;28630;97.62;28.63
+Movistar;Bogotá, Bogota, Colombia;;feb-23;136988;39500;all;N/A;median;39500;6;89.449;40.832;188174;158431;188.17;158.43
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;feb-23;37398;11702;all;N/A;median;11702;19;239.312;63.184;166976;131338;166.98;131.34
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-23;28997;8437;all;N/A;median;8437;5;43.55;78.375;160944;162186;160.94;162.19
+Movistar;Medellín, Medellin, Antioquia, Colombia;;feb-23;34811;10285;all;N/A;median;10285;16;38;57.917;221834;231888;221.83;231.89
+Claro;Bogotá, Bogota, Colombia;;feb-23;270138;87488;all;N/A;median;87488;10;18.075;7.125;94001;31666;94.00;31.67
+Claro;Cali, Cali, Valle del Cauca, Colombia;;feb-23;41892;13339;all;N/A;median;13339;18;323.667;83.197;89251;31596;89.25;31.60
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-23;16722;5911;all;N/A;median;5911;13;530.315;82.037;91329;32084;91.33;32.08
+Claro;Medellín, Medellin, Antioquia, Colombia;;feb-23;35876;12131;all;N/A;median;12131;10;342.083;7.475;98650;31680;98.65;31.68
+Tigo;Bogotá, Bogota, Colombia;;feb-23;46818;16450;all;N/A;median;16450;10;161.236;54.875;84623;17761;84.62;17.76
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;feb-23;19781;6054;all;N/A;median;6054;15;292.889;78.472;60989;16616;60.99;16.62
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-23;11072;3727;all;N/A;median;3727;10;514.833;88.625;71239;15766;71.24;15.77
+Tigo;Medellín, Medellin, Antioquia, Colombia;;feb-23;106756;37263;all;N/A;median;37263;9;26.165;60.945;93113;21471;93.11;21.47
+DIRECTV;Bogotá, Bogota, Colombia;;feb-23;7933;2669;all;N/A;median;2669;25;429.811;17.675;13802;4978;13.80;4.98
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;feb-23;2403;1020;all;N/A;median;1020;33;59.466;234.173;13240;3568;13.24;3.57
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-23;4120;1215;all;N/A;median;1215;29;866.083;342.375;8797;3037;8.80;3.04
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;feb-23;226;90;all;N/A;median;90;27;55.55;13.85;18013;6466;18.01;6.47
+ETB;Bogotá, Bogota, Colombia;;feb-23;292368;92594;all;N/A;median;92594;4;77.333;3.2;111998;114390;112.00;114.39
+ETB;Cali, Cali, Valle del Cauca, Colombia;;feb-23;117;42;all;N/A;median;42;4;14.9;36.125;66762;93622;66.76;93.62
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;feb-23;44;24;all;N/A;median;24;19;230.667;4;36954;31576;36.95;31.58
+ETB;Medellín, Medellin, Antioquia, Colombia;;feb-23;287;113;all;N/A;median;113;13;222.913;9;10542;14536;10.54;14.54
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;feb-23;13528;4068;all;N/A;median;4068;5;325.548;91.625;45827;45101;45.83;45.10
+All Providers Combined;Bogotá, Bogota, Colombia;;mar-23;790230;241647;all;N/A;median;241647;7;138.083;5.544;103398;43922;103.40;43.92
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;mar-23;123915;37771;all;N/A;median;37771;18;297.599;84.625;89160;32965;89.16;32.97
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-23;71359;21931;all;N/A;median;21931;9;507.019;92.937;92038;33209;92.04;33.21
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;mar-23;196559;62868;all;N/A;median;62868;10;31;67.316;100156;31075;100.16;31.08
+Movistar;Bogotá, Bogota, Colombia;;mar-23;142963;41518;all;N/A;median;41518;6;91.347;42.864;180066;150658;180.07;150.66
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;mar-23;35908;11321;all;N/A;median;11321;19;238.003;68.127;170937;141432;170.94;141.43
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-23;31865;9162;all;N/A;median;9162;5;440.586;80.067;152847;152909;152.85;152.91
+Movistar;Medellín, Medellin, Antioquia, Colombia;;mar-23;38536;11250;all;N/A;median;11250;16;38.25;60.003;222036;231780;222.04;231.78
+Claro;Bogotá, Bogota, Colombia;;mar-23;267787;86841;all;N/A;median;86841;10;178.083;71.449;94412;31733;94.41;31.73
+Claro;Cali, Cali, Valle del Cauca, Colombia;;mar-23;44686;14317;all;N/A;median;14317;18;321.397;86.125;89555;31308;89.56;31.31
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-23;19838;7000;all;N/A;median;7000;13;53.875;85.345;89282;31975;89.28;31.98
+Claro;Medellín, Medellin, Antioquia, Colombia;;mar-23;36426;12633;all;N/A;median;12633;9;343.848;7.8;103944;31831;103.94;31.83
+Tigo;Bogotá, Bogota, Colombia;;mar-23;46465;16398;all;N/A;median;16398;10;162.583;57.302;86059;18216;86.06;18.22
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;mar-23;20264;6432;all;N/A;median;6432;15;293.243;79.843;57193;16139;57.19;16.14
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-23;13598;4433;all;N/A;median;4433;10;516.268;8.975;73713;14213;73.71;14.21
+Tigo;Medellín, Medellin, Antioquia, Colombia;;mar-23;106306;37257;all;N/A;median;37257;8;277.307;63.322;91820;22507;91.82;22.51
+DIRECTV;Bogotá, Bogota, Colombia;;mar-23;7671;2573;all;N/A;median;2573;25;425.944;171.125;14477;4743;14.48;4.74
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;mar-23;3133;1229;all;N/A;median;1229;33;573.778;221.312;14075;3782;14.08;3.78
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-23;4078;1323;all;N/A;median;1323;38;853.209;323.047;9129;3106;9.13;3.11
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;mar-23;267;100;all;N/A;median;100;30;538.768;150.323;16516;5075;16.52;5.08
+ETB;Bogotá, Bogota, Colombia;;mar-23;284458;91856;all;N/A;median;91856;4;79.393;33.887;112623;112426;112.62;112.43
+ETB;Cali, Cali, Valle del Cauca, Colombia;;mar-23;18;12;all;N/A;median;12;3;135.996;2.35;73628;91657;73.63;91.66
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;mar-23;43;22;all;N/A;median;22;31;357.958;35.208;39889;44996;39.89;45.00
+ETB;Medellín, Medellin, Antioquia, Colombia;;mar-23;170;56;all;N/A;median;56;22;380.111;16.468;6757;6065;6.76;6.07
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;mar-23;14724;4423;all;N/A;median;4423;5;28;9.675;49526;48438;49.53;48.44
+All Providers Combined;Bogotá, Bogota, Colombia;;Apr 2023;720388;223376;all;N/A;median;223376;7;134.417;53.125;107944;44883;107.94;44.88
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Apr 2023;111103;34379;all;N/A;median;34379;18;298.734;8.461;90113;33161;90.11;33.16
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2023;62960;19889;all;N/A;median;19889;10;502.333;87.812;92363;33008;92.36;33.01
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Apr 2023;194759;61653;all;N/A;median;61653;10;315.556;6.65;100529;31418;100.53;31.42
+Movistar;Bogotá, Bogota, Colombia;;Apr 2023;131711;39087;all;N/A;median;39087;6;89.667;40.916;183968;155469;183.97;155.47
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Apr 2023;32591;10394;all;N/A;median;10394;19;236.167;64.875;170989;150525;170.99;150.53
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2023;27646;8179;all;N/A;median;8179;5;433.717;73.393;160586;156479;160.59;156.48
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Apr 2023;38874;11128;all;N/A;median;11128;16;399.333;58.916;222083;230580;222.08;230.58
+Claro;Bogotá, Bogota, Colombia;;Apr 2023;238804;78465;all;N/A;median;78465;10;17.65;70.375;95233;32453;95.23;32.45
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Apr 2023;39083;12651;all;N/A;median;12651;18;323.203;8.525;91418;32190;91.42;32.19
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2023;18339;6389;all;N/A;median;6389;13;530.052;80.875;91003;32519;91.00;32.52
+Claro;Medellín, Medellin, Antioquia, Colombia;;Apr 2023;43089;14518;all;N/A;median;14518;9;349.833;8.075;102809;32313;102.81;32.31
+Tigo;Bogotá, Bogota, Colombia;;Apr 2023;41505;14727;all;N/A;median;14727;10;161.667;5.45;79814;18791;79.81;18.79
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Apr 2023;17900;5725;all;N/A;median;5725;15;29.325;79.916;57421;15894;57.42;15.89
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2023;12067;4266;all;N/A;median;4266;11;519.979;89.312;62768;12908;62.77;12.91
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Apr 2023;98729;34790;all;N/A;median;34790;9;273.609;60.125;92210;22754;92.21;22.75
+DIRECTV;Bogotá, Bogota, Colombia;;Apr 2023;6623;2378;all;N/A;median;2378;24;410.167;15.6;15269;4869;15.27;4.87
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Apr 2023;2622;1098;all;N/A;median;1098;34;555.556;184.243;15075;3665;15.08;3.67
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2023;3534;1216;all;N/A;median;1216;29;829.294;291.469;9079;3134;9.08;3.13
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Apr 2023;595;227;all;N/A;median;227;29;441.552;135.144;17518;6083;17.52;6.08
+ETB;Bogotá, Bogota, Colombia;;Apr 2023;260881;85708;all;N/A;median;85708;4;77.167;32.125;115689;115386;115.69;115.39
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Apr 2023;17;11;all;N/A;median;11;7;217.954;6.45;19187;18451;19.19;18.45
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Apr 2023;34;17;all;N/A;median;17;26;39.25;4.85;17903;18075;17.90;18.08
+ETB;Medellín, Medellin, Antioquia, Colombia;;Apr 2023;210;99;all;N/A;median;99;9;249.333;93.937;22506;37882;22.51;37.88
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Apr 2023;14532;4482;all;N/A;median;4482;5;313.333;127.125;51160;50987;51.16;50.99
+All Providers Combined;Bogotá, Bogota, Colombia;;may-23;759364;235626;all;N/A;median;235626;7;133.167;53.022;110997;48124;111.00;48.12
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;may-23;118595;36266;all;N/A;median;36266;18;299.167;87.313;90768;33214;90.77;33.21
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;may-23;63049;20228;all;N/A;median;20228;9;49.5;8.675;93933;33253;93.93;33.25
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;may-23;185194;59261;all;N/A;median;59261;10;308.667;65.875;106143;32016;106.14;32.02
+Movistar;Bogotá, Bogota, Colombia;;may-23;140146;41022;all;N/A;median;41022;6;89.119;40.333;186593;165849;186.59;165.85
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;may-23;32447;10538;all;N/A;median;10538;19;234.167;66.394;165258;140457;165.26;140.46
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;may-23;26551;8110;all;N/A;median;8110;5;431.562;7.125;167499;164859;167.50;164.86
+Movistar;Medellín, Medellin, Antioquia, Colombia;;may-23;42206;11838;all;N/A;median;11838;15;39;6.277;225946;232708;225.95;232.71
+Claro;Bogotá, Bogota, Colombia;;may-23;259716;84705;all;N/A;median;84705;10;176.166;7;97614;32511;97.61;32.51
+Claro;Cali, Cali, Valle del Cauca, Colombia;;may-23;44621;13915;all;N/A;median;13915;18;320.917;86.625;92475;32406;92.48;32.41
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;may-23;19590;6792;all;N/A;median;6792;13;51.7;82.137;93108;32556;93.11;32.56
+Claro;Medellín, Medellin, Antioquia, Colombia;;may-23;36533;12646;all;N/A;median;12646;9;335.833;76.405;109123;32414;109.12;32.41
+Tigo;Bogotá, Bogota, Colombia;;may-23;40967;14745;all;N/A;median;14745;10;161.532;5.375;86843;18904;86.84;18.90
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;may-23;18112;6051;all;N/A;median;6051;15;294.287;74.875;60806;16510;60.81;16.51
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;may-23;12110;4419;all;N/A;median;4419;11;518.333;86.875;69901;13018;69.90;13.02
+Tigo;Medellín, Medellin, Antioquia, Colombia;;may-23;93882;33822;all;N/A;median;33822;9;27.15;6.025;92590;22513;92.59;22.51
+DIRECTV;Bogotá, Bogota, Colombia;;may-23;5359;1967;all;N/A;median;1967;24;421.667;155.458;15737;4823;15.74;4.82
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;may-23;2640;1128;all;N/A;median;1128;35;56.5;200.065;14978;3552;14.98;3.55
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;may-23;3435;1045;all;N/A;median;1045;28;830.055;30.8;9331;3005;9.33;3.01
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;may-23;269;98;all;N/A;median;98;33;487.778;144.667;18098;5570;18.10;5.57
+ETB;Bogotá, Bogota, Colombia;;may-23;272076;90104;all;N/A;median;90104;4;76.583;32.161;121323;118553;121.32;118.55
+ETB;Cali, Cali, Valle del Cauca, Colombia;;may-23;12;6;all;N/A;median;6;8;220.119;63.372;33372;28548;33.37;28.55
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;may-23;49;36;all;N/A;median;36;25;354.045;107.304;39588;48185;39.59;48.19
+ETB;Medellín, Medellin, Antioquia, Colombia;;may-23;165;62;all;N/A;median;62;17;24.908;84.031;8532;9789;8.53;9.79
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;may-23;16486;4692;all;N/A;median;4692;4;327.167;160.625;53549;56577;53.55;56.58
+All Providers Combined;Bogotá, Bogota, Colombia;;jun-23;723584;226905;all;N/A;median;226905;7;133.838;5.4;115963;48744;115.96;48.74
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;jun-23;115360;34113;all;N/A;median;34113;18;295.333;86.048;93843;33279;93.84;33.28
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-23;58599;19031;all;N/A;median;19031;9;479.337;89.028;93538;33260;93.54;33.26
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;jun-23;175360;55685;all;N/A;median;55685;10;315.509;66.375;111933;32415;111.93;32.42
+Movistar;Bogotá, Bogota, Colombia;;jun-23;140472;41292;all;N/A;median;41292;6;90.992;41.833;192011;168727;192.01;168.73
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;jun-23;31256;9777;all;N/A;median;9777;19;231.667;62.333;177230;144939;177.23;144.94
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-23;25907;7978;all;N/A;median;7978;5;428.167;72.958;163895;161580;163.90;161.58
+Movistar;Medellín, Medellin, Antioquia, Colombia;;jun-23;42757;12231;all;N/A;median;12231;15;397.167;6.45;227335;234893;227.34;234.89
+Claro;Bogotá, Bogota, Colombia;;jun-23;243748;80680;all;N/A;median;80680;10;17.6;7.025;104887;32466;104.89;32.47
+Claro;Cali, Cali, Valle del Cauca, Colombia;;jun-23;41560;12955;all;N/A;median;12955;18;323.333;85.833;93772;32375;93.77;32.38
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-23;16360;5765;all;N/A;median;5765;13;502.916;8.247;93967;32466;93.97;32.47
+Claro;Medellín, Medellin, Antioquia, Colombia;;jun-23;36223;12260;all;N/A;median;12260;9;342.416;77.905;113614;32492;113.61;32.49
+Tigo;Bogotá, Bogota, Colombia;;jun-23;37559;13770;all;N/A;median;13770;10;16.15;5.45;86580;18403;86.58;18.40
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;jun-23;18594;5716;all;N/A;median;5716;15;285.457;74.783;68193;17557;68.19;17.56
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-23;11673;4313;all;N/A;median;4313;10;490.833;89.125;66007;12521;66.01;12.52
+Tigo;Medellín, Medellin, Antioquia, Colombia;;jun-23;85618;30538;all;N/A;median;30538;8;270.154;60.129;93389;22171;93.39;22.17
+DIRECTV;Bogotá, Bogota, Colombia;;jun-23;5304;1981;all;N/A;median;1981;25;419.172;16.775;13997;4559;14.00;4.56
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;jun-23;2224;865;all;N/A;median;865;35;582.889;21.375;13961;3565;13.96;3.57
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-23;3431;1057;all;N/A;median;1057;32;908.667;372.414;8574;3040;8.57;3.04
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;jun-23;91;34;all;N/A;median;34;30;456.534;116.392;20772;5593;20.77;5.59
+ETB;Bogotá, Bogota, Colombia;;jun-23;255759;85898;all;N/A;median;85898;4;76.988;3.3;127240;121653;127.24;121.65
+ETB;Cali, Cali, Valle del Cauca, Colombia;;jun-23;76;18;all;N/A;median;18;2;146.833;25.375;46709;38535;46.71;38.54
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;jun-23;90;35;all;N/A;median;35;23;369.458;154.895;32273;43297;32.27;43.30
+ETB;Medellín, Medellin, Antioquia, Colombia;;jun-23;93;45;all;N/A;median;45;16;29.206;112.812;16955;19259;16.96;19.26
+EMCALI;Bogotá, Bogota, Colombia;;jun-23;22;5;all;N/A;median;5;5;77.513;71.688;37153;85413;37.15;85.41
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;jun-23;17915;5019;all;N/A;median;5019;4;298.343;16.659;69569;76889;69.57;76.89
+All Providers Combined;Bogotá, Bogota, Colombia;;jul-23;722141;221860;all;N/A;median;221860;7;13.35;54.166;117793;54071;117.79;54.07
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;jul-23;120543;35082;all;N/A;median;35082;17;299.333;8.6;94271;38353;94.27;38.35
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-23;61025;19624;all;N/A;median;19624;10;477.304;88.125;93263;33756;93.26;33.76
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;jul-23;178629;57059;all;N/A;median;57059;10;297.083;65.408;114917;32368;114.92;32.37
+Movistar;Bogotá, Bogota, Colombia;;jul-23;131433;38945;all;N/A;median;38945;6;9;40.208;198307;176751;198.31;176.75
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;jul-23;31572;10172;all;N/A;median;10172;19;234.528;63.375;177792;156056;177.79;156.06
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-23;24897;7935;all;N/A;median;7935;5;42.85;72.656;167625;164152;167.63;164.15
+Movistar;Medellín, Medellin, Antioquia, Colombia;;jul-23;35769;11427;all;N/A;median;11427;15;386.333;5.975;235293;243146;235.29;243.15
+Claro;Bogotá, Bogota, Colombia;;jul-23;230224;76136;all;N/A;median;76136;10;178.167;71.875;105315;32459;105.32;32.46
+Claro;Cali, Cali, Valle del Cauca, Colombia;;jul-23;39688;12322;all;N/A;median;12322;18;323.333;84.394;94537;32276;94.54;32.28
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-23;17872;6033;all;N/A;median;6033;13;508.572;85.964;94202;32478;94.20;32.48
+Claro;Medellín, Medellin, Antioquia, Colombia;;jul-23;39998;13240;all;N/A;median;13240;9;336.737;7.797;125465;32532;125.47;32.53
+Tigo;Bogotá, Bogota, Colombia;;jul-23;35325;13295;all;N/A;median;13295;10;161.413;55.222;88299;19463;88.30;19.46
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;jul-23;17425;5555;all;N/A;median;5555;16;289.122;7.425;73303;18488;73.30;18.49
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-23;12019;4230;all;N/A;median;4230;10;481.831;80.558;71789;13496;71.79;13.50
+Tigo;Medellín, Medellin, Antioquia, Colombia;;jul-23;87514;30598;all;N/A;median;30598;8;237.854;59.625;93748;22042;93.75;22.04
+DIRECTV;Bogotá, Bogota, Colombia;;jul-23;5865;2077;all;N/A;median;2077;25;409.833;154.875;14827;4703;14.83;4.70
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;jul-23;1572;675;all;N/A;median;675;35;577.124;211.738;14157;3654;14.16;3.65
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-23;3267;1041;all;N/A;median;1041;29;816.749;28;8445;2857;8.45;2.86
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;jul-23;108;51;all;N/A;median;51;29;432.592;154.167;13444;6307;13.44;6.31
+ETB;Bogotá, Bogota, Colombia;;jul-23;275993;87696;all;N/A;median;87696;4;78.945;3.375;132171;132822;132.17;132.82
+ETB;Cali, Cali, Valle del Cauca, Colombia;;jul-23;19;12;all;N/A;median;12;9;201.012;177.311;4440;4633;4.44;4.63
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;jul-23;28;14;all;N/A;median;14;32;544.778;201.965;14373;12853;14.37;12.85
+ETB;Medellín, Medellin, Antioquia, Colombia;;jul-23;72;36;all;N/A;median;36;13;246.458;69.104;23665;12750;23.67;12.75
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;jul-23;24916;6338;all;N/A;median;6338;5;389.335;157.673;71621;87368;71.62;87.37
+All Providers Combined;Bogotá, Bogota, Colombia;;Aug 2023;740059;231224;all;N/A;median;231224;6;14.1;5.5;125262;58548;125.26;58.55
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Aug 2023;121932;35742;all;N/A;median;35742;17;298.073;9.35;94047;39783;94.05;39.78
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2023;61619;19138;all;N/A;median;19138;10;46.4;86.279;94312;37799;94.31;37.80
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Aug 2023;180683;58272;all;N/A;median;58272;10;322.583;70.833;114825;32204;114.83;32.20
+Movistar;Bogotá, Bogota, Colombia;;Aug 2023;134299;40260;all;N/A;median;40260;6;91.295;43.667;200046;169756;200.05;169.76
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Aug 2023;32498;10377;all;N/A;median;10377;19;23.75;65.119;183205;167694;183.21;167.69
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2023;26390;7896;all;N/A;median;7896;5;428.139;77.553;171800;164451;171.80;164.45
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Aug 2023;33867;10927;all;N/A;median;10927;15;38.55;6.075;239162;247949;239.16;247.95
+Claro;Bogotá, Bogota, Colombia;;Aug 2023;233562;78631;all;N/A;median;78631;10;175.111;70.431;108424;32489;108.42;32.49
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Aug 2023;40939;12764;all;N/A;median;12764;18;322.708;8.85;94343;32346;94.34;32.35
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2023;17272;5909;all;N/A;median;5909;13;481.702;79.312;93751;32595;93.75;32.60
+Claro;Medellín, Medellin, Antioquia, Colombia;;Aug 2023;39636;13666;all;N/A;median;13666;9;337.833;7.608;126655;32529;126.66;32.53
+Tigo;Bogotá, Bogota, Colombia;;Aug 2023;38255;13703;all;N/A;median;13703;10;163.944;5.875;90645;19391;90.65;19.39
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Aug 2023;17030;5432;all;N/A;median;5432;16;309.541;88.723;68769;17657;68.77;17.66
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2023;11105;3865;all;N/A;median;3865;10;482.167;79.156;76003;13910;76.00;13.91
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Aug 2023;89337;31634;all;N/A;median;31634;8;278.338;68.583;94096;22461;94.10;22.46
+DIRECTV;Bogotá, Bogota, Colombia;;Aug 2023;5133;1832;all;N/A;median;1832;25;415.062;16.028;15828;4814;15.83;4.81
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Aug 2023;1774;785;all;N/A;median;785;34;584.444;223.583;15459;3743;15.46;3.74
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2023;2948;1009;all;N/A;median;1009;29;838.872;308.818;9477;3279;9.48;3.28
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Aug 2023;201;64;all;N/A;median;64;32;425.333;141.906;12536;5575;12.54;5.58
+ETB;Bogotá, Bogota, Colombia;;Aug 2023;279937;91998;all;N/A;median;91998;4;93.041;34.671;147847;147265;147.85;147.27
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Aug 2023;46;31;all;N/A;median;31;14;272.833;76.375;4669;4653;4.67;4.65
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Aug 2023;46;18;all;N/A;median;18;25;390.443;9.175;12761;13674;12.76;13.67
+ETB;Medellín, Medellin, Antioquia, Colombia;;Aug 2023;163;76;all;N/A;median;76;13;323.333;11.275;21547;24327;21.55;24.33
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Aug 2023;24532;6462;all;N/A;median;6462;6;287.729;176.667;68766;82588;68.77;82.59
+All Providers Combined;Bogotá, Bogota, Colombia;;sep-23;750071;227259;all;N/A;median;227259;6;128.919;54.826;131724;61782;131.72;61.78
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;sep-23;130635;37697;all;N/A;median;37697;18;307.667;97.041;93898;39072;93.90;39.07
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-23;62340;18599;all;N/A;median;18599;9;453.167;85.337;100570;44554;100.57;44.55
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;sep-23;179247;57691;all;N/A;median;57691;11;313.625;7.025;123734;32879;123.73;32.88
+Movistar;Bogotá, Bogota, Colombia;;sep-23;169028;46851;all;N/A;median;46851;5;9.25;49.583;223860;199682;223.86;199.68
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;sep-23;40716;11896;all;N/A;median;11896;19;236.283;67.888;202897;192551;202.90;192.55
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-23;30980;8426;all;N/A;median;8426;5;42.2;73.869;194234;184971;194.23;184.97
+Movistar;Medellín, Medellin, Antioquia, Colombia;;sep-23;38802;12438;all;N/A;median;12438;14;370.555;64.312;255015;265481;255.02;265.48
+Claro;Bogotá, Bogota, Colombia;;sep-23;235516;79588;all;N/A;median;79588;10;172.099;6.975;110598;32506;110.60;32.51
+Claro;Cali, Cali, Valle del Cauca, Colombia;;sep-23;48876;14391;all;N/A;median;14391;19;339.597;11.625;87744;32240;87.74;32.24
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-23;16491;5524;all;N/A;median;5524;13;472.667;81.906;93537;32620;93.54;32.62
+Claro;Medellín, Medellin, Antioquia, Colombia;;sep-23;38692;13609;all;N/A;median;13609;9;330.619;76.125;135093;32535;135.09;32.54
+Tigo;Bogotá, Bogota, Colombia;;sep-23;34026;12192;all;N/A;median;12192;10;158.667;56.375;91750;21275;91.75;21.28
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;sep-23;17710;5687;all;N/A;median;5687;15;314.331;9.15;66961;17147;66.96;17.15
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-23;9279;3428;all;N/A;median;3428;11;469.323;7.875;70789;14127;70.79;14.13
+Tigo;Medellín, Medellin, Antioquia, Colombia;;sep-23;80981;28665;all;N/A;median;28665;9;251.556;66.917;93857;22180;93.86;22.18
+DIRECTV;Bogotá, Bogota, Colombia;;sep-23;3605;1416;all;N/A;median;1416;25;435.106;16.95;15566;4691;15.57;4.69
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;sep-23;2498;986;all;N/A;median;986;34;596.333;229.167;15201;3754;15.20;3.75
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-23;2729;899;all;N/A;median;899;29;793.333;263.077;10757;3451;10.76;3.45
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;sep-23;123;31;all;N/A;median;31;33;436.216;134.396;17251;5441;17.25;5.44
+ETB;Bogotá, Bogota, Colombia;;sep-23;253956;82026;all;N/A;median;82026;4;72.667;31.656;143443;142658;143.44;142.66
+ETB;Cali, Cali, Valle del Cauca, Colombia;;sep-23;18;12;all;N/A;median;12;9;179.833;3.4;42964;88802;42.96;88.80
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;sep-23;52;20;all;N/A;median;20;23;363.881;15.8;15052;13823;15.05;13.82
+ETB;Medellín, Medellin, Antioquia, Colombia;;sep-23;75;39;all;N/A;median;39;16;25.919;65.875;24688;19421;24.69;19.42
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;sep-23;15734;4787;all;N/A;median;4787;4;346.167;103.312;74643;78972;74.64;78.97
+All Providers Combined;Bogotá, Bogota, Colombia;;oct-23;782941;237363;all;N/A;median;237363;6;124.667;5.375;137948;72024;137.95;72.02
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;oct-23;141888;41420;all;N/A;median;41420;18;288.583;82.067;103630;44112;103.63;44.11
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-23;67022;19716;all;N/A;median;19716;8;450.132;86.476;116024;68488;116.02;68.49
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;oct-23;183353;59566;all;N/A;median;59566;11;302.338;70.652;132268;33036;132.27;33.04
+Movistar;Bogotá, Bogota, Colombia;;oct-23;199392;54350;all;N/A;median;54350;5;91.111;45.437;240728;203903;240.73;203.90
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;oct-23;49829;14677;all;N/A;median;14677;19;232.648;6.682;209786;197946;209.79;197.95
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-23;36643;9973;all;N/A;median;9973;5;423.394;78.176;204690;200509;204.69;200.51
+Movistar;Medellín, Medellin, Antioquia, Colombia;;oct-23;40062;12902;all;N/A;median;12902;14;325.833;60.715;275570;289505;275.57;289.51
+Claro;Bogotá, Bogota, Colombia;;oct-23;234501;81150;all;N/A;median;81150;10;170.333;6.825;113613;32539;113.61;32.54
+Claro;Cali, Cali, Valle del Cauca, Colombia;;oct-23;51872;15235;all;N/A;median;15235;18;319.144;86.667;94228;32347;94.23;32.35
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-23;15927;5458;all;N/A;median;5458;13;469.167;79.166;94064;32656;94.06;32.66
+Claro;Medellín, Medellin, Antioquia, Colombia;;oct-23;41214;14341;all;N/A;median;14341;9;33.618;77.704;135761;32571;135.76;32.57
+Tigo;Bogotá, Bogota, Colombia;;oct-23;33849;12218;all;N/A;median;12218;10;155.078;5.325;92190;21119;92.19;21.12
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;oct-23;15783;5342;all;N/A;median;5342;15;283.416;7.15;73452;18868;73.45;18.87
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-23;8740;3079;all;N/A;median;3079;10;475.837;83.937;75796;19682;75.80;19.68
+Tigo;Medellín, Medellin, Antioquia, Colombia;;oct-23;79287;28914;all;N/A;median;28914;9;260.667;70.278;94162;22544;94.16;22.54
+DIRECTV;Bogotá, Bogota, Colombia;;oct-23;3976;1443;all;N/A;median;1443;25;439.333;17.05;14623;4712;14.62;4.71
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;oct-23;3677;1424;all;N/A;median;1424;35;551.222;201.098;16067;4024;16.07;4.02
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-23;2865;965;all;N/A;median;965;30;779.472;277.583;10765;3324;10.77;3.32
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;oct-23;149;41;all;N/A;median;41;36;550.668;212.296;13676;5121;13.68;5.12
+ETB;Bogotá, Bogota, Colombia;;oct-23;254438;82160;all;N/A;median;82160;4;69.365;31.511;142868;147636;142.87;147.64
+ETB;Cali, Cali, Valle del Cauca, Colombia;;oct-23;14;12;all;N/A;median;12;3;104.916;0.9125;238425;362890;238.43;362.89
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;oct-23;74;32;all;N/A;median;32;25;377.583;69.729;31244;18124;31.24;18.12
+ETB;Medellín, Medellin, Antioquia, Colombia;;oct-23;58;29;all;N/A;median;29;17;274.416;89.029;37275;22837;37.28;22.84
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;oct-23;16135;4984;all;N/A;median;4984;4;314.945;7.959;86019;91333;86.02;91.33
+All Providers Combined;Bogotá, Bogota, Colombia;;nov-23;782876;232545;all;N/A;median;232545;6;129.845;56.874;136522;67216;136.52;67.22
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;nov-23;131462;38290;all;N/A;median;38290;18;283.568;82.009;100031;44217;100.03;44.22
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-23;62711;18412;all;N/A;median;18412;9;456.332;8.646;118624;62040;118.62;62.04
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;nov-23;174566;56247;all;N/A;median;56247;10;311.304;70.659;134017;33008;134.02;33.01
+Movistar;Bogotá, Bogota, Colombia;;nov-23;177683;49988;all;N/A;median;49988;5;90.331;45.632;240100;196540;240.10;196.54
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;nov-23;44175;13256;all;N/A;median;13256;20;24;68.996;205501;188041;205.50;188.04
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-23;33795;9238;all;N/A;median;9238;5;424.994;76.768;203293;197771;203.29;197.77
+Movistar;Medellín, Medellin, Antioquia, Colombia;;nov-23;34412;11500;all;N/A;median;11500;14;33.55;62.868;268185;283920;268.19;283.92
+Claro;Bogotá, Bogota, Colombia;;nov-23;242676;81185;all;N/A;median;81185;10;171.833;7.075;118790;32492;118.79;32.49
+Claro;Cali, Cali, Valle del Cauca, Colombia;;nov-23;45598;13197;all;N/A;median;13197;18;323.333;9.144;93982;32060;93.98;32.06
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-23;14412;4855;all;N/A;median;4855;13;481.042;81.284;106603;32570;106.60;32.57
+Claro;Medellín, Medellin, Antioquia, Colombia;;nov-23;38439;13005;all;N/A;median;13005;9;35.375;8.1;142699;32531;142.70;32.53
+Tigo;Bogotá, Bogota, Colombia;;nov-23;30969;11478;all;N/A;median;11478;10;158.127;55.625;90545;21113;90.55;21.11
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;nov-23;16028;5152;all;N/A;median;5152;15;28.3;7.325;73694;18699;73.69;18.70
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-23;8589;3062;all;N/A;median;3062;10;475.333;89.937;76695;17535;76.70;17.54
+Tigo;Medellín, Medellin, Antioquia, Colombia;;nov-23;75507;27269;all;N/A;median;27269;9;264.556;68.167;94311;22401;94.31;22.40
+DIRECTV;Bogotá, Bogota, Colombia;;nov-23;5111;1731;all;N/A;median;1731;25;427.896;16.45;15951;4857;15.95;4.86
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;nov-23;2690;1058;all;N/A;median;1058;35;563.333;202.108;16374;4193;16.37;4.19
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-23;3017;976;all;N/A;median;976;27;769.561;238.884;13202;3926;13.20;3.93
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;nov-23;316;69;all;N/A;median;69;35;505.137;129.446;20982;7004;20.98;7.00
+ETB;Bogotá, Bogota, Colombia;;nov-23;267945;81582;all;N/A;median;81582;4;70.833;3.4;141523;149693;141.52;149.69
+ETB;Cali, Cali, Valle del Cauca, Colombia;;nov-23;17;11;all;N/A;median;11;9;212.312;3.4;19182;20887;19.18;20.89
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;nov-23;25;14;all;N/A;median;14;22;364.417;176.187;12241;15711;12.24;15.71
+ETB;Medellín, Medellin, Antioquia, Colombia;;nov-23;48;30;all;N/A;median;30;16;246.884;73.417;9533;8768;9.53;8.77
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;nov-23;17896;5644;all;N/A;median;5644;4;222.062;64.328;86261;89328;86.26;89.33
+EMCALI;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2023;;;all;N/A;median;;;;;;;;
+EMCALI;Medellín, Medellin, Antioquia, Colombia;;Dec 2023;;;all;N/A;median;;;;;;;;
+All Providers Combined;Bogotá, Bogota, Colombia;;Dec 2023;671685;202852;all;N/A;median;202852;6;123.104;54.305;146729;74972;146.73;74.97
+All Providers Combined;Cali, Cali, Valle del Cauca, Colombia;;Dec 2023;105819;32114;all;N/A;median;32114;18;281.333;84.618;111992;45911;111.99;45.91
+All Providers Combined;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2023;60079;17472;all;N/A;median;17472;9;453.833;83.733;131158;62841;131.16;62.84
+All Providers Combined;Medellín, Medellin, Antioquia, Colombia;;Dec 2023;145006;47406;all;N/A;median;47406;11;305.067;66.375;146971;33156;146.97;33.16
+Movistar;Bogotá, Bogota, Colombia;;Dec 2023;140856;42725;all;N/A;median;42725;5;85.394;42.916;256604;191954;256.60;191.95
+Movistar;Cali, Cali, Valle del Cauca, Colombia;;Dec 2023;39730;11848;all;N/A;median;11848;20;241.916;81.125;205098;193461;205.10;193.46
+Movistar;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2023;31611;9022;all;N/A;median;9022;5;42.626;7.575;208723;197538;208.72;197.54
+Movistar;Medellín, Medellin, Antioquia, Colombia;;Dec 2023;30019;10284;all;N/A;median;10284;14;34.266;59.075;282364;298868;282.36;298.87
+Claro;Bogotá, Bogota, Colombia;;Dec 2023;196927;65729;all;N/A;median;65729;10;169.833;6.825;133533;32567;133.53;32.57
+Claro;Cali, Cali, Valle del Cauca, Colombia;;Dec 2023;33107;10467;all;N/A;median;10467;18;323.833;90.363;103193;32134;103.19;32.13
+Claro;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2023;15448;4760;all;N/A;median;4760;13;47.98;78.984;115754;32376;115.75;32.38
+Claro;Medellín, Medellin, Antioquia, Colombia;;Dec 2023;29987;9764;all;N/A;median;9764;9;33.957;75.223;160263;32565;160.26;32.57
+Tigo;Bogotá, Bogota, Colombia;;Dec 2023;28106;10261;all;N/A;median;10261;10;155.833;54.137;93282;21495;93.28;21.50
+Tigo;Cali, Cali, Valle del Cauca, Colombia;;Dec 2023;13820;4585;all;N/A;median;4585;17;289.261;81.394;68706;16477;68.71;16.48
+Tigo;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2023;7146;2457;all;N/A;median;2457;10;469.511;80.354;77484;16448;77.48;16.45
+Tigo;Medellín, Medellin, Antioquia, Colombia;;Dec 2023;61230;22820;all;N/A;median;22820;9;26.103;64.724;94594;21886;94.59;21.89
+DIRECTV;Bogotá, Bogota, Colombia;;Dec 2023;3769;1539;all;N/A;median;1539;25;420.847;165.729;16790;5237;16.79;5.24
+DIRECTV;Cali, Cali, Valle del Cauca, Colombia;;Dec 2023;1653;716;all;N/A;median;716;36;554.667;20.6;17020;3998;17.02;4.00
+DIRECTV;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2023;3577;1000;all;N/A;median;1000;26;701.598;200.093;16817;3965;16.82;3.97
+DIRECTV;Medellín, Medellin, Antioquia, Colombia;;Dec 2023;251;52;all;N/A;median;52;40;530.861;176.126;39315;36338;39.32;36.34
+ETB;Bogotá, Bogota, Colombia;;Dec 2023;240668;74185;all;N/A;median;74185;4;68.322;31.667;155828;164067;155.83;164.07
+ETB;Cali, Cali, Valle del Cauca, Colombia;;Dec 2023;35;16;all;N/A;median;16;7;201.583;28.281;111767;186820;111.77;186.82
+ETB;Barranquilla, Barranquilla, Atlantico, Colombia;;Dec 2023;11;7;all;N/A;median;7;11;247.333;1.55;107764;116008;107.76;116.01
+ETB;Medellín, Medellin, Antioquia, Colombia;;Dec 2023;104;36;all;N/A;median;36;15;245.869;100.442;43344;40073;43.34;40.07
+EMCALI;Bogotá, Bogota, Colombia;;Dec 2023;3;1;all;N/A;median;1;18;362.162;82.788;3941;734;3.94;0.73
+EMCALI;Cali, Cali, Valle del Cauca, Colombia;;Dec 2023;13717;4637;all;N/A;median;4637;4;226.666;61.125;91228;92717;91.23;92.72

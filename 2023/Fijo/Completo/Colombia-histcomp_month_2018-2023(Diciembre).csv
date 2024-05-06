@@ -1,0 +1,73 @@
+﻿Provider;Location;Device;Aggregate Date;Test Count;Sample Count;Platform;Technology Type;Metric Type;User Count;Minimum Latency;Download Speed;Upload Speed;Download Speed Mbps;Upload Speed Mbps
+All Providers Combined;Colombia;;Jan 2018;1529360;772892;all;N/A;median;383877;31;6013;1373;6.01;1.37
+All Providers Combined;Colombia;;feb-18;1611753;797852;all;N/A;median;390769;32;6490;1605;6.49;1.61
+All Providers Combined;Colombia;;mar-18;1638001;835723;all;N/A;median;405034;29;7025;1708;7.03;1.71
+All Providers Combined;Colombia;;Apr 2018;1607045;827680;all;N/A;median;399877;29;7927;1932;7.93;1.93
+All Providers Combined;Colombia;;may-18;1555388;819576;all;N/A;median;396094;28;8310;1993;8.31;1.99
+All Providers Combined;Colombia;;jun-18;1425320;746237;all;N/A;median;364117;27;8558;2029;8.56;2.03
+All Providers Combined;Colombia;;jul-18;1501353;797284;all;N/A;median;387949;26;9105;2066;9.11;2.07
+All Providers Combined;Colombia;;Aug 2018;1661066;876635;all;N/A;median;425943;24;9729;2121;9.73;2.12
+All Providers Combined;Colombia;;sep-18;1676862;883876;all;N/A;median;429534;26;10011;2153;10.01;2.15
+All Providers Combined;Colombia;;oct-18;1517704;812532;all;N/A;median;371918;26;10179;2200;10.18;2.20
+All Providers Combined;Colombia;;nov-18;1349878;729709;all;N/A;median;331558;26;10202;2208;10.20;2.21
+All Providers Combined;Colombia;;Dec 2018;1146359;631741;all;N/A;median;287861;27;10199;2220;10.20;2.22
+All Providers Combined;Colombia;;Jan 2019;1612548;872451;all;N/A;median;398344;29;10260;2235;10.26;2.24
+All Providers Combined;Colombia;;feb-19;1588164;861576;all;N/A;median;402589;27;10480;2349;10.48;2.35
+All Providers Combined;Colombia;;mar-19;1566226;865386;all;N/A;median;397435;28;10432;2363;10.43;2.36
+All Providers Combined;Colombia;;Apr 2019;1532020;838705;all;N/A;median;386845;30;10461;2419;10.46;2.42
+All Providers Combined;Colombia;;may-19;1667388;908259;all;N/A;median;409952;29;10605;2901;10.61;2.90
+All Providers Combined;Colombia;;jun-19;1651426;880840;all;N/A;median;410089;29;10573;2758;10.57;2.76
+All Providers Combined;Colombia;;jul-19;1780337;433329;all;N/A;median;433329;29;11492;3329;11.49;3.33
+All Providers Combined;Colombia;;Aug 2019;1807380;446628;all;N/A;median;446628;30;12174;3623;12.17;3.62
+All Providers Combined;Colombia;;sep-19;1725165;427727;all;N/A;median;427727;31;12941;4038;12.94;4.04
+All Providers Combined;Colombia;;oct-19;1797350;452072;all;N/A;median;452072;31;14761;4841;14.76;4.84
+All Providers Combined;Colombia;;nov-19;1822597;451134;all;N/A;median;451134;31;16062;5140;16.06;5.14
+All Providers Combined;Colombia;;Dec 2019;1676077;432382;all;N/A;median;432382;31;18561;5245;18.56;5.25
+All Providers Combined;Colombia;;Jan 2020;1859339;471403;all;N/A;median;471403;31;18394;5256;18.39;5.26
+All Providers Combined;Colombia;;feb-20;1944681;493070;all;N/A;median;493070;29;21111;5778;21.11;5.78
+All Providers Combined;Colombia;;mar-20;3309750;785318;all;N/A;median;785318;34;17536;5184;17.54;5.18
+All Providers Combined;Colombia;;Apr 2020;3959783;864322;all;N/A;median;864322;35;17408;5070;17.41;5.07
+All Providers Combined;Colombia;;may-20;4204200;914025;all;N/A;median;914025;33;19733;5364;19.73;5.36
+All Providers Combined;Colombia;;jun-20;3511363;817004;all;N/A;median;817004;19;22444;5754;22.44;5.75
+All Providers Combined;Colombia;;jul-20;3606397;861459;all;N/A;median;861459;18;24119;5832;24.12;5.83
+All Providers Combined;Colombia;;Aug 2020;3495419;843286;all;N/A;median;843286;19;25217;5861;25.22;5.86
+All Providers Combined;Colombia;;sep-20;3092255;782006;all;N/A;median;782006;18;26237;5971;26.24;5.97
+All Providers Combined;Colombia;;oct-20;2897967;758815;all;N/A;median;758815;18;27036;6137;27.04;6.14
+All Providers Combined;Colombia;;nov-20;2711878;721840;all;N/A;median;721840;18;28772;6475;28.77;6.48
+All Providers Combined;Colombia;;Dec 2020;2304126;613689;all;N/A;median;613689;18;29970;6619;29.97;6.62
+All Providers Combined;Colombia;;Jan 2021;2939001;749292;all;N/A;median;749292;18;30327;6476;30.33;6.48
+All Providers Combined;Colombia;;feb-21;3222059;828934;all;N/A;median;828934;19;30897;6633;30.90;6.63
+All Providers Combined;Colombia;;mar-21;3128872;816276;all;N/A;median;816276;19;31700;7864;31.70;7.86
+All Providers Combined;Colombia;;Apr 2021;3319017;857687;all;N/A;median;857687;17;33354;8220;33.35;8.22
+All Providers Combined;Colombia;;may-21;3217083;834388;all;N/A;median;834388;16;36333;8539;36.33;8.54
+All Providers Combined;Colombia;;jun-21;2977249;794130;all;N/A;median;794130;16;41295;9118;41.30;9.12
+All Providers Combined;Colombia;;jul-21;3129689;830778;all;N/A;median;830778;15;43949;10161;43.95;10.16
+All Providers Combined;Colombia;;Aug 2021;3056615;827009;all;N/A;median;827009;15;46368;10525;46.37;10.53
+All Providers Combined;Colombia;;sep-21;2856581;753668;all;N/A;median;753668;14;49558;10748;49.56;10.75
+All Providers Combined;Colombia;;oct-21;2664542;753217;all;N/A;median;753217;14;51785;10944;51.79;10.94
+All Providers Combined;Colombia;;nov-21;2648674;745114;all;N/A;median;745114;13;55206;12478;55.21;12.48
+All Providers Combined;Colombia;;Dec 2021;2355211;684645;all;N/A;median;684645;13;58692;15099;58.69;15.10
+All Providers Combined;Colombia;;Jan 2022;2575844;714047;all;N/A;median;714047;13;60012;18208;60.01;18.21
+All Providers Combined;Colombia;;feb-22;2455156;689922;all;N/A;median;689922;13;65405;21284;65.41;21.28
+All Providers Combined;Colombia;;mar-22;2633676;724243;all;N/A;median;724243;12;69440;21997;69.44;22.00
+All Providers Combined;Colombia;;Apr 2022;2614112;720589;all;N/A;median;720589;12;73038;23293;73.04;23.29
+All Providers Combined;Colombia;;may-22;2488953;670894;all;N/A;median;670894;12;74160;25951;74.16;25.95
+All Providers Combined;Colombia;;jun-22;2232933;626883;all;N/A;median;626883;12;77159;28587;77.16;28.59
+All Providers Combined;Colombia;;jul-22;2273322;633679;all;N/A;median;633679;12;83570;29195;83.57;29.20
+All Providers Combined;Colombia;;Aug 2022;2376264;645018;all;N/A;median;645018;12;84658;30678;84.66;30.68
+All Providers Combined;Colombia;;sep-22;2212610;602957;all;N/A;median;602957;11;86825;31771;86.83;31.77
+All Providers Combined;Colombia;;oct-22;2178145;607102;all;N/A;median;607102;11;87284;31928;87.28;31.93
+All Providers Combined;Colombia;;nov-22;2089638;598556;all;N/A;median;598556;11;89629;32374;89.63;32.37
+All Providers Combined;Colombia;;Dec 2022;1820877;528248;all;N/A;median;528248;11;90758;32624;90.76;32.62
+All Providers Combined;Colombia;;Jan 2023;2072240;588520;all;N/A;median;588520;11;91433;32615;91.43;32.62
+All Providers Combined;Colombia;;feb-23;2168011;624976;all;N/A;median;624976;11;92956;32912;92.96;32.91
+All Providers Combined;Colombia;;mar-23;2263189;648034;all;N/A;median;648034;11;93463;32991;93.46;32.99
+All Providers Combined;Colombia;;Apr 2023;2051895;594394;all;N/A;median;594394;11;93784;33194;93.78;33.19
+All Providers Combined;Colombia;;may-23;2098842;604743;all;N/A;median;604743;10;94404;33543;94.40;33.54
+All Providers Combined;Colombia;;jun-23;2017308;585661;all;N/A;median;585661;10;94795;33987;94.80;33.99
+All Providers Combined;Colombia;;jul-23;2039587;587927;all;N/A;median;587927;11;95452;35287;95.45;35.29
+All Providers Combined;Colombia;;Aug 2023;2095936;607569;all;N/A;median;607569;10;99193;36989;99.19;36.99
+All Providers Combined;Colombia;;sep-23;2119842;602864;all;N/A;median;602864;11;104902;39881;104.90;39.88
+All Providers Combined;Colombia;;oct-23;2205576;625502;all;N/A;median;625502;10;111650;43406;111.65;43.41
+All Providers Combined;Colombia;;nov-23;2132277;599835;all;N/A;median;599835;10;111810;42541;111.81;42.54
+All Providers Combined;Colombia;;Dec 2023;1883945;538709;all;N/A;median;538709;11;117226;42968;117.23;42.97
