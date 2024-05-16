@@ -95,9 +95,7 @@ gdf2 = gpd.read_file('https://raw.githubusercontent.com/postdatacrc/Mediciones_Q
 gdf2=gdf2.rename(columns={"NOMBRE_DPT":'Location'})
 with urllib.request.urlopen('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Colombia.geo.json') as url:
     Colombian_DPTO2 = json.loads(url.read().decode())
-Servidores=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Fijo/Fij-Servidores_Colombia.csv',encoding='latin-1',delimiter=';')
-Servidores['latitude']=Servidores['latitude'].str.replace(',','.')
-Servidores['longitude']=Servidores['longitude'].str.replace(',','.')
+Servidores=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/2023/Fijo/Completo/Speedtest_Servers_2024.csv',encoding='utf-8-sig',delimiter=',')
 dict_serv_colores={'Cali':'rgb(255,128,0)', 'Bogotá D.C.':'rgb(255,0,0)', 'Cartagena':'rgb(128,255,0)',
         'Medellín':'rgb(0,255,0)', 'Barranquilla':'rgb(0,255,128)',
        'San Andrés':'rgb(255,255,0)', 'San Agustín, Huila':'rgb(0,255,255)', 'Choachí, Cundinamarca':'rgb(128,128,128)',
@@ -132,15 +130,15 @@ if select_servicio=='Información general':
     for i in range(0,len(Servidores)):
         html2=f"""<b>Nombre:</b>\n
         {Servidores.iloc[i]['server_name']}<br>
-        <b>Cantidad servidores:</b>\n
-        {Servidores.iloc[i]['Cantidad servidores']}
+        <b>Padtrocinador servidor:</b>\n
+        {Servidores.iloc[i]['sponsor_name']}
         """
         iframe2=folium.IFrame(html=html2, width=110, height=105)
         popup2=folium.Popup(iframe2)    
         folium.CircleMarker(
           location=[Servidores.iloc[i]['latitude'], Servidores.iloc[i]['longitude']],
-          popup=popup2,radius=10,weight=1,
-     color='black',       
+          popup=popup2,radius=2,weight=1,
+     color='red',       
      fill=True,
      #fill_color=dict_serv_colores[Servidores.iloc[i]['server_name']],
      fill_opacity=0.2
@@ -149,7 +147,7 @@ if select_servicio=='Información general':
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("### <b>Distribución de servidores de pruebas en Colombia</b>",unsafe_allow_html=True)
-        st.markdown('<p style="text-align:justify;">Las mediciones de los indicadores de calidad se soportan en el uso de una red que para 2021 incorporaba 38 servidores de prueba dispersos en el territorio nacional. Estas se muestran en el mapa a continuación.</p>',unsafe_allow_html=True)    
+        st.markdown('<p style="text-align:justify;">Las mediciones de los indicadores de calidad se soportan en el uso de una red que para 2024 incorporaba 116 servidores de prueba dispersos en el territorio nacional. Estas se muestran en el mapa a continuación.</p>',unsafe_allow_html=True)    
         st.markdown("")
         folium_static(Sevidores_map,width=350)  
         st.markdown(r"""<p style=font-size:10px>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022. 
@@ -1667,9 +1665,7 @@ if select_servicio == 'Internet fijo':
                     año_opFijo = st.selectbox('Escoja el año',[2020,2021,2022,2023],3) 
                 mes=mes_opFijoNombre[mes_opFijo]    
                     
-                Servidores=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/Bases_Fijo/Fij-Servidores_Colombia.csv',encoding='latin-1',delimiter=';')
-                Servidores['latitude']=Servidores['latitude'].str.replace(',','.')
-                Servidores['longitude']=Servidores['longitude'].str.replace(',','.')
+                Servidores=pd.read_csv('https://raw.githubusercontent.com/postdatacrc/Mediciones_QoE/main/2023/Fijo/Completo/Speedtest_Servers_2024.csv',encoding='utf-8-sig',delimiter=',')
                 ColLat2=Colombia2Fijo[(Colombia2Fijo['year']==2023)&(Colombia2Fijo['month']==mes)].groupby(['Location'])['Latency'].mean()
                 ColLat2=round(ColLat2,2)
                 departamentosLat_df2Fijo=gdf2.merge(ColLat2, on='Location')
