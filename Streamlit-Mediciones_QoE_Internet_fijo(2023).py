@@ -125,7 +125,6 @@ if select_servicio=='Información general':
         nan_fill_color ="rgba(0,0,0,0)",
         smooth_factor=0).add_to(Sevidores_map)
 
-
     # add marker one by one on the map
     for i in range(0,len(Servidores)):
         html2=f"""<b>Nombre:</b>\n
@@ -150,7 +149,7 @@ if select_servicio=='Información general':
         st.markdown('<p style="text-align:justify;">Las mediciones de los indicadores de calidad se soportan en el uso de una red que para 2024 incorporaba 116 servidores de prueba dispersos en el territorio nacional. Estas se muestran en el mapa a continuación.</p>',unsafe_allow_html=True)    
         st.markdown("")
         folium_static(Sevidores_map,width=350)  
-        st.markdown(r"""<p style=font-size:10px>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2022. 
+        st.markdown(r"""<p style=font-size:10px>Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2024. 
         Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.</p>""",unsafe_allow_html=True)
     with col2:
         st.markdown("### Indicadores de desempeño",unsafe_allow_html=True)
@@ -375,7 +374,8 @@ CapDep=['LETICIA','MEDELLÍN','ARAUCA','BARRANQUILLA','BOGOTÁ','CARTAGENA','TUN
             'PASTO','CUCUTA','MOCOA','ARMENIA','PEREIRA','SAN ANDRÉS','BUCARAMANGA','SINCELEJO','IBAGUE','CALI','MITÚ',
             'PUERTO CARREÑO']
 
-dict_colores_op={'Claro':'red','Tigo':'rgb(153,51,255)','ETB':'rgb(0,153,153)','Movistar':'rgb(51,255,51)','All combined':'black'}
+dict_colores_op={'Claro':'red','Tigo':'rgb(153,51,255)','ETB':'rgb(0,153,153)','Movistar':'rgb(51,255,51)','All Providers Combined':'black',
+                 "DIRECTV":"rgb(0,0,102)","EMCALI":"rgb(0,102,0)"}
 
 
 if select_servicio == 'Internet fijo':
@@ -395,7 +395,7 @@ if select_servicio == 'Internet fijo':
                                          line=dict(color='blue', width=2),name=' ',mode='lines+markers',fill='tonexty', fillcolor='rgba(0,0,255,0.2)'),row=1, col=1)
                 fig1Fijo.update_xaxes(tickvals=['2018-01-01','2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01',
                                                 '2022-06-01','2022-12-01','2023-06-01','2023-12-01'])
-                fig1Fijo.update_xaxes(tickangle=0, tickfont=dict(family='Tahoma', color='black', size=22),title_font=dict(family="Tahoma"),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
+                fig1Fijo.update_xaxes(range=["2018-01-01","2024-01-12"],tickangle=0, tickfont=dict(family='Tahoma', color='black', size=22),title_font=dict(family="Tahoma"),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
                 fig1Fijo.update_yaxes(tickfont=dict(family='Tahoma', color='black', size=22),title_font=dict(family="Tahoma"),titlefont_size=22, title_text='Velocidad descarga (Mbps)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
@@ -413,7 +413,7 @@ if select_servicio == 'Internet fijo':
                 fig1Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2023.',
-                font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.25)
+                font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.35)
                 st.plotly_chart(fig1Fijo, use_container_width=True)
             #st.download_button(label="Descargar CSV",data=convert_df(Downspeed1Fijo),file_name='Historico_descarga_Colombia.csv',mime='text/csv')
 
@@ -496,7 +496,7 @@ if select_servicio == 'Internet fijo':
                 col1, col2,col3= st.columns(3)
                 mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
                 with col2:
-                    mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                    mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
                 mes=mes_opFijoNombre[mes_opFijo]     
                 
                 df19A3Fijo=pd.DataFrame();df20A3Fijo=pd.DataFrame();df21A3Fijo=pd.DataFrame();df22A3Fijo=pd.DataFrame();df23A3Fijo=pd.DataFrame()
@@ -553,12 +553,12 @@ if select_servicio == 'Internet fijo':
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
                 fig2Fijo.update_traces(textfont_size=22)
                 fig2Fijo.update_layout(height=600,width=1200,legend_title=None)
-                fig2Fijo.update_layout(legend=dict(orientation="h",yanchor='top',xanchor='center',x=0.5,y=0.8))
+                fig2Fijo.update_layout(legend=dict(orientation="h",yanchor='top',xanchor='center',x=0.5,y=0.9))
                 fig2Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
                 fig2Fijo.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=14,font=dict(size=14),
                 title={
                 'text': "<b>Velocidad anual de descarga de Internet fijo por ciudad<br> (2020-2023) </b>",
-                'y':0.8,
+                'y':0.85,
                 'x':0.5,
                 'xanchor': 'center',
                 'yanchor': 'top'})  
@@ -566,7 +566,7 @@ if select_servicio == 'Internet fijo':
                 fig2Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2019 - 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.4)
+                font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.6)
                 st.plotly_chart(fig2Fijo, use_container_width=True)  
 
             with tab2:
@@ -653,7 +653,7 @@ if select_servicio == 'Internet fijo':
                 fig4Fijo.update_yaxes(tickfont=dict(family='Tahoma', color='black', size=22),title_font=dict(family="Tahoma"),titlefont_size=22,ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
                 fig4Fijo.update_traces(textfont_size=22)
-                fig4Fijo.update_layout(height=700,legend_title=None)
+                fig4Fijo.update_layout(height=750,legend_title=None)
                 fig4Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=True)
                 fig4Fijo.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=22,
                 title={
@@ -667,11 +667,9 @@ if select_servicio == 'Internet fijo':
                 fig4Fijo.update_yaxes(showspikes=True,range=[0,max(DicDer['Upload Speed Mbps'].values.tolist())+10],title_text="Velocidad de carga (Mbps)", row=1, col=1)
                 fig4Fijo.update_yaxes(showspikes=True,range=[0,max(DicDer['Upload Speed Mbps'].values.tolist())+10],title_text=None, row=1, col=2)
                 fig4Fijo.update_layout(legend=dict(y=0.95,x=1,orientation='v'))
-                fig4Fijo.add_annotation(
-                showarrow=False,
-                text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                font=dict(size=10), xref='x domain',x=0.33,yref='y domain',y=-0.16)            
+           
                 st.plotly_chart(fig4Fijo, use_container_width=True)
+                st.markdown("Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2023.<br>Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.")
 
                 DicIz_maxLat=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==Año_opFijoIz)&(Ciudades3Fijo['month']==mesIz)&(Ciudades3Fijo['Latency']>=100)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
                 DicDer_maxLat=Ciudades3Fijo.loc[(Ciudades3Fijo['year']==2023)&(Ciudades3Fijo['month']==mesDer)&(Ciudades3Fijo['Latency']>=100)][['Location','Latency','Download Speed Mbps', 'Upload Speed Mbps']]
@@ -683,10 +681,10 @@ if select_servicio == 'Internet fijo':
                 #            Para el periodo 2023-{mesDer} estas son: {resultDicDer_maxLat}""",unsafe_allow_html=True)
 
             with tab3:
-                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',CapDep,4)
+                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',["BOGOTÁ","MEDELLÍN","CALI","BARRANQUILLA"],0)
                 
                 TopCapDep_cap=TopCapDep[(TopCapDep['DESC_MUNICIPIO']==select_capdep)].sort_values(by='periodo')
-                AgGrid(TopCapDep_cap)
+              
                 fig_muniOp=go.Figure()
                 for op in TopCapDep_cap['Provider'].unique():
                     if op not in dict_colores_op.keys():
@@ -703,7 +701,7 @@ if select_servicio == 'Internet fijo':
                     zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
                     fig_muniOp.update_traces(textfont_size=22)
                     fig_muniOp.update_layout(height=500,legend_title=None,font=dict(size=22))
-                    fig_muniOp.update_layout(legend=dict(orientation="h",y=1.1,x=0.35),showlegend=True)
+                    fig_muniOp.update_layout(legend=dict(orientation="h",y=1.1,xanchor="center",x=0.5),showlegend=True)
                     fig_muniOp.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
                     fig_muniOp.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=14,
                     title={
@@ -712,11 +710,16 @@ if select_servicio == 'Internet fijo':
                     'x':0.5,
                     'xanchor': 'center',
                     'yanchor': 'top'})  
-                    fig_muniOp.update_xaxes(tickvals=['2023-01','2023-02','2023-03','2023-04','2023-05','2023-06','2023-12'])
+                    fig_muniOp.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01',
+                                                      '2019-03-01','2019-06-01''2019-09-01','2019-12-01',
+                                                      '2020-03-01','2020-06-01','2020-09-01','2020-12-01',
+                                                      '2021-03-01','2021-06-01','2021-09-01','2021-12-01',
+                                                      '2022-03-01','2022-06-01','2022-09-01','2022-12-01',
+                                                      '2023-03-01','2023-06-01','2023-09-01','2023-12-01'])
                     fig_muniOp.add_annotation(
                     showarrow=False,
                     text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                    font=dict(size=10), xref='paper',yref='y domain',y=-0.25)                     
+                    font=dict(size=10), xref='paper',yref='y domain',y=-0.35)                     
                 st.plotly_chart(fig_muniOp, use_container_width=True)     
                 
         if dimension_Vel_descarga_Fijo == 'Operadores': 
@@ -770,16 +773,15 @@ if select_servicio == 'Internet fijo':
                 'x':0.5,
                 'xanchor': 'center',
                 'yanchor': 'top'})  
-                fig3Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01',
-                '2019-06-01','2019-09-01','2019-12-01','2020-03-01','2020-06-01','2020-09-01',
-                '2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01','2022-03-01','2022-06-01','2022-09-01','2022-12-01','2023-03-01','2023-06-01',
-                '2023-12-01'])
+                fig3Fijo.update_xaxes(tickvals=['2018-01-01','2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01',
+                                                '2022-06-01','2022-12-01','2023-06-01','2023-12-01'])
                 fig3Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                font=dict(size=10), xref='paper',yref='y domain',y=-0.25) 
+                font=dict(size=10), xref='paper',yref='y domain',y=-0.35) 
                 st.plotly_chart(fig3Fijo, use_container_width=True)  
-            #st.download_button(label="Descargar CSV",data=convert_df(JuntosDescarga4Fijo),file_name='Historico_descarga_Operadores.csv',mime='text/csv')            
+            #st.download_button(label="Descargar CSV",data=convert_df(JuntosDescarga4Fijo),file_name='Historico_descarga_Operadores.csv',mime='text/csv')     
+                   
             with tab2:
                 col1,col2,col3,col4= st.columns([2,1,1,2])
                 mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
@@ -1130,7 +1132,7 @@ if select_servicio == 'Internet fijo':
                 fig6Fijo = make_subplots(rows=1, cols=1)
                 fig6Fijo.add_trace(go.Scatter(x=Upspeed1Fijo['Aggregate Date'].values, y=Upspeed1Fijo['Upload Speed Mbps'].values,
                                          line=dict(color='red', width=2),mode='lines+markers',fill='tonexty', fillcolor='rgba(255,0,0,0.2)'),row=1, col=1)
-                fig6Fijo.update_xaxes(tickvals=['2018-01-01','2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01',
+                fig6Fijo.update_xaxes(range=["2018-01-01","2024-01-12"],tickvals=['2018-01-01','2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01',
                 '2021-06-01','2021-12-01','2022-06-01','2022-12-01','2023-06-01','2023-12-01'])
                 fig6Fijo.update_xaxes(tickangle=0, tickfont=dict(family='Tahoma', color='black', size=22),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
@@ -1150,7 +1152,7 @@ if select_servicio == 'Internet fijo':
                 fig6Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2023.',
-                font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.25)
+                font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.6)
                 st.plotly_chart(fig6Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(Upspeed1Fijo),file_name='Historico_carga_Colombia.csv',mime='text/csv')
             with tab2:
@@ -1229,7 +1231,7 @@ if select_servicio == 'Internet fijo':
                 col1, col2,col3= st.columns(3)
                 mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
                 with col2:
-                    mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                    mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
                 mes=mes_opFijoNombre[mes_opFijo] 
                 
                 df19B3=pd.DataFrame();df20B3=pd.DataFrame();df21B3=pd.DataFrame();df22B3=pd.DataFrame();df23B3=pd.DataFrame()
@@ -1300,21 +1302,21 @@ if select_servicio == 'Internet fijo':
                 fig7Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2020 - 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                font=dict(size=10), xref='x domain',x=0.1,yref='y domain',y=-0.5)             
+                font=dict(size=10), xref='x domain',x=0.1,yref='y domain',y=-0.6)             
                 st.plotly_chart(fig7Fijo, use_container_width=True)  
             
             with tab2:    
-                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',CapDep,4)
-                TopCapDep_cap=TopCapDep[(TopCapDep['DESC_MUNICIPIO']==select_capdep)].sort_values(by='aggregate_date')
+                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',["BOGOTÁ","MEDELLÍN","CALI","BARRANQUILLA"],0)
+                TopCapDep_cap=TopCapDep[(TopCapDep['DESC_MUNICIPIO']==select_capdep)].sort_values(by='periodo')
 
                 fig_muniOp=go.Figure()
-                for op in TopCapDep_cap['provider'].unique():
+                for op in TopCapDep_cap['Provider'].unique():
                     if op not in dict_colores_op.keys():
                         color_op='rgb(192,192,192)'
                     else:
                         color_op=dict_colores_op[op]
-                    df_muniOp=TopCapDep_cap[TopCapDep_cap['provider']==op]
-                    fig_muniOp.add_trace(go.Scatter(x=df_muniOp['aggregate_date'],y=df_muniOp['median_upload_mbps'],mode='lines+markers',name=op,marker_color=color_op
+                    df_muniOp=TopCapDep_cap[TopCapDep_cap['Provider']==op]
+                    fig_muniOp.add_trace(go.Scatter(x=df_muniOp['periodo'],y=df_muniOp['Upload Speed Mbps'],mode='lines+markers',name=op,marker_color=color_op
                     ))
                     
                     fig_muniOp.update_xaxes(tickangle=0, tickfont=dict(family='Tahoma', color='black', size=22),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
@@ -1332,11 +1334,16 @@ if select_servicio == 'Internet fijo':
                     'x':0.5,
                     'xanchor': 'center',
                     'yanchor': 'top'})  
-                    fig_muniOp.update_xaxes(tickvals=['2023-01-01','2023-02-01','2023-03-01','2023-04-01','2023-05-01','2023-06-01','2023-12-01'])
+                    fig_muniOp.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01',
+                                                      '2019-03-01','2019-06-01''2019-09-01','2019-12-01',
+                                                      '2020-03-01','2020-06-01','2020-09-01','2020-12-01',
+                                                      '2021-03-01','2021-06-01','2021-09-01','2021-12-01',
+                                                      '2022-03-01','2022-06-01','2022-09-01','2022-12-01',
+                                                      '2023-03-01','2023-06-01','2023-09-01','2023-12-01'])
                     fig_muniOp.add_annotation(
                     showarrow=False,
                     text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                    font=dict(size=10), xref='paper',yref='y domain',y=-0.25)                     
+                    font=dict(size=10), xref='paper',yref='y domain',y=-0.35)                     
                 st.plotly_chart(fig_muniOp, use_container_width=True)     
             
         if dimension_Vel_carga_Fijo == 'Operadores':   
@@ -1390,13 +1397,12 @@ if select_servicio == 'Internet fijo':
                 'x':0.5,
                 'xanchor': 'center',
                 'yanchor': 'top'})  
-                fig8Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01',
-                '2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01',
-                '2022-03-01','2022-06-01','2022-09-01','2022-12-01','2023-03-01','2023-06-01','2023-12-01'])
+                fig8Fijo.update_xaxes(tickvals=['2018-01-01','2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01',
+                                                '2022-06-01','2022-12-01','2023-06-01','2023-12-01'])
                 fig8Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                font=dict(size=10), xref='paper',yref='y domain',y=-0.25) 
+                font=dict(size=10), xref='paper',yref='y domain',y=-0.35) 
                 st.plotly_chart(fig8Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(JuntosCarga4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')            
             with tab2:
@@ -1629,11 +1635,12 @@ if select_servicio == 'Internet fijo':
             Latency1Fijo=Colombia1Fijo.groupby(['Aggregate Date'])['Latency'].mean().reset_index()
             Latency1Fijo['Aggregate Date']=Latency1Fijo['Aggregate Date'].astype('str')
             tab1,tab2=st.tabs(["Evolución indicador","Mapa departamental"])
+
             with tab1:
                 fig9Fijo = make_subplots(rows=1, cols=1)
                 fig9Fijo.add_trace(go.Scatter(x=Latency1Fijo['Aggregate Date'].values, y=Latency1Fijo['Latency'].values,
                              line=dict(color='purple', width=2),mode='lines+markers',fill='tonexty', fillcolor='rgba(153,0,153,0.2)'),row=1, col=1)
-                fig9Fijo.update_xaxes(tickangle=0, tickfont=dict(family='Tahoma', color='black', size=22),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
+                fig9Fijo.update_xaxes(range=["2018-01-01","2024-01-12"],tickangle=0, tickfont=dict(family='Tahoma', color='black', size=22),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
                 fig9Fijo.update_yaxes(tickfont=dict(family='Tahoma', color='black', size=22),title_font=dict(family="Tahoma"),titlefont_size=22, title_text='Latencia (ms)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
@@ -1653,9 +1660,10 @@ if select_servicio == 'Internet fijo':
                 fig9Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en los datos de Ookla® Speedtest Intelligence® para 2018 - 2023.',
-                font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.25)
+                font=dict(size=10), xref='x domain',x=0.5,yref='y domain',y=-0.35)
                 st.plotly_chart(fig9Fijo, use_container_width=True)  
-            #st.download_button(label="Descargar CSV",data=convert_df(Latency1Fijo),file_name='Historico_latencia_Colombia.csv',mime='text/csv')             
+            #st.download_button(label="Descargar CSV",data=convert_df(Latency1Fijo),file_name='Historico_latencia_Colombia.csv',mime='text/csv')   
+                      
             with tab2:
                 col1,col2,col3,col4= st.columns([2,1,1,2])
                 mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
@@ -1722,12 +1730,14 @@ if select_servicio == 'Internet fijo':
                     for i in range(0,len(Servidores)):
                        folium.Marker(
                           location=[Servidores.iloc[i]['latitude'], Servidores.iloc[i]['longitude']],
-                          popup=Servidores.iloc[i]['server_name'],icon=folium.Icon(color='red', icon='wifi', prefix='fa'),radius=3,
+                          popup=Servidores.iloc[i]['server_name'],icon=folium.Icon(color='red', icon='wifi', prefix='fa'),radius=1,
                      color='red',
                      fill=True,
                      fill_color='red',
                      fill_opacity=1
                        ).add_to(colombia_map3Fijo)
+          
+                                  
                     for key in choropleth._children:
                         if key.startswith('color_map'):
                             del(choropleth._children[key])
@@ -1740,11 +1750,12 @@ if select_servicio == 'Internet fijo':
 
         if dimension_Latencia_Fijo == 'Ciudades':    
             tab1,tab2=st.tabs(["Comparación anual","Información por operadores"])
+
             with tab1:   
                 col1, col2,col3= st.columns(3)
                 mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
                 with col2:
-                    mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']) 
+                    mes_opFijo = st.selectbox('Escoja el mes a comparar anualmente',['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],11) 
                 mes=mes_opFijoNombre[mes_opFijo] 
                 
                 df19C3=pd.DataFrame();df20C3=pd.DataFrame();df21C3=pd.DataFrame();df22C3=pd.DataFrame();df23C3=pd.DataFrame()
@@ -1808,21 +1819,22 @@ if select_servicio == 'Internet fijo':
                 fig10Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2019 - 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                font=dict(size=10), xref='x domain',x=0.1,yref='y domain',y=-0.5)                 
+                font=dict(size=10), xref='x domain',x=0.1,yref='y domain',y=-0.6)                 
                 st.plotly_chart(fig10Fijo, use_container_width=True)  
 
             with tab2:    
-                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',CapDep,4)
-                TopCapDep_cap=TopCapDep[(TopCapDep['DESC_MUNICIPIO']==select_capdep)].sort_values(by='aggregate_date')
-
+                select_capdep=st.selectbox('Escoja la ciudad capital de departamento',["BOGOTÁ","MEDELLÍN","CALI","BARRANQUILLA"],0)
+                
+                TopCapDep_cap=TopCapDep[(TopCapDep['DESC_MUNICIPIO']==select_capdep)].sort_values(by='periodo')
+              
                 fig_muniOp=go.Figure()
-                for op in TopCapDep_cap['provider'].unique():
+                for op in TopCapDep_cap['Provider'].unique():
                     if op not in dict_colores_op.keys():
                         color_op='rgb(192,192,192)'
                     else:
                         color_op=dict_colores_op[op]
-                    df_muniOp=TopCapDep_cap[TopCapDep_cap['provider']==op]
-                    fig_muniOp.add_trace(go.Scatter(x=df_muniOp['aggregate_date'],y=df_muniOp['median_latency_ms'],mode='lines+markers',name=op,marker_color=color_op
+                    df_muniOp=TopCapDep_cap[TopCapDep_cap['Provider']==op]
+                    fig_muniOp.add_trace(go.Scatter(x=df_muniOp['periodo'],y=df_muniOp['Minimum Latency'],mode='lines+markers',name=op,marker_color=color_op
                     ))
                     
                     fig_muniOp.update_xaxes(tickangle=0, tickfont=dict(family='Tahoma', color='black', size=22),title_text=None,ticks="outside", tickformat="%m<br>20%y",tickwidth=1, tickcolor='black', ticklen=5,
@@ -1831,7 +1843,7 @@ if select_servicio == 'Internet fijo':
                     zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
                     fig_muniOp.update_traces(textfont_size=22)
                     fig_muniOp.update_layout(height=500,legend_title=None,font=dict(size=22))
-                    fig_muniOp.update_layout(legend=dict(orientation="h",y=1.1,x=0.35),showlegend=True)
+                    fig_muniOp.update_layout(legend=dict(orientation="h",y=1.1,xanchor="center",x=0.5),showlegend=True)
                     fig_muniOp.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
                     fig_muniOp.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=14,
                     title={
@@ -1840,12 +1852,17 @@ if select_servicio == 'Internet fijo':
                     'x':0.5,
                     'xanchor': 'center',
                     'yanchor': 'top'})  
-                    fig_muniOp.update_xaxes(tickvals=['2023-01-01','2023-02-01','2023-03-01','2023-04-01','2023-05-01','2023-06-01','2023-12-01'])
+                    fig_muniOp.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01',
+                                                      '2019-03-01','2019-06-01''2019-09-01','2019-12-01',
+                                                      '2020-03-01','2020-06-01','2020-09-01','2020-12-01',
+                                                      '2021-03-01','2021-06-01','2021-09-01','2021-12-01',
+                                                      '2022-03-01','2022-06-01','2022-09-01','2022-12-01',
+                                                      '2023-03-01','2023-06-01','2023-09-01','2023-12-01'])
                     fig_muniOp.add_annotation(
                     showarrow=False,
                     text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                    font=dict(size=10), xref='paper',yref='y domain',y=-0.25)                     
-                st.plotly_chart(fig_muniOp, use_container_width=True)
+                    font=dict(size=10), xref='paper',yref='y domain',y=-0.35)                     
+                st.plotly_chart(fig_muniOp, use_container_width=True)     
 
         if dimension_Latencia_Fijo == 'Operadores':  
             TodosLatencia4Fijo=Operadores4Fijo.loc[Operadores4Fijo['Provider']=='All Providers Combined'].groupby(['Aggregate Date'])['Latency'].mean().reset_index()
@@ -1886,7 +1903,7 @@ if select_servicio == 'Internet fijo':
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True)
                 fig11Fijo.update_yaxes(tickfont=dict(family='Tahoma', color='black', size=22),title_font=dict(family="Tahoma"),titlefont_size=22, title_text='Latencia (ms)',ticks="outside", tickwidth=1, tickcolor='black', ticklen=5,
                 zeroline=True,linecolor = "#000000",zerolinewidth=2,showticklabels=True) 
-                fig11Fijo.update_traces(textfont_size=14)
+                fig11Fijo.update_traces(textfont_size=22)
                 fig11Fijo.update_layout(height=500,legend_title=None,font=dict(size=22))
                 fig11Fijo.update_layout(legend=dict(orientation="v",y=1.02,x=0.87),showlegend=True)
                 fig11Fijo.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)')
@@ -1897,15 +1914,15 @@ if select_servicio == 'Internet fijo':
                 'x':0.5,
                 'xanchor': 'center',
                 'yanchor': 'top'})  
-                fig11Fijo.update_xaxes(tickvals=['2018-03-01','2018-06-01','2018-09-01','2018-12-01','2019-03-01','2019-06-01','2019-09-01','2019-12-01',
-                '2020-03-01','2020-06-01','2020-09-01','2020-12-01','2021-03-01','2021-06-01','2021-09-01','2021-12-01',
-                '2022-03-01','2022-06-01','2022-09-01','2022-12-01','2023-03-01','2023-06-01','2023-12-01'])
+                fig11Fijo.update_xaxes(tickvals=['2018-01-01','2018-06-01','2018-12-01','2019-06-01','2019-12-01','2020-06-01','2020-12-01','2021-06-01','2021-12-01',
+                                                '2022-06-01','2022-12-01','2023-06-01','2023-12-01'])
                 fig11Fijo.add_annotation(
                 showarrow=False,
                 text='Fuente: Basado en el análisis realizado por CRC de los datos de Speedtest Intelligence® para 2018 - 2023. Las marcas registradas de Ookla se usan bajo licencia y se reimprimen con permiso.',
-                font=dict(size=10), xref='paper',yref='y domain',y=-0.25) 
+                font=dict(size=10), xref='paper',yref='y domain',y=-0.3) 
                 st.plotly_chart(fig11Fijo, use_container_width=True)  
             #st.download_button(label="Descargar CSV",data=convert_df(JuntosLatencia4Fijo),file_name='Historico_dcarga_Operadores.csv',mime='text/csv')   
+
             with tab2:
                 col1,col2,col3,col4= st.columns([2,1,1,2])
                 mes_opFijoNombre={'Enero':1,'Febrero':2,'Marzo':3,'Abril':4,'Mayo':5,'Junio':6,'Julio':7,'Agosto':8,'Septiembre':9,'Octubre':10,'Noviembre':11,'Diciembre':12}
@@ -2180,14 +2197,14 @@ if select_servicio == 'Comparación internacional':
     fig1Int.update_traces(textfont_size=16)
     fig1Int.update_layout(height=500,legend_title=None)
     fig1Int.update_layout(paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
-    fig1Int.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=22)
 
-    fig1Int.update_layout(height=600,   
-        title='<b>Diagrama de burbujas de indicadores de desempeño en Internet fijo por país<br>(Diciembre 2023)',
-        title_x=0.5,
-        font=dict(
-            family="Tahoma",
-            color=" black",size=22))
+    fig1Int.update_layout(font_color="Black",title_font_family="Tahoma",title_font_color="Black",titlefont_size=22,
+                title={
+                'text': "<b>Diagrama de burbujas de indicadores de desempeño en Internet fijo por país (Diciembre 2023)</b>",
+                'y':0.85,
+                'x':0.5,
+                'xanchor': 'center',
+                'yanchor': 'top'})  
     fig1Int.update_layout(legend=dict(y=1,x=1,font_size=17))
     fig1Int.update_layout(paper_bgcolor='rgba(0,0,0,0)')
     fig1Int.update_layout(plot_bgcolor='rgba(0,0,0,0)')
